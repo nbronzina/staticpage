@@ -94,8 +94,8 @@
   .project-title {
     font-weight: bold;
   }
-/* Estilo para la sección de Writing */
-.writing-section {
+  /* Estilo para la sección de Writing */
+  .writing-section {
     padding: 20px;
     text-align: left;
   }
@@ -115,6 +115,43 @@
   }
   .writing-list a:hover {
     text-decoration: underline;
+  }
+
+  /* Estilos responsivos para dispositivos móviles */
+  @media (max-width: 768px) {
+    h1, h2 {
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    /* Imagen principal con tamaño ajustado para móviles */
+    .main-image {
+      width: 100%; /* Ocupa todo el ancho de la pantalla */
+      height: auto;
+    }
+
+    /* Contenedor flex para imagen y texto */
+    .intro-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Ajuste para proyectos en móvil */
+    .project {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project img {
+      width: 100%; /* Ocupa todo el ancho de la pantalla en móviles */
+      max-width: 300px; /* Limita el tamaño máximo */
+    }
   }
 </style>
 </head>
@@ -255,3 +292,4 @@
 
 </body>
 </html>
+
