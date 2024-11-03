@@ -117,6 +117,23 @@
     .stats-section div {
       flex: 1;
     }
+    /* Estilo de la flecha para volver arriba */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .back-to-top:hover {
+      background-color: #555;
+    }
     @media (max-width: 768px) {
       .intro-container {
         flex-direction: column;
@@ -247,6 +264,9 @@
     </div>
   </section>
 
+  <!-- Flecha para volver arriba -->
+  <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
   <!-- Script de Geolocalización, Hora y Pronóstico -->
   <script>
     function updateTime() {
@@ -268,7 +288,7 @@
 
     async function fetchWeather() {
       try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=4f8273341d68d1acdccba1c7b45c5e54&units=metric`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=YOUR_API_KEY&units=metric`);
         const data = await response.json();
         const temperature = data.main.temp;
         const weatherDescription = data.weather[0].description;
@@ -278,8 +298,13 @@
       }
     }
     fetchWeather();
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   </script>
 </body>
 </html>
+
 
 
