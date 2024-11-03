@@ -12,6 +12,7 @@
       transition: background-color 0.5s, color 0.5s;
       margin: 0;
       padding: 20px;
+      position: relative; /* Para posicionar el medidor de batería */
     }
     h1, h2 {
       margin: 0;
@@ -116,6 +117,27 @@
     }
     .stats-section div {
       flex: 1;
+    }
+    /* Estilo para la flecha de retroceso */
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #4caf50; /* Color de fondo */
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s;
+    }
+    .back-to-top:hover {
+      background-color: #45a049; /* Color al pasar el mouse */
     }
     @media (max-width: 768px) {
       .intro-container {
@@ -247,6 +269,11 @@
     </div>
   </section>
 
+  <!-- Flecha para volver arriba -->
+  <button class="back-to-top" onclick="scrollToTop()">
+    &#8593;
+  </button>
+
   <!-- Script de Geolocalización, Hora y Pronóstico -->
   <script>
     function updateTime() {
@@ -278,6 +305,13 @@
       }
     }
     fetchWeather();
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Desplazamiento suave
+      });
+    }
   </script>
 </body>
 </html>
