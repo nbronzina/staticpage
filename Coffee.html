@@ -3,100 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COFFEE.TXT</title>
+    <title>Coffee.txt</title>
     <style>
         body {
             background-color: black;
             color: #00FF00; /* Bright green text */
             font-family: "Courier New", Courier, monospace;
-            margin: 0;
-            padding: 20px;
             text-align: center;
+            margin: 0;
+            padding: 0;
         }
-        .ascii-art {
-            font-size: 12px;
-            white-space: pre; /* Preserve spacing for ASCII art */
-            margin-bottom: 20px;
+        .container {
+            margin-top: 50px;
         }
-        .header {
-            font-size: 16px;
+        .title {
+            font-size: 36px;
             text-transform: uppercase;
             margin-bottom: 20px;
-            text-shadow: 0 0 5px #00FF00;
+            text-shadow: 0 0 10px #00FF00;
         }
-        .box {
-            border: 2px solid #00FF00;
-            padding: 20px;
-            text-align: left;
-            margin: 0 auto;
+        .intro {
             max-width: 800px;
-            background-color: #111; /* Darker background for contrast */
+            margin: auto;
+            padding: 20px;
+            border: 2px dotted #00FF00;
+            margin-bottom: 40px;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            text-align: left; /* Align text to the left for better readability */
+        }
+        .section-title {
+            font-size: 28px;
+            text-align: left;
+            margin-bottom: 20px;
+            color: #00FF00;
         }
         hr {
             border: none;
-            height: 1px;
+            height: 2px;
             background-color: #00FF00;
             margin: 20px 0;
         }
         .footer {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        /* Animated GIF icons */
+        .gif-icon {
+            width: 50px;
+            height: 50px;
             margin-top: 20px;
-            font-size: 10px;
-            color: #006600; /* Darker green for footer text */
+        }
+        /* Retro pattern background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png'); /* Retro pattern */
+            opacity: 0.1;
+            z-index: -1;
         }
     </style>
 </head>
 <body>
-    <div class="ascii-art">
-        <p>THIS FILE FOUGHT ITS WAY OUT OF...</p>
-        <p>WELCOME TO COFFEE.TXT</p>
-        <p>:: HALLS OF THE BREWED WARRIOR ::</p>
-        <p>====================================</p>
-        <p>.-= THE BEST CAFES IN MADRID =-.</p>
-        <p>====================================</p>
-    </div>
-
-    <div class="box">
-        <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
-        <p>Discover personalized coffee routes curated specifically to match your preferences. Enjoy Madrid’s best specialty cafes with detailed address information, opening hours, and more.</p>
+    <div class="container">
+        <div class="title">Coffee.txt</div>
         <hr>
-        <p>Enjoy every sip, every step, every café.</p>
+        <!-- Introduction Box -->
+        <div class="intro">
+            <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
+            <p>Discover personalized coffee routes curated specifically to match your preferences. Enjoy Madrid’s best specialty cafes with detailed address information, opening hours, and more.</p>
+            <hr>
+            <p>Enjoy every sip, every step, every café.</p>
+        </div>
+        
+        <!-- New Section Title -->
+        <div class="content">
+            <h2 class="section-title">Cafés for Digital Nomads</h2>
+            <p>Madrid, the vibrant capital of Spain, is known for its rich history, culture, and growing specialty coffee scene. Here’s a quick guide to some of the best cafes in the city for digital nomads.</p>
+            
+            <p>You'll find Hola Coffee in the elegant Salamanca neighborhood. This cozy spot is perfect for coffee lovers seeking quality. Their menu features various options, from classic espressos to innovative brewing methods. The calm atmosphere is ideal for reading or working, although it isn’t specifically labeled as digital-nomad-friendly.</p>
+            
+            <p>Next, head to the city center, where several excellent cafes are concentrated. Pum Pum Café on Tribulete Street is a charming little place serving specialty coffee and delicious homemade pastries. This spot is digital-nomad-friendly, with available outlets and reliable Wi-Fi. Nearby on Cost.ª de los Ángeles, you’ll find Hanso Café, known for its scientific approach to coffee brewing. Hanso offers a quiet atmosphere and free Wi-Fi, although outlets may be scarce during peak hours.</p>
+            
+            <p>La Casa Encendida’s café on Ronda de Valencia is another must-visit. Located in a cultural center, it provides a unique space to enjoy coffee while exploring exhibitions. The spacious area has free Wi-Fi but can get crowded due to its prime location. If you’re a coffee aficionado, Acid Coffee on Verónica Street features quality beans and a relaxed setting. It’s a comfortable spot to work or read, with free Wi-Fi and available outlets.</p>
+            
+            <p>In the Chamberí neighborhood, Toma Café is a benchmark in Madrid's specialty coffee scene. Their commitment to quality and sustainability is evident in every cup. Toma is another great place for digital nomads, with free Wi-Fi and outlets, though it can be busy during peak hours. Finally, in Arganzuela, Dot Café Bar offers a unique experience combining specialty coffee with contemporary art. The spacious and bright venue has free Wi-Fi, but outlets can be limited.</p>
+            
+            <p>Note: Some cafes may restrict laptop use on weekends to maintain a relaxed and pleasant atmosphere for all patrons.</p>
+            
+            <hr>
+            <p><strong>Addresses & Hours:</strong></p>
+            <ul>
+                <li><strong>Hola Coffee:</strong> Calle de Lagasca, 42, Salamanca, 28001 Madrid. Open Mon-Fri 8:00-20:00, Sat-Sun 9:00-20:00.</li>
+                <li><strong>Pum Pum Café:</strong> C. de Tribulete, 6, Centro, 28012 Madrid. Open Mon-Sun 9:30-19:30.</li>
+                <li><strong>Hanso Café 2:</strong> Cost.ª de los ángeles 7. 28013 Madrid. Open Mon-Fri 9:00-20:00, Sat-Sun 10:00-20:00.</li>
+                <li><strong>La Casa Encendida Café:</strong> Rda. de Valencia, 2, Centro, 28012 Madrid. Open Tue-Sun 9:00-19:30, Brunch Sat-Sun.</li>
+                <li><strong>Acid Coffee:</strong> C. de la Verónica, 9, Centro, 28014 Madrid. Open Mon-Fri 8:30-20:00, Sat-Sun 9:00-20:00.</li>
+                <li><strong>Toma Café:</strong> C. de Sta. Feliciana, 5, Chamberí, 28010 Madrid. Open Mon-Sun 8:00-20:00.</li>
+                <li><strong>Dot Café Bar:</strong> C. de Eugenio Sellés, 6, Arganzuela, 28045 Madrid. Open Mon-Fri 8:00-20:00, Closed on Tuesdays.</li>
+            </ul>
+            
+            <p>Hope this guide helps you find the best specialty coffee spots in Madrid, whether looking for a place to work or enjoy a great cup of coffee.</p>
+        </div>
+
+        <div class="footer">© 2024 Coffee.txt | All rights reserved.</div>
+        <img src="https://i.gifer.com/1tJ6.gif" alt="Animated icon" class="gif-icon">
     </div>
-
-    <div class="ascii-art">
-        <p>============================</p>
-        <p>.: CAFÉS FOR DIGITAL NOMADS :.</p>
-        <p>============================</p>
-    </div>
-
-    <div class="box">
-        <p>Madrid, Spain's vibrant capital, is known for its rich history and culture and its growing specialty coffee scene. Here's a quick guide to some of the best cafes in the city for digital nomads.</p>
-
-        <p>We begin our journey in the elegant Salamanca neighborhood, home to Hola Coffee. This cozy spot is perfect for coffee lovers seeking quality. The menu offers various options, from classic espressos to innovative brewing methods. The calm atmosphere makes it an ideal place for reading or working, although it isn't specifically labeled as digital-nomad-friendly.</p>
-
-        <p>Next, head to the city center, where several excellent cafes are concentrated. Pum Pum Café on Tribulete Street is a charming little place serving specialty coffee and delicious homemade pastries. This spot is digital-nomad-friendly, with available outlets and reliable Wi-Fi. Nearby on Cost.ª de los ángeles 7, you'll find Hanso Café 2, known for its scientific approach to coffee brewing. Hanso offers a quiet atmosphere and free Wi-Fi, although outlets may be scarce during peak hours.</p>
-
-        <p>La Casa Encendida's café on Ronda de Valencia is another must-visit. Located in a cultural center, it provides a unique space to enjoy coffee while exploring exhibitions. The spacious area has free Wi-Fi but can get crowded due to its prime location. If you're a coffee aficionado, Acid Coffee on Verónica Street features quality beans and a relaxed setting. It’s a comfortable spot to work or read, with free Wi-Fi and available outlets.</p>
-
-        <p>In the Chamberí neighborhood, Toma Café is a benchmark in Madrid's specialty coffee scene. Their commitment to quality and sustainability is evident in every cup. Toma is another great place for digital nomads, with free Wi-Fi and outlets, though it can be busy during peak hours. Finally, in Arganzuela, Dot Café Bar offers a unique experience combining specialty coffee with contemporary art. The spacious and bright venue has free Wi-Fi, but outlets can be limited.</p>
-
-        <p>Note: Some cafes may restrict computer use on weekends to maintain a relaxed and pleasant atmosphere for all patrons.</p>
-
-        <p><strong>Addresses and Hours:</strong></p>
-        <ul>
-            <li><strong>Hola Coffee:</strong> Calle de Lagasca, 42, Salamanca, 28001 Madrid. Mon-Fri 8:00-20:00, Sat-Sun 9:00-20:00.</li>
-            <li><strong>Pum Pum Café:</strong> C. de Tribulete, 6, Centro, 28012 Madrid. Mon-Sun 9:30-19:30.</li>
-            <li><strong>Hanso Café 2:</strong> Cost.ª de los ángeles 7. 28013 Madrid. Mon-Fri 9:00-20:00, Sat-Sun 10:00-20:00.</li>
-            <li><strong>La Casa Encendida:</strong> Rda. de Valencia, 2, Centro, 28012 Madrid. Tue-Sun 9:00-19:30, Brunch Sat-Sun.</li>
-            <li><strong>Acid Coffee:</strong> C. de la Verónica, 9, Centro, 28014 Madrid. Mon-Fri 8:30-20:00, Sat-Sun 9:00-20:00.</li>
-            <li><strong>Toma Café:</strong> C. de Sta. Feliciana, 5, Chamberí, 28010 Madrid. Mon-Sun 8:00-20:00.</li>
-            <li><strong>Dot Café Bar:</strong> C. de Eugenio Sellés, 6, Arganzuela, 28045 Madrid. Mon-Fri 8:00-20:00, Closed on Tuesdays.</li>
-        </ul>
-
-        <p>Hope this guide helps you enjoy the best specialty coffee spots in Madrid, whether you're looking for a place to work or want to savor a good cup of coffee.</p>
-    </div>
-
-    <div class="footer">
-        <p>© 2024 COFFEE.TXT | All rights brewed.</p>
-    </div>
+</body>
+</html>
 </body>
 </html>
