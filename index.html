@@ -12,7 +12,6 @@
       transition: background-color 0.5s, color 0.5s;
       margin: 0;
       padding: 20px;
-      position: relative; /* Para posicionar el medidor de batería */
     }
     h1, h2 {
       margin: 0;
@@ -118,35 +117,6 @@
     .stats-section div {
       flex: 1;
     }
-    .battery-meter {
-      position: absolute;
-      top: 20px; /* Ajusta la posición vertical */
-      right: 20px; /* Ajusta la posición horizontal */
-      background-color: rgba(255, 255, 255, 0.8);
-      border: 2px solid #333;
-      border-radius: 10px;
-      padding: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      width: 100px; /* Ajusta el ancho según tu diseño */
-    }
-    .battery-level {
-      height: 0; /* Esta se ajustará dinámicamente */
-      border-radius: 10px;
-      background-color: #4caf50; /* Color verde para el medidor de batería */
-      transition: height 0.5s;
-    }
-    .traffic-meter {
-      margin-top: 10px;
-      background-color: rgba(255, 0, 0, 0.5); /* Color de fondo para el medidor de tráfico */
-      border-radius: 10px;
-      height: 20px; /* Altura del medidor */
-    }
-    .traffic-level {
-      height: 100%;
-      border-radius: 10px;
-      background-color: #ffcc00; /* Color para el consumo de recursos */
-      transition: width 0.5s; /* Suaviza el cambio de tamaño */
-    }
     @media (max-width: 768px) {
       .intro-container {
         flex-direction: column;
@@ -175,17 +145,6 @@
 </head>
 
 <body>
-  <!-- Medidor de Batería -->
-  <div class="battery-meter">
-    <h3>Battery Meter</h3>
-    <div class="battery-level" id="battery-meter" style="height: 100%;"></div>
-  </div>
-
-  <!-- Medidor de Tráfico -->
-  <div class="traffic-meter">
-    <div class="traffic-level" id="traffic-meter" style="width: 0%;"></div>
-  </div>
-
   <!-- Sección de Introducción -->
   <section id="home">
     <h1>Hello!</h1>
@@ -296,18 +255,6 @@
     }
     setInterval(updateTime, 1000);
 
-    async function updateBatteryStatus() {
-      if (navigator.getBattery) {
-        const battery = await navigator.getBattery();
-        const level = Math.round(battery.level * 100);
-        document.getElementById('battery-info').textContent = `${level}%, ${battery.charging ? 'charging' : 'not charging'}`;
-        document.getElementById('battery-meter').style.height = `${level}%`; // Actualiza la altura del medidor de batería
-      } else {
-        document.getElementById('battery-info').textContent = 'Battery status not available';
-      }
-    }
-    updateBatteryStatus();
-
     async function fetchWeather() {
       try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=4f8273341d68d1acdccba1c7b45c5e54&units=metric`);
@@ -320,15 +267,6 @@
       }
     }
     fetchWeather();
-
-    // Simulación de consumo de energía
-    let energyConsumption = 0; // Representa el consumo de energía
-    const trafficLevel = document.getElementById('traffic-meter');
-    const trafficSimulationInterval = setInterval(() => {
-      energyConsumption += Math.random() * 10; // Aumenta el consumo de energía aleatoriamente
-      const normalizedLevel = Math.min(energyConsumption, 100); // Normaliza el consumo al rango [0, 100]
-      trafficLevel.style.width = `${normalizedLevel}%`; // Actualiza el ancho del medidor de tráfico
-    }, 1000); // Actualiza cada segundo
   </script>
 </body>
 </html>
