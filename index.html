@@ -68,10 +68,10 @@
     }
     .project-section {
       text-align: left;
-      padding: 10px 20px; /* Reduce el padding superior e inferior */
+      padding: 10px 20px;
     }
     .project-section h2 {
-      margin-bottom: 10px; /* Reduce el espacio debajo del título */
+      margin-bottom: 10px;
     }
     .project {
       display: flex;
@@ -88,7 +88,7 @@
       font-weight: bold;
     }
     .writing-section {
-      padding: 10px 20px; /* Reduce el padding superior e inferior */
+      padding: 10px 20px;
       text-align: left;
     }
     .writing-item {
@@ -109,8 +109,12 @@
       text-decoration: underline;
     }
     .privacy-notice {
-      padding: 10px 20px; /* Reduce el padding superior e inferior */
+      padding: 10px 20px;
       text-align: left;
+    }
+    .clock {
+      font-size: 18px;
+      margin-top: 10px;
     }
     @media (max-width: 768px) {
       .intro-container {
@@ -144,6 +148,7 @@
       <img src="img/static.png" alt="">
       <p>The website is programmed based on HTML code from a text editor on my Mac computer based on static sites.</p>
     </div>
+    <div class="clock" id="clock">Loading time...</div> <!-- Reloj agregado -->
     <hr>
     <div class="intro-container">
       <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
@@ -274,7 +279,7 @@
     <p><b>Your Consent:</b> By using this website, you consent to this use of geolocation for the described purpose. If you have any concerns or questions, please contact me.</p>
   </section>
 
-  <!-- Script de Modo Solar con Geolocalización -->
+  <!-- Script de Modo Solar con Geolocalización y Reloj -->
   <script>
     async function adjustLightBasedOnLocation() {
       try {
@@ -283,6 +288,8 @@
         const { latitude, longitude } = data;
         const now = new Date();
         const localHours = (now.getUTCHours() + (longitude / 15)) % 24;
+        
+        // Ajuste de brillo basado en la hora local
         if (localHours >= 6 && localHours < 18) {
           document.body.style.backgroundColor = '#FFEECC';
           document.body.style.color = '#333';
@@ -290,13 +297,26 @@
           document.body.style.backgroundColor = '#333';
           document.body.style.color = '#FFEECC';
         }
+
+        // Mostrar el reloj con la hora local
+        function updateClock() {
+          const localTime = new Date();
+          localTime.setHours(localTime.getUTCHours() + Math.floor(longitude / 15));
+          const hours = localTime.getHours().toString().padStart(2, '0');
+          const minutes = localTime.getMinutes().toString().padStart(2, '0');
+          const seconds = localTime.getSeconds().toString().padStart(2, '0');
+          document.getElementById('clock').textContent = `Local Time: ${hours}:${minutes}:${seconds}`;
+        }
+        
+        setInterval(updateClock, 1000); // Actualizar cada segundo
       } catch (error) {
         console.error('Error obteniendo la ubicación:', error);
       }
     }
+
     adjustLightBasedOnLocation();
   </script>
-<hr>
+
   <!-- Sección de enlaces a redes sociales -->
   <p class="footer-links">You can learn more about me on <a href="https://www.instagram.com/nbronzina">Instagram</a>, contact me on <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a>, read me on <a href="https://www.medium.com/@nbronzina">Medium</a>, and/or just <a href="mailto:nicolas.bronzina.com">email me</a></p>
 </body>
