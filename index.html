@@ -112,6 +112,19 @@
       padding: 10px 20px;
       text-align: left;
     }
+    /* Estilo para la sección de estadísticas, clima y redes sociales */
+    .stats-weather-social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+    .server-stats, .weather, .social-links {
+      flex: 1;
+      text-align: center;
+    }
     @media (max-width: 768px) {
       .intro-container {
         flex-direction: column;
@@ -130,6 +143,10 @@
       .project img {
         width: 100%;
         max-width: 300px;
+      }
+      .stats-weather-social {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
@@ -265,24 +282,37 @@
     <hr>
   </section>
 
-  <!-- Sección de estadísticas del servidor -->
-  <section class="server-stats">
-    <h2>Server Stats</h2>
-    <p>Location: Madrid</p>
-    <p>Time: <span id="server-time"></span></p>
-    <p>Battery status: <span id="battery-status"></span></p>
+  <!-- Sección de estadísticas, clima y redes sociales -->
+  <section class="stats-weather-social">
+    <div class="server-stats">
+      <h2>Server Stats</h2>
+      <p>Location: Madrid</p>
+      <p>Time: <span id="server-time"></span></p>
+      <p>Battery status: <span id="battery-status"></span></p>
+    </div>
+    <div class="weather">
+      <h2>Weather</h2>
+      <p id="weather-info">Loading weather...</p>
+    </div>
+    <div class="social-links">
+      <h2>Follow Me</h2>
+      <p>
+        <a href="https://www.instagram.com/nbronzina">Instagram</a> | 
+        <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a> | 
+        <a href="https://www.medium.com/@nbronzina">Medium</a> | 
+        <a href="mailto:nicolas.bronzina.com">Email</a>
+      </p>
+    </div>
   </section>
 
-  <!-- Script para obtener la hora y el estado de la batería -->
+  <!-- Script para obtener la hora, el estado de la batería y el clima -->
   <script>
-    // Actualiza la hora en tiempo real
     function updateTime() {
       const now = new Date();
       document.getElementById('server-time').textContent = now.toLocaleTimeString();
     }
     setInterval(updateTime, 1000);
 
-    // Obtener el estado de la batería si es compatible
     async function updateBatteryStatus() {
       if (navigator.getBattery) {
         const battery = await navigator.getBattery();
@@ -293,11 +323,20 @@
       }
     }
     updateBatteryStatus();
-  </script>
 
-  <hr>
-  <!-- Sección de enlaces a redes sociales -->
-  <p class="footer-links">You can learn more about me on <a href="https://www.instagram.com/nbronzina">Instagram</a>, contact me on <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a>, read me on <a href="https://www.medium.com/@nbronzina">Medium</a>, and/or just <a href="mailto:nicolas.bronzina.com">email me</a></p>
+    async function fetchWeather() {
+      try {
+        const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=40.4168&longitude=-3.7038&current_weather=true');
+        const data = await response.json();
+        const weather = data.current_weather;
+        document.getElementById('weather-info').textContent = `${weather.temperature}°C, ${weather.weathercode}`;
+      } catch (error) {
+        document.getElementById('weather-info').textContent = 'Weather data not available';
+      }
+    }
+    fetchWeather();
+  </script>
 </body>
 </html>
+
 
