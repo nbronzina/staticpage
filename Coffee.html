@@ -6,55 +6,65 @@
     <title>Coffee.txt</title>
     <style>
         body {
-            background-color: black;
-            color: #00FF00; /* Bright green text */
+            background-color: #000; /* Black background */
+            color: #00FF00; /* Neon green text */
             font-family: "Courier New", Courier, monospace;
             text-align: center;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         .container {
-            margin-top: 50px;
+            margin-top: 30px;
+            padding: 10px;
         }
         .title {
-            font-size: 36px;
+            font-size: 40px;
             text-transform: uppercase;
-            margin-bottom: 20px;
             text-shadow: 0 0 10px #00FF00;
+            border-bottom: 2px solid #00FF00;
+            padding-bottom: 10px;
         }
         .intro {
             max-width: 800px;
-            margin: auto;
+            margin: 40px auto;
             padding: 20px;
-            border: 2px dotted #00FF00;
-            margin-bottom: 40px;
+            border: 3px dashed #00FF00;
+            background-color: #111; /* Darker background for contrast */
+            box-shadow: 0 0 20px #00FF00;
+            text-align: left;
         }
         .content {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             padding: 20px;
-            text-align: left; /* Align text to the left for better readability */
+            text-align: left;
+            line-height: 1.8;
+            color: #0aff0a; /* Lighter neon green */
         }
         .section-title {
             font-size: 28px;
-            text-align: left;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px #00FF00;
             margin-bottom: 20px;
-            color: #00FF00;
+            border-left: 5px solid #00FF00;
+            padding-left: 10px;
         }
         hr {
             border: none;
-            height: 2px;
+            height: 1px;
             background-color: #00FF00;
             margin: 20px 0;
         }
         .footer {
             margin-top: 30px;
-            font-size: 14px;
+            font-size: 12px;
+            color: #006600; /* Darker green for footer */
         }
         /* Animated GIF icons */
         .gif-icon {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             margin-top: 20px;
         }
         /* Retro pattern background */
@@ -65,20 +75,43 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://www.transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png'); /* Retro pattern */
+            background-image: url('https://www.transparenttextures.com/patterns/black-linen.png'); /* Retro texture */
             opacity: 0.1;
             z-index: -1;
+        }
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+            color: #00FF00;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff;
+            clip: rect(0, 900px, 0, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            text-shadow: -2px 0 #00ffff, 2px 0 #ff00ff;
+            animation: glitch 2s infinite linear alternate;
+        }
+        @keyframes glitch {
+            0% { clip: rect(10px, 9999px, 20px, 0); }
+            50% { clip: rect(130px, 9999px, 150px, 0); }
+            100% { clip: rect(50px, 9999px, 70px, 0); }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="title">Coffee.txt</div>
+        <div class="title glitch" data-text="Coffee.txt">Coffee.txt</div>
         <hr>
         <!-- Introduction Box -->
         <div class="intro">
             <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
-            <p>Discover personalized coffee routes curated specifically to match your preferences. Madrid’s best specialty cafes with detailed address information, opening hours, and more.</p>
+            <p>Discover personalized coffee routes curated specifically to match your preferences. Enjoy Madrid’s best specialty cafes with detailed address information, opening hours, and more.</p>
             <hr>
             <p>Enjoy every sip, every step, every café.</p>
         </div>
@@ -86,7 +119,7 @@
         <!-- New Section Title -->
         <div class="content">
             <h2 class="section-title">Cafés for Digital Nomads</h2>
-            <p>Madrid, the vibrant capital of Spain, is known for its rich history, culture, and growing specialty coffee scene. Here’s a quick guide to some of the best cafes in the city for digital nomads.</p>
+            <p>Madrid, Spain's vibrant capital, is known for its rich history, culture, and growing specialty coffee scene. Here’s a quick guide to some of the best cafes in the city for digital nomads.</p>
             
             <p>You'll find Hola Coffee in the elegant Salamanca neighborhood. This cozy spot is perfect for coffee lovers seeking quality. Their menu features various options, from classic espressos to innovative brewing methods. The calm atmosphere is ideal for reading or working, although it isn’t specifically labeled as digital-nomad-friendly.</p>
             
@@ -103,14 +136,14 @@
             <ul>
                 <li><strong>Hola Coffee:</strong> Calle de Lagasca, 42, Salamanca, 28001 Madrid. Open Mon-Fri 8:00-20:00, Sat-Sun 9:00-20:00.</li>
                 <li><strong>Pum Pum Café:</strong> C. de Tribulete, 6, Centro, 28012 Madrid. Open Mon-Sun 9:30-19:30.</li>
-                <li><strong>Hanso Café:</strong> C. del Pez, 20, Centro, 28004 Madrid. Open Mon-Fri 9:00-20:00, Sat-Sun 10:00-20:00.</li>
+                <li><strong>Hanso Café 2:</strong> Cost.ª de los ángeles 7. 28013 Madrid. Open Mon-Fri 9:00-20:00, Sat-Sun 10:00-20:00.</li>
                 <li><strong>La Casa Encendida Café:</strong> Rda. de Valencia, 2, Centro, 28012 Madrid. Open Tue-Sun 9:00-19:30, Brunch Sat-Sun.</li>
                 <li><strong>Acid Coffee:</strong> C. de la Verónica, 9, Centro, 28014 Madrid. Open Mon-Fri 8:30-20:00, Sat-Sun 9:00-20:00.</li>
                 <li><strong>Toma Café:</strong> C. de Sta. Feliciana, 5, Chamberí, 28010 Madrid. Open Mon-Sun 8:00-20:00.</li>
                 <li><strong>Dot Café Bar:</strong> C. de Eugenio Sellés, 6, Arganzuela, 28045 Madrid. Open Mon-Fri 8:00-20:00, Closed on Tuesdays.</li>
             </ul>
             
-            <p>Hope this guide helps you find the best specialty coffee spots in Madrid, whether you’re looking for a place to work or just want to enjoy a great cup of coffee.</p>
+            <p>Hope this guide helps you find the best specialty coffee spots in Madrid, whether looking for a place to work or enjoy a great cup of coffee.</p>
         </div>
 
         <div class="footer">© 2024 Coffee.txt | All rights reserved.</div>
@@ -119,5 +152,4 @@
 </body>
 </html>
 
-</html>
 
