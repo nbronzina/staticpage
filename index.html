@@ -288,7 +288,7 @@
 
     async function fetchWeather() {
       try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=YOUR_API_KEY&units=metric`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=4f8273341d68d1acdccba1c7b45c5e54&units=metric`);
         const data = await response.json();
         const temperature = data.main.temp;
         const weatherDescription = data.weather[0].description;
