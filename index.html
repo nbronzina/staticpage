@@ -323,7 +323,7 @@
 
     async function fetchWeatherForecast() {
       try {
-        const apiKey = 'TU_CLAVE_DE_API_AQUÍ';
+        const apiKey = '4f8273341d68d1acdccba1c7b45c5e54';
         const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=40.4168&lon=-3.7038&units=metric&appid=${apiKey}`);
         const data = await response.json();
         document.getElementById('weather-today').innerText = `${data.list[0].main.temp}°C, ${data.list[0].weather[0].description}`;
@@ -348,3 +348,4 @@
   <p class="footer-links">You can learn more about me on <a href="https://www.instagram.com/nbronzina">Instagram</a>, contact me on <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a>, read me on <a href="https://www.medium.com/@nbronzina">Medium</a>, and/or just <a href="mailto:nicolas.bronzina.com">email me</a></p>
 </body>
 </html>
+
