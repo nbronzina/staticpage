@@ -68,10 +68,10 @@
     }
     .project-section {
       text-align: left;
-      padding: 10px 20px; /* Reduce el padding superior e inferior */
+      padding: 10px 20px;
     }
     .project-section h2 {
-      margin-bottom: 10px; /* Reduce el espacio debajo del título */
+      margin-bottom: 10px;
     }
     .project {
       display: flex;
@@ -88,7 +88,7 @@
       font-weight: bold;
     }
     .writing-section {
-      padding: 10px 20px; /* Reduce el padding superior e inferior */
+      padding: 10px 20px;
       text-align: left;
     }
     .writing-item {
@@ -107,10 +107,6 @@
     }
     .writing-list a:hover {
       text-decoration: underline;
-    }
-    .privacy-notice {
-      padding: 10px 20px;
-      text-align: left;
     }
     .stats-section {
       display: flex;
@@ -167,51 +163,6 @@
         <p><b>[ES]</b> <em>Cientísta Social</em> e <em>Investigador</em> con un Máster en Diseño de Experiencia de Usuario.</p>
         <p>Como <b>Design Researcher</b>, me dedico a enriquecer y avanzar en los aspectos especulativos del diseño mediante un enfoque polifacético, que incluye una investigación exhaustiva, la generación de prototipos diegéticos y la traducción de marcos conceptuales en ideas tangibles. Mi trabajo se fundamenta en el futuro de la alimentación, aunque también muestro interés en otros temas como los nuevos entornos urbanos, la ecología y las tecnologías emergentes.</p>
         <p>Además de ser socio director en BPP y contribuir a la redacción de artículos sobre diseño ficción, me desempeño como colaborador habitual en <a href="https://www.girardinnova.com">Girardin & Nova</a>. Allí, investigo a fondo tanto las tendencias emergentes como las "señales débiles", con el fin de identificar posibles escenarios futuros tanto dentro como fuera de las organizaciones.</p>
-      </div>
-    </div>
-    <hr>
-  </section>
-
-  <!-- Sección About -->
-  <section id="about">
-    <div class="contenedor">
-      <div class="columna">
-        <p style="text-align: center;"><b>Experience</b></p>
-        <p style="text-align: center;"><u>Heated</u></p>
-        <p style="text-align: center;">Creative Alchemist & Scenario Weaver | Jun 2024 - present day</p>
-        <p style="text-align: center;"><u>BPP Analytics and Design</u></p>
-        <p style="text-align: center;">Managing Partner | Jan 2024 - present day</p>
-        <p style="text-align: center;"><u>Girardin & Nova</u></p>
-        <p style="text-align: center;">Design Researcher | Jan 2024 - present day</p>
-        <p style="text-align: center;"><u>Near Future Laboratory</u></p>
-        <p style="text-align: center;">Design Researcher | Feb 2023 - Jan 2024</p>
-        <br>
-        <p style="text-align: center;"><b>Certificates</b></p>
-        <p style="text-align: center;"><u>Institute for the Future</u></p>
-        <p style="text-align: center;">Future Thinking & Forecasting Skills</p>
-        <p style="text-align: center;"><u>IBM</u></p>
-        <p style="text-align: center;">Big Data Foundations - Level 1</p>
-        <p style="text-align: center;"><u>Mr Marcel School</u></p>
-        <p style="text-align: center;">UX Writing/Content Design</p>
-        <p style="text-align: center;"><u>Be Potencial</u></p>
-        <p style="text-align: center;">Public Speaking & Storytelling</p>
-      </div>
-      <div class="columna">
-        <p style="text-align: center;"><b>Education</b></p>
-        <p style="text-align: center;"><u>UDIT</u></p>
-        <p style="text-align: center;">Master's Degree in User Experience for the Design of Digital Products and Services</p>
-        <p style="text-align: center;"><u>Universidad del Salvador</u></p>
-        <p style="text-align: center;">Bachelor Degree in Sociology</p>
-        <br>
-        <p style="text-align: center;"><b>Key Skills</b></p>
-        <p style="text-align: center;">Critical Thinking</p>
-        <p style="text-align: center;">Explorative Research</p>
-        <p style="text-align: center;">Survey Research</p>
-        <p style="text-align: center;">Interviewing</p>
-        <p style="text-align: center;">Trends & "Weak Signals" Analysis</p>
-        <p style="text-align: center;">Storytelling</p>
-        <p style="text-align: center;">Diegetic Artifacts & Scenario Ideation</p>
-        <p style="text-align: center;">Generative Intelligence</p>
       </div>
     </div>
     <hr>
@@ -291,7 +242,7 @@
       <p id="weather-info">Loading...</p>
     </div>
     <div>
-      <h2>Follow Me</h2>
+      <h2>Contact</h2>
       <p><a href="https://www.instagram.com/nbronzina">Instagram</a> | <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a> | <a href="https://www.medium.com/@nbronzina">Medium</a> | <a href="mailto:nicolas.bronzina.com">Email</a></p>
     </div>
   </section>
@@ -300,7 +251,7 @@
   <script>
     function updateTime() {
       const now = new Date();
-      document.getElementById('server-time').textContent = now.toLocaleTimeString();
+      document.getElementById('time-info').textContent = now.toLocaleTimeString();
     }
     setInterval(updateTime, 1000);
 
@@ -308,9 +259,9 @@
       if (navigator.getBattery) {
         const battery = await navigator.getBattery();
         const level = Math.round(battery.level * 100);
-        document.getElementById('battery-status').textContent = `${level}%, ${battery.charging ? 'charging' : 'not charging'}`;
+        document.getElementById('battery-info').textContent = `${level}%, ${battery.charging ? 'charging' : 'not charging'}`;
       } else {
-        document.getElementById('battery-status').textContent = 'Battery status not available';
+        document.getElementById('battery-info').textContent = 'Battery status not available';
       }
     }
     updateBatteryStatus();
@@ -329,3 +280,4 @@
   </script>
 </body>
 </html>
+
