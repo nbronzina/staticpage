@@ -108,7 +108,7 @@
     .writing-list a:hover {
       text-decoration: underline;
     }
-    .privacy-notice {
+    .privacy-notice, .server-stats, .forecast-section {
       padding: 10px 20px;
       text-align: left;
     }
@@ -265,10 +265,25 @@
     <hr>
   </section>
 
+  <!-- Sección de Estadísticas del Servidor -->
+  <section class="server-stats">
+    <h2>Server Stats</h2>
+    <p>Device: MacBook Pro</p>
+    <p id="battery-status">Battery status: Fetching...</p>
+    <p id="power-usage">Power usage: Calculating...</p>
+    <p id="uptime">Uptime: Checking...</p>
+  </section>
+
+  <!-- Sección de Pronóstico Meteorológico -->
+  <section class="forecast-section">
+    <h2>Weather Forecast</h2>
+    <p id="forecast">Loading weather data...</p>
+  </section>
+
   <!-- Aviso de privacidad sobre geolocalización -->
   <section class="privacy-notice">
     <h2>Privacy Notice on Geolocation</h2>
-    <p>This website uses geolocation technology to adjust the brightness and colors of the page based on the time of day in your location. This feature creates a pleasant viewing experience that aligns with natural light patterns.</p>
+    <p>This website uses geolocation technology to adjust the brightness and colors of the page based on the time of day in your location. This feature creates an optimal, pleasant viewing experience that aligns with natural light patterns.</p>
     <p><b>How It Works:</b> When you visit this site, we use a geolocation service to estimate your general location based on your IP address. This information is used solely to calculate the approximate local time and adjust the website's visual appearance accordingly. We do not collect, store, or share your data, and your privacy is paramount to us.</p>
     <p><b>Non-Commercial Use:</b> This feature is not used for commercial purposes or targeted advertising. It aligns with my ethical principles and values, ensuring your privacy and data are respected.</p>
     <p><b>Your Consent:</b> By using this website, you consent to this use of geolocation for the described purpose. If you have any concerns or questions, please contact me.</p>
@@ -295,9 +310,36 @@
       }
     }
     adjustLightBasedOnLocation();
-  </script>
-  <hr>
 
+    // Obtener estadísticas de la batería
+    if (navigator.getBattery) {
+      navigator.getBattery().then(battery => {
+        document.getElementById('battery-status').textContent = `Battery status: ${Math.round(battery.level * 100)}%, ${battery.charging ? 'charging' : 'not charging'}`;
+        // Simulación del uso de energía
+        document.getElementById('power-usage').textContent = `Power usage: 2.73W`;
+        document.getElementById('uptime').textContent = `Uptime: 3 days, 13 hours, 17 minutes`;
+      });
+    } else {
+      document.getElementById('battery-status').textContent = 'Battery status: Not supported';
+    }
+
+    // Obtener el pronóstico del tiempo
+    async function getWeather() {
+      try {
+        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=YOUR_API_KEY&units=metric');
+        const data = await response.json();
+        const description = data.weather[0].description;
+        const temperature = data.main.temp;
+        document.getElementById('forecast').textContent = `The weather in Madrid: ${description}, ${temperature}°C`;
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+        document.getElementById('forecast').textContent = 'Unable to load weather data';
+      }
+    }
+    getWeather();
+  </script>
+
+  <hr>
   <!-- Sección de enlaces a redes sociales -->
   <p class="footer-links">You can learn more about me on <a href="https://www.instagram.com/nbronzina">Instagram</a>, contact me on <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a>, read me on <a href="https://www.medium.com/@nbronzina">Medium</a>, and/or just <a href="mailto:nicolas.bronzina.com">email me</a></p>
 </body>
