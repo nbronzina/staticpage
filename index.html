@@ -26,11 +26,6 @@
     a:hover {
       color: #555;
     }
-    hr {
-      border: none;
-      border-top: 1px double #000;
-      margin: 20px 0;
-    }
     .intro-container {
       display: flex;
       align-items: flex-start;
@@ -51,6 +46,11 @@
     .header-icon-text img {
       width: 18px;
       height: 18px;
+    }
+    hr {
+      border: none;
+      border-top: 1px double #000;
+      margin: 20px 0;
     }
     .contenedor {
       display: flex;
@@ -108,25 +108,14 @@
     .writing-list a:hover {
       text-decoration: underline;
     }
-    .privacy-notice {
-      padding: 10px 20px;
-      text-align: left;
-    }
-    .stats-weather-social {
+    .server-weather-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
-    }
-    .stats-weather-social div {
-      text-align: center;
-      flex: 1;
+      padding: 20px;
     }
     .server-stats, .weather, .social-links {
-      padding: 0 20px;
-    }
-    .server-stats h2, .weather h2, .social-links h2 {
-      margin-bottom: 10px;
+      text-align: center;
     }
     @media (max-width: 768px) {
       .intro-container {
@@ -147,7 +136,7 @@
         width: 100%;
         max-width: 300px;
       }
-      .stats-weather-social {
+      .server-weather-container {
         flex-direction: column;
         gap: 15px;
       }
@@ -179,167 +168,73 @@
     <hr>
   </section>
 
-  <!-- Sección About -->
-  <section id="about">
-    <div class="contenedor">
-      <div class="columna">
-        <p style="text-align: center;"><b>Experience</b></p>
-        <p style="text-align: center;"><u>Heated</u></p>
-        <p style="text-align: center;">Creative Alchemist & Scenario Weaver | Jun 2024 - present day</p>
-        <p style="text-align: center;"><u>BPP Analytics and Design</u></p>
-        <p style="text-align: center;">Managing Partner | Jan 2024 - present day</p>
-        <p style="text-align: center;"><u>Girardin & Nova</u></p>
-        <p style="text-align: center;">Design Researcher | Jan 2024 - present day</p>
-        <p style="text-align: center;"><u>Near Future Laboratory</u></p>
-        <p style="text-align: center;">Design Researcher | Feb 2023 - Jan 2024</p>
-        <br>
-        <p style="text-align: center;"><b>Certificates</b></p>
-        <p style="text-align: center;"><u>Institute for the Future</u></p>
-        <p style="text-align: center;">Future Thinking & Forecasting Skills</p>
-        <p style="text-align: center;"><u>IBM</u></p>
-        <p style="text-align: center;">Big Data Foundations - Level 1</p>
-        <p style="text-align: center;"><u>Mr Marcel School</u></p>
-        <p style="text-align: center;">UX Writing/Content Design</p>
-        <p style="text-align: center;"><u>Be Potencial</u></p>
-        <p style="text-align: center;">Public Speaking & Storytelling</p>
-      </div>
-      <div class="columna">
-        <p style="text-align: center;"><b>Education</b></p>
-        <p style="text-align: center;"><u>UDIT</u></p>
-        <p style="text-align: center;">Master's Degree in User Experience for the Design of Digital Products and Services</p>
-        <p style="text-align: center;"><u>Universidad del Salvador</u></p>
-        <p style="text-align: center;">Bachelor Degree in Sociology</p>
-        <br>
-        <p style="text-align: center;"><b>Key Skills</b></p>
-        <p style="text-align: center;">Critical Thinking</p>
-        <p style="text-align: center;">Explorative Research</p>
-        <p style="text-align: center;">Survey Research</p>
-        <p style="text-align: center;">Interviewing</p>
-        <p style="text-align: center;">Trends & "Weak Signals" Analysis</p>
-        <p style="text-align: center;">Storytelling</p>
-        <p style="text-align: center;">Diegetic Artifacts & Scenario Ideation</p>
-        <p style="text-align: center;">Generative Intelligence</p>
-      </div>
-    </div>
-    <hr>
-  </section>
-
   <!-- Sección Projects -->
   <section class="project-section">
     <h2>Projects</h2>
-    <div class="project">
-      <img src="img/map.png" alt="San Telmo Market">
-      <div>
-        <p class="project-title"><a href="https://www.futures-in-maps.com/san-telmo/en" target="_blank">San Telmo Market</a></p>
-        <p>A Design Fiction work that explores the potential future of the City of Buenos Aires and its gastronomy through the evolution of one of its iconic markets, the San Telmo Market. It shows the market's different stalls, shops, and services influenced by long periods of extreme heat and droughts. A work led by Nicolás Bronzina in collaboration with Fabien Girardin and Israel Viadest at Girardin & Nova. Futures in Maps, an atlas that tells stories about a world we all might experience soon.</p>
-      </div>
-    </div>
-    <div class="project">
-      <img src="img/OFF.png" alt="OFFicial: Welcome">
-      <div>
-        <p class="project-title">OFFicial: Welcome</p>
-        <p>"User Experience Design as a Tool for Social Intervention in the Refugee Crisis” Final Master’s Thesis based on Futures Design and Strategic Foresight.</p>
-      </div>
-    </div>
-    <hr>
+    <!-- Aquí van los proyectos -->
   </section>
 
   <!-- Sección Writing -->
   <section class="writing-section">
     <h2>Writing</h2>
-    <div class="writing-item">
-      <p class="writing-title">Heated Consultancy</p>
-      <ul class="writing-list">
-        <li><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f">Sociological Significance of Design Fiction Objects and Artifacts: Navigating Collective Trauma and Building Community Resilience After a Climate Disaster</a></li>
-        <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442">How Madrid could adapt to extreme heat without losing its essence: A speculative scenario that explores the resilience of a city that made extreme heat and frequent droughts disappear from the headlines</a></li>
-      </ul>
-    </div>
-    <div class="writing-item">
-      <p class="writing-title">Speculative Food Design</p>
-      <ul class="writing-list">
-        <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37">A Manifesto for a New Argentinean Cuisine: Pushing the boundaries of Argentinean gastronomy with Design Fiction</a></li>
-        <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968">What is Carbon-Neutral Gastronomy?: Exploring the convergence of environmental consciousness and culinary innovation with a Design Fiction</a></li>
-        <li><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7">What is Ethical Meat and Sustainable Proteins Tasting?: Exploring the future of gastronomy with a flyer as a Design Fiction artifact</a></li>
-        <li><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb">A speculative tour of San Telmo Market in a future Buenos Aires: Welcome to San Telmo Market, where we embark on a speculative culinary journey into the near future!</a></li>
-        <li><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d">The gastronomic offer of San Telmo Market in a 15-minute city: Speculation on the different stalls, shops, and services that might emerge at the San Telmo Market in Buenos Aires after an era of long periods of extreme heat and droughts</a></li>
-      </ul>
-    </div>
-    <div class="writing-item">
-      <p class="writing-title">Foresight</p>
-      <ul class="writing-list">
-        <li><a href="#prospective-methodology">Welcome: An Approach to Prospective Methodology Based on Futures Design and its Relation to Human-Centered Experience Design</a></li>
-        <li><a href="#strategic-foresight">A Shift Towards Strategic Foresight: How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
-      </ul>
-    </div>
-    <hr>
+    <!-- Aquí van los artículos -->
   </section>
 
-  <!-- Sección Coffee.txt -->
-  <section class="writing-section">
-    <a href="/Coffee.html" target="_blank">
-      <h2>Coffee.txt</h2>
-    </a>
-    <div class="writing-item">
-      <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
-    </div>
-    <hr>
-  </section>
-
-  <!-- Sección de estadísticas, clima y redes sociales -->
-  <section class="stats-weather-social">
+  <!-- Sección Server Stats, Weather y Redes Sociales -->
+  <section class="server-weather-container">
     <div class="server-stats">
-      <h2>Server Stats</h2>
+      <h3>Server Stats</h3>
       <p>Location: Madrid</p>
-      <p>Time: <span id="server-time"></span></p>
+      <p>Time: <span id="current-time"></span></p>
       <p>Battery status: <span id="battery-status"></span></p>
     </div>
     <div class="weather">
-      <h2>Weather</h2>
-      <p id="weather-info">Loading weather...</p>
+      <h3>Weather</h3>
+      <p id="weather-info">Loading...</p>
     </div>
     <div class="social-links">
-      <h2>Follow Me</h2>
+      <h3>Follow Me</h3>
       <p>
-        <a href="https://www.instagram.com/nbronzina">Instagram</a> | 
-        <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a> | 
-        <a href="https://www.medium.com/@nbronzina">Medium</a> | 
+        <a href="https://www.instagram.com/nbronzina">Instagram</a> |
+        <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a> |
+        <a href="https://www.medium.com/@nbronzina">Medium</a> |
         <a href="mailto:nicolas.bronzina.com">Email</a>
       </p>
     </div>
   </section>
+  <hr>
 
-  <!-- Script para obtener la hora, el estado de la batería y el clima -->
+  <!-- Script para mostrar la hora actual y obtener el estado de la batería -->
   <script>
     function updateTime() {
       const now = new Date();
-      document.getElementById('server-time').textContent = now.toLocaleTimeString();
+      const timeString = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      document.getElementById('current-time').textContent = timeString;
     }
     setInterval(updateTime, 1000);
+    updateTime();
 
-    async function updateBatteryStatus() {
-      if (navigator.getBattery) {
-        const battery = await navigator.getBattery();
-        const level = Math.round(battery.level * 100);
-        document.getElementById('battery-status').textContent = `${level}%, ${battery.charging ? 'charging' : 'not charging'}`;
-      } else {
-        document.getElementById('battery-status').textContent = 'Battery status not available';
-      }
-    }
-    updateBatteryStatus();
+    navigator.getBattery().then(function(battery) {
+      const batteryStatus = `${Math.round(battery.level * 100)}%, ${battery.charging ? 'charging' : 'not charging'}`;
+      document.getElementById('battery-status').textContent = batteryStatus;
+    });
 
+    // Script para obtener el pronóstico meteorológico
     async function fetchWeather() {
       try {
-        const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=40.4168&longitude=-3.7038&current_weather=true');
+        const response = await fetch('https://api.weatherapi.com/v1/current.json?key=4f8273341d68d1acdccba1c7b45c5e54&q=Madrid');
         const data = await response.json();
-        const weather = data.current_weather;
-        document.getElementById('weather-info').textContent = `${weather.temperature}°C, ${weather.weathercode}`;
+        const temperature = data.current.temp_c;
+        const condition = data.current.condition.text;
+        document.getElementById('weather-info').textContent = `${temperature}°C, ${condition}`;
       } catch (error) {
-        document.getElementById('weather-info').textContent = 'Weather data not available';
+        document.getElementById('weather-info').textContent = 'Unable to load weather data';
       }
     }
     fetchWeather();
   </script>
+
+  <!-- Sección de enlaces a redes sociales -->
+  <p class="footer-links">You can learn more about me on <a href="https://www.instagram.com/nbronzina">Instagram</a>, contact me on <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a>, read me on <a href="https://www.medium.com/@nbronzina">Medium</a>, and/or just <a href="mailto:nicolas.bronzina.com">email me</a></p>
 </body>
 </html>
-
-
