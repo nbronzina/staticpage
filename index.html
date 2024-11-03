@@ -284,6 +284,7 @@
         const battery = await navigator.getBattery();
         const level = Math.round(battery.level * 100);
         document.getElementById('battery-info').textContent = `${level}%, ${battery.charging ? 'charging' : 'not charging'}`;
+        document.getElementById('battery-meter').style.height = `${level}%`; // Actualiza la altura del medidor de batería
       } else {
         document.getElementById('battery-info').textContent = 'Battery status not available';
       }
