@@ -4,14 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nicolás Bronzina</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <style>
+    :root {
+      --primary-color: #333;
+      --secondary-color: #555;
+      --background-color: #fff;
+      --accent-color: #4caf50; /* Color verde para el medidor de batería */
+      --text-color: #000;
+    }
     /* Estilos generales */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       line-height: 1.6;
-      transition: background-color 0.5s, color 0.5s;
+      background-color: var(--background-color);
+      color: var(--text-color);
       margin: 0;
       padding: 20px;
+      transition: background-color 0.5s, color 0.5s;
     }
     h1, h2 {
       margin: 0;
@@ -24,7 +34,7 @@
       text-decoration: underline;
     }
     a:hover {
-      color: #555;
+      color: var(--secondary-color);
     }
     .intro-container {
       display: flex;
@@ -37,19 +47,17 @@
     .main-image {
       width: 250px;
       height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .header-icon-text {
       display: flex;
       align-items: center;
       gap: 10px;
     }
-    .header-icon-text img {
-      width: 18px;
-      height: 18px;
-    }
     hr {
       border: none;
-      border-top: 1px double #000;
+      border-top: 1px double var(--primary-color);
       margin: 20px 0;
     }
     .contenedor {
@@ -66,56 +74,41 @@
       text-align: center;
       margin-top: 20px;
     }
-    .project-section {
-      text-align: left;
+    .project-section, .writing-section {
       padding: 10px 20px;
+      text-align: left;
     }
-    .project-section h2 {
+    .project-section h2, .writing-section h2 {
       margin-bottom: 10px;
     }
-    .project {
-      display: flex;
-      align-items: center;
-      gap: 15px;
+    .project, .writing-item {
       margin-bottom: 20px;
+      border: 1px solid var(--primary-color);
+      border-radius: 8px;
+      padding: 10px;
+      transition: transform 0.2s;
+    }
+    .project:hover, .writing-item:hover {
+      transform: scale(1.02);
     }
     .project img {
-      width: 250px;
+      width: 100%;
       height: auto;
       border-radius: 8px;
     }
     .project-title {
       font-weight: bold;
     }
-    .writing-section {
-      padding: 10px 20px;
-      text-align: left;
-    }
-    .writing-item {
-      margin-bottom: 20px;
-    }
-    .writing-title {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .writing-list ul {
-      padding-left: 20px;
-    }
-    .writing-list a {
-      color: inherit;
-      text-decoration: none;
-    }
-    .writing-list a:hover {
-      text-decoration: underline;
-    }
     .stats-section {
       display: flex;
       justify-content: space-between;
       padding: 20px 0;
       text-align: center;
+      flex-wrap: wrap;
     }
     .stats-section div {
       flex: 1;
+      margin: 10px;
     }
     /* Estilo para la flecha de retroceso */
     .back-to-top {
@@ -124,13 +117,13 @@
       bottom: 20px;
       background: none; /* Sin fondo */
       border: none; /* Sin borde */
-      color: black; /* Color negro */
+      color: var(--primary-color); /* Color negro */
       font-size: 24px; /* Tamaño del ícono de flecha */
       cursor: pointer;
       transition: color 0.3s;
     }
     .back-to-top:hover {
-      color: #555; /* Color al pasar el mouse */
+      color: var(--secondary-color); /* Color al pasar el mouse */
     }
     @media (max-width: 768px) {
       .intro-container {
@@ -147,10 +140,6 @@
         align-items: center;
         gap: 10px;
       }
-      .project img {
-        width: 100%;
-        max-width: 300px;
-      }
       .stats-section {
         flex-direction: column;
         gap: 10px;
@@ -165,7 +154,7 @@
     <h1>Hello!</h1>
     <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
     <div class="header-icon-text">
-      <img src="img/static.png" alt="">
+      <img src="img/static.png" alt="Icono estático">
       <p>The website is programmed based on HTML code from a text editor on my Mac computer based on static sites.</p>
     </div>
     <hr>
