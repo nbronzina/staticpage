@@ -12,7 +12,6 @@
       transition: background-color 0.5s, color 0.5s;
       margin: 0;
       padding: 20px;
-      position: relative; /* Para posicionar el medidor de batería */
     }
     h1, h2 {
       margin: 0;
@@ -123,22 +122,15 @@
       position: fixed;
       right: 20px;
       bottom: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border: 2px solid #333;
-      border-radius: 5px;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      transition: background-color 0.3s;
+      background: none; /* Sin fondo */
+      border: none; /* Sin borde */
+      color: black; /* Color negro */
       font-size: 24px; /* Tamaño del ícono de flecha */
-      color: #333; /* Color de la flecha */
+      cursor: pointer;
+      transition: color 0.3s;
     }
     .back-to-top:hover {
-      background-color: #f0f0f0; /* Color al pasar el mouse */
+      color: #555; /* Color al pasar el mouse */
     }
     @media (max-width: 768px) {
       .intro-container {
