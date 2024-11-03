@@ -26,6 +26,11 @@
     a:hover {
       color: #555;
     }
+    hr {
+      border: none;
+      border-top: 1px double #000;
+      margin: 20px 0;
+    }
     .intro-container {
       display: flex;
       align-items: flex-start;
@@ -46,11 +51,6 @@
     .header-icon-text img {
       width: 18px;
       height: 18px;
-    }
-    hr {
-      border: none;
-      border-top: 1px double #000;
-      margin: 20px 0;
     }
     .contenedor {
       display: flex;
@@ -112,18 +112,21 @@
       padding: 10px 20px;
       text-align: left;
     }
-    /* Estilo para la sección de estadísticas, clima y redes sociales */
     .stats-weather-social {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #000;
+      padding: 20px 0;
+    }
+    .stats-weather-social div {
+      text-align: center;
+      flex: 1;
     }
     .server-stats, .weather, .social-links {
-      flex: 1;
-      text-align: center;
+      padding: 0 20px;
+    }
+    .server-stats h2, .weather h2, .social-links h2 {
+      margin-bottom: 10px;
     }
     @media (max-width: 768px) {
       .intro-container {
@@ -146,7 +149,7 @@
       }
       .stats-weather-social {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
       }
     }
   </style>
