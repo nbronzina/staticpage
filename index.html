@@ -1,273 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nicolás Bronzina</title>
-<style>
-  /* Estilos generales */
-  body {
-    background-color: #FFCC99;
-    font-family: Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
-  }
-  h1, h2 {
-    margin: 0;
-    color: black;
-  }
-  p {
-    font-size: 16px;
-  }
-  a {
-    color: #333; /* Cambia el color de los enlaces a negro */
-    text-decoration: underline;
-  }
-  a:hover {
-    color: #555; /* Cambia el color al pasar el cursor (opcional) */
-  }
-  /* Contenedor flex para imagen y texto */
-  .intro-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  .intro-text {
-    flex: 1;
-  }
-  /* Imagen principal con tamaño ajustado */
-  .main-image {
-    width: 250px;
-    height: auto;
-  }
-  /* Estilo para el ícono y el texto del encabezado */
-  .header-icon-text {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .header-icon-text img {
-    width: 18px;
-    height: 18px;
-  }
-  hr {
-    border: none;
-    border-top: 1px double #000;
-    margin: 30px 0;
-  }
-  /* Estilos para el contenedor de columnas */
-  .contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  .columna {
-    flex: 1;
-    padding: 10px;
-  }
-  /* Estilos para enlaces en el pie */
-  .footer-links {
-    text-align: center;
-    margin-top: 20px;
-  }
-  /* Estilo para la sección de proyectos */
-  .project-section {
-    text-align: left;
-    padding: 20px;
-  }
-  .project-section h2 {
-    margin-bottom: 20px; /* Aumenta el espacio debajo del título "Projects" */
-  }
-  .project {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  .project img {
-    width: 250px;
-    height: auto;
-    border-radius: 8px;
-  }
-  .project-title {
-    font-weight: bold;
-  }
-  /* Estilo para la sección de Writing */
-  .writing-section {
-    padding: 20px;
-    text-align: left;
-  }
-  .writing-item {
-    margin-bottom: 20px;
-  }
-  .writing-title {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  .writing-list ul {
-    padding-left: 20px;
-  }
-  .writing-list a {
-    color: #333; /* Cambia el color del vínculo a negro */
-    text-decoration: none;
-  }
-  .writing-list a:hover {
-    text-decoration: underline;
-  }
-
-  /* Estilos responsivos para dispositivos móviles */
-  @media (max-width: 768px) {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicolás Bronzina</title>
+  <style>
+    /* Estilos generales */
+    body {
+      background-color: #FFCC99;
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
     h1, h2 {
-      font-size: 1.5em;
-      text-align: center;
+      margin: 0;
+      color: black;
     }
-
     p {
-      font-size: 14px;
+      font-size: 16px;
     }
-
-    /* Imagen principal con tamaño ajustado para móviles */
-    .main-image {
-      width: 100%; /* Ocupa todo el ancho de la pantalla */
-      height: auto;
+    a {
+      color: #333; /* Cambia el color de los enlaces a negro */
+      text-decoration: underline;
     }
-
+    a:hover {
+      color: #555; /* Cambia el color al pasar el cursor (opcional) */
+    }
     /* Contenedor flex para imagen y texto */
     .intro-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
     }
-
-    /* Ajuste para proyectos en móvil */
-    .project {
-      flex-direction: column;
+    .intro-text {
+      flex: 1;
+    }
+    /* Imagen principal con tamaño ajustado */
+    .main-image {
+      width: 250px;
+      height: auto;
+    }
+    /* Estilo para el ícono y el texto del encabezado */
+    .header-icon-text {
+      display: flex;
       align-items: center;
       gap: 10px;
     }
-
-    .project img {
-      width: 100%; /* Ocupa todo el ancho de la pantalla en móviles */
-      max-width: 300px; /* Limita el tamaño máximo */
+    .header-icon-text img {
+      width: 18px;
+      height: 18px;
     }
-  }
-</style>
+    hr {
+      border: none;
+      border-top: 1px double #000;
+      margin: 30px 0;
+    }
+    /* Estilos para el contenedor de columnas */
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .columna {
+      flex: 1;
+      padding: 10px;
+    }
+    /* Estilos para enlaces en el pie */
+    .footer-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    /* Estilo para la sección de proyectos */
+    .project-section {
+      text-align: left;
+      padding: 20px;
+    }
+    .project-section h2 {
+      margin-bottom: 20px; /* Aumenta el espacio debajo del título "Projects" */
+    }
+    .project {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .project img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+    }
+    .project-title {
+      font-weight: bold;
+    }
+    /* Estilo para la sección de Writing */
+    .writing-section {
+      padding: 20px;
+      text-align: left;
+    }
+    .writing-item {
+      margin-bottom: 20px;
+    }
+    .writing-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .writing-list ul {
+      padding-left: 20px;
+    }
+    .writing-list a {
+      color: #333; /* Cambia el color del vínculo a negro */
+      text-decoration: none;
+    }
+    .writing-list a:hover {
+      text-decoration: underline;
+    }
+    /* Estilos responsivos para dispositivos móviles */
+    @media (max-width: 768px) {
+      h1, h2 {
+        font-size: 1.5em;
+        text-align: center;
+      }
+      p {
+        font-size: 14px;
+      }
+      /* Imagen principal con tamaño ajustado para móviles */
+      .main-image {
+        width: 100%; /* Ocupa todo el ancho de la pantalla */
+        height: auto;
+      }
+      /* Contenedor flex para imagen y texto */
+      .intro-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      /* Ajuste para proyectos en móvil */
+      .project {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .project img {
+        width: 100%; /* Ocupa todo el ancho de la pantalla en móviles */
+        max-width: 300px; /* Limita el tamaño máximo */
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- Sección de Introducción -->
-<section id="home">
-  <h1>Hello!</h1>
-  <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
-  
-  <!-- Contenedor de ícono y texto juntos -->
-  <div class="header-icon-text">
-    <img src="img/static.png" alt="">
-    <p>The website is programmed based on HTML code from a text editor on my Mac computer based on static sites. In addition, I am making a gradual transition to add a solar type power supply.</p>
-  </div>
-  
+  <!-- Sección de Introducción -->
+  <section id="home">
+    <h1>Hello!</h1>
+    <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
+    
+    <!-- Contenedor de ícono y texto juntos -->
+    <div class="header-icon-text">
+      <img src="img/static.png" alt="">
+      <p>The website is programmed based on HTML code from a text editor on my Mac computer based on static sites. In addition, I am making a gradual transition to add a solar type power supply.</p>
+    </div>
+    
+    <hr>
+
+    <!-- Contenedor de presentación con imagen y texto alineados en flex -->
+    <div class="intro-container">
+      <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
+      <div class="intro-text">
+        <p><b>[EN]</b> <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
+        <p>
+          As a <b>Design Researcher</b>, I'm dedicated to enriching and advancing the speculative aspects of design through a multi-faceted approach, including extensive research, diegetic prototyping, and translation of conceptual frameworks into tangible ideas. My work is grounded in the future of food, but I'm also interested in other topics such as new urban environments, Ecology, and emerging technologies.
+        </p>
+        <p>
+          In addition to being a managing partner at BPP and contributing to design fiction writing, I'm a regular contributor to <a href="https://www.girardinnova.com">Girardin & Nova</a>. There, I'm dedicated to in-depth research on emerging trends and 'weak signals', to identify possible future scenarios inside and outside organizations.
+        </p>
+        <p><b>[ES]</b> <em>Cientísta Social</em> e <em>Investigador</em> con un Máster en Diseño de Experiencia de Usuario.</p>
+        <p>
+          Como <b>Design Researcher</b>, me dedico a enriquecer y avanzar en los aspectos especulativos del diseño mediante un enfoque polifacético, que incluye una investigación exhaustiva, la generación de prototipos diegéticos y la traducción de marcos conceptuales en ideas tangibles. Mi trabajo se fundamenta en el futuro de la alimentación, aunque también muestro interés en otros temas como los nuevos entornos urbanos, la Ecología y las tecnologías emergentes.
+        </p>
+        <p>
+          Además de ser socio director en BPP y contribuir a la redacción de artículos sobre diseño ficción, me desempeño como colaborador habitual en <a href="https://www.girardinnova.com">Girardin & Nova</a>. Allí, investigo a fondo tanto las tendencias emergentes como las "señales débiles", con el fin de identificar posibles escenarios futuros tanto dentro como fuera de las organizaciones.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Línea divisoria debajo de la imagen y el texto -->
+    <hr>
+  </section>
+
+  <!-- Sección About -->
+  <section id="about">
+    <div class="contenedor">
+      <div class="columna">
+        <p style="text-align: center;"><b>Experience</b></p>
+        <p style="text-align: center;"><u>Heated</u></p>
+        <p style="text-align: center;">Creative Alchemist & Scenario Weaver | Jun 2024 - present day</p>
+        <p style="text-align: center;"><u>BPP Analytics and Design</u></p>
+        <p style="text-align: center;">Managing Partner | Jan 2024 - present day</p>
+        <p style="text-align: center;"><u>Girardin & Nova</u></p>
+        <p style="text-align: center;">Design Researcher | Jan 2024 - present day</p>
+        <p style="text-align: center;"><u>Near Future Laboratory</u></p>
+        <p style="text-align: center;">Design Researcher | Feb 2023 - Jan 2024</p>
+        <br>
+        <p style="text-align: center;"><b>Certificates</b></p>
+        <p style="text-align: center;"><u>Institute for the Future</u></p>
+        <p style="text-align: center;">Future Thinking & Forecasting Skills</p>
+        <p style="text-align: center;"><u>IBM</u></p>
+        <p style="text-align: center;">Big Data Foundations - Level 1</p>
+        <p style="text-align: center;"><u>Mr Marcel School</u></p>
+        <p style="text-align: center;">UX Writing/Content Design</p>
+        <p style="text-align: center;"><u>Be Potencial</u></p>
+        <p style="text-align: center;">Public Speaking & Storytelling</p>
+      </div>
+      <div class="columna">
+        <p style="text-align: center;"><b>Education</b></p>
+        <p style="text-align: center;"><u>UDIT</u></p>
+        <p style="text-align: center;">Master's Degree in User Experience for the Design of Digital Products and Services</p>
+        <p style="text-align: center;"><u>Universidad del Salvador</u></p>
+        <p style="text-align: center;">Bachelor Degree in Sociology</p>
+        <br>
+        <p style="text-align: center;"><b>Key Skills</b></p>
+        <p style="text-align: center;">Critical Thinking</p>
+        <p style="text-align: center;">Explorative Research</p>
+        <p style="text-align: center;">Survey Research</p>
+        <p style="text-align: center;">Interviewing</p>
+        <p style="text-align: center;">Trends & "Weak Signals" Analysis</p>
+        <p style="text-align: center;">Storytelling</p>
+        <p style="text-align: center;">Diegetic Artifacts & Scenario Ideation</p>
+        <p style="text-align: center;">Generative Intelligence</p>
+      </div>
+    </div>
+  </section>
+
   <hr>
 
-  <!-- Contenedor de presentación con imagen y texto alineados en flex -->
-  <div class="intro-container">
-    <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
-    <div class="intro-text">
-      <p><b>[EN]</b> <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
-      <p>
-        As a <b>Design Researcher</b>, I'm dedicated to enriching and advancing the speculative aspects of design through a multi-faceted approach, including extensive research, diegetic prototyping, and translation of conceptual frameworks into tangible ideas. My work is grounded in the future of food, but I'm also interested in other topics such as new urban environments, Ecology, and emerging technologies.
-      </p>
-      <p>
-        In addition to being a managing partner at BPP and contributing to design fiction writing, I'm a regular contributor to <a href="https://www.girardinnova.com">Girardin & Nova</a>. There, I'm dedicated to in-depth research on emerging trends and 'weak signals', to identify possible future scenarios inside and outside organizations.
-      </p>
-      <p><b>[ES]</b> <em>Cientísta Social</em> e <em>Investigador</em> con un Máster en Diseño de Experiencia de Usuario.</p>
-      <p>
-        Como <b>Design Researcher</b>, me dedico a enriquecer y avanzar en los aspectos especulativos del diseño mediante un enfoque polifacético, que incluye una investigación exhaustiva, la generación de prototipos diegéticos y la traducción de marcos conceptuales en ideas tangibles. Mi trabajo se fundamenta en el futuro de la alimentación, aunque también muestro interés en otros temas como los nuevos entornos urbanos, la Ecología y las tecnologías emergentes.
-      </p>
-      <p>
-        Además de ser socio director en BPP y contribuir a la redacción de artículos sobre diseño ficción, me desempeño como colaborador habitual en <a href="https://www.girardinnova.com">Girardin & Nova</a>. Allí, investigo a fondo tanto las tendencias emergentes como las "señales débiles", con el fin de identificar posibles escenarios futuros tanto dentro como fuera de las organizaciones.
-      </p>
-    </div>
-  </div>
-  
-  <!-- Línea divisoria debajo de la imagen y el texto -->
-  <hr>
-</section>
-
-<!-- Sección About -->
-<section id="about">
-  <div class="contenedor">
-    <div class="columna">
-      <p style="text-align: center;"><b>Experience</b></p>
-      <p style="text-align: center;"><u>Heated</u></p>
-      <p style="text-align: center;">Creative Alchemist & Scenario Weaver | Jun 2024 - present day</p>
-      <p style="text-align: center;"><u>BPP Analytics and Design</u></p>
-      <p style="text-align: center;">Managing Partner | Jan 2024 - present day</p>
-      <p style="text-align: center;"><u>Girardin & Nova</u></p>
-      <p style="text-align: center;">Design Researcher | Jan 2024 - present day</p>
-      <p style="text-align: center;"><u>Near Future Laboratory</u></p>
-      <p style="text-align: center;">Design Researcher | Feb 2023 - Jan 2024</p>
-      <br>
-      <p style="text-align: center;"><b>Certificates</b></p>
-      <p style="text-align: center;"><u>Institute for the Future</u></p>
-      <p style="text-align: center;">Future Thinking & Forecasting Skills</p>
-      <p style="text-align: center;"><u>IBM</u></p>
-      <p style="text-align: center;">Big Data Foundations - Level 1</p>
-      <p style="text-align: center;"><u>Mr Marcel School</u></p>
-      <p style="text-align: center;">UX Writing/Content Design</p>
-      <p style="text-align: center;"><u>Be Potencial</u></p>
-      <p style="text-align: center;">Public Speaking & Storytelling</p>
-    </div>
-    <div class="columna">
-      <p style="text-align: center;"><b>Education</b></p>
-      <p style="text-align: center;"><u>UDIT</u></p>
-      <p style="text-align: center;">Master's Degree in User Experience for the Design of Digital Products and Services</p>
-      <p style="text-align: center;"><u>Universidad del Salvador</u></p>
-      <p style="text-align: center;">Bachelor Degree in Sociology</p>
-      <br>
-      <p style="text-align: center;"><b>Key Skills</b></p>
-      <p style="text-align: center;">Critical Thinking</p>
-      <p style="text-align: center;">Explorative Research</p>
-      <p style="text-align: center;">Survey Research</p>
-      <p style="text-align: center;">Interviewing</p>
-      <p style="text-align: center;">Trends & "Weak Signals" Analysis</p>
-      <p style="text-align: center;">Storytelling</p>
-      <p style="text-align: center;">Diegetic Artifacts & Scenario Ideation</p>
-      <p style="text-align: center;">Generative Intelligence</p>
-    </div>
-  </div>
-</section>
-
-<hr>
-
-<!-- Sección de Proyectos -->
-<section class="project-section">
-  <h2>Projects</h2>
-  <div class="project">
-    <img src="img/map.png" alt="San Telmo Market">
-    <div>
-      <p class="project-title">
-  <a href="https://www.futures-in-maps.com/san-telmo/en" target="_blank">San Telmo Market</a>
-</p>
-      <p>A Design Fiction work that explores the potential future of the City of Buenos Aires and its gastronomy through the evolution of one of its iconic markets, the San Telmo Market. It shows the market's different stalls, shops, and services influenced by long periods of extreme heat and droughts. A work led by Nicolás Bronzina in collaboration with Fabien Girardin and Israel Viadest at Girardin & Nova. Futures in Maps, an atlas that tells stories about a world we all might experience soon.</p>
-    </div>
-  </div>
+  <!-- Sección de Proyectos -->
+  <section class="project-section">
+    <h2>Projects</h2>
     <div class="project">
-    <img src="img/OFF.png" alt="Heat Resilience for Madrid">
-    <div>
-      <p class="project-title">OFFicial: Welcome</p>
-      <p>"User Experience Design as a Tool for Social Intervention in the Refugee Crisis” Final Master’s Thesis based on Futures Design and Strategic Foresight</p>
+      <img src="img/map.png" alt="San Telmo Market">
+      <div>
+        <p class="project-title"><a href="https://www.futures-in-maps.com/san-telmo/en" target="_blank">San Telmo Market</a></p>
+        <p>A Design Fiction work that explores the potential future of the City of Buenos Aires and its gastronomy through the evolution of one of its iconic markets, the San Telmo Market. It shows the market's different stalls, shops, and services influenced by long periods of extreme heat and droughts. A work led by Nicolás Bronzina in collaboration with Fabien Girardin and Israel Viadest at Girardin & Nova. Futures in Maps, an atlas that tells stories about a world we all might experience soon.</p>
+      </div>
     </div>
-  </div>
-</section>
+    <div class="project">
+      <img src="img/OFF.png" alt="Heat Resilience for Madrid">
+      <div>
+        <p class="project-title">OFFicial: Welcome</p>
+        <p>"User Experience Design as a Tool for Social Intervention in the Refugee Crisis” Final Master’s Thesis based on Futures Design and Strategic Foresight</p>
+      </div>
+    </div>
+  </section>
 
-<hr>
+  <hr>
 
-<!-- Sección de Coffee.txt -->
-<section id="coffee-txt">
-  <div class="contenedor">
+  <!-- Sección Coffee.txt Guide -->
+  <section class="writing-item">
     <h2>Coffee.txt Guide</h2>
     <p>Welcome to Coffee.txt – your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
     <p><strong>URL:</strong> <a href="https://nicolasbronzina.com/coffee.txt">nicolasbronzina.com/coffee.txt</a></p>
@@ -282,45 +273,43 @@
     </ul>
     <p>Stay connected with fellow coffee lovers, discover new experiences, and let Coffee.txt be your entry point into the world of specialty coffee.</p>
     <p>Enjoy every sip, every step, every café.</p>
-  </div>
-</section>
+  </section>
 
-<hr>
+  <hr>
 
-<!-- Sección de Articles -->
-<section class="writing-section">
-  <h2>Articles</h2>
-  <div class="writing-item">
-    <p class="writing-title">Heated Consultancy</p>
-    <ul class="writing-list">
-      <li><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f">Sociological Significance of Design Fiction Objects and Artifacts: Navigating Collective Trauma and Building Community Resilience After a Climate Disaster</a></li>
-      <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442">How Madrid could adapt to extreme heat without losing its essence: A speculative scenario that explores the resilience of a city that made extreme heat and frequent droughts disappear from the headlines</a></li>
-    </ul>
-  </div>
-  <div class="writing-item">
-    <p class="writing-title">Speculative Food Design</p>
-    <ul class="writing-list">
-      <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37">A Manifesto for a New Argentinean Cuisine: Pushing the boundaries of Argentinean gastronomy with Design Fiction</a></li>
-      <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968">What is Carbon-Neutral Gastronomy?: Exploring the convergence of environmental consciousness and culinary innovation with a Design Fiction</a></li>
-      <li><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7">What is Ethical Meat and Sustainable Proteins Tasting?: Exploring the future of gastronomy with a flyer as a Design Fiction artifact</a></li>
-      <li><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb">A Guided Tour in the Future of San Telmo Market: We imaged the future of one of Buenos Aires iconic market to speculate on a world we all might experience soon.</a></li>
-      <li><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d">The gastronomic offer of San Telmo Market in a 15-minute city: Speculation on the different stalls, shops, and services that might emerge at the San Telmo Market in Buenos Aires after an era of long periods of extreme heat and droughts</a></li>
-    </ul>
-  </div>
-  <div class="writing-item">
-    <p class="writing-title">Foresight</p>
-    <ul class="writing-list">
-      <li><a href="#prospective-methodology">Welcome: An Approach to Prospective Methodology Based on Futures Design and its Relation to Human-Centered Experience Design</a></li>
-      <li><a href="#strategic-foresight">A Shift Towards Strategic Foresight: How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
-    </ul>
-  </div>
-</section>
+  <!-- Sección de Articles -->
+  <section class="writing-section">
+    <h2>Articles</h2>
+    <div class="writing-item">
+      <p class="writing-title">Heated Consultancy</p>
+      <ul class="writing-list">
+        <li><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f">Sociological Significance of Design Fiction Objects and Artifacts: Navigating Collective Trauma and Building Community Resilience After a Climate Disaster</a></li>
+        <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442">How Madrid could adapt to extreme heat without losing its essence: A speculative scenario that explores the resilience of a city that made extreme heat and frequent droughts disappear from the headlines</a></li>
+      </ul>
+    </div>
+    <div class="writing-item">
+      <p class="writing-title">Speculative Food Design</p>
+      <ul class="writing-list">
+        <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37">A Manifesto for a New Argentinean Cuisine: Pushing the boundaries of Argentinean gastronomy with Design Fiction</a></li>
+        <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968">What is Carbon-Neutral Gastronomy?: Exploring the convergence of environmental consciousness and culinary innovation with a Design Fiction</a></li>
+        <li><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7">What is Ethical Meat and Sustainable Proteins Tasting?: Exploring the future of gastronomy with a flyer as a Design Fiction artifact</a></li>
+        <li><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb">A Guided Tour in the Future of San Telmo Market: We imaged the future of one of Buenos Aires iconic market to speculate on a world we all might experience soon.</a></li>
+        <li><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d">The gastronomic offer of San Telmo Market in a 15-minute city: Speculation on the different stalls, shops, and services that might emerge at the San Telmo Market in Buenos Aires after an era of long periods of extreme heat and droughts</a></li>
+      </ul>
+    </div>
+    <div class="writing-item">
+      <p class="writing-title">Foresight</p>
+      <ul class="writing-list">
+        <li><a href="#prospective-methodology">Welcome: An Approach to Prospective Methodology Based on Futures Design and its Relation to Human-Centered Experience Design</a></li>
+        <li><a href="#strategic-foresight">A Shift Towards Strategic Foresight: How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
+      </ul>
+    </div>
+  </section>
 
-<hr>
+  <hr>
 
-<!-- Sección de enlaces a redes sociales -->
-<p class="footer-links">You can learn more about me on <a href="https://www.instagram.com/nbronzina">Instagram</a>, contact me on <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a>, read me on <a href="https://www.medium.com/@nbronzina">Medium</a>, and/or just <a href="mailto:nicolas.bronzina.com">email me</a></p>
+  <!-- Sección de enlaces a redes sociales -->
+  <p class="footer-links">You can learn more about me on <a href="https://www.instagram.com/nbronzina">Instagram</a>, contact me on <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a>, read me on <a href="https://www.medium.com/@nbronzina">Medium</a>, and/or just <a href="mailto:nicolas.bronzina.com">email me</a></p>
 
 </body>
 </html>
-
