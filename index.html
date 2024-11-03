@@ -32,7 +32,10 @@
       gap: 20px;
     }
     .intro-text {
-      flex: 1;
+      flex: 1; /* This allows the text to occupy the remaining space */
+      display: flex;
+      flex-direction: column; /* Stack text vertically */
+      justify-content: flex-start; /* Align text to the start */
     }
     .main-image {
       width: 250px;
@@ -286,7 +289,7 @@
       if (navigator.getBattery) {
         const battery = await navigator.getBattery();
         const level = Math.round(battery.level * 100);
-        document.getElementById('battery-info').textContent = ${level}%, ${battery.charging ? 'charging' : 'not charging'};
+        document.getElementById('battery-info').textContent = `${level}%, ${battery.charging ? 'charging' : 'not charging'}`;
       } else {
         document.getElementById('battery-info').textContent = 'Battery status not available';
       }
@@ -296,11 +299,11 @@
 
     async function fetchWeather() {
       try {
-        const response = await fetch(https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=4f8273341d68d1acdccba1c7b45c5e54&units=metric);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=4f8273341d68d1acdccba1c7b45c5e54&units=metric`);
         const data = await response.json();
         const temperature = data.main.temp;
         const weatherDescription = data.weather[0].description;
-        document.getElementById('weather-info').textContent = ${temperature}°C, ${weatherDescription};
+        document.getElementById('weather-info').textContent = `${temperature}°C, ${weatherDescription}`;
       } catch (error) {
         document.getElementById('weather-info').textContent = 'Weather data not available';
       }
