@@ -171,37 +171,37 @@
 <body>
   <!-- Sección de Encabezado -->
   <header class="header">
-    <h1>
+    <h1 id="main-title">
       Hello! ¡Hola! 你好! नमस्ते!
     </h1>
     <div class="language-select">
       <label for="language-select">Translate:</label>
       <select id="language-select">
+        <option value="en">English</option>
+        <option value="es">Español</option>
         <option value="fr">Français</option>
         <option value="de">Deutsch</option>
         <option value="pt">Português</option>
         <option value="zh">中文</option>
+        <option value="hi">हिन्दी</option>
       </select>
     </div>
   </header>
 
   <!-- Sección de Introducción -->
   <section id="home">
-    <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
+    <h2 id="intro-heading">I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
     <div class="header-icon-text">
       <img src="img/static.png" alt="">
-      <p>The website is programmed based on HTML code from a text editor on my Mac computer based on static sites.</p>
+      <p id="intro-description">The website is programmed based on HTML code from a text editor on my Mac computer based on static sites.</p>
     </div>
     <hr>
     <div class="intro-container">
       <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
       <div class="intro-text">
-        <p><b>[EN]</b> <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
+        <p><b><em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
         <p>As a <b>Design Researcher</b>, I'm dedicated to enriching and advancing the speculative aspects of design through a multi-faceted approach, including extensive research, diegetic prototyping, and translation of conceptual frameworks into tangible ideas. My work is grounded in the future of food, but I'm also interested in other topics such as new urban environments, ecology, and emerging technologies.</p>
-        <p>In addition to being a managing partner at BPP and contributing to design fiction writing, I'm a regular contributor to <a href="https://www.girardinnova.com">Girardin & Nova</a>. There, I'm dedicated to in-depth research on emerging trends and 'weak signals,' to identify possible future scenarios inside and outside organizations.</p>
-        <p><b>[ES]</b> <em>Cientísta Social</em> e <em>Investigador</em> con un Máster en Diseño de Experiencia de Usuario.</p>
-        <p>Como <b>Design Researcher</b>, me dedico a enriquecer y avanzar en los aspectos especulativos del diseño mediante un enfoque polifacético, que incluye una investigación exhaustiva, la generación de prototipos diegéticos y la traducción de marcos conceptuales en ideas tangibles. Mi trabajo se fundamenta en el futuro de la alimentación, aunque también muestro interés en otros temas como los nuevos entornos urbanos, la ecología y las tecnologías emergentes.</p>
-        <p>Además de ser socio director en BPP y contribuir a la redacción de artículos sobre diseño ficción, me desempeño como colaborador habitual en <a href="https://www.girardinnova.com">Girardin & Nova</a>. Allí, investigo a fondo tanto las tendencias emergentes como las "señales débiles", con el fin de identificar posibles escenarios futuros tanto dentro como fuera de las organizaciones.</p>
+        <p>In addition to being a managing partner at BPP and contributing to design fiction writing, I'm a regular contributor to <a href="https://www.girardinnova.com">Girardin & Nova</a>. There, I'm dedicated to in-depth research on emerging trends and 'weak signals' to identify possible future scenarios inside and outside organizations.</p>
       </div>
     </div>
     <hr>
@@ -293,6 +293,46 @@
 
   <!-- Script de Geolocalización, Hora y Pronóstico -->
   <script>
+    const translations = {
+      en: {
+        introHeading: "I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid",
+        introDescription: "The website is programmed based on HTML code from a text editor on my Mac computer based on static sites."
+      },
+      es: {
+        introHeading: "Soy Nicolás Bronzina, un investigador en diseño argentino que vive en Madrid",
+        introDescription: "El sitio web está programado con código HTML desde un editor de texto en mi computadora Mac, basado en sitios estáticos."
+      },
+      fr: {
+        introHeading: "Je suis Nicolás Bronzina, un chercheur en design argentin vivant à Madrid",
+        introDescription: "Le site est programmé sur la base du code HTML à partir d'un éditeur de texte sur mon ordinateur Mac, basé sur des sites statiques."
+      },
+      de: {
+        introHeading: "Ich bin Nicolás Bronzina, ein argentinischer Designforscher, der in Madrid lebt",
+        introDescription: "Die Website ist auf der Grundlage von HTML-Code aus einem Texteditor auf meinem Mac-Computer, basierend auf statischen Websites, programmiert."
+      },
+      pt: {
+        introHeading: "Sou Nicolás Bronzina, um pesquisador argentino em design vivendo em Madrid",
+        introDescription: "O site é programado com código HTML a partir de um editor de texto no meu computador Mac, baseado em sites estáticos."
+      },
+      zh: {
+        introHeading: "我是尼古拉斯·布朗齐纳，阿根廷的设计研究员，现居马德里",
+        introDescription: "该网站基于我在Mac计算机上的文本编辑器中编写的HTML代码，基于静态网站。"
+      },
+      hi: {
+        introHeading: "मैं निकोलस ब्रॉन्ज़िना हूँ, एक अर्जेंटीना का डिजाइन शोधकर्ता जो मैड्रिड में रहता है",
+        introDescription: "यह वेबसाइट मेरे मैक कंप्यूटर पर टेक्स्ट संपादक से HTML कोड पर आधारित है, जो स्थिर साइटों पर आधारित है।"
+      }
+    };
+
+    function translateTo(lang) {
+      document.getElementById('intro-heading').textContent = translations[lang].introHeading;
+      document.getElementById('intro-description').textContent = translations[lang].introDescription;
+    }
+
+    document.getElementById('language-select').addEventListener('change', function() {
+      translateTo(this.value);
+    });
+
     function updateTime() {
       const now = new Date();
       document.getElementById('time-info').textContent = now.toLocaleTimeString();
