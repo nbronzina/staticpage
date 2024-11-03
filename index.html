@@ -132,6 +132,15 @@
     .back-to-top:hover {
       color: #555; /* Color al pasar el mouse */
     }
+    /* Estilos para el header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .language-select {
+      margin-left: auto; /* Para empujar las opciones de idioma a la derecha */
+    }
     @media (max-width: 768px) {
       .intro-container {
         flex-direction: column;
@@ -160,13 +169,28 @@
 </head>
 
 <body>
+  <!-- Sección de Encabezado -->
+  <header class="header">
+    <h1>
+      Hello! ¡Hola! 你好! नमस्ते!
+    </h1>
+    <div class="language-select">
+      <label for="language-select">Translate:</label>
+      <select id="language-select">
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="pt">Português</option>
+        <option value="zh">中文</option>
+      </select>
+    </div>
+  </header>
+
   <!-- Sección de Introducción -->
   <section id="home">
-    <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
     <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
     <div class="header-icon-text">
       <img src="img/static.png" alt="">
-      <p>This website is programmed using HTML code from a text editor on my MacBook Pro (2019) using the static pages approach.</p>
+      <p>The website is programmed based on HTML code from a text editor on my Mac computer based on static sites.</p>
     </div>
     <hr>
     <div class="intro-container">
@@ -174,7 +198,7 @@
       <div class="intro-text">
         <p><b>[EN]</b> <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
         <p>As a <b>Design Researcher</b>, I'm dedicated to enriching and advancing the speculative aspects of design through a multi-faceted approach, including extensive research, diegetic prototyping, and translation of conceptual frameworks into tangible ideas. My work is grounded in the future of food, but I'm also interested in other topics such as new urban environments, ecology, and emerging technologies.</p>
-        <p>In addition to being a managing partner at BPP and contributing to design fiction writing, I'm a regular contributor to <a href="https://www.girardinnova.com">Girardin & Nova</a>. There, I'm dedicated to in-depth research on emerging trends and 'weak signals' to identify possible future scenarios inside and outside organizations.</p>
+        <p>In addition to being a managing partner at BPP and contributing to design fiction writing, I'm a regular contributor to <a href="https://www.girardinnova.com">Girardin & Nova</a>. There, I'm dedicated to in-depth research on emerging trends and 'weak signals,' to identify possible future scenarios inside and outside organizations.</p>
         <p><b>[ES]</b> <em>Cientísta Social</em> e <em>Investigador</em> con un Máster en Diseño de Experiencia de Usuario.</p>
         <p>Como <b>Design Researcher</b>, me dedico a enriquecer y avanzar en los aspectos especulativos del diseño mediante un enfoque polifacético, que incluye una investigación exhaustiva, la generación de prototipos diegéticos y la traducción de marcos conceptuales en ideas tangibles. Mi trabajo se fundamenta en el futuro de la alimentación, aunque también muestro interés en otros temas como los nuevos entornos urbanos, la ecología y las tecnologías emergentes.</p>
         <p>Además de ser socio director en BPP y contribuir a la redacción de artículos sobre diseño ficción, me desempeño como colaborador habitual en <a href="https://www.girardinnova.com">Girardin & Nova</a>. Allí, investigo a fondo tanto las tendencias emergentes como las "señales débiles", con el fin de identificar posibles escenarios futuros tanto dentro como fuera de las organizaciones.</p>
@@ -190,7 +214,7 @@
       <img src="img/map.png" alt="San Telmo Market">
       <div>
         <p class="project-title"><a href="https://www.futures-in-maps.com/san-telmo/en" target="_blank">San Telmo Market</a></p>
-        <p>A Design Fiction work that explores the City of Buenos Aires's potential future and gastronomy through the evolution of one of its iconic markets, the San Telmo Market. It shows the market's different stalls, shops, and services influenced by long periods of extreme heat and droughts. A work led by Nicolás Bronzina in collaboration with Fabien Girardin and Israel Viadest at Girardin & Nova. Futures in Maps is an atlas that tells stories about a world we all might experience soon.</p>
+        <p>A Design Fiction work that explores the potential future of the City of Buenos Aires and its gastronomy through the evolution of one of its iconic markets, the San Telmo Market. It shows the market's different stalls, shops, and services influenced by long periods of extreme heat and droughts. A work led by Nicolás Bronzina in collaboration with Fabien Girardin and Israel Viadest at Girardin & Nova. Futures in Maps, an atlas that tells stories about a world we all might experience soon.</p>
       </div>
     </div>
     <div class="project">
@@ -284,6 +308,7 @@
         document.getElementById('battery-info').textContent = 'Battery status not available';
       }
     }
+    updateBatteryStatus();
     setInterval(updateBatteryStatus, 1000); // Actualiza el estado de la batería cada segundo
 
     async function fetchWeather() {
@@ -297,7 +322,7 @@
         document.getElementById('weather-info').textContent = 'Weather data not available';
       }
     }
-    fetchWeather(); // Llama a la función para obtener el pronóstico al cargar la página
+    fetchWeather();
 
     function scrollToTop() {
       window.scrollTo({
