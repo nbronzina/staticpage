@@ -37,15 +37,16 @@
     .main-image {
       width: 250px;
       height: auto;
+      position: relative;
     }
-    .header-icon-text {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .header-icon-text img {
-      width: 18px;
-      height: 18px;
+    .banner-text {
+      position: absolute;
+      top: 0; /* Aligne la parte superior */
+      left: 0; /* Aligne a la izquierda */
+      right: 0; /* Aligne a la derecha */
+      background: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
+      padding: 10px; /* Espaciado interno */
+      text-align: center; /* Centrar el texto */
     }
     hr {
       border: none;
@@ -182,9 +183,11 @@
     <div class="intro-container">
       <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
       <div class="intro-text">
-        <p><b>[EN]</b> <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
-        <p>As a <strong>Design Researcher</strong>, I focus on enriching and advancing the speculative aspects of design through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My work encompasses the future of food, urban environments, ecology, and emerging technologies.</p>
-        <p>In addition to being a managing partner at BPP and contributing to design fiction writing, I'm a regular contributor to <a href="https://www.girardinnova.com">Girardin & Nova</a>. There, I'm dedicated to in-depth research on emerging trends and 'weak signals' to identify possible future scenarios inside and outside organizations.</p>
+        <div class="banner-text">
+          <p><b>[EN]</b> <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
+          <p>As a <strong>Design Researcher</strong>, I focus on enriching and advancing the speculative aspects of design through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My work encompasses the future of food, urban environments, ecology, and emerging technologies.</p>
+          <p>In addition to being a managing partner at BPP and contributing to design fiction writing, I'm a regular contributor to <a href="https://www.girardinnova.com">Girardin & Nova</a>. There, I'm dedicated to in-depth research on emerging trends and 'weak signals' to identify possible future scenarios inside and outside organizations.</p>
+        </div>
       </div>
     </div>
     <hr>
