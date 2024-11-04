@@ -95,6 +95,56 @@
             margin-bottom: 10px;
         }
 
+        .cta {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .cta-button {
+            background-color: #FB6C2C;
+            color: #1B1C20;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #EAEAEA;
+            color: #1B1C20;
+        }
+
+        .highlights, .testimonials {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .highlights h3, .testimonials h3 {
+            color: #FB6C2C;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .highlights p {
+            color: #C4C4C4;
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #C4C4C4;
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+
+        .video-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
         .footer {
             background-color: #16171B;
             text-align: center;
@@ -121,7 +171,33 @@
     <div class="content">
         <section id="home" class="section active">
             <h2>Welcome to OFFicial</h2>
-            <p>Discover our strategic design solutions at the intersection of human rights and technology.</p>
+            <p>We are committed to leveraging design and technology to empower displaced communities, shaping a world where everyone has the opportunity to thrive with dignity.</p>
+            
+            <div class="cta">
+                <a href="#purpose" class="cta-button">Learn More</a>
+                <a href="#contact" class="cta-button">Get Involved</a>
+            </div>
+
+            <div class="highlights">
+                <h3>Our Impact</h3>
+                <p>Over 1,000 refugees supported through our integration programs.</p>
+                <p>Partnered with 50+ organizations worldwide to drive meaningful change.</p>
+                <p>Recognized with the Social Innovation Award 2029.</p>
+            </div>
+
+            <div class="testimonials">
+                <h3>What People Say</h3>
+                <blockquote>
+                    "OFFicial's support transformed our integration process, making us feel truly welcome." - Maria, Refugee
+                </blockquote>
+                <blockquote>
+                    "Their innovative approach is a game changer for social impact." - John Doe, NGO Partner
+                </blockquote>
+            </div>
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tu-video-id" frameborder="0" allowfullscreen></iframe>
+            </div>
         </section>
 
         <section id="purpose" class="section">
