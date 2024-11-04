@@ -92,6 +92,16 @@
       justify-content: space-between;
       align-items: center;
     }
+    /* Estilos para la sección de estadísticas */
+    .stats-section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .stats-column {
+      flex: 1;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -183,12 +193,16 @@
 
   <!-- Sección de Estadísticas del Servidor, Pronóstico y Redes Sociales -->
   <section class="stats-section">
-    <div>
-      <h2>Battery Status</h2>
-      <p id="battery-info">Loading battery status...</p>
-      <p id="battery-note">Content will be updated until the battery runs out. Please charge the device to refresh the content.</p>
+    <div class="stats-column">
+      <h2>Server Stats</h2>
+      <p>Location: Madrid</p>
+      <p id="time-info">Time: Loading...</p>
     </div>
-    <div>
+    <div class="stats-column">
+      <h2>Forecast</h2>
+      <p id="weather-info">Loading...</p>
+    </div>
+    <div class="stats-column">
       <h2>Contact</h2>
       <p><a href="https://www.instagram.com/nbronzina">Instagram</a> | <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a> | <a href="https://www.medium.com/@nbronzina">Medium</a> | <a href="mailto:nicolas.bronzina.com">Email</a></p>
     </div>
@@ -199,7 +213,7 @@
     &#8593;
   </button>
 
-  <!-- Script de Estado de la Batería -->
+  <!-- Script de Estado de la Batería y Hora -->
   <script>
     async function updateBatteryStatus() {
       if (navigator.getBattery) {
@@ -210,8 +224,30 @@
         document.getElementById('battery-info').textContent = 'Battery status not available';
       }
     }
+
+    function updateTime() {
+      const now = new Date();
+      document.getElementById('time-info').textContent = now.toLocaleTimeString();
+    }
+
+    // Call the functions initially and set intervals for updates
     updateBatteryStatus();
-    setInterval(updateBatteryStatus, 60000); // Update every minute
+    setInterval(updateBatteryStatus, 60000); // Update battery status every minute
+    updateTime();
+    setInterval(updateTime, 1000); // Update time every second
+
+    async function fetchWeather() {
+      try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=4f8273341d68d1acdccba1c7b45c5e54&units=metric`);
+        const data = await response.json();
+        const temperature = data.main.temp;
+        const weatherDescription = data.weather[0].description;
+        document.getElementById('weather-info').textContent = `${temperature}°C, ${weatherDescription}`;
+      } catch (error) {
+        document.getElementById('weather-info').textContent = 'Weather data not available';
+      }
+    }
+    fetchWeather();
 
     function scrollToTop() {
       window.scrollTo({
@@ -222,4 +258,3 @@
   </script>
 </body>
 </html>
-
