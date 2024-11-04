@@ -56,18 +56,15 @@
       border-top: 1px double #000;
       margin: 20px 0;
     }
-    .project-section {
+    .project-section, .writing-section {
       text-align: left;
       padding: 10px 20px;
     }
-    .project {
-      display: flex; /* Flexbox for project layout */
-      align-items: flex-start; /* Align items at the start */
-      gap: 15px; /* Space between image and text */
+    .project, .writing-item {
       margin-bottom: 20px;
     }
     .project img {
-      width: 250px; /* Adjust as needed */
+      width: 250px;
       height: auto;
       border-radius: 8px;
     }
@@ -102,31 +99,6 @@
       flex: 1;
       text-align: center;
     }
-
-    /* Media Queries for Mobile Optimization */
-    @media (max-width: 768px) {
-      .intro-container {
-        flex-direction: column; /* Stack image and text vertically on small screens */
-        align-items: center;
-        gap: 15px;
-      }
-      .main-image {
-        width: 100%; /* Make image full width on mobile */
-        max-width: 200px; /* Keep a max-width for larger screens */
-      }
-      .project {
-        flex-direction: column; /* Stack project image and text on small screens */
-        align-items: center; /* Center align on mobile */
-      }
-      .project img {
-        width: 100%; /* Make project images responsive */
-        max-width: 250px; /* Maintain max width */
-      }
-      .stats-section {
-        flex-direction: column; /* Stack stats section items on small screens */
-        align-items: center; /* Center align for stats */
-      }
-    }
   </style>
 </head>
 
@@ -157,7 +129,7 @@
 
   <!-- Sección Projects -->
   <section class="project-section">
-    <h2 style="margin-bottom: 15px;">Projects</h2> <!-- Added margin for spacing -->
+    <h2 style="margin-bottom: 10px;">Projects</h2>
     <div class="project">
       <img src="img/map.png" alt="San Telmo Market">
       <div>
@@ -177,7 +149,7 @@
 
   <!-- Sección Writing -->
   <section class="writing-section">
-    <h2>Writing</h2>
+    <h2 style="margin-bottom: 10px;">Writing</h2>
     <div class="writing-item">
       <p class="writing-title">Heated Consultancy</p>
       <ul class="writing-list">
@@ -283,4 +255,3 @@
   </script>
 </body>
 </html>
-
