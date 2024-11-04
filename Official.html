@@ -25,10 +25,9 @@
         }
 
         .header {
-            text-align: center;
             position: relative;
             overflow: hidden;
-            padding: 0; /* Remove padding to let the image fill the section */
+            text-align: center;
         }
 
         .header img {
@@ -37,10 +36,16 @@
         }
 
         .header p {
-            font-size: 1.2rem;
-            color: #C4C4C4;
-            max-width: 900px;
-            margin: 15px auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+            color: #EBE1D1;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+            padding: 10px 20px;
+            border-radius: 8px;
+            max-width: 80%;
         }
 
         .navbar {
@@ -150,7 +155,7 @@
 </head>
 <body>
     <header class="header">
-        <img src="img/OFF.jpg" alt="OFFicial Logo">
+        <img src="img/OFF.png" alt="OFFicial Logo">
         <p>Strategic Design Consultant specialized in the intersection of Human Rights and Technology</p>
     </header>
     
