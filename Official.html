@@ -25,7 +25,7 @@
         }
 
         .navbar {
-            background-color: transparent;
+            background-color: #1B1C20;
             padding: 20px 40px;
             display: flex;
             justify-content: space-between;
@@ -34,6 +34,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .navbar a {
@@ -51,11 +52,11 @@
         }
 
         .content {
-            padding-top: 80px;
+            padding-top: 100px;
         }
 
         .section {
-            padding: 80px 40px;
+            padding: 60px 40px;
             max-width: 1200px;
             margin: 0 auto;
             display: none; /* Hide all sections by default */
@@ -65,20 +66,11 @@
             display: block; /* Show the active section */
         }
 
-        .welcome-header {
-            margin-top: 0; /* Remove top margin */
-            width: 100%; /* Full width */
-        }
-
-        .welcome-header img {
-            width: 100%; /* Full width */
-            height: auto; /* Maintain aspect ratio */
-        }
-
         h2 {
             color: #FB6C2C;
             font-size: 2.5rem;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         h3 {
@@ -86,6 +78,7 @@
             font-size: 1.8rem;
             margin-top: 30px;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         p {
@@ -127,20 +120,17 @@
             color: #1B1C20;
         }
 
-        .highlights, .testimonials {
+        .testimonials, .partners {
             margin-top: 40px;
             text-align: center;
         }
 
-        .highlights h3, .testimonials h3 {
-            color: #FB6C2C;
-            font-size: 1.8rem;
+        .testimonial img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
             margin-bottom: 15px;
-        }
-
-        .highlights p {
-            color: #C4C4C4;
-            margin-bottom: 10px;
+            border-radius: 8px;
         }
 
         blockquote {
@@ -148,6 +138,7 @@
             color: #C4C4C4;
             margin: 10px 0;
             padding: 0 20px;
+            text-align: center;
         }
 
         .video-container {
@@ -155,39 +146,34 @@
             text-align: center;
         }
 
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .partner-logos img {
+            max-width: 150px; /* Uniform width */
+            height: auto; /* Maintain aspect ratio */
+            margin: 10px;
+            transition: transform 0.3s; /* Hover effect */
+        }
+
+        .partner-logos img:hover {
+            transform: scale(1.05); /* Hover zoom */
+        }
+
         .footer {
             background-color: #16171B;
             text-align: center;
-            padding: 50px 40px;
+            padding: 30px 40px;
             color: #C4C4C4;
             font-size: 0.9rem;
             border-top: 4px solid #FB6C2C;
         }
-        /* Add this to your existing CSS */
-.partners {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.partner-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.partner-logos img {
-    max-width: 150px; /* Ensures all logos have the same width */
-    height: auto; /* Maintains aspect ratio */
-    margin: 10px;
-    transition: transform 0.3s; /* Adds a hover effect */
-}
-
-.partner-logos img:hover {
-    transform: scale(1.05); /* Slightly enlarges the logo on hover */
-}
     </style>
 </head>
 <body>
@@ -196,6 +182,7 @@
             <a onclick="showPage('home')">OFFicial</a>
         </div>
         <div class="menu">
+            <a onclick="showPage('home')">Home</a>
             <a onclick="showPage('purpose')">Purpose</a>
             <a onclick="showPage('team')">Team</a>
             <a onclick="showPage('welcome')">Welcome</a>
@@ -207,128 +194,32 @@
         <section id="home" class="section active">
             <h2>OFFicial Consultancy</h2>
             <p>Committed to leveraging design and technology to empower displaced communities, shaping a world where everyone has the opportunity to thrive with dignity.</p>
-             
-      <div class="video-container">
-    <iframe width="800" height="450" src="https://www.youtube.com/embed/Ih194mji50A" frameborder="0" allowfullscreen></iframe>
-</div>
-            
-        <div class="cta">
-    <a href="#purpose" class="cta-button" onclick="showPage('purpose')">Learn More</a>
-    <a href="#contact" class="cta-button" onclick="showPage('contact')">Get Involved</a>
-</div>
-
-          <div class="testimonials">
-    <h3>What People Say</h3>
-    <div class="testimonial">
-        <img src="img/Misha.png" alt="Misha Portrait" style="width:800px; height:auto; margin-bottom:15px;">
-        <blockquote>
-            "Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive. It makes every step into a new land feel guided, reminding us that even when we have lost everything, we are not alone. Through Welcome, we are given a chance to become valued members of a community, not just refugees searching for safety." - Misha Al Numan (62), Chemical Engineer
-        </blockquote>
-    </div>
-</div>
-    <div class="partners">
-    <h3>Our Partners</h3>
-    <div class="partner-logos">
-        <img src="img/cf_logo.jpg" alt="Caminando Fronteras Logo">
-        <img src="img/cruzroja.jpg" alt="Cruz Roja Logo">
-        <img src="img/hJYUBIAB_400x400.png" alt="UNHCR Logo">
-        <img src="img/logo-cear.jpg" alt="CEAR Logo">
-    </div>
-</div>
-        </section>
-
-        <section id="purpose" class="section">
-            <h2>Our Purpose</h2>
-            <p>At OFFicial, we are a vital ally for people who are forced to leave behind their homes, lives, and everything they know and face precarious conditions upon arriving in a new country. In an interconnected and technologically advanced world, our mission is to support and empower these individuals who are constantly pursuing a dignified and secure life.</p>
-            
-            <h3>What do we do?</h3>
-            <p>We use innovation and prospective design to create future-oriented artifacts that promote collective reflection and drive social change. We transform refugees' complex realities, projecting effective solutions for the near future. Our approach focuses on:</p>
-            <ul>
-                <li><strong>Simplification:</strong> We significantly reduce the processing times for asylum applications through deeply empathetic and human interactions.</li>
-                <li><strong>Automation:</strong> We alleviate the administrative burden on institutions and streamline processes by integrating advanced intelligent technologies.</li>
-                <li><strong>Facilitating Integration:</strong> We build bridges of support that enable agile and meaningful integration into host communities, providing services that interpret and assist refugees at every step.</li>
-                <li><strong>Building Trust:</strong> In a constantly changing global environment, we offer clarity and eliminate uncertainty for refugees, ensuring a secure and understandable experience.</li>
-            </ul>
-        </section>
-
-        <section id="welcome" class="section">
-            <div class="welcome-header">
-                <img src="img/OFF2.png" alt="Welcome Logo">
+            <div class="video-container">
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/Ih194mji50A" frameborder="0" allowfullscreen></iframe>
             </div>
-            <p>OFFicial's flagship product, designed to support refugees through every step of their journey in a new country. Powered by advanced Artificial Intelligence, Welcome simplifies, automates, and personalizes the asylum process and integration into the community.</p>
-            
-            <h3>Key Features</h3>
-            <ul>
-                <li><strong>AI-Driven Assistance:</strong> Provides real-time guidance and answers to asylum seekers, making the process less stressful and more accessible.</li>
-                <li><strong>Comprehensive Data Management:</strong> Collects, organizes, and updates essential documents and information every 24 to 48 hours to ensure applications are processed swiftly and accurately.</li>
-                <li><strong>Community and Resource Integration:</strong> Connects refugees with local resources, support networks, and essential services, easing their transition and promoting a sense of belonging.</li>
-                <li><strong>Trusted Information Access:</strong> Taps into a robust database covering news, social conditions, healthcare, employment, and bureaucratic systems of the host country, distinguishing between verified and unverified data for reliable updates.</li>
-                <li><strong>Proactive, Personalized Support:</strong> Autonomously suggests actions to improve the quality of life for refugees, tailoring communication styles to match individual needs and language proficiencies.</li>
-                <li><strong>Anonymous Data Sharing:</strong> Generates anonymized statistics for sharing with governments and NGOs, contributing to improved policies and support systems.</li>
-            </ul>
-            
-            <p>With Welcome, we aim to transform how refugees experience relocation, ensuring they feel supported, informed, and empowered in their new environment.</p>
-            
-            <!-- Add the image here -->
-    <div class="image-container">
-        <img src="img/OFF3.png" alt="Welcome Product Image" style="width:100%; max-width:900px; margin: 40px auto; display: block;">
-    </div>
-    <h3>Technical Viability</h3>
-    <p>At OFFicial, we follow the path of Responsible Design because:</p>
-    <ul>
-        <li>It is seen as a means for sustainability.</li>
-        <li>It minimizes the risk of products becoming obsolete.</li>
-        <li>Using carefully selected materials reduces environmental impact.</li>
-        <li>It is designed for longer durability.</li>
-        <li>It is an innovation based on recycled and higher-quality materials, contributing to both carbon and waste footprint reduction for the planet.</li>
-    </ul>
-    <p>OFFicial considers applying Modular Design to its products important because:</p>
-    <ul>
-        <li>Conventional design is still too complex and unsuitable for creating a portfolio of different product versions.</li>
-        <li>With modular design, any current market product can be adapted without restarting the manufacturing process.</li>
-        <li>Modularity provides agility, helping to avoid large amounts of obsolete inventory whenever the market changes.</li>
-        <li>It is more consumer/user-friendly as they do not face total replacement; they can easily replace the broken module.</li>
-        <li>It fosters a broader customer/user base.</li>
-        <li>Aesthetic customization (as long as they like the overall design language, it can be easily modified to fit anyone's personal style).</li>
-        <li>Product confidence. They do not waste the money invested in it.</li>
-    </ul>
-    <p>Not every hardware product suits this approach (e.g., thin and lightweight designs like smartphones), but complexity can be managed. With the design features of OFFicial's wearable, modularity works because it is still relatively simple and manageable.</p>
-    <p>We are not looking for the impossible but to do things well, one at a time.</p>
-    <p>A design based on both longevity (responsibility) and modularity can extend the functional lifespan of the wearable.</p>
-
-    <h3>Economic Viability</h3>
-    <p>Another validation point is economic, and at OFFicial, we believe Welcome's stakeholders and partners are excellent business options:</p>
-    <ul>
-        <li><strong>Google</strong> with its "Impact Challenge," providing support to non-profit organizations and community social initiatives to make society a better place together; referencing the 2018 Google AI Impact Challenge.</li>
-        <li><strong>SkillLab BV</strong> (Netherlands), discovered based on the previous partner. They help municipal employment services integrate refugees into local jobs. Using an AI-powered app, refugees can quickly document their skills in their native languages and receive relevant career path recommendations to explore.</li>
-        <li><strong>Solferino Academy</strong>. It aims to challenge and inspire how people work, think, act, and connect. It supports the International Federation of Red Cross (IFRC) network in transforming for the future, thriving through complex and dynamic changes. The IFRC can better address upcoming humanitarian and development challenges by doing so. The Academy partners with the private sector, academic institutions, entrepreneurs, startups, and others with similar values.</li>
-    </ul>
-
-    <h3>Legal Viability</h3>
-    <p>In terms of legal viability, since Welcome's set of information and data is considered confidential or in high-risk environments, its security and protection are of utmost importance for both OFFicial and all involved actors, relying on the primary attribute of digital identification systems:</p>
-    <ul>
-        <li>Flexibility and durability in operation (e.g., in a natural disaster and/or migration).</li>
-        <li>Using Biometrics, one of the principles sought by the design team was for the wearable to comply with the principle of being counterfeit-resistant. This means ensuring that it is difficult to fake, providing security to the user.</li>
-    </ul>
-    <p>The type of identification included in our device is based on a security methodology, allowing the recognition of our users' non-transferable physical characteristics for identification. This increases the security of the second system, ensuring no vulnerabilities in the security.</p>
-    <p>These applications aim for more convenient systems (easier presentation of identification and documentation), more secure (only authorized individuals have access), and faster (reduced maintenance of codes).</p>
-    <p>OFFicial's biometric system is overseen by a public official and NGO workers during the registration (NGO) and verification (State) of asylum seekers' identities in the database. Civil identification aims to prevent multiple registrations and duplicates, following the International Committee of the Red Cross (ICRC) conditions for biometric data transfer to the State.</p>
-    <p>Therefore, Welcome will guarantee data protection, collecting only what is necessary and deleting it once the asylum process and evaluation are complete. This ensures that migrants and refugees can live without fear, connecting with the host community and inviting them to participate.</p>
-</section>
+            <div class="cta">
+                <a href="#purpose" class="cta-button" onclick="showPage('purpose')">Learn More</a>
+                <a href="#contact" class="cta-button" onclick="showPage('contact')">Get Involved</a>
+            </div>
+            <div class="testimonials">
+                <h3>What People Say</h3>
+                <div class="testimonial">
+                    <img src="img/Misha.png" alt="Misha Portrait">
+                    <blockquote>"Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive." - Misha Al Numan, Chemical Engineer</blockquote>
+                </div>
+            </div>
+            <div class="partners">
+                <h3>Our Partners</h3>
+                <div class="partner-logos">
+                    <img src="img/cf_logo.jpg" alt="Caminando Fronteras Logo">
+                    <img src="img/cruzroja.jpg" alt="Cruz Roja Logo">
+                    <img src="img/hJYUBIAB_400x400.png" alt="UNHCR Logo">
+                    <img src="img/logo-cear.jpg" alt="CEAR Logo">
+                </div>
+            </div>
         </section>
 
-        <section id="team" class="section">
-            <h2>Our Team</h2>
-            <p>Meet the diverse and skilled team committed to reshaping the future through design.</p>
-        </section>
-
-  <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p>Interested in collaborating or learning more? Reach out, and let's make a difference together.</p>
-    <p>This website and its artifact tell a story about a future we might all experience soon, regardless of whether you live in Spain. It is part of the Final Master’s Thesis based on Futures Design and Strategic Foresight between Nicolás Bronzina, Eider Fernández Árcos, and Jorge Gil called "User Experience Design as a Tool for Social Intervention in the Refugee Crisis.”</p>
-    <p>We used an approach called Design Fiction to envision, design, and move toward desirable futures rather than passively accepting what is and 'will be' the so-called refugee crisis.</p>
-    <p>Please contact <strong><a href="https://www.nicolasbronzina.com" target="_blank" style="color: #FB6C2C; text-decoration: none;">Nicolás Bronzina</a></strong> for further information about this project.</p>
-</section>
+        <!-- Add other sections here in the same format -->
     </div>
 
     <footer class="footer">
@@ -338,11 +229,8 @@
 
     <script>
         function showPage(pageId) {
-            // Hide all sections
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => section.classList.remove('active'));
-
-            // Show the selected section
             const activeSection = document.getElementById(pageId);
             if (activeSection) {
                 activeSection.classList.add('active');
