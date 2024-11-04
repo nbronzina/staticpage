@@ -280,25 +280,13 @@
     &#8593;
   </button>
 
-  <!-- Script de Geolocalización, Hora y Pronóstico -->
+  <!-- Script de Hora y Pronóstico -->
   <script>
     function updateTime() {
       const now = new Date();
       document.getElementById('time-info').textContent = now.toLocaleTimeString();
     }
     setInterval(updateTime, 1000); // Actualiza la hora cada segundo
-
-    async function updateBatteryStatus() {
-      if (navigator.getBattery) {
-        const battery = await navigator.getBattery();
-        const level = Math.round(battery.level * 100);
-        document.getElementById('battery-info').textContent = `${level}%, ${battery.charging ? 'charging' : 'not charging'}`;
-      } else {
-        document.getElementById('battery-info').textContent = 'Battery status not available';
-      }
-    }
-    updateBatteryStatus();
-    setInterval(updateBatteryStatus, 1000); // Actualiza el estado de la batería cada segundo
 
     async function fetchWeather() {
       try {
