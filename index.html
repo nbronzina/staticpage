@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nicolás Bronzina</title>
   <style>
-    /* Estilos generales */
+    /* General Styles */
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -26,92 +26,116 @@
     a:hover {
       color: #555; /* Change color on hover */
     }
-    .intro-container {
-      display: flex;
-      align-items: center; /* Align items vertically centered */
-      gap: 20px;
-      margin-top: 20px; /* Add some spacing at the top */
-    }
-    .intro-text {
-      flex: 1; /* This allows the text to occupy the remaining space */
-      display: flex;
-      flex-direction: column; /* Stack text vertically */
-      justify-content: center; /* Center text vertically */
-    }
-    .main-image {
-      width: 200px; /* Fixed width for the image */
-      height: auto;
-    }
-    .header-icon-text {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .header-icon-text img {
-      width: 18px;
-      height: 18px;
-    }
     hr {
       border: none;
       border-top: 1px double #000;
       margin: 20px 0;
     }
-    .project-section {
-      text-align: left;
-      padding: 10px 20px;
+
+    /* Desktop Styles */
+    @media (min-width: 769px) {
+      .intro-container {
+        display: flex;
+        align-items: center; /* Align items vertically centered */
+        gap: 20px;
+        margin-top: 20px; /* Add some spacing at the top */
+      }
+      .intro-text {
+        flex: 1; /* This allows the text to occupy the remaining space */
+        display: flex;
+        flex-direction: column; /* Stack text vertically */
+        justify-content: center; /* Center text vertically */
+      }
+      .main-image {
+        width: 200px; /* Fixed width for the image */
+        height: auto;
+      }
+      .project-section {
+        text-align: left;
+        padding: 10px 20px;
+      }
+      .project {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      .project img {
+        width: 250px;
+        height: auto;
+        border-radius: 8px;
+      }
+      .stats-section {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .stats-column {
+        flex: 1;
+        text-align: center;
+      }
+      .back-to-top {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background: none; /* No background */
+        border: none; /* No border */
+        color: black; /* Black color */
+        font-size: 24px; /* Arrow icon size */
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+      .back-to-top:hover {
+        color: #555; /* Color on hover */
+      }
     }
-    .project {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-    .project img {
-      width: 250px;
-      height: auto;
-      border-radius: 8px;
-    }
-    /* Flecha para volver arriba */
-    .back-to-top {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: none; /* Sin fondo */
-      border: none; /* Sin borde */
-      color: black; /* Color negro */
-      font-size: 24px; /* Tamaño del ícono de flecha */
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-    .back-to-top:hover {
-      color: #555; /* Color al pasar el mouse */
-    }
-    /* Estilos para el header */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    /* Estilos para la sección de estadísticas */
-    .stats-section {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-    .stats-column {
-      flex: 1;
-      text-align: center;
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .intro-container {
+        flex-direction: column; /* Stack vertically */
+        align-items: center; /* Center align */
+      }
+      .main-image {
+        width: 100%; /* Full width for mobile */
+        max-width: 300px; /* Max width */
+        height: auto;
+      }
+      .project-section,
+      .writing-section {
+        padding: 10px; /* Reduced padding for mobile */
+      }
+      .project {
+        flex-direction: column; /* Stack project image and text vertically */
+        align-items: flex-start; /* Left align */
+      }
+      .project img {
+        width: 100%; /* Full width for images */
+        max-width: 300px; /* Max width for images */
+      }
+      .stats-section {
+        flex-direction: column; /* Stack sections vertically */
+      }
+      .stats-column {
+        margin-bottom: 10px; /* Spacing between columns */
+      }
+      .back-to-top {
+        position: fixed;
+        right: 10px; /* Adjusted for mobile */
+        bottom: 10px; /* Adjusted for mobile */
+        font-size: 20px; /* Adjusted size for mobile */
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- Sección de Encabezado -->
+  <!-- Header Section -->
   <header class="header">
     <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
   </header>
 
-  <!-- Sección de Introducción -->
+  <!-- Introduction Section -->
   <section id="home">
     <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
     <div class="header-icon-text">
@@ -130,57 +154,57 @@
     <hr>
   </section>
 
-<!-- Sección Projects -->
-<section class="project-section">
+  <!-- Projects Section -->
+  <section class="project-section">
     <h2 style="margin-bottom: 20px;">Projects</h2> <!-- Added margin for spacing -->
     <div class="project">
-        <img src="img/map.png" alt="San Telmo Market">
-        <div>
-            <p class="project-title"><a href="https://www.futures-in-maps.com/san-telmo/en" target="_blank">San Telmo Market</a></p>
-            <p>A Design Fiction work that explores the City of Buenos Aires's potential future and gastronomy through the evolution of one of its iconic markets, the San Telmo Market. It shows the market's different stalls, shops, and services influenced by long periods of extreme heat and droughts. A work led by Nicolás Bronzina in collaboration with Fabien Girardin and Israel Viadest at Girardin & Nova. Futures in Maps is an atlas that tells stories about a world we all might experience soon.</p>
-        </div>
+      <img src="img/map.png" alt="San Telmo Market">
+      <div>
+        <p class="project-title"><a href="https://www.futures-in-maps.com/san-telmo/en" target="_blank">San Telmo Market</a></p>
+        <p>A Design Fiction work that explores the City of Buenos Aires's potential future and gastronomy through the evolution of one of its iconic markets, the San Telmo Market. It shows the market's different stalls, shops, and services influenced by long periods of extreme heat and droughts. A work led by Nicolás Bronzina in collaboration with Fabien Girardin and Israel Viadest at Girardin & Nova. Futures in Maps is an atlas that tells stories about a world we all might experience soon.</p>
+      </div>
     </div>
     <div class="project">
-        <img src="img/OFF.png" alt="OFFicial: Welcome">
-        <div>
-            <p class="project-title"><a href="/Official.html" target="_blank">OFFicial: Welcome</a></p>
-            <p>This website and its artifact tell a story about a future we might all experience soon, regardless of whether you live in Spain. It is part of the Final Master’s Thesis based on Futures Design and Strategic Foresight between Nicolás Bronzina, Eider Fernández Árcos, and Jorge Gil called "User Experience Design as a Tool for Social Intervention in the Refugee Crisis.” We used an approach called Design Fiction to envision, design, and move toward desirable futures rather than passively accepting what is and 'will be' the so-called refugee crisis.</p>
-        </div>
+      <img src="img/OFF.png" alt="OFFicial: Welcome">
+      <div>
+        <p class="project-title"><a href="/Official.html" target="_blank">OFFicial: Welcome</a></p>
+        <p>This website and its artifact tell a story about a future we might all experience soon, regardless of whether you live in Spain. It is part of the Final Master’s Thesis based on Futures Design and Strategic Foresight between Nicolás Bronzina, Eider Fernández Árcos, and Jorge Gil called "User Experience Design as a Tool for Social Intervention in the Refugee Crisis.” We used an approach called Design Fiction to envision, design, and move toward desirable futures rather than passively accepting what is and 'will be' the so-called refugee crisis.</p>
+      </div>
     </div>
     <hr>
-</section>
+  </section>
 
-<!-- Sección Writing -->
-<section class="writing-section">
+  <!-- Writing Section -->
+  <section class="writing-section">
     <h2 style="margin-bottom: 20px;">Writing</h2> <!-- Added margin for spacing -->
     <div class="writing-item">
-        <p class="writing-title">Heated Consultancy</p>
-        <ul class="writing-list">
-            <li><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f">Sociological Significance of Design Fiction Objects and Artifacts: Navigating Collective Trauma and Building Community Resilience After a Climate Disaster</a></li>
-            <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442">How Madrid could adapt to extreme heat without losing its essence: A speculative scenario that explores the resilience of a city that made extreme heat and frequent droughts disappear from the headlines</a></li>
-        </ul>
+      <p class="writing-title">Heated Consultancy</p>
+      <ul class="writing-list">
+        <li><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f">Sociological Significance of Design Fiction Objects and Artifacts: Navigating Collective Trauma and Building Community Resilience After a Climate Disaster</a></li>
+        <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442">How Madrid could adapt to extreme heat without losing its essence: A speculative scenario that explores the resilience of a city that made extreme heat and frequent droughts disappear from the headlines</a></li>
+      </ul>
     </div>
     <div class="writing-item">
-        <p class="writing-title">Speculative Food Design</p>
-        <ul class="writing-list">
-            <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37">A Manifesto for a New Argentinean Cuisine: Pushing the boundaries of Argentinean gastronomy with Design Fiction</a></li>
-            <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968">What is Carbon-Neutral Gastronomy?: Exploring the convergence of environmental consciousness and culinary innovation with a Design Fiction</a></li>
-            <li><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7">What is Ethical Meat and Sustainable Proteins Tasting?: Exploring the future of gastronomy with a flyer as a Design Fiction artifact</a></li>
-            <li><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb">A speculative tour of San Telmo Market in a future Buenos Aires: Welcome to San Telmo Market, where we embark on a speculative culinary journey into the near future!</a></li>
-            <li><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d">The gastronomic offer of San Telmo Market in a 15-minute city: Speculation on the different stalls, shops, and services that might emerge at the San Telmo Market in Buenos Aires after an era of long periods of extreme heat and droughts</a></li>
-        </ul>
+      <p class="writing-title">Speculative Food Design</p>
+      <ul class="writing-list">
+        <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37">A Manifesto for a New Argentinean Cuisine: Pushing the boundaries of Argentinean gastronomy with Design Fiction</a></li>
+        <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968">What is Carbon-Neutral Gastronomy?: Exploring the convergence of environmental consciousness and culinary innovation with a Design Fiction</a></li>
+        <li><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7">What is Ethical Meat and Sustainable Proteins Tasting?: Exploring the future of gastronomy with a flyer as a Design Fiction artifact</a></li>
+        <li><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb">A speculative tour of San Telmo Market in a future Buenos Aires: Welcome to San Telmo Market, where we embark on a speculative culinary journey into the near future!</a></li>
+        <li><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d">The gastronomic offer of San Telmo Market in a 15-minute city: Speculation on the different stalls, shops, and services that might emerge at the San Telmo Market in Buenos Aires after an era of long periods of extreme heat and droughts</a></li>
+      </ul>
     </div>
     <div class="writing-item">
-        <p class="writing-title">Foresight</p>
-        <ul class="writing-list">
-            <li><a href="#prospective-methodology">Welcome: An Approach to Prospective Methodology Based on Futures Design and its Relation to Human-Centered Experience Design</a></li>
-            <li><a href="#strategic-foresight">A Shift Towards Strategic Foresight: How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
-        </ul>
+      <p class="writing-title">Foresight</p>
+      <ul class="writing-list">
+        <li><a href="#prospective-methodology">Welcome: An Approach to Prospective Methodology Based on Futures Design and its Relation to Human-Centered Experience Design</a></li>
+        <li><a href="#strategic-foresight">A Shift Towards Strategic Foresight: How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
+      </ul>
     </div>
     <hr>
-</section>
+  </section>
 
-  <!-- Sección Coffee.txt -->
+  <!-- Coffee Section -->
   <section class="writing-section">
     <a href="/Coffee.html" target="_blank">
       <h2>Coffee.txt</h2>
@@ -191,7 +215,7 @@
     <hr>
   </section>
 
-  <!-- Sección de Estadísticas del Servidor, Pronóstico y Redes Sociales -->
+  <!-- Stats Section -->
   <section class="stats-section">
     <div class="stats-column">
       <h2>Server Stats</h2>
@@ -208,12 +232,12 @@
     </div>
   </section>
 
-  <!-- Flecha para volver arriba -->
+  <!-- Back to Top Button -->
   <button class="back-to-top" onclick="scrollToTop()">
     &#8593;
   </button>
 
-  <!-- Script de Estado de la Batería y Hora -->
+  <!-- Script for Battery Status and Time -->
   <script>
     async function updateBatteryStatus() {
       if (navigator.getBattery) {
