@@ -119,11 +119,19 @@
       .stats-column {
         margin-bottom: 10px; /* Spacing between columns */
       }
-      .back-to-top {
+     .back-to-top {
         position: fixed;
-        right: 20px; /* Adjusted for mobile */
-        bottom: 20px; /* Adjusted for mobile */
-        font-size: 24px; /* Same size for both mobile and desktop */
+        right: 20px;
+        bottom: 20px;
+        background: none; /* No background */
+        border: none; /* No border */
+        color: black; /* Black color */
+        font-size: 24px; /* Arrow icon size */
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+      .back-to-top:hover {
+        color: #555; /* Color on hover */
       }
     }
   </style>
