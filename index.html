@@ -192,6 +192,13 @@
     width: 100%; /* Columna ocupa todo el ancho en móvil */
   }
 }
+    .wide-hr {
+  border: none;
+  border-top: 2px solid #000; /* Cambia el grosor del borde */
+  margin: 20px auto; /* Mantén el margen deseado y centra el divisor */
+  width: 90%; /* Ajusta el ancho a un porcentaje deseado */
+  max-width: 800px; /* Máximo ancho para mantenerlo visualmente atractivo */
+}
   </style>
 </head>
 
@@ -315,16 +322,16 @@
     <hr>
   </section>
 
-  <!-- Sección Coffee.txt -->
-  <section class="writing-section">
-    <a href="/Coffee.html" target="_blank">
-      <h2>Coffee.txt</h2>
-    </a>
-    <div class="writing-item">
-      <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
-    </div>
-    <hr>
-  </section>
+<!-- Sección Coffee.txt -->
+<section class="writing-section">
+  <a href="/Coffee.html" target="_blank">
+    <h2>Coffee.txt</h2>
+  </a>
+  <div class="writing-item">
+    <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
+  </div>
+  <hr class="wide-hr"> <!-- Agregada clase -->
+</section>
 
   <!-- Sección de Estadísticas del Servidor, Pronóstico y Redes Sociales -->
   <section class="stats-section">
