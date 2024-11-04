@@ -25,37 +25,22 @@
         }
 
         .header {
-            background-color: #202124;
             text-align: center;
-            padding: 50px;
-            border-bottom: 8px solid #FB6C2C;
             position: relative;
             overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 150%;
-            height: 100%;
-            background: linear-gradient(135deg, #FB6C2C33, transparent);
-            transform: translateX(-50%) rotate(15deg);
-            pointer-events: none;
+            padding: 0; /* Remove padding to let the image fill the section */
         }
 
         .header img {
-            max-width: 200px;
+            width: 100%; /* Make the image fill the entire width of the section */
             height: auto;
-            margin-bottom: 15px;
         }
 
         .header p {
             font-size: 1.2rem;
             color: #C4C4C4;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 15px auto;
         }
 
         .navbar {
