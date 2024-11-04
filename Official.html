@@ -163,6 +163,31 @@
             font-size: 0.9rem;
             border-top: 4px solid #FB6C2C;
         }
+        /* Add this to your existing CSS */
+.partners {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.partner-logos img {
+    max-width: 150px; /* Ensures all logos have the same width */
+    height: auto; /* Maintains aspect ratio */
+    margin: 10px;
+    transition: transform 0.3s; /* Adds a hover effect */
+}
+
+.partner-logos img:hover {
+    transform: scale(1.05); /* Slightly enlarges the logo on hover */
+}
     </style>
 </head>
 <body>
@@ -192,13 +217,6 @@
     <a href="#contact" class="cta-button" onclick="showPage('contact')">Get Involved</a>
 </div>
 
-            <div class="highlights">
-                <h3>Our Impact</h3>
-                <p>Over 1,000 refugees are supported through our integration programs.</p>
-                <p>Partnered with 50+ organizations worldwide to drive meaningful change.</p>
-                <p>Recognized with the Social Innovation Award 2029.</p>
-            </div>
-
           <div class="testimonials">
     <h3>What People Say</h3>
     <div class="testimonial">
@@ -206,6 +224,15 @@
         <blockquote>
             "Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive. It makes every step into a new land feel guided, reminding us that even when we have lost everything, we are not alone. Through Welcome, we are given a chance to become valued members of a community, not just refugees searching for safety." - Misha Al Numan (62), Chemical Engineer
         </blockquote>
+    </div>
+</div>
+    <div class="partners">
+    <h3>Our Partners</h3>
+    <div class="partner-logos">
+        <img src="img/cf_logo.jpg" alt="Caminando Fronteras Logo">
+        <img src="img/cruzroja.jpg" alt="Cruz Roja Logo">
+        <img src="img/hJYUBIAB_400x400.png" alt="UNHCR Logo">
+        <img src="img/logo-cear.jpg" alt="CEAR Logo">
     </div>
 </div>
         </section>
