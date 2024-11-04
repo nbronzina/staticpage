@@ -56,11 +56,14 @@
       border-top: 1px double #000;
       margin: 20px 0;
     }
-    .project-section, .writing-section {
+    .project-section {
       text-align: left;
       padding: 10px 20px;
     }
-    .project, .writing-item {
+    .project {
+      display: flex;
+      align-items: center;
+      gap: 15px;
       margin-bottom: 20px;
     }
     .project img {
@@ -99,13 +102,23 @@
       flex: 1;
       text-align: center;
     }
-    /* Media Queries for Mobile Optimization */
+    /* Responsive styles */
     @media (max-width: 768px) {
-      .stats-section {
-        flex-direction: column; /* Stack items vertically on mobile */
+      .intro-container {
+        flex-direction: column; /* Stack for mobile */
+        align-items: center;
       }
-      .stats-column {
-        margin-bottom: 15px; /* Add spacing between stacked items */
+      .main-image {
+        width: 100%; /* Responsive width for image */
+        max-width: 200px; /* Maximum width for image */
+        margin-bottom: 10px; /* Space below the image */
+      }
+      .project {
+        flex-direction: column; /* Stack project items */
+        align-items: center; /* Center project items */
+      }
+      .stats-section {
+        flex-direction: column; /* Stack stats section for mobile */
       }
     }
   </style>
