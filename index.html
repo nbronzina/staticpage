@@ -95,50 +95,51 @@
       }
     }
 
-    /* Mobile Styles */
-    @media (max-width: 768px) {
-      .intro-container {
-        flex-direction: column; /* Stack vertically */
-        align-items: center; /* Center align */
-      }
-      .main-image {
-        width: 100%; /* Full width for mobile */
-        max-width: 300px; /* Max width */
-        height: auto;
-      }
-      .project-section,
-      .writing-section {
-        padding: 10px; /* Reduced padding for mobile */
-      }
-      .project {
-        flex-direction: column; /* Stack project image and text vertically */
-        align-items: flex-start; /* Left align */
-      }
-      .project img {
-        width: 100%; /* Full width for images */
-        max-width: 300px; /* Max width for images */
-      }
-      .stats-section {
-        flex-direction: column; /* Stack sections vertically */
-      }
-      .stats-column {
-        margin-bottom: 10px; /* Spacing between columns */
-      }
-     .back-to-top {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        background: none; /* No background */
-        border: none; /* No border */
-        color: black; /* Black color */
-        font-size: 24px; /* Arrow icon size */
-        cursor: pointer;
-        transition: color 0.3s;
-      }
-      .back-to-top:hover {
-        color: #555; /* Color on hover */
-      }
-    }
+ /* Mobile Styles */
+@media (max-width: 768px) {
+  .intro-container {
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center align */
+  }
+  .main-image {
+    width: 80%; /* Reduced size for mobile */
+    max-width: 150px; /* Max width for the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Optional: spacing below the image */
+  }
+  .project-section,
+  .writing-section {
+    padding: 10px; /* Reduced padding for mobile */
+  }
+  .project {
+    flex-direction: column; /* Stack project image and text vertically */
+    align-items: flex-start; /* Left align */
+  }
+  .project img {
+    width: 100%; /* Full width for images */
+    max-width: 300px; /* Max width for images */
+  }
+  .stats-section {
+    flex-direction: column; /* Stack sections vertically */
+  }
+  .stats-column {
+    margin-bottom: 10px; /* Spacing between columns */
+  }
+  .back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: none; /* No background */
+    border: none; /* No border */
+    color: black; /* Black color */
+    font-size: 24px; /* Arrow icon size */
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .back-to-top:hover {
+    color: #555; /* Color on hover */
+  }
+}
   </style>
 </head>
 
