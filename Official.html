@@ -1,322 +1,441 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicolás Bronzina</title>
-  <style>
-    /* Estilos generales */
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      transition: background-color 0.5s, color 0.5s;
-      margin: 0;
-      padding: 20px;
-    }
-    h1, h2 {
-      margin: 0;
-    }
-    p {
-      font-size: 16px;
-    }
-    a {
-      color: inherit;
-      text-decoration: underline;
-    }
-    a:hover {
-      color: #555;
-    }
-    .intro-container {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      margin-top: 20px; /* Add some spacing at the top */
-    }
-    .intro-text {
-      flex: 1; /* This allows the text to occupy the remaining space */
-      display: flex;
-      flex-direction: column; /* Stack text vertically */
-      justify-content: center; /* Center text vertically */
-    }
-    .main-image {
-      width: 250px; /* Fixed width for the image */
-      height: auto;
-    }
-    .header-icon-text {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .header-icon-text img {
-      width: 18px;
-      height: 18px;
-    }
-    hr {
-      border: none;
-      border-top: 1px double #000;
-      margin: 20px 0;
-    }
-    .contenedor {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .columna {
-      flex: 1;
-      padding: 10px;
-    }
-    .footer-links {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .project-section {
-      text-align: left;
-      padding: 10px 20px;
-    }
-    .project-section h2 {
-      margin-bottom: 10px;
-    }
-    .project {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-    .project img {
-      width: 250px;
-      height: auto;
-      border-radius: 8px;
-    }
-    .project-title {
-      font-weight: bold;
-    }
-    .writing-section {
-      padding: 10px 20px;
-      text-align: left;
-    }
-    .writing-item {
-      margin-bottom: 20px;
-    }
-    .writing-title {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .writing-list ul {
-      padding-left: 20px;
-    }
-    .writing-list a {
-      color: inherit;
-      text-decoration: none;
-    }
-    .writing-list a:hover {
-      text-decoration: underline;
-    }
-    .stats-section {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 0;
-      text-align: center;
-    }
-    .stats-section div {
-      flex: 1;
-    }
-    /* Estilo para la flecha de retroceso */
-    .back-to-top {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: none; /* Sin fondo */
-      border: none; /* Sin borde */
-      color: black; /* Color negro */
-      font-size: 24px; /* Tamaño del ícono de flecha */
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-    .back-to-top:hover {
-      color: #555; /* Color al pasar el mouse */
-    }
-    /* Estilos para el header */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    @media (max-width: 768px) {
-      .intro-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-      }
-      .main-image {
-        width: 100%;
-        height: auto;
-      }
-      .project {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-      .project img {
-        width: 100%;
-        max-width: 300px;
-      }
-      .stats-section {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFicial Consultancy</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Mono', monospace;
+        }
+
+        body {
+            background-color: #1B1C20;
+            color: #EAEAEA;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: #1B1C20;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: #FB6C2C;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-left: 15px;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .navbar a:hover {
+            color: #EAEAEA;
+        }
+
+        .content {
+            padding-top: 80px;
+        }
+
+        .section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #FB6C2C;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #FB6C2C;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            color: #C4C4C4;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        ul {
+            color: #C4C4C4;
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .cta {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background-color: #FB6C2C;
+            color: #1B1C20;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            background-color: #EAEAEA;
+            color: #1B1C20;
+        }
+
+        .testimonials, .partners {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .testimonial img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #C4C4C4;
+            margin: 5px 0;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .video-container {
+            margin-top: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 56.25%; /* Aspect ratio for 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        .mobile-images {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .mobile-images img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .partner-logos img {
+            max-width: 100px;
+            height: auto;
+            margin: 5px;
+            transition: transform 0.3s;
+        }
+
+        .partner-logos img:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background-color: #16171B;
+            text-align: center;
+            padding: 20px 20px;
+            color: #C4C4C4;
+            font-size: 0.8rem;
+            border-top: 3px solid #FB6C2C;
+        }
+
+        @media (min-width: 768px) {
+            .navbar {
+                padding: 20px 40px;
+            }
+
+            .navbar a {
+                font-size: 1rem;
+                margin-left: 20px;
+            }
+
+            .content {
+                padding-top: 100px;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            h3 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .partner-logos img {
+                max-width: 150px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <!-- Sección de Encabezado -->
-  <header class="header">
-    <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
-  </header>
+    <nav class="navbar">
+        <div class="logo">
+            <a onclick="showPage('home')"><img src="img/LogoOFF.png" alt="OFFicial Logo" style="max-height: 40px;"></a>
+        </div>
+        <div class="menu">
+            <a onclick="showPage('purpose')">Purpose</a>
+            <a onclick="showPage('team')">Team</a>
+            <a onclick="showPage('welcome')">Welcome</a>
+            <a onclick="showPage('contact')">Contact</a>
+        </div>
+    </nav>
 
-  <!-- Sección de Introducción -->
-  <section id="home">
-    <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
-    <div class="header-icon-text">
-      <img src="img/static.png" alt="">
-      <p>The website is programmed using HTML code from a text editor on my Mac computer, based on static sites.</p>
+    <div class="content">
+        <section id="home" class="section active">
+            <div class="image-container">
+        <img src="img/OFFICIAL.png" alt="OFFicial Consultancy" style="max-width: 100%; height: auto;">
     </div>
-    <hr>
-    <div class="intro-container">
-      <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
-      <div class="intro-text">
-        <p><b>[EN]</b> <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
-        <p>As a <strong>Design Researcher</strong>, I focus on enriching and advancing the speculative aspects of design through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My work encompasses the future of food, urban environments, ecology, and emerging technologies.</p>
-        <p>In addition to being a managing partner at BPP and contributing to design fiction writing, I'm a regular contributor to <a href="https://www.girardinnova.com">Girardin & Nova</a>. There, I'm dedicated to in-depth research on emerging trends and 'weak signals' to identify possible future scenarios inside and outside organizations.</p>
-      </div>
-    </div>
-    <hr>
-  </section>
+            <p>Committed to leveraging design and technology to empower displaced communities, shaping a world where everyone has the opportunity to thrive with dignity.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Ih194mji50A" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="testimonials">
+                <h3>What People Say</h3>
+                <div class="testimonial">
+                    <img src="img/Misha.png" alt="Misha Portrait">
+                    <blockquote>"Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive." - Misha Al Numan (62), Chemical Engineer Refugee</blockquote>
+                </div>
+            </div>
+            <div class="partners">
+                <h3>Our Partners</h3>
+                <div class="partner-logos">
+                    <img src="img/cf_logo.jpg" alt="Caminando Fronteras Logo">
+                    <img src="img/cruzroja.jpg" alt="Cruz Roja Logo">
+                    <img src="img/hJYUBIAB_400x400.png" alt="UNHCR Logo">
+                    <img src="img/logo-cear.jpg" alt="CEAR Logo">
+                </div>
+            </div>
+            <div class="cta">
+                <a href="#contact" class="cta-button" onclick="showPage('contact')">Get Involved</a>
+            </div>
+        </section>
 
-  <!-- Sección Projects -->
-  <section class="project-section">
-    <h2>Projects</h2>
-    <div class="project">
-      <img src="img/map.png" alt="San Telmo Market">
-      <div>
-        <p class="project-title"><a href="https://www.futures-in-maps.com/san-telmo/en" target="_blank">San Telmo Market</a></p>
-        <p>A Design Fiction work that explores the City of Buenos Aires's potential future and gastronomy through the evolution of one of its iconic markets, the San Telmo Market. It shows the market's different stalls, shops, and services influenced by long periods of extreme heat and droughts. A work led by Nicolás Bronzina in collaboration with Fabien Girardin and Israel Viadest at Girardin & Nova. Futures in Maps is an atlas that tells stories about a world we all might experience soon.</p>
-      </div>
-    </div>
-    <div class="project">
-      <img src="img/OFF.png" alt="OFFicial: Welcome">
-      <div>
-        <p class="project-title">OFFicial: Welcome</p>
-        <p>"User Experience Design as a Tool for Social Intervention in the Refugee Crisis” Final Master’s Thesis based on Futures Design and Strategic Foresight.</p>
-      </div>
-    </div>
-    <hr>
-  </section>
+        <section id="purpose" class="section">
+            <h2>Our Purpose</h2>
+            <p>At OFFicial, we are a vital ally for people who are forced to leave behind their homes, lives, and everything they know and face precarious conditions upon arriving in a new country. In an interconnected and technologically advanced world, our mission is to support and empower these individuals who are constantly pursuing a dignified and secure life.</p>
+            <h3>What do we do?</h3>
+            <p>We use innovation and prospective design to create future-oriented artifacts that promote collective reflection and drive social change. We transform refugees' complex realities, projecting effective solutions for the near future. Our approach focuses on:</p>
+            <ul>
+                <li><strong>Simplification:</strong> We significantly reduce the processing times for asylum applications through deeply empathetic and human interactions.</li>
+                <li><strong>Automation:</strong> We alleviate the administrative burden on institutions and streamline processes by integrating advanced intelligent technologies.</li>
+                <li><strong>Facilitating Integration:</strong> We build bridges of support that enable agile and meaningful integration into host communities, providing services that interpret and assist refugees at every step.</li>
+                <li><strong>Building Trust:</strong> In a constantly changing global environment, we offer clarity and eliminate uncertainty for refugees, ensuring a secure and understandable experience.</li>
+            </ul>
+            <h3>Design Principles</h3>
+            <p>The design of WELCOME is not neutral. Our product is intentionally built around the values we represent as a company:</p>
+            <ul>
+                <li><strong>1.</strong> The future is about stories of change built in the present: we want to contribute to building a more sustainable, supportive, and equitable society.</li>
+                <li><strong>2.</strong> We are optimistic, not utopian.</li>
+                <li><strong>3.</strong> We design from real data and for everyone; we will not leave anyone behind.</li>
+                <li><strong>4.</strong> Technology is a tool to solve problems, not a place to spend time. The right amount of tech is the minimum necessary to solve a problem.</li>
+                <li><strong>5.</strong> Trust grows with transparency. We simplify processes to make them accessible.</li>
+                <li><strong>6.</strong> We design for a before and after impact.</li>
+                <li><strong>7.</strong> If we believe something is possible, we strive to change it and calmly accept what we cannot change.</li>
+                <li><strong>8.</strong> What is important to our users is also important to our organization.</li>
+            </ul>
+            <blockquote>"Why do you always choose battles you cannot win? - Because they are the ones worth fighting for."</blockquote>
+        </section>
 
-  <!-- Sección Writing -->
-  <section class="writing-section">
-    <h2>Writing</h2>
-    <div class="writing-item">
-      <p class="writing-title">Heated Consultancy</p>
-      <ul class="writing-list">
-        <li><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f">Sociological Significance of Design Fiction Objects and Artifacts: Navigating Collective Trauma and Building Community Resilience After a Climate Disaster</a></li>
-        <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442">How Madrid could adapt to extreme heat without losing its essence: A speculative scenario that explores the resilience of a city that made extreme heat and frequent droughts disappear from the headlines</a></li>
-      </ul>
-    </div>
-    <div class="writing-item">
-      <p class="writing-title">Speculative Food Design</p>
-      <ul class="writing-list">
-        <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37">A Manifesto for a New Argentinean Cuisine: Pushing the boundaries of Argentinean gastronomy with Design Fiction</a></li>
-        <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968">What is Carbon-Neutral Gastronomy?: Exploring the convergence of environmental consciousness and culinary innovation with a Design Fiction</a></li>
-        <li><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7">What is Ethical Meat and Sustainable Proteins Tasting?: Exploring the future of gastronomy with a flyer as a Design Fiction artifact</a></li>
-        <li><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb">A speculative tour of San Telmo Market in a future Buenos Aires: Welcome to San Telmo Market, where we embark on a speculative culinary journey into the near future!</a></li>
-        <li><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d">The gastronomic offer of San Telmo Market in a 15-minute city: Speculation on the different stalls, shops, and services that might emerge at the San Telmo Market in Buenos Aires after an era of long periods of extreme heat and droughts</a></li>
-      </ul>
-    </div>
-    <div class="writing-item">
-      <p class="writing-title">Foresight</p>
-      <ul class="writing-list">
-        <li><a href="#prospective-methodology">Welcome: An Approach to Prospective Methodology Based on Futures Design and its Relation to Human-Centered Experience Design</a></li>
-        <li><a href="#strategic-foresight">A Shift Towards Strategic Foresight: How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
-      </ul>
-    </div>
-    <hr>
-  </section>
+        <section id="welcome" class="section">
+            <div class="image-container">
+                <img src="img/OFF2.png" alt="Welcome Logo">
+            </div>
+            <p>OFFicial's flagship product, designed to support refugees through every step of their journey in a new country. Powered by advanced Artificial Intelligence, Welcome simplifies, automates, and personalizes the asylum process and integration into the community.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>AI-Driven Assistance:</strong> Provides real-time guidance and answers to asylum seekers, making the process less stressful and more accessible.</li>
+                <li><strong>Comprehensive Data Management:</strong> Collects, organizes, and updates essential documents and information every 24 to 48 hours to ensure applications are processed swiftly and accurately.</li>
+                <li><strong>Community and Resource Integration:</strong> Connects refugees with local resources, support networks, and essential services, easing their transition and promoting a sense of belonging.</li>
+                <li><strong>Trusted Information Access:</strong> Taps into a robust database covering news, social conditions, healthcare, employment, and bureaucratic systems of the host country, distinguishing between verified and unverified data for reliable updates.</li>
+                <li><strong>Proactive, Personalized Support:</strong> Autonomously suggests actions to improve the quality of life for refugees, tailoring communication styles to match individual needs and language proficiencies.</li>
+                <li><strong>Anonymous Data Sharing:</strong> Generates anonymized statistics for sharing with governments and NGOs, contributing to improved policies and support systems.</li>
+            </ul>
 
-  <!-- Sección Coffee.txt -->
-  <section class="writing-section">
-    <a href="/Coffee.html" target="_blank">
-      <h2>Coffee.txt</h2>
-    </a>
-    <div class="writing-item">
-      <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
+            <div class="image-container">
+                <img src="img/OFF3.png" alt="Welcome Product Image">
+            </div>
+            <h3>Technical Viability</h3>
+            <p>At OFFicial, we follow the path of Responsible Design because:</p>
+            <ul>
+                <li>It is seen as a means for sustainability.</li>
+                <li>It minimizes the risk of products becoming obsolete.</li>
+                <li>Using carefully selected materials reduces environmental impact.</li>
+                <li>It is designed for longer durability.</li>
+                <li>It is an innovation based on recycled and higher-quality materials, contributing to both carbon and waste footprint reduction for the planet.</li>
+            </ul>
+            <p>OFFicial considers applying Modular Design to its products important because:</p>
+            <ul>
+                <li>Conventional design is still too complex and unsuitable for creating a portfolio of different product versions.</li>
+                <li>With modular design, any current market product can be adapted without restarting the manufacturing process.</li>
+                <li>Modularity provides agility, helping to avoid large amounts of obsolete inventory whenever the market changes.</li>
+                <li>It is more consumer/user-friendly as they do not face total replacement; they can easily replace the broken module.</li>
+                <li>It fosters a broader customer/user base.</li>
+                <li>Aesthetic customization (as long as they like the overall design language, it can be easily modified to fit anyone's personal style).</li>
+                <li>Product confidence. They do not waste the money invested in it.</li>
+            </ul>
+            <p>Not every hardware product suits this approach (e.g., thin and lightweight designs like smartphones), but complexity can be managed. With the design features of OFFicial's wearable, modularity works because it is still relatively simple and manageable.</p>
+            <p>We are not looking for the impossible but to do things well, one at a time.</p>
+            <p>A design based on both longevity (responsibility) and modularity can extend the functional lifespan of the wearable.</p>
+
+            <h3>Economic Viability</h3>
+            <p>Another validation point is economic, and at OFFicial, we believe Welcome's stakeholders and partners are excellent business options:</p>
+            <ul>
+                <li><strong>Google</strong> with its "Impact Challenge," providing support to non-profit organizations and community social initiatives to make society a better place together; referencing the 2018 Google AI Impact Challenge.</li>
+                <li><strong>SkillLab BV</strong> (Netherlands), discovered based on the previous partner. They help municipal employment services integrate refugees into local jobs. Using an AI-powered app, refugees can quickly document their skills in their native languages and receive relevant career path recommendations to explore.</li>
+                <li><strong>Solferino Academy</strong>. It aims to challenge and inspire how people work, think, act, and connect. It supports the International Federation of Red Cross (IFRC) network in transforming for the future, thriving through complex and dynamic changes. The IFRC can better address upcoming humanitarian and development challenges by doing so. The Academy partners with the private sector, academic institutions, entrepreneurs, startups, and others with similar values.</li>
+            </ul>
+
+            <h3>Legal Viability</h3>
+            <p>In terms of legal viability, since Welcome's set of information and data is considered confidential or in high-risk environments, its security and protection are of utmost importance for both OFFicial and all involved actors, relying on the primary attribute of digital identification systems:</p>
+            <ul>
+                <li>Flexibility and durability in operation (e.g., in a natural disaster and/or migration).</li>
+                <li>Using Biometrics, one of the principles sought by the design team was for the wearable to comply with the principle of being counterfeit-resistant. This means ensuring that it is difficult to fake, providing security to the user.</li>
+            </ul>
+            <p>The type of identification included in our device is based on a security methodology, allowing the recognition of our users' non-transferable physical characteristics for identification. This increases the security of the second system, ensuring no vulnerabilities in the security.</p>
+            <p>These applications aim for more convenient systems (easier presentation of identification and documentation), more secure (only authorized individuals have access), and faster (reduced maintenance of codes).</p>
+            <p>OFFicial's biometric system is overseen by a public official and NGO workers during the registration (NGO) and verification (State) of asylum seekers' identities in the database. Civil identification aims to prevent multiple registrations and duplicates, following the International Committee of the Red Cross (ICRC) conditions for biometric data transfer to the State.</p>
+            <p>Therefore, Welcome will guarantee data protection, collecting only what is necessary and deleting it once the asylum process and evaluation are complete. This ensures that migrants and refugees can live without fear, connecting with the host community and inviting them to participate.</p>
+   
+            <!-- Mobile images section -->
+            <div class="mobile-images">
+                <img src="img/Follow-up2.png" alt="Mobile Device 1">
+                <img src="img/Loading.png" alt="Mobile Device 2">
+                <img src="img/Privacy.png" alt="Mobile Device 3">
+            </div>
+        </section>
+
+        <section id="team" class="section">
+            <h2>Our Team</h2>
+            <div class="team-member">
+                <h3>Jorge Gil</h3>
+                <p><strong>Lead UI Designer / Interaction Designer Jr.</strong></p>
+                <p>Graduated in Audiovisual Communication. He has developed his career in diverse fields, such as audiovisual production, graphic design, and DIY event curation and management, with social innovation as a common thread.</p>
+                <blockquote>
+                    "Deeply convinced that design and technology should serve communication between people, and not the other way around, and with a life trajectory in community organizations, we create Welcome to impact, facilitate, and streamline the management of situations of vulnerability, particularly in the asylum application process for refugees by the principles of the Geneva Convention."
+                </blockquote>
+            </div>
+            <div class="team-member">
+                <h3>Eider Fernández Árcos</h3>
+                <p><strong>Lead Product Designer / Researcher Jr.</strong></p>
+                <p>Graduated in Product Design from UDIT, she complements her education with a Master’s in User Experience Design for Products and Services from the same institution. Currently, she focuses on creating and managing communities, organizing events and meetups to attract opportunities, and establishing relationships with key players in the design sector.</p>
+                <blockquote>
+                    "I believe in design as a tool to move forward, and through my work, I feel obligated to respond to any stimulus that arises from observing situations or needs, using the natural user experience-based design process. I believe designers have that superpower and that creativity and empathy are our greatest allies in addressing it."
+                </blockquote>
+            </div>
+            <div class="team-member">
+                <h3>Nicolás Bronzina</h3>
+                <p><strong>Lead Researcher / UI Designer Jr.</strong></p>
+                <p>As a Design Researcher, he focuses on enriching and advancing the speculative aspects of design through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas.</p>
+                <blockquote>
+                    "Due to my personal interest in social issues, particularly those affecting vulnerable populations, and my academic background as a Sociologist, the personal purpose of this project is to understand, from my perspective as a foreigner in Spain, the life stories, needs, and challenges of refugees in Spain. I seek to empathize with them and find possible solutions from my place in society and as part of the OFFicial team."
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>Interested in collaborating or learning more? Reach out, and let's make a difference together.</p>
+            <p>This website and its artifact tell a story about a future we might all experience soon, regardless of whether you live in Spain. It is part of the Final Master’s Thesis based on Futures Design and Strategic Foresight between Nicolás Bronzina, Eider Fernández Árcos, and Jorge Gil called "User Experience Design as a Tool for Social Intervention in the Refugee Crisis.”</p>
+            <p>We used an approach called Design Fiction to envision, design, and move toward desirable futures rather than passively accepting what is and 'will be' the so-called refugee crisis.</p>
+            <p>Please contact <strong><a href="https://www.nicolasbronzina.com" target="_blank" style="color: #FB6C2C; text-decoration: none;">Nicolás Bronzina</a></strong> for further information about this project.</p>
+        </section>
     </div>
-    <hr>
-  </section>
 
-  <!-- Sección de Estadísticas del Servidor, Pronóstico y Redes Sociales -->
-  <section class="stats-section">
-    <div>
-      <h2>Server Stats</h2>
-      <p>Location: Madrid</p>
-      <p id="time-info">Time: Loading...</p>
-      <p id="battery-info">Battery status: Loading...</p>
-    </div>
-    <div>
-      <h2>Forecast</h2>
-      <p id="weather-info">Loading...</p>
-    </div>
-    <div>
-      <h2>Contact</h2>
-      <p><a href="https://www.instagram.com/nbronzina">Instagram</a> | <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a> | <a href="https://www.medium.com/@nbronzina">Medium</a> | <a href="mailto:nicolas.bronzina.com">Email</a></p>
-    </div>
-  </section>
+    <footer class="footer">
+        <p>OFFicial © 2030. All rights reserved.</p>
+        <p>Dedicated to those who have to leave their homes in search of a better future.</p>
+    </footer>
 
-  <!-- Flecha para volver arriba -->
-  <button class="back-to-top" onclick="scrollToTop()">
-    &#8593;
-  </button>
-
-  <!-- Script de Geolocalización, Hora y Pronóstico -->
-  <script>
-    function updateTime() {
-      const now = new Date();
-      document.getElementById('time-info').textContent = now.toLocaleTimeString();
-    }
-    setInterval(updateTime, 1000); // Actualiza la hora cada segundo
-
-    async function updateBatteryStatus() {
-      if (navigator.getBattery) {
-        const battery = await navigator.getBattery();
-        const level = Math.round(battery.level * 100);
-        document.getElementById('battery-info').textContent = `${level}%, ${battery.charging ? 'charging' : 'not charging'}`;
-      } else {
-        document.getElementById('battery-info').textContent = 'Battery status not available';
-      }
-    }
-    updateBatteryStatus();
-    setInterval(updateBatteryStatus, 1000); // Actualiza el estado de la batería cada segundo
-
-    async function fetchWeather() {
-      try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=4f8273341d68d1acdccba1c7b45c5e54&units=metric`);
-        const data = await response.json();
-        const temperature = data.main.temp;
-        const weatherDescription = data.weather[0].description;
-        document.getElementById('weather-info').textContent = `${temperature}°C, ${weatherDescription}`;
-      } catch (error) {
-        document.getElementById('weather-info').textContent = 'Weather data not available';
-      }
-    }
-    fetchWeather();
-
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Desplazamiento suave
-      });
-    }
-  </script>
+    <script>
+        function showPage(pageId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            const activeSection = document.getElementById(pageId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
