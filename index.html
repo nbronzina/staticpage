@@ -102,6 +102,31 @@
       flex: 1;
       text-align: center;
     }
+
+    /* Media Queries for Mobile Optimization */
+    @media (max-width: 768px) {
+      .intro-container {
+        flex-direction: column; /* Stack image and text vertically on small screens */
+        align-items: center;
+        gap: 15px;
+      }
+      .main-image {
+        width: 100%; /* Make image full width on mobile */
+        max-width: 200px; /* Keep a max-width for larger screens */
+      }
+      .project {
+        flex-direction: column; /* Stack project image and text on small screens */
+        align-items: center; /* Center align on mobile */
+      }
+      .project img {
+        width: 100%; /* Make project images responsive */
+        max-width: 250px; /* Maintain max width */
+      }
+      .stats-section {
+        flex-direction: column; /* Stack stats section items on small screens */
+        align-items: center; /* Center align for stats */
+      }
+    }
   </style>
 </head>
 
@@ -258,4 +283,3 @@
   </script>
 </body>
 </html>
-
