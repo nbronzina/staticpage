@@ -95,15 +95,65 @@
             margin-bottom: 10px;
         }
 
-        .welcome-image {
+        .welcome-header {
             text-align: center;
             margin-bottom: 40px;
         }
 
-        .welcome-image img {
+        .welcome-header img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
+        }
+
+        .cta {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .cta-button {
+            background-color: #FB6C2C;
+            color: #1B1C20;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #EAEAEA;
+            color: #1B1C20;
+        }
+
+        .highlights, .testimonials {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .highlights h3, .testimonials h3 {
+            color: #FB6C2C;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .highlights p {
+            color: #C4C4C4;
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #C4C4C4;
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+
+        .video-container {
+            margin-top: 40px;
+            text-align: center;
         }
 
         .footer {
@@ -133,25 +183,68 @@
         <section id="home" class="section active">
             <h2>Welcome to OFFicial</h2>
             <p>We are committed to leveraging design and technology to empower displaced communities, shaping a world where everyone has the opportunity to thrive with dignity.</p>
+            
+            <div class="cta">
+                <a href="#purpose" class="cta-button">Learn More</a>
+                <a href="#contact" class="cta-button">Get Involved</a>
+            </div>
+
+            <div class="highlights">
+                <h3>Our Impact</h3>
+                <p>Over 1,000 refugees supported through our integration programs.</p>
+                <p>Partnered with 50+ organizations worldwide to drive meaningful change.</p>
+                <p>Recognized with the Social Innovation Award 2029.</p>
+            </div>
+
+            <div class="testimonials">
+                <h3>What People Say</h3>
+                <blockquote>
+                    "OFFicial's support transformed our integration process, making us feel truly welcome." - Maria, Refugee
+                </blockquote>
+                <blockquote>
+                    "Their innovative approach is a game changer for social impact." - John Doe, NGO Partner
+                </blockquote>
+            </div>
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/watch?v=Ih194mji50A" frameborder="0" allowfullscreen></iframe>
+            </div>
         </section>
 
         <section id="purpose" class="section">
             <h2>Our Purpose</h2>
             <p>At OFFicial, we are a vital ally for people who are forced to leave behind their homes, lives, and everything they know and face precarious conditions upon arriving in a new country. In an interconnected and technologically advanced world, our mission is to support and empower these individuals constantly pursuing a dignified and secure life.</p>
+            
+            <h3>What do we do?</h3>
+            <p>We use innovation and prospective design to create future-oriented artifacts that promote collective reflection and drive social change. We transform refugees' complex realities, projecting effective solutions for the near future. Our approach focuses on:</p>
+            <ul>
+                <li><strong>Simplification:</strong> We significantly reduce the processing times for asylum applications through deeply empathetic and human interactions.</li>
+                <li><strong>Automation:</strong> We alleviate the administrative burden on institutions and streamline processes by integrating advanced intelligent technologies.</li>
+                <li><strong>Facilitating Integration:</strong> We build bridges of support that enable agile and meaningful integration into host communities, providing services that interpret and assist refugees at every step.</li>
+                <li><strong>Building Trust:</strong> In a constantly changing global environment, we offer clarity and eliminate uncertainty for refugees, ensuring a secure and understandable experience.</li>
+            </ul>
+            
+            <h3>How do we do it?</h3>
+            <p>Our most innovative solution is <strong>Welcome</strong>: a Voice Conversational Assistant powered by advanced Artificial Intelligence. Welcome:</p>
+            <ul>
+                <li>Collects and manages data that validate the integration and adaptation of asylum seekers, using this data to improve the user experience continuously.</li>
+                <li>Provides an interactive, personalized voice guide that simplifies the adaptation process, helping refugees navigate and connect with essential services in their new environment.</li>
+            </ul>
+            <p>Welcome embodies our vision of technology that solves problems in a human, accessible, and deeply empathetic way. At OFFicial, we remain committed to designing more just and equitable futures in which everyone has the opportunity to rebuild their lives with dignity.</p>
         </section>
 
         <section id="welcome" class="section">
-            <div class="welcome-image">
-                <img src="img/OFF2.png" alt="Welcome Logo">
+            <div class="welcome-header">
+                <img src="welcome-logo.png" alt="Welcome Logo">
             </div>
             <h2>Welcome</h2>
             <p>Welcome is OFFicial's flagship product, designed to support refugees through every step of their journey in a new country. Powered by advanced Artificial Intelligence, Welcome simplifies, automates, and personalizes the asylum process and integration into the community.</p>
             
             <h3>Key Features of Welcome</h3>
             <ul>
-                <li><strong>AI-Driven Support:</strong> Provides real-time guidance and answers to asylum seekers, making the process less stressful and more accessible.</li>
+                <li><strong>AI-Driven Assistance:</strong> Provides real-time guidance and answers to asylum seekers, making the process less stressful and more accessible.</li>
                 <li><strong>Comprehensive Data Management:</strong> Collects, organizes, and updates essential documents and information every 24 to 48 hours to ensure applications are processed swiftly and accurately.</li>
-                <li><strong>Community and Resource Integration:</strong> Connects refugees with local resources and support networks, easing their transition and promoting a sense of belonging.</li>
+                <li><strong>Community and Resource Integration:</strong> Connects refugees with local resources, support networks, and essential services, easing their transition and promoting a sense of belonging.</li>
                 <li><strong>Trusted Information Access:</strong> Taps into a robust database covering news, social conditions, healthcare, employment, and bureaucratic systems of the host country, distinguishing between verified and unverified data for reliable updates.</li>
                 <li><strong>Proactive, Personalized Support:</strong> Autonomously suggests actions to improve the quality of life for refugees, tailoring communication styles to match individual needs and language proficiencies.</li>
                 <li><strong>Anonymous Data Sharing:</strong> Generates anonymized statistics for sharing with governments and NGOs, contributing to improved policies and support systems.</li>
@@ -191,4 +284,3 @@
     </script>
 </body>
 </html>
-
