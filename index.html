@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nicolás Bronzina</title>
   <style>
-    /* General Styles */
+    /* Estilos generales */
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
+      transition: background-color 0.5s, color 0.5s;
       margin: 0;
       padding: 20px;
-      transition: background-color 0.5s, color 0.5s;
     }
     h1, h2 {
       margin: 0;
@@ -21,123 +21,172 @@
     }
     a {
       color: inherit;
-      text-decoration: none; /* Remove underline */
+      text-decoration: underline;
     }
     a:hover {
-      color: #555; /* Change color on hover */
+      color: #555;
+    }
+    .intro-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-top: 20px; /* Add some spacing at the top */
+    }
+    .intro-text {
+      flex: 1; /* This allows the text to occupy the remaining space */
+      display: flex;
+      flex-direction: column; /* Stack text vertically */
+      justify-content: center; /* Center text vertically */
+    }
+    .main-image {
+      width: 250px; /* Fixed width for the image */
+      height: auto;
+    }
+    .header-icon-text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-icon-text img {
+      width: 18px;
+      height: 18px;
     }
     hr {
       border: none;
       border-top: 1px double #000;
       margin: 20px 0;
     }
-
-    /* Icon Styles */
-    .header-icon-text img {
-      width: 24px; /* Fixed width for the globe icon */
-      height: auto; /* Maintain aspect ratio */
-      vertical-align: middle; /* Align icon with text */
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
-
-    /* Container Styles */
-    .intro-container, .project, .writing-item {
-      margin-bottom: 20px; /* Space between sections */
+    .columna {
+      flex: 1;
+      padding: 10px;
     }
-
-    /* Desktop Styles */
-    @media (min-width: 769px) {
-      .intro-container {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .main-image {
-        width: 200px; /* Fixed width for the image */
-      }
-      .project-section, .writing-section {
-        padding: 10px 20px;
-      }
-      .project {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-      .project img {
-        width: 250px; /* Fixed width for project images */
-        border-radius: 8px;
-      }
-      .stats-section {
-        display: flex;
-        justify-content: space-between;
-      }
-      .stats-column {
-        flex: 1;
-        text-align: center;
-      }
-      .back-to-top {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        color: black;
-        font-size: 24px;
-        cursor: pointer;
-        transition: color 0.3s;
-      }
-      .back-to-top:hover {
-        color: #555; /* Color on hover */
-      }
+    .footer-links {
+      text-align: center;
+      margin-top: 20px;
     }
-
-    /* Mobile Styles */
+    .project-section {
+      text-align: left;
+      padding: 10px 20px;
+    }
+    .project-section h2 {
+      margin-bottom: 10px;
+    }
+    .project {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .project img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+    }
+    .project-title {
+      font-weight: bold;
+    }
+    .writing-section {
+      padding: 10px 20px;
+      text-align: left;
+    }
+    .writing-item {
+      margin-bottom: 20px;
+    }
+    .writing-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .writing-list ul {
+      padding-left: 20px;
+    }
+    .writing-list a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .writing-list a:hover {
+      text-decoration: underline;
+    }
+    .stats-section {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .stats-section div {
+      flex: 1;
+    }
+    /* Estilo para la flecha de retroceso */
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: none; /* Sin fondo */
+      border: none; /* Sin borde */
+      color: black; /* Color negro */
+      font-size: 24px; /* Tamaño del ícono de flecha */
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .back-to-top:hover {
+      color: #555; /* Color al pasar el mouse */
+    }
+    /* Estilos para el header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     @media (max-width: 768px) {
       .intro-container {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
       }
       .main-image {
-        width: 80%; /* Reduced size for mobile */
-        max-width: 150px; /* Max width for the image */
-        margin-bottom: 10px; /* Spacing below the image */
-      }
-      .project-section, .writing-section {
-        padding: 10px; /* Reduced padding for mobile */
+        width: 100%;
+        height: auto;
       }
       .project {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        gap: 10px;
       }
       .project img {
-        width: 100%; /* Full width for images */
-        max-width: 300px; /* Max width for images */
+        width: 100%;
+        max-width: 300px;
       }
       .stats-section {
         flex-direction: column;
-      }
-      .stats-column {
-        margin-bottom: 10px; /* Spacing between columns */
+        gap: 10px;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Header Section -->
+  <!-- Sección de Encabezado -->
   <header class="header">
     <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
   </header>
 
-  <!-- Introduction Section -->
+  <!-- Sección de Introducción -->
   <section id="home">
     <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
     <div class="header-icon-text">
-      <img src="img/static.png" alt="Globe Icon">
+      <img src="img/static.png" alt="">
       <p>The website is programmed using HTML code from a text editor on my Mac computer, based on static sites.</p>
     </div>
     <hr>
     <div class="intro-container">
       <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
       <div class="intro-text">
-        <p><em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
+        <p><b>[EN]</b> <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
         <p>As a <strong>Design Researcher</strong>, I focus on enriching and advancing the speculative aspects of design through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My work encompasses the future of food, urban environments, ecology, and emerging technologies.</p>
         <p>In addition to being a managing partner at BPP and contributing to design fiction writing, I'm a regular contributor to <a href="https://www.girardinnova.com">Girardin & Nova</a>. There, I'm dedicated to in-depth research on emerging trends and 'weak signals' to identify possible future scenarios inside and outside organizations.</p>
       </div>
@@ -145,7 +194,7 @@
     <hr>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Sección Projects -->
   <section class="project-section">
     <h2>Projects</h2>
     <div class="project">
@@ -158,14 +207,14 @@
     <div class="project">
       <img src="img/OFF.png" alt="OFFicial: Welcome">
       <div>
-        <p class="project-title"><a href="/Official.html" target="_blank">OFFicial: Welcome</a></p>
-        <p>This website and its artifact tell a story about a future we might all experience soon, regardless of whether you live in Spain. It is part of the Final Master’s Thesis based on Futures Design and Strategic Foresight between Nicolás Bronzina, Eider Fernández Árcos, and Jorge Gil called "User Experience Design as a Tool for Social Intervention in the Refugee Crisis.” We used an approach called Design Fiction to envision, design, and move toward desirable futures rather than passively accepting what is and 'will be' the so-called refugee crisis.</p>
+        <p class="project-title">OFFicial: Welcome</p>
+        <p>"User Experience Design as a Tool for Social Intervention in the Refugee Crisis” Final Master’s Thesis based on Futures Design and Strategic Foresight.</p>
       </div>
     </div>
     <hr>
   </section>
 
-  <!-- Writing Section -->
+  <!-- Sección Writing -->
   <section class="writing-section">
     <h2>Writing</h2>
     <div class="writing-item">
@@ -195,7 +244,7 @@
     <hr>
   </section>
 
-  <!-- Coffee Section -->
+  <!-- Sección Coffee.txt -->
   <section class="writing-section">
     <a href="/Coffee.html" target="_blank">
       <h2>Coffee.txt</h2>
@@ -206,49 +255,48 @@
     <hr>
   </section>
 
-  <!-- Stats Section -->
+  <!-- Sección de Estadísticas del Servidor, Pronóstico y Redes Sociales -->
   <section class="stats-section">
-    <div class="stats-column">
+    <div>
       <h2>Server Stats</h2>
       <p>Location: Madrid</p>
       <p id="time-info">Time: Loading...</p>
+      <p id="battery-info">Battery status: Loading...</p>
     </div>
-    <div class="stats-column">
+    <div>
       <h2>Forecast</h2>
       <p id="weather-info">Loading...</p>
     </div>
-    <div class="stats-column">
+    <div>
       <h2>Contact</h2>
       <p><a href="https://www.instagram.com/nbronzina">Instagram</a> | <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a> | <a href="https://www.medium.com/@nbronzina">Medium</a> | <a href="mailto:nicolas.bronzina.com">Email</a></p>
     </div>
   </section>
 
-  <!-- Back to Top Button -->
+  <!-- Flecha para volver arriba -->
   <button class="back-to-top" onclick="scrollToTop()">
     &#8593;
   </button>
 
-  <!-- Script for Battery Status and Time -->
+  <!-- Script de Geolocalización, Hora y Pronóstico -->
   <script>
-    async function updateBatteryStatus() {
-      if (navigator.getBattery) {
-        const battery = await navigator.getBattery();
-        const level = Math.round(battery.level * 100);
-        document.getElementById('battery-info').textContent = `Battery level: ${level}%, ${battery.charging ? 'Charging' : 'Not charging'}`;
-      } else {
-        document.getElementById('battery-info').textContent = 'Battery status not available';
-      }
-    }
-
     function updateTime() {
       const now = new Date();
       document.getElementById('time-info').textContent = now.toLocaleTimeString();
     }
+    setInterval(updateTime, 1000); // Actualiza la hora cada segundo
 
+    async function updateBatteryStatus() {
+      if (navigator.getBattery) {
+        const battery = await navigator.getBattery();
+        const level = Math.round(battery.level * 100);
+        document.getElementById('battery-info').textContent = `${level}%, ${battery.charging ? 'charging' : 'not charging'}`;
+      } else {
+        document.getElementById('battery-info').textContent = 'Battery status not available';
+      }
+    }
     updateBatteryStatus();
-    setInterval(updateBatteryStatus, 60000); // Update battery status every minute
-    updateTime();
-    setInterval(updateTime, 1000); // Update time every second
+    setInterval(updateBatteryStatus, 1000); // Actualiza el estado de la batería cada segundo
 
     async function fetchWeather() {
       try {
@@ -266,7 +314,7 @@
     function scrollToTop() {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: 'smooth' // Desplazamiento suave
       });
     }
   </script>
