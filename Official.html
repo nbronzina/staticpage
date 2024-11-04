@@ -146,6 +146,17 @@
             text-align: center;
         }
 
+        .image-container {
+            text-align: center; /* Centers the image horizontally */
+            margin: 40px 0; /* Adds space above and below the image */
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+        }
+
         .partner-logos {
             display: flex;
             justify-content: center;
@@ -182,6 +193,7 @@
             <a onclick="showPage('home')">OFFicial</a>
         </div>
         <div class="menu">
+            <a onclick="showPage('home')">Home</a>
             <a onclick="showPage('purpose')">Purpose</a>
             <a onclick="showPage('team')">Team</a>
             <a onclick="showPage('welcome')">Welcome</a>
@@ -212,7 +224,7 @@
                     <img src="img/logo-cear.jpg" alt="CEAR Logo">
                 </div>
             </div>
-               <div class="cta">
+            <div class="cta">
                 <a href="#purpose" class="cta-button" onclick="showPage('purpose')">Learn More</a>
                 <a href="#contact" class="cta-button" onclick="showPage('contact')">Get Involved</a>
             </div>
@@ -232,79 +244,24 @@
         </section>
 
         <section id="welcome" class="section">
-    <div class="content">
-        <section id="welcome" class="section active">
-            <div class="welcome-header">
-                <div class="image-container">
-                    <img src="img/OFF2.png" alt="Welcome Logo">
-                </div>
+            <div class="image-container">
+                <img src="img/OFF2.png" alt="Welcome Logo">
             </div>
-    <p>OFFicial's flagship product, designed to support refugees through every step of their journey in a new country. Powered by advanced Artificial Intelligence, Welcome simplifies, automates, and personalizes the asylum process and integration into the community.</p>
-    
-    <h3>Key Features</h3>
-    <ul>
-        <li><strong>AI-Driven Assistance:</strong> Provides real-time guidance and answers to asylum seekers, making the process less stressful and more accessible.</li>
-        <li><strong>Comprehensive Data Management:</strong> Collects, organizes, and updates essential documents and information every 24 to 48 hours to ensure applications are processed swiftly and accurately.</li>
-        <li><strong>Community and Resource Integration:</strong> Connects refugees with local resources, support networks, and essential services, easing their transition and promoting a sense of belonging.</li>
-        <li><strong>Trusted Information Access:</strong> Taps into a robust database covering news, social conditions, healthcare, employment, and bureaucratic systems of the host country, distinguishing between verified and unverified data for reliable updates.</li>
-        <li><strong>Proactive, Personalized Support:</strong> Autonomously suggests actions to improve the quality of life for refugees, tailoring communication styles to match individual needs and language proficiencies.</li>
-        <li><strong>Anonymous Data Sharing:</strong> Generates anonymized statistics for sharing with governments and NGOs, contributing to improved policies and support systems.</li>
-    </ul>
-    
-    <p>With Welcome, we aim to transform how refugees experience relocation, ensuring they feel supported, informed, and empowered in their new environment.</p>
-    
-    <!-- Second image and added text -->
-    <div class="image-container">
-        <img src="img/OFF3.png" alt="Welcome Product Image" style="width:100%; max-width:900px; margin: 40px auto; display: block;">
-    </div>
-    
-    <h3>Technical Viability</h3>
-    <p>At OFFicial, we follow the path of Responsible Design because:</p>
-    <ul>
-        <li>It is seen as a means for sustainability.</li>
-        <li>It minimizes the risk of products becoming obsolete.</li>
-        <li>Using carefully selected materials reduces environmental impact.</li>
-        <li>It is designed for longer durability.</li>
-        <li>It is an innovation based on recycled and higher-quality materials, contributing to both carbon and waste footprint reduction for the planet.</li>
-    </ul>
-    <p>OFFicial considers applying Modular Design to its products important because:</p>
-    <ul>
-        <li>Conventional design is still too complex and unsuitable for creating a portfolio of different product versions.</li>
-        <li>With modular design, any current market product can be adapted without restarting the manufacturing process.</li>
-        <li>Modularity provides agility, helping to avoid large amounts of obsolete inventory whenever the market changes.</li>
-        <li>It is more consumer/user-friendly as they do not face total replacement; they can easily replace the broken module.</li>
-        <li>It fosters a broader customer/user base.</li>
-        <li>Aesthetic customization (as long as they like the overall design language, it can be easily modified to fit anyone's personal style).</li>
-        <li>Product confidence. They do not waste the money invested in it.</li>
-    </ul>
-    <p>Not every hardware product suits this approach (e.g., thin and lightweight designs like smartphones), but complexity can be managed. With the design features of OFFicial's wearable, modularity works because it is still relatively simple and manageable.</p>
-    <p>We are not looking for the impossible but to do things well, one at a time.</p>
-    <p>A design based on both longevity (responsibility) and modularity can extend the functional lifespan of the wearable.</p>
+            <p>OFFicial's flagship product, designed to support refugees through every step of their journey in a new country. Powered by advanced Artificial Intelligence, Welcome simplifies, automates, and personalizes the asylum process and integration into the community.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>AI-Driven Assistance:</strong> Provides real-time guidance and answers to asylum seekers, making the process less stressful and more accessible.</li>
+                <li><strong>Comprehensive Data Management:</strong> Collects, organizes, and updates essential documents and information every 24 to 48 hours to ensure applications are processed swiftly and accurately.</li>
+                <li><strong>Community and Resource Integration:</strong> Connects refugees with local resources, support networks, and essential services, easing their transition and promoting a sense of belonging.</li>
+                <li><strong>Trusted Information Access:</strong> Taps into a robust database covering news, social conditions, healthcare, employment, and bureaucratic systems of the host country, distinguishing between verified and unverified data for reliable updates.</li>
+                <li><strong>Proactive, Personalized Support:</strong> Autonomously suggests actions to improve the quality of life for refugees, tailoring communication styles to match individual needs and language proficiencies.</li>
+                <li><strong>Anonymous Data Sharing:</strong> Generates anonymized statistics for sharing with governments and NGOs, contributing to improved policies and support systems.</li>
+            </ul>
+        </section>
 
-    <h3>Economic Viability</h3>
-    <p>Another validation point is economic, and at OFFicial, we believe Welcome's stakeholders and partners are excellent business options:</p>
-    <ul>
-        <li><strong>Google</strong> with its "Impact Challenge," providing support to non-profit organizations and community social initiatives to make society a better place together; referencing the 2018 Google AI Impact Challenge.</li>
-        <li><strong>SkillLab BV</strong> (Netherlands), discovered based on the previous partner. They help municipal employment services integrate refugees into local jobs. Using an AI-powered app, refugees can quickly document their skills in their native languages and receive relevant career path recommendations to explore.</li>
-        <li><strong>Solferino Academy</strong>. It aims to challenge and inspire how people work, think, act, and connect. It supports the International Federation of Red Cross (IFRC) network in transforming for the future, thriving through complex and dynamic changes. The IFRC can better address upcoming humanitarian and development challenges by doing so. The Academy partners with the private sector, academic institutions, entrepreneurs, startups, and others with similar values.</li>
-    </ul>
-
-    <h3>Legal Viability</h3>
-    <p>In terms of legal viability, since Welcome's set of information and data is considered confidential or in high-risk environments, its security and protection are of utmost importance for both OFFicial and all involved actors, relying on the primary attribute of digital identification systems:</p>
-    <ul>
-        <li>Flexibility and durability in operation (e.g., in a natural disaster and/or migration).</li>
-        <li>Using Biometrics, one of the principles sought by the design team was for the wearable to comply with the principle of being counterfeit-resistant. This means ensuring that it is difficult to fake, providing security to the user.</li>
-    </ul>
-    <p>The type of identification included in our device is based on a security methodology, allowing the recognition of our users' non-transferable physical characteristics for identification. This increases the security of the second system, ensuring no vulnerabilities in the security.</p>
-    <p>These applications aim for more convenient systems (easier presentation of identification and documentation), more secure (only authorized individuals have access), and faster (reduced maintenance of codes).</p>
-    <p>OFFicial's biometric system is overseen by a public official and NGO workers during the registration (NGO) and verification (State) of asylum seekers' identities in the database. Civil identification aims to prevent multiple registrations and duplicates, following the International Committee of the Red Cross (ICRC) conditions for biometric data transfer to the State.</p>
-    <p>Therefore, Welcome will guarantee data protection, collecting only what is necessary and deleting it once the asylum process and evaluation are complete. This ensures that migrants and refugees can live without fear, connecting with the host community and inviting them to participate.</p>
-</section>
-
-       <section id="team" class="section">
+        <section id="team" class="section">
             <h2>Our Team</h2>
             <p>Meet the diverse and skilled team committed to reshaping the future through design.</p>
-
             <div class="team-member">
                 <h3>Jorge Gil</h3>
                 <p><strong>Lead UI Designer / Interaction Designer Jr.</strong></p>
@@ -313,7 +270,6 @@
                     "Deeply convinced that design and technology should serve communication between people, and not the other way around, and with a life trajectory in community organizations, we create Welcome to impact, facilitate, and streamline the management of situations of vulnerability, particularly in the asylum application process for refugees by the principles of the Geneva Convention."
                 </blockquote>
             </div>
-
             <div class="team-member">
                 <h3>Eider Fernández Árcos</h3>
                 <p><strong>Lead Product Designer / Researcher Jr.</strong></p>
@@ -322,7 +278,6 @@
                     "I believe in design as a tool to move forward, and through my work, I feel obligated to respond to any stimulus that arises from observing situations or needs, using the natural user experience-based design process. I believe designers have that superpower and that creativity and empathy are our greatest allies in addressing it."
                 </blockquote>
             </div>
-
             <div class="team-member">
                 <h3>Nicolás Bronzina</h3>
                 <p><strong>Lead Researcher / UI Designer Jr.</strong></p>
