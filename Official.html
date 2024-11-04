@@ -30,7 +30,7 @@
       display: flex;
       align-items: flex-start;
       gap: 20px;
-      margin-top: 20px;
+      margin-top: 20px; /* Add some spacing at the top */
     }
     .intro-text {
       flex: 1; /* This allows the text to occupy the remaining space */
@@ -39,7 +39,7 @@
       justify-content: center; /* Center text vertically */
     }
     .main-image {
-      width: 200px; /* Fixed width for the image */
+      width: 250px; /* Fixed width for the image */
       height: auto;
     }
     .header-icon-text {
@@ -56,9 +56,26 @@
       border-top: 1px double #000;
       margin: 20px 0;
     }
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .columna {
+      flex: 1;
+      padding: 10px;
+    }
+    .footer-links {
+      text-align: center;
+      margin-top: 20px;
+    }
     .project-section {
       text-align: left;
       padding: 10px 20px;
+    }
+    .project-section h2 {
+      margin-bottom: 10px;
     }
     .project {
       display: flex;
@@ -71,7 +88,40 @@
       height: auto;
       border-radius: 8px;
     }
-    /* Flecha para volver arriba */
+    .project-title {
+      font-weight: bold;
+    }
+    .writing-section {
+      padding: 10px 20px;
+      text-align: left;
+    }
+    .writing-item {
+      margin-bottom: 20px;
+    }
+    .writing-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .writing-list ul {
+      padding-left: 20px;
+    }
+    .writing-list a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .writing-list a:hover {
+      text-decoration: underline;
+    }
+    .stats-section {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .stats-section div {
+      flex: 1;
+    }
+    /* Estilo para la flecha de retroceso */
     .back-to-top {
       position: fixed;
       right: 20px;
@@ -91,16 +141,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    /* Estilos para la sección de estadísticas */
-    .stats-section {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-    .stats-column {
-      flex: 1;
-      text-align: center;
     }
     @media (max-width: 768px) {
       .intro-container {
@@ -146,7 +186,7 @@
     <div class="intro-container">
       <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
       <div class="intro-text">
-        <p><em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
+        <p><b>[EN]</b> <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design.</p>
         <p>As a <strong>Design Researcher</strong>, I focus on enriching and advancing the speculative aspects of design through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My work encompasses the future of food, urban environments, ecology, and emerging technologies.</p>
         <p>In addition to being a managing partner at BPP and contributing to design fiction writing, I'm a regular contributor to <a href="https://www.girardinnova.com">Girardin & Nova</a>. There, I'm dedicated to in-depth research on emerging trends and 'weak signals' to identify possible future scenarios inside and outside organizations.</p>
       </div>
@@ -167,7 +207,7 @@
     <div class="project">
       <img src="img/OFF.png" alt="OFFicial: Welcome">
       <div>
-        <p class="project-title"><a href="/Official.html" target="_blank">OFFicial: Welcome</a></p>
+        <p class="project-title">OFFicial: Welcome</p>
         <p>"User Experience Design as a Tool for Social Intervention in the Refugee Crisis” Final Master’s Thesis based on Futures Design and Strategic Foresight.</p>
       </div>
     </div>
@@ -217,18 +257,17 @@
 
   <!-- Sección de Estadísticas del Servidor, Pronóstico y Redes Sociales -->
   <section class="stats-section">
-    <div class="stats-column">
+    <div>
       <h2>Server Stats</h2>
       <p>Location: Madrid</p>
       <p id="time-info">Time: Loading...</p>
       <p id="battery-info">Battery status: Loading...</p>
-      <p id="battery-note">Content will be updated until the battery runs out. Please charge the device to refresh the content.</p>
     </div>
-    <div class="stats-column">
+    <div>
       <h2>Forecast</h2>
       <p id="weather-info">Loading...</p>
     </div>
-    <div class="stats-column">
+    <div>
       <h2>Contact</h2>
       <p><a href="https://www.instagram.com/nbronzina">Instagram</a> | <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a> | <a href="https://www.medium.com/@nbronzina">Medium</a> | <a href="mailto:nicolas.bronzina.com">Email</a></p>
     </div>
@@ -239,29 +278,25 @@
     &#8593;
   </button>
 
-  <!-- Script de Estado de la Batería y Hora -->
+  <!-- Script de Geolocalización, Hora y Pronóstico -->
   <script>
-    async function updateBatteryStatus() {
-      if (navigator.getBattery) {
-        const battery = await navigator.getBattery();
-        const level = Math.round(battery.level * 100);
-        const charging = battery.charging;
-        document.getElementById('battery-info').textContent = `${level}%, ${charging ? 'Charging' : 'Not Charging'}`;
-      } else {
-        document.getElementById('battery-info').textContent = 'Battery status not available';
-      }
-    }
-
     function updateTime() {
       const now = new Date();
       document.getElementById('time-info').textContent = now.toLocaleTimeString();
     }
+    setInterval(updateTime, 1000); // Actualiza la hora cada segundo
 
-    // Call the functions initially and set intervals for updates
+    async function updateBatteryStatus() {
+      if (navigator.getBattery) {
+        const battery = await navigator.getBattery();
+        const level = Math.round(battery.level * 100);
+        document.getElementById('battery-info').textContent = `${level}%, ${battery.charging ? 'charging' : 'not charging'}`;
+      } else {
+        document.getElementById('battery-info').textContent = 'Battery status not available';
+      }
+    }
     updateBatteryStatus();
-    setInterval(updateBatteryStatus, 60000); // Update battery status every minute
-    updateTime();
-    setInterval(updateTime, 1000); // Update time every second
+    setInterval(updateBatteryStatus, 1000); // Actualiza el estado de la batería cada segundo
 
     async function fetchWeather() {
       try {
@@ -279,12 +314,9 @@
     function scrollToTop() {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: 'smooth' // Desplazamiento suave
       });
     }
   </script>
 </body>
 </html>
-
-</html>
-
