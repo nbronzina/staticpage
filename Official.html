@@ -17,229 +17,163 @@
         body {
             background-color: #1B1C20;
             color: #EAEAEA;
-            line-height: 1.6;
             font-size: 16px;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
 
         .navbar {
-            background-color: #16171B;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            position: fixed; /* Make the navbar fixed */
+            background-color: transparent;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
             top: 0;
             width: 100%;
-            z-index: 1000; /* Ensure it stays above other elements */
-        }
-
-        .navbar ul {
-            list-style: none;
-        }
-
-        .navbar li {
-            display: inline;
-            margin: 0 25px;
+            z-index: 1000;
         }
 
         .navbar a {
             color: #FB6C2C;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: color 0.3s, transform 0.3s;
+            font-size: 1rem;
+            margin-left: 20px;
+            transition: color 0.3s;
         }
 
         .navbar a:hover {
             color: #EAEAEA;
-            transform: translateY(-3px);
         }
 
         .header {
-            position: relative;
-            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            margin-top: 80px; /* Add margin to offset the fixed navbar */
+            background-image: url('img/OFF.png'); /* Add your image */
+            background-size: cover;
+            background-position: center;
+            color: #EAEAEA;
         }
 
-        .header img {
-            width: 100%; /* Make the image fill the entire width of the section */
-            height: auto;
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
         }
 
         .header p {
-            position: absolute;
-            bottom: 20px; /* Move the paragraph closer to the bottom */
-            left: 50%;
-            transform: translateX(-50%);
             font-size: 1.5rem;
-            color: #EBE1D1;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
-            padding: 10px 20px;
-            border-radius: 8px;
-            max-width: 80%;
-        }
-
-        .video-container {
-            text-align: center;
-            margin: 30px 0;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .section {
-            padding: 50px 30px;
-            background-color: #EBE1D1;
-            color: #202124;
-            margin: 30px auto;
-            border-radius: 12px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-            max-width: 1000px;
-            transition: transform 0.5s, box-shadow 0.5s;
-        }
-
-        .section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section h2 {
             color: #FB6C2C;
+            font-size: 2.5rem;
             margin-bottom: 20px;
-            border-left: 6px solid #FB6C2C;
-            padding-left: 15px;
-            font-size: 2rem;
         }
 
         .section p {
-            margin-bottom: 25px;
-            color: #202124;
-            font-weight: 400;
-        }
-
-        .principles {
-            margin: 30px 0;
-            padding-left: 25px;
-            list-style: disc;
             color: #C4C4C4;
+            margin-bottom: 20px;
         }
 
-        .quote {
-            font-style: italic;
-            color: #FB6C2C;
-            text-align: center;
-            margin: 50px 0;
-            font-size: 1.4rem;
-            text-shadow: 1px 1px 3px #111;
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .project {
+            background-color: #202124;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 280px;
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
         }
 
         .footer {
             background-color: #16171B;
             text-align: center;
-            padding: 25px;
-            border-top: 4px solid #FB6C2C;
+            padding: 50px 40px;
             color: #C4C4C4;
             font-size: 0.9rem;
-        }
-
-        .social-links {
-            margin-top: 15px;
-        }
-
-        .social-links a {
-            margin: 0 20px;
-            color: #FB6C2C;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #EAEAEA;
+            border-top: 4px solid #FB6C2C;
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <ul>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#purpose">Our Purpose</a></li>
-            <li><a href="#principles">Design Principles</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="logo">
+            <a href="#">OFFicial</a>
+        </div>
+        <div class="menu">
+            <a href="#purpose">Purpose</a>
+            <a href="#projects">Projects</a>
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
     <header class="header">
-        <img src="img/OFF.png" alt="OFFicial Logo">
-        <p>Strategic Design Consultant specialized in the intersection of Human Rights and Technology</p>
+        <div>
+            <h1>OFFicial Consultancy</h1>
+            <p>Strategic Design at the Intersection of Human Rights and Technology</p>
+        </div>
     </header>
-    
-    <div class="video-container">
-        <iframe width="800" height="450" src="https://www.youtube.com/embed/Ih194mji50A" frameborder="0" allowfullscreen></iframe>
-    </div>
-    
-    <section id="team" class="section">
-        <h2>Team</h2>
-        <p>A diverse group of experts in Futures Design, UX, and strategic research, committed to designing meaningful change.</p>
-    </section>
-    
+
     <section id="purpose" class="section">
         <h2>Our Purpose</h2>
-        <p>At OFFicial, we are a vital ally for people who, forced to leave behind their homes, lives, and everything they know, face precarious conditions upon arriving in a new country. In an interconnected and technologically advanced world, our mission is to support and empower these individuals in their constant pursuit of a dignified and secure life.</p>
-        <p><strong>What do we do?</strong><br>
-        We use innovation and prospective design to create future-oriented artifacts that promote collective reflection and drive social change. We transform the complex realities faced by refugees, projecting effective solutions for the near future. Our approach focuses on:</p>
-        <ul class="principles">
-            <li><strong>Simplification:</strong> We significantly reduce the processing times for asylum applications through deeply empathetic and human interactions.</li>
-            <li><strong>Automation:</strong> We alleviate the administrative burden on institutions and streamline processes by integrating advanced intelligent technologies.</li>
-            <li><strong>Facilitating Integration:</strong> We build bridges of support that enable agile and meaningful integration into host communities, providing services that interpret and assist refugees at every step.</li>
-            <li><strong>Building Trust:</strong> In a constantly changing global environment, we offer clarity and eliminate uncertainty for refugees, ensuring a secure and understandable experience.</li>
-        </ul>
-        <p><strong>How do we do it?</strong><br>
-        Our most innovative solution is <strong>Welcome</strong>: a Voice Conversational Assistant powered by advanced Artificial Intelligence. Welcome:</p>
-        <ul class="principles">
-            <li>Collects and manages data that validate the integration and adaptation of asylum seekers, using this data to continuously improve the user experience.</li>
-            <li>Provides an interactive, personalized voice guide that simplifies the adaptation process, helping refugees navigate and connect with essential services in their new environment.</li>
-        </ul>
-        <p>Welcome embodies our vision of technology that not only solves problems but does so in a human, accessible, and deeply empathetic way. At OFFicial, we remain committed to designing more just and equitable futures, where everyone has the opportunity to rebuild their lives with dignity.</p>
-    </section>
-    
-    <section id="principles" class="section">
-        <h2>Design Principles</h2>
-        <ul class="principles">
-            <li>The future is about stories of change built in the present: we aim to contribute to a more sustainable and supportive society.</li>
-            <li>We are optimistic, not utopian.</li>
-            <li>We design from real data and for everyone, leaving no one behind.</li>
-            <li>Technology is a tool to solve problems, not a place to spend time.</li>
-            <li>Trust grows with transparency. We simplify processes to make them accessible.</li>
-            <li>We design for a before and after impact.</li>
-            <li>If we believe something is possible, we strive to change it and calmly accept what we cannot change.</li>
-            <li>What is important to our users is also important to our organization.</li>
-        </ul>
-    </section>
-    
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <p>Explore our projects that address complex social issues with innovative, user-centered solutions.</p>
-    </section>
-    
-    <section id="research" class="section">
-        <h2>Research</h2>
-        <p>Our research methodology combines Futures Design and strategic foresight to create tangible, meaningful impact.</p>
+        <p>At OFFicial, we stand as allies to those who leave everything behind in search of dignity. We utilize innovation and speculative design to rethink and reshape the future.</p>
     </section>
 
-    <div class="quote">
-        <p>"Why do you always choose battles you cannot win? - Because they are the ones worth fighting for."</p>
-    </div>
-    
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Have a project in mind or want to collaborate with us? Get in touch and let’s discuss how we can design a better future together.</p>
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Project Title 1</h3>
+                <p>Brief description of the project and its impact.</p>
+            </div>
+            <div class="project">
+                <h3>Project Title 2</h3>
+                <p>Brief description of the project and its impact.</p>
+            </div>
+            <div class="project">
+                <h3>Project Title 3</h3>
+                <p>Brief description of the project and its impact.</p>
+            </div>
+        </div>
     </section>
-    
+
+    <section id="team" class="section">
+        <h2>Our Team</h2>
+        <p>Meet the diverse and skilled team committed to reshaping the future through design.</p>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Interested in collaborating or learning more? Reach out and let's make a difference together.</p>
+    </section>
+
     <footer class="footer">
         <p>OFFicial © 2030. All rights reserved.</p>
-        <p>Design Fiction website set in a near future Madrid dedicated to Nahla, Vilma, and all those who have had to leave their homes searching for a decent life.</p>
+        <p>Dedicated to those who have to leave their homes in search of a better future.</p>
     </footer>
 </body>
 </html>
