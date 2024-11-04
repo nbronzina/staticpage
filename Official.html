@@ -56,16 +56,20 @@
             align-items: center;
         }
 
-        .rotating-logo {
-            max-height: 40px;
-            animation: spin 5s linear infinite; /* Animación continua */
-            transform-style: preserve-3d;
-        }
+     .rotating-logo {
+    max-height: 40px;
+    animation: spin 5s linear infinite; /* Animación continua */
+    transform-style: preserve-3d;
+}
 
-        .logo:hover .rotating-logo {
-            transform: rotateY(360deg); /* Hace que el logo gire 360 grados en el eje Y */
-        }
-
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
         .content {
             padding-top: 80px;
         }
@@ -265,9 +269,9 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">
-            <a onclick="showPage('home')"><img src="img/LogoOFF.png" alt="OFFicial Logo" class="rotating-logo"></a>
-        </div>
+       <div class="logo">
+    <a onclick="showPage('home')"><img src="img/LogoOFF.png" alt="OFFicial Logo" class="rotating-logo"></a>
+</div>
         <div class="menu">
             <a onclick="showPage('purpose')">Purpose</a>
             <a onclick="showPage('team')">Team</a>
