@@ -56,26 +56,9 @@
       border-top: 1px double #000;
       margin: 20px 0;
     }
-    .contenedor {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .columna {
-      flex: 1;
-      padding: 10px;
-    }
-    .footer-links {
-      text-align: center;
-      margin-top: 20px;
-    }
     .project-section {
       text-align: left;
       padding: 10px 20px;
-    }
-    .project-section h2 {
-      margin-bottom: 10px;
     }
     .project {
       display: flex;
@@ -88,40 +71,7 @@
       height: auto;
       border-radius: 8px;
     }
-    .project-title {
-      font-weight: bold;
-    }
-    .writing-section {
-      padding: 10px 20px;
-      text-align: left;
-    }
-    .writing-item {
-      margin-bottom: 20px;
-    }
-    .writing-title {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .writing-list ul {
-      padding-left: 20px;
-    }
-    .writing-list a {
-      color: inherit;
-      text-decoration: none;
-    }
-    .writing-list a:hover {
-      text-decoration: underline;
-    }
-    .stats-section {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 0;
-      text-align: center;
-    }
-    .stats-section div {
-      flex: 1;
-    }
-    /* Estilo para la flecha de retroceso */
+    /* Flecha para volver arriba */
     .back-to-top {
       position: fixed;
       right: 20px;
@@ -141,30 +91,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    @media (max-width: 768px) {
-      .intro-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-      }
-      .main-image {
-        width: 100%;
-        height: auto;
-      }
-      .project {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-      .project img {
-        width: 100%;
-        max-width: 300px;
-      }
-      .stats-section {
-        flex-direction: column;
-        gap: 10px;
-      }
     }
   </style>
 </head>
@@ -195,24 +121,24 @@
   </section>
 
   <!-- Sección Projects -->
-<section class="project-section">
-  <h2>Projects</h2>
-  <div class="project">
-    <img src="img/map.png" alt="San Telmo Market">
-    <div>
-      <p class="project-title"><a href="https://www.futures-in-maps.com/san-telmo/en" target="_blank">San Telmo Market</a></p>
-      <p>A Design Fiction work that explores the City of Buenos Aires's potential future and gastronomy through the evolution of one of its iconic markets, the San Telmo Market. It shows the market's different stalls, shops, and services influenced by long periods of extreme heat and droughts. A work led by Nicolás Bronzina in collaboration with Fabien Girardin and Israel Viadest at Girardin & Nova. Futures in Maps is an atlas that tells stories about a world we all might experience soon.</p>
+  <section class="project-section">
+    <h2>Projects</h2>
+    <div class="project">
+      <img src="img/map.png" alt="San Telmo Market">
+      <div>
+        <p class="project-title"><a href="https://www.futures-in-maps.com/san-telmo/en" target="_blank">San Telmo Market</a></p>
+        <p>A Design Fiction work that explores the City of Buenos Aires's potential future and gastronomy through the evolution of one of its iconic markets, the San Telmo Market. It shows the market's different stalls, shops, and services influenced by long periods of extreme heat and droughts. A work led by Nicolás Bronzina in collaboration with Fabien Girardin and Israel Viadest at Girardin & Nova. Futures in Maps is an atlas that tells stories about a world we all might experience soon.</p>
+      </div>
     </div>
-  </div>
-  <div class="project">
-    <img src="img/OFF.png" alt="OFFicial: Welcome">
-    <div>
-      <p class="project-title"><a href="/Official.html" target="_blank">OFFicial: Welcome</a></p>
-      <p>"User Experience Design as a Tool for Social Intervention in the Refugee Crisis” Final Master’s Thesis based on Futures Design and Strategic Foresight.</p>
+    <div class="project">
+      <img src="img/OFF.png" alt="OFFicial: Welcome">
+      <div>
+        <p class="project-title"><a href="/Official.html" target="_blank">OFFicial: Welcome</a></p>
+        <p>"User Experience Design as a Tool for Social Intervention in the Refugee Crisis” Final Master’s Thesis based on Futures Design and Strategic Foresight.</p>
+      </div>
     </div>
-  </div>
-  <hr>
-</section>
+    <hr>
+  </section>
 
   <!-- Sección Writing -->
   <section class="writing-section">
@@ -258,14 +184,9 @@
   <!-- Sección de Estadísticas del Servidor, Pronóstico y Redes Sociales -->
   <section class="stats-section">
     <div>
-      <h2>Server Stats</h2>
-      <p>Location: Madrid</p>
-      <p id="time-info">Time: Loading...</p>
-      <p id="battery-info">Battery status: Loading...</p>
-    </div>
-    <div>
-      <h2>Forecast</h2>
-      <p id="weather-info">Loading...</p>
+      <h2>Battery Status</h2>
+      <p id="battery-info">Loading battery status...</p>
+      <p id="battery-note">Content will be updated until the battery runs out. Please charge the device to refresh the content.</p>
     </div>
     <div>
       <h2>Contact</h2>
@@ -278,45 +199,27 @@
     &#8593;
   </button>
 
-  <!-- Script de Geolocalización, Hora y Pronóstico -->
+  <!-- Script de Estado de la Batería -->
   <script>
-    function updateTime() {
-      const now = new Date();
-      document.getElementById('time-info').textContent = now.toLocaleTimeString();
-    }
-    setInterval(updateTime, 1000); // Actualiza la hora cada segundo
-
     async function updateBatteryStatus() {
       if (navigator.getBattery) {
         const battery = await navigator.getBattery();
         const level = Math.round(battery.level * 100);
-        document.getElementById('battery-info').textContent = `${level}%, ${battery.charging ? 'charging' : 'not charging'}`;
+        document.getElementById('battery-info').textContent = `Battery level: ${level}%, ${battery.charging ? 'Charging' : 'Not charging'}`;
       } else {
         document.getElementById('battery-info').textContent = 'Battery status not available';
       }
     }
     updateBatteryStatus();
-    setInterval(updateBatteryStatus, 1000); // Actualiza el estado de la batería cada segundo
-
-    async function fetchWeather() {
-      try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=4f8273341d68d1acdccba1c7b45c5e54&units=metric`);
-        const data = await response.json();
-        const temperature = data.main.temp;
-        const weatherDescription = data.weather[0].description;
-        document.getElementById('weather-info').textContent = `${temperature}°C, ${weatherDescription}`;
-      } catch (error) {
-        document.getElementById('weather-info').textContent = 'Weather data not available';
-      }
-    }
-    fetchWeather();
+    setInterval(updateBatteryStatus, 60000); // Update every minute
 
     function scrollToTop() {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth' // Desplazamiento suave
+        behavior: 'smooth'
       });
     }
   </script>
 </body>
 </html>
+
