@@ -26,7 +26,7 @@
 
         .navbar {
             background-color: #1B1C20;
-            padding: 20px 40px;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -41,8 +41,8 @@
             color: #FB6C2C;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1rem;
-            margin-left: 20px;
+            font-size: 0.9rem;
+            margin-left: 15px;
             transition: color 0.3s;
             cursor: pointer;
         }
@@ -52,11 +52,11 @@
         }
 
         .content {
-            padding-top: 100px;
+            padding-top: 80px;
         }
 
         .section {
-            padding: 60px 40px;
+            padding: 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
             display: none;
@@ -68,22 +68,22 @@
 
         h2 {
             color: #FB6C2C;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 15px;
             text-align: center;
         }
 
         h3 {
             color: #FB6C2C;
-            font-size: 1.8rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
             text-align: center;
         }
 
         p {
             color: #C4C4C4;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             line-height: 1.8;
         }
 
@@ -91,28 +91,30 @@
             color: #C4C4C4;
             list-style-type: disc;
             padding-left: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .cta {
-            margin-top: 20px;
+            margin-top: 15px;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .cta-button {
             background-color: #FB6C2C;
             color: #1B1C20;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s;
+            font-size: 0.9rem;
         }
 
         .cta-button:hover {
@@ -121,52 +123,53 @@
         }
 
         .testimonials, .partners {
-            margin-top: 40px;
+            margin-top: 30px;
             text-align: center;
         }
 
         .testimonial img {
             width: 100%;
-            max-width: 300px;
+            max-width: 250px;
             height: auto;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             border-radius: 8px;
         }
 
         blockquote {
             font-style: italic;
             color: #C4C4C4;
-            margin: 10px 0;
-            padding: 0 20px;
+            margin: 5px 0;
+            padding: 0 10px;
             text-align: center;
         }
 
         .video-container {
-            margin-top: 40px;
+            margin-top: 30px;
             text-align: center;
         }
 
         .image-container {
             text-align: center;
-            margin: 40px 0;
+            margin: 30px 0;
         }
 
         .image-container img {
             width: 100%;
-            max-width: 900px;
+            max-width: 800px;
             height: auto;
         }
 
         .mobile-images {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .mobile-images img {
             width: 100%;
-            max-width: 200px;
+            max-width: 150px;
             height: auto;
             border-radius: 10px;
         }
@@ -175,15 +178,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .partner-logos img {
-            max-width: 150px;
+            max-width: 100px;
             height: auto;
-            margin: 10px;
+            margin: 5px;
             transition: transform 0.3s;
         }
 
@@ -194,10 +197,42 @@
         .footer {
             background-color: #16171B;
             text-align: center;
-            padding: 30px 40px;
+            padding: 20px 20px;
             color: #C4C4C4;
-            font-size: 0.9rem;
-            border-top: 4px solid #FB6C2C;
+            font-size: 0.8rem;
+            border-top: 3px solid #FB6C2C;
+        }
+
+        @media (min-width: 768px) {
+            .navbar {
+                padding: 20px 40px;
+            }
+
+            .navbar a {
+                font-size: 1rem;
+                margin-left: 20px;
+            }
+
+            .content {
+                padding-top: 100px;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            h3 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .partner-logos img {
+                max-width: 150px;
+            }
         }
     </style>
 </head>
