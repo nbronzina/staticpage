@@ -99,6 +99,15 @@
       flex: 1;
       text-align: center;
     }
+    /* Media Queries for Mobile Optimization */
+    @media (max-width: 768px) {
+      .stats-section {
+        flex-direction: column; /* Stack items vertically on mobile */
+      }
+      .stats-column {
+        margin-bottom: 15px; /* Add spacing between stacked items */
+      }
+    }
   </style>
 </head>
 
