@@ -168,6 +168,30 @@
         gap: 10px;
       }
     }
+    .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Espacio alrededor de los elementos */
+  margin: 20px 0; /* Margen vertical para separar de otras secciones */
+}
+
+.columna {
+  flex: 1; /* Permite que cada columna ocupe el mismo espacio */
+  max-width: 300px; /* Máximo ancho para columnas en pantallas grandes */
+  padding: 10px; /* Espacio interno */
+}
+
+/* Estilos para que las columnas se vean bien en móvil */
+@media (max-width: 768px) {
+  .contenedor {
+    flex-direction: column; /* Apilar columnas en móvil */
+    align-items: center; /* Centrar contenido en móvil */
+  }
+  .columna {
+    max-width: none; /* Eliminar el ancho máximo en móviles */
+    width: 100%; /* Columna ocupa todo el ancho en móvil */
+  }
+}
   </style>
 </head>
 
@@ -194,6 +218,52 @@
   </div>
   <hr>
 </section>
+  
+  <!-- Sección About -->
+<section id="about">
+  <div class="contenedor">
+    <div class="columna">
+      <p style="text-align: center;"><b>Experience</b></p>
+      <p style="text-align: center;"><u>Heated</u></p>
+      <p style="text-align: center;">Creative Alchemist & Scenario Weaver | Jun 2024 - present day</p>
+      <p style="text-align: center;"><u>BPP Analytics and Design</u></p>
+      <p style="text-align: center;">Managing Partner | Jan 2024 - present day</p>
+      <p style="text-align: center;"><u>Girardin & Nova</u></p>
+      <p style="text-align: center;">Design Researcher | Jan 2024 - present day</p>
+      <p style="text-align: center;"><u>Near Future Laboratory</u></p>
+      <p style="text-align: center;">Design Researcher | Feb 2023 - Jan 2024</p>
+      <br>
+      <p style="text-align: center;"><b>Certificates</b></p>
+      <p style="text-align: center;"><u>Institute for the Future</u></p>
+      <p style="text-align: center;">Future Thinking & Forecasting Skills</p>
+      <p style="text-align: center;"><u>IBM</u></p>
+      <p style="text-align: center;">Big Data Foundations - Level 1</p>
+      <p style="text-align: center;"><u>Mr Marcel School</u></p>
+      <p style="text-align: center;">UX Writing/Content Design</p>
+      <p style="text-align: center;"><u>Be Potencial</u></p>
+      <p style="text-align: center;">Public Speaking & Storytelling</p>
+    </div>
+    <div class="columna">
+      <p style="text-align: center;"><b>Education</b></p>
+      <p style="text-align: center;"><u>UDIT</u></p>
+      <p style="text-align: center;">Master's Degree in User Experience for the Design of Digital Products and Services</p>
+      <p style="text-align: center;"><u>Universidad del Salvador</u></p>
+      <p style="text-align: center;">Bachelor Degree in Sociology</p>
+      <br>
+      <p style="text-align: center;"><b>Key Skills</b></p>
+      <p style="text-align: center;">Critical Thinking</p>
+      <p style="text-align: center;">Explorative Research</p>
+      <p style="text-align: center;">Survey Research</p>
+      <p style="text-align: center;">Interviewing</p>
+      <p style="text-align: center;">Trends & "Weak Signals" Analysis</p>
+      <p style="text-align: center;">Storytelling</p>
+      <p style="text-align: center;">Diegetic Artifacts & Scenario Ideation</p>
+      <p style="text-align: center;">Generative Intelligence</p>
+    </div>
+  </div>
+  <hr>
+</section>
+
 
   <!-- Sección Projects -->
   <section class="project-section">
