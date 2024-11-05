@@ -146,14 +146,19 @@
             margin-top: 30px;
             text-align: center;
         }
+        
+        .testimonial-content {
+    display: flex;
+    align-items: center; /* Alinea verticalmente la imagen y la cita */
+    gap: 20px; /* Espacio entre la imagen y la cita */
+}
 
-        .testimonial img {
-            width: 100%;
-            max-width: 350px;
-            height: auto;
-            margin-bottom: 10px;
-            border-radius: 8px;
-        }
+      .testimonial img {
+    width: 100%;
+    max-width: 150px; /* Ajusta el tamaño de la imagen según lo necesites */
+    height: auto;
+    border-radius: 8px;
+}
 
         blockquote {
             font-style: italic;
@@ -292,10 +297,12 @@
             </div>
             <div class="testimonials">
                 <h3>What People Say</h3>
-                <div class="testimonial">
-                    <img src="img/Misha.png" alt="Misha Portrait">
-                    <blockquote>"Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive." - Misha Al Numan (62), Chemical Engineer Refugee</blockquote>
-                </div>
+               <div class="testimonial">
+    <div class="testimonial-content">
+        <img src="img/Misha.png" alt="Misha Portrait">
+        <blockquote>"Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive." - Misha Al Numan (62), Chemical Engineer Refugee</blockquote>
+    </div>
+</div>
             </div>
             <div class="partners">
                 <h3>Our Partners</h3>
