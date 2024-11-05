@@ -352,7 +352,21 @@
     margin-bottom: 10px;
     font-style: italic;
 }
+@media (min-width: 768px) {
+    .gallery-container img {
+        max-width: 600px; /* Increase the maximum width for the PackWelcome image on desktop */
+        transition: transform 0.3s;
+    }
 
+    .gallery-container img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Reduce space between sections on desktop */
+    .section {
+        padding: 20px 20px; /* Reduce the padding for sections on desktop */
+    }
+}
     </style>
 </head>
 <body>
