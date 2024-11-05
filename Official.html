@@ -430,6 +430,61 @@
         height: auto;
     }
 }
+        .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FB6C2C;
+    color: #1B1C20;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 767px) {
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+.look-feel-image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.look-feel-image {
+    width: 100%;
+    max-width: 600px; /* Adjust max width for desktop */
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners for a smoother look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better visibility */
+    transition: transform 0.3s;
+}
+
+.look-feel-image:hover {
+    transform: scale(1.05); /* Optional: Zoom effect on hover */
+}
+
+@media (max-width: 767px) {
+    .look-feel-image {
+        max-width: 100%; /* Make the image take full width on mobile */
+    }
+}
     </style>
 </head>
 <body>
@@ -438,7 +493,7 @@
             <a onclick="showPage('home')"><img src="img/LogoOFF.png" alt="OFFicial Logo" class="rotating-logo"></a>
         </div>
         <div class="menu">
-            <a onclick="showPage('purpose')">Purpose</a>
+            <a onclick="showPage('purpose')">OFFicial</a>
             <a onclick="showPage('team')">Team</a>
             <a onclick="showPage('welcome')">Welcome</a>
             <a onclick="showPage('contact')">Contact</a>
@@ -457,7 +512,7 @@
             </div>
             <!-- Welcome Product Image Gallery Section -->
             <div class="welcome-gallery">
-                <h3>Our Product</h3>
+                <h3>WELCOME</h3>
                 <div class="gallery-container">
                     <img src="img/PackWelcome.jpg" alt="Welcome Product Image 1" class="gallery-image">
                 </div>
@@ -535,7 +590,13 @@
                 <li><strong>7.</strong> If we believe something is possible, we strive to change it and calmly accept what we cannot.</li>
                 <li><strong>8.</strong> What is important to our users is also important to our organization.</li>
             </ul>
-            <blockquote>"Why do you always choose battles you cannot win? - Because they are the ones worth fighting for."</blockquote>
+            <h3>Look & Feel</h3>
+            <p>The development of the graphic elements that make up Welcome is based on two fundamental guidelines: the design principles by which OFFicial operates and the work developed by Syrian graphic designer and refugee Yara Said.</p>
+            <p>In 2015, the civil war in Syria, the situation of extreme poverty in Niger, and the political persecution in Afghanistan and Iraq led to one of the largest migration crises in history. As a result, the Rio 2016 Olympic Games joined Amnesty International's Refugee Nation initiative. They registered a team of 10 refugee athletes as a symbolic gesture to make the crisis visible. This initiative has been continued for the Tokyo 2020 Olympics with a team of 29 athletes.</p>
+            <p>Although not officially recognized by the International Olympic Committee, as part of this visibility campaign, a team of creatives developed several distinctive graphic elements, the most important of which is the Refugee Nation flag.</p>
+      <div class="look-feel-image-container">
+    <img src="img/look-feel.jpg" alt="Look and Feel Graphic" class="look-feel-image">
+</div>
         </section>
 
         <!-- Welcome Section -->
@@ -590,7 +651,7 @@
         <section id="team" class="section">
             <h2>Our Team</h2>
             <div class="team-member">
-                <h3>Jorge Gil</h3>
+                <h3>Jorge Gil Rodríguez</h3>
                 <p><strong>Lead UI Designer / Interaction Designer Jr.</strong></p>
                 <p>Graduated in Audiovisual Communication. He has developed his career in diverse fields, such as audiovisual production, graphic design, and DIY event curation and management, with social innovation as a common thread.</p>
                 <blockquote>
@@ -598,7 +659,7 @@
                 </blockquote>
             </div>
             <div class="team-member">
-                <h3>Eider Fernández Árcos</h3>
+                <h3>Eider Fernández Arcos</h3>
                 <p><strong>Lead Product Designer / Researcher Jr.</strong></p>
                 <p>Graduated in Product Design from UDIT, she complements her education with a Master’s in User Experience Design for Products and Services from the same institution. Currently, she focuses on creating and managing communities, organizing events and meetups to attract opportunities, and establishing relationships with key players in the design sector.</p>
                 <blockquote>
@@ -619,15 +680,16 @@
         <section id="contact" class="section">
             <h2>Contact Us</h2>
             <p>Interested in collaborating or learning more? Reach out, and let's make a difference together.</p>
-            <p>This website and its artifact tell a story about a future we might all experience soon, regardless of whether you live in Spain. It is part of the Final Master’s Thesis based on Futures Design and Strategic Foresight between Nicolás Bronzina, Eider Fernández Árcos, and Jorge Gil called "User Experience Design as a Tool for Social Intervention in the Refugee Crisis.”</p>
+            <p>This website and its artifact tell a story about a future we might all experience soon, regardless of whether you live in Spain. It is part of the Final Master’s Thesis based on Futures Design and Strategic Foresight between Nicolás Bronzina, Eider Fernández Arcos, and Jorge Gil Rodríguez called "User Experience Design as a Tool for Social Intervention in the Refugee Crisis.”</p>
             <p>We used an approach called Design Fiction to envision, design, and move toward desirable futures rather than passively accepting what is and 'will be' the so-called refugee crisis.</p>
             <p>Please contact <strong><a href="https://www.nicolasbronzina.com" target="_blank" style="color: #FB6C2C; text-decoration: none;">Nicolás Bronzina</a></strong> for further information about this project.</p>
         </section>
     </div>
 
     <footer class="footer">
-        <p>OFFicial © 2030. All rights reserved.</p>
+        <blockquote>"Why do you always choose battles you cannot win? - Because they are the ones worth fighting for."</blockquote>
         <p>Dedicated to those who have to leave their homes in search of a better future.</p>
+        <p>OFFicial © 2030 | All rights reserved.</p>
     </footer>
 
     <script>
@@ -640,5 +702,25 @@
             }
         }
     </script>
+        <button class="back-to-top" onclick="scrollToTop()">↑</button>
+    <script>
+    // Show or hide the "Back to Top" button
+    window.addEventListener("scroll", function() {
+        const button = document.querySelector(".back-to-top");
+        if (window.scrollY > 300) {
+            button.classList.add("show");
+        } else {
+            button.classList.remove("show");
+        }
+    });
+
+    // Scroll to the top of the page when the button is clicked
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+</script>
 </body>
 </html>
