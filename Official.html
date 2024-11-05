@@ -430,6 +430,39 @@
         height: auto;
     }
 }
+        .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FB6C2C;
+    color: #1B1C20;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 767px) {
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -640,5 +673,26 @@
             }
         }
     </script>
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+    <script>
+    // Show or hide the "Back to Top" button
+    window.addEventListener("scroll", function() {
+        const button = document.querySelector(".back-to-top");
+        if (window.scrollY > 300) {
+            button.classList.add("show");
+        } else {
+            button.classList.remove("show");
+        }
+    });
+
+    // Scroll to the top of the page when the button is clicked
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+</script>
+
 </body>
 </html>
