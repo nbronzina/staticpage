@@ -7,7 +7,7 @@
     <title>OFFicial Consultancy</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
     <style>
-        /* Estilos generales */
+        /* General Styles */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,8 +20,6 @@
             color: #EAEAEA;
             font-size: 16px;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
             overflow-x: hidden;
         }
 
@@ -84,32 +82,28 @@
             display: block;
         }
 
-        h2 {
+        h2, h3 {
             color: #FB6C2C;
-            font-size: 2rem;
-            margin-bottom: 15px;
             text-align: center;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 2rem;
         }
 
         h3 {
-            color: #FB6C2C;
             font-size: 1.5rem;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            text-align: center;
         }
 
-        p {
+        p, ul {
             color: #C4C4C4;
             margin-bottom: 15px;
-            line-height: 1.8;
         }
 
         ul {
-            color: #C4C4C4;
             list-style-type: disc;
             padding-left: 20px;
-            margin-bottom: 15px;
         }
 
         li {
@@ -140,39 +134,6 @@
             color: #1B1C20;
         }
 
-        .testimonials, .partners {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .testimonial-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-direction: column;
-        }
-
-        @media (min-width: 768px) {
-            .testimonial-content {
-                flex-direction: row;
-            }
-        }
-
-        .testimonial img {
-            width: 100%;
-            max-width: 150px;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        blockquote {
-            font-style: italic;
-            color: #C4C4C4;
-            margin: 5px 0;
-            padding: 0 10px;
-            text-align: center;
-        }
-
         .video-container {
             margin-top: 30px;
             text-align: center;
@@ -190,20 +151,22 @@
             height: 100%;
         }
 
-        .image-container {
+        .image-container, .look-feel-image-container {
             text-align: center;
             margin: 30px 0;
         }
 
-        .image-container img {
+        .image-container img, .look-feel-image {
             width: 100%;
             max-width: 800px;
             height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
         }
 
-        .welcome-gallery {
-            text-align: center;
-            margin-top: 30px;
+        .look-feel-image:hover, .gallery-image:hover {
+            transform: scale(1.05);
         }
 
         .gallery-container {
@@ -216,11 +179,6 @@
         .gallery-image {
             max-width: 400px;
             border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .gallery-image:hover {
-            transform: scale(1.05);
         }
 
         .partner-logos {
@@ -246,7 +204,7 @@
         .footer {
             background-color: #16171B;
             text-align: center;
-            padding: 20px 20px;
+            padding: 20px;
             color: #C4C4C4;
             font-size: 0.8rem;
             border-top: 3px solid #FB6C2C;
@@ -257,92 +215,29 @@
                 padding: 10px;
             }
 
-            .partner-logos img {
+            .partner-logos img, .cear-logo {
                 max-width: 120px;
-                height: auto;
-            }
-
-            .cear-logo-container {
-                text-align: center;
-                margin-top: 10px;
-            }
-
-            .cear-logo {
-                max-width: 120px;
-                height: auto;
             }
         }
 
-        /* Optimización Responsiva para Escritorio (a partir de 768px) */
         @media (min-width: 768px) {
             .navbar {
                 padding: 20px 40px;
             }
 
-            .partner-logos {
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-            }
-
             .partner-logos img {
                 max-width: 150px;
-                height: auto;
-            }
-
-            .cear-logo-container {
-                text-align: center;
-                margin-top: 20px;
-            }
-
-            .cear-logo {
-                max-width: 150px;
-                height: auto;
-            }
-
-            .image-container img {
-                max-width: 600px;
-                height: auto;
             }
 
             .gallery-container {
-                display: flex;
                 justify-content: space-between;
                 gap: 20px;
-                flex-wrap: nowrap;
             }
 
-            .welcome-product-image {
-                max-width: 300px;
-            }
-
-            .section {
-                min-height: 70vh;
+            .look-feel-image {
+                max-width: 600px;
             }
         }
-        .look-feel-image-container {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.look-feel-image {
-    width: 100%;
-    max-width: 600px; /* Adjust max width for desktop */
-    height: auto;
-    border-radius: 8px; /* Optional: Rounded corners for a smoother look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better visibility */
-    transition: transform 0.3s;
-}
-
-.look-feel-image:hover {
-    transform: scale(1.05); /* Optional: Zoom effect on hover */
-}
-
-@media (max-width: 767px) {
-    .look-feel-image {
-        max-width: 100%; /* Make the image take full width on mobile */
-    }
-}
     </style>
 </head>
 <body>
@@ -360,80 +255,61 @@
 
     <div class="content">
         <!-- Home Section -->
-     <section id="home" class="section active">
-    <div class="image-container">
-        <img src="img/OFFICIAL.png" alt="OFFicial Consultancy">
-    </div>
-    <p>Committed to leveraging design and technology to empower displaced communities, shaping a world where everyone has the opportunity to thrive with dignity.</p>
-    
-    <!-- Video Section -->
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/Ih194mji50A" frameborder="0" allowfullscreen></iframe>
-    </div>
-    
-    <!-- Our Product Section -->
-    <div class="welcome-gallery">
-        <h3>Our Product</h3>
-        <div class="gallery-container">
-            <img src="img/PackWelcome.jpg" alt="Welcome Product Image 1" class="gallery-image">
-        </div>
-    </div>
-    
-    <!-- Needs and Goals Section -->
-    <section class="needs-goals">
-        <div class="user-goals">
-            <h4>Refugees</h4>
-            <p><strong>“As a refugee, I WANT to complete the asylum application process successfully so I can live a dignified life in my new country, with the help of WELCOME.”</strong></p>
-            <p><strong>“As a refugee, I WANT to fully integrate into society so I can be accepted as a full citizen through the support of WELCOME.”</strong></p>
-            <p><strong>“As a refugee, I WANT to secure housing and meaningful employment so I can ensure a stable future for my family, facilitated by WELCOME.”</strong></p>
-        </div>
-
-        <div class="user-goals">
-            <h4>NGOs</h4>
-            <p><strong>“As an NGO, I WANT to provide refugees with a structured welcome and essential, firsthand information so they can integrate smoothly into the community, with WELCOME’s guidance.”</strong></p>
-            <p><strong>“As an NGO, I WANT to assist refugees consistently, so the asylum evaluation process becomes more efficient, using WELCOME as a tool.”</strong></p>
-        </div>
-
-        <div class="user-goals">
-            <h4>State</h4>
-            <p><strong>“As the State, I WANT to collect information about asylum seekers, so the application process is fairer and more transparent, supported by WELCOME.”</strong></p>
-            <p><strong>“As the State, I WANT to immediately scan and authenticate asylum seekers, so their identification can be verified quickly and easily, through WELCOME.”</strong></p>
-        </div>
-    </section>
-
-    <!-- What People Say Section -->
-    <div class="testimonials">
-        <h3>What People Say</h3>
-        <img src="img/Refugees.png" alt="Refugees Portrait" class="refugee-image">
-        <div class="testimonial">
-            <div class="testimonial-content">
-                <blockquote>"Through Welcome, I found a lifeline in a sea of uncertainty. It’s more than a tool; it’s a guide that empowers and restores a sense of control in the most vulnerable moments." - Leila Hussein (35), Human Rights Advocate and Refugee</blockquote>
-                <blockquote>"Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive." - Misha Al Numan (62), Chemical Engineer Refugee</blockquote>
-                <blockquote>"For many of us, starting over means facing countless barriers. Welcome has given me the courage to navigate a complex system with confidence, making integration feel achievable rather than overwhelming." - Ahmed Khalil (29), Former Teacher and Asylum Seeker</blockquote>
+        <section id="home" class="section active">
+            <div class="image-container">
+                <img src="img/OFFICIAL.png" alt="OFFicial Consultancy">
             </div>
-        </div>
-    </div>
-</section>
+            <p>OFFicial Consultancy is dedicated to leveraging design and technology to empower displaced communities. We envision a world where everyone has the opportunity to thrive with dignity, regardless of the hardships they have faced.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Ih194mji50A" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="welcome-gallery">
+                <h3>Our Product</h3>
+                <div class="gallery-container">
+                    <img src="img/PackWelcome.jpg" alt="Welcome Product Image 1" class="gallery-image">
+                </div>
+            </div>
+            <section class="needs-goals">
+                <h3>Needs and Goals</h3>
+                <div class="user-goals">
+                    <h4>Refugees</h4>
+                    <p><strong>“As a refugee, I WANT to complete the asylum application process successfully so I can live a dignified life in my new country, with the help of WELCOME.”</strong></p>
+                    <p><strong>“As a refugee, I WANT to fully integrate into society so I can be accepted as a full citizen through the support of WELCOME.”</strong></p>
+                    <p><strong>“As a refugee, I WANT to secure housing and meaningful employment so I can ensure a stable future for my family, facilitated by WELCOME.”</strong></p>
+                </div>
+                <div class="user-goals">
+                    <h4>NGOs</h4>
+                    <p><strong>“As an NGO, I WANT to provide refugees with a structured welcome and essential, firsthand information so they can integrate smoothly into the community, with WELCOME’s guidance.”</strong></p>
+                    <p><strong>“As an NGO, I WANT to assist refugees consistently, so the asylum evaluation process becomes more efficient, using WELCOME as a tool.”</strong></p>
+                </div>
+                <div class="user-goals">
+                    <h4>State</h4>
+                    <p><strong>“As the State, I WANT to collect information about asylum seekers, so the application process is fairer and more transparent, supported by WELCOME.”</strong></p>
+                    <p><strong>“As the State, I WANT to immediately scan and authenticate asylum seekers, so their identification can be verified quickly and easily, through WELCOME.”</strong></p>
+                </div>
+            </section>
+            <div class="testimonials">
+                <h3>What People Say</h3>
+                <img src="img/Refugees.png" alt="Refugees Portrait" class="refugee-image">
+                <div class="testimonial-content">
+                    <blockquote>"Through Welcome, I found a lifeline in a sea of uncertainty. It’s more than a tool; it’s a guide that empowers and restores a sense of control in the most vulnerable moments." - Leila Hussein (35), Human Rights Advocate and Refugee</blockquote>
+                    <blockquote>"Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive." - Misha Al Numan (62), Chemical Engineer Refugee</blockquote>
+                    <blockquote>"For many of us, starting over means facing countless barriers. Welcome has given me the courage to navigate a complex system with confidence, making integration feel achievable rather than overwhelming." - Ahmed Khalil (29), Former Teacher and Asylum Seeker</blockquote>
+                </div>
+            </div>
+        </section>
 
         <!-- Purpose Section -->
         <section id="purpose" class="section">
             <h2>Our Purpose</h2>
-            <p>At OFFicial, we are a vital ally for people who are forced to leave behind their homes, lives, and everything they know and face precarious conditions upon arriving in a new country. In an interconnected and technologically advanced world, our mission is to support and empower these individuals who are constantly pursuing a dignified and secure life.</p>
-            <h3>What do we do?</h3>
-            <p>We use innovation and prospective design to create future-oriented artifacts that promote collective reflection and drive social change. We transform refugees' complex realities, projecting effective solutions for the near future. Our approach focuses on:</p>
-            <ul>
-                <li><strong>Simplification:</strong> We significantly reduce the processing times for asylum applications through deeply empathetic and human interactions.</li>
-                <li><strong>Automation:</strong> We alleviate the administrative burden on institutions and streamline processes by integrating advanced intelligent technologies.</li>
-                <li><strong>Facilitating Integration:</strong> We build bridges of support that enable agile and meaningful integration into host communities, providing services that interpret and assist refugees at every step.</li>
-                <li><strong>Building Trust:</strong> In a constantly changing global environment, we offer clarity and eliminate uncertainty for refugees, ensuring a secure and understandable experience.</li>
-            </ul>
+            <p>At OFFicial, we believe in being a vital ally for people forced to leave behind their homes, lives, and everything they know, often facing precarious conditions upon arriving in a new country. We understand that the journey to stability can be filled with uncertainty, and our mission is to make that journey smoother and more predictable.</p>
+            <h3>What Do We Do?</h3>
+            <p>We use innovation and prospective design to create future-oriented artifacts that promote collective reflection and drive social change. Our work focuses on transforming refugees' complex realities into effective solutions for the near future.</p>
             <h3>Look & Feel</h3>
-            <p>The development of the graphic elements that make up Welcome is based on two fundamental guidelines: the design principles by which OFFicial operates and the work developed by Syrian graphic designer and refugee Yara Said.</p>
-            <p>In 2015, the civil war in Syria, the situation of extreme poverty in Niger, and the political persecution in Afghanistan and Iraq led to one of the largest migration crises in history. As a result, the Rio 2016 Olympic Games joined Amnesty International's Refugee Nation initiative. They registered a team of 10 refugee athletes as a symbolic gesture to make the crisis visible. This initiative has been continued for the Tokyo 2020 Olympics with a team of 29 athletes.</p>
-            <p>Although not officially recognized by the International Olympic Committee, as part of this visibility campaign, a team of creatives developed several distinctive graphic elements, the most important of which is the Refugee Nation flag.</p>
-      <div class="look-feel-image-container">
-    <img src="img/Flag.jpg" alt="Look and Feel Graphic" class="look-feel-image">
-</div>
+            <p>The development of the graphic elements that make up Welcome is based on two fundamental guidelines: the design principles by which OFFicial operates and the work developed by Syrian graphic designer and refugee Yara Said. In 2015, one of the largest migration crises in history unfolded, with the civil war in Syria, extreme poverty in Niger, and political persecution in Afghanistan and Iraq.</p>
+            <div class="look-feel-image-container">
+                <img src="img/Flag.jpg" alt="Look and Feel Graphic" class="look-feel-image">
+            </div>
         </section>
 
         <!-- Team Section -->
@@ -442,91 +318,64 @@
             <div class="team-member">
                 <h3>Jorge Gil</h3>
                 <p><strong>Lead UI Designer / Interaction Designer Jr.</strong></p>
-                <p>Graduated in Audiovisual Communication. He has developed his career in diverse fields, such as audiovisual production, graphic design, and DIY event curation and management, with social innovation as a common thread.</p>
-                <blockquote>"Deeply convinced that design and technology should serve communication between people, and not the other way around, and with a life trajectory in community organizations, we create Welcome to impact, facilitate, and streamline the management of situations of vulnerability, particularly in the asylum application process for refugees by the principles of the Geneva Convention."</blockquote>
+                <p>Graduated in Audiovisual Communication, Jorge has developed his career in diverse fields such as audiovisual production, graphic design, and DIY event curation and management, with social innovation as a common thread. He believes that design and technology should always serve to improve communication between people.</p>
             </div>
             <div class="team-member">
                 <h3>Eider Fernández Arcos</h3>
                 <p><strong>Lead Product Designer / Researcher Jr.</strong></p>
-                <p>Graduated in Product Design from UDIT, she complements her education with a Master’s in User Experience Design for Products and Services from the same institution. Currently, she focuses on creating and managing communities, organizing events and meetups to attract opportunities, and establishing relationships with key players in the design sector.</p>
-                <blockquote>"I believe in design as a tool to move forward, and through my work, I feel obligated to respond to any stimulus that arises from observing situations or needs, using the natural user experience-based design process. I believe designers have that superpower and that creativity and empathy are our greatest allies in addressing it."</blockquote>
+                <p>With a degree in Product Design and a Master’s in User Experience Design for Products and Services, Eider is focused on creating and managing design communities. She organizes events and meetups to attract opportunities and establish relationships with key players in the design sector.</p>
             </div>
             <div class="team-member">
                 <h3>Nicolás Bronzina</h3>
                 <p><strong>Lead Researcher / UI Designer Jr.</strong></p>
-                <p>As a Design Researcher, he focuses on enriching and advancing the speculative aspects of design through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas.</p>
-                <blockquote>"Due to my personal interest in social issues, particularly those affecting vulnerable populations, and my academic background as a Sociologist, the personal purpose of this project is to understand, from my perspective as a foreigner in Spain, the life stories, needs, and challenges of refugees in Spain. I seek to empathize with them and find possible solutions from my place in society and as part of the OFFicial team."</blockquote>
+                <p>Nicolás is a Sociologist and Design Researcher dedicated to understanding the life stories, needs, and challenges of refugees in Spain. His work focuses on translating complex social issues into tangible, impactful design solutions, using design as a powerful tool for social intervention.</p>
             </div>
         </section>
-        <!-- WELCOME Section -->
+
+        <!-- Welcome Section -->
         <section id="welcome" class="section">
-    <div class="image-container">
-        <img src="img/OFF2.png" alt="Welcome Logo">
-    </div>
-    <p>OFFicial's flagship product is designed to support refugees through every step of their journey in a new country. Powered by advanced Artificial Intelligence, Welcome simplifies, automates, and personalizes the asylum process and integration into the community.</p>
-
-    <!-- OFFicial App Section -->
-    <h3>OFFicial App</h3>
-    <p>The OFFicial App provides an all-in-one, easy-to-use tool for managing asylum seekers' integration and documentation process. Key features include:</p>
-    <ul>
-        <li><strong>Welcome:</strong> Quick onboarding with personal profile setup through voice commands.</li>
-        <li><strong>Virtual Documentation Wallet:</strong> Stores and organizes important documents for easy access and management.</li>
-        <li><strong>Deadline Calendar:</strong> Tracks important dates with automatic reminders for document submission.</li>
-        <li><strong>Access to Your Lawyer:</strong> Virtual legal support with real-time assistance.</li>
-        <li><strong>Available Resources Directory:</strong> Comprehensive guide to accessible services and support.</li>
-        <li><strong>Local Glossary:</strong> Linguistic resource with useful local terms and phrases.</li>
-        <li><strong>Location and Maps Access:</strong> Geolocated information and detailed city maps.</li>
-        <li><strong>Augmented Reality (AR):</strong> Advanced feature to intuitively help users find resources within the app interface.</li>
-        <li><strong>Anonymous Data Collection:</strong> Anonymous data contributions to the state while fully respecting privacy.</li>
-    </ul>
-
-    <!-- Mobile Images Section -->
-    <div class="mobile-images">
-        <img src="img/Follow-up2.png" alt="Mobile Device 1">
-        <img src="img/Loading.png" alt="Mobile Device 2">
-        <img src="img/Privacy.png" alt="Mobile Device 3">
-    </div>
-
-    <!-- Additional Information Section -->
-    <p>As a conversational assistant, the weight of the graphical interface is drastically reduced. Today, users are used to interacting with digital services through natural interfaces, but visual output ensures that the message has been received correctly.</p>
-    <p>In addition, it is necessary to visually communicate certain states of the assistant, especially when it is unable to communicate orally, i.e., when it is not connected or has been disabled by the user for privacy reasons.</p>
-    <p>Another context in which visual support is needed is when there are navigation prompts or options to choose from (e.g., a calendar).</p>
-    <p>Beyond these situations, as mentioned above, the interaction with Welcome will be in the form of a background dialogue, allowing the mobile device to be used for any other function while the assistant interacts with the user either on its initiative (a reminder) or by invoking it (e.g., Welcome, what is the deadline for submitting my residency application?).</p>
-
-    <!-- Physical Device Section -->
-    <h3>Physical Device: Biometric Data Wristband</h3>
-    <p>The OFFicial wristband is a complementary device providing advanced security and health functions:</p>
-    <ul>
-        <li><strong>Design and Functionality:</strong> Biometric sensors that measure heart rate, body activity, and respiration.</li>
-        <li><strong>NFC Chip:</strong> Stores data for temporary personal identification, enabling secure, contactless access.</li>
-        <li><strong>Battery Life:</strong> Up to 72 hours with a rechargeable lithium-ion battery.</li>
-        <li><strong>Compatibility:</strong> Works with iOS, Android, and Huawei for seamless integration.</li>
-        <li><strong>App Connectivity:</strong> Syncs with the OFFicial App and can be used with a headset or without.</li>
-    </ul>
-
-    <!-- Images for Physical Device -->
-    <div class="image-container">
-        <img src="img/PulseraWelcome.jpg" alt="Welcome Product Image 1">
-        <img src="img/PulseraWelcome2.jpg" alt="Welcome Product Image 2">
-    </div>
-</section>
-
+            <div class="image-container">
+                <img src="img/OFF2.png" alt="Welcome Logo">
+            </div>
+            <p>OFFicial's flagship product, Welcome, uses advanced Artificial Intelligence to simplify and personalize the asylum process and facilitate integration into the community. We believe that technology, when used thoughtfully, can make complex and often intimidating processes more manageable and human-centered.</p>
+            <h3>OFFicial App</h3>
+            <p>The OFFicial App is a comprehensive, user-friendly tool that manages asylum seekers' integration and documentation processes. Key features include:</p>
+            <ul>
+                <li><strong>Welcome:</strong> Quick onboarding with personal profile setup using voice commands.</li>
+                <li><strong>Virtual Documentation Wallet:</strong> Securely stores and organizes important documents for easy access.</li>
+                <li><strong>Deadline Calendar:</strong> Keeps track of important dates with automatic reminders for document submissions.</li>
+                <li><strong>Access to Your Lawyer:</strong> Provides virtual legal support and real-time assistance.</li>
+                <li><strong>Available Resources Directory:</strong> A guide to accessible services and support.</li>
+                <li><strong>Local Glossary:</strong> A linguistic resource that includes useful local terms and phrases.</li>
+                <li><strong>Location and Maps Access:</strong> Provides geolocated information and detailed city maps.</li>
+                <li><strong>Augmented Reality (AR):</strong> Helps users find resources intuitively within the app interface.</li>
+                <li><strong>Anonymous Data Collection:</strong> Collects data anonymously while fully respecting user privacy.</li>
+            </ul>
+            <div class="mobile-images">
+                <img src="img/Follow-up2.png" alt="Mobile Device 1">
+                <img src="img/Loading.png" alt="Mobile Device 2">
+                <img src="img/Privacy.png" alt="Mobile Device 3">
+            </div>
+            <h3>Biometric Data Wristband</h3>
+            <p>Our complementary wristband provides advanced security and health functions, including biometric sensors, an NFC chip for secure identification, and seamless integration with the OFFicial App. It enhances the experience by ensuring that the most critical information is always easily accessible.</p>
+            <div class="image-container">
+                <img src="img/PulseraWelcome.jpg" alt="Welcome Product Image 1">
+                <img src="img/PulseraWelcome2.jpg" alt="Welcome Product Image 2">
+            </div>
+        </section>
 
         <!-- Contact Section -->
         <section id="contact" class="section">
             <h2>Contact Us</h2>
-            <p>Interested in collaborating or learning more? Reach out, and let's make a difference together.</p>
-            <p>This website and its artifact tell a story about a future we might all experience soon, regardless of whether you live in Spain. It is part of the Final Master’s Thesis based on Futures Design and Strategic Foresight between Nicolás Bronzina, Eider Fernández Arcos, and Jorge Gil Rodríguez called "User Experience Design as a Tool for Social Intervention in the Refugee Crisis.”</p>
-            <p>We used an approach called Design Fiction to envision, design, and move toward desirable futures rather than passively accepting what is and 'will be' the so-called refugee crisis.</p>
-            <p>Please contact <strong><a href="https://www.nicolasbronzina.com" target="_blank" style="color: #FB6C2C; text-decoration: none;">Nicolás Bronzina</a></strong> for further information about this project.</p>
+            <p>We are always looking for partners, collaborators, and supporters. If you’re interested in working with us or learning more about our work, don’t hesitate to reach out.</p>
+            <p>This project is part of a Master’s Thesis on Futures Design and Strategic Foresight, created by Nicolás Bronzina, Eider Fernández Arcos, and Jorge Gil. It envisions a future where design interventions can make a substantial impact on the refugee crisis.</p>
+            <p>For more information, visit <a href="https://www.nicolasbronzina.com" target="_blank" style="color: #FB6C2C; text-decoration: none;">Nicolás Bronzina</a>.</p>
         </section>
     </div>
 
     <footer class="footer">
         <blockquote>"Why do you always choose battles you cannot win? - Because they are the ones worth fighting for."</blockquote>
-        <p>Dedicated to those who have to leave their homes in search of a better future.</p>
         <p>OFFicial © 2030 | All rights reserved.</p>
-        
     </footer>
 
     <script>
