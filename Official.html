@@ -367,6 +367,21 @@
         padding: 20px 20px; /* Reduce the padding for sections on desktop */
     }
 }
+        @media (min-width: 1024px) {
+    .refugee-image {
+        display: block;
+        max-width: 1000px;
+        margin: 0 auto 20px auto; /* Center the image and add spacing below */
+        width: 100%;
+        height: auto;
+    }
+
+    /* Optional: Reduce space between quotes */
+    .testimonial-content blockquote {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
     </style>
 </head>
 <body>
@@ -421,16 +436,17 @@
     </div>
 </section>
             <div class="testimonials">
-                <h3>What People Say</h3>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <img src="img/Refugees.png" alt="Refugees Portrait">
-                        <blockquote>"Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive." - Misha Al Numan (62), Chemical Engineer Refugee</blockquote>
-                        <blockquote>"Through Welcome, I found a lifeline in a sea of uncertainty. It’s more than a tool; it’s a guide that empowers and restores a sense of control in the most vulnerable moments." - Leila Hussein (35), Human Rights Advocate and Refugee</blockquote>
-                        <blockquote>"For many of us, starting over means facing countless barriers. Welcome has given me the courage to navigate a complex system with confidence, making integration feel achievable rather than overwhelming." - Ahmed Khalil (29), Former Teacher and Asylum Seeker</blockquote>
-                    </div>
-                </div>
-            </div>
+    <h3>What People Say</h3>
+    <!-- Add the image for desktop -->
+    <img src="img/Refugees.png" alt="Refugees Portrait" class="refugee-image">
+    <div class="testimonial">
+        <div class="testimonial-content">
+            <blockquote>"Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive." - Misha Al Numan (62), Chemical Engineer Refugee</blockquote>
+            <blockquote>"Through Welcome, I found a lifeline in a sea of uncertainty. It’s more than a tool; it’s a guide that empowers and restores a sense of control in the most vulnerable moments." - Leila Hussein (35), Human Rights Advocate and Refugee</blockquote>
+            <blockquote>"For many of us, starting over means facing countless barriers. Welcome has given me the courage to navigate a complex system with confidence, making integration feel achievable rather than overwhelming." - Ahmed Khalil (29), Former Teacher and Asylum Seeker</blockquote>
+        </div>
+    </div>
+</div>
             <div class="partners">
                 <h3>Our Partners</h3>
                 <div class="partner-logos">
