@@ -390,6 +390,25 @@
         margin: 0 auto 20px; /* Center the image and add spacing below */
     }
 }
+@media (min-width: 1024px) {
+    .partner-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .partner-logos img {
+        max-width: 150px;
+        margin: 5px;
+    }
+
+    .partner-logos .cear-logo {
+        flex-basis: 100%; /* Make CEAR logo take full width */
+        text-align: center; /* Center the CEAR logo */
+        margin-top: 20px; /* Add some spacing above the CEAR logo */
+    }
+}
     </style>
 </head>
 <body>
@@ -458,11 +477,11 @@
             <div class="partners">
                 <h3>Our Partners</h3>
                 <div class="partner-logos">
-                    <img src="img/cf_logo.jpg" alt="Caminando Fronteras Logo">
-                    <img src="img/cruzroja.jpg" alt="Cruz Roja Logo">
-                    <img src="img/hJYUBIAB_400x400.png" alt="UNHCR Logo">
-                    <img src="img/logo-cear.jpg" alt="CEAR Logo">
-                </div>
+    <img src="img/cf_logo.jpg" alt="Caminando Fronteras Logo">
+    <img src="img/cruzroja.jpg" alt="Cruz Roja Logo">
+    <img src="img/hJYUBIAB_400x400.png" alt="UNHCR Logo">
+    <img src="img/logo-cear.jpg" alt="CEAR Logo" class="cear-logo">
+</div>
             </div>
             <div class="cta">
                 <a href="#contact" class="cta-button" onclick="showPage('contact')">Get Involved</a>
