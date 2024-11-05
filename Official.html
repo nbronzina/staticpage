@@ -393,22 +393,21 @@
 @media (min-width: 1024px) {
     .partner-logos {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        align-items: flex-start;
+        gap: 15px;
     }
 
-    .partner-logos img {
+    .cear-logo-container {
+        text-align: center;
+        margin-top: 20px; /* Add some space above the CEAR logo */
+    }
+
+    .cear-logo {
         max-width: 150px;
-        margin: 5px;
-    }
-
-    .partner-logos .cear-logo {
-        flex-basis: 100%; /* Make CEAR logo take full width */
-        text-align: center; /* Center the CEAR logo */
-        margin-top: 20px; /* Add some spacing above the CEAR logo */
+        height: auto;
     }
 }
+
     </style>
 </head>
 <body>
@@ -480,6 +479,8 @@
     <img src="img/cf_logo.jpg" alt="Caminando Fronteras Logo">
     <img src="img/cruzroja.jpg" alt="Cruz Roja Logo">
     <img src="img/hJYUBIAB_400x400.png" alt="UNHCR Logo">
+</div>
+<div class="cear-logo-container">
     <img src="img/logo-cear.jpg" alt="CEAR Logo" class="cear-logo">
 </div>
             </div>
