@@ -315,6 +315,13 @@
         max-width: 250px; /* Ajusta el tamaño máximo para pantallas más grandes */
     }
 }
+        /* Additional CSS for scaling down images on desktop screens */
+@media (min-width: 1024px) {
+    .image-container img {
+        max-width: 400px; /* Adjust the size as needed */
+        height: auto;
+    }
+}
     </style>
 </head>
 <body>
