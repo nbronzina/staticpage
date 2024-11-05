@@ -297,6 +297,18 @@
     border-radius: 10px;
     transition: transform 0.3s;
 }
+        .welcome-product-image {
+    width: 100%; /* Se ajusta al ancho máximo del contenedor */
+    max-width: 600px; /* Limita el ancho máximo para que no sea demasiado grande */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Agrega bordes redondeados para un diseño más suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para darle un toque moderno */
+    transition: transform 0.3s; /* Transición suave para el hover */
+}
+
+.welcome-product-image:hover {
+    transform: scale(1.05); /* Efecto de zoom suave al pasar el ratón */
+}
 
 @media (min-width: 768px) {
     .mobile-images img {
@@ -402,9 +414,9 @@
                 <li><strong>Proactive, Personalized Support:</strong> Autonomously suggests actions to improve the quality of life for refugees, tailoring communication styles to match individual needs and language proficiencies.</li>
                 <li><strong>Anonymous Data Sharing:</strong> Generates anonymized statistics for sharing with governments and NGOs, contributing to improved policies and support systems.</li>
             </ul>
-            <div class="image-container">
-                <img src="img/PackWelcome.jpg" alt="Welcome Product Image">
-            </div>
+        <div class="image-container">
+    <img src="img/PackWelcome.jpg" alt="Welcome Product Image" class="welcome-product-image">
+</div>
             <h3>Technical Viability</h3>
             <p>At OFFicial, we follow the path of Responsible Design because:</p>
             <ul>
