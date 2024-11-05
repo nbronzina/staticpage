@@ -200,19 +200,26 @@
             height: auto;
         }
 
-        .mobile-images {
+        .welcome-gallery {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .gallery-container {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 30px;
             flex-wrap: wrap;
         }
 
-        .mobile-images img {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
+        .gallery-image {
+            max-width: 400px;
             border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
         }
 
         .partner-logos {
@@ -275,34 +282,6 @@
                 max-width: 150px;
             }
         }
-        .welcome-gallery {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.welcome-gallery h3 {
-    color: #FB6C2C;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-}
-
-.gallery-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.gallery-image {
-    max-width: 400px;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.gallery-image:hover {
-    transform: scale(1.05);
-}
-
     </style>
 </head>
 <body>
@@ -328,13 +307,14 @@
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/Ih194mji50A" frameborder="0" allowfullscreen></iframe>
             </div>
-              <!-- New Welcome Product Image Gallery Section -->
-    <div class="welcome-gallery">
-        <div class="gallery-container">
-            <img src="img/PulseraWelcome.jpg" alt="Welcome Product Image 2" class="gallery-image">
-            <img src="img/PulseraWelcome2.jpg" alt="Welcome Product Image 3" class="gallery-image">
-        </div>
-    </div>
+            <!-- Welcome Product Image Gallery Section -->
+            <div class="welcome-gallery">
+                <h3>Our Product</h3>
+                <div class="gallery-container">
+                    <img src="img/PulseraWelcome.jpg" alt="Welcome Product Image 1" class="gallery-image">
+                    <img src="img/PulseraWelcome2.jpg" alt="Welcome Product Image 2" class="gallery-image">
+                </div>
+            </div>
             <div class="testimonials">
                 <h3>What People Say</h3>
                 <div class="testimonial">
