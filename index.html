@@ -204,6 +204,36 @@
   border-top: 3px double #000; /* Grosor del borde más grueso */
   margin: 20px 0;
 }
+    /* Estilos del modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Queda en posición fija */
+  z-index: 1000; /* Asegura que esté en la parte superior */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Permite desplazamiento si es necesario */
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: auto; /* Puede ser automático o definido */
+  max-width: 80%; /* Máximo ancho del modal */
+}
+
+.close {
+  position: absolute; /* Posiciona el botón de cierre */
+  top: 20px;
+  right: 35px;
+  color: white; /* Color blanco para el texto */
+  font-size: 40px; /* Tamaño del texto */
+  font-weight: bold;
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
   </style>
 </head>
 
@@ -295,7 +325,7 @@
       </div>
     </div>
    <div class="project">
-  <img src="img/NG.png" alt="Heated DANA's NatGeo Special Edition">
+  <img src="img/NG.png" alt="Heated DANA's NatGeo Special Edition"  onclick="openModal(this)">
   <div>
     <p class="project-title">Heated DANA's NatGeo Special Edition</p>
     <p>A design fiction capsule that imagines a mural of resilience on the facades of Andalucía, created by artists and local communities to represent strength and solidarity in the face of the DANA floods 2024. This diegetic artifact uses public art as a visual and emotional reminder of the need for more robust environmental policies and community capacity to address climate change. Part of "The Sociological Significance of Design Fiction Artefacts: Navigating Collective Trauma and Building Community Resilience After a Climate Disaster".</p>
@@ -402,6 +432,27 @@
         behavior: 'smooth' // Desplazamiento suave
       });
     }
+    function openModal(element) {
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+  const caption = document.getElementById("caption");
+
+  modal.style.display = "block"; // Muestra el modal
+  modalImage.src = element.src; // Establece la fuente de la imagen del modal
+  caption.innerHTML = element.alt; // Establece el texto del pie de foto
+}
+
+function closeModal() {
+  const modal = document.getElementById("imageModal");
+  modal.style.display = "none"; // Oculta el modal
+}
   </script>
+  <!-- Modal para ver la imagen en tamaño real -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage" alt="Imagen del proyecto">
+  <div id="caption"></div>
+</div>
+  
 </body>
 </html>
