@@ -33,12 +33,10 @@
       color: #555;
     }
 
-    .intro-container {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      margin-top: 20px; /* Add some spacing at the top */
-    }
+   .intro-container {
+    margin-top: 10px; /* Adjust margin above the intro container */
+    gap: 10px; /* Reduce the gap between image and text */
+}
 
     .intro-text {
       flex: 1; /* This allows the text to occupy the remaining space */
@@ -168,12 +166,16 @@
       color: #555; /* Color al pasar el mouse */
     }
 
-    /* Estilos para el header */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.header {
+    display: flex;
+    justify-content: flex-start; /* Align items to the start */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Add some spacing below the header */
+}
+
+.header h1 {
+    margin-left: 10px; /* Space between the icon and the text */
+}
 
     @media (max-width: 768px) {
       .intro-container {
@@ -278,28 +280,29 @@
 </head>
 
 <body>
-  <!-- Sección de Encabezado -->
-  <header class="header">
+<!-- Sección de Encabezado -->
+<header class="header">
+    <img src="icon-url" alt="World Icon" style="width: 30px; height: 30px;"> <!-- Adjust this to your actual icon path -->
     <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
-  </header>
+</header>
 
-  <!-- Sección de Introducción -->
-  <section id="home">
+<!-- Sección de Introducción -->
+<section id="home">
     <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
     <div class="header-icon-text">
-      <img src="img/static.png" alt="">
-      <p>The website is programmed using HTML code from a text editor on my Mac computer, based on static sites.</p>
+        <img src="img/static.png" alt="">
+        <p>The website is programmed using HTML code from a text editor on my Mac computer, based on static sites.</p>
     </div>
     <hr>
     <div class="intro-container">
-      <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
-      <div class="intro-text">
-        <p>As a <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design, I am deeply committed to advancing the speculative aspects of design. My <strong>Design Researcher</strong> role allows me to enrich my work through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My focus areas include the future of food, urban environments, ecology, and emerging technologies.</p>
-        <p>In addition to being a managing partner at BPP, I contribute to design fiction writing and collaborate with <a href="https://www.girardinnova.com">Girardin & Nova</a>, where I conduct in-depth research on emerging trends and 'weak signals' to identify potential future scenarios. Recently, I have also started designing diegetic artifacts there. I am actively involved with Heated Consultancy, where I leverage my expertise to explore innovative solutions for climate resilience, striving to positively impact an ever-changing world.</p>
-      </div>
+        <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
+        <div class="intro-text">
+            <p>As a <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design, I am deeply committed to advancing the speculative aspects of design. My <strong>Design Researcher</strong> role allows me to enrich my work through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My focus areas include the future of food, urban environments, ecology, and emerging technologies.</p>
+            <p>In addition to being a managing partner at BPP, I contribute to design fiction writing and collaborate with <a href="https://www.girardinnova.com">Girardin & Nova</a>, where I conduct in-depth research on emerging trends and 'weak signals' to identify potential future scenarios. Recently, I have also started designing diegetic artifacts there. I am actively involved with Heated Consultancy, where I leverage my expertise to explore innovative solutions for climate resilience, striving to positively impact an ever-changing world.</p>
+        </div>
     </div>
     <hr>
-  </section>
+</section>
 
   <!-- Sección About -->
   <section id="about">
