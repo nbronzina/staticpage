@@ -32,7 +32,12 @@
     a:hover {
       color: #555;
     }
-
+.header-container {
+    max-width: 800px; /* Adjust this value as needed */
+    margin: 0 auto; /* Center the div */
+    text-align: center; /* Center the text */
+}
+    
 .intro-container {
     display: flex;
     align-items: center; /* Alinea verticalmente la imagen y el texto */
@@ -285,27 +290,31 @@
 </head>
 
 <body>
-  <!-- Sección de Encabezado -->
-  <header class="header">
-    <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
-  </header>
+<!-- Sección de Encabezado -->
+<header class="header">
+    <div class="header-container">
+        <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
+        <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
+        <div class="header-icon-text">
+            <img src="img/static.png" alt="World Icon" style="width: 30px; height: 30px;">
+            <p>The website is programmed using HTML code from a text editor on my Mac computer, based on static sites.</p>
+        </div>
+    </div>
+</header>
+<hr>
 
 <!-- Sección de Introducción -->
 <section id="home">
-  <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
-  <div class="header-icon-text">
-    <img src="img/static.png" alt="">
-    <p>The website is programmed using HTML code from a text editor on my Mac computer, based on static sites.</p>
-  </div>
-  <hr>
     <div class="intro-container">
         <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
         <div class="intro-text">
-            <p>As a <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design, I am deeply committed to advancing the speculative aspects of design. My <strong>Design Researcher</strong> role allows me to enrich my work through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My focus areas include the future of food, urban environments, ecology, and emerging technologies.</p>
-            <br>
-            <p>In addition to being a managing partner at BPP, I contribute to design fiction writing and collaborate with <a href="https://www.girardinnova.com">Girardin & Nova</a>, where I conduct in-depth research on emerging trends and 'weak signals' to identify potential future scenarios. Recently, I have also started designing diegetic artifacts there. I am actively involved with Heated Consultancy, where I leverage my expertise to explore innovative solutions for climate resilience, striving to positively impact an ever-changing world.</p>
-            <br>
-            <p>Finally, I am the creator and editor of <a href="/Coffee.html">Coffee.txt</a>, your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
+            <div class="text-container">
+                <p>As a <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design, I am deeply committed to advancing the speculative aspects of design. My <strong>Design Researcher</strong> role allows me to enrich my work through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My focus areas include the future of food, urban environments, ecology, and emerging technologies.</p>
+                <br>
+                <p>In addition to being a managing partner at BPP, I contribute to design fiction writing and collaborate with <a href="https://www.girardinnova.com">Girardin & Nova</a>, where I conduct in-depth research on emerging trends and 'weak signals' to identify potential future scenarios. Recently, I have also started designing diegetic artifacts there. I am actively involved with Heated Consultancy, where I leverage my expertise to explore innovative solutions for climate resilience, striving to positively impact an ever-changing world.</p>
+                <br>
+                <p>Finally, I am the creator and editor of <a href="/Coffee.html">Coffee.txt</a>, your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
+            </div>
         </div>
     </div>
     <hr>
