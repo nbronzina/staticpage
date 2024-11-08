@@ -57,11 +57,12 @@
       height: auto;
     }
 
-    .header-icon-text {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+ .header-icon-text {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center icon and text vertically */
+    gap: 10px; /* Space between the icon and text */
+    margin-top: 10px; /* Optional: Space between the h2 and icon text */
+}
 
     .header-icon-text img {
       width: 18px;
@@ -175,8 +176,8 @@
 
 .header {
     display: flex;
-    justify-content: flex-start; /* Align items to the start */
-    align-items: center; /* Center items vertically */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align all elements */
     margin-bottom: 20px; /* Add some spacing below the header */
 }
 
@@ -290,18 +291,14 @@
 </head>
 
 <body>
-<!-- Sección de Encabezado -->
 <header class="header">
-    <div class="header-container">
-        <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
-        <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
-        <div class="header-icon-text">
-            <img src="img/static.png" alt="World Icon" style="width: 30px; height: 30px;">
-            <p>The website is programmed using HTML code from a text editor on my Mac computer, based on static sites.</p>
-        </div>
+    <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
+    <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
+    <div class="header-icon-text">
+        <img src="img/static.png" alt="World Icon" style="width: 30px; height: 30px;">
+        <p>The website is programmed using HTML code from a text editor on my Mac computer, based on static sites.</p>
     </div>
 </header>
-<hr>
 
 <!-- Sección de Introducción -->
 <section id="home">
