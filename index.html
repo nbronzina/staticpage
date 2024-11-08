@@ -13,115 +13,144 @@
       margin: 0;
       padding: 20px;
     }
+
     h1, h2 {
       margin: 0;
     }
+
     p {
       font-size: 16px;
+      max-width: 600px; /* Maximum width for paragraphs to optimize line length */
+      margin: 0 auto; /* Center the paragraphs */
     }
+
     a {
       color: inherit;
       text-decoration: underline;
     }
+
     a:hover {
       color: #555;
     }
+
     .intro-container {
       display: flex;
       align-items: flex-start;
       gap: 20px;
       margin-top: 20px; /* Add some spacing at the top */
     }
+
     .intro-text {
       flex: 1; /* This allows the text to occupy the remaining space */
       display: flex;
       flex-direction: column; /* Stack text vertically */
       justify-content: center; /* Center text vertically */
     }
+
     .main-image {
       width: 250px; /* Fixed width for the image */
       height: auto;
     }
+
     .header-icon-text {
       display: flex;
       align-items: center;
       gap: 10px;
     }
+
     .header-icon-text img {
       width: 18px;
       height: 18px;
     }
+
     hr {
       border: none;
       border-top: 1px double #000;
       margin: 20px 0;
     }
+
     .contenedor {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
+
     .columna {
       flex: 1;
       padding: 10px;
     }
+
     .footer-links {
       text-align: center;
       margin-top: 20px;
     }
+
     .project-section {
       text-align: left;
       padding: 10px 20px;
     }
+
     .project-section h2 {
       margin-bottom: 10px;
     }
+
     .project {
       display: flex;
       align-items: center;
       gap: 15px;
       margin-bottom: 20px;
     }
+
     .project img {
       width: 250px;
       height: auto;
       border-radius: 8px;
     }
+
     .project-title {
       font-weight: bold;
       text-decoration: none; /* Ensure no underline */
     }
+
     .writing-section {
       padding: 10px 20px;
       text-align: left;
     }
+
     .writing-item {
       margin-bottom: 20px;
     }
+
     .writing-title {
       font-weight: bold;
       margin-bottom: 5px;
     }
+
     .writing-list ul {
       padding-left: 20px;
     }
+
     .writing-list a {
       color: inherit;
       text-decoration: none;
     }
+
     .writing-list a:hover {
       text-decoration: underline;
     }
+
     .stats-section {
       display: flex;
       justify-content: space-between;
       padding: 20px 0;
       text-align: center;
     }
+
     .stats-section div {
       flex: 1;
     }
+
     /* Estilo para la flecha de retroceso */
     .back-to-top {
       position: fixed;
@@ -134,106 +163,117 @@
       cursor: pointer;
       transition: color 0.3s;
     }
+
     .back-to-top:hover {
       color: #555; /* Color al pasar el mouse */
     }
+
     /* Estilos para el header */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
     @media (max-width: 768px) {
       .intro-container {
         flex-direction: column;
         align-items: center;
         gap: 15px;
       }
+
       .main-image {
         width: 80%; /* Adjusted for smaller size */
         max-width: 200px; /* Smaller max width for mobile */
         height: auto; /* Maintain aspect ratio */
       }
+
       .project {
         flex-direction: column;
         align-items: center;
         gap: 10px;
       }
+
       .project img {
         width: 100%;
         max-width: 300px;
       }
+
       .stats-section {
         flex-direction: column;
         gap: 10px;
       }
-       /* Nuevo estilo para el título en móviles */
-  h1 {
-    font-size: 28px; /* Ajustar el tamaño de la fuente según sea necesario */
-    white-space: nowrap; /* Evita que se rompa el texto en varias líneas */
-    overflow: hidden; /* Oculta el desbordamiento si es necesario */
-    text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
-  }
+
+      /* Nuevo estilo para el título en móviles */
+      h1 {
+        font-size: 28px; /* Ajustar el tamaño de la fuente según sea necesario */
+        white-space: nowrap; /* Evita que se rompa el texto en varias líneas */
+        overflow: hidden; /* Oculta el desbordamiento si es necesario */
+        text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
+      }
     }
+
     .contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Espacio alrededor de los elementos */
-  margin: 20px 0; /* Margen vertical para separar de otras secciones */
-}
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; /* Espacio alrededor de los elementos */
+      margin: 20px 0; /* Margen vertical para separar de otras secciones */
+    }
 
-.columna {
-  flex: 1; /* Permite que cada columna ocupe el mismo espacio */
-  max-width: 300px; /* Máximo ancho para columnas en pantallas grandes */
-  padding: 10px; /* Espacio interno */
-}
+    .columna {
+      flex: 1; /* Permite que cada columna ocupe el mismo espacio */
+      max-width: 300px; /* Máximo ancho para columnas en pantallas grandes */
+      padding: 10px; /* Espacio interno */
+    }
 
-/* Estilos para que las columnas se vean bien en móvil */
-@media (max-width: 768px) {
-  .contenedor {
-    flex-direction: column; /* Apilar columnas en móvil */
-    align-items: center; /* Centrar contenido en móvil */
-  }
-  .columna {
-    max-width: none; /* Eliminar el ancho máximo en móviles */
-    width: 100%; /* Columna ocupa todo el ancho en móvil */
-  }
-}
+    /* Estilos para que las columnas se vean bien en móvil */
+    @media (max-width: 768px) {
+      .contenedor {
+        flex-direction: column; /* Apilar columnas en móvil */
+        align-items: center; /* Centrar contenido en móvil */
+      }
+
+      .columna {
+        max-width: none; /* Eliminar el ancho máximo en móviles */
+        width: 100%; /* Columna ocupa todo el ancho en móvil */
+      }
+    }
+
     .thick-hr {
-  border: none;
-  border-top: 3px double #000; /* Grosor del borde más grueso */
-  margin: 20px 0;
-}
+      border: none;
+      border-top: 3px double #000; /* Grosor del borde más grueso */
+      margin: 20px 0;
+    }
+
     /* Estilos del modal */
-.modal {
-  display: none; /* Oculto por defecto */
-  position: fixed; /* Queda en posición fija */
-  z-index: 1000; /* Asegura que esté en la parte superior */
-  left: 0;
-  top: 0;
-  width: 100%; /* Ancho completo */
-  height: 100%; /* Alto completo */
-  overflow: auto; /* Permite desplazamiento si es necesario */
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
-}
+    .modal {
+      display: none; /* Oculto por defecto */
+      position: fixed; /* Queda en posición fija */
+      z-index: 1000; /* Asegura que esté en la parte superior */
+      left: 0;
+      top: 0;
+      width: 100%; /* Ancho completo */
+      height: 100%; /* Alto completo */
+      overflow: auto; /* Permite desplazamiento si es necesario */
+      background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+    }
 
-.modal-content {
-  margin: auto;
-  display: block;
-  width: auto; /* Puede ser automático o definido */
-  max-width: 80%; /* Máximo ancho del modal */
-}
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: auto; /* Puede ser automático o definido */
+      max-width: 80%; /* Máximo ancho del modal */
+    }
 
-.close {
-  position: absolute; /* Posiciona el botón de cierre */
-  top: 20px;
-  right: 35px;
-  color: white; /* Color blanco para el texto */
-  font-size: 40px; /* Tamaño del texto */
-  font-weight: bold;
-  cursor: pointer; /* Cambia el cursor al pasar por encima */
-}
-
+    .close {
+      position: absolute; /* Posiciona el botón de cierre */
+      top: 20px;
+      right: 35px;
+      color: white; /* Color blanco para el texto */
+      font-size: 40px; /* Tamaño del texto */
+      font-weight: bold;
+      cursor: pointer; /* Cambia el cursor al pasar por encima */
+    }
   </style>
 </head>
 
@@ -243,144 +283,116 @@
     <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
   </header>
 
-<!-- Sección de Introducción -->
-<section id="home">
-  <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
-  <div class="header-icon-text">
-    <img src="img/static.png" alt="">
-    <p>The website is programmed using HTML code from a text editor on my Mac computer, based on static sites.</p>
-  </div>
-  <hr>
-  <div class="intro-container">
-    <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
-    <div class="intro-text">
-      <p>As a <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design, I am deeply committed to advancing the speculative aspects of design. My <strong>Design Researcher</strong> role allows me to enrich my work through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My focus areas include the future of food, urban environments, ecology, and emerging technologies.
-      <p>In addition to being a managing partner at BPP, I contribute to design fiction writing and collaborate with <a href="https://www.girardinnova.com">Girardin & Nova</a>, where I conduct in-depth research on emerging trends and 'weak signals' to identify potential future scenarios. Recently, I have also started designing diegetic artifacts there. I am actively involved with Heated Consultancy, where I leverage my expertise to explore innovative solutions for climate resilience, striving to positively impact an ever-changing world.</p>
+  <!-- Sección de Introducción -->
+  <section id="home">
+    <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
+    <div class="header-icon-text">
+      <img src="img/static.png" alt="">
+      <p>The website is programmed using HTML code from a text editor on my Mac computer, based on static sites.</p>
     </div>
-  </div>
-  <hr>
-</section>
-  
+    <hr>
+    <div class="intro-container">
+      <img src="img/DitherME.png" alt="Nicolás Bronzina" class="main-image">
+      <div class="intro-text">
+        <p>As a <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design, I am deeply committed to advancing the speculative aspects of design. My <strong>Design Researcher</strong> role allows me to enrich my work through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My focus areas include the future of food, urban environments, ecology, and emerging technologies.</p>
+        <p>In addition to being a managing partner at BPP, I contribute to design fiction writing and collaborate with <a href="https://www.girardinnova.com">Girardin & Nova</a>, where I conduct in-depth research on emerging trends and 'weak signals' to identify potential future scenarios. Recently, I have also started designing diegetic artifacts there. I am actively involved with Heated Consultancy, where I leverage my expertise to explore innovative solutions for climate resilience, striving to positively impact an ever-changing world.</p>
+      </div>
+    </div>
+    <hr>
+  </section>
+
   <!-- Sección About -->
-<section id="about">
-  <div class="contenedor">
-    <div class="columna">
-      <p style="text-align: center;"><b>Experience</b></p>
-      <p style="text-align: center;"><u>Heated</u></p>
-      <p style="text-align: center;">Creative Alchemist & Scenario Weaver | Jun 2024 - present day</p>
-      <p style="text-align: center;"><u>BPP Analytics and Design</u></p>
-      <p style="text-align: center;">Managing Partner | Jan 2024 - present day</p>
-      <p style="text-align: center;"><u>Girardin & Nova</u></p>
-      <p style="text-align: center;">Design Researcher | Jan 2024 - present day</p>
-      <p style="text-align: center;"><u>Near Future Laboratory</u></p>
-      <p style="text-align: center;">Design Researcher | Feb 2023 - Jan 2024</p>
-      <br>
-      <p style="text-align: center;"><b>Certificates</b></p>
-      <p style="text-align: center;"><u>Institute for the Future</u></p>
-      <p style="text-align: center;">Future Thinking & Forecasting Skills</p>
-      <p style="text-align: center;"><u>IBM</u></p>
-      <p style="text-align: center;">Big Data Foundations - Level 1</p>
-      <p style="text-align: center;"><u>Mr Marcel School</u></p>
-      <p style="text-align: center;">UX Writing/Content Design</p>
-      <p style="text-align: center;"><u>Be Potencial</u></p>
-      <p style="text-align: center;">Public Speaking & Storytelling</p>
-    </div>
-    <div class="columna">
-      <p style="text-align: center;"><b>Education</b></p>
-      <p style="text-align: center;"><u>UDIT</u></p>
-      <p style="text-align: center;">Master's Degree in User Experience for the Design of Digital Products and Services</p>
-      <p style="text-align: center;"><u>Universidad del Salvador</u></p>
-      <p style="text-align: center;">Bachelor Degree in Sociology</p>
-      <br>
-      <p style="text-align: center;"><b>Key Skills</b></p>
-      <p style="text-align: center;">Critical Thinking</p>
-      <p style="text-align: center;">Explorative Research</p>
-      <p style="text-align: center;">Survey Research</p>
-      <p style="text-align: center;">Interviewing</p>
-      <p style="text-align: center;">Trends & "Weak Signals" Analysis</p>
-      <p style="text-align: center;">Storytelling</p>
-      <p style="text-align: center;">Diegetic Artifacts & Scenario Ideation</p>
-      <p style="text-align: center;">Generative Intelligence</p>
-    </div>
-  </div>
-  <hr>
-</section>
-
-
-  <!-- Sección Projects -->
-  <section class="project-section">
-    <h2>Projects</h2>
-           <div class="project">
-  <img src="img/Instrucciones-de-Uso.png" alt="CoolDown-Pods"  onclick="openModal(this)">
-  <div>
-    <p class="project-title">Cooling Pods Instructional Panel</p>
-    <p>A design fiction work envisioning an instructional panel for Cooling Pods, urban cooling stations designed to provide relief during extreme heat waves. This diegetic artifact features a user-friendly guide to accessing these public pods, reinforcing the role of intuitive infrastructure in enhancing urban resilience and comfort. Part of "How Madrid could adapt to extreme heat without losing its essence: A speculative scenario that explores the resilience of a city that made extreme heat and frequent droughts disappear from the headlines".</p>
-  </div>
-</div>
-       <div class="project">
-  <img src="img/NG.png" alt="Heated DANA's NatGeo Special Edition"  onclick="openModal(this)">
-  <div>
-    <p class="project-title">Heated DANA's NatGeo Special Edition</p>
-    <p>A design fiction work that imagines a mural of resilience on the facades of Andalucía, created by artists and local communities to represent strength and solidarity in the face of the DANA floods 2024. This diegetic artifact uses public art as a visual and emotional reminder of the need for more robust environmental policies and community capacity to address climate change. Part of "The Sociological Significance of Design Fiction Artefacts: Navigating Collective Trauma and Building Community Resilience After a Climate Disaster".</p>
-  </div>
-</div>
-    <div class="project">
-      <img src="img/map.png" alt="San Telmo Market">
-      <div>
-        <p class="project-title"><a href="https://www.futures-in-maps.com/san-telmo/en" target="_blank">San Telmo Market</a></p>
-        <p>A Design Fiction work that explores the City of Buenos Aires's potential future and gastronomy through the evolution of one of its iconic markets, the San Telmo Market. It shows the market's different stalls, shops, and services influenced by long periods of extreme heat and droughts. A work led by Nicolás Bronzina in collaboration with Fabien Girardin and Israel Viadest at Girardin & Nova. Futures in Maps is an atlas that tells stories about a world we all might experience soon.</p>
+  <section id="about">
+    <div class="contenedor">
+      <div class="columna">
+        <p style="text-align: center;"><b>Experience</b></p>
+        <p style="text-align: center;"><u>Heated</u></p>
+        <p style="text-align: center;">Creative Alchemist & Scenario Weaver | Jun 2024 - present day</p>
+        <p style="text-align: center;"><u>BPP Analytics and Design</u></p>
+        <p style="text-align: center;">Managing Partner | Jan 2024 - present day</p>
+        <p style="text-align: center;"><u>Girardin & Nova</u></p>
+        <p style="text-align: center;">Design Researcher | Jan 2024 - present day</p>
+        <p style="text-align: center;"><u>Near Future Laboratory</u></p>
+        <p style="text-align: center;">Design Researcher | Feb 2023 - Jan 2024</p>
+        <br>
+        <p style="text-align: center;"><b>Certificates</b></p>
+        <p style="text-align: center;"><u>Institute for the Future</u></p>
+        <p style="text-align: center;">Future Thinking & Forecasting Skills</p>
+        <p style="text-align: center;"><u>IBM</u></p>
+        <p style="text-align: center;">Big Data Foundations - Level 1</p>
+        <p style="text-align: center;"><u>Mr Marcel School</u></p>
+        <p style="text-align: center;">UX Writing/Content Design</p>
+        <p style="text-align: center;"><u>Be Potencial</u></p>
+        <p style="text-align: center;">Public Speaking & Storytelling</p>
       </div>
-    </div>
-    <div class="project">
-      <img src="img/OFF.png" alt="OFFicial: Welcome">
-      <div>
-        <p class="project-title"><a href="/Official.html" target="_blank">OFFicial: Welcome</a></p>
-        <p>This website and its accompanying artifact narrate a plausible future related to the refugee experience we may all encounter soon, irrespective of our location in Spain. It forms a part of the Final Master’s Thesis based on Futures Design and Strategic Foresight, a collaborative effort by Nicolás Bronzina, Eider Fernández Árcos, and Jorge Gil, titled "User Experience Design as a Tool for Social Intervention in the Refugee Crisis." Employing an approach known as Design Fiction, we aimed to envision, create, and advance preferable futures, actively resisting the passive acceptance of the current and impending challenges associated with the refugee crisis.</p>
+      <div class="columna">
+        <p style="text-align: center;"><b>Education</b></p>
+        <p style="text-align: center;"><u>UDIT</u></p>
+        <p style="text-align: center;">Master's Degree in User Experience for the Design of Digital Products and Services</p>
+        <p style="text-align: center;"><u>Universidad del Salvador</u></p>
+        <p style="text-align: center;">Bachelor Degree in Sociology</p>
+        <br>
+        <p style="text-align: center;"><b>Key Skills</b></p>
+        <p style="text-align: center;">Critical Thinking</p>
+        <p style="text-align: center;">Explorative Research</p>
+        <p style="text-align: center;">Survey Research</p>
+        <p style="text-align: center;">Interviewing</p>
+        <p style="text-align: center;">Trends & "Weak Signals" Analysis</p>
+        <p style="text-align: center;">Storytelling</p>
+        <p style="text-align: center;">Diegetic Artifacts & Scenario Ideation</p>
+        <p style="text-align: center;">Generative Intelligence</p>
       </div>
     </div>
     <hr>
   </section>
 
-  <!-- Sección Writing -->
+  <!-- Sección Projects and Writing -->
+  <section class="project-writing-section">
+    <h2>Selected Work</h2>
+    
+    <div class="project-category">
+      <h3>Future of Food</h3>
+      <img src="img/food.jpg" alt="Future of Food" style="width: 100%; height: auto;">
+      <ul>
+        <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37">A Manifesto for a New Argentinean Cuisine</a></li>
+        <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968">What is carbon-neutral gastronomy?</a></li>
+        <li><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7">What is ethical meat and sustainable proteins tasting?</a></li>
+        <li><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d">The gastronomic offer of San Telmo Market in a 15-minute city</a></li>
+      </ul>
+    </div>
+
+    <div class="project-category">
+      <h3>Environmental Crisis</h3>
+      <img src="img/environmental_crisis.jpg" alt="Environmental Crisis" style="width: 100%; height: auto;">
+      <ul>
+        <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442">How Madrid could adapt to extreme heat without losing its essence</a></li>
+        <li><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb">A speculative tour of San Telmo Market in a future Buenos Aires</a></li>
+        <li><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f">Collective trauma and community resilience after a climate disaster</a></li>
+      </ul>
+    </div>
+
+    <div class="project-category">
+      <h3>Foresight</h3>
+      <img src="img/foresight.jpg" alt="Foresight" style="width: 100%; height: auto;">
+      <ul>
+        <li><a href="#prospective-methodology">Prospective Methodology Based on Futures Design</a></li>
+        <li><a href="#strategic-foresight">How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
+      </ul>
+    </div>
+    
+    <hr>
+  </section>
+
+  <!-- Sección Coffee.txt -->
   <section class="writing-section">
-    <h2>Writing</h2>
+    <a href="/Coffee.html" target="_blank">
+      <h2>Coffee.txt</h2>
+    </a>
     <div class="writing-item">
-      <p class="writing-title">Heated Consultancy</p>
-      <ul class="writing-list">
-        <li><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f">Sociological Significance of Design Fiction Artifacts: Navigating Collective Trauma and Building Community Resilience After a Climate Disaster</a></li>
-        <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442">How Madrid could adapt to extreme heat without losing its essence: A speculative scenario that explores the resilience of a city that made extreme heat and frequent droughts disappear from the headlines</a></li>
-      </ul>
+      <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
     </div>
-    <div class="writing-item">
-      <p class="writing-title">Speculative Food Design</p>
-      <ul class="writing-list">
-        <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37">A Manifesto for a New Argentinean Cuisine: Pushing the boundaries of Argentinean gastronomy with Design Fiction</a></li>
-        <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968">What is Carbon-Neutral Gastronomy?: Exploring the convergence of environmental consciousness and culinary innovation with a Design Fiction</a></li>
-        <li><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7">What is Ethical Meat and Sustainable Proteins Tasting?: Exploring the future of gastronomy with a flyer as a Design Fiction artifact</a></li>
-        <li><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb">A speculative tour of San Telmo Market in a future Buenos Aires: Welcome to San Telmo Market, where we embark on a speculative culinary journey into the near future!</a></li>
-        <li><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d">The gastronomic offer of San Telmo Market in a 15-minute city: Speculation on the different stalls, shops, and services that might emerge at the San Telmo Market in Buenos Aires after an era of long periods of extreme heat and droughts</a></li>
-      </ul>
-    </div>
-    <div class="writing-item">
-      <p class="writing-title">Foresight</p>
-      <ul class="writing-list">
-        <li><a href="#prospective-methodology">Welcome: An Approach to Prospective Methodology Based on Futures Design and its Relation to Human-Centered Experience Design</a></li>
-        <li><a href="#strategic-foresight">A Shift Towards Strategic Foresight: How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
-      </ul>
-    </div>
-    <hr>
+    <hr class="thick-hr">
   </section>
-
-<!-- Sección Coffee.txt -->
-<section class="writing-section">
-  <a href="/Coffee.html" target="_blank">
-    <h2>Coffee.txt</h2>
-  </a>
-  <div class="writing-item">
-    <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
-  </div>
-  <hr class="thick-hr">
-</section>
 
   <!-- Sección de Estadísticas del Servidor, Pronóstico y Redes Sociales -->
   <section class="stats-section">
@@ -390,13 +402,13 @@
       <p id="time-info">Time: Loading...</p>
     </div>
     <div>
-    <h2>Forecast</h2>
-    <div id="weather-container">
-      <img id="weather-icon" src="" alt="Weather Icon" style="width: 50px; height: 50px;">
-      <p id="weather-info">Loading...</p>
+      <h2>Forecast</h2>
+      <div id="weather-container">
+        <img id="weather-icon" src="" alt="Weather Icon" style="width: 50px; height: 50px;">
+        <p id="weather-info">Loading...</p>
+      </div>
+      <p style="font-size: 12px; color: grey;">Data sourced from OpenWeatherMap API</p>
     </div>
-    <p style="font-size: 12px; color: grey;">Data sourced from OpenWeatherMap API</p>
-  </div>
     <div>
       <h2>Contact</h2>
       <p><a href="https://www.instagram.com/nbronzina">Instagram</a> | <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a> | <a href="https://www.medium.com/@nbronzina">Medium</a> | <a href="mailto:nicolas.bronzina.com">Email</a></p>
@@ -416,21 +428,21 @@
     }
     setInterval(updateTime, 1000); // Actualiza la hora cada segundo
 
-   async function fetchWeather() {
-    try {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=4f8273341d68d1acdccba1c7b45c5e54&units=metric`);
-      const data = await response.json();
-      const temperature = data.main.temp;
-      const weatherDescription = data.weather[0].description;
-      const weatherIcon = data.weather[0].icon; // Obtener el código del ícono
-      const iconUrl = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`; // URL del ícono
+    async function fetchWeather() {
+      try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=4f8273341d68d1acdccba1c7b45c5e54&units=metric`);
+        const data = await response.json();
+        const temperature = data.main.temp;
+        const weatherDescription = data.weather[0].description;
+        const weatherIcon = data.weather[0].icon; // Obtener el código del ícono
+        const iconUrl = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`; // URL del ícono
 
-      document.getElementById('weather-info').textContent = `${temperature}°C, ${weatherDescription}`;
-      document.getElementById('weather-icon').src = iconUrl; // Establecer la fuente del ícono
-    } catch (error) {
-      document.getElementById('weather-info').textContent = 'Weather data not available';
+        document.getElementById('weather-info').textContent = `${temperature}°C, ${weatherDescription}`;
+        document.getElementById('weather-icon').src = iconUrl; // Establecer la fuente del ícono
+      } catch (error) {
+        document.getElementById('weather-info').textContent = 'Weather data not available';
+      }
     }
-  }
     fetchWeather();
 
     function scrollToTop() {
@@ -439,27 +451,29 @@
         behavior: 'smooth' // Desplazamiento suave
       });
     }
+
     function openModal(element) {
-  const modal = document.getElementById("imageModal");
-  const modalImage = document.getElementById("modalImage");
-  const caption = document.getElementById("caption");
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+      const caption = document.getElementById("caption");
 
-  modal.style.display = "block"; // Muestra el modal
-  modalImage.src = element.src; // Establece la fuente de la imagen del modal
-  caption.innerHTML = element.alt; // Establece el texto del pie de foto
-}
+      modal.style.display = "block"; // Muestra el modal
+      modalImage.src = element.src; // Establece la fuente de la imagen del modal
+      caption.innerHTML = element.alt; // Establece el texto del pie de foto
+    }
 
-function closeModal() {
-  const modal = document.getElementById("imageModal");
-  modal.style.display = "none"; // Oculta el modal
-}
+    function closeModal() {
+      const modal = document.getElementById("imageModal");
+      modal.style.display = "none"; // Oculta el modal
+    }
   </script>
+
   <!-- Modal para ver la imagen en tamaño real -->
-<div id="imageModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImage" alt="Imagen del proyecto">
-  <div id="caption"></div>
-</div>
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Imagen del proyecto">
+    <div id="caption"></div>
+  </div>
   
 </body>
 </html>
