@@ -72,21 +72,16 @@
             padding-top: 80px;
         }
 
-.section {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* Ocupa la altura completa de la ventana */
-    overflow-y: auto; /* Permite desplazamiento dentro de la sección si el contenido es largo */
-    display: none; /* Oculta la sección por defecto */
-    padding: 40px 20px;
-}
+        .section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: none;
+        }
 
-.section.active {
-    display: block; /* Solo la sección activa será visible */
-    z-index: 10;
-}
+        .section.active {
+            display: block;
+        }
 
         h2 {
             color: #FB6C2C;
@@ -490,29 +485,22 @@
         max-width: 100%; /* Make the image take full width on mobile */
     }
 }
-        /* Container for centered readable text */
-.readable-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
     </style>
 </head>
 <body>
     <nav class="navbar">
-    <div class="logo">
-        <a href="#home" onclick="showPage('home')"><img src="img/LogoOFF.png" alt="OFFicial Logo" class="rotating-logo"></a>
-    </div>
-    <div class="menu">
-        <a href="#purpose" onclick="showPage('purpose')">OFFicial</a>
-        <a href="#team" onclick="showPage('team')">Team</a>
-        <a href="#welcome" onclick="showPage('welcome')">Welcome</a>
-        <a href="#contact" onclick="showPage('contact')">Contact</a>
-    </div>
-</nav>
+        <div class="logo">
+            <a onclick="showPage('home')"><img src="img/LogoOFF.png" alt="OFFicial Logo" class="rotating-logo"></a>
+        </div>
+        <div class="menu">
+            <a onclick="showPage('purpose')">OFFicial</a>
+            <a onclick="showPage('team')">Team</a>
+            <a onclick="showPage('welcome')">Welcome</a>
+            <a onclick="showPage('contact')">Contact</a>
+        </div>
+    </nav>
 
     <div class="content">
-    <div class="readable-container">
         <!-- Home Section -->
         <section id="home" class="section active">
             <div class="image-container">
@@ -529,10 +517,8 @@
                     <img src="img/PackWelcome.jpg" alt="Welcome Product Image 1" class="gallery-image">
                 </div>
             </div>
-    </div>
 <!-- Needs and Goals Section -->
 <section class="needs-goals">
-    <div class="readable-container">
     <div class="user-goals">
         <h4>Refugees</h4>
         <p><strong>“As a refugee, I WANT to complete the asylum application process successfully so I can live a dignified life in my new country, with the help of WELCOME.”</strong></p>
@@ -551,10 +537,8 @@
         <p><strong>“As the State, I WANT to collect information about asylum seekers, so the application process is fairer and more transparent, supported by WELCOME.”</strong></p>
         <p><strong>“As the State, I WANT to immediately scan and authenticate asylum seekers, so their identification can be verified quickly and easily, through WELCOME.”</strong></p>
     </div>
-    </div>
 </section>
             <div class="testimonials">
-                <div class="readable-container">
     <h3>What People Say</h3>
     <!-- Add the image for desktop -->
     <img src="img/Refugees.png" alt="Refugees Portrait" class="refugee-image">
@@ -565,7 +549,6 @@
             <blockquote>"For many of us, starting over means facing countless barriers. Welcome has given me the courage to navigate a complex system with confidence, making integration feel achievable rather than overwhelming." - Ahmed Khalil (29), Former Teacher and Asylum Seeker</blockquote>
         </div>
     </div>
-                </div>
 </div>
             <div class="partners">
                 <h3>Our Partners</h3>
@@ -585,7 +568,6 @@
 
         <!-- Purpose Section -->
         <section id="purpose" class="section">
-            <div class="readable-container">
             <h2>Our Purpose</h2>
             <p>At OFFicial, we are a vital ally for people who are forced to leave behind their homes, lives, and everything they know and face precarious conditions upon arriving in a new country. In an interconnected and technologically advanced world, our mission is to support and empower these individuals who are constantly pursuing a dignified and secure life.</p>
             <h3>What do we do?</h3>
@@ -615,12 +597,10 @@
       <div class="look-feel-image-container">
     <img src="img/Flag.jpg" alt="Look and Feel Graphic" class="look-feel-image">
 </div>
-            </div>
         </section>
 
         <!-- Welcome Section -->
   <section id="welcome" class="section">
-      <div class="readable-container">
     <div class="image-container">
         <img src="img/OFF2.png" alt="Welcome Logo">
     </div>
@@ -665,12 +645,10 @@
         <img src="img/PulseraWelcome.jpg" alt="Welcome Product Image 1">
         <img src="img/PulseraWelcome2.jpg" alt="Welcome Product Image 2">
     </div>
-      </div>
 </section>
         
         <!-- Team Section -->
         <section id="team" class="section">
-            <div class="readable-container">
             <h2>Our Team</h2>
             <div class="team-member">
                 <h3>Jorge Gil Rodríguez</h3>
@@ -696,12 +674,10 @@
                     "Due to my personal interest in social issues, particularly those affecting vulnerable populations, and my academic background as a Sociologist, the personal purpose of this project is to understand, from my perspective as a foreigner in Spain, the life stories, needs, and challenges of refugees in Spain. I seek to empathize with them and find possible solutions from my place in society and as part of the OFFicial team."
                 </blockquote>
             </div>
-            </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="section">
-            <div class="readable-container">
             <h2>Contact Us</h2>
             <p>Interested in collaborating or learning more? Reach out, and let's make a difference together.</p>
             <p>This website and its artifact tell a story about a future we might all experience soon, regardless of whether you live in Spain. It is part of the Final Master’s Thesis based on Futures Design and Strategic Foresight between Nicolás Bronzina, Eider Fernández Arcos, and Jorge Gil Rodríguez called "User Experience Design as a Tool for Social Intervention in the Refugee Crisis.”</p>
@@ -709,7 +685,6 @@
             <p>Please contact <strong><a href="https://www.nicolasbronzina.com" target="_blank" style="color: #FB6C2C; text-decoration: none;">Nicolás Bronzina</a></strong> for further information about this project.</p>
         </section>
     </div>
-</div>
 
     <footer class="footer">
         <blockquote>"Why do you always choose battles you cannot win? - Because they are the ones worth fighting for."</blockquote>
@@ -718,32 +693,25 @@
     </footer>
 
     <script>
-     function showPage(pageId) {
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => section.classList.remove('active'));
-
-        const activeSection = document.getElementById(pageId);
-        if (activeSection) {
-            activeSection.classList.add('active');
-            window.scrollTo(0, 0); // Asegura que la página se muestre desde la parte superior
-            window.history.pushState({ page: pageId }, '', `#${pageId}`);
+        function showPage(pageId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            const activeSection = document.getElementById(pageId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
         }
-    }
-
-    // Detectar el hash al cargar la página y mostrar la sección correspondiente
-    window.addEventListener('DOMContentLoaded', () => {
-        const currentHash = window.location.hash.substring(1);
-        if (currentHash) {
-            showPage(currentHash);
+    </script>
+        <button class="back-to-top" onclick="scrollToTop()">↑</button>
+    <script>
+    // Show or hide the "Back to Top" button
+    window.addEventListener("scroll", function() {
+        const button = document.querySelector(".back-to-top");
+        if (window.scrollY > 300) {
+            button.classList.add("show");
         } else {
-            showPage('home'); // Mostrar la sección por defecto
+            button.classList.remove("show");
         }
-    });
-
-    // Actualizar la sección al cambiar el hash manualmente en la URL
-    window.addEventListener('hashchange', () => {
-        const currentHash = window.location.hash.substring(1);
-        showPage(currentHash);
     });
 
     // Scroll to the top of the page when the button is clicked
