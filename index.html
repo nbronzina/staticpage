@@ -4,71 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nicolás Bronzina</title>
-  <style>
-    /* Estilos generales */
+   <style>
+    /* General Styles */
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
-      transition: background-color 0.5s, color 0.5s;
       margin: 0;
       padding: 20px;
+      line-height: 1.6;
     }
 
-    h1, h2 {
+    h1, h2, p {
       margin: 0;
+    }
+
+    h1 {
+      font-size: 28px;
     }
 
     p {
       font-size: 16px;
-      max-width: 600px; /* Maximum width for paragraphs to optimize line length */
+      max-width: 600px;
       margin: 0;
     }
 
     a {
-      color: inherit;
       text-decoration: underline;
     }
 
     a:hover {
       color: #555;
     }
-.header-container {
-    max-width: 800px; /* Adjust this value as needed */
-    margin: 0 auto; /* Center the div */
-    text-align: center; /* Center the text */
-}
-    
-.intro-container {
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    margin-top: 10px; /* Adjust margin as needed */
-}
-    .intro-content {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack image and text vertically */
-    align-items: center; /* Center align all items */
-    max-width: 800px; /* Set a max width for better readability */
-    text-align: center; /* Center the text */
-}
-
-.intro-text {
-    width: 100%; /* Full width to match the container */
-}
-
-.main-image {
-    width: 250px; /* Fixed width for the image */
-    height: auto;
-    margin-bottom: 10px; /* Space between the image and text */
-}
-
-.header-icon-text {
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center icon and text vertically */
-    justify-content: center; /* Center align content horizontally */
-    margin-top: 5px; /* Adjust if needed */
-    max-width: 800px; /* Same max width as header for consistency */
-    text-align: center; /* Center the text inside */
-}
 
     hr {
       border: none;
@@ -76,77 +41,78 @@
       margin: 20px 0;
     }
 
-    .contenedor {
+    /* Header Styles */
+    .header {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header-icon-text {
+      display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 10px;
+      margin-top: 10px;
     }
 
-    .columna {
-      flex: 1;
-      padding: 10px;
+    .header-icon-text img {
+      width: 20px;
+      height: 20px;
     }
 
-    .footer-links {
-      text-align: center;
-      margin-top: 20px;
+    /* Introduction Section */
+    .intro-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .project-section {
-      text-align: left;
-      padding: 10px 20px;
-    }
-
-    .project-section h2 {
+    .main-image {
+      width: 80%;
+      max-width: 200px;
+      height: auto;
       margin-bottom: 10px;
     }
 
-    .project {
+    .intro-text {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* About Section */
+    .contenedor {
       display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .project img {
-      width: 250px;
-      height: auto;
-      border-radius: 8px;
+    .columna {
+      max-width: 400px;
+      padding: 10px;
+      text-align: center;
     }
 
-    .project-title {
-      font-weight: bold;
-      text-decoration: none; /* Ensure no underline */
+    /* Selected Works Section */
+    .selected-work-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    .writing-section {
-      padding: 10px 20px;
-      text-align: left;
+    .selected-work-container ul {
+      list-style-position: inside;
+      padding: 0;
     }
 
-    .writing-item {
-      margin-bottom: 20px;
+    .selected-work-container li {
+      margin: 5px 0;
     }
 
-    .writing-title {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .writing-list ul {
-      padding-left: 20px;
-    }
-
-    .writing-list a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .writing-list a:hover {
-      text-decoration: underline;
-    }
-
+    /* Stats Section */
     .stats-section {
       display: flex;
       justify-content: space-between;
@@ -158,45 +124,37 @@
       flex: 1;
     }
 
-    /* Estilo para la flecha de retroceso */
+    /* Back to Top Button */
     .back-to-top {
       position: fixed;
       right: 20px;
       bottom: 20px;
-      background: none; /* Sin fondo */
-      border: none; /* Sin borde */
-      color: black; /* Color negro */
-      font-size: 24px; /* Tamaño del ícono de flecha */
+      background: none;
+      border: none;
+      color: black;
+      font-size: 24px;
       cursor: pointer;
-      transition: color 0.3s;
     }
 
     .back-to-top:hover {
-      color: #555; /* Color al pasar el mouse */
+      color: #555;
     }
 
-.header {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center align all elements */
-    margin-bottom: 20px; /* Add some spacing below the header */
-}
-
-.header h1 {
-    margin-left: 10px; /* Space between the icon and the text */
-}
-
+    /* Mobile Styles */
     @media (max-width: 768px) {
       .intro-container {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
       }
 
       .main-image {
-        width: 80%; /* Adjusted for smaller size */
-        max-width: 200px; /* Smaller max width for mobile */
-        height: auto; /* Maintain aspect ratio */
+        width: 80%;
+        max-width: 200px;
+        height: auto;
+      }
+
+      .header h1, .header h2 {
+        font-size: 24px;
       }
 
       .project {
@@ -215,136 +173,15 @@
         gap: 10px;
       }
 
-      /* Nuevo estilo para el título en móviles */
-      h1 {
-        font-size: 28px; /* Ajustar el tamaño de la fuente según sea necesario */
-        white-space: nowrap; /* Evita que se rompa el texto en varias líneas */
-        overflow: hidden; /* Oculta el desbordamiento si es necesario */
-        text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
-      }
-    }
-
-    .contenedor {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around; /* Espacio alrededor de los elementos */
-      margin: 20px 0; /* Margen vertical para separar de otras secciones */
-    }
-
-    .columna {
-      flex: 1; /* Permite que cada columna ocupe el mismo espacio */
-      max-width: 300px; /* Máximo ancho para columnas en pantallas grandes */
-      padding: 10px; /* Espacio interno */
-    }
-
-    /* Estilos para que las columnas se vean bien en móvil */
-    @media (max-width: 768px) {
       .contenedor {
-        flex-direction: column; /* Apilar columnas en móvil */
-        align-items: center; /* Centrar contenido en móvil */
+        flex-direction: column;
+        align-items: center;
       }
 
       .columna {
-        max-width: none; /* Eliminar el ancho máximo en móviles */
-        width: 100%; /* Columna ocupa todo el ancho en móvil */
+        width: 100%;
       }
     }
-
-    .thick-hr {
-      border: none;
-      border-top: 3px double #000; /* Grosor del borde más grueso */
-      margin: 20px 0;
-    }
-
-    /* Estilos del modal */
-    .modal {
-      display: none; /* Oculto por defecto */
-      position: fixed; /* Queda en posición fija */
-      z-index: 1000; /* Asegura que esté en la parte superior */
-      left: 0;
-      top: 0;
-      width: 100%; /* Ancho completo */
-      height: 100%; /* Alto completo */
-      overflow: auto; /* Permite desplazamiento si es necesario */
-      background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
-    }
-
-    .modal-content {
-      margin: auto;
-      display: block;
-      width: auto; /* Puede ser automático o definido */
-      max-width: 80%; /* Máximo ancho del modal */
-    }
-
-    .close {
-      position: absolute; /* Posiciona el botón de cierre */
-      top: 20px;
-      right: 35px;
-      color: white; /* Color blanco para el texto */
-      font-size: 40px; /* Tamaño del texto */
-      font-weight: bold;
-      cursor: pointer; /* Cambia el cursor al pasar por encima */
-    }
-    .selected-work-container {
-    max-width: 800px; /* Set the max width for better readability */
-    margin: 0 auto; /* Center the container */
-    text-align: center; /* Center text inside the container */
-}
-    .selected-work-container ul {
-    list-style-position: inside; /* Makes the bullets closer to the text */
-    padding: 0; /* Removes any default padding from the ul */
-    margin: 0; /* Removes any default margin from the ul */
-}
-
-.selected-work-container li {
-    margin: 5px 0; /* Adjusts space between the list items */
-}
-    .contenedor {
-    display: flex;
-    justify-content: center; /* Center the columns */
-    flex-wrap: wrap; /* Allow wrapping of columns */
-    margin: 20px 0; /* Vertical margin for separation */
-}
-
-.columna {
-    flex: 1; /* Allow each column to take equal space */
-    max-width: 400px; /* Limit the width for better readability */
-    padding: 10px; /* Inner padding for columns */
-    text-align: center; /* Center text inside each column */
-}
-    /* General mobile adjustments */
-@media (max-width: 768px) {
-  .header {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center all elements in the header */
-    text-align: center; /* Center the text */
-  }
-
-  .header h1, .header h2 {
-    margin: 0; /* Remove margins to ensure elements are tightly aligned */
-    font-size: 24px; /* Adjust the font size to fit mobile screens */
-  }
-
-  /* Adjust icon and text in header */
-  .header-icon-text {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center the icon and text horizontally */
-    gap: 10px; /* Adjust space between the icon and text */
-    margin-top: 10px; /* Add a little space between the text and the icon */
-  }
-
-  .header-icon-text p {
-    font-size: 14px; /* Adjust text size for better mobile readability */
-  }
-
-  .header-icon-text img {
-    width: 20px; /* Adjust icon size for mobile */
-    height: 20px;
-  }
-}
-
   </style>
 </head>
 
