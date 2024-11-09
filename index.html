@@ -312,6 +312,39 @@
     padding: 10px; /* Inner padding for columns */
     text-align: center; /* Center text inside each column */
 }
+    /* General mobile adjustments */
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center all elements in the header */
+    text-align: center; /* Center the text */
+  }
+
+  .header h1, .header h2 {
+    margin: 0; /* Remove margins to ensure elements are tightly aligned */
+    font-size: 24px; /* Adjust the font size to fit mobile screens */
+  }
+
+  /* Adjust icon and text in header */
+  .header-icon-text {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the icon and text horizontally */
+    gap: 10px; /* Adjust space between the icon and text */
+    margin-top: 10px; /* Add a little space between the text and the icon */
+  }
+
+  .header-icon-text p {
+    font-size: 14px; /* Adjust text size for better mobile readability */
+  }
+
+  .header-icon-text img {
+    width: 20px; /* Adjust icon size for mobile */
+    height: 20px;
+  }
+}
+
   </style>
 </head>
 
