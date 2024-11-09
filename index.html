@@ -5,106 +5,193 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nicolás Bronzina</title>
   <style>
- /* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  text-align: center; /* Centra todo el texto por defecto */
-}
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
 
-h1, h2, p {
-  margin: 0;
-}
+    h1, h2, p {
+      margin: 0;
+    }
 
-h1 {
-  font-size: 28px;
-}
+    h1 {
+      font-size: 28px;
+    }
 
-p {
-  font-size: 16px;
-  max-width: 600px;
-}
+    p {
+      font-size: 16px;
+      max-width: 600px;
+      text-align: center;
+    }
 
-a {
-  text-decoration: underline;
-}
+    a {
+      text-decoration: underline;
+    }
 
-a:hover {
-  color: #555;
-}
+    a:hover {
+      color: #555;
+    }
 
-/* Header */
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-}
+    hr {
+      border: none;
+      border-top: 1px double #000;
+      margin: 20px 0;
+    }
 
-.header-icon-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
+    /* Header */
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center items horizontally */
+      text-align: center;
+      margin-bottom: 20px;
+      width: 100%;
+    }
 
-.header-icon-text img {
-  width: 20px;
-  height: 20px;
-}
+    .header-icon-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-/* Profile Image */
-.main-image {
-  width: 200px;
-  height: auto;
-  margin-bottom: 20px; /* Espacio entre la imagen y el texto */
-  border-radius: 50%; /* Circular */
-}
+    .header-icon-text img {
+      width: 20px;
+      height: 20px;
+    }
 
-/* Section Layout */
-.intro-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
+    /* Profile Image */
+    .main-image {
+      width: 200px;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 50%; /* Circular image */
+    }
 
-.intro-text {
-  width: 100%;
-}
+    /* Introduction Section */
+    .intro-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .main-image {
-    width: 80%;
-    max-width: 200px;
-    height: auto;
-  }
+    .intro-text {
+      width: 100%;
+      text-align: center;
+    }
 
-  h1, h2 {
-    font-size: 24px;
-  }
+    /* About Section */
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
 
-  .contenedor {
-    flex-direction: column;
-    align-items: center;
-  }
+    .columna {
+      max-width: 400px;
+      padding: 10px;
+      text-align: center;
+    }
 
-  .columna {
-    width: 100%;
-  }
-}
+    /* Selected Works Section */
+    .selected-work-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
+    .selected-work-container ul {
+      list-style-position: inside;
+      padding: 0;
+    }
+
+    .selected-work-container li {
+      margin: 5px 0;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .stats-section div {
+      flex: 1;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: none;
+      border: none;
+      color: black;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .back-to-top:hover {
+      color: #555;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .intro-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .main-image {
+        width: 80%;
+        max-width: 200px;
+        height: auto;
+      }
+
+      .header h1, .header h2 {
+        font-size: 24px;
+      }
+
+      .project {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .project img {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .stats-section {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .contenedor {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .columna {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
