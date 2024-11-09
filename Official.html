@@ -72,12 +72,20 @@
             padding-top: 80px;
         }
 
-     .section {
-    display: none;
+.section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ocupa la altura completa de la ventana */
+    overflow-y: auto; /* Permite desplazamiento dentro de la sección si el contenido es largo */
+    display: none; /* Oculta la sección por defecto */
+    padding: 40px 20px;
 }
 
 .section.active {
-    display: block;
+    display: block; /* Solo la sección activa será visible */
+    z-index: 10;
 }
 
         h2 {
@@ -710,13 +718,14 @@
     </footer>
 
     <script>
-         function showPage(pageId) {
+     function showPage(pageId) {
         const sections = document.querySelectorAll('.section');
         sections.forEach(section => section.classList.remove('active'));
 
         const activeSection = document.getElementById(pageId);
         if (activeSection) {
             activeSection.classList.add('active');
+            window.scrollTo(0, 0); // Asegura que la página se muestre desde la parte superior
             window.history.pushState({ page: pageId }, '', `#${pageId}`);
         }
     }
