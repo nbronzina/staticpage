@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nicolás Bronzina</title>
-   <style>
+  <style>
     /* General Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
       line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
     }
 
     h1, h2, p {
@@ -24,7 +29,7 @@
     p {
       font-size: 16px;
       max-width: 600px;
-      margin: 0;
+      text-align: center;
     }
 
     a {
@@ -41,12 +46,14 @@
       margin: 20px 0;
     }
 
-    /* Header Styles */
+    /* Header */
     .header {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center; /* Center items horizontally */
+      text-align: center;
       margin-bottom: 20px;
+      width: 100%;
     }
 
     .header-icon-text {
@@ -62,19 +69,21 @@
       height: 20px;
     }
 
+    /* Profile Image */
+    .main-image {
+      width: 200px;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 50%; /* Circular image */
+    }
+
     /* Introduction Section */
     .intro-container {
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: center;
-    }
-
-    .main-image {
-      width: 80%;
-      max-width: 200px;
-      height: auto;
-      margin-bottom: 10px;
+      width: 100%;
     }
 
     .intro-text {
@@ -88,6 +97,7 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
+      width: 100%;
     }
 
     .columna {
