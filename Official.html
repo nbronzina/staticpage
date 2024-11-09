@@ -7,143 +7,435 @@
     <title>OFFicial Consultancy</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
     <style>
-    :root {
-    --background-color: #1B1C20;
-    --text-color: #EAEAEA;
-    --highlight-color: #FB6C2C;
-    --secondary-text-color: #C4C4C4;
-    --font-family: 'DM Mono', monospace;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Mono', monospace;
+        }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family);
-}
+        body {
+            background-color: #1B1C20;
+            color: #EAEAEA;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        .navbar {
+            background-color: #1B1C20;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+        .logo {
+            display: inline-block;
+            perspective: 1000px;
+        }
 
-.navbar {
-    background-color: var(--background-color);
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+        .rotating-logo {
+            max-height: 40px;
+            transition: transform 2s;
+            transform-origin: center;
+            animation: rotate3D 10s linear infinite;
+        }
 
-.navbar a {
-    color: var(--highlight-color);
-    text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s;
-}
+        @keyframes rotate3D {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
 
-.navbar a:hover {
-    color: var(--text-color);
-}
+        .navbar a {
+            color: #FB6C2C;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-left: 15px;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
 
-.rotating-logo {
-    max-height: 40px;
-    animation: rotate 10s linear infinite;
-}
+        .navbar a:hover {
+            color: #EAEAEA;
+        }
 
-@keyframes rotate {
-    from { transform: rotateY(0); }
-    to { transform: rotateY(360deg); }
-}
+        .content {
+            padding-top: 80px;
+        }
 
-.section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: none;
-}
+        .section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: none;
+        }
 
-.section.active {
-    display: block;
-}
+        .section.active {
+            display: block;
+        }
 
-h2, h3 {
-    color: var(--highlight-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
+        h2 {
+            color: #FB6C2C;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
 
-p {
-    color: var(--secondary-text-color);
-    margin-bottom: 15px;
-    line-height: 1.8;
-}
+        h3 {
+            color: #FB6C2C;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
 
-ul {
-    color: var(--secondary-text-color);
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-bottom: 15px;
-}
+        p {
+            color: #C4C4C4;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
 
-.cta-button {
-    background-color: var(--highlight-color);
-    color: var(--background-color);
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
+        ul {
+            color: #C4C4C4;
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
 
-.cta-button:hover {
-    background-color: var(--text-color);
-    color: var(--background-color);
-}
+        li {
+            margin-bottom: 5px;
+        }
 
-.gallery-container {
+        .cta {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background-color: #FB6C2C;
+            color: #1B1C20;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            background-color: #EAEAEA;
+            color: #1B1C20;
+        }
+
+        .testimonials, .partners {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-content {
+                flex-direction: row;
+            }
+        }
+
+        .testimonial img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #C4C4C4;
+            margin: 5px 0;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .video-container {
+            margin-top: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        .welcome-gallery {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-image {
+            max-width: 400px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .partner-logos img {
+            max-width: 100px;
+            height: auto;
+            margin: 5px;
+            transition: transform 0.3s;
+        }
+
+        .partner-logos img:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background-color: #16171B;
+            text-align: center;
+            padding: 20px 20px;
+            color: #C4C4C4;
+            font-size: 0.8rem;
+            border-top: 3px solid #FB6C2C;
+        }
+
+        @media (min-width: 768px) {
+            .navbar {
+                padding: 20px 40px;
+            }
+
+            .navbar a {
+                font-size: 1rem;
+                margin-left: 20px;
+            }
+
+            .content {
+                padding-top: 100px;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            h3 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .partner-logos img {
+                max-width: 150px;
+            }
+        }
+        .mobile-images {
     display: flex;
     justify-content: center;
     gap: 15px;
+    margin-top: 30px;
     flex-wrap: wrap;
 }
 
-.gallery-image {
-    max-width: 400px;
+.mobile-images img {
+    width: 100%; /* Asegura que la imagen use el ancho máximo permitido */
+    max-width: 150px; /* Limita el ancho máximo para dispositivos móviles */
+    height: auto; /* Mantiene la proporción de la imagen */
     border-radius: 10px;
     transition: transform 0.3s;
 }
-
-.gallery-image:hover {
-    transform: scale(1.05);
+        .welcome-product-image {
+    width: 100%; /* Se ajusta al ancho máximo del contenedor */
+    max-width: 600px; /* Limita el ancho máximo para que no sea demasiado grande */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Agrega bordes redondeados para un diseño más suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para darle un toque moderno */
+    transition: transform 0.3s; /* Transición suave para el hover */
 }
 
-.footer {
-    background-color: #16171B;
+.welcome-product-image:hover {
+    transform: scale(1.05); /* Efecto de zoom suave al pasar el ratón */
+}
+
+@media (min-width: 768px) {
+    .mobile-images img {
+        max-width: 250px; /* Ajusta el tamaño máximo para pantallas más grandes */
+    }
+}
+        /* Additional CSS for scaling down images on desktop screens */
+@media (min-width: 1024px) {
+    .image-container img {
+        max-width: 400px; /* Adjust the size as needed */
+        height: auto;
+    }
+}
+.needs-goals {
+    background-color: #1B1C20;
+    color: #C4C4C4;
     text-align: center;
-    padding: 20px;
-    color: var(--secondary-text-color);
-    border-top: 3px solid var(--highlight-color);
+    padding: 40px 20px;
+    margin-top: 30px;
 }
 
-.back-to-top {
+.needs-goals h3 {
+    color: #FB6C2C;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.user-goals {
+    margin-bottom: 30px;
+}
+
+.user-goals h4 {
+    color: #FB6C2C;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.user-goals p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+@media (min-width: 768px) {
+    .gallery-container img {
+        max-width: 600px; /* Increase the maximum width for the PackWelcome image on desktop */
+        transition: transform 0.3s;
+    }
+
+    .gallery-container img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Reduce space between sections on desktop */
+    .section {
+        padding: 20px 20px; /* Reduce the padding for sections on desktop */
+    }
+}
+        @media (min-width: 1024px) {
+    .refugee-image {
+        display: block;
+        max-width: 1000px;
+        margin: 0 auto 20px auto; /* Center the image and add spacing below */
+        width: 100%;
+        height: auto;
+    }
+
+    /* Optional: Reduce space between quotes */
+    .testimonial-content blockquote {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+        @media (max-width: 767px) {
+    .refugee-image {
+        width: 100%;
+        max-width: 300px; /* Adjust the max width as needed for mobile */
+        height: auto;
+        margin: 0 auto 20px; /* Center the image and add spacing below */
+    }
+}
+@media (min-width: 1024px) {
+    .partner-logos {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .cear-logo-container {
+        text-align: center;
+        margin-top: 20px; /* Add some space above the CEAR logo */
+    }
+
+    .cear-logo {
+        max-width: 150px;
+        height: auto;
+    }
+}
+@media (max-width: 767px) {
+    .partner-logos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Space between logos */
+    }
+
+    .partner-logos img {
+        max-width: 120px; /* Adjust size as needed */
+        height: auto;
+    }
+
+    .cear-logo-container {
+        text-align: center;
+        margin-top: 10px; /* Space above CEAR logo */
+    }
+
+    .cear-logo {
+        max-width: 120px; /* Match the size with other logos */
+        height: auto;
+    }
+}
+        .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--highlight-color);
-    color: var(--background-color);
+    background-color: #FB6C2C;
+    color: #1B1C20;
     border: none;
     border-radius: 50%;
     width: 50px;
@@ -151,9 +443,10 @@ ul {
     font-size: 24px;
     text-align: center;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, visibility 0.3s;
     z-index: 1000;
 }
 
@@ -162,22 +455,34 @@ ul {
     visibility: visible;
 }
 
-/* Responsive Styles */
-@media (min-width: 768px) {
-    .navbar {
-        padding: 20px 40px;
+@media (max-width: 767px) {
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
     }
+}
+.look-feel-image-container {
+    text-align: center;
+    margin: 20px 0;
+}
 
-    .navbar a {
-        font-size: 1rem;
-    }
+.look-feel-image {
+    width: 100%;
+    max-width: 600px; /* Adjust max width for desktop */
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners for a smoother look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better visibility */
+    transition: transform 0.3s;
+}
 
-    .section {
-        padding: 40px 20px;
-    }
+.look-feel-image:hover {
+    transform: scale(1.05); /* Optional: Zoom effect on hover */
+}
 
-    .gallery-image {
-        max-width: 600px;
+@media (max-width: 767px) {
+    .look-feel-image {
+        max-width: 100%; /* Make the image take full width on mobile */
     }
 }
     </style>
