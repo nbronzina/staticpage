@@ -60,16 +60,29 @@ a:hover {
 /* Introduction Section */
 .intro-container {
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra el texto y la imagen */
-  justify-content: center;
-  gap: 20px;
+  align-items: flex-start; /* Align items to the top */
+  justify-content: flex-start; /* Justify content to the left */
+  gap: 20px; /* Space between image and text */
   max-width: 800px;
+  margin: 0 auto; /* Center the entire section */
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: row; /* Align image and text horizontally */
+  align-items: flex-start; /* Align both items to the top */
+  justify-content: flex-start; /* Align items to the left */
+}
+
+.main-image {
+  width: 300px; /* Adjust the width of the image */
+  height: auto;
+  margin-right: 20px; /* Space between image and text */
 }
 
 .intro-text {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 500px; /* Control the text width */
+  text-align: left; /* Align text to the left */
 }
 
 /* About Section */
@@ -215,16 +228,13 @@ a:hover {
 <!-- Sección de Introducción -->
 <section id="home">
   <div class="intro-container">
-    <img src="img/Perfil 2024.png" alt="Nicolás Bronzina" class="main-image">
+    <img src="path_to_your_image.jpg" alt="Profile Picture" class="main-image">
     <div class="intro-text">
-      <p>As a <em>Social Scientist</em> and <em>Researcher</em> with a Master's in User Experience Design, I am deeply committed to advancing the speculative aspects of design. My <strong>Design Researcher</strong> role allows me to enrich my work through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My focus areas include the future of food, urban environments, ecology, and emerging technologies.</p>
-      <br>
-      <p>In addition to being a managing partner at BPP, I contribute to design fiction writing and collaborate with <a href="https://www.girardinnova.com">Girardin & Nova</a>, where I conduct in-depth research on emerging trends and 'weak signals' to identify potential future scenarios. Recently, I have also started designing diegetic artifacts there. I am actively involved with Heated Consultancy, where I leverage my expertise to explore innovative solutions for climate resilience, striving to positively impact an ever-changing world.</p>
-      <br>
+      <p>As a <strong>Social Scientist</strong> and <strong>Researcher</strong> with a Master's in User Experience Design, I am deeply committed to advancing the speculative aspects of design. My <strong>Design Researcher</strong> role allows me to enrich my work through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas. My focus areas include the future of food, urban environments, ecology, and emerging technologies.</p>
+      <p>In addition to being a managing partner at BPP, I contribute to design fiction writing and collaborate with <a href="https://www.girardinnova.com">Girardin & Nova</a>, where I conduct in-depth research on emerging trends and 'weak signals' to identify potential future scenarios. Recently, I have also started designing diegetic artifacts. I am actively involved with Heated Consultancy, where I leverage my expertise to explore innovative solutions for climate resilience, striving to positively impact an ever-changing world.</p>
       <p>Finally, I am the creator and editor of <a href="/Coffee.html">Coffee.txt</a>, your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
     </div>
   </div>
-  <hr>
 </section>
 
   <!-- Sección About -->
