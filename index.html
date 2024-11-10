@@ -65,11 +65,6 @@
       margin-top: 10px;
     }
 
-    .header-icon-text img {
-      width: 50px;
-      height: auto;
-    }
-
     /* Profile Image */
    .main-image {
   width: 400px; /* Ancho fijo para la imagen */
@@ -81,7 +76,7 @@
   .intro-container {
   display: flex;
   flex-direction: column;
-  align-items: center;  /* Centra la imagen y el texto horizontalmente */
+  align-items: left;  /* Centra la imagen y el texto horizontalmente */
   justify-content: left; /* Centra el contenido verticalmente */
   gap: 20px; /* Espacio entre la imagen y el texto */
 }
@@ -326,7 +321,9 @@
 
   <!-- Sección de Estadísticas del Servidor, Pronóstico y Redes Sociales -->
   <section class="stats-section">
+    <div class="header-icon-text">
     <p>The website is programmed using HTML code from a text editor on my Mac computer, based on static sites.</p>
+</div>
     <div>
       <h2>Server Stats</h2>
       <p>Location: Madrid</p>
