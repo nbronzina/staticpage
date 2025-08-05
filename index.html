@@ -13,9 +13,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Asegura que el contenido comience desde arriba */
+  justify-content: flex-start;
   text-align: center;
-  min-height: 100vh; /* Asegura que el contenido ocupe toda la altura de la pantalla */
+  min-height: 100vh;
 }
 
 h1, h2, p {
@@ -60,29 +60,29 @@ a:hover {
 /* Introduction Section */
 .intro-container {
   display: flex;
-  align-items: flex-start; /* Align items to the top */
-  justify-content: flex-start; /* Justify content to the left */
-  gap: 20px; /* Space between image and text */
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
   max-width: 800px;
-  margin: 0 auto; /* Center the entire section */
+  margin: 0 auto;
 }
 
 .intro-content {
   display: flex;
-  flex-direction: row; /* Align image and text horizontally */
-  align-items: flex-start; /* Align both items to the top */
-  justify-content: flex-start; /* Align items to the left */
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .main-image {
-  width: 300px; /* Adjust the width of the image */
+  width: 300px;
   height: auto;
-  margin-right: 20px; /* Space between image and text */
+  margin-right: 20px;
 }
 
 .intro-text {
-  max-width: 500px; /* Control the text width */
-  text-align: left; /* Align text to the left */
+  max-width: 500px;
+  text-align: left;
 }
 
 /* About Section */
@@ -116,18 +116,24 @@ a:hover {
   margin: 5px 0;
 }
 
-/* Stats Section */
+/* Stats Section - CORREGIDO */
 .stats-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
   padding: 20px 0;
   text-align: center;
   width: 100%;
-  margin-top: 20px; /* Se agrega un margen superior para separarlo del texto superior */
+  max-width: 900px;
+  margin: 20px auto 0;
+  flex-wrap: nowrap;
 }
 
 .stats-section div {
   flex: 1;
+  min-width: 180px;
+  max-width: 280px;
 }
 
 /* Footer Links */
@@ -192,7 +198,14 @@ a:hover {
 
   .stats-section {
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .stats-section div {
+    flex: none;
+    width: 100%;
+    max-width: 300px;
   }
 
   .contenedor {
@@ -216,13 +229,10 @@ a:hover {
 </head>
 
 <body>
-</head>
-
-<body>
   <!-- Sección de Encabezado -->
 <header class="header">
     <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
-    <h2>I’m Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
+    <h2>I'm Nicolás Bronzina, an Argentinean Design Researcher living in Madrid</h2>
 </header>
   <hr>
 <!-- Sección de Introducción -->
@@ -339,10 +349,10 @@ a:hover {
             <h3>Foresight</h3>
             <img src="img/DDK.png" alt="Foresight" style="width: 80%; height: auto;">
             <ul>
-                <li><a href="https://medium.com/@nbronzina/enseñando-inteligencia-artificial-a-diseñadores-ux-694c3a1611d7">Teaching Artificial Intelligence to UX Designers: Notes from a masterclass given together with Fabien Girardin and Rohit Gupta for UX design students at UDIT.</li>
-                <li><a href="https://medium.com/@nbronzina/turning-the-tide-ac23bdb8e7ba">Turning the Tide: How Argentina Can Transform Short-Term Survival into a Future-Ready Strategy</li>
-                <li><a href="https://atelierdesfuturs.org/q260-comment-reimaginer-le-futur-au-quotidien/">Comment réimaginer le futur au quotidian? / Re-imagining everyday futures</li>
-                <li><a href="https://medium.com/@nbronzina/viveza-criolla-a-model-for-the-future-dc2705802104">Viveza Criolla: A Design Fiction Lens on Strategic Adaptation</li>
+                <li><a href="https://medium.com/@nbronzina/enseñando-inteligencia-artificial-a-diseñadores-ux-694c3a1611d7">Teaching Artificial Intelligence to UX Designers: Notes from a masterclass given together with Fabien Girardin and Rohit Gupta for UX design students at UDIT.</a></li>
+                <li><a href="https://medium.com/@nbronzina/turning-the-tide-ac23bdb8e7ba">Turning the Tide: How Argentina Can Transform Short-Term Survival into a Future-Ready Strategy</a></li>
+                <li><a href="https://atelierdesfuturs.org/q260-comment-reimaginer-le-futur-au-quotidien/">Comment réimaginer le futur au quotidian? / Re-imagining everyday futures</a></li>
+                <li><a href="https://medium.com/@nbronzina/viveza-criolla-a-model-for-the-future-dc2705802104">Viveza Criolla: A Design Fiction Lens on Strategic Adaptation</a></li>
                 <li><a href= "https://medium.com/@nbronzina/diegetic-discovery-kit-57f77e6074e9"> A practical guide to changing how you see the everyday objects and spaces around you</a></li>
                 <li><a href="/Official.html">Envisioning futures where Design Fiction empowers refugees to rebuild their lives</a></li>
                 <li><a href="https://medium.com/@nbronzina/welcome-an-approach-to-prospective-methodology-based-on-futures-design-and-its-relation-to-6a5491518262">Prospective Methodology Based on Futures Design</a></li>
@@ -389,7 +399,7 @@ a:hover {
       const now = new Date();
       document.getElementById('time-info').textContent = now.toLocaleTimeString();
     }
-    setInterval(updateTime, 1000); // Actualiza la hora cada segundo
+    setInterval(updateTime, 1000);
 
     async function fetchWeather() {
       try {
@@ -397,11 +407,11 @@ a:hover {
         const data = await response.json();
         const temperature = data.main.temp;
         const weatherDescription = data.weather[0].description;
-        const weatherIcon = data.weather[0].icon; // Obtener el código del ícono
-        const iconUrl = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`; // URL del ícono
+        const weatherIcon = data.weather[0].icon;
+        const iconUrl = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
 
         document.getElementById('weather-info').textContent = `${temperature}°C, ${weatherDescription}`;
-        document.getElementById('weather-icon').src = iconUrl; // Establecer la fuente del ícono
+        document.getElementById('weather-icon').src = iconUrl;
       } catch (error) {
         document.getElementById('weather-info').textContent = 'Weather data not available';
       }
@@ -411,7 +421,7 @@ a:hover {
     function scrollToTop() {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth' // Desplazamiento suave
+        behavior: 'smooth'
       });
     }
 
@@ -420,14 +430,14 @@ a:hover {
       const modalImage = document.getElementById("modalImage");
       const caption = document.getElementById("caption");
 
-      modal.style.display = "block"; // Muestra el modal
-      modalImage.src = element.src; // Establece la fuente de la imagen del modal
-      caption.innerHTML = element.alt; // Establece el texto del pie de foto
+      modal.style.display = "block";
+      modalImage.src = element.src;
+      caption.innerHTML = element.alt;
     }
 
     function closeModal() {
       const modal = document.getElementById("imageModal");
-      modal.style.display = "none"; // Oculta el modal
+      modal.style.display = "none";
     }
   </script>
   
