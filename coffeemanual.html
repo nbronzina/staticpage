@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café de Especialidad: La Guía Completa</title>
+    <style>
+        /* ===== SISTEMA DE DISEÑO BASE ===== */
+        /* Definimos variables CSS para consistencia y fácil mantenimiento */
+        :root {
+            --coffee-dark: #3c2415;     /* Marrón oscuro principal */
+            --coffee-medium: #5d3a24;   /* Marrón medio para subtítulos */
+            --coffee-light: #6b4226;    /* Marrón claro para detalles */
+            --gold-accent: #d4af37;     /* Oro para destacados y botones */
+            --gold-light: #f4d03f;      /* Oro claro para gradientes */
+            --cream-bg: #f5f3f0;        /* Crema para fondo principal */
+            --cream-card: #e8e2db;      /* Crema más oscura para bordes */
+            --paper-white: #ffffff;     /* Blanco puro para tarjetas */
+            --warm-beige: #f8f6f3;      /* Beige cálido para secciones */
+        }
+
+        /* Reset básico para consistencia entre navegadores */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Incluye padding y border en el ancho total */
+        }
+
+        /* ===== TIPOGRAFÍA Y LAYOUT BASE ===== */
+        body {
+            font-family: 'Georgia', serif; /* Serif para legibilidad y calidez */
+            line-height: 1.6; /* Espaciado cómodo para lectura */
+            color: var(--coffee-dark);
+            background: linear-gradient(135deg, var(--cream-bg) 0%, var(--cream-card) 100%);
+            /* Gradiente sutil que añade profundidad visual */
+        }
+
+        /* ===== ESTRUCTURA PRINCIPAL ===== */
+        /* Layout flexbox para sidebar + contenido principal */
+        .container {
+            display: flex;
+            min-height: 100vh; /* Altura mínima de viewport completo */
+        }
+
+        /* ===== SIDEBAR NAVEGACIÓN ===== */
+        .sidebar {
+            width: 280px; /* Ancho fijo para navegación */
+            background: var(--coffee-dark);
+            color: var(--cream-bg);
+            padding: 2rem 1.5rem;
+            position: fixed; /* Fijo para scroll independiente */
+            height: 100vh;
+            overflow-y: auto; /* Scroll si contenido excede altura */
+            box-shadow: 4px 0 20px rgba(0,0,0,0.1); /* Sombra sutil para separación */
+            z-index: 100; /* Asegurar que aparezca sobre contenido */
+        }
+
+        .sidebar h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold-accent);
+            border-bottom: 2px solid var(--gold-accent);
+            padding-bottom: 0.5rem;
+        }
+
+        /* ===== MENÚ NAVEGACIÓN ===== */
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Enlaces de navegación con hover effects */
+        .nav-menu a {
+            color: var(--cream-bg);
+            text-decoration: none;
+            display: block;
+            padding: 0.7rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease; /* Transición suave para interacciones */
+            font-size: 0.9rem;
+        }
+
+        /* Estados interactivos de navegación */
+        .nav-menu a:hover {
+            background: var(--gold-accent);
+            color: var(--coffee-dark);
+            transform: translateX(5px); /* Efecto de desplazamiento al hover */
+        }
+
+        .nav-menu a.active {
+            background: var(--gold-accent);
+            color: var(--coffee-dark);
+        }
+
+        /* ===== CONTENIDO PRINCIPAL ===== */
+        .main-content {
+            margin-left: 280px; /* Compensar ancho del sidebar */
+            padding: 2rem;
+            max-width: 800px; /* Ancho óptimo para legibilidad */
+            width: 100%;
+        }
+
+        /* ===== SECCIONES DE CONTENIDO ===== */
+        .section {
+            margin-bottom: 4rem; /* Espaciado generoso entre secciones */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards; /* Animación de entrada */
+        }
+
+        /* Animación de fade-in para secciones */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== JERARQUÍA TIPOGRÁFICA ===== */
+        .section h2 {
+            font-size: 2.5rem;
+            color: var(--coffee-dark);
+            margin-bottom: 1.5rem;
+            border-left: 6px solid var(--gold-accent); /* Barra lateral decorativa */
+            padding-left: 1rem;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            color: var(--coffee-medium);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .section h4 {
+            font-size: 1.3rem;
+            color: var(--coffee-light);
+            margin: 1.5rem 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px; /* Espaciado para legibilidad */
+        }
+
+        /* ===== COMPONENTES DE CONTENIDO ===== */
+        
+        /* Caja destacada para información importante */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--gold-accent), var(--gold-light));
+            color: var(--coffee-dark);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3); /* Sombra dorada */
+        }
+
+        .highlight-box h3 {
+            color: var(--coffee-dark);
+            margin-top: 0;
+        }
+
+        /* Tarjeta de información general */
+        .info-card {
+            background: var(--paper-white);
+            border: 2px solid var(--cream-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Sombra sutil */
+        }
+
+        /* ===== GRIDS PARA ORGANIZACIÓN ===== */
+        
+        /* Grid responsivo para procesos de café */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        /* Tarjetas individuales de proceso */
+        .process-card {
+            background: var(--paper-white);
+            border: 2px solid var(--gold-accent);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease; /* Animación hover */
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px); /* Elevación al hover */
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .process-card h4 {
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== DIAGRAMAS Y VISUALIZACIONES ===== */
+        
+        /* Contenedor para diagramas ASCII */
+        .extraction-diagram {
+            background: var(--warm-beige);
+            border: 2px solid var(--gold-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            font-family: monospace; /* Fuente monoespaciada para ASCII */
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* ===== MÉTODOS DE PREPARACIÓN ===== */
+        
+        .brewing-method {
+            background: var(--paper-white);
+            border-left: 4px solid var(--gold-accent); /* Barra lateral identificativa */
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Grid para especificaciones técnicas */
+        .brewing-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--warm-beige);
+            border-radius: 8px;
+        }
+
+        .spec-item {
+            text-align: center;
+        }
+
+        .spec-value {
+            font-weight: bold;
+            color: var(--gold-accent);
+            font-size: 1.2rem;
+        }
+
+        .spec-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== RUEDA DE CATA ===== */
+        
+        .tasting-wheel {
+            background: var(--paper-white);
+            border: 3px solid var(--gold-accent);
+            border-radius: 50%; /* Círculo perfecto */
+            width: 300px;
+            height: 300px;
+            margin: 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+        }
+
+        /* ===== CATEGORÍAS DE SABOR ===== */
+        
+        .flavor-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .flavor-card {
+            background: var(--paper-white);
+            border: 1px solid var(--cream-card);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .flavor-card:hover {
+            border-color: var(--gold-accent);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+        }
+
+        /* ===== INDICADORES DE CALIDAD ===== */
+        
+        .quality-indicators {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap; /* Responsivo */
+            gap: 1rem;
+        }
+
+        .indicator {
+            background: var(--paper-white);
+            border: 2px solid var(--cream-card);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            flex: 1;
+            min-width: 150px; /* Ancho mínimo */
+            transition: all 0.3s ease;
+        }
+
+        /* Estados específicos para indicadores */
+        .indicator.good {
+            border-color: #28a745; /* Verde para positivo */
+        }
+
+        .indicator.bad {
+            border-color: #dc3545; /* Rojo para negativo */
+        }
+
+        .indicator:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ===== TIMELINE DE ALMACENAMIENTO ===== */
+        
+        .storage-timeline {
+            background: var(--paper-white);
+            border: 2px solid var(--gold-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--warm-beige);
+            border-radius: 8px;
+        }
+
+        .timeline-day {
+            background: var(--gold-accent);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        /* ===== MAPA DE ORÍGENES ===== */
+        
+        .origins-map {
+            background: var(--paper-white);
+            border: 2px solid var(--gold-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .region-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .region-card {
+            background: var(--paper-white);
+            border: 2px solid var(--cream-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .region-card:hover {
+            border-color: var(--gold-accent);
+            transform: translateY(-5px);
+        }
+
+        /* ===== SECCIÓN DE QUIZ ===== */
+        
+        .quiz-section {
+            background: linear-gradient(135deg, var(--coffee-dark), var(--coffee-medium));
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .quiz-question {
+            margin: 1.5rem 0;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .quiz-option {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--gold-accent);
+        }
+
+        /* ===== PLAN DE ACCIÓN ===== */
+        
+        .action-plan {
+            background: linear-gradient(135deg, var(--gold-accent), var(--gold-light));
+            color: var(--coffee-dark);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        /* ===== GLOSARIO ===== */
+        
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .glossary-item {
+            background: var(--paper-white);
+            border: 1px solid var(--cream-card);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .glossary-term {
+            font-weight: bold;
+            color: var(--gold-accent);
+            font-size: 1.1rem;
+        }
+
+        /* ===== NAVEGACIÓN MÓVIL ===== */
+        
+        .mobile-toggle {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1000;
+            background: var(--coffee-dark);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        
+        @media (max-width: 768px) {
+            /* Mostrar botón hamburguesa en móvil */
+            .mobile-toggle {
+                display: block;
+            }
+
+            /* Sidebar oculto por defecto en móvil */
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+
+            /* Clase para mostrar sidebar */
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            /* Ajustar contenido principal */
+            .main-content {
+                margin-left: 0;
+                padding: 4rem 1rem 2rem;
+            }
+
+            /* Reducir tamaños de texto */
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            /* Grids a una columna en móvil */
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brewing-specs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quality-indicators {
+                flex-direction: column;
+            }
+        }
+
+        /* ===== MEJORAS DE ACCESIBILIDAD ===== */
+        
+        /* Foco visible para navegación por teclado */
+        .nav-menu a:focus,
+        .quiz-option:focus {
+            outline: 2px solid var(--gold-accent);
+            outline-offset: 2px;
+        }
+
+        /* Alto contraste para texto importante */
+        .highlight-box,
+        .action-plan {
+            font-weight: 500; /* Peso medio para mejor legibilidad */
+        }
+
+        /* ===== ANIMACIONES ADICIONALES ===== */
+        
+        /* Animación sutil para elementos interactivos */
+        .process-card,
+        .flavor-card,
+        .region-card,
+        .indicator {
+            will-change: transform; /* Optimización de rendimiento */
+        }
+
+        /* Transición suave para cambios de tema si se implementara */
+        * {
+            transition-property: background-color, border-color, color;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón hamburguesa para móvil -->
+    <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
+    
+    <div class="container">
+        <!-- ===== SIDEBAR NAVEGACIÓN ===== -->
+        <nav class="sidebar" id="sidebar">
+            <h1>☕ Café Especialidad</h1>
+            <ul class="nav-menu">
+                <!-- Navegación estructurada siguiendo el flujo pedagógico -->
+                <li><a href="#intro" class="nav-link">Introducción</a></li>
+                <li><a href="#specialty" class="nav-link">¿Qué es Especialidad?</a></li>
+                <li><a href="#processing" class="nav-link">Procesamiento</a></li>
+                <li><a href="#extraction" class="nav-link">Ciencia de Extracción</a></li>
+                <li><a href="#brewing" class="nav-link">Métodos de Preparación</a></li>
+                <li><a href="#cupping" class="nav-link">Cata Profesional</a></li>
+                <li><a href="#water" class="nav-link">Calidad del Agua</a></li>
+                <li><a href="#defects" class="nav-link">Identificar Defectos</a></li>
+                <li><a href="#storage" class="nav-link">Almacenamiento</a></li>
+                <li><a href="#buying" class="nav-link">Guía de Compra</a></li>
+                <li><a href="#glossary" class="nav-link">Glosario</a></li>
+                <li><a href="#action" class="nav-link">Plan de Acción</a></li>
+            </ul>
+        </nav>
+
+        <!-- ===== CONTENIDO PRINCIPAL ===== -->
+        <main class="main-content">
+            
+            <!-- SECCIÓN: INTRODUCCIÓN -->
+            <section id="intro" class="section">
+                <div class="highlight-box">
+                    <h2>¿Por qué un café cuesta €15 y otro €3?</h2>
+                    <p>La respuesta está en cada paso del proceso, desde la planta hasta tu taza. Esta guía te explicará exactamente qué hace que un café sea "de especialidad" y cómo puedes identificarlo, comprarlo y prepararlo correctamente.</p>
+                    <p><strong>Si ya sabes algo de café</strong>, encontrarás información técnica detallada.</p>
+                    <p><strong>Si empiezas de cero</strong>, cada concepto se construye sobre el anterior.</p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: ¿QUÉ ES ESPECIALIDAD? -->
+            <section id="specialty" class="section">
+                <h2>¿Qué es realmente el café de especialidad?</h2>
+                
+                <!-- Analogía introductoria para facilitar comprensión -->
+                <div class="info-card">
+                    <h3>Imagina dos tomates en una tienda:</h3>
+                    <p><strong>Uno perfecto:</strong> sin marcas, cultivado con cuidado → €4/kg</p>
+                    <p><strong>Otro con manchas:</strong> producido en masa → €1/kg</p>
+                    <p>Con el café pasa igual, pero la diferencia es menos obvia.</p>
+                </div>
+
+                <h3>Definición Oficial</h3>
+                <p>Un café de especialidad debe cumplir <strong>TRES</strong> requisitos simultáneos:</p>
+
+                <!-- Indicadores visuales para conceptos clave -->
+                <div class="quality-indicators">
+                    <div class="indicator good">
+                        <h4>80+ Puntos</h4>
+                        <p>Puntuación SCA mínima</p>
+                    </div>
+                    <div class="indicator good">
+                        <h4>Trazabilidad</h4>
+                        <p>Origen específico conocido</p>
+                    </div>
+                    <div class="indicator good">
+                        <h4>Sin Defectos</h4>
+                        <p>Máximo 5 secundarios, 0 primarios</p>
+                    </div>
+                </div>
+
+                <!-- Dato impactante destacado -->
+                <div class="highlight-box">
+                    <h3>Dato Impactante:</h3>
+                    <p>Solo el <strong>10% del café arábica mundial</strong> califica como "especialidad"</p>
+                    <p>Y solo el <strong>3% del café total</strong> consumido mundialmente</p>
+                </div>
+
+                <!-- Visualización ASCII adaptada para web -->
+                <div class="extraction-diagram">
+                    <h4>Pirámide de Calidad del Café</h4>
+                    <pre>
+                    ESPECIALIDAD
+                   (10% del arábica)
+                  ******************
+                 ********************
+                **********************
+               ************************
+              **************************
+             ****************************
+            *** COMMODITY ARÁBICA *******
+           ******************************
+          ********************************
+         **********************************
+        ************************************
+       **************************************
+      ****************************************
+     ******************************************
+    ********************************************
+   **********************************************
+  ************************************************
+ **************************************************
+****************************************************
+****************** ROBUSTA *************************
+                    </pre>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: PROCESAMIENTO -->
+            <section id="processing" class="section">
+                <h2>Del Grano Verde a Tu Taza</h2>
+                
+                <!-- Información básica accesible -->
+                <div class="info-card">
+                    <h3>El Cafeto y Su Fruto</h3>
+                    <p>El café es una cereza. Dentro hay dos semillas: los "granos". La planta tarda 3-4 años en producir, y cada cereza madura en 6-9 meses.</p>
+                </div>
+
+                <h3>Métodos de Procesamiento</h3>
+                <p>El procesamiento determina qué sabores desarrollará el café. Hay tres métodos principales:</p>
+
+                <!-- Grid de tarjetas para comparación visual -->
+                <div class="process-grid">
+                    <div class="process-card">
+                        <h4>🌊 PROCESAMIENTO LAVADO</h4>
+                        <p><strong>Proceso:</strong></p>
+                        <ul>
+                            <li>Despulpar cereza inmediatamente</li>
+                            <li>Fermentar 12-48 horas</li>
+                            <li>Lavar para eliminar mucílago</li>
+                            <li>Secar solo grano con pergamino</li>
+                        </ul>
+                        <p><strong>Resultado:</strong> Sabores limpios, acidez brillante, notas cítricas</p>
+                        <p><strong>Ejemplos:</strong> Colombia, Centroamérica, Kenia</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <h4>☀️ PROCESAMIENTO NATURAL</h4>
+                        <p><strong>Proceso:</strong></p>
+                        <ul>
+                            <li>Secar cereza COMPLETA al sol</li>
+                            <li>Voltear 15-20 días</li>
+                            <li>Pulpa fermenta con grano</li>
+                            <li>Despulpar solo al final</li>
+                        </ul>
+                        <p><strong>Resultado:</strong> Sabores frutales intensos, dulzor, cuerpo pesado</p>
+                        <p><strong>Ejemplos:</strong> Etiopía, Brasil fazendas</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <h4>🍯 PROCESAMIENTO HONEY</h4>
+                        <p><strong>Proceso:</strong></p>
+                        <ul>
+                            <li>Despulpar dejando mucílago</li>
+                            <li>Secar con mucílago adherido</li>
+                            <li>Control preciso humedad</li>
+                        </ul>
+                        <p><strong>Resultado:</strong> Equilibrio entre lavado y natural</p>
+                        <p><strong>Ejemplos:</strong> Costa Rica, Brasil experimental</p>
+                    </div>
+                </div>
+
+                <!-- Ejercicio práctico destacado -->
+                <div class="highlight-box">
+                    <h3>¿Por qué importa esto?</h3>
+                    <p>Cada método crea perfiles de sabor diferentes. Si compras un "natural etíope" esperando acidez limpia, te llevarás una sorpresa frutal intensa.</p>
+                    <p><strong>Ejercicio:</strong> Compra el mismo café en tres procesos diferentes. Prepáralos exactamente igual. La diferencia te explicará más que cualquier teoría.</p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: CIENCIA DE EXTRACCIÓN -->
+            <section id="extraction" class="section">
+                <h2>La Ciencia de la Extracción</h2>
+                <p class="subtitle">(O por qué tu café sabe amargo)</p>
+
+                <!-- Explicación técnica accesible -->
+                <div class="info-card">
+                    <h3>La Ecuación Básica:</h3>
+                    <p><strong>TDS (%):</strong> qué tan "fuerte" sabe tu café</p>
+                    <p><strong>Extracción (%):</strong> qué porcentaje del café se disolvió</p>
+                    
+                    <!-- Especificaciones técnicas en grid visual -->
+                    <div class="brewing-specs">
+                        <div class="spec-item">
+                            <div class="spec-value">1.15-1.35%</div>
+                            <div class="spec-label">TDS Filtrados</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">8-12%</div>
+                            <div class="spec-label">TDS Espresso</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">18-22%</div>
+                            <div class="spec-label">Extracción Óptima</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>¿Qué se extrae y cuándo?</h3>
+                
+                <!-- Diagrama educativo -->
+                <div class="extraction-diagram">
+                    <h4>Curva de Extracción</h4>
+                    <pre>
+SABOR
+  ↑
+  │    ZONA ÓPTIMA
+  │      ╭─────╮
+  │     ╱       ╲
+  │ AGRIO         AMARGO
+  │   ╱             ╲
+  │  ╱               ╲
+  ├─╱─────────────────╲───→ TIEMPO
+  0%        18-22%        30%+
+       EXTRACCIÓN
+                    </pre>
+                </div>
+
+                <!-- Fases de extracción explicadas visualmente -->
+                <div class="process-grid">
+                    <div class="process-card">
+                        <h4>1️⃣ PRIMERA EXTRACCIÓN</h4>
+                        <p><strong>Qué:</strong> Ácidos + Sales</p>
+                        <p><strong>Sabor:</strong> Brillante, cítrico</p>
+                        <p><strong>Solo esto:</strong> AGRIO/ÁCIDO</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <h4>2️⃣ SEGUNDA EXTRACCIÓN</h4>
+                        <p><strong>Qué:</strong> Azúcares + Aromáticos</p>
+                        <p><strong>Sabor:</strong> Dulzor, equilibrio</p>
+                        <p><strong>Esta es:</strong> ZONA ÓPTIMA</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <h4>3️⃣ TERCERA EXTRACCIÓN</h4>
+                        <p><strong>Qué:</strong> Taninos + Quinonas</p>
+                        <p><strong>Sabor:</strong> Amargor, astringencia</p>
+                        <p><strong>Llegar aquí:</strong> AMARGO</p>
+                    </div>
+                </div>
+
+                <!-- Diagnóstico práctico -->
+                <div class="highlight-box">
+                    <h3>Diagnóstico Práctico por Sabor:</h3>
+                    <p><strong>Problema:</strong> Café agrio → <strong>Subextracción</strong> → Molienda más fina</p>
+                    <p><strong>Problema:</strong> Café amargo → <strong>Sobreextracción</strong> → Molienda más gruesa</p>
+                    <p><strong>Problema:</strong> Café aguado → <strong>TDS bajo</strong> → Usar más café</p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: MÉTODOS DE PREPARACIÓN -->
+            <section id="brewing" class="section">
+                <h2>Métodos de Preparación</h2>
+                <p>Cada método tiene una personalidad. Elegir el correcto es como elegir la copa correcta para el vino.</p>
+
+                <!-- Métodos detallados con especificaciones -->
+                <div class="brewing-method">
+                    <h3>🫖 FRENCH PRESS</h3>
+                    <p><strong>Perfil:</strong> Cuerpo completo, sedimento, sabores intensos</p>
+                    
+                    <div class="brewing-specs">
+                        <div class="spec-item">
+                            <div class="spec-value">Muy gruesa</div>
+                            <div class="spec-label">Molienda</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">4 minutos</div>
+                            <div class="spec-label">Tiempo</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">1:15</div>
+                            <div class="spec-label">Ratio</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">96°C</div>
+                            <div class="spec-label">Temperatura</div>
+                        </div>
+                    </div>
+                    <p><strong>Mejor para:</strong> Cafés con cuerpo (brasileños), naturales intensos, principiantes</p>
+                </div>
+
+                <div class="brewing-method">
+                    <h3>⏳ V60 (Pour Over)</h3>
+                    <p><strong>Perfil:</strong> Claridad, limpieza, acidez definida</p>
+                    
+                    <div class="brewing-specs">
+                        <div class="spec-item">
+                            <div class="spec-value">Media-fina</div>
+                            <div class="spec-label">Molienda</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">2:30-3:30</div>
+                            <div class="spec-label">Tiempo</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">1:16</div>
+                            <div class="spec-label">Ratio</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">93°C</div>
+                            <div class="spec-label">Temperatura</div>
+                        </div>
+                    </div>
+                    <p><strong>Mejor para:</strong> Cafés lavados africanos, alta acidez, usuarios con experiencia</p>
+                </div>
+
+                <div class="brewing-method">
+                    <h3>🔄 AEROPRESS</h3>
+                    <p><strong>Perfil:</strong> Versatilidad máxima, limpio pero con cuerpo</p>
+                    
+                    <div class="brewing-specs">
+                        <div class="spec-item">
+                            <div class="spec-value">Media</div>
+                            <div class="spec-label">Molienda</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">1-2 min</div>
+                            <div class="spec-label">Tiempo</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">1:12-1:17</div>
+                            <div class="spec-label">Ratio</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">85°C</div>
+                            <div class="spec-label">Temperatura</div>
+                        </div>
+                    </div>
+                    <p><strong>Mejor para:</strong> Experimentación, viajes, todos los niveles</p>
+                </div>
+
+                <!-- Guía de decisión -->
+                <div class="highlight-box">
+                    <h3>¿Cómo Elegir?</h3>
+                    <p><strong>¿Tiempo?</strong> Prisa → AeroPress | Ritual → V60 | Lote → French Press</p>
+                    <p><strong>¿Tipo de café?</strong> Natural intenso → French Press | Lavado delicado → V60</p>
+                    <p><strong>¿Experiencia?</strong> Principiante → French Press | Avanzado → Espresso</p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: CATA PROFESIONAL -->
+            <section id="cupping" class="section">
+                <h2>Cómo Catar Café como un Profesional</h2>
+                <p>La cata profesional (cupping) es tu herramienta para entender realmente el café. Es objetiva, repetible, y separa marketing de calidad real.</p>
+
+                <!-- Rueda de sabores visual -->
+                <div class="tasting-wheel">
+                    <div style="text-align: center;">
+                        <h4>Rueda de Sabores</h4>
+                        <p>Frutales • Florales<br>
+                        Dulces • Especias<br>
+                        Terrosos • Defectos</p>
+                    </div>
+                </div>
+
+                <h3>Protocolo SCA Simplificado</h3>
+                <!-- Proceso paso a paso -->
+                <div class="process-grid">
+                    <div class="process-card">
+                        <h4>1. FRAGANCIA</h4>
+                        <p>Café seco molido</p>
+                        <p>Huele inmediatamente</p>
+                        <p>Notas: floral, frutal, terrosa</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <h4>2. AROMA</h4>
+                        <p>Café mojado (4 min)</p>
+                        <p>Más intenso que fragancia</p>
+                        <p>Rompe costra, remueve</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <h4>3. CATA LÍQUIDA</h4>
+                        <p>13-15 minutos</p>
+                        <p>Sorbos ruidosos (aspirar)</p>
+                        <p>Evalúa todos los aspectos</p>
+                    </div>
+                </div>
+
+                <!-- Categorías de sabor organizadas -->
+                <div class="flavor-categories">
+                    <div class="flavor-card">
+                        <h4>🍊 FRUTALES</h4>
+                        <ul>
+                            <li>Cítricos: limón, lima, naranja</li>
+                            <li>Frutas: manzana, pera, durazno</li>
+                            <li>Bayas: fresa, mora, arándano</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flavor-card">
+                        <h4>🌸 FLORALES</h4>
+                        <ul>
+                            <li>Rosa, jazmín, lavanda</li>
+                            <li>Miel, té negro</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flavor-card">
+                        <h4>🍫 DULCES</h4>
+                        <ul>
+                            <li>Chocolate: leche, amargo</li>
+                            <li>Caramelo, vainilla, miel</li>
+                            <li>Frutos secos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flavor-card">
+                        <h4>🌿 ESPECIAS</h4>
+                        <ul>
+                            <li>Canela, clavo, pimienta</li>
+                            <li>Cardamomo, jengibre</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sistema de puntuación -->
+                <div class="quiz-section">
+                    <h3>Sistema de Puntuación SCA</h3>
+                    <div class="brewing-specs">
+                        <div class="spec-item">
+                            <div class="spec-value">+80</div>
+                            <div class="spec-label">Especialidad</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">70-80</div>
+                            <div class="spec-label">Premium</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">60-70</div>
+                            <div class="spec-label">Comercial Bueno</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">&lt;60</div>
+                            <div class="spec-label">Comercial Bajo</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: CALIDAD DEL AGUA -->
+            <section id="water" class="section">
+                <h2>El Agua: El 98% que Nadie Menciona</h2>
+                <p>El agua no es solo H2O. Los minerales disueltos cambian completamente la extracción.</p>
+
+                <!-- Especificaciones técnicas del agua -->
+                <div class="info-card">
+                    <h3>El agua "perfecta" para café contiene:</h3>
+                    <div class="brewing-specs">
+                        <div class="spec-item">
+                            <div class="spec-value">150-300 ppm</div>
+                            <div class="spec-label">Dureza General</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">75-150 ppm</div>
+                            <div class="spec-label">Alcalinidad</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">6.5-7.5</div>
+                            <div class="spec-label">pH</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Minerales Clave</h3>
+                <!-- Explicación de minerales y su efecto -->
+                <div class="process-grid">
+                    <div class="process-card">
+                        <h4>Mg²⁺ MAGNESIO</h4>
+                        <p><strong>Extrae:</strong> Acidez y brillo</p>
+                        <p><strong>Potencia:</strong> Sabores frutales</p>
+                        <p><strong>Óptimo:</strong> 10-30 ppm</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <h4>Ca²⁺ CALCIO</h4>
+                        <p><strong>Extrae:</strong> Cuerpo y dulzor</p>
+                        <p><strong>Potencia:</strong> Sabores terrosos</p>
+                        <p><strong>Óptimo:</strong> 50-175 ppm</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <h4>HCO₃⁻ BICARBONATOS</h4>
+                        <p><strong>Función:</strong> Buffer de acidez</p>
+                        <p><strong>Problema:</strong> Demasiado → café plano</p>
+                        <p><strong>Óptimo:</strong> 75-150 ppm</p>
+                    </div>
+                </div>
+
+                <!-- Consejos prácticos -->
+                <div class="highlight-box">
+                    <h3>Recetas de Agua para Café:</h3>
+                    <p><strong>Para cafés ácidos (africanos):</strong> Más calcio, menos magnesio</p>
+                    <p><strong>Para cafés dulces (brasileños):</strong> Más magnesio, menos calcio</p>
+                    <p><strong>Prueba rápida:</strong> Café con agua embotellada vs grifo. ¿Notas diferencia?</p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: IDENTIFICAR DEFECTOS -->
+            <section id="defects" class="section">
+                <h2>Cómo Identificar un Café Malo</h2>
+                <p>La mayoría del café en el mercado NO es de especialidad. Aprende a identificar calidad para no tirar dinero.</p>
+
+                <h3>Señales en el Empaque</h3>
+                <!-- Indicadores visuales de calidad -->
+                <div class="quality-indicators">
+                    <div class="indicator bad">
+                        <h4>🚩 BANDERAS ROJAS</h4>
+                        <ul>
+                            <li>Sin fecha de tostado</li>
+                            <li>"100% arábica" único atributo</li>
+                            <li>Precios &lt;€8/kg</li>
+                            <li>Empaque no hermético</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="indicator good">
+                        <h4>✅ BANDERAS VERDES</h4>
+                        <ul>
+                            <li>Fecha tostado (&lt;4 semanas)</li>
+                            <li>Origen específico</li>
+                            <li>Método procesamiento</li>
+                            <li>Válvula desgasificación</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Test práctico destacado -->
+                <div class="highlight-box">
+                    <h3>Test de Calidad Rápido: BLOOM TEST</h3>
+                    <ol>
+                        <li>Pon café molido en V60 o similar</li>
+                        <li>Vierte agua caliente (doble peso del café)</li>
+                        <li>¿Se infla y burbujea vigorosamente?</li>
+                    </ol>
+                    <p><strong>SÍ = café fresco de calidad | NO = café viejo o defectuoso</strong></p>
+                </div>
+
+                <h3>Defectos Comunes</h3>
+                <!-- Defectos categorizados visualmente -->
+                <div class="flavor-categories">
+                    <div class="flavor-card">
+                        <h4>⚫ TOSTADO DESIGUAL</h4>
+                        <p>Granos diferentes colores</p>
+                        <p>Sabor: astringencia + agrio</p>
+                    </div>
+                    
+                    <div class="flavor-card">
+                        <h4>🔥 SOBRE-TOSTADO</h4>
+                        <p>Color oscuro, aceites</p>
+                        <p>Sabor: amargo puro, sin matices</p>
+                    </div>
+                    
+                    <div class="flavor-card">
+                        <h4>🌱 SUB-TOSTADO</h4>
+                        <p>Color pálido, mate</p>
+                        <p>Sabor: agrio, hierba, cereales</p>
+                    </div>
+                    
+                    <div class="flavor-card">
+                        <h4>💧 MAL ALMACENADO</h4>
+                        <p>Olor a moho, humedad</p>
+                        <p>Sabor: papel, cartón, rancio</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: ALMACENAMIENTO -->
+            <section id="storage" class="section">
+                <h2>Almacenamiento y Frescura</h2>
+                <p>El café empieza a degradarse inmediatamente después del tostado. Tu almacenamiento determina cuánto sabor conservas.</p>
+
+                <!-- Timeline visual de frescura -->
+                <div class="storage-timeline">
+                    <h3>Línea Temporal de Frescura</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-day">0</div>
+                        <div>
+                            <h4>Día del Tostado</h4>
+                            <p>CO₂ máximo, necesita desgasificar. Sabores "verdes" presentes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-day">2-4</div>
+                        <div>
+                            <h4>Desgasificación Óptima</h4>
+                            <p>Desarrollo completo sabores. Ventana ideal para espresso.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-day">5-14</div>
+                        <div>
+                            <h4>Pico de Sabor</h4>
+                            <p>Óptimo para filtrados. Extracción más predecible.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-day">15-30</div>
+                        <div>
+                            <h4>Pérdida Gradual</h4>
+                            <p>Sabores más apagados pero aún aceptable uso doméstico.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-day">30+</div>
+                        <div>
+                            <h4>Calidad Comprometida</h4>
+                            <p>Sabores planos, "cartón". Solo para mezclas con lácteos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mejores prácticas comparadas -->
+                <div class="process-grid">
+                    <div class="process-card">
+                        <h4>✅ HACER</h4>
+                        <ul>
+                            <li>Contenedor hermético opaco</li>
+                            <li>Temperatura ambiente</li>
+                            <li>Moler justo antes de usar</li>
+                            <li>Comprar 250-500g máximo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="process-card">
+                        <h4>❌ NO HACER</h4>
+                        <ul>
+                            <li>Refrigerador (condensación)</li>
+                            <li>Congelador (cristales hielo)</li>
+                            <li>Bolsas zip (no herméticas)</li>
+                            <li>Comprar más de 4 semanas</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: GUÍA DE COMPRA -->
+            <section id="buying" class="section">
+                <h2>Guía Práctica de Compra</h2>
+                <p>Consejos reales para no perderse en el mundo del café de especialidad.</p>
+
+                <!-- Regiones organizadas geográficamente -->
+                <div class="region-grid">
+                    <div class="region-card">
+                        <h3>🌍 ÁFRICA ORIENTAL</h3>
+                        <p><strong>Etiopía:</strong> Cuna del café, naturales explosivos</p>
+                        <p><strong>Kenia:</strong> Acidez brillante, grosellas negras</p>
+                        <p><strong>Carácter:</strong> Frutales, florales, té</p>
+                    </div>
+                    
+                    <div class="region-card">
+                        <h3>🏔️ AMÉRICA CENTRAL</h3>
+                        <p><strong>Guatemala:</strong> Volcánico, cuerpo completo</p>
+                        <p><strong>Costa Rica:</strong> Pioneer honey processing</p>
+                        <p><strong>Carácter:</strong> Equilibrado, chocolatoso</p>
+                    </div>
+                    
+                    <div class="region-card">
+                        <h3>🏞️ AMÉRICA DEL SUR</h3>
+                        <p><strong>Colombia:</strong> Estándar mundial lavado</p>
+                        <p><strong>Brasil:</strong> Variedad inmensa, naturales</p>
+                        <p><strong>Carácter:</strong> Nueces, chocolate, consistente</p>
+                    </div>
+                    
+                    <div class="region-card">
+                        <h3>🏝️ ASIA</h3>
+                        <p><strong>Indonesia:</strong> Terroso, herbal, cuerpo</p>
+                        <p><strong>Filipinas:</strong> Emergente specialty</p>
+                        <p><strong>Carácter:</strong> Especias, tierra, único</p>
+                    </div>
+                </div>
+
+                <h3>Niveles de Comprador</h3>
+                <!-- Progresión pedagógica de compradores -->
+                <div class="process-grid">
+                    <div class="process-card">
+                        <h4>1️⃣ PRINCIPIANTE</h4>
+                        <p><strong>Presupuesto:</strong> €15-20/kg</p>
+                        <p><strong>Objetivo:</strong> Descubrir diferencias</p>
+                        <p><strong>Recomendación:</strong> Colombia, Brasil equilibrados</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <h4>2️⃣ EXPLORADOR</h4>
+                        <p><strong>Presupuesto:</strong> €18-25/kg</p>
+                        <p><strong>Objetivo:</strong> Mapear preferencias</p>
+                        <p><strong>Estrategia:</strong> Diferentes orígenes/procesamientos</p>
+                    </div>
+                    
+                    <div class="process-card">
+                        <h4>3️⃣ ENTHUSIASTA</h4>
+                        <p><strong>Presupuesto:</strong> €20-35/kg</p>
+                        <p><strong>Objetivo:</strong> Microlotes, técnica</p>
+                        <p><strong>Enfoque:</strong> Fincas específicas, experimentales</p>
+                    </div>
+                </div>
+
+                <!-- Estrategia estacional -->
+                <div class="highlight-box">
+                    <h3>Estrategia Anual de Compras</h3>
+                    <p><strong>Enero-Marzo:</strong> América Central llegando, mejores precios</p>
+                    <p><strong>Abril-Junio:</strong> Sudamericanas, mayor disponibilidad</p>
+                    <p><strong>Julio-Septiembre:</strong> África Oriental nueva cosecha</p>
+                    <p><strong>Octubre-Diciembre:</strong> Lotes especiales, experimentales</p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: GLOSARIO -->
+            <section id="glossary" class="section">
+                <h2>Glosario de Términos Esenciales</h2>
+                <p>Los términos técnicos que necesitas conocer para navegar el mundo del café de especialidad.</p>
+
+                <!-- Términos organizados alfabéticamente -->
+                <div class="glossary-grid">
+                    <div class="glossary-item">
+                        <div class="glossary-term">ARÁBICA</div>
+                        <p>Especie premium de café. 70% producción mundial, solo 10% es "specialty".</p>
+                    </div>
+                    
+                    <div class="glossary-item">
+                        <div class="glossary-term">BLOOM</div>
+                        <p>Expansión del café cuando se moja. Libera CO₂. Indica frescura y calidad.</p>
+                    </div>
+                    
+                    <div class="glossary-item">
+                        <div class="glossary-term">CUPPING</div>
+                        <p>Método estándar evaluación café. Protocolo SCA internacional objetivo.</p>
+                    </div>
+                    
+                    <div class="glossary-item">
+                        <div class="glossary-term">EXTRACCIÓN</div>
+                        <p>Porcentaje café disuelto en agua. Rango óptimo: 18-22%.</p>
+                    </div>
+                    
+                    <div class="glossary-item">
+                        <div class="glossary-term">MICROLOT</div>
+                        <p>Lote muy pequeño café excepcional (&lt;100 sacos). Precios premium.</p>
+                    </div>
+                    
+                    <div class="glossary-item">
+                        <div class="glossary-term">Q-GRADER</div>
+                        <p>Catador certificado SCA/CQI. Autoridad para determinar si es specialty.</p>
+                    </div>
+                    
+                    <div class="glossary-item">
+                        <div class="glossary-term">SINGLE ORIGIN</div>
+                        <p>Café de región/finca específica. Expresión terroir único. Trazabilidad completa.</p>
+                    </div>
+                    
+                    <div class="glossary-item">
+                        <div class="glossary-term">TDS</div>
+                        <p>Total Dissolved Solids. Concentración café en agua. 1.15-1.35% óptimo filtrados.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: PLAN DE ACCIÓN -->
+            <section id="action" class="section">
+                <div class="action-plan">
+                    <h2>Tu Plan de Acción</h2>
+                    <p>Si has llegado hasta aquí, ya sabes más sobre café que el 90% de los consumidores. Pero el conocimiento sin práctica es solo teoría.</p>
+
+                    <h3>Plan Sugerido:</h3>
+                    
+                    <h4>SEMANA 1-2:</h4>
+                    <ul>
+                        <li>Identifica tostador local de calidad</li>
+                        <li>Compra tu primer café de especialidad</li>
+                        <li>Practica un método de preparación básico</li>
+                        <li>Lleva registro simple de lo que pruebas</li>
+                    </ul>
+                    
+                    <h4>SEMANA 3-4:</h4>
+                    <ul>
+                        <li>Experimenta con diferentes variables</li>
+                        <li>Compara mismo café preparado diferente</li>
+                        <li>Empieza a desarrollar tu paladar</li>
+                    </ul>
+                    
+                    <h4>MES 2-3:</h4>
+                    <ul>
+                        <li>Explora diferentes orígenes</li>
+                        <li>Aprende cata básica en casa</li>
+                        <li>Invierte en buen molinillo</li>
+                        <li>Conecta con comunidad local</li>
+                    </ul>
+                    
+                    <h4>MES 4-6:</h4>
+                    <ul>
+                        <li>Asiste a cata/evento tostador</li>
+                        <li>Experimenta procesamientos diferentes</li>
+                        <li>Perfecciona tu método favorito</li>
+                        <li>Comparte conocimiento con otros</li>
+                    </ul>
+                    
+                    <h4>MES 7+:</h4>
+                    <ul>
+                        <li>Explora microlotes especiales</li>
+                        <li>Considera cursos formales (SCA)</li>
+                        <li>Visita otras cafeterías, tostadores</li>
+                        <li>Tal vez viaja a origen café...</li>
+                    </ul>
+
+                    <!-- Mensaje inspiracional final -->
+                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--coffee-dark);">
+                        <h3>Recuerda:</h3>
+                        <p>El café de especialidad no se trata de snobismo. Se trata de apreciar el trabajo artesanal, pagar precios justos a productores, y disfrutar una de las experiencias sensoriales más complejas disponibles diariamente.</p>
+                        
+                        <p><strong>Cada taza cuenta una historia:</strong><br>
+                        Del clima donde creció, las manos que lo cosecharon, el cuidado en su procesamiento, la habilidad del tostador, y tu técnica al prepararlo.</p>
+                        
+                        <p style="text-align: center; font-size: 1.2rem; font-weight: bold; margin-top: 2rem;">
+                            Tu viaje apenas comienza.<br>
+                            ¡Disfruta tu próxima taza! ☕
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        /* ===== FUNCIONALIDAD JAVASCRIPT ===== */
+        
+        // Navegación suave entre secciones
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                // Gestión del estado activo de navegación
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Scroll suave al objetivo
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Actualización automática de navegación basada en scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            
+            // Detectar sección actual en viewport
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            // Actualizar navegación activa
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Funcionalidad móvil - toggle del sidebar
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        // Cerrar sidebar al hacer clic en contenido principal (móvil)
+        document.querySelector('.main-content').addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                document.getElementById('sidebar').classList.remove('open');
+            }
+        });
+
+        // Sistema de observación para animaciones al scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0s';
+                }
+            });
+        }, observerOptions);
+
+        // Observar todas las secciones para animaciones
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Funcionalidad interactiva para opciones de quiz (si se implementara)
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Limpiar selección anterior
+                const question = this.closest('.quiz-question');
+                if (question) {
+                    question.querySelectorAll('.quiz-option').forEach(opt => {
+                        opt.style.background = 'rgba(255,255,255,0.1)';
+                        opt.style.borderColor = 'transparent';
+                    });
+                }
+                
+                // Destacar opción seleccionada
+                this.style.background = 'rgba(212, 175, 55, 0.3)';
+                this.style.borderColor = 'var(--gold-accent)';
+            });
+        });
+
+        // Calculadora simple de ratios de preparación (funcionalidad adicional)
+        function createBrewingCalculator() {
+            const calculators = document.querySelectorAll('.brewing-specs');
+            calculators.forEach(calc => {
+                // Hacer elementos clickeables para mostrar calculadora
+                calc.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('spec-value')) {
+                        const input = prompt('Ingresa cantidad de café en gramos:');
+                        if (input && !isNaN(input)) {
+                            const coffee = parseFloat(input);
+                            const ratioElement = this.querySelector('.spec-item:nth-child(3) .spec-value');
+                            if (ratioElement) {
+                                const ratio = ratioElement.textContent;
+                                if (ratio.includes(':')) {
+                                    const ratioNum = parseFloat(ratio.split(':')[1]);
+                                    const water = coffee * ratioNum;
+                                    alert(`Para ${coffee}g de café, usa ${water}g de agua`);
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        }
+
+        // Inicialización cuando el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar calculadora de ratios
+            createBrewingCalculator();
+            
+            // Establecer primer elemento de navegación como activo
+            const firstNavLink = document.querySelector('.nav-link');
+            if (firstNavLink) {
+                firstNavLink.classList.add('active');
+            }
+            
+            // Mostrar primera sección inmediatamente
+            const firstSection = document.querySelector('.section');
+            if (firstSection) {
+                firstSection.style.opacity = '1';
+                firstSection.style.transform = 'translateY(0)';
+            }
+        });
+
+        // Manejo de errores globales para mejorar experiencia
+        window.addEventListener('error', function(e) {
+            console.log('Error capturado:', e.error);
+            // En producción, podrías enviar esto a un servicio de logging
+        });
+
+        // Performance: reducir cálculos en scroll
+        let ticking = false;
+        function updateScrollProgress() {
+            // Aquí podrías añadir una barra de progreso de lectura
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollProgress);
+                ticking = true;
+            }
+        });
+    </script>
+</body>
+</html>
