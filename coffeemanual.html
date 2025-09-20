@@ -140,6 +140,14 @@
             border-left: 3px solid #e76f51;
         }
 
+        .success {
+            background: #f0fff4;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 3px;
+            border-left: 3px solid #38a169;
+        }
+
         /* TABLAS */
         table {
             width: 100%;
@@ -233,9 +241,14 @@
         <nav>
             <ul>
                 <li><a href="#fundamentos">Fundamentos</a></li>
+                <li><a href="#equipamiento">Equipamiento</a></li>
+                <li><a href="#molienda">Molienda</a></li>
+                <li><a href="#agua">Agua</a></li>
                 <li><a href="#calidad">Identificar Calidad</a></li>
                 <li><a href="#preparacion">Preparación</a></li>
+                <li><a href="#cata">Cata en Casa</a></li>
                 <li><a href="#compra">Guía de Compra</a></li>
+                <li><a href="#economia">Costos Reales</a></li>
                 <li><a href="#solucion">Solución de Problemas</a></li>
             </ul>
         </nav>
@@ -295,9 +308,319 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 2: IDENTIFICAR CALIDAD -->
+        <!-- SECCIÓN 2: EQUIPAMIENTO -->
+        <section id="equipamiento">
+            <h2>2. Equipamiento Básico: Qué Necesitas Realmente</h2>
+            
+            <h3>Jerarquía de Inversión</h3>
+            <div class="highlight">
+                <p><strong>Orden de prioridad para invertir tu dinero:</strong></p>
+                <ol>
+                    <li><strong>Buen molinillo</strong> (más importante que el método)</li>
+                    <li><strong>Balanza digital</strong> (consistencia es clave)</li>
+                    <li><strong>Kettle con control temperatura</strong> (para métodos filtrados)</li>
+                    <li><strong>Método específico</strong> (V60, AeroPress, etc.)</li>
+                </ol>
+            </div>
+
+            <h3>Por Presupuesto Total</h3>
+            <table>
+                <tr>
+                    <th>Presupuesto</th>
+                    <th>Nivel</th>
+                    <th>Setup Recomendado</th>
+                </tr>
+                <tr>
+                    <td>€50-80</td>
+                    <td>Entrada</td>
+                    <td>Prensa francesa + molinillo manual + balanza básica</td>
+                </tr>
+                <tr>
+                    <td>€100-150</td>
+                    <td>Intermedio</td>
+                    <td>AeroPress + molinillo eléctrico entry + balanza + kettle</td>
+                </tr>
+                <tr>
+                    <td>€200-300</td>
+                    <td>Entusiasta</td>
+                    <td>V60 + molinillo de fresas + kettle cuello cisne + balanza 0.1g</td>
+                </tr>
+                <tr>
+                    <td>€400+</td>
+                    <td>Serio</td>
+                    <td>Setup completo + espresso manual</td>
+                </tr>
+            </table>
+
+            <h3>Equipamiento Esencial</h3>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>⚖️ BALANZA DIGITAL</h4>
+                    <p><strong>Por qué:</strong> Consistencia es todo</p>
+                    <p><strong>Precisión:</strong> Mínimo 0.1g</p>
+                    <p><strong>Capacidad:</strong> 2kg+</p>
+                    <p><strong>Extra:</strong> Timer integrado es útil</p>
+                    <p><strong>Precio:</strong> €15-40</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>🌡️ KETTLE TEMPERATURA</h4>
+                    <p><strong>Por qué:</strong> Control preciso extracción</p>
+                    <p><strong>Tipo:</strong> Cuello cisne para pour over</p>
+                    <p><strong>Rango:</strong> 60-100°C</p>
+                    <p><strong>Extra:</strong> Hold temperature función</p>
+                    <p><strong>Precio:</strong> €40-120</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>⏱️ TIMER</h4>
+                    <p><strong>Por qué:</strong> Timing consistente</p>
+                    <p><strong>Tipo:</strong> Smartphone es suficiente</p>
+                    <p><strong>Extra:</strong> Apps específicas café</p>
+                    <p><strong>Precio:</strong> Gratis (móvil)</p>
+                </div>
+            </div>
+
+            <div class="warning">
+                <h4>❌ Errores Comunes de Principiantes</h4>
+                <ul>
+                    <li>Comprar método caro antes que buen molinillo</li>
+                    <li>No usar balanza (medir "a ojo")</li>
+                    <li>Ignorar temperatura del agua</li>
+                    <li>Querer todo el equipamiento desde el día 1</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: MOLIENDA -->
+        <section id="molienda">
+            <h2>3. Molienda: La Variable Más Subestimada</h2>
+            
+            <h3>Por Qué la Molienda es Crítica</h3>
+            <div class="highlight">
+                <p>Una molienda uniforme es más importante que el método de preparación. 80% del sabor final depende de cómo moliste el café.</p>
+                <p><strong>Regla absoluta:</strong> Moler siempre justo antes de preparar. Café molido pierde 60% del aroma en 15 minutos.</p>
+            </div>
+
+            <h3>Tipos de Molinillos</h3>
+            <table>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Mecanismo</th>
+                    <th>Uniformidad</th>
+                    <th>Precio</th>
+                    <th>Mejor Para</th>
+                </tr>
+                <tr>
+                    <td>Cuchillas</td>
+                    <td>Cortar/picar</td>
+                    <td>Muy baja</td>
+                    <td>€10-30</td>
+                    <td>Evitar siempre</td>
+                </tr>
+                <tr>
+                    <td>Fresas planas</td>
+                    <td>Moler/aplastar</td>
+                    <td>Excelente</td>
+                    <td>€150+</td>
+                    <td>Espresso, avanzados</td>
+                </tr>
+                <tr>
+                    <td>Fresas cónicas</td>
+                    <td>Moler/cortar</td>
+                    <td>Muy buena</td>
+                    <td>€80-200</td>
+                    <td>Todo uso, mejor inicio</td>
+                </tr>
+                <tr>
+                    <td>Manual</td>
+                    <td>Fresas manuales</td>
+                    <td>Buena-excelente</td>
+                    <td>€30-150</td>
+                    <td>Portabilidad, presupuesto</td>
+                </tr>
+            </table>
+
+            <h3>Tamaños de Molienda por Método</h3>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>EXTRA GRUESA</h4>
+                    <p><strong>Aspecto:</strong> Migas de pan</p>
+                    <p><strong>Métodos:</strong> Cold brew, prensa francesa</p>
+                    <p><strong>Tiempo:</strong> 4+ minutos</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>GRUESA</h4>
+                    <p><strong>Aspecto:</strong> Sal marina gruesa</p>
+                    <p><strong>Métodos:</strong> Chemex, percoladores</p>
+                    <p><strong>Tiempo:</strong> 4-6 minutos</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>MEDIA</h4>
+                    <p><strong>Aspecto:</strong> Sal de mesa</p>
+                    <p><strong>Métodos:</strong> V60, Kalita, cafetera filtro</p>
+                    <p><strong>Tiempo:</strong> 2-4 minutos</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>MEDIA-FINA</h4>
+                    <p><strong>Aspecto:</strong> Arena de playa</p>
+                    <p><strong>Métodos:</strong> AeroPress, Moka</p>
+                    <p><strong>Tiempo:</strong> 1-3 minutos</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>FINA</h4>
+                    <p><strong>Aspecto:</strong> Harina</p>
+                    <p><strong>Métodos:</strong> Espresso, Turkish</p>
+                    <p><strong>Tiempo:</strong> 25-30 segundos</p>
+                </div>
+            </div>
+
+            <div class="tip">
+                <h4>💡 Ajuste en Tiempo Real</h4>
+                <p><strong>Extracción lenta/amarga:</strong> Molienda más gruesa</p>
+                <p><strong>Extracción rápida/agria:</strong> Molienda más fina</p>
+                <p><strong>Inicio recomendado:</strong> Empezar medio, ajustar según sabor</p>
+            </div>
+
+            <h3>Recomendaciones por Presupuesto</h3>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>€30-50: MANUAL</h4>
+                    <p><strong>Ventajas:</strong> Excelente calidad/precio</p>
+                    <p><strong>Desventajas:</strong> Esfuerzo físico</p>
+                    <p><strong>Mejor para:</strong> 1-2 tazas, viajes</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>€80-120: ELÉCTRICO ENTRY</h4>
+                    <p><strong>Ventajas:</strong> Conveniencia diaria</p>
+                    <p><strong>Desventajas:</strong> Calidad variable</p>
+                    <p><strong>Mejor para:</strong> Uso diario, filtrados</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>€150-250: PROSUMER</h4>
+                    <p><strong>Ventajas:</strong> Versatilidad total</p>
+                    <p><strong>Desventajas:</strong> Inversión alta</p>
+                    <p><strong>Mejor para:</strong> Entusiastas, espresso</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: AGUA -->
+        <section id="agua">
+            <h2>4. El Agua: Fundamento Invisible del Sabor</h2>
+            
+            <h3>Por Qué Importa el Agua</h3>
+            <div class="highlight">
+                <p>El café es 98% agua. Los minerales disueltos actúan como "llaves" que extraen diferentes sabores del café. Agua "mala" = café malo, sin excepciones.</p>
+            </div>
+
+            <h3>Minerales Clave y Sus Efectos</h3>
+            <table>
+                <tr>
+                    <th>Mineral</th>
+                    <th>Función</th>
+                    <th>Extrae</th>
+                    <th>Rango Óptimo</th>
+                </tr>
+                <tr>
+                    <td><strong>Magnesio (Mg²⁺)</strong></td>
+                    <td>Llave de acidez</td>
+                    <td>Notas frutales, brillo</td>
+                    <td>10-30 ppm</td>
+                </tr>
+                <tr>
+                    <td><strong>Calcio (Ca²⁺)</strong></td>
+                    <td>Llave de cuerpo</td>
+                    <td>Dulzor, textura</td>
+                    <td>50-175 ppm</td>
+                </tr>
+                <tr>
+                    <td><strong>Bicarbonatos (HCO₃⁻)</strong></td>
+                    <td>Buffer acidez</td>
+                    <td>Equilibrio (cuidado: exceso aplana)</td>
+                    <td>75-150 ppm</td>
+                </tr>
+            </table>
+
+            <h3>Test Rápido de Tu Agua</h3>
+            <div class="success">
+                <h4>✅ Prueba de Comparación</h4>
+                <ol>
+                    <li>Haz café idéntico con agua del grifo</li>
+                    <li>Haz café idéntico con agua embotellada</li>
+                    <li>Cata ambos lado a lado</li>
+                </ol>
+                <p><strong>Si notas diferencia clara:</strong> Tu agua necesita mejora</p>
+                <p><strong>Si son similares:</strong> Tu agua del grifo es aceptable</p>
+            </div>
+
+            <h3>Soluciones Prácticas por Problema</h3>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>AGUA MUY DURA</h4>
+                    <p><strong>Síntomas:</strong> Café plano, sin acidez</p>
+                    <p><strong>Causa:</strong> Exceso calcio/magnesio</p>
+                    <p><strong>Solución:</strong> Filtro descalcificador o mezclar con destilada</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>AGUA MUY BLANDA</h4>
+                    <p><strong>Síntomas:</strong> Café agrio, metálico</p>
+                    <p><strong>Causa:</strong> Falta minerales</p>
+                    <p><strong>Solución:</strong> Agua embotellada mineralizada</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>CLORO/QUÍMICOS</h4>
+                    <p><strong>Síntomas:</strong> Sabor químico, olor</p>
+                    <p><strong>Causa:</strong> Tratamiento municipal</p>
+                    <p><strong>Solución:</strong> Filtro carbón activado</p>
+                </div>
+            </div>
+
+            <h3>Aguas Embotelladas Recomendadas (España)</h3>
+            <table>
+                <tr>
+                    <th>Marca</th>
+                    <th>Mineralización</th>
+                    <th>Mejor Para</th>
+                    <th>Precio</th>
+                </tr>
+                <tr>
+                    <td>Bezoya</td>
+                    <td>Baja</td>
+                    <td>Cafés muy aromáticos</td>
+                    <td>€0.50/L</td>
+                </tr>
+                <tr>
+                    <td>Evian</td>
+                    <td>Media</td>
+                    <td>Uso general equilibrado</td>
+                    <td>€1.20/L</td>
+                </tr>
+                <tr>
+                    <td>Vichy Catalán</td>
+                    <td>Alta</td>
+                    <td>Cafés suaves, con cuerpo</td>
+                    <td>€1.50/L</td>
+                </tr>
+            </table>
+
+            <div class="tip">
+                <h4>💡 Hack Profesional</h4>
+                <p>Muchos tostadores de especialidad usan <strong>agua Third Wave Water</strong>: sachets que añades a agua destilada para mineralizarla perfectamente. €20 por 12 sachets (240L de agua perfecta).</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: IDENTIFICAR CALIDAD -->
         <section id="calidad">
-            <h2>2. Cómo Identificar Café de Calidad</h2>
+            <h2>5. Cómo Identificar Café de Calidad</h2>
             
             <h3>En el Empaque</h3>
             <div class="grid">
@@ -363,9 +686,9 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 3: PREPARACIÓN -->
+        <!-- SECCIÓN 6: PREPARACIÓN -->
         <section id="preparacion">
-            <h2>3. Preparación: De lo Básico a lo Óptimo</h2>
+            <h2>6. Preparación: Técnicas Específicas</h2>
             
             <h3>Variables Fundamentales</h3>
             <p>Todo café se prepara controlando estas variables. Domínalas y controlarás el sabor:</p>
@@ -398,58 +721,218 @@
                 </tr>
             </table>
 
-            <h3>Métodos por Perfil</h3>
+            <h3>Técnicas Específicas por Método</h3>
             
             <div class="grid">
                 <div class="grid-item">
-                    <h4>🫖 Prensa Francesa</h4>
-                    <p><strong>Perfil:</strong> Cuerpo, intensidad</p>
-                    <p><strong>Ratio:</strong> 1:15 (30g:450ml)</p>
-                    <p><strong>Molienda:</strong> Muy gruesa</p>
-                    <p><strong>Tiempo:</strong> 4 minutos</p>
-                    <p><strong>Mejor para:</strong> Principiantes, cafés con cuerpo</p>
+                    <h4>🫖 PRENSA FRANCESA</h4>
+                    <p><strong>Receta:</strong> 30g café : 450ml agua</p>
+                    <p><strong>Paso a paso:</strong></p>
+                    <ol>
+                        <li>Precalentar prensa con agua caliente</li>
+                        <li>Molienda muy gruesa</li>
+                        <li>Añadir café, verter agua 96°C</li>
+                        <li>Revolver suavemente 30 seg</li>
+                        <li>Colocar tapa, esperar 3:30</li>
+                        <li>Presionar lentamente</li>
+                        <li><strong>Servir inmediatamente</strong></li>
+                    </ol>
                 </div>
                 
                 <div class="grid-item">
-                    <h4>⏳ V60 / Pour Over</h4>
-                    <p><strong>Perfil:</strong> Claridad, acidez</p>
-                    <p><strong>Ratio:</strong> 1:16 (25g:400ml)</p>
-                    <p><strong>Molienda:</strong> Media-fina</p>
-                    <p><strong>Tiempo:</strong> 2:30-3:30 min</p>
-                    <p><strong>Mejor para:</strong> Cafés lavados, experimentadores</p>
+                    <h4>⏳ V60 POUR OVER</h4>
+                    <p><strong>Receta:</strong> 22g café : 350ml agua</p>
+                    <p><strong>Paso a paso:</strong></p>
+                    <ol>
+                        <li>Enjuagar filtro con agua caliente</li>
+                        <li>Molienda media-fina</li>
+                        <li><strong>Bloom:</strong> 44ml agua, esperar 30s</li>
+                        <li><strong>1° vertido:</strong> hasta 150ml (círculos)</li>
+                        <li><strong>2° vertido:</strong> hasta 250ml</li>
+                        <li><strong>3° vertido:</strong> hasta 350ml</li>
+                        <li>Tiempo total: 2:30-3:00</li>
+                    </ol>
                 </div>
                 
                 <div class="grid-item">
-                    <h4>🔄 AeroPress</h4>
-                    <p><strong>Perfil:</strong> Versatilidad máxima</p>
-                    <p><strong>Ratio:</strong> Variable (1:12-1:17)</p>
-                    <p><strong>Molienda:</strong> Media</p>
-                    <p><strong>Tiempo:</strong> 1-2 minutos</p>
-                    <p><strong>Mejor para:</strong> Todos los niveles, viajes</p>
+                    <h4>🔄 AEROPRESS</h4>
+                    <p><strong>Receta:</strong> 18g café : 220ml agua</p>
+                    <p><strong>Paso a paso:</strong></p>
+                    <ol>
+                        <li>Enjuagar filtro, calentar AeroPress</li>
+                        <li>Molienda media</li>
+                        <li>Café en cámara, agua 85°C</li>
+                        <li>Revolver 10 segundos</li>
+                        <li>Insertar pistón, crear vacío ligero</li>
+                        <li>Esperar 1:30 total</li>
+                        <li>Presionar suavemente 30 segundos</li>
+                    </ol>
                 </div>
             </div>
 
-            <h3>El Agua: El 98% Invisible</h3>
-            <div class="highlight">
-                <p>El agua no es solo H2O. Los minerales cambian completamente la extracción:</p>
-                <ul>
-                    <li><strong>Magnesio:</strong> Extrae acidez y brillo</li>
-                    <li><strong>Calcio:</strong> Extrae cuerpo y dulzor</li>
-                    <li><strong>Bicarbonatos:</strong> Buffean acidez (cuidado: demasiado = café plano)</li>
-                </ul>
-                <p><strong>Prueba rápida:</strong> Haz café con agua embotellada vs grifo. ¿Notas diferencia? Si sí, considera filtración.</p>
+            <h3>Pre-infusión/Blooming: La Técnica Crucial</h3>
+            <div class="success">
+                <h4>✅ Cómo Hacer Bloom Perfecto</h4>
+                <ol>
+                    <li>Crear pequeño hoyo en centro del café molido</li>
+                    <li>Verter agua en círculo desde centro hacia fuera</li>
+                    <li>Usar exactamente doble peso agua que café (20g café = 40ml agua)</li>
+                    <li>Cronometrar exactamente 30-45 segundos</li>
+                    <li>El café debe expandirse como una "torta"</li>
+                </ol>
+                <p><strong>Si no hay bloom:</strong> Café viejo o molienda incorrecta</p>
             </div>
 
-            <h3>Molienda: La Variable Más Importante</h3>
             <div class="tip">
-                <p><strong>Regla de oro:</strong> Moler siempre justo antes de preparar. Una molienda uniforme es más importante que un método fancy.</p>
-                <p><strong>Jerarquía de inversión:</strong> 1) Buen molinillo → 2) Balanza → 3) Kettle temperatura → 4) Método específico</p>
+                <h4>💡 Ajustes en Tiempo Real</h4>
+                <p><strong>Extracción muy rápida:</strong> Molienda más fina o vertido más lento</p>
+                <p><strong>Extracción muy lenta:</strong> Molienda más gruesa o vertido más rápido</p>
+                <p><strong>Sabor agrio:</strong> Temperatura más alta o tiempo más largo</p>
+                <p><strong>Sabor amargo:</strong> Temperatura más baja o tiempo más corto</p>
             </div>
         </section>
 
-        <!-- SECCIÓN 4: GUÍA DE COMPRA -->
+        <!-- SECCIÓN 7: CATA EN CASA -->
+        <section id="cata">
+            <h2>7. Desarrollar el Paladar: Cata Básica en Casa</h2>
+            
+            <h3>Protocolo Simplificado de Cata</h3>
+            <div class="highlight">
+                <p><strong>Objetivo:</strong> Entrenar el paladar sistemáticamente para identificar sabores y calidad.</p>
+                <p><strong>Tiempo necesario:</strong> 15-20 minutos</p>
+                <p><strong>Frecuencia:</strong> 2-3 veces por semana máximo</p>
+            </div>
+
+            <h3>Setup Básico de Cata</h3>
+            <table>
+                <tr>
+                    <th>Necesitas</th>
+                    <th>Función</th>
+                    <th>Alternativa Casera</th>
+                </tr>
+                <tr>
+                    <td>Cucharas soperas</td>
+                    <td>Aspirar líquido</td>
+                    <td>Cualquier cuchara grande</td>
+                </tr>
+                <tr>
+                    <td>Tazas idénticas</td>
+                    <td>Comparación justa</td>
+                    <td>Bowls pequeños iguales</td>
+                </tr>
+                <tr>
+                    <td>Agua neutra</td>
+                    <td>Limpiar paladar</td>
+                    <td>Agua embotellada simple</td>
+                </tr>
+                <tr>
+                    <td>Libreta</td>
+                    <td>Registro notas</td>
+                    <td>Móvil o papel</td>
+                </tr>
+            </table>
+
+            <h3>Proceso Paso a Paso</h3>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>1️⃣ PREPARACIÓN</h4>
+                    <ul>
+                        <li>Mismo ratio para todos los cafés</li>
+                        <li>Misma temperatura agua</li>
+                        <li>Mismo tiempo extracción</li>
+                        <li>Dejar enfriar a ~60°C</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>2️⃣ AROMA</h4>
+                    <ul>
+                        <li>Oler cada café profundamente</li>
+                        <li>Anotar primeras impresiones</li>
+                        <li>Comparar diferencias obvias</li>
+                        <li>No pensar demasiado</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>3️⃣ PRIMERA CATA</h4>
+                    <ul>
+                        <li>Aspirar ruidosamente (atomiza)</li>
+                        <li>Distribuir por toda la boca</li>
+                        <li>Anotar impresión general</li>
+                        <li>Enjuagar boca entre muestras</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>4️⃣ ANÁLISIS DETALLADO</h4>
+                    <ul>
+                        <li>Acidez: ¿poca, media, alta?</li>
+                        <li>Dulzor: ¿presente, ausente?</li>
+                        <li>Cuerpo: ¿ligero, medio, pesado?</li>
+                        <li>Final: ¿limpio, persistente?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Ejercicios Prácticos para Desarrollar Paladar</h3>
+            
+            <div class="success">
+                <h4>✅ EJERCICIO 1: Comparación Básica</h4>
+                <p><strong>Qué hacer:</strong> Catar mismo café preparado con ratios diferentes</p>
+                <p><strong>Setup:</strong> 1:15, 1:16, 1:17 lado a lado</p>
+                <p><strong>Qué aprendes:</strong> Cómo el ratio afecta intensidad y equilibrio</p>
+            </div>
+
+            <div class="success">
+                <h4>✅ EJERCICIO 2: Orígenes Contrastantes</h4>
+                <p><strong>Qué hacer:</strong> Etiope natural vs Colombian lavado</p>
+                <p><strong>Setup:</strong> Misma preparación, cafés opuestos</p>
+                <p><strong>Qué aprendes:</strong> Diferencias procesamiento y terroir</p>
+            </div>
+
+            <div class="success">
+                <h4>✅ EJERCICIO 3: Calidad Comparada</h4>
+                <p><strong>Qué hacer:</strong> Café especialidad vs supermercado</p>
+                <p><strong>Setup:</strong> Mismo origen si es posible</p>
+                <p><strong>Qué aprendes:</strong> Qué significa realmente "calidad"</p>
+            </div>
+
+            <h3>Rueda de Sabores Simplificada</h3>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>🍊 FRUTALES</h4>
+                    <p>Cítricos, bayas, frutas tropicales, frutas de hueso</p>
+                </div>
+                <div class="grid-item">
+                    <h4>🌸 FLORALES</h4>
+                    <p>Rosa, jazmín, miel, té</p>
+                </div>
+                <div class="grid-item">
+                    <h4>🍫 DULCES</h4>
+                    <p>Chocolate, caramelo, vainilla, azúcar moreno</p>
+                </div>
+                <div class="grid-item">
+                    <h4>🌰 NUECES/ESPECIAS</h4>
+                    <p>Almendra, canela, clavo, pimienta</p>
+                </div>
+            </div>
+
+            <div class="tip">
+                <h4>💡 Consejos para Acelerar Desarrollo</h4>
+                <ul>
+                    <li>Empezar con diferencias obvias (natural vs lavado)</li>
+                    <li>Anotar TODO, incluso si parece tonto</li>
+                    <li>Catar con otras personas (comparar notas)</li>
+                    <li>No más de 4 muestras por sesión</li>
+                    <li>Ser consistente: mismo horario y condiciones</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 8: GUÍA DE COMPRA -->
         <section id="compra">
-            <h2>4. Guía Práctica de Compra</h2>
+            <h2>8. Guía Práctica de Compra</h2>
             
             <h3>Por Nivel de Experiencia</h3>
             <table>
@@ -482,26 +965,60 @@
             <h3>Orígenes: Qué Esperar</h3>
             <div class="grid">
                 <div class="grid-item">
-                    <h4>🌍 África</h4>
+                    <h4>🌍 ÁFRICA</h4>
                     <p><strong>Etiopía:</strong> Florales, té, frutales salvajes</p>
                     <p><strong>Kenia:</strong> Acidez brillante, grosellas</p>
                     <p><strong>Carácter:</strong> Complejos, únicos</p>
                 </div>
                 
                 <div class="grid-item">
-                    <h4>🏔️ Centroamérica</h4>
+                    <h4>🏔️ CENTROAMÉRICA</h4>
                     <p><strong>Guatemala:</strong> Chocolatoso, volcánico</p>
                     <p><strong>Costa Rica:</strong> Equilibrado, limpio</p>
                     <p><strong>Carácter:</strong> Balanceados, consistentes</p>
                 </div>
                 
                 <div class="grid-item">
-                    <h4>🏞️ Sudamérica</h4>
+                    <h4>🏞️ SUDAMÉRICA</h4>
                     <p><strong>Colombia:</strong> Estándar mundial</p>
                     <p><strong>Brasil:</strong> Variedad inmensa</p>
                     <p><strong>Carácter:</strong> Nueces, chocolate, fáciles</p>
                 </div>
             </div>
+
+            <h3>Dónde Comprar en España</h3>
+            <table>
+                <tr>
+                    <th>Canal</th>
+                    <th>Ventajas</th>
+                    <th>Desventajas</th>
+                    <th>Mejor Para</th>
+                </tr>
+                <tr>
+                    <td>Tostador Local</td>
+                    <td>Fresco, consejos, soporte</td>
+                    <td>Selección limitada</td>
+                    <td>Principiantes, comunidad</td>
+                </tr>
+                <tr>
+                    <td>Online Especializado</td>
+                    <td>Variedad, precios, info</td>
+                    <td>Sin asesoramiento personal</td>
+                    <td>Exploradores, conveniencia</td>
+                </tr>
+                <tr>
+                    <td>Tiendas de Café</td>
+                    <td>Catar antes, conocimiento</td>
+                    <td>Precios altos</td>
+                    <td>Decisiones difíciles</td>
+                </tr>
+                <tr>
+                    <td>Suscripciones</td>
+                    <td>Descubrimiento automático</td>
+                    <td>Pérdida control</td>
+                    <td>Experimentadores perezosos</td>
+                </tr>
+            </table>
 
             <h3>Estrategia de Compra Anual</h3>
             <div class="highlight">
@@ -511,51 +1028,241 @@
                 <p><strong>Invierno:</strong> Experimentales y microlotes</p>
             </div>
 
-            <h3>Almacenamiento</h3>
-            <div class="tip">
-                <h4>Línea Temporal de Frescura</h4>
+            <h3>Cuánto Comprar de Una Vez</h3>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>250g</h4>
+                    <p><strong>Para:</strong> Probar nuevo origen</p>
+                    <p><strong>Duración:</strong> 1-2 semanas</p>
+                    <p><strong>Ventaja:</strong> Riesgo mínimo</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>500g</h4>
+                    <p><strong>Para:</strong> Café que te gusta</p>
+                    <p><strong>Duración:</strong> 2-4 semanas</p>
+                    <p><strong>Ventaja:</strong> Mejor precio/kg</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>1kg</h4>
+                    <p><strong>Para:</strong> Café diario confirmado</p>
+                    <p><strong>Duración:</strong> 4-6 semanas</p>
+                    <p><strong>Riesgo:</strong> Puede volverse viejo</p>
+                </div>
+            </div>
+
+            <div class="warning">
+                <h4>❌ Errores Comunes de Compra</h4>
                 <ul>
-                    <li><strong>Días 2-4:</strong> Pico para espresso</li>
-                    <li><strong>Días 5-14:</strong> Óptimo para filtrados</li>
-                    <li><strong>Días 15-30:</strong> Aún bueno para casa</li>
-                    <li><strong>30+ días:</strong> Solo para bebidas con leche</li>
+                    <li>Comprar más de 4 semanas de consumo</li>
+                    <li>Elegir solo por precio o por origen "exótico"</li>
+                    <li>No preguntar fecha de tostado</li>
+                    <li>Ignorar método de procesamiento</li>
+                    <li>Comprar café molido (se oxida rápidamente)</li>
                 </ul>
-                <p><strong>Reglas:</strong> Contenedor hermético opaco + temperatura ambiente + comprar máximo 500g</p>
             </div>
         </section>
 
-        <!-- SECCIÓN 5: SOLUCIÓN DE PROBLEMAS -->
+        <!-- SECCIÓN 9: COSTOS REALES -->
+        <section id="economia">
+            <h2>9. Economía del Café de Especialidad</h2>
+            
+            <h3>Inversión Inicial Total por Nivel</h3>
+            <table>
+                <tr>
+                    <th>Nivel</th>
+                    <th>Equipamiento</th>
+                    <th>Café (1er mes)</th>
+                    <th>Total Inicial</th>
+                    <th>Costo/Taza</th>
+                </tr>
+                <tr>
+                    <td>Entrada</td>
+                    <td>€60</td>
+                    <td>€30</td>
+                    <td>€90</td>
+                    <td>€0.50</td>
+                </tr>
+                <tr>
+                    <td>Intermedio</td>
+                    <td>€150</td>
+                    <td>€40</td>
+                    <td>€190</td>
+                    <td>€0.65</td>
+                </tr>
+                <tr>
+                    <td>Entusiasta</td>
+                    <td>€300</td>
+                    <td>€60</td>
+                    <td>€360</td>
+                    <td>€0.80</td>
+                </tr>
+                <tr>
+                    <td>Avanzado</td>
+                    <td>€600+</td>
+                    <td>€80</td>
+                    <td>€680+</td>
+                    <td>€1.00+</td>
+                </tr>
+            </table>
+
+            <h3>Comparación Costo vs Alternativas</h3>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>☕ CASA ESPECIALIDAD</h4>
+                    <p><strong>Costo:</strong> €0.50-0.80/taza</p>
+                    <p><strong>Calidad:</strong> Excelente</p>
+                    <p><strong>Tiempo:</strong> 5-8 minutos</p>
+                    <p><strong>Control:</strong> Total</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>🏪 CAFETERÍA ESPECIALIDAD</h4>
+                    <p><strong>Costo:</strong> €2.50-4.00/taza</p>
+                    <p><strong>Calidad:</strong> Variable</p>
+                    <p><strong>Tiempo:</strong> 0 + desplazamiento</p>
+                    <p><strong>Control:</strong> Nulo</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>🏢 OFICINA/BAR</h4>
+                    <p><strong>Costo:</strong> €1.20-2.00/taza</p>
+                    <p><strong>Calidad:</strong> Baja-media</p>
+                    <p><strong>Tiempo:</strong> Variable</p>
+                    <p><strong>Control:</strong> Nulo</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>🏠 CÁPSULAS</h4>
+                    <p><strong>Costo:</strong> €0.40-0.60/taza</p>
+                    <p><strong>Calidad:</strong> Media</p>
+                    <p><strong>Tiempo:</strong> 1 minuto</p>
+                    <p><strong>Control:</strong> Mínimo</p>
+                </div>
+            </div>
+
+            <h3>Análisis de ROI (Return on Investment)</h3>
+            <div class="highlight">
+                <p><strong>Escenario típico:</strong> 2 tazas/día, 300 días/año</p>
+                <p><strong>Inversión inicial:</strong> €190 (nivel intermedio)</p>
+                <p><strong>Ahorro anual vs cafetería:</strong> €1,500-2,000</p>
+                <p><strong>Payback period:</strong> 6-8 semanas</p>
+                <p><strong>Beneficio adicional:</strong> Mejor calidad + conveniencia</p>
+            </div>
+
+            <h3>Presupuesto Mensual Realista</h3>
+            <table>
+                <tr>
+                    <th>Consumo</th>
+                    <th>Café Necesario</th>
+                    <th>Presupuesto</th>
+                    <th>Observaciones</th>
+                </tr>
+                <tr>
+                    <td>1 taza/día</td>
+                    <td>500g/mes</td>
+                    <td>€8-15</td>
+                    <td>Nivel entrada suficiente</td>
+                </tr>
+                <tr>
+                    <td>2 tazas/día</td>
+                    <td>1kg/mes</td>
+                    <td>€15-30</td>
+                    <td>Explorar diferentes orígenes</td>
+                </tr>
+                <tr>
+                    <td>3+ tazas/día</td>
+                    <td>1.5kg/mes</td>
+                    <td>€25-45</td>
+                    <td>Café diario + experimentación</td>
+                </tr>
+            </table>
+
+            <h3>Optimización de Costos</h3>
+            <div class="tip">
+                <h4>💡 Estrategias para Ahorrar</h4>
+                <ul>
+                    <li><strong>Comprar directo de tostador:</strong> 10-20% descuento vs tiendas</li>
+                    <li><strong>Suscripciones:</strong> 5-15% descuento por compra recurrente</li>
+                    <li><strong>Compras grupales:</strong> Dividir costos envío con amigos</li>
+                    <li><strong>Ofertas temporada:</strong> Stocks cuando hay promociones</li>
+                    <li><strong>Marcas house:</strong> Misma calidad, menos marketing</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h4>⚠️ Costos Ocultos a Considerar</h4>
+                <ul>
+                    <li>Mantenimiento/descalcificación equipamiento</li>
+                    <li>Reemplazo filtros (si usas agua filtrada)</li>
+                    <li>Actualización equipamiento (GAS - Gear Acquisition Syndrome)</li>
+                    <li>Mayor consumo al mejorar calidad</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 10: SOLUCIÓN DE PROBLEMAS -->
         <section id="solucion">
-            <h2>5. Solución de Problemas</h2>
+            <h2>10. Solución de Problemas</h2>
             
             <h3>Diagnóstico por Sabor</h3>
             <table>
                 <tr>
                     <th>Problema</th>
                     <th>Causa Probable</th>
-                    <th>Solución</th>
+                    <th>Solución Inmediata</th>
+                    <th>Prevención</th>
                 </tr>
                 <tr>
                     <td>Café agrio/ácido</td>
                     <td>Subextracción</td>
                     <td>Molienda más fina, más tiempo, agua más caliente</td>
+                    <td>Revisar ratio y calibrar molinillo</td>
                 </tr>
                 <tr>
                     <td>Café amargo</td>
                     <td>Sobreextracción</td>
                     <td>Molienda más gruesa, menos tiempo, agua más fría</td>
+                    <td>No sobrepasar tiempos recomendados</td>
                 </tr>
                 <tr>
                     <td>Café aguado</td>
                     <td>Ratio bajo</td>
                     <td>Usar más café o menos agua</td>
+                    <td>Usar balanza siempre</td>
                 </tr>
                 <tr>
                     <td>Sin sabor</td>
                     <td>Café viejo</td>
                     <td>Comprar café fresco con fecha reciente</td>
+                    <td>Rotar stock, comprar menos cantidad</td>
                 </tr>
             </table>
+
+            <h3>Problemas de Equipamiento</h3>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>🔧 MOLINILLO</h4>
+                    <p><strong>Problema:</strong> Molienda desigual</p>
+                    <p><strong>Causa:</strong> Fresas desgastadas/sucias</p>
+                    <p><strong>Solución:</strong> Limpiar o calibrar</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>⚖️ BALANZA</h4>
+                    <p><strong>Problema:</strong> Lecturas inconsistentes</p>
+                    <p><strong>Causa:</strong> Superficie inestable</p>
+                    <p><strong>Solución:</strong> Calibrar y nivelar</p>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>🌡️ TEMPERATURA</h4>
+                    <p><strong>Problema:</strong> Agua muy caliente/fría</p>
+                    <p><strong>Causa:</strong> Kettle descalibrado</p>
+                    <p><strong>Solución:</strong> Verificar con termómetro</p>
+                </div>
+            </div>
 
             <h3>Defectos Comunes del Café</h3>
             <div class="warning">
@@ -567,6 +1274,18 @@
                 </ul>
             </div>
 
+            <h3>Guía de Emergencia: Café Malo → Café Bebible</h3>
+            <div class="success">
+                <h4>✅ Rescate de Café Mediocre</h4>
+                <ul>
+                    <li><strong>Demasiado amargo:</strong> Añadir pizca de sal</li>
+                    <li><strong>Demasiado ácido:</strong> Añadir pizca de bicarbonato</li>
+                    <li><strong>Sin cuerpo:</strong> Cambiar a prensa francesa</li>
+                    <li><strong>Viejo/plano:</strong> Usar ratio más alto (más café)</li>
+                    <li><strong>Último recurso:</strong> Bebidas con leche</li>
+                </ul>
+            </div>
+
             <h3>Progresión Recomendada</h3>
             <div class="grid">
                 <div class="grid-item">
@@ -575,6 +1294,7 @@
                         <li>Comprar primer café de especialidad</li>
                         <li>Dominar un método básico</li>
                         <li>Practicar el bloom test</li>
+                        <li>Establecer rutina diaria</li>
                     </ul>
                 </div>
                 
@@ -584,25 +1304,44 @@
                         <li>Experimentar con variables</li>
                         <li>Probar diferentes orígenes</li>
                         <li>Desarrollar el paladar</li>
+                        <li>Llevar registro de preparaciones</li>
                     </ul>
                 </div>
                 
                 <div class="grid-item">
-                    <h4>Mes 3+</h4>
+                    <h4>Mes 3-6</h4>
                     <ul>
-                        <li>Invertir en buen molinillo</li>
+                        <li>Invertir en mejor molinillo</li>
                         <li>Explorar procesamientos</li>
                         <li>Conectar con comunidad local</li>
+                        <li>Asistir a eventos de cata</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item">
+                    <h4>Mes 6+</h4>
+                    <ul>
+                        <li>Considerar cursos SCA</li>
+                        <li>Explorar microlotes caros</li>
+                        <li>Experimentar tostado casero</li>
+                        <li>Planificar viaje a origen</li>
                     </ul>
                 </div>
             </div>
 
-            <h3>Recursos para Continuar</h3>
+            <h3>Recursos para Continuar Aprendiendo</h3>
             <div class="highlight">
                 <p><strong>Educación formal:</strong> Cursos SCA (Specialty Coffee Association)</p>
-                <p><strong>Comunidad:</strong> Tostadores locales, eventos de cata</p>
-                <p><strong>Experimentación:</strong> Llevar registro de preparaciones</p>
-                <p><strong>Viajes:</strong> Visitar cafeterías, eventualmente orígenes</p>
+                <p><strong>Comunidad:</strong> Tostadores locales, eventos de cata, foros online</p>
+                <p><strong>Experimentación:</strong> Llevar registro detallado de preparaciones</p>
+                <p><strong>Viajes:</strong> Visitar cafeterías, tostadores, eventualmente orígenes</p>
+                <p><strong>Libros:</strong> "Coffee: A Comprehensive Guide to the Bean" - Kenneth Davids</p>
+                <p><strong>Apps:</strong> Coffee Project, Brewfather para tracking</p>
+            </div>
+
+            <div class="tip">
+                <h4>💡 Mindset Final</h4>
+                <p>El café de especialidad es un viaje, no un destino. No existe la preparación "perfecta", solo la que te gusta más cada día. Experimenta, disfruta el proceso, y recuerda que cada taza cuenta una historia única desde el origen hasta tu mesa.</p>
             </div>
         </section>
 
