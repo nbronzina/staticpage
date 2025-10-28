@@ -10,428 +10,495 @@
   <link rel="shortcut icon" type="image/png" href="img/DitherME2.png">
   <link rel="apple-touch-icon" href="img/DitherME2.png">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nicolás Bronzina">
-<meta property="og:description" content="Strategic Foresight Researcher & Climate Adaptation Specialist active at the interface between climate futures and organizational decision-making.">
-<meta property="og:image" content="https://www.nicolasbronzina.com/img/DitherME2.png">
-<meta property="og:url" content="https://www.nicolasbronzina.com/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nicolás Bronzina">
+  <meta property="og:description" content="Strategic Foresight Researcher & Climate Adaptation Specialist active at the interface between climate futures and organizational decision-making.">
+  <meta property="og:image" content="https://www.nicolasbronzina.com/img/DitherME2.png">
+  <meta property="og:url" content="https://www.nicolasbronzina.com/">
   
 <style>
-  /* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  min-height: 100vh;
-}
+  /* ========== CSS Variables ========== */
+  :root {
+    --color-primary: #000;
+    --color-text: #000;
+    --color-bg: #fff;
+    --color-border: #ddd;
+    --color-hover-bg: #333;
+    --color-grey: #555;
+    --color-grey-light: grey;
+    
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 40px;
+    
+    --font-size-base: 16px;
+    --font-size-h1: 28px;
+    --font-size-h2: 24px;
+    --font-size-small: 12px;
+    
+    --max-width-text: 600px;
+    --max-width-content: 800px;
+    --max-width-wide: 900px;
+    
+    --transition-speed: 0.3s;
+  }
 
-h1, h2, p {
-  margin: 0;
-}
+  /* ========== Mobile-First Base Styles ========== */
+  * {
+    box-sizing: border-box;
+  }
 
-h1 {
-  font-size: 28px;
-}
-
-p {
-  font-size: 16px;
-  max-width: 600px;
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: inherit;
-}
-
-/* Header */
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-/* Profile Image */
-.main-image {
-  width: 400px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-/* Introduction Section */
-.intro-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.intro-content {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.main-image {
-  width: 300px;
-  height: auto;
-  margin-right: 20px;
-}
-
-.intro-text {
-  max-width: 500px;
-  text-align: left;
-}
-
-/* About Section */
-.contenedor {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.columna {
-  max-width: 400px;
-  padding: 10px;
-  text-align: center;
-}
-
-/* Selected Works Section */
-.selected-work-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.selected-work-container ul {
-  list-style-position: inside;
-  padding: 0;
-}
-
-.selected-work-container li {
-  margin: 5px 0;
-}
-
-/* Interactive Projects Section */
-.interactive-projects-section {
-  margin: 40px auto;
-  max-width: 800px;
-}
-
-.interactive-projects-section .project-category {
-  margin: 30px 0;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  transition: box-shadow 0.3s ease;
-}
-
-.interactive-projects-section .project-category:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.interactive-projects-section a.project-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #000;
-  color: #fff;
-  text-decoration: none;
-  margin: 10px 0;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.interactive-projects-section a.project-button:hover {
-  background-color: #333;
-}
-
-/* Stats Section - ORIGINAL STYLING */
-.stats-section {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
-  padding: 20px 0;
-  text-align: center;
-  width: 100%;
-  max-width: 900px;
-  margin: 20px auto 0;
-  flex-wrap: nowrap;
-}
-
-.stats-section div {
-  flex: 1;
-  min-width: 180px;
-  max-width: 280px;
-}
-
-/* Footer Links */
-.footer-links {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: inherit;
-  margin-right: 10px;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-/* Back to Top Button */
-.back-to-top {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: none;
-  border: none;
-  color: black;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.back-to-top:hover {
-  color: #555;
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .intro-container {
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: var(--spacing-md);
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    min-height: 100vh;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+  }
+
+  h1, h2, h3, p {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: var(--font-size-h1);
+    margin-bottom: var(--spacing-md);
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--spacing-md);
+  }
+
+  h3 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  p {
+    font-size: var(--font-size-base);
+    max-width: var(--max-width-text);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    transition: color var(--transition-speed);
+  }
+
+  a:hover {
+    color: var(--color-grey);
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  hr {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    margin: var(--spacing-lg) 0;
+  }
+
+  /* ========== Layout Components ========== */
+  .header {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
   }
 
   .main-image {
-    width: 80%;
-    max-width: 200px;
-    height: auto;
-  }
-
-  .header h1, .header h2 {
-    font-size: 24px;
-  }
-
-  .project {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .project img {
     width: 100%;
     max-width: 300px;
+    margin-bottom: var(--spacing-md);
   }
 
+  .intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+  }
+
+  .intro-text {
+    max-width: var(--max-width-text);
+    text-align: left;
+  }
+
+  .intro-text p + p {
+    margin-top: var(--spacing-md);
+  }
+
+  /* ========== Content Sections ========== */
+  .content-section {
+    width: 100%;
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+  }
+
+  .two-column-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+  }
+
+  .column {
+    padding: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .column p {
+    margin: var(--spacing-sm) 0;
+  }
+
+  .column p:first-of-type {
+    margin-top: 0;
+  }
+
+  /* ========== Project Styles ========== */
+  .project-category {
+    margin: var(--spacing-lg) 0;
+    text-align: center;
+  }
+
+  .project-category h3 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .project-category img {
+    width: 100%;
+    margin: var(--spacing-md) 0;
+  }
+
+  .project-category ul {
+    list-style-position: inside;
+    padding: 0;
+    text-align: left;
+  }
+
+  .project-category li {
+    margin: var(--spacing-xs) 0;
+  }
+
+  /* ========== Interactive Projects ========== */
+  .interactive-project-card {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: box-shadow var(--transition-speed);
+  }
+
+  .interactive-project-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .interactive-project-card p {
+    margin: var(--spacing-md) 0;
+  }
+
+  .project-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color var(--transition-speed);
+  }
+
+  .project-button:hover {
+    background-color: var(--color-hover-bg);
+    color: var(--color-bg);
+  }
+
+  /* ========== Stats Section ========== */
   .stats-section {
+    display: flex;
     flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .stats-section div {
-    flex: none;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+    text-align: center;
     width: 100%;
-    max-width: 300px;
+    max-width: var(--max-width-wide);
+    margin: var(--spacing-md) auto 0;
   }
 
-  .contenedor {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .columna {
+  .stats-section > div {
     width: 100%;
   }
-}
 
-/* Adjust the "The website is programmed..." section */
-.website-info {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  padding-bottom: 20px;
-}
+  .stats-section h2 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .stats-section p {
+    margin: var(--spacing-xs) 0;
+  }
+
+  #weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  #weather-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .climate-credit {
+    font-size: var(--font-size-small);
+    color: var(--color-grey-light);
+    margin-top: var(--spacing-sm);
+  }
+
+  /* ========== Back to Top Button ========== */
+  .back-to-top {
+    position: fixed;
+    right: var(--spacing-md);
+    bottom: var(--spacing-md);
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color var(--transition-speed);
+    padding: var(--spacing-sm);
+  }
+
+  .back-to-top:hover {
+    color: var(--color-grey);
+  }
+
+  /* ========== Tablet & Desktop ========== */
+  @media (min-width: 768px) {
+    body {
+      padding: var(--spacing-lg);
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    .intro-container {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .main-image {
+      max-width: 300px;
+      margin-right: var(--spacing-md);
+      margin-bottom: 0;
+    }
+
+    .two-column-grid {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .column {
+      max-width: 400px;
+    }
+
+    .stats-section {
+      flex-direction: row;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+    }
+
+    .stats-section > div {
+      flex: 1;
+      min-width: 180px;
+      max-width: 280px;
+    }
+  }
+
+  /* ========== Utility Classes ========== */
+  .text-center {
+    text-align: center;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .mb-small {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .mb-medium {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .mb-large {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .img-full-width {
+    width: 100%;
+  }
+
+  .img-80 {
+    width: 80%;
+  }
 </style>
 </head>
 
 <body>
-  <!-- Sección de Encabezado -->
-<header class="header">
+  <!-- Header Section -->
+  <header class="header">
     <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
     <h2>I'm Nicolás Bronzina, Strategic Foresight Researcher & Climate Adaptation Specialist</h2>
-</header>
+  </header>
   <hr>
-<!-- Sección de Introducción -->
-<section id="home">
-  <div class="intro-container">
-    <img src="img/DitherME.png" alt="Profile Picture" class="main-image">
-    <div class="intro-text">
-      <p>I help organizations navigate uncertainty and prototype possible futures today. With backgrounds in sociology and UX design, I specialize in translating complex climate and urban challenges into actionable strategic frameworks through evidence-based foresight research.</p>
-      <br>
-      <p>As co-founder of <a href="https://www.heated.studio/">Heated Studio</a>, I lead climate resilience projects for clients seeking future-ready strategies. Also, as Managing Partner at BPP Analytics and Design, I combine quantitative analysis with futures design to support strategic decision-making in complex contexts. My work bridges present capabilities with emerging scenarios, combining speculative design with rigorous research methodologies.</p>
-      <br>
-      <p>Previously collaborated with Near Future Laboratory and Girardin & Nova on design fiction projects for major enterprises across telecommunications, finance, defense, and automotive/mobility sectors.</p>
-      <br>
-      <p><strong> Do you need strategic clarity on what comes next for you or your workplace? </strong> </p></strong> <a href="mailto:nicolas.bronzina@gmail.com">Let's explore future scenarios together</a>.</p>
-      <br>
-      <p>When I'm not thinking about possible futures, you can find me behind <a href="https://www.nicolasbronzina.com/Coffee.html">Coffee.txt</a>, your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid; and <a href="https://www.nicolasbronzina.com/CoffeeDecoded.html">Coffee Decoded</a>, A practical guide written by someone who has made the expensive equipment and bad coffee mistakes so you don't have to. Because even futurists need caffeine! Originally from Argentina, now based in Madrid.</p>
-    </div>
-  </div>
-  <hr>
-</section>
 
-  <!-- Sección About -->
- <section id="about">
-    <div class="contenedor">
-        <div class="columna">
-            <p><b>Experience</b></p>
-            <br>
-            <p><u>Lab de Mundanidad Forzada</u></p>
-            <p>Research Coordinator & Lab Initiator</p>
-            <br>
-            <p><u>Heated Studio</u></p>
-            <p>Experimental Practitioner & Co-founder</p>
-            <br>
-            <p><u>BPP Analytics and Design</u></p>
-            <p>Managing Partner</p>
-            <br>
-            <p><u>Girardin & Nova</u></p>
-            <p>Design Researcher</p>
-            <br>
-            <p><u>Near Future Laboratory</u></p>
-            <p>Design Researcher</p>
-            <br>
-            <p><b>Education & Credentials</b></p>
-            <br>
-            <p><u>UDIT Madrid</u></p>
-            <p>Master's Degree in User Experience for the Design of Digital Products and Services</p>
-            <br>
-            <p><u>Universidad del Salvador</u></p>
-            <p>Bachelor's in Sociology</p>
-            <br>
-            <p><u>Institute for the Future</u></p>
-            <p>Certified in Future Thinking & Forecasting</p>
-        </div>
-        <div class="columna">
-            <p><b>Core Expertise</b></p>
-            <br>
-            <p><b>Strategic Foresight</b></p>
-            <p>Scenario Planning & Vision Development</p>
-            <p>Weak Signals & Trends Analysis</p>
-            <p>Systems Thinking & Complexity Navigation</p>
-            <br>
-            <p><b>Design Research</b></p>
-            <p>Design Fiction & Speculative Design</p>
-            <p>Diegetic Prototyping</p>
-            <p>AI-Enhanced Narrative Development</p>
-            <br>
-            <p><b>Climate & Urban Futures</b></p>
-            <p>Climate Adaptation & Resilience Planning</p>
-            <p>Urban Transformation Strategies</p>
-            <p>Sustainability Framework Development</p>
-            <br>
-            <p><b>Organizational Impact</b></p>
-            <p>Executive Strategic Planning</p>
-            <p>Cross-disciplinary Team Leadership</p>
-            <p>Future-Ready Decision Making</p>
-        </div>
-    </div>
-   <hr>
-</section>
-
-  <!-- Sección Selected Works -->
-<section class="project-writing-section">
-    <div class="selected-work-container">
-        <h2>Selected Work</h2>
+  <!-- Introduction Section -->
+  <section id="home">
+    <div class="intro-container">
+      <img src="img/DitherME.png" alt="Nicolás Bronzina profile picture" class="main-image" loading="lazy">
+      <div class="intro-text">
+        <p>I help organizations navigate uncertainty and prototype possible futures today. With backgrounds in sociology and UX design, I specialize in translating complex climate and urban challenges into actionable strategic frameworks through evidence-based foresight research.</p>
         
-        <div class="project-category">
-            <h3>Future of Food</h3>
-            <img src="img/Empanadas.png" alt="Future of Food" style="width: 100%; height: auto;">
-            <ul>
-                <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37">A Manifesto for a New Argentinean Cuisine</a></li>
-                <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968">What is carbon-neutral gastronomy?</a></li>
-                <li><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7">What is ethical meat and sustainable proteins tasting?</a></li>
-                <li><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d">The gastronomic offer of San Telmo Market in a 15-minute city</a></li>
-            </ul>
-        </div>
-
-        <div class="project-category">
-            <h3>Environmental Crisis</h3>
-            <img src="img/PortadaNG.png" alt="Environmental Crisis" style="width: 80%; height: auto;">
-            <ul>
-                <li><a href="https://medium.com/heated-consultancy/how-i-prototyped-an-alternative-future-climate-with-design-fiction-genai-90b720ecf2d4">How I Prototyped an Alternative Future Climate with Design Fiction & GenAI</a></li>
-                <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442">How Madrid could adapt to extreme heat without losing its essence</a></li>
-                <li><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb">A speculative tour of San Telmo Market in a future Buenos Aires</a></li>
-                <li><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f">Collective trauma and community resilience after a climate disaster</a></li>
-            </ul>
-        </div>
-
-        <div class="project-category">
-            <h3>Foresight</h3>
-            <img src="img/DDK.png" alt="Foresight" style="width: 80%; height: auto;">
-            <ul>
-                <li><a href="https://medium.com/@nbronzina/no-the-plane-doesnt-have-ai-e6a0501e9f0d">No, the plane doesn't have AI. And that opens up more interesting questions than the ones it tries to answer</a></li>
-                <li><a href="https://medium.com/@nbronzina/what-if-the-state-designed-futures-661a303aeb8f">What if the State Designed Futures? A day in Buenos Aires revealed how speculative design, weak signals, and institutional fiction can become fundamental tools for public policy</a></li>
-                <li><a href="https://medium.com/@nbronzina/enseñando-inteligencia-artificial-a-diseñadores-ux-694c3a1611d7">Teaching Artificial Intelligence to UX Designers: Notes from a masterclass given together with Fabien Girardin and Rohit Gupta for UX design students at UDIT [ES]</a></li>
-                <li><a href="https://medium.com/@nbronzina/turning-the-tide-ac23bdb8e7ba">Turning the Tide: How Argentina Can Transform Short-Term Survival into a Future-Ready Strategy</a></li>
-                <li><a href="https://atelierdesfuturs.org/q260-comment-reimaginer-le-futur-au-quotidien/">Comment réimaginer le futur au quotidian? / Re-imagining everyday futures</a></li>
-                <li><a href="https://medium.com/@nbronzina/viveza-criolla-a-model-for-the-future-dc2705802104">Viveza Criolla: A Design Fiction Lens on Strategic Adaptation</a></li>
-                <li><a href= "https://medium.com/@nbronzina/diegetic-discovery-kit-57f77e6074e9"> A practical guide to changing how you see the everyday objects and spaces around you</a></li>
-                <li><a href="/Official.html">Envisioning futures where Design Fiction empowers refugees to rebuild their lives</a></li>
-                <li><a href="https://medium.com/@nbronzina/welcome-an-approach-to-prospective-methodology-based-on-futures-design-and-its-relation-to-6a5491518262">Prospective Methodology Based on Futures Design</a></li>
-                <li><a href="https://medium.com/@nbronzina/a-shift-towards-strategic-foresight-a34a87050eff">How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
-            </ul>
-        </div>
-    </div>
-  <hr>
-</section>
-
-  <!-- Sección Interactive Web Projects -->
-<section class="interactive-projects-section">
-    <div class="selected-work-container">
-        <h2>Interactive Web Projects</h2>
-        <p style="margin-bottom: 20px;">Web-based tools and interactive experiences for civic engagement and urban exploration</p>
+        <p>As co-founder of <a href="https://www.heated.studio/" rel="noopener" target="_blank">Heated Studio</a>, I lead climate resilience projects for clients seeking future-ready strategies. Also, as Managing Partner at BPP Analytics and Design, I combine quantitative analysis with futures design to support strategic decision-making in complex contexts. My work bridges present capabilities with emerging scenarios, combining speculative design with rigorous research methodologies.</p>
         
-        <div class="project-category">
-            <h3>CUIDAR.ar | Sistema de Cuidados para Personas Mayores</h3>
-            <p style="margin-bottom: 15px;">Care system platform for older adults developed for the Government of Buenos Aires City (GCBA). An interactive tool designed to improve access to care services and support networks for elderly citizens.</p>
-            <a href="https://www.nicolasbronzina.com/CUIDAR.html" target="_blank" class="project-button">
-                Explore CUIDAR.ar →
-            </a>
-        </div>
-
-        <div class="project-category" style="margin-top: 30px;">
-            <h3>Mercado San Telmo</h3>
-            <p style="margin-bottom: 15px;">Interactive exploration of Buenos Aires' historic San Telmo Market. A digital experience that brings the market's cultural heritage and gastronomic diversity to life through design fiction and futures thinking.</p>
-            <a href="https://www.nicolasbronzina.com/MercadoSanTelmo.html" target="_blank" class="project-button">
-                Visit Mercado San Telmo →
-            </a>
-        </div>
+        <p>Previously collaborated with Near Future Laboratory and Girardin & Nova on design fiction projects for major enterprises across telecommunications, finance, defense, and automotive/mobility sectors.</p>
+        
+        <p><strong>Do you need strategic clarity on what comes next for you or your workplace?</strong> <a href="mailto:nicolas.bronzina@gmail.com">Let's explore future scenarios together</a>.</p>
+        
+        <p>When I'm not thinking about possible futures, you can find me behind <a href="https://www.nicolasbronzina.com/Coffee.html">Coffee.txt</a>, your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid; and <a href="https://www.nicolasbronzina.com/CoffeeDecoded.html">Coffee Decoded</a>, A practical guide written by someone who has made the expensive equipment and bad coffee mistakes so you don't have to. Because even futurists need caffeine! Originally from Argentina, now based in Madrid.</p>
+      </div>
     </div>
-  <hr>
-</section>
+    <hr>
+  </section>
 
-  <!-- Sección de Estadísticas del Servidor, Pronóstico y Redes Sociales -->
+  <!-- About Section -->
+  <section id="about">
+    <div class="two-column-grid">
+      <div class="column">
+        <p><strong>Experience</strong></p>
+        <p><u>Lab de Mundanidad Forzada</u></p>
+        <p>Research Coordinator & Lab Initiator</p>
+        <p><u>Heated Studio</u></p>
+        <p>Experimental Practitioner & Co-founder</p>
+        <p><u>BPP Analytics and Design</u></p>
+        <p>Managing Partner</p>
+        <p><u>Girardin & Nova</u></p>
+        <p>Design Researcher</p>
+        <p><u>Near Future Laboratory</u></p>
+        <p>Design Researcher</p>
+        <p><strong>Education & Credentials</strong></p>
+        <p><u>UDIT Madrid</u></p>
+        <p>Master's Degree in User Experience for the Design of Digital Products and Services</p>
+        <p><u>Universidad del Salvador</u></p>
+        <p>Bachelor's in Sociology</p>
+        <p><u>Institute for the Future</u></p>
+        <p>Certified in Future Thinking & Forecasting</p>
+      </div>
+      <div class="column">
+        <p><strong>Core Expertise</strong></p>
+        <p><strong>Strategic Foresight</strong></p>
+        <p>Scenario Planning & Vision Development</p>
+        <p>Weak Signals & Trends Analysis</p>
+        <p>Systems Thinking & Complexity Navigation</p>
+        <p><strong>Design Research</strong></p>
+        <p>Design Fiction & Speculative Design</p>
+        <p>Diegetic Prototyping</p>
+        <p>AI-Enhanced Narrative Development</p>
+        <p><strong>Climate & Urban Futures</strong></p>
+        <p>Climate Adaptation & Resilience Planning</p>
+        <p>Urban Transformation Strategies</p>
+        <p>Sustainability Framework Development</p>
+        <p><strong>Organizational Impact</strong></p>
+        <p>Executive Strategic Planning</p>
+        <p>Cross-disciplinary Team Leadership</p>
+        <p>Future-Ready Decision Making</p>
+      </div>
+    </div>
+    <hr>
+  </section>
+
+  <!-- Selected Works Section -->
+  <section class="content-section">
+    <h2>Selected Work</h2>
+    
+    <article class="project-category">
+      <h3>Future of Food</h3>
+      <img src="img/Empanadas.png" alt="Future of Food project visualization" class="img-full-width" loading="lazy">
+      <ul>
+        <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37" rel="noopener" target="_blank">A Manifesto for a New Argentinean Cuisine</a></li>
+        <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968" rel="noopener" target="_blank">What is carbon-neutral gastronomy?</a></li>
+        <li><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7" rel="noopener" target="_blank">What is ethical meat and sustainable proteins tasting?</a></li>
+        <li><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d" rel="noopener" target="_blank">The gastronomic offer of San Telmo Market in a 15-minute city</a></li>
+      </ul>
+    </article>
+
+    <article class="project-category">
+      <h3>Environmental Crisis</h3>
+      <img src="img/PortadaNG.png" alt="Environmental Crisis project visualization" class="img-80" loading="lazy">
+      <ul>
+        <li><a href="https://medium.com/heated-consultancy/how-i-prototyped-an-alternative-future-climate-with-design-fiction-genai-90b720ecf2d4" rel="noopener" target="_blank">How I Prototyped an Alternative Future Climate with Design Fiction & GenAI</a></li>
+        <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442" rel="noopener" target="_blank">How Madrid could adapt to extreme heat without losing its essence</a></li>
+        <li><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb" rel="noopener" target="_blank">A speculative tour of San Telmo Market in a future Buenos Aires</a></li>
+        <li><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f" rel="noopener" target="_blank">Collective trauma and community resilience after a climate disaster</a></li>
+      </ul>
+    </article>
+
+    <article class="project-category">
+      <h3>Foresight</h3>
+      <img src="img/DDK.png" alt="Foresight project visualization" class="img-80" loading="lazy">
+      <ul>
+        <li><a href="https://medium.com/@nbronzina/no-the-plane-doesnt-have-ai-e6a0501e9f0d" rel="noopener" target="_blank">No, the plane doesn't have AI. And that opens up more interesting questions than the ones it tries to answer</a></li>
+        <li><a href="https://medium.com/@nbronzina/what-if-the-state-designed-futures-661a303aeb8f" rel="noopener" target="_blank">What if the State Designed Futures? A day in Buenos Aires revealed how speculative design, weak signals, and institutional fiction can become fundamental tools for public policy</a></li>
+        <li><a href="https://medium.com/@nbronzina/enseñando-inteligencia-artificial-a-diseñadores-ux-694c3a1611d7" rel="noopener" target="_blank">Teaching Artificial Intelligence to UX Designers: Notes from a masterclass given together with Fabien Girardin and Rohit Gupta for UX design students at UDIT [ES]</a></li>
+        <li><a href="https://medium.com/@nbronzina/turning-the-tide-ac23bdb8e7ba" rel="noopener" target="_blank">Turning the Tide: How Argentina Can Transform Short-Term Survival into a Future-Ready Strategy</a></li>
+        <li><a href="https://atelierdesfuturs.org/q260-comment-reimaginer-le-futur-au-quotidien/" rel="noopener" target="_blank">Comment réimaginer le futur au quotidian? / Re-imagining everyday futures</a></li>
+        <li><a href="https://medium.com/@nbronzina/viveza-criolla-a-model-for-the-future-dc2705802104" rel="noopener" target="_blank">Viveza Criolla: A Design Fiction Lens on Strategic Adaptation</a></li>
+        <li><a href="https://medium.com/@nbronzina/diegetic-discovery-kit-57f77e6074e9" rel="noopener" target="_blank">A practical guide to changing how you see the everyday objects and spaces around you</a></li>
+        <li><a href="/Official.html">Envisioning futures where Design Fiction empowers refugees to rebuild their lives</a></li>
+        <li><a href="https://medium.com/@nbronzina/welcome-an-approach-to-prospective-methodology-based-on-futures-design-and-its-relation-to-6a5491518262" rel="noopener" target="_blank">Prospective Methodology Based on Futures Design</a></li>
+        <li><a href="https://medium.com/@nbronzina/a-shift-towards-strategic-foresight-a34a87050eff" rel="noopener" target="_blank">How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
+      </ul>
+    </article>
+    <hr>
+  </section>
+
+  <!-- Interactive Web Projects Section -->
+  <section class="content-section">
+    <h2>Interactive Web Projects</h2>
+    <p class="mb-medium">Web-based tools and interactive experiences for civic engagement and urban exploration</p>
+    
+    <article class="interactive-project-card">
+      <h3>CUIDAR.ar | Sistema de Cuidados para Personas Mayores</h3>
+      <p>Care system platform for older adults developed for the Government of Buenos Aires City (GCBA). An interactive tool designed to improve access to care services and support networks for elderly citizens.</p>
+      <a href="https://www.nicolasbronzina.com/CUIDAR.html" target="_blank" rel="noopener" class="project-button" aria-label="Explore CUIDAR.ar project">
+        Explore CUIDAR.ar →
+      </a>
+    </article>
+
+    <article class="interactive-project-card">
+      <h3>Mercado San Telmo</h3>
+      <p>Interactive exploration of Buenos Aires' historic San Telmo Market. A digital experience that brings the market's cultural heritage and gastronomic diversity to life through design fiction and futures thinking.</p>
+      <a href="https://www.nicolasbronzina.com/MercadoSanTelmo.html" target="_blank" rel="noopener" class="project-button" aria-label="Visit Mercado San Telmo project">
+        Visit Mercado San Telmo →
+      </a>
+    </article>
+    <hr>
+  </section>
+
+  <!-- Stats Section -->
   <section class="stats-section">
     <div>
       <h2>Server Status</h2>
@@ -441,230 +508,317 @@ a:hover {
     <div>
       <h2>Climate Status</h2>
       <div id="weather-container">
-        <img id="weather-icon" src="" alt="Weather Icon" style="width: 50px; height: 50px;">
+        <img id="weather-icon" src="" alt="Weather icon" loading="lazy">
         <p id="weather-info">Loading...</p>
       </div>
       <p id="air-quality-info">AQI: Loading...</p>
       <p id="uv-heat-info">UV/Heat: Loading...</p>
       <p id="adaptation-metrics">Adaptation: Loading...</p>
       <p id="risk-assessment">Risk Level: Loading...</p>
-      <p style="font-size: 12px; color: grey;">Multi-source climate data</p>
+      <p class="climate-credit">Multi-source climate data</p>
     </div>
     <div>
       <h2>Contact</h2>
-      <p><a href="https://www.instagram.com/nbronzina">Instagram</a> | <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a> | <a href="https://www.medium.com/@nbronzina">Medium</a> | <a href="mailto:nicolas.bronzina@gmail.com">Email</a></p>
+      <p>
+        <a href="https://www.instagram.com/nbronzina" rel="noopener" target="_blank">Instagram</a> | 
+        <a href="https://www.linkedin.com/in/nicolasbronzina" rel="noopener" target="_blank">LinkedIn</a> | 
+        <a href="https://www.medium.com/@nbronzina" rel="noopener" target="_blank">Medium</a> | 
+        <a href="mailto:nicolas.bronzina@gmail.com">Email</a>
+      </p>
     </div>
   </section>
 
-  <!-- Flecha para volver arriba -->
-  <button class="back-to-top" onclick="scrollToTop()">
+  <!-- Back to Top Button -->
+  <button class="back-to-top" onclick="scrollToTop()" aria-label="Scroll back to top">
     &#8593;
   </button>
 
-  <!-- Script de Hora y Pronóstico -->
+  <!-- Optimized JavaScript -->
   <script>
-    const MADRID_LAT = 40.4168;
-    const MADRID_LON = -3.7038;
-    const API_KEY = '4f8273341d68d1acdccba1c7b45c5e54';
+    // ========== Configuration ==========
+    const CONFIG = {
+      MADRID_LAT: 40.4168,
+      MADRID_LON: -3.7038,
+      API_KEY: '4f8273341d68d1acdccba1c7b45c5e54',
+      CACHE_DURATION: 10 * 60 * 1000, // 10 minutes
+      HISTORICAL_TEMP_AVG: 15, // Madrid historical average
+      MADRID_UHI_BASE: 2.1 // Urban Heat Island base effect
+    };
 
+    // ========== Cache Manager ==========
+    class CacheManager {
+      static isSupported() {
+        try {
+          localStorage.setItem('test', 'test');
+          localStorage.removeItem('test');
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      static set(key, data) {
+        if (!this.isSupported()) return false;
+        try {
+          const item = {
+            data: data,
+            timestamp: Date.now()
+          };
+          localStorage.setItem(key, JSON.stringify(item));
+          return true;
+        } catch (e) {
+          console.warn('Cache write failed:', e);
+          return false;
+        }
+      }
+
+      static get(key, maxAge = CONFIG.CACHE_DURATION) {
+        if (!this.isSupported()) return null;
+        try {
+          const item = localStorage.getItem(key);
+          if (!item) return null;
+          
+          const parsed = JSON.parse(item);
+          const age = Date.now() - parsed.timestamp;
+          
+          if (age > maxAge) {
+            localStorage.removeItem(key);
+            return null;
+          }
+          
+          return parsed.data;
+        } catch (e) {
+          console.warn('Cache read failed:', e);
+          return null;
+        }
+      }
+    }
+
+    // ========== Time Display ==========
     function updateTime() {
       const now = new Date();
-      document.getElementById('time-info').textContent = `Time: ${now.toLocaleTimeString()}`;
+      const timeElement = document.getElementById('time-info');
+      if (timeElement) {
+        timeElement.textContent = `Time: ${now.toLocaleTimeString()}`;
+      }
     }
-    setInterval(updateTime, 1000);
 
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // ========== Weather API Manager ==========
+    class WeatherAPI {
+      static async fetchWithCache(url, cacheKey) {
+        const cached = CacheManager.get(cacheKey);
+        if (cached) {
+          console.log(`Using cached data for ${cacheKey}`);
+          return cached;
+        }
+
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
+        const data = await response.json();
+        CacheManager.set(cacheKey, data);
+        return data;
+      }
+
+      static async fetchCurrentWeather() {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=${CONFIG.API_KEY}&units=metric`;
+        return this.fetchWithCache(url, 'weather_current');
+      }
+
+      static async fetchOneCallData() {
+        const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${CONFIG.MADRID_LAT}&lon=${CONFIG.MADRID_LON}&appid=${CONFIG.API_KEY}&units=metric`;
+        return this.fetchWithCache(url, 'weather_onecall');
+      }
+
+      static async fetchAirQuality() {
+        const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${CONFIG.MADRID_LAT}&lon=${CONFIG.MADRID_LON}&appid=${CONFIG.API_KEY}`;
+        return this.fetchWithCache(url, 'air_quality');
+      }
+
+      static async fetchOpenMeteoAir() {
+        const url = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${CONFIG.MADRID_LAT}&longitude=${CONFIG.MADRID_LON}&hourly=pm10,pm2_5,carbon_monoxide,nitrogen_dioxide,ozone,uv_index&timezone=Europe%2FMadrid`;
+        return this.fetchWithCache(url, 'open_meteo_air');
+      }
+    }
+
+    // ========== Climate Calculations ==========
+    class ClimateCalculations {
+      static temperatureAnomaly(currentTemp) {
+        return Math.max(currentTemp - CONFIG.HISTORICAL_TEMP_AVG, 0).toFixed(1);
+      }
+
+      static heatIndex(temp, humidity) {
+        if (temp < 27) return temp;
+        
+        const hi = -8.784695 + 1.61139411 * temp + 2.338549 * humidity 
+                  - 0.14611605 * temp * humidity - 0.012308094 * Math.pow(temp, 2)
+                  - 0.016424828 * Math.pow(humidity, 2) + 0.002211732 * Math.pow(temp, 2) * humidity
+                  + 0.00072546 * temp * Math.pow(humidity, 2) - 0.000003582 * Math.pow(temp, 2) * Math.pow(humidity, 2);
+        
+        return Math.round(hi);
+      }
+
+      static urbanHeatIsland(urbanTemp) {
+        const tempFactor = Math.max(0, (urbanTemp - 25) * 0.1);
+        return (CONFIG.MADRID_UHI_BASE + tempFactor).toFixed(1);
+      }
+
+      static resilienceScore(temp, aqi, uvIndex) {
+        let score = 10;
+        
+        if (temp > 35) score -= 3;
+        else if (temp > 30) score -= 2;
+        else if (temp > 25) score -= 1;
+        
+        if (aqi >= 4) score -= 3;
+        else if (aqi >= 3) score -= 2;
+        else if (aqi >= 2) score -= 1;
+        
+        if (uvIndex > 8) score -= 2;
+        else if (uvIndex > 6) score -= 1;
+        
+        return Math.max(score, 0).toFixed(1);
+      }
+
+      static riskLevel(temp, aqi, uvIndex, heatIndex) {
+        let riskScore = 0;
+        
+        if (temp > 40) riskScore += 4;
+        else if (temp > 35) riskScore += 3;
+        else if (temp > 30) riskScore += 2;
+        else if (temp > 25) riskScore += 1;
+        
+        riskScore += Math.max(0, aqi - 1);
+        
+        if (uvIndex > 10) riskScore += 3;
+        else if (uvIndex > 8) riskScore += 2;
+        else if (uvIndex > 6) riskScore += 1;
+        
+        if (heatIndex > 40) riskScore += 2;
+        else if (heatIndex > 35) riskScore += 1;
+        
+        if (riskScore >= 8) return 'EXTREME';
+        if (riskScore >= 6) return 'HIGH';
+        if (riskScore >= 4) return 'MODERATE';
+        if (riskScore >= 2) return 'LOW';
+        return 'MINIMAL';
+      }
+
+      static trackHeatWaveDays(currentTemp) {
+        if (!CacheManager.isSupported()) return 0;
+        
+        const today = new Date().toDateString();
+        let heatWaveData = JSON.parse(localStorage.getItem('heatWaveData') || '{}');
+        
+        if (currentTemp > 30) {
+          heatWaveData[today] = currentTemp;
+        }
+        
+        let consecutiveDays = 0;
+        const now = new Date();
+        for (let i = 0; i < 7; i++) {
+          const checkDate = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
+          const dateString = checkDate.toDateString();
+          if (heatWaveData[dateString] && heatWaveData[dateString] > 30) {
+            consecutiveDays++;
+          } else {
+            break;
+          }
+        }
+        
+        localStorage.setItem('heatWaveData', JSON.stringify(heatWaveData));
+        return consecutiveDays;
+      }
+
+      static getAQIText(aqi) {
+        const aqiMap = { 1: 'Good', 2: 'Fair', 3: 'Moderate', 4: 'Poor', 5: 'Very Poor' };
+        return aqiMap[aqi] || 'Unknown';
+      }
+    }
+
+    // ========== UI Updates ==========
+    class UIUpdater {
+      static setElementText(id, text) {
+        const element = document.getElementById(id);
+        if (element) element.textContent = text;
+      }
+
+      static setElementAttribute(id, attribute, value) {
+        const element = document.getElementById(id);
+        if (element) element.setAttribute(attribute, value);
+      }
+
+      static updateWeatherDisplay(weatherData, oneCallData, airData, openMeteoData) {
+        try {
+          const temperature = weatherData.main.temp;
+          const weatherDescription = weatherData.weather[0].description;
+          const weatherIcon = weatherData.weather[0].icon;
+          const iconUrl = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+          const humidity = weatherData.main.humidity;
+
+          this.setElementText('weather-info', `${temperature}°C, ${weatherDescription}`);
+          this.setElementAttribute('weather-icon', 'src', iconUrl);
+          
+          const aqi = airData.list[0].main.aqi;
+          const pm25 = Math.round(airData.list[0].components.pm2_5);
+          const pm10 = Math.round(airData.list[0].components.pm10);
+          const aqiText = ClimateCalculations.getAQIText(aqi);
+          
+          this.setElementText('air-quality-info', `AQI: ${aqiText} (${aqi}/5) | PM2.5: ${pm25} | PM10: ${pm10}μg/m³`);
+          
+          const uvIndex = oneCallData.current?.uvi || 0;
+          const heatIndex = ClimateCalculations.heatIndex(temperature, humidity);
+          const tempAnomaly = ClimateCalculations.temperatureAnomaly(temperature);
+          
+          this.setElementText('uv-heat-info', `UV: ${Math.round(uvIndex)} | Heat Index: ${heatIndex}°C | Anomaly: +${tempAnomaly}°C`);
+          
+          const urbanHeatIsland = ClimateCalculations.urbanHeatIsland(temperature);
+          const resilienceScore = ClimateCalculations.resilienceScore(temperature, aqi, uvIndex);
+          
+          this.setElementText('adaptation-metrics', `UHI: +${urbanHeatIsland}°C | Resilience: ${resilienceScore}/10`);
+          
+          const riskLevel = ClimateCalculations.riskLevel(temperature, aqi, uvIndex, heatIndex);
+          const heatWaveDays = ClimateCalculations.trackHeatWaveDays(temperature);
+          
+          this.setElementText('risk-assessment', `Risk: ${riskLevel} | Heat Wave: ${heatWaveDays} days`);
+          
+        } catch (error) {
+          console.error('Error updating climate metrics:', error);
+          this.displayError();
+        }
+      }
+
+      static displayError() {
+        this.setElementText('weather-info', 'Weather data not available');
+        this.setElementText('air-quality-info', 'AQI: Data unavailable');
+        this.setElementText('uv-heat-info', 'UV/Heat: Data unavailable');
+        this.setElementText('adaptation-metrics', 'Adaptation: Data unavailable');
+        this.setElementText('risk-assessment', 'Risk Level: Data unavailable');
+      }
+    }
+
+    // ========== Main Weather Fetch ==========
     async function fetchWeather() {
       try {
-        // OpenWeatherMap current weather
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=${API_KEY}&units=metric`);
-        const data = await response.json();
+        const [weatherData, oneCallData, airData, openMeteoData] = await Promise.all([
+          WeatherAPI.fetchCurrentWeather(),
+          WeatherAPI.fetchOneCallData(),
+          WeatherAPI.fetchAirQuality(),
+          WeatherAPI.fetchOpenMeteoAir()
+        ]);
         
-        // OpenWeatherMap One Call API for UV and comprehensive data
-        const oneCallResponse = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${MADRID_LAT}&lon=${MADRID_LON}&appid=${API_KEY}&units=metric`);
-        const oneCallData = await oneCallResponse.json();
-        
-        // Air quality from OpenWeatherMap
-        const airResponse = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${MADRID_LAT}&lon=${MADRID_LON}&appid=${API_KEY}`);
-        const airData = await airResponse.json();
-        
-        // Open-Meteo backup for additional air quality data
-        const openMeteoResponse = await fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${MADRID_LAT}&longitude=${MADRID_LON}&hourly=pm10,pm2_5,carbon_monoxide,nitrogen_dioxide,ozone,uv_index&timezone=Europe%2FMadrid`);
-        const openMeteoData = await openMeteoResponse.json();
-        
-        updateAllClimateMetrics(data, oneCallData, airData, openMeteoData);
+        UIUpdater.updateWeatherDisplay(weatherData, oneCallData, airData, openMeteoData);
         
       } catch (error) {
         console.error('Error fetching climate data:', error);
-        document.getElementById('weather-info').textContent = 'Weather data not available';
-        document.getElementById('air-quality-info').textContent = 'AQI: Data unavailable';
-        document.getElementById('uv-heat-info').textContent = 'UV/Heat: Data unavailable';
-        document.getElementById('adaptation-metrics').textContent = 'Adaptation: Data unavailable';
-        document.getElementById('risk-assessment').textContent = 'Risk Level: Data unavailable';
+        UIUpdater.displayError();
       }
     }
 
-    function updateAllClimateMetrics(weatherData, oneCallData, airData, openMeteoData) {
-      try {
-        // Basic weather display
-        const temperature = weatherData.main.temp;
-        const weatherDescription = weatherData.weather[0].description;
-        const weatherIcon = weatherData.weather[0].icon;
-        const iconUrl = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
-        const humidity = weatherData.main.humidity;
-
-        document.getElementById('weather-info').textContent = `${temperature}°C, ${weatherDescription}`;
-        document.getElementById('weather-icon').src = iconUrl;
-        
-        // Air Quality Index with enhanced data
-        const aqi = airData.list[0].main.aqi;
-        const pm25 = Math.round(airData.list[0].components.pm2_5);
-        const pm10 = Math.round(airData.list[0].components.pm10);
-        const no2 = Math.round(airData.list[0].components.no2);
-        const aqiText = getAQIText(aqi);
-        
-        document.getElementById('air-quality-info').textContent = `AQI: ${aqiText} (${aqi}/5) | PM2.5: ${pm25} | PM10: ${pm10}μg/m³`;
-        
-        // UV Index and Heat Stress Index
-        const uvIndex = oneCallData.current?.uvi || 0;
-        const heatIndex = calculateHeatIndex(temperature, humidity);
-        const tempAnomaly = calculateTemperatureAnomaly(temperature);
-        
-        document.getElementById('uv-heat-info').textContent = `UV: ${Math.round(uvIndex)} | Heat Index: ${heatIndex}°C | Anomaly: +${tempAnomaly}°C`;
-        
-        // Climate Adaptation Metrics
-        const urbanHeatIsland = calculateUrbanHeatIsland(temperature);
-        const resilienceScore = calculateResilienceScore(temperature, aqi, uvIndex);
-        
-        document.getElementById('adaptation-metrics').textContent = `UHI: +${urbanHeatIsland}°C | Resilience: ${resilienceScore}/10`;
-        
-        // Climate Risk Assessment
-        const riskLevel = calculateClimateRiskLevel(temperature, aqi, uvIndex, heatIndex);
-        const heatWaveDays = trackHeatWaveDays(temperature);
-        
-        document.getElementById('risk-assessment').textContent = `Risk: ${riskLevel} | Heat Wave: ${heatWaveDays} days`;
-        
-      } catch (error) {
-        console.error('Error updating climate metrics:', error);
-      }
-    }
-
-    // Climate Adaptation Calculation Functions
-    function calculateTemperatureAnomaly(currentTemp) {
-      const historicalAverage = 15; // Madrid historical average
-      return Math.max(currentTemp - historicalAverage, 0).toFixed(1);
-    }
-
-    function calculateHeatIndex(temp, humidity) {
-      // Simplified Heat Index calculation
-      if (temp < 27) return temp;
-      
-      const hi = -8.784695 + 1.61139411 * temp + 2.338549 * humidity 
-                - 0.14611605 * temp * humidity - 0.012308094 * Math.pow(temp, 2)
-                - 0.016424828 * Math.pow(humidity, 2) + 0.002211732 * Math.pow(temp, 2) * humidity
-                + 0.00072546 * temp * Math.pow(humidity, 2) - 0.000003582 * Math.pow(temp, 2) * Math.pow(humidity, 2);
-      
-      return Math.round(hi);
-    }
-
-    function calculateUrbanHeatIsland(urbanTemp) {
-      // Estimated UHI effect for Madrid (urban vs rural temperature difference)
-      const baseUHI = 2.1; // Madrid typical UHI effect
-      const tempFactor = Math.max(0, (urbanTemp - 25) * 0.1); // Increases with temperature
-      return (baseUHI + tempFactor).toFixed(1);
-    }
-
-    function calculateResilienceScore(temp, aqi, uvIndex) {
-      let score = 10;
-      
-      // Temperature stress penalty
-      if (temp > 35) score -= 3;
-      else if (temp > 30) score -= 2;
-      else if (temp > 25) score -= 1;
-      
-      // Air quality penalty
-      if (aqi >= 4) score -= 3;
-      else if (aqi >= 3) score -= 2;
-      else if (aqi >= 2) score -= 1;
-      
-      // UV exposure penalty
-      if (uvIndex > 8) score -= 2;
-      else if (uvIndex > 6) score -= 1;
-      
-      return Math.max(score, 0).toFixed(1);
-    }
-
-    function calculateClimateRiskLevel(temp, aqi, uvIndex, heatIndex) {
-      let riskScore = 0;
-      
-      // Temperature risk
-      if (temp > 40) riskScore += 4;
-      else if (temp > 35) riskScore += 3;
-      else if (temp > 30) riskScore += 2;
-      else if (temp > 25) riskScore += 1;
-      
-      // Air quality risk
-      riskScore += Math.max(0, aqi - 1);
-      
-      // UV risk
-      if (uvIndex > 10) riskScore += 3;
-      else if (uvIndex > 8) riskScore += 2;
-      else if (uvIndex > 6) riskScore += 1;
-      
-      // Heat index risk
-      if (heatIndex > 40) riskScore += 2;
-      else if (heatIndex > 35) riskScore += 1;
-      
-      if (riskScore >= 8) return 'EXTREME';
-      if (riskScore >= 6) return 'HIGH';
-      if (riskScore >= 4) return 'MODERATE';
-      if (riskScore >= 2) return 'LOW';
-      return 'MINIMAL';
-    }
-
-    function trackHeatWaveDays(currentTemp) {
-      // Store in localStorage for persistence (simplified tracking)
-      const today = new Date().toDateString();
-      let heatWaveData = JSON.parse(localStorage.getItem('heatWaveData') || '{}');
-      
-      if (currentTemp > 30) {
-        heatWaveData[today] = currentTemp;
-      }
-      
-      // Count consecutive days > 30°C in last 7 days
-      let consecutiveDays = 0;
-      const now = new Date();
-      for (let i = 0; i < 7; i++) {
-        const checkDate = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
-        const dateString = checkDate.toDateString();
-        if (heatWaveData[dateString] && heatWaveData[dateString] > 30) {
-          consecutiveDays++;
-        } else {
-          break;
-        }
-      }
-      
-      localStorage.setItem('heatWaveData', JSON.stringify(heatWaveData));
-      return consecutiveDays;
-    }
-
-    function getAQIText(aqi) {
-      const aqiMap = { 1: 'Good', 2: 'Fair', 3: 'Moderate', 4: 'Poor', 5: 'Very Poor' };
-      return aqiMap[aqi] || 'Unknown';
-    }
-
-    function getHealthAdvice(aqi) {
-      const adviceMap = {
-        1: 'Great for outdoor activities',
-        2: 'Generally safe outdoors', 
-        3: 'Sensitive groups caution',
-        4: 'Limit outdoor activities',
-        5: 'Avoid outdoor activities'
-      };
-      return adviceMap[aqi] || 'Monitor conditions';
-    }
-
-    fetchWeather();
-
+    // ========== Scroll to Top ==========
     function scrollToTop() {
       window.scrollTo({
         top: 0,
@@ -672,20 +826,8 @@ a:hover {
       });
     }
 
-    function openModal(element) {
-      const modal = document.getElementById("imageModal");
-      const modalImage = document.getElementById("modalImage");
-      const caption = document.getElementById("caption");
-
-      modal.style.display = "block";
-      modalImage.src = element.src;
-      caption.innerHTML = element.alt;
-    }
-
-    function closeModal() {
-      const modal = document.getElementById("imageModal");
-      modal.style.display = "none";
-    }
+    // ========== Initialize ==========
+    fetchWeather();
   </script>
   
 </body>
