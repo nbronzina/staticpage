@@ -289,6 +289,43 @@
     color: var(--color-grey);
   }
 
+  /* ========== Side Projects Section ========== */
+  .side-projects-section {
+    width: 100%;
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+  }
+
+  .side-projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-md) 0;
+  }
+
+  .side-project-card {
+    padding: var(--spacing-md);
+    text-align: center;
+  }
+
+  .side-project-card h3 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .side-project-card h3 a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .side-project-card h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .side-project-card p {
+    margin: var(--spacing-sm) 0;
+    max-width: 100%;
+  }
+
   /* ========== Tablet & Desktop ========== */
   @media (min-width: 768px) {
     body {
@@ -317,6 +354,16 @@
 
     .column {
       max-width: 400px;
+    }
+
+    .side-projects-grid {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .side-project-card {
+      flex: 1;
+      max-width: 350px;
     }
 
     .stats-section {
@@ -386,7 +433,7 @@
         
         <p><strong>Do you need strategic clarity on what comes next for you or your workplace?</strong> <a href="mailto:nicolas.bronzina@gmail.com">Let's explore future scenarios together</a>.</p>
         
-        <p>When I'm not thinking about possible futures, you can find me behind <a href="https://www.nicolasbronzina.com/Coffee.html">Coffee.txt</a>, your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid; and <a href="https://www.nicolasbronzina.com/CoffeeDecoded.html">Coffee Decoded</a>, A practical guide written by someone who has made the expensive equipment and bad coffee mistakes so you don't have to. Because even futurists need caffeine! Originally from Argentina, now based in Madrid.</p>
+        <p>Originally from Argentina, now based in Madrid.</p>
       </div>
     </div>
     <hr>
@@ -420,6 +467,27 @@
         Explore OFFicial →
       </a>
     </article>
+    <hr>
+  </section>
+
+  <!-- Side Projects Section -->
+  <section class="side-projects-section">
+    <h2>Side Projects & Personal Pursuits</h2>
+    <p class="text-center mb-medium">When I'm not thinking about possible futures...</p>
+    
+    <div class="side-projects-grid">
+      <article class="side-project-card">
+        <h3><a href="https://www.nicolasbronzina.com/Coffee.html" target="_blank">Coffee.txt</a></h3>
+        <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
+      </article>
+      
+      <article class="side-project-card">
+        <h3><a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" target="_blank">Coffee Decoded</a></h3>
+        <p>A practical guide written by someone who has made the expensive equipment and bad coffee mistakes so you don't have to.</p>
+      </article>
+    </div>
+    
+    <p class="text-center" style="margin-top: 20px;"><em>Because even futurists need caffeine!</em></p>
     <hr>
   </section>
 
