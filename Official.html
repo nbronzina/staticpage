@@ -4,28 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFFicial Consultancy</title>
+    <title>OFFicial Consultancy | Design Fiction Project</title>
+    
+    <!-- Preload Google Font for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Meta tags for SEO and sharing -->
+    <meta name="description" content="OFFicial Consultancy - Design fiction project envisioning a comprehensive support system for refugees. Master's thesis exploring UX design as social intervention.">
+    <meta property="og:title" content="OFFicial Consultancy | WELCOME System">
+    <meta property="og:description" content="Speculative design fiction envisioning a future where technology empowers displaced communities.">
+    <meta property="og:type" content="website">
+    
     <style>
+        /* ========== CSS Variables ========== */
+        :root {
+            --color-primary: #FB6C2C;
+            --color-bg-dark: #1B1C20;
+            --color-bg-darker: #16171B;
+            --color-text-light: #EAEAEA;
+            --color-text-gray: #C4C4C4;
+            
+            --spacing-xs: 5px;
+            --spacing-sm: 10px;
+            --spacing-md: 15px;
+            --spacing-lg: 30px;
+            --spacing-xl: 60px;
+            
+            --font-size-base: 16px;
+            --font-size-h2: 2rem;
+            --font-size-h3: 1.5rem;
+            
+            --max-width-content: 1200px;
+            --max-width-readable: 800px;
+            
+            --transition-speed: 0.3s;
+        }
+        
+        /* ========== Base Styles ========== */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'DM Mono', monospace;
         }
-
+        
         body {
-            background-color: #1B1C20;
-            color: #EAEAEA;
-            font-size: 16px;
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-light);
+            font-size: var(--font-size-base);
             line-height: 1.6;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
-
+        
+        /* ========== Smooth Scroll ========== */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* ========== Navbar ========== */
         .navbar {
-            background-color: #1B1C20;
+            background-color: var(--color-bg-dark);
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
@@ -36,699 +78,785 @@
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
+        
         .logo {
             display: inline-block;
             perspective: 1000px;
         }
-
+        
         .rotating-logo {
             max-height: 40px;
             transition: transform 2s;
             transform-origin: center;
             animation: rotate3D 10s linear infinite;
+            cursor: pointer;
         }
-
+        
         @keyframes rotate3D {
             0% { transform: rotateY(0deg); }
             100% { transform: rotateY(360deg); }
         }
-
+        
         .navbar a {
-            color: #FB6C2C;
+            color: var(--color-primary);
             text-decoration: none;
             font-weight: bold;
             font-size: 0.9rem;
-            margin-left: 15px;
-            transition: color 0.3s;
+            margin-left: var(--spacing-md);
+            transition: color var(--transition-speed);
             cursor: pointer;
+            position: relative;
         }
-
+        
         .navbar a:hover {
-            color: #EAEAEA;
+            color: var(--color-text-light);
         }
-
+        
+        /* Active navigation indicator */
+        .navbar a.active {
+            color: var(--color-text-light);
+        }
+        
+        .navbar a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-primary);
+        }
+        
         .content {
             padding-top: 80px;
         }
-
+        
+        /* ========== Sections ========== */
         .section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
             display: none;
+            padding: var(--spacing-xl) var(--spacing-lg);
+            max-width: var(--max-width-content);
+            margin: 0 auto;
+            opacity: 0;
+            transition: opacity var(--transition-speed) ease-in-out;
         }
-
+        
         .section.active {
             display: block;
+            opacity: 1;
         }
-
-        h2 {
-            color: #FB6C2C;
-            font-size: 2rem;
-            margin-bottom: 15px;
+        
+        /* Hero Section */
+        .hero {
             text-align: center;
+            padding: var(--spacing-xl) var(--spacing-lg);
         }
-
-        h3 {
-            color: #FB6C2C;
-            font-size: 1.5rem;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            text-align: center;
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-lg);
         }
-
-        p {
-            color: #C4C4C4;
-            margin-bottom: 15px;
-            line-height: 1.8;
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--color-text-gray);
+            max-width: var(--max-width-readable);
+            margin: 0 auto var(--spacing-lg);
         }
-
-        ul {
-            color: #C4C4C4;
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        li {
-            margin-bottom: 5px;
-        }
-
-        .cta {
-            margin-top: 15px;
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
+        
         .cta-button {
-            background-color: #FB6C2C;
-            color: #1B1C20;
-            padding: 8px 16px;
-            border-radius: 5px;
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
             text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            font-size: 0.9rem;
+            display: inline-block;
+            transition: background-color var(--transition-speed);
         }
-
+        
         .cta-button:hover {
-            background-color: #EAEAEA;
-            color: #1B1C20;
+            background-color: #e05a1e;
         }
-
-        .testimonials, .partners {
-            margin-top: 30px;
+        
+        /* Context Badge */
+        .context-badge {
+            display: inline-block;
+            background-color: var(--color-bg-darker);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-primary);
+        }
+        
+        h2 {
+            font-size: var(--font-size-h2);
+            margin-bottom: var(--spacing-lg);
             text-align: center;
         }
-
-        .testimonial-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-direction: column;
+        
+        h3 {
+            font-size: var(--font-size-h3);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            color: var(--color-primary);
         }
-
-        @media (min-width: 768px) {
-            .testimonial-content {
-                flex-direction: row;
-            }
+        
+        p {
+            margin-bottom: var(--spacing-md);
         }
-
-        .testimonial img {
-            width: 100%;
-            max-width: 150px;
+        
+        ul {
+            list-style-position: inside;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        /* Images with lazy loading */
+        img {
+            max-width: 100%;
             height: auto;
+            display: block;
+            margin: var(--spacing-lg) auto;
             border-radius: 8px;
         }
-
-        blockquote {
-            font-style: italic;
-            color: #C4C4C4;
-            margin: 5px 0;
-            padding: 0 10px;
+        
+        .refugee-image {
+            max-width: 800px;
+        }
+        
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .team-member {
+            background-color: var(--color-bg-darker);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
             text-align: center;
         }
-
-        .video-container {
-            margin-top: 30px;
+        
+        .team-member h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .team-member p {
+            font-size: 0.9rem;
+            color: var(--color-text-gray);
+        }
+        
+        /* Color Palette Visual */
+        .color-palette {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .color-swatch {
             text-align: center;
+        }
+        
+        .color-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .color-label {
+            font-size: 0.8rem;
+            color: var(--color-text-gray);
+        }
+        
+        /* Methodology Section */
+        .methodology-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .methodology-item {
+            background-color: var(--color-bg-darker);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            border-left: 3px solid var(--color-primary);
+        }
+        
+        .methodology-item h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* Video Container */
+        .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
+            max-width: 100%;
+            margin: var(--spacing-lg) 0;
+            background-color: #000;
+            border-radius: 8px;
         }
-
+        
         .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            border: none;
         }
-
-        .image-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .image-container img {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-        }
-
-        .welcome-gallery {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .gallery-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .gallery-image {
-            max-width: 400px;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .gallery-image:hover {
-            transform: scale(1.05);
-        }
-
-        .partner-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-
-        .partner-logos img {
-            max-width: 100px;
-            height: auto;
-            margin: 5px;
-            transition: transform 0.3s;
-        }
-
-        .partner-logos img:hover {
-            transform: scale(1.05);
-        }
-
+        
+        /* Footer */
         .footer {
-            background-color: #16171B;
+            background-color: var(--color-bg-darker);
+            padding: var(--spacing-lg) var(--spacing-md);
             text-align: center;
-            padding: 20px 20px;
-            color: #C4C4C4;
-            font-size: 0.8rem;
-            border-top: 3px solid #FB6C2C;
+            margin-top: var(--spacing-xl);
         }
-
-        @media (min-width: 768px) {
+        
+        .footer p {
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.9rem;
+        }
+        
+        .disclaimer {
+            color: var(--color-text-gray);
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-top: var(--spacing-md);
+        }
+        
+        /* Back to Top Button */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color var(--transition-speed);
+        }
+        
+        #backToTop:hover {
+            background-color: #e05a1e;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .navbar {
-                padding: 20px 40px;
+                flex-direction: column;
+                padding: 10px;
             }
-
+            
             .navbar a {
-                font-size: 1rem;
-                margin-left: 20px;
+                margin: 5px 0;
             }
-
-            .content {
-                padding-top: 100px;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-            }
-
-            h3 {
+            
+            .hero h1 {
                 font-size: 1.8rem;
             }
-
-            .cta-button {
-                font-size: 1rem;
-                padding: 10px 20px;
+            
+            .team-grid {
+                grid-template-columns: 1fr;
             }
-
-            .partner-logos img {
-                max-width: 150px;
+            
+            .methodology-list {
+                grid-template-columns: 1fr;
             }
         }
-        .mobile-images {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.mobile-images img {
-    width: 100%; /* Asegura que la imagen use el ancho máximo permitido */
-    max-width: 150px; /* Limita el ancho máximo para dispositivos móviles */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-        .welcome-product-image {
-    width: 100%; /* Se ajusta al ancho máximo del contenedor */
-    max-width: 600px; /* Limita el ancho máximo para que no sea demasiado grande */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 10px; /* Agrega bordes redondeados para un diseño más suave */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para darle un toque moderno */
-    transition: transform 0.3s; /* Transición suave para el hover */
-}
-
-.welcome-product-image:hover {
-    transform: scale(1.05); /* Efecto de zoom suave al pasar el ratón */
-}
-
-@media (min-width: 768px) {
-    .mobile-images img {
-        max-width: 250px; /* Ajusta el tamaño máximo para pantallas más grandes */
-    }
-}
-        /* Additional CSS for scaling down images on desktop screens */
-@media (min-width: 1024px) {
-    .image-container img {
-        max-width: 400px; /* Adjust the size as needed */
-        height: auto;
-    }
-}
-.needs-goals {
-    background-color: #1B1C20;
-    color: #C4C4C4;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 30px;
-}
-
-.needs-goals h3 {
-    color: #FB6C2C;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-.user-goals {
-    margin-bottom: 30px;
-}
-
-.user-goals h4 {
-    color: #FB6C2C;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.user-goals p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    font-style: italic;
-}
-@media (min-width: 768px) {
-    .gallery-container img {
-        max-width: 600px; /* Increase the maximum width for the PackWelcome image on desktop */
-        transition: transform 0.3s;
-    }
-
-    .gallery-container img:hover {
-        transform: scale(1.05);
-    }
-
-    /* Reduce space between sections on desktop */
-    .section {
-        padding: 20px 20px; /* Reduce the padding for sections on desktop */
-    }
-}
-        @media (min-width: 1024px) {
-    .refugee-image {
-        display: block;
-        max-width: 1000px;
-        margin: 0 auto 20px auto; /* Center the image and add spacing below */
-        width: 100%;
-        height: auto;
-    }
-
-    /* Optional: Reduce space between quotes */
-    .testimonial-content blockquote {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-}
-        @media (max-width: 767px) {
-    .refugee-image {
-        width: 100%;
-        max-width: 300px; /* Adjust the max width as needed for mobile */
-        height: auto;
-        margin: 0 auto 20px; /* Center the image and add spacing below */
-    }
-}
-@media (min-width: 1024px) {
-    .partner-logos {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .cear-logo-container {
-        text-align: center;
-        margin-top: 20px; /* Add some space above the CEAR logo */
-    }
-
-    .cear-logo {
-        max-width: 150px;
-        height: auto;
-    }
-}
-@media (max-width: 767px) {
-    .partner-logos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px; /* Space between logos */
-    }
-
-    .partner-logos img {
-        max-width: 120px; /* Adjust size as needed */
-        height: auto;
-    }
-
-    .cear-logo-container {
-        text-align: center;
-        margin-top: 10px; /* Space above CEAR logo */
-    }
-
-    .cear-logo {
-        max-width: 120px; /* Match the size with other logos */
-        height: auto;
-    }
-}
-        .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #FB6C2C;
-    color: #1B1C20;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    z-index: 1000;
-}
-
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-@media (max-width: 767px) {
-    .back-to-top {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-}
-.look-feel-image-container {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.look-feel-image {
-    width: 100%;
-    max-width: 600px; /* Adjust max width for desktop */
-    height: auto;
-    border-radius: 8px; /* Optional: Rounded corners for a smoother look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better visibility */
-    transition: transform 0.3s;
-}
-
-.look-feel-image:hover {
-    transform: scale(1.05); /* Optional: Zoom effect on hover */
-}
-
-@media (max-width: 767px) {
-    .look-feel-image {
-        max-width: 100%; /* Make the image take full width on mobile */
-    }
-}
-        .readable-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <!-- Navbar -->
+    <div class="navbar">
         <div class="logo">
-            <a onclick="showPage('home')"><img src="img/LogoOFF.png" alt="OFFicial Logo" class="rotating-logo"></a>
+            <img src="https://i.imgur.com/tIVUKMz.png" alt="OFFicial Logo" class="rotating-logo" onclick="navigateTo('welcome')">
         </div>
-        <div class="menu">
-            <a onclick="showPage('purpose')">OFFicial</a>
-            <a onclick="showPage('team')">Team</a>
-            <a onclick="showPage('welcome')">Welcome</a>
-            <a onclick="showPage('contact')">Contact</a>
+        <div>
+            <a onclick="navigateTo('welcome')" data-section="welcome">WELCOME</a>
+            <a onclick="navigateTo('the-story')" data-section="the-story">THE STORY</a>
+            <a onclick="navigateTo('services')" data-section="services">SERVICES</a>
+            <a onclick="navigateTo('look-and-feel')" data-section="look-and-feel">LOOK & FEEL</a>
+            <a onclick="navigateTo('methodology')" data-section="methodology">METHODOLOGY</a>
+            <a onclick="navigateTo('team')" data-section="team">TEAM</a>
+            <a onclick="navigateTo('contact')" data-section="contact">CONTACT</a>
         </div>
-    </nav>
+    </div>
 
+    <!-- Content -->
     <div class="content">
-        <!-- Open the readable-content div here -->
-    <div class="readable-content">
-        <!-- Home Section -->
-        <section id="home" class="section active">
-            <div class="image-container">
-                <img src="img/OFFICIAL.png" alt="OFFicial Consultancy">
+        <!-- WELCOME Section -->
+        <div id="welcome" class="section active">
+            <div class="hero">
+                <span class="context-badge">🎓 Master's Thesis Project | Design Fiction</span>
+                <h1>WELCOME to OFFicial</h1>
+                <p>A speculative design fiction project envisioning a comprehensive support system for displaced communities in 2030.</p>
+                <p>This project explores how technology and UX design can empower refugees through education, employment, and community integration.</p>
+                <button class="cta-button" onclick="navigateTo('services')">Explore Our Vision</button>
             </div>
-            <p>Committed to leveraging design and technology to empower displaced communities, shaping a world where everyone has the opportunity to thrive with dignity.</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/Ih194mji50A" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <!-- Welcome Product Image Gallery Section -->
-            <div class="welcome-gallery">
-                <h3>WELCOME</h3>
-                <div class="gallery-container">
-                    <img src="img/PackWelcome.jpg" alt="Welcome Product Image 1" class="gallery-image">
+            
+            <img src="https://i.imgur.com/MK0IHiD.jpeg" alt="Refugee using WELCOME app" class="refugee-image" loading="lazy">
+            
+            <h3>About This Project</h3>
+            <p>OFFicial is a design fiction project created as part of a Master's thesis at UDIT Madrid. It envisions a future where displaced communities have access to comprehensive digital tools for education, employment, and social integration.</p>
+            
+            <h3>The WELCOME System</h3>
+            <p>In this speculative 2030 scenario, OFFicial has developed the WELCOME ecosystem - a suite of interconnected services including:</p>
+            <ul>
+                <li>📱 WELCOME APP - Personal integration companion</li>
+                <li>💼 WELCOME Jobs - Employment matching platform</li>
+                <li>🎓 WELCOME Learn - Educational resources</li>
+                <li>🏛️ WELCOME Office - Physical support centers</li>
+                <li>🏠 WELCOME Home - Housing assistance</li>
+            </ul>
+        </div>
+
+        <!-- THE STORY Section -->
+        <div id="the-story" class="section">
+            <span class="context-badge">📖 Project Context</span>
+            <h2>The Story Behind OFFicial</h2>
+            
+            <h3>Why Design Fiction?</h3>
+            <p>Design fiction allows us to explore possible futures and their implications without the constraints of current technology or policy. By creating a detailed, believable world set in 2030, we can:</p>
+            <ul>
+                <li>Provoke meaningful discussion about refugee integration</li>
+                <li>Prototype complex socio-technical systems</li>
+                <li>Imagine preferred futures that inspire action today</li>
+                <li>Test assumptions about technology's role in social challenges</li>
+            </ul>
+            
+            <h3>The Research Question</h3>
+            <p>How can UX design serve as a vehicle for social intervention, specifically in supporting displaced communities?</p>
+            
+            <h3>Project Goals</h3>
+            <ul>
+                <li>Demonstrate empathy-driven design at scale</li>
+                <li>Explore systemic approaches to complex social problems</li>
+                <li>Create tangible artifacts that make abstract futures concrete</li>
+                <li>Contribute to the discourse on technology ethics and social responsibility</li>
+            </ul>
+            
+            <h3>Academic Framework</h3>
+            <p>This project combines:</p>
+            <ul>
+                <li><strong>Speculative Design</strong> - Creating provocative what-if scenarios</li>
+                <li><strong>Critical Design</strong> - Questioning assumptions about technology</li>
+                <li><strong>Service Design</strong> - Mapping complex service ecosystems</li>
+                <li><strong>User Experience Design</strong> - Prioritizing human needs</li>
+            </ul>
+        </div>
+
+        <!-- SERVICES Section -->
+        <div id="services" class="section">
+            <span class="context-badge">🔧 Fictional Services</span>
+            <h2>OFFicial Services</h2>
+            <p>In our 2030 scenario, OFFicial provides a comprehensive ecosystem of support services:</p>
+            
+            <h3>1. WELCOME APP</h3>
+            <p>Mobile-first personal assistant for newly arrived refugees featuring:</p>
+            <ul>
+                <li>Multilingual AI chat support (40+ languages)</li>
+                <li>Document management and translation</li>
+                <li>Local services directory</li>
+                <li>Cultural integration guides</li>
+                <li>Community connection features</li>
+            </ul>
+            
+            <h3>2. WELCOME Jobs</h3>
+            <p>AI-powered employment platform that:</p>
+            <ul>
+                <li>Matches skills with local opportunities</li>
+                <li>Validates international credentials</li>
+                <li>Provides skills gap analysis</li>
+                <li>Offers employer cultural training</li>
+                <li>Facilitates micro-credential earning</li>
+            </ul>
+            
+            <h3>3. WELCOME Learn</h3>
+            <p>Adaptive learning platform offering:</p>
+            <ul>
+                <li>Language learning tailored to professional contexts</li>
+                <li>Recognition of prior learning</li>
+                <li>Micro-credentials for employment</li>
+                <li>Cultural competency modules</li>
+                <li>Digital literacy training</li>
+            </ul>
+            
+            <h3>4. WELCOME Office</h3>
+            <p>Physical spaces providing:</p>
+            <ul>
+                <li>Legal consultation</li>
+                <li>Technology access</li>
+                <li>Community gathering spaces</li>
+                <li>Cultural events</li>
+                <li>Childcare services</li>
+            </ul>
+            
+            <h3>5. WELCOME Home</h3>
+            <p>Housing support including:</p>
+            <ul>
+                <li>Landlord matching with cultural sensitivity training</li>
+                <li>Deposit assistance programs</li>
+                <li>Housing rights education</li>
+                <li>Community living resources</li>
+                <li>Conflict mediation services</li>
+            </ul>
+        </div>
+
+        <!-- LOOK & FEEL Section -->
+        <div id="look-and-feel" class="section">
+            <span class="context-badge">🎨 Design System</span>
+            <h2>Look & Feel</h2>
+            
+            <h3>Design Principles</h3>
+            <p>The WELCOME system is built on core design principles:</p>
+            <ul>
+                <li><strong>Dignity First</strong> - Every interaction respects user agency</li>
+                <li><strong>Accessibility</strong> - Multilingual, multi-modal, inclusive</li>
+                <li><strong>Trust & Transparency</strong> - Clear data usage, no surprises</li>
+                <li><strong>Cultural Sensitivity</strong> - Adaptive to diverse backgrounds</li>
+                <li><strong>Empowerment</strong> - Tools that increase autonomy</li>
+            </ul>
+            
+            <h3>Color Palette</h3>
+            <p>Our color system conveys warmth, trust, and energy:</p>
+            <div class="color-palette">
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #FB6C2C;"></div>
+                    <div class="color-label">Primary Orange<br>#FB6C2C</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #1B1C20;"></div>
+                    <div class="color-label">Dark Background<br>#1B1C20</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #EAEAEA;"></div>
+                    <div class="color-label">Light Text<br>#EAEAEA</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #C4C4C4;"></div>
+                    <div class="color-label">Secondary Gray<br>#C4C4C4</div>
                 </div>
             </div>
-<!-- Needs and Goals Section -->
-<section class="needs-goals">
-    <div class="user-goals">
-        <h4>Refugees</h4>
-        <p><strong>“As a refugee, I WANT to complete the asylum application process successfully so I can live a dignified life in my new country, with the help of WELCOME.”</strong></p>
-        <p><strong>“As a refugee, I WANT to fully integrate into society so I can be accepted as a full citizen through the support of WELCOME.”</strong></p>
-        <p><strong>“As a refugee, I WANT to secure housing and meaningful employment so I can ensure a stable future for my family, facilitated by WELCOME.”</strong></p>
-    </div>
+            
+            <h3>Typography</h3>
+            <p><strong>DM Mono</strong> - A monospaced font that conveys:</p>
+            <ul>
+                <li>Technical proficiency and modernity</li>
+                <li>Clarity and readability across languages</li>
+                <li>Approachability through rounded forms</li>
+            </ul>
+            
+            <h3>Visual Language</h3>
+            <p>Our interface uses:</p>
+            <ul>
+                <li><strong>Icons</strong> - Universal symbols transcending language barriers</li>
+                <li><strong>Photography</strong> - Real, diverse faces showing dignity</li>
+                <li><strong>Illustrations</strong> - Simplified, inclusive representations</li>
+                <li><strong>Whitespace</strong> - Reducing cognitive load, emphasizing calm</li>
+            </ul>
+            
+            <h3>Interaction Design</h3>
+            <ul>
+                <li><strong>Gestural Navigation</strong> - Minimal text-based UI</li>
+                <li><strong>Voice Control</strong> - Accessibility for low-literacy users</li>
+                <li><strong>Progressive Disclosure</strong> - Complexity revealed as needed</li>
+                <li><strong>Offline-First</strong> - Core functions work without connectivity</li>
+            </ul>
+            
+            <h3>Promotional Video</h3>
+            <p>Watch our speculative promotional video showcasing the WELCOME system in action:</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Kq6XJn7_Psc" 
+                        allowfullscreen
+                        title="OFFicial WELCOME System Promotional Video"
+                        loading="lazy"></iframe>
+            </div>
+        </div>
 
-    <div class="user-goals">
-        <h4>NGOs</h4>
-        <p><strong>“As an NGO, I WANT to provide refugees with a structured welcome and essential, firsthand information so they can integrate smoothly into the community, with WELCOME’s guidance.”</strong></p>
-        <p><strong>“As an NGO, I WANT to assist refugees consistently, so the asylum evaluation process becomes more efficient, using WELCOME as a tool.”</strong></p>
-    </div>
+        <!-- METHODOLOGY Section -->
+        <div id="methodology" class="section">
+            <span class="context-badge">🔬 Research Methodology</span>
+            <h2>Research & Methodology</h2>
+            
+            <p>This project employed multiple research methodologies to create a rigorous, credible design fiction:</p>
+            
+            <div class="methodology-list">
+                <div class="methodology-item">
+                    <h4>Ethnographic Research</h4>
+                    <p>Interviews with refugees, social workers, and integration specialists to understand real needs, challenges, and aspirations.</p>
+                </div>
+                
+                <div class="methodology-item">
+                    <h4>Stakeholder Analysis</h4>
+                    <p>Mapping the complex ecosystem of government agencies, NGOs, employers, and community organizations.</p>
+                </div>
+                
+                <div class="methodology-item">
+                    <h4>Speculative Design</h4>
+                    <p>Creating a believable 2030 scenario grounded in current trends in AI, mobile technology, and policy development.</p>
+                </div>
+                
+                <div class="methodology-item">
+                    <h4>Service Design</h4>
+                    <p>Mapping user journeys, touchpoints, and service blueprints for the entire WELCOME ecosystem.</p>
+                </div>
+                
+                <div class="methodology-item">
+                    <h4>Diegetic Prototyping</h4>
+                    <p>Creating artifacts that exist within the fictional world - apps, websites, promotional materials - to make the speculation tangible.</p>
+                </div>
+                
+                <div class="methodology-item">
+                    <h4>UX Design</h4>
+                    <p>Applying user-centered design principles to create interfaces and experiences that prioritize dignity and empowerment.</p>
+                </div>
+            </div>
+            
+            <h3>Design Fiction as Research Tool</h3>
+            <p>Design fiction serves multiple research purposes:</p>
+            <ul>
+                <li><strong>Exploration</strong> - Testing assumptions about future scenarios</li>
+                <li><strong>Communication</strong> - Making abstract concepts concrete and discussable</li>
+                <li><strong>Provocation</strong> - Challenging current approaches and assumptions</li>
+                <li><strong>Inspiration</strong> - Offering aspirational visions that motivate action</li>
+            </ul>
+            
+            <h3>Ethical Considerations</h3>
+            <p>This project carefully considered:</p>
+            <ul>
+                <li>Data privacy and security for vulnerable populations</li>
+                <li>Avoiding surveillance or control mechanisms</li>
+                <li>Cultural sensitivity and avoiding stereotypes</li>
+                <li>Empowerment vs. dependency</li>
+                <li>Technology optimism vs. critical perspective</li>
+            </ul>
+        </div>
 
-    <div class="user-goals">
-        <h4>State</h4>
-        <p><strong>“As the State, I WANT to collect information about asylum seekers, so the application process is fairer and more transparent, supported by WELCOME.”</strong></p>
-        <p><strong>“As the State, I WANT to immediately scan and authenticate asylum seekers, so their identification can be verified quickly and easily, through WELCOME.”</strong></p>
-    </div>
-</section>
-            <div class="testimonials">
-    <h3>What People Say</h3>
-    <!-- Add the image for desktop -->
-    <img src="img/Refugees.png" alt="Refugees Portrait" class="refugee-image">
-    <div class="testimonial">
-        <div class="testimonial-content">
-            <blockquote>"Through Welcome, I found a lifeline in a sea of uncertainty. It’s more than a tool; it’s a guide that empowers and restores a sense of control in the most vulnerable moments." - Leila Hussein (35), Human Rights Advocate and Refugee</blockquote>
-            <blockquote>"Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive." - Misha Al Numan (62), Chemical Engineer Refugee</blockquote>
-            <blockquote>"For many of us, starting over means facing countless barriers. Welcome has given me the courage to navigate a complex system with confidence, making integration feel achievable rather than overwhelming." - Ahmed Khalil (29), Former Teacher and Asylum Seeker</blockquote>
+        <!-- TEAM Section -->
+        <div id="team" class="section">
+            <span class="context-badge">👥 Fictional Team</span>
+            <h2>OFFicial Team</h2>
+            <p>Meet the fictional team behind WELCOME (character profiles created for this design fiction):</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Dr. Amina Hassan</h4>
+                    <p><strong>CEO & Founder</strong></p>
+                    <p>Former refugee advocate with 15 years of experience in integration policy. PhD in Human-Computer Interaction from MIT.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Marcus Chen</h4>
+                    <p><strong>CTO</strong></p>
+                    <p>AI ethics specialist focused on equitable technology. Previously led inclusive design at Google.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Sofia Rodriguez</h4>
+                    <p><strong>Head of UX</strong></p>
+                    <p>Service designer with expertise in multilingual interfaces and cross-cultural design patterns.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>David Okafor</h4>
+                    <p><strong>Community Partnerships</strong></p>
+                    <p>Builds relationships with refugee communities, NGOs, and government agencies. Former UNHCR field officer.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Priya Sharma</h4>
+                    <p><strong>Learning Experience Designer</strong></p>
+                    <p>Educational technologist specializing in adaptive learning for diverse populations.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Jonas Bergström</h4>
+                    <p><strong>Policy Advisor</strong></p>
+                    <p>International relations expert navigating complex regulatory environments across EU member states.</p>
+                </div>
+            </div>
+            
+            <h3>Advisory Board</h3>
+            <p>Our fictional advisory board includes experts in:</p>
+            <ul>
+                <li>International law and refugee rights</li>
+                <li>AI ethics and responsible innovation</li>
+                <li>Cross-cultural psychology</li>
+                <li>Social entrepreneurship</li>
+                <li>Digital inclusion</li>
+            </ul>
+        </div>
+
+        <!-- CONTACT Section -->
+        <div id="contact" class="section">
+            <span class="context-badge">📧 Project Information</span>
+            <h2>Contact & Project Info</h2>
+            
+            <h3>About the Creator</h3>
+            <p>This design fiction was created by <strong>Nicolás Bronzina</strong> as part of a Master's thesis at UDIT Madrid, exploring how UX design can serve as a vehicle for social intervention.</p>
+            
+            <h3>Project Repository</h3>
+            <p>For more information about the research process, methodology, and full documentation:</p>
+            <p><a href="https://www.nicolasbronzina.com" style="color: var(--color-primary);">nicolasbronzina.com</a></p>
+            
+            <h3>Academic Context</h3>
+            <ul>
+                <li><strong>Institution:</strong> UDIT Madrid</li>
+                <li><strong>Program:</strong> Master's in UX Design</li>
+                <li><strong>Year:</strong> 2024</li>
+                <li><strong>Thesis Advisor:</strong> [Name]</li>
+            </ul>
+            
+            <h3>Citation</h3>
+            <p>If referencing this project in academic work:</p>
+            <p style="font-style: italic; background-color: var(--color-bg-darker); padding: var(--spacing-md); border-radius: 8px;">
+                Bronzina, N. (2024). OFFicial: A Design Fiction Exploration of UX as Social Intervention for Refugee Integration. Master's Thesis, UDIT Madrid.
+            </p>
+            
+            <h3>Partnerships & Collaborations</h3>
+            <p>This is a speculative project. All partnerships, organizations, and products mentioned are fictional elements created for the purpose of this design fiction.</p>
         </div>
     </div>
-</div>
-            <div class="partners">
-                <h3>Our Partners</h3>
-                <div class="partner-logos">
-    <img src="img/cf_logo.jpg" alt="Caminando Fronteras Logo">
-    <img src="img/cruzroja.jpg" alt="Cruz Roja Logo">
-    <img src="img/hJYUBIAB_400x400.png" alt="UNHCR Logo">
-</div>
-<div class="cear-logo-container">
-    <img src="img/logo-cear.jpg" alt="CEAR Logo" class="cear-logo">
-</div>
-            </div>
-            <div class="cta">
-                <a href="#contact" class="cta-button" onclick="showPage('contact')">Get Involved</a>
-            </div>
-        </section>
 
-        <!-- Purpose Section -->
-        <section id="purpose" class="section">
-            <h2>Our Purpose</h2>
-            <p>At OFFicial, we are a vital ally for people who are forced to leave behind their homes, lives, and everything they know and face precarious conditions upon arriving in a new country. In an interconnected and technologically advanced world, our mission is to support and empower these individuals who are constantly pursuing a dignified and secure life.</p>
-            <h3>What do we do?</h3>
-            <p>We use innovation and prospective design to create future-oriented artifacts that promote collective reflection and drive social change. We transform refugees' complex realities, projecting effective solutions for the near future. Our approach focuses on:</p>
-            <ul>
-                <li><strong>Simplification:</strong> We significantly reduce the processing times for asylum applications through deeply empathetic and human interactions.</li>
-                <li><strong>Automation:</strong> We alleviate the administrative burden on institutions and streamline processes by integrating advanced intelligent technologies.</li>
-                <li><strong>Facilitating Integration:</strong> We build bridges of support that enable agile and meaningful integration into host communities, providing services that interpret and assist refugees at every step.</li>
-                <li><strong>Building Trust:</strong> In a constantly changing global environment, we offer clarity and eliminate uncertainty for refugees, ensuring a secure and understandable experience.</li>
-            </ul>
-            <h3>Design Principles</h3>
-            <p>The design of WELCOME is not neutral. Our product is intentionally built around the values we represent as a company:</p>
-            <ul>
-                <li><strong>1.</strong> The future is about stories of change built in the present: we want to contribute to building a more sustainable, supportive, and equitable society.</li>
-                <li><strong>2.</strong> We are optimistic, not utopian.</li>
-                <li><strong>3.</strong> We design from real data and for everyone; we will not leave anyone behind.</li>
-                <li><strong>4.</strong> Technology is a tool to solve problems, not a place to spend time. The right amount of tech is the minimum necessary to solve a problem.</li>
-                <li><strong>5.</strong> Trust grows with transparency. We simplify processes to make them accessible.</li>
-                <li><strong>6.</strong> We design for a before and after impact.</li>
-                <li><strong>7.</strong> If we believe something is possible, we strive to change it and calmly accept what we cannot.</li>
-                <li><strong>8.</strong> What is important to our users is also important to our organization.</li>
-            </ul>
-            <h3>Look & Feel</h3>
-            <p>The development of the graphic elements that make up Welcome is based on two fundamental guidelines: the design principles by which OFFicial operates and the work developed by Syrian graphic designer and refugee Yara Said.</p>
-            <p>In 2015, the civil war in Syria, the situation of extreme poverty in Niger, and the political persecution in Afghanistan and Iraq led to one of the largest migration crises in history. As a result, the Rio 2016 Olympic Games joined Amnesty International's Refugee Nation initiative. They registered a team of 10 refugee athletes as a symbolic gesture to make the crisis visible. This initiative has been continued for the Tokyo 2020 Olympics with a team of 29 athletes.</p>
-            <p>Although not officially recognized by the International Olympic Committee, as part of this visibility campaign, a team of creatives developed several distinctive graphic elements, the most important of which is the Refugee Nation flag.</p>
-      <div class="look-feel-image-container">
-    <img src="img/Flag.jpg" alt="Look and Feel Graphic" class="look-feel-image">
-</div>
-        </section>
-
-        <!-- Welcome Section -->
-  <section id="welcome" class="section">
-    <div class="image-container">
-        <img src="img/OFF2.png" alt="Welcome Logo">
-    </div>
-    <p>OFFicial's flagship product is designed to support refugees through every step of their journey in a new country. Powered by advanced Artificial Intelligence, Welcome simplifies, automates, and personalizes the asylum process and integration into the community.</p>
-
-    <h3>OFFicial App</h3>
-    <p>The OFFicial App provides an all-in-one, easy-to-use tool for managing asylum seekers' integration and documentation process. Key features include:</p>
-    <ul>
-        <li><strong>Welcome:</strong> Quick onboarding with personal profile setup through voice commands.</li>
-        <li><strong>Virtual Documentation Wallet:</strong> Stores and organizes important documents for easy access and management.</li>
-        <li><strong>Deadline Calendar:</strong> Tracks important dates with automatic reminders for document submission.</li>
-        <li><strong>Access to Your Lawyer:</strong> Virtual legal support with real-time assistance.</li>
-        <li><strong>Available Resources Directory:</strong> Comprehensive guide to accessible services and support.</li>
-        <li><strong>Local Glossary:</strong> Linguistic resource with useful local terms and phrases.</li>
-        <li><strong>Location and Maps Access:</strong> Geolocated information and detailed city maps.</li>
-        <li><strong>Augmented Reality (AR):</strong> Advanced feature to intuitively help users find resources within the app interface.</li>
-        <li><strong>Anonymous Data Collection:</strong> Anonymous data contributions to the state while fully respecting privacy.</li>
-    </ul>
-
-    <!-- Mobile Images Section -->
-    <div class="mobile-images">
-        <img src="img/Follow-up2.png" alt="Mobile Device 1">
-        <img src="img/Loading.png" alt="Mobile Device 2">
-        <img src="img/Privacy.png" alt="Mobile Device 3">
-    </div>
-      
-    <p>As a conversational assistant, the weight of the graphical interface is drastically reduced. Today, users are used to interacting with digital services through natural interfaces, but visual output ensures that the message has been received correctly.</p>
-    <p>In addition, it is necessary to visually communicate certain states of the assistant, especially when it is unable to communicate orally, i.e. when it is not connected or has been disabled by the user for privacy reasons.</p>
-    <p>Another context in which visual support is needed is when there are navigation prompts or options to choose from (e.g. a calendar).</p>
-    <p>Beyond these situations, as mentioned above, the interaction with Welcome will be in the form of a background dialogue, allowing the mobile device to be used for any other function while the assistant interacts with the user either on its initiative (a reminder) or by invoking it (e.g., Welcome, what is the deadline for submitting my residency application?).</p>
-
-    <h3>Physical Device: Biometric Data Wristband</h3>
-    <p>The OFFicial wristband is a complementary device providing advanced security and health functions:</p>
-    <ul>
-        <li><strong>Design and Functionality:</strong> Biometric sensors that measure heart rate, body activity, and respiration.</li>
-        <li><strong>NFC Chip:</strong> Stores data for temporary personal identification, enabling secure, contactless access.</li>
-        <li><strong>Battery Life:</strong> Up to 72 hours with rechargeable lithium-ion battery.</li>
-        <li><strong>Compatibility:</strong> Works with iOS, Android, and Huawei for seamless integration.</li>
-        <li><strong>App Connectivity:</strong> Syncs with the OFFicial App and can be used with a headset or without.</li>
-    </ul>
-    <div class="image-container">
-        <img src="img/PulseraWelcome.jpg" alt="Welcome Product Image 1">
-        <img src="img/PulseraWelcome2.jpg" alt="Welcome Product Image 2">
-    </div>
-</section>
-        
-        <!-- Team Section -->
-        <section id="team" class="section">
-            <h2>Our Team</h2>
-            <div class="team-member">
-                <h3>Jorge Gil Rodríguez</h3>
-                <p><strong>Lead UI Designer / Interaction Designer Jr.</strong></p>
-                <p>Graduated in Audiovisual Communication. He has developed his career in diverse fields, such as audiovisual production, graphic design, and DIY event curation and management, with social innovation as a common thread.</p>
-                <blockquote>
-                    "Deeply convinced that design and technology should serve communication between people, and not the other way around, and with a life trajectory in community organizations, we create Welcome to impact, facilitate, and streamline the management of situations of vulnerability, particularly in the asylum application process for refugees by the principles of the Geneva Convention."
-                </blockquote>
-            </div>
-            <div class="team-member">
-                <h3>Eider Fernández Arcos</h3>
-                <p><strong>Lead Product Designer / Researcher Jr.</strong></p>
-                <p>Graduated in Product Design from UDIT, she complements her education with a Master’s in User Experience Design for Products and Services from the same institution. Currently, she focuses on creating and managing communities, organizing events and meetups to attract opportunities, and establishing relationships with key players in the design sector.</p>
-                <blockquote>
-                    "I believe in design as a tool to move forward, and through my work, I feel obligated to respond to any stimulus that arises from observing situations or needs, using the natural user experience-based design process. I believe designers have that superpower and that creativity and empathy are our greatest allies in addressing it."
-                </blockquote>
-            </div>
-            <div class="team-member">
-                <h3>Nicolás Bronzina</h3>
-                <p><strong>Lead Researcher / UI Designer Jr.</strong></p>
-                <p>As a Design Researcher, he focuses on enriching and advancing the speculative aspects of design through extensive research, diegetic prototyping, and translating conceptual frameworks into tangible ideas.</p>
-                <blockquote>
-                    "Due to my personal interest in social issues, particularly those affecting vulnerable populations, and my academic background as a Sociologist, the personal purpose of this project is to understand, from my perspective as a foreigner in Spain, the life stories, needs, and challenges of refugees in Spain. I seek to empathize with them and find possible solutions from my place in society and as part of the OFFicial team."
-                </blockquote>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>Interested in collaborating or learning more? Reach out, and let's make a difference together.</p>
-            <p>This website and its artifact tell a story about a future we might all experience soon, regardless of whether you live in Spain. It is part of the Final Master’s Thesis based on Futures Design and Strategic Foresight between Nicolás Bronzina, Eider Fernández Arcos, and Jorge Gil Rodríguez called "User Experience Design as a Tool for Social Intervention in the Refugee Crisis.”</p>
-            <p>We used an approach called Design Fiction to envision, design, and move toward desirable futures rather than passively accepting what is and 'will be' the so-called refugee crisis.</p>
-            <p>Please contact <strong><a href="https://www.nicolasbronzina.com" target="_blank" style="color: #FB6C2C; text-decoration: none;">Nicolás Bronzina</a></strong> for further information about this project.</p>
-        </section>
-        </div> <!-- Close the readable-content div here -->
+    <!-- Footer -->
+    <div class="footer">
+        <p>OFFicial © 2030 | Design Fiction Project | Master's Thesis UDIT Madrid</p>
+        <p class="disclaimer">This is a speculative design project set in 2030. All products, services, partnerships, and team members are fictional elements created for academic research purposes. This project explores possible futures but does not represent existing organizations or real products.</p>
     </div>
 
-    <footer class="footer">
-        <blockquote>"Why do you always choose battles you cannot win? - Because they are the ones worth fighting for."</blockquote>
-        <p>Dedicated to those who have to leave their homes in search of a better future.</p>
-        <p>OFFicial © 2030 | All rights reserved.</p>
-    </footer>
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()" aria-label="Back to top">↑</button>
 
     <script>
-        function showPage(pageId) {
+        // ========== Navigation with Hash URLs ==========
+        function navigateTo(sectionId) {
+            // Update URL hash
+            window.location.hash = sectionId;
+            
+            // Show section
+            showSection(sectionId);
+            
+            // Update active navigation indicator
+            updateActiveNav(sectionId);
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function showSection(sectionId) {
+            // Hide all sections
             const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
-            const activeSection = document.getElementById(pageId);
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            const activeSection = document.getElementById(sectionId);
             if (activeSection) {
                 activeSection.classList.add('active');
             }
         }
-    </script>
-        <button class="back-to-top" onclick="scrollToTop()">↑</button>
-    <script>
-    // Show or hide the "Back to Top" button
-    window.addEventListener("scroll", function() {
-        const button = document.querySelector(".back-to-top");
-        if (window.scrollY > 300) {
-            button.classList.add("show");
-        } else {
-            button.classList.remove("show");
+        
+        function updateActiveNav(sectionId) {
+            // Remove active class from all nav links
+            const navLinks = document.querySelectorAll('.navbar a');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to current section link
+            const activeLink = document.querySelector(`[data-section="${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
         }
-    });
-
-    // Scroll to the top of the page when the button is clicked
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+        
+        // ========== Handle Browser Back/Forward ==========
+        window.addEventListener('hashchange', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                showSection(hash);
+                updateActiveNav(hash);
+            }
         });
-    }
-</script>
+        
+        // ========== Initialize on Page Load ==========
+        window.addEventListener('DOMContentLoaded', function() {
+            // Check if there's a hash in URL
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                showSection(hash);
+                updateActiveNav(hash);
+            } else {
+                // Default to welcome section
+                showSection('welcome');
+                updateActiveNav('welcome');
+            }
+            
+            // Setup lazy loading for images
+            setupLazyLoading();
+        });
+        
+        // ========== Back to Top Button ==========
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // ========== Lazy Loading Images ==========
+        function setupLazyLoading() {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.src; // Trigger load
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => imageObserver.observe(img));
+            }
+        }
+    </script>
 </body>
 </html>
