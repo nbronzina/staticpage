@@ -7,9 +7,9 @@
     <title>OFFicial Consultancy</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="OFFicial - Committed to leveraging design and technology to empower displaced communities, shaping a world where everyone has the opportunity to thrive with dignity.">
-    <meta property="og:title" content="OFFicial Consultancy">
-    <meta property="og:description" content="Design Fiction project - User Experience Design as a Tool for Social Intervention in the Refugee Crisis">
+    <meta name="description" content="OFFicial - Empowering displaced communities through design and technology. Creating comprehensive support systems for refugees worldwide.">
+    <meta property="og:title" content="OFFicial Consultancy - WELCOME System">
+    <meta property="og:description" content="Committed to leveraging design and technology to empower displaced communities, shaping a world where everyone has the opportunity to thrive with dignity.">
     <meta property="og:type" content="website">
     
     <!-- Preload Font -->
@@ -96,7 +96,6 @@
             color: var(--color-text-light);
         }
 
-        /* Active navigation indicator */
         .navbar a.active {
             color: var(--color-text-light);
         }
@@ -144,6 +143,12 @@
             text-align: center;
         }
 
+        h4 {
+            color: var(--color-primary);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
         p {
             color: var(--color-text-gray);
             margin-bottom: 15px;
@@ -172,12 +177,12 @@
         .cta-button {
             background-color: var(--color-primary);
             color: var(--color-bg-dark);
-            padding: 8px 16px;
+            padding: 10px 24px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: background-color var(--transition-speed);
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .cta-button:hover {
@@ -185,37 +190,21 @@
             color: var(--color-bg-dark);
         }
 
-        .testimonials, .partners {
-            margin-top: 30px;
+        .hero {
             text-align: center;
+            padding: 40px 20px;
         }
 
-        .testimonial-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-direction: column;
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--color-text-light);
+            margin-bottom: 20px;
         }
 
-        @media (min-width: 768px) {
-            .testimonial-content {
-                flex-direction: row;
-            }
-        }
-
-        .testimonial img {
-            width: 100%;
-            max-width: 150px;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        blockquote {
-            font-style: italic;
-            color: var(--color-text-gray);
-            margin: 5px 0;
-            padding: 0 10px;
-            text-align: center;
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
         }
 
         .video-container {
@@ -225,6 +214,9 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .video-container iframe {
@@ -246,57 +238,225 @@
             height: auto;
         }
 
-        .welcome-gallery {
+        .partners-section {
+            margin-top: 50px;
             text-align: center;
-            margin-top: 30px;
-        }
-
-        .gallery-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .gallery-image {
-            max-width: 400px;
-            border-radius: 10px;
-            transition: transform var(--transition-speed);
-        }
-
-        .gallery-image:hover {
-            transform: scale(1.05);
         }
 
         .partner-logos {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
+            gap: 30px;
             flex-wrap: wrap;
-            margin-top: 15px;
+            margin-top: 30px;
         }
 
         .partner-logos img {
-            max-width: 100px;
+            max-width: 120px;
             height: auto;
-            margin: 5px;
+            margin: 10px;
             transition: transform var(--transition-speed);
+            filter: grayscale(20%);
         }
 
         .partner-logos img:hover {
             transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .cear-logo-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cear-logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .user-goals-section {
+            background-color: var(--color-bg-darker);
+            padding: 50px 20px;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+
+        .user-goal {
+            margin-bottom: 40px;
+        }
+
+        .user-goal h4 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .user-goal p {
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .mobile-images {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .mobile-images img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform var(--transition-speed);
+        }
+
+        .mobile-images img:hover {
+            transform: scale(1.05);
+        }
+
+        .look-feel-image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .look-feel-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform var(--transition-speed);
+        }
+
+        .look-feel-image:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonials {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-direction: column;
+            margin-top: 30px;
+        }
+
+        .refugee-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        blockquote {
+            font-style: italic;
+            color: var(--color-text-gray);
+            margin: 15px 0;
+            padding: 0 20px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .team-member {
+            background-color: var(--color-bg-darker);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .team-member h3 {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            text-align: left;
+        }
+
+        .team-member blockquote {
+            text-align: left;
+            padding: 20px 0;
+            margin-top: 15px;
+            border-left: 3px solid var(--color-primary);
+            padding-left: 20px;
+        }
+
+        .project-reveal {
+            background-color: var(--color-bg-darker);
+            padding: 40px;
+            margin-top: 40px;
+            border-radius: 8px;
+            border-top: 3px solid var(--color-primary);
+        }
+
+        .project-reveal h3 {
+            text-align: left;
+            margin-bottom: 20px;
         }
 
         .footer {
             background-color: var(--color-bg-darker);
             text-align: center;
-            padding: 20px 20px;
+            padding: 30px 20px;
             color: var(--color-text-gray);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             border-top: 3px solid var(--color-primary);
+            margin-top: 60px;
         }
 
+        .footer blockquote {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 20px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-primary);
+            color: var(--color-bg-dark);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--transition-speed), visibility var(--transition-speed);
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .readable-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Responsive */
         @media (min-width: 768px) {
             .navbar {
                 padding: 20px 40px;
@@ -319,220 +479,44 @@
                 font-size: 1.8rem;
             }
 
-            .cta-button {
-                font-size: 1rem;
-                padding: 10px 20px;
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .testimonial-content {
+                flex-direction: row;
+            }
+
+            .refugee-image {
+                max-width: 1000px;
+            }
+
+            .mobile-images img {
+                max-width: 250px;
             }
 
             .partner-logos img {
                 max-width: 150px;
             }
         }
-        .mobile-images {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
 
-.mobile-images img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    border-radius: 10px;
-    transition: transform var(--transition-speed);
-}
-        .welcome-product-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform var(--transition-speed);
-}
-
-.welcome-product-image:hover {
-    transform: scale(1.05);
-}
-
-@media (min-width: 768px) {
-    .mobile-images img {
-        max-width: 250px;
-    }
-}
         @media (min-width: 1024px) {
-    .image-container img {
-        max-width: 400px;
-        height: auto;
-    }
-}
-.needs-goals {
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-gray);
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 30px;
-}
+            .image-container img {
+                max-width: 600px;
+            }
+        }
 
-.needs-goals h3 {
-    color: var(--color-primary);
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-.user-goals {
-    margin-bottom: 30px;
-}
-
-.user-goals h4 {
-    color: var(--color-primary);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.user-goals p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    font-style: italic;
-}
-@media (min-width: 768px) {
-    .gallery-container img {
-        max-width: 600px;
-        transition: transform var(--transition-speed);
-    }
-
-    .gallery-container img:hover {
-        transform: scale(1.05);
-    }
-
-    .section {
-        padding: 20px 20px;
-    }
-}
-        @media (min-width: 1024px) {
-    .refugee-image {
-        display: block;
-        max-width: 1000px;
-        margin: 0 auto 20px auto;
-        width: 100%;
-        height: auto;
-    }
-
-    .testimonial-content blockquote {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-}
         @media (max-width: 767px) {
-    .refugee-image {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-        margin: 0 auto 20px;
-    }
-}
-@media (min-width: 1024px) {
-    .partner-logos {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-    }
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
 
-    .cear-logo-container {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .cear-logo {
-        max-width: 150px;
-        height: auto;
-    }
-}
-@media (max-width: 767px) {
-    .partner-logos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .partner-logos img {
-        max-width: 120px;
-        height: auto;
-    }
-
-    .cear-logo-container {
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .cear-logo {
-        max-width: 120px;
-        height: auto;
-    }
-}
-        .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--color-primary);
-    color: var(--color-bg-dark);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--transition-speed), visibility var(--transition-speed);
-    z-index: 1000;
-}
-
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-@media (max-width: 767px) {
-    .back-to-top {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-}
-.look-feel-image-container {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.look-feel-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform var(--transition-speed);
-}
-
-.look-feel-image:hover {
-    transform: scale(1.05);
-}
-
-@media (max-width: 767px) {
-    .look-feel-image {
-        max-width: 100%;
-    }
-}
-        .readable-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
+            .partner-logos {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -541,84 +525,43 @@
             <a onclick="navigateTo('home')"><img src="img/LogoOFF.png" alt="OFFicial Logo" class="rotating-logo"></a>
         </div>
         <div class="menu">
-            <a onclick="navigateTo('purpose')" data-section="purpose">OFFicial</a>
+            <a onclick="navigateTo('about')" data-section="about">About</a>
+            <a onclick="navigateTo('welcome')" data-section="welcome">WELCOME</a>
+            <a onclick="navigateTo('impact')" data-section="impact">Impact</a>
             <a onclick="navigateTo('team')" data-section="team">Team</a>
-            <a onclick="navigateTo('welcome')" data-section="welcome">Welcome</a>
             <a onclick="navigateTo('contact')" data-section="contact">Contact</a>
         </div>
     </nav>
 
     <div class="content">
         <div class="readable-content">
-        <!-- Home Section -->
+        
+        <!-- HOME Section -->
         <section id="home" class="section active">
-            <div class="image-container">
-                <img src="img/OFFICIAL.png" alt="OFFicial Consultancy" loading="eager">
+            <div class="hero">
+                <div class="image-container">
+                    <img src="img/OFFICIAL.png" alt="OFFicial Consultancy" loading="eager">
+                </div>
+                <h1>Empowering Displaced Communities</h1>
+                <p>Committed to leveraging design and technology to empower displaced communities, shaping a world where everyone has the opportunity to thrive with dignity.</p>
+                <div class="cta">
+                    <a href="#welcome" class="cta-button" onclick="navigateTo('welcome')">Explore WELCOME</a>
+                </div>
             </div>
-            <p>Committed to leveraging design and technology to empower displaced communities, shaping a world where everyone has the opportunity to thrive with dignity.</p>
+            
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/Ih194mji50A" frameborder="0" allowfullscreen loading="lazy"></iframe>
             </div>
-            <!-- Welcome Product Image Gallery Section -->
-            <div class="welcome-gallery">
-                <h3>WELCOME</h3>
-                <div class="gallery-container">
-                    <img src="img/PackWelcome.jpg" alt="Welcome Product Image 1" class="gallery-image" loading="lazy">
-                </div>
-            </div>
-<!-- Needs and Goals Section -->
-<section class="needs-goals">
-    <div class="user-goals">
-        <h4>Refugees</h4>
-        <p><strong>"As a refugee, I WANT to complete the asylum application process successfully so I can live a dignified life in my new country, with the help of WELCOME."</strong></p>
-        <p><strong>"As a refugee, I WANT to fully integrate into society so I can be accepted as a full citizen through the support of WELCOME."</strong></p>
-        <p><strong>"As a refugee, I WANT to secure housing and meaningful employment so I can ensure a stable future for my family, facilitated by WELCOME."</strong></p>
-    </div>
-
-    <div class="user-goals">
-        <h4>NGOs</h4>
-        <p><strong>"As an NGO, I WANT to provide refugees with a structured welcome and essential, firsthand information so they can integrate smoothly into the community, with WELCOME's guidance."</strong></p>
-        <p><strong>"As an NGO, I WANT to assist refugees consistently, so the asylum evaluation process becomes more efficient, using WELCOME as a tool."</strong></p>
-    </div>
-
-    <div class="user-goals">
-        <h4>State</h4>
-        <p><strong>"As the State, I WANT to collect information about asylum seekers, so the application process is fairer and more transparent, supported by WELCOME."</strong></p>
-        <p><strong>"As the State, I WANT to immediately scan and authenticate asylum seekers, so their identification can be verified quickly and easily, through WELCOME."</strong></p>
-    </div>
-</section>
-            <div class="testimonials">
-    <h3>What People Say</h3>
-    <img src="img/Refugees.png" alt="Refugees Portrait" class="refugee-image" loading="lazy">
-    <div class="testimonial">
-        <div class="testimonial-content">
-            <blockquote>"Through Welcome, I found a lifeline in a sea of uncertainty. It's more than a tool; it's a guide that empowers and restores a sense of control in the most vulnerable moments." - Leila Hussein (35), Human Rights Advocate and Refugee</blockquote>
-            <blockquote>"Welcome is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive." - Misha Al Numan (62), Chemical Engineer Refugee</blockquote>
-            <blockquote>"For many of us, starting over means facing countless barriers. Welcome has given me the courage to navigate a complex system with confidence, making integration feel achievable rather than overwhelming." - Ahmed Khalil (29), Former Teacher and Asylum Seeker</blockquote>
-        </div>
-    </div>
-</div>
-            <div class="partners">
-                <h3>Our Partners</h3>
-                <div class="partner-logos">
-    <img src="img/cf_logo.jpg" alt="Caminando Fronteras Logo" loading="lazy">
-    <img src="img/cruzroja.jpg" alt="Cruz Roja Logo" loading="lazy">
-    <img src="img/hJYUBIAB_400x400.png" alt="UNHCR Logo" loading="lazy">
-</div>
-<div class="cear-logo-container">
-    <img src="img/logo-cear.jpg" alt="CEAR Logo" class="cear-logo" loading="lazy">
-</div>
-            </div>
-            <div class="cta">
-                <a href="#contact" class="cta-button" onclick="navigateTo('contact')">Get Involved</a>
-            </div>
         </section>
 
-        <!-- Purpose Section -->
-        <section id="purpose" class="section">
-            <h2>Our Purpose</h2>
+        <!-- ABOUT Section -->
+        <section id="about" class="section">
+            <h2>About OFFicial</h2>
+            
+            <h3>Our Mission</h3>
             <p>At OFFicial, we are a vital ally for people who are forced to leave behind their homes, lives, and everything they know and face precarious conditions upon arriving in a new country. In an interconnected and technologically advanced world, our mission is to support and empower these individuals who are constantly pursuing a dignified and secure life.</p>
-            <h3>What do we do?</h3>
+            
+            <h3>What We Do</h3>
             <p>We use innovation and prospective design to create future-oriented artifacts that promote collective reflection and drive social change. We transform refugees' complex realities, projecting effective solutions for the near future. Our approach focuses on:</p>
             <ul>
                 <li><strong>Simplification:</strong> We significantly reduce the processing times for asylum applications through deeply empathetic and human interactions.</li>
@@ -626,6 +569,7 @@
                 <li><strong>Facilitating Integration:</strong> We build bridges of support that enable agile and meaningful integration into host communities, providing services that interpret and assist refugees at every step.</li>
                 <li><strong>Building Trust:</strong> In a constantly changing global environment, we offer clarity and eliminate uncertainty for refugees, ensuring a secure and understandable experience.</li>
             </ul>
+            
             <h3>Design Principles</h3>
             <p>The design of WELCOME is not neutral. Our product is intentionally built around the values we represent as a company:</p>
             <ul>
@@ -638,74 +582,145 @@
                 <li><strong>7.</strong> If we believe something is possible, we strive to change it and calmly accept what we cannot.</li>
                 <li><strong>8.</strong> What is important to our users is also important to our organization.</li>
             </ul>
-            <h3>Look & Feel</h3>
-            <p>The development of the graphic elements that make up Welcome is based on two fundamental guidelines: the design principles by which OFFicial operates and the work developed by Syrian graphic designer and refugee Yara Said.</p>
-            <p>In 2015, the civil war in Syria, the situation of extreme poverty in Niger, and the political persecution in Afghanistan and Iraq led to one of the largest migration crises in history. As a result, the Rio 2016 Olympic Games joined Amnesty International's Refugee Nation initiative. They registered a team of 10 refugee athletes as a symbolic gesture to make the crisis visible. This initiative has been continued for the Tokyo 2020 Olympics with a team of 29 athletes.</p>
-            <p>Although not officially recognized by the International Olympic Committee, as part of this visibility campaign, a team of creatives developed several distinctive graphic elements, the most important of which is the Refugee Nation flag.</p>
-      <div class="look-feel-image-container">
-    <img src="img/Flag.jpg" alt="Look and Feel Graphic" class="look-feel-image" loading="lazy">
-</div>
+
+            <!-- Partners Section -->
+            <div class="partners-section">
+                <h3>Our Partners</h3>
+                <p>We work alongside leading humanitarian organizations to create meaningful impact for displaced communities worldwide.</p>
+                <div class="partner-logos">
+                    <img src="img/cf_logo.jpg" alt="Caminando Fronteras" loading="lazy">
+                    <img src="img/cruzroja.jpg" alt="Cruz Roja" loading="lazy">
+                    <img src="img/hJYUBIAB_400x400.png" alt="UNHCR" loading="lazy">
+                </div>
+                <div class="cear-logo-container">
+                    <img src="img/logo-cear.jpg" alt="CEAR" class="cear-logo" loading="lazy">
+                </div>
+            </div>
         </section>
 
-        <!-- Welcome Section -->
-  <section id="welcome" class="section">
-    <div class="image-container">
-        <img src="img/OFF2.png" alt="Welcome Logo" loading="lazy">
-    </div>
-    <p>OFFicial's flagship product is designed to support refugees through every step of their journey in a new country. Powered by advanced Artificial Intelligence, Welcome simplifies, automates, and personalizes the asylum process and integration into the community.</p>
+        <!-- WELCOME Section (Complete Product) -->
+        <section id="welcome" class="section">
+            <div class="image-container">
+                <img src="img/OFF2.png" alt="WELCOME System" loading="lazy">
+            </div>
+            
+            <h2>The WELCOME System</h2>
+            <p>OFFicial's flagship product is designed to support refugees through every step of their journey in a new country. Powered by advanced Artificial Intelligence, WELCOME simplifies, automates, and personalizes the asylum process and integration into the community.</p>
 
-    <h3>OFFicial App</h3>
-    <p>The OFFicial App provides an all-in-one, easy-to-use tool for managing asylum seekers' integration and documentation process. Key features include:</p>
-    <ul>
-        <li><strong>Welcome:</strong> Quick onboarding with personal profile setup through voice commands.</li>
-        <li><strong>Virtual Documentation Wallet:</strong> Stores and organizes important documents for easy access and management.</li>
-        <li><strong>Deadline Calendar:</strong> Tracks important dates with automatic reminders for document submission.</li>
-        <li><strong>Access to Your Lawyer:</strong> Virtual legal support with real-time assistance.</li>
-        <li><strong>Available Resources Directory:</strong> Comprehensive guide to accessible services and support.</li>
-        <li><strong>Local Glossary:</strong> Linguistic resource with useful local terms and phrases.</li>
-        <li><strong>Location and Maps Access:</strong> Geolocated information and detailed city maps.</li>
-        <li><strong>Augmented Reality (AR):</strong> Advanced feature to intuitively help users find resources within the app interface.</li>
-        <li><strong>Anonymous Data Collection:</strong> Anonymous data contributions to the state while fully respecting privacy.</li>
-    </ul>
+            <div class="image-container">
+                <img src="img/PackWelcome.jpg" alt="WELCOME Package" loading="lazy" style="max-width: 600px; border-radius: 10px;">
+            </div>
 
-    <!-- Mobile Images Section -->
-    <div class="mobile-images">
-        <img src="img/Follow-up2.png" alt="Mobile Device 1" loading="lazy">
-        <img src="img/Loading.png" alt="Mobile Device 2" loading="lazy">
-        <img src="img/Privacy.png" alt="Mobile Device 3" loading="lazy">
-    </div>
-      
-    <p>As a conversational assistant, the weight of the graphical interface is drastically reduced. Today, users are used to interacting with digital services through natural interfaces, but visual output ensures that the message has been received correctly.</p>
-    <p>In addition, it is necessary to visually communicate certain states of the assistant, especially when it is unable to communicate orally, i.e. when it is not connected or has been disabled by the user for privacy reasons.</p>
-    <p>Another context in which visual support is needed is when there are navigation prompts or options to choose from (e.g. a calendar).</p>
-    <p>Beyond these situations, as mentioned above, the interaction with Welcome will be in the form of a background dialogue, allowing the mobile device to be used for any other function while the assistant interacts with the user either on its initiative (a reminder) or by invoking it (e.g., Welcome, what is the deadline for submitting my residency application?).</p>
+            <!-- User Goals -->
+            <div class="user-goals-section">
+                <h3>Designed for Everyone</h3>
+                
+                <div class="user-goal">
+                    <h4>For Refugees</h4>
+                    <p><strong>"As a refugee, I WANT to complete the asylum application process successfully so I can live a dignified life in my new country, with the help of WELCOME."</strong></p>
+                    <p><strong>"As a refugee, I WANT to fully integrate into society so I can be accepted as a full citizen through the support of WELCOME."</strong></p>
+                    <p><strong>"As a refugee, I WANT to secure housing and meaningful employment so I can ensure a stable future for my family, facilitated by WELCOME."</strong></p>
+                </div>
 
-    <h3>Physical Device: Biometric Data Wristband</h3>
-    <p>The OFFicial wristband is a complementary device providing advanced security and health functions:</p>
-    <ul>
-        <li><strong>Design and Functionality:</strong> Biometric sensors that measure heart rate, body activity, and respiration.</li>
-        <li><strong>NFC Chip:</strong> Stores data for temporary personal identification, enabling secure, contactless access.</li>
-        <li><strong>Battery Life:</strong> Up to 72 hours with rechargeable lithium-ion battery.</li>
-        <li><strong>Compatibility:</strong> Works with iOS, Android, and Huawei for seamless integration.</li>
-        <li><strong>App Connectivity:</strong> Syncs with the OFFicial App and can be used with a headset or without.</li>
-    </ul>
-    <div class="image-container">
-        <img src="img/PulseraWelcome.jpg" alt="Welcome Product Image 1" loading="lazy">
-        <img src="img/PulseraWelcome2.jpg" alt="Welcome Product Image 2" loading="lazy">
-    </div>
-</section>
-        
-        <!-- Team Section -->
+                <div class="user-goal">
+                    <h4>For NGOs</h4>
+                    <p><strong>"As an NGO, I WANT to provide refugees with a structured welcome and essential, firsthand information so they can integrate smoothly into the community, with WELCOME's guidance."</strong></p>
+                    <p><strong>"As an NGO, I WANT to assist refugees consistently, so the asylum evaluation process becomes more efficient, using WELCOME as a tool."</strong></p>
+                </div>
+
+                <div class="user-goal">
+                    <h4>For the State</h4>
+                    <p><strong>"As the State, I WANT to collect information about asylum seekers, so the application process is fairer and more transparent, supported by WELCOME."</strong></p>
+                    <p><strong>"As the State, I WANT to immediately scan and authenticate asylum seekers, so their identification can be verified quickly and easily, through WELCOME."</strong></p>
+                </div>
+            </div>
+
+            <!-- App Features -->
+            <h3>The WELCOME App</h3>
+            <p>The WELCOME App provides an all-in-one, easy-to-use tool for managing asylum seekers' integration and documentation process. Key features include:</p>
+            <ul>
+                <li><strong>Welcome:</strong> Quick onboarding with personal profile setup through voice commands.</li>
+                <li><strong>Virtual Documentation Wallet:</strong> Stores and organizes important documents for easy access and management.</li>
+                <li><strong>Deadline Calendar:</strong> Tracks important dates with automatic reminders for document submission.</li>
+                <li><strong>Access to Your Lawyer:</strong> Virtual legal support with real-time assistance.</li>
+                <li><strong>Available Resources Directory:</strong> Comprehensive guide to accessible services and support.</li>
+                <li><strong>Local Glossary:</strong> Linguistic resource with useful local terms and phrases.</li>
+                <li><strong>Location and Maps Access:</strong> Geolocated information and detailed city maps.</li>
+                <li><strong>Augmented Reality (AR):</strong> Advanced feature to intuitively help users find resources within the app interface.</li>
+                <li><strong>Anonymous Data Collection:</strong> Anonymous data contributions to the state while fully respecting privacy.</li>
+            </ul>
+
+            <div class="mobile-images">
+                <img src="img/Follow-up2.png" alt="WELCOME App Interface" loading="lazy">
+                <img src="img/Loading.png" alt="WELCOME App Loading" loading="lazy">
+                <img src="img/Privacy.png" alt="WELCOME App Privacy" loading="lazy">
+            </div>
+            
+            <p>As a conversational assistant, the weight of the graphical interface is drastically reduced. Today, users are used to interacting with digital services through natural interfaces, but visual output ensures that the message has been received correctly.</p>
+            <p>In addition, it is necessary to visually communicate certain states of the assistant, especially when it is unable to communicate orally, i.e. when it is not connected or has been disabled by the user for privacy reasons.</p>
+            <p>Another context in which visual support is needed is when there are navigation prompts or options to choose from (e.g. a calendar).</p>
+            <p>Beyond these situations, as mentioned above, the interaction with WELCOME will be in the form of a background dialogue, allowing the mobile device to be used for any other function while the assistant interacts with the user either on its initiative (a reminder) or by invoking it (e.g., "WELCOME, what is the deadline for submitting my residency application?").</p>
+
+            <!-- Wristband -->
+            <h3>Physical Device: Biometric Data Wristband</h3>
+            <p>The WELCOME wristband is a complementary device providing advanced security and health functions:</p>
+            <ul>
+                <li><strong>Design and Functionality:</strong> Biometric sensors that measure heart rate, body activity, and respiration.</li>
+                <li><strong>NFC Chip:</strong> Stores data for temporary personal identification, enabling secure, contactless access.</li>
+                <li><strong>Battery Life:</strong> Up to 72 hours with rechargeable lithium-ion battery.</li>
+                <li><strong>Compatibility:</strong> Works with iOS, Android, and Huawei for seamless integration.</li>
+                <li><strong>App Connectivity:</strong> Syncs with the WELCOME App and can be used with a headset or without.</li>
+            </ul>
+            <div class="image-container">
+                <img src="img/PulseraWelcome.jpg" alt="WELCOME Wristband" loading="lazy">
+                <img src="img/PulseraWelcome2.jpg" alt="WELCOME Wristband Detail" loading="lazy">
+            </div>
+
+            <!-- Look & Feel -->
+            <h3>Design Language</h3>
+            <p>The development of the graphic elements that make up WELCOME is based on two fundamental guidelines: the design principles by which OFFicial operates and the work developed by Syrian graphic designer and refugee Yara Said.</p>
+            <p>In 2015, the civil war in Syria, the situation of extreme poverty in Niger, and the political persecution in Afghanistan and Iraq led to one of the largest migration crises in history. As a result, the Rio 2016 Olympic Games joined Amnesty International's Refugee Nation initiative. They registered a team of 10 refugee athletes as a symbolic gesture to make the crisis visible. This initiative has been continued for the Tokyo 2020 Olympics with a team of 29 athletes.</p>
+            <p>Although not officially recognized by the International Olympic Committee, as part of this visibility campaign, a team of creatives developed several distinctive graphic elements, the most important of which is the Refugee Nation flag.</p>
+            <div class="look-feel-image-container">
+                <img src="img/Flag.jpg" alt="Refugee Nation Flag" class="look-feel-image" loading="lazy">
+            </div>
+        </section>
+
+        <!-- IMPACT Section -->
+        <section id="impact" class="section">
+            <h2>Impact Stories</h2>
+            <p>WELCOME is transforming lives by providing refugees with the tools and support they need to rebuild their futures with dignity.</p>
+            
+            <div class="testimonials">
+                <h3>What People Say</h3>
+                <img src="img/Refugees.png" alt="Refugees using WELCOME" class="refugee-image" loading="lazy">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <blockquote>"Through WELCOME, I found a lifeline in a sea of uncertainty. It's more than a tool; it's a guide that empowers and restores a sense of control in the most vulnerable moments." <br>- Leila Hussein (35), Human Rights Advocate and Refugee</blockquote>
+                        <blockquote>"WELCOME is more than just technology; it is a bridge of hope that transforms the unknown into something familiar and supportive." <br>- Misha Al Numan (62), Chemical Engineer Refugee</blockquote>
+                        <blockquote>"For many of us, starting over means facing countless barriers. WELCOME has given me the courage to navigate a complex system with confidence, making integration feel achievable rather than overwhelming." <br>- Ahmed Khalil (29), Former Teacher and Asylum Seeker</blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta">
+                <a href="#contact" class="cta-button" onclick="navigateTo('contact')">Get Involved</a>
+            </div>
+        </section>
+
+        <!-- TEAM Section -->
         <section id="team" class="section">
             <h2>Our Team</h2>
+            
             <div class="team-member">
                 <h3>Jorge Gil Rodríguez</h3>
                 <p><strong>Lead UI Designer / Interaction Designer Jr.</strong></p>
                 <p>Graduated in Audiovisual Communication. He has developed his career in diverse fields, such as audiovisual production, graphic design, and DIY event curation and management, with social innovation as a common thread.</p>
                 <blockquote>
-                    "Deeply convinced that design and technology should serve communication between people, and not the other way around, and with a life trajectory in community organizations, we create Welcome to impact, facilitate, and streamline the management of situations of vulnerability, particularly in the asylum application process for refugees by the principles of the Geneva Convention."
+                    "Deeply convinced that design and technology should serve communication between people, and not the other way around, and with a life trajectory in community organizations, we create WELCOME to impact, facilitate, and streamline the management of situations of vulnerability, particularly in the asylum application process for refugees by the principles of the Geneva Convention."
                 </blockquote>
             </div>
+            
             <div class="team-member">
                 <h3>Eider Fernández Arcos</h3>
                 <p><strong>Lead Product Designer / Researcher Jr.</strong></p>
@@ -714,6 +729,7 @@
                     "I believe in design as a tool to move forward, and through my work, I feel obligated to respond to any stimulus that arises from observing situations or needs, using the natural user experience-based design process. I believe designers have that superpower and that creativity and empathy are our greatest allies in addressing it."
                 </blockquote>
             </div>
+            
             <div class="team-member">
                 <h3>Nicolás Bronzina</h3>
                 <p><strong>Lead Researcher / UI Designer Jr.</strong></p>
@@ -724,21 +740,43 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- CONTACT Section (WHERE THE FICTION IS REVEALED) -->
         <section id="contact" class="section">
             <h2>Contact Us</h2>
             <p>Interested in collaborating or learning more? Reach out, and let's make a difference together.</p>
-            <p>This website and its artifact tell a story about a future we might all experience soon, regardless of whether you live in Spain. It is part of the Final Master's Thesis based on Futures Design and Strategic Foresight between Nicolás Bronzina, Eider Fernández Arcos, and Jorge Gil Rodríguez called "User Experience Design as a Tool for Social Intervention in the Refugee Crisis."</p>
-            <p>We used an approach called Design Fiction to envision, design, and move toward desirable futures rather than passively accepting what is and 'will be' the so-called refugee crisis.</p>
-            <p>Please contact <strong><a href="https://www.nicolasbronzina.com" target="_blank" style="color: #FB6C2C; text-decoration: none;">Nicolás Bronzina</a></strong> for further information about this project.</p>
+
+            <!-- Project Reveal -->
+            <div class="project-reveal">
+                <h3>About This Project</h3>
+                <p>This website and its artifacts present a speculative future scenario—a "what if" exploration of how design and technology could support displaced communities.</p>
+                
+                <p>The content you've experienced is part of a <strong>Design Fiction project</strong> created as the Final Master's Thesis at UDIT Madrid:</p>
+                
+                <p><strong>"User Experience Design as a Tool for Social Intervention in the Refugee Crisis"</strong></p>
+                
+                <p><strong>Created by:</strong><br>
+                Nicolás Bronzina, Eider Fernández Arcos, and Jorge Gil Rodríguez</p>
+                
+                <p>We used an approach called <strong>Design Fiction</strong> to envision, design, and move toward desirable futures rather than passively accepting what is and "will be" the so-called refugee crisis. By creating detailed, believable artifacts set in 2030, we aim to provoke discussion, inspire action, and demonstrate how UX design can serve as a vehicle for social intervention.</p>
+                
+                <p>The WELCOME system, OFFicial consultancy, partnerships, and testimonials are fictional elements designed to make this possible future tangible and discussable.</p>
+                
+                <p><strong>For more information about this project, please contact:</strong><br>
+                <a href="https://www.nicolasbronzina.com" target="_blank" style="color: #FB6C2C; text-decoration: none; font-weight: bold;">Nicolás Bronzina</a></p>
+            </div>
         </section>
+        
         </div>
     </div>
 
     <footer class="footer">
         <blockquote>"Why do you always choose battles you cannot win? - Because they are the ones worth fighting for."</blockquote>
         <p>Dedicated to those who have to leave their homes in search of a better future.</p>
-        <p>OFFicial © 2030 | All rights reserved.</p>
+        <p><strong>OFFicial © 2030</strong></p>
+        <div class="footer-disclaimer">
+            Speculative Design Project | Master's Thesis - UDIT Madrid<br>
+            This is a design fiction exploring possible futures. All organizations, partnerships, and scenarios are fictional.
+        </div>
     </footer>
 
     <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
@@ -746,27 +784,18 @@
     <script>
         // ========== Navigation with Hash URLs ==========
         function navigateTo(sectionId) {
-            // Update URL hash
             window.location.hash = sectionId;
-            
-            // Show section
             showSection(sectionId);
-            
-            // Update active navigation indicator
             updateActiveNav(sectionId);
-            
-            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         
         function showSection(sectionId) {
-            // Hide all sections
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
             
-            // Show selected section
             const activeSection = document.getElementById(sectionId);
             if (activeSection) {
                 activeSection.classList.add('active');
@@ -774,13 +803,11 @@
         }
         
         function updateActiveNav(sectionId) {
-            // Remove active class from all nav links
             const navLinks = document.querySelectorAll('.navbar a');
             navLinks.forEach(link => {
                 link.classList.remove('active');
             });
             
-            // Add active class to current section link
             const activeLink = document.querySelector(`[data-section="${sectionId}"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
@@ -798,17 +825,14 @@
         
         // ========== Initialize on Page Load ==========
         window.addEventListener('DOMContentLoaded', function() {
-            // Check if there's a hash in URL
             const hash = window.location.hash.substring(1);
             if (hash) {
                 showSection(hash);
                 updateActiveNav(hash);
             } else {
-                // Default to home section
                 updateActiveNav('home');
             }
             
-            // Setup lazy loading for images
             setupLazyLoading();
         });
         
@@ -821,7 +845,7 @@
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const img = entry.target;
-                            img.src = img.src; // Trigger load
+                            img.src = img.src;
                             observer.unobserve(img);
                         }
                     });
