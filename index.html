@@ -197,6 +197,7 @@
     padding: var(--spacing-md);
     border: 1px solid var(--color-border);
     border-radius: 8px;
+    text-align: center;
     transition: box-shadow var(--transition-speed);
   }
 
@@ -204,8 +205,13 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
+  .interactive-project-card h3 {
+    margin-bottom: var(--spacing-md);
+  }
+
   .interactive-project-card p {
     margin: var(--spacing-md) 0;
+    max-width: 100%;
   }
 
   .project-button {
@@ -478,7 +484,7 @@
   <!-- Interactive Web Projects Section -->
   <section class="content-section">
     <h2>Interactive Web Projects</h2>
-    <p class="mb-medium">Web-based tools and interactive experiences for civic engagement and urban exploration</p>
+    <p class="text-center mb-medium">Web-based tools and interactive experiences for civic engagement and urban exploration</p>
     
     <article class="interactive-project-card">
       <h3>CUIDAR.ar | Sistema de Cuidados para Personas Mayores</h3>
@@ -508,7 +514,7 @@
     <div>
       <h2>Climate Status</h2>
       <div id="weather-container">
-        <img id="weather-icon" src="" alt="Weather icon" loading="lazy">
+        <img id="weather-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Weather icon">
         <p id="weather-info">Loading...</p>
       </div>
       <p id="air-quality-info">AQI: Loading...</p>
@@ -803,18 +809,55 @@
     // ========== Main Weather Fetch ==========
     async function fetchWeather() {
       try {
-        const [weatherData, oneCallData, airData, openMeteoData] = await Promise.all([
-          WeatherAPI.fetchCurrentWeather(),
-          WeatherAPI.fetchOneCallData(),
-          WeatherAPI.fetchAirQuality(),
-          WeatherAPI.fetchOpenMeteoAir()
-        ]);
+        // Solo usar APIs gratuitas disponibles
+        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=${CONFIG.API_KEY}&units=metric`);
+        const weatherData = await weatherResponse.json();
         
-        UIUpdater.updateWeatherDisplay(weatherData, oneCallData, airData, openMeteoData);
+        const airResponse = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${CONFIG.MADRID_LAT}&lon=${CONFIG.MADRID_LON}&appid=${CONFIG.API_KEY}`);
+        const airData = await airResponse.json();
+        
+        // Actualizar display básico
+        const temperature = weatherData.main.temp;
+        const weatherDescription = weatherData.weather[0].description;
+        const weatherIcon = weatherData.weather[0].icon;
+        const iconUrl = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+        const humidity = weatherData.main.humidity;
+
+        document.getElementById('weather-info').textContent = `${temperature}°C, ${weatherDescription}`;
+        document.getElementById('weather-icon').src = iconUrl;
+        
+        const aqi = airData.list[0].main.aqi;
+        const pm25 = Math.round(airData.list[0].components.pm2_5);
+        const pm10 = Math.round(airData.list[0].components.pm10);
+        const aqiText = ClimateCalculations.getAQIText(aqi);
+        
+        document.getElementById('air-quality-info').textContent = `AQI: ${aqiText} (${aqi}/5) | PM2.5: ${pm25} | PM10: ${pm10}μg/m³`;
+        
+        // UV Index estimado basado en hora del día (simplificado)
+        const hour = new Date().getHours();
+        const uvIndex = (hour >= 11 && hour <= 15) ? 6 : (hour >= 9 && hour <= 17) ? 4 : 1;
+        const heatIndex = ClimateCalculations.heatIndex(temperature, humidity);
+        const tempAnomaly = ClimateCalculations.temperatureAnomaly(temperature);
+        
+        document.getElementById('uv-heat-info').textContent = `UV: ~${uvIndex} | Heat Index: ${heatIndex}°C | Anomaly: +${tempAnomaly}°C`;
+        
+        const urbanHeatIsland = ClimateCalculations.urbanHeatIsland(temperature);
+        const resilienceScore = ClimateCalculations.resilienceScore(temperature, aqi, uvIndex);
+        
+        document.getElementById('adaptation-metrics').textContent = `UHI: +${urbanHeatIsland}°C | Resilience: ${resilienceScore}/10`;
+        
+        const riskLevel = ClimateCalculations.riskLevel(temperature, aqi, uvIndex, heatIndex);
+        const heatWaveDays = ClimateCalculations.trackHeatWaveDays(temperature);
+        
+        document.getElementById('risk-assessment').textContent = `Risk: ${riskLevel} | Heat Wave: ${heatWaveDays} days`;
         
       } catch (error) {
         console.error('Error fetching climate data:', error);
-        UIUpdater.displayError();
+        document.getElementById('weather-info').textContent = 'Weather data not available';
+        document.getElementById('air-quality-info').textContent = 'AQI: Data unavailable';
+        document.getElementById('uv-heat-info').textContent = 'UV/Heat: Data unavailable';
+        document.getElementById('adaptation-metrics').textContent = 'Adaptation: Data unavailable';
+        document.getElementById('risk-assessment').textContent = 'Risk Level: Data unavailable';
       }
     }
 
