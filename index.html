@@ -152,6 +152,12 @@
       font-weight: 600;
     }
 
+    .stat-label {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
     .stats p {
       margin: 5px 0;
       font-size: 0.95rem;
@@ -408,7 +414,7 @@
 
     /* Dark Mode Styles */
     body.dark-mode {
-      background-color: #1a1a1a;
+      background-color: #0d0d0d;
       color: #EBE1D1;
     }
 
@@ -449,7 +455,7 @@
 
     body.dark-mode .project-button:hover {
       background-color: #EBE1D1;
-      color: #1a1a1a;
+      color: #0d0d0d;
     }
 
     body.dark-mode .site-stats {
@@ -479,17 +485,29 @@
 
     body.dark-mode .skip-link {
       background: #EBE1D1;
-      color: #1a1a1a;
+      color: #0d0d0d;
     }
 
     body.dark-mode ::selection {
       background-color: #EBE1D1;
-      color: #1a1a1a;
+      color: #0d0d0d;
     }
 
     body.dark-mode ::-moz-selection {
       background-color: #EBE1D1;
-      color: #1a1a1a;
+      color: #0d0d0d;
+    }
+
+    /* Reduced Motion - Respect user preferences */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
@@ -525,14 +543,14 @@
 
       <div class="stats-content">
         <div>
-          <h2>Server Status</h2>
+          <div class="stat-label">Server Status</div>
           <p>Location: Madrid, Spain</p>
           <p>Time: <span id="madrid-time">Loading...</span></p>
           <p>Last updated: October 2025</p>
         </div>
 
         <div>
-          <h2>Contact</h2>
+          <div class="stat-label">Contact</div>
         <div class="social-icons">
           <a href="https://www.instagram.com/nbronzina" target="_blank" aria-label="Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5">
@@ -742,7 +760,7 @@
     <div class="site-stats">
       <p><strong>Low-Tech Website Metrics</strong></p>
       <p>This site is optimized for minimal bandwidth and maximum accessibility</p>
-      <p>• Page weight: ~34.7 KB (HTML+CSS only, excluding images)</p>
+      <p>• Page weight: ~35 KB (HTML+CSS only, excluding images)</p>
       <p>• External API requests: 0</p>
       <p>• External fonts: 0 (system fonts only)</p>
       <p>• JavaScript: ~400 bytes (clock + theme toggle)</p>
@@ -750,7 +768,7 @@
       <p>• Favicon: Inline SVG (~180 bytes, no extra HTTP requests)</p>
       <p>• Dark mode: Manual toggle with localStorage persistence</p>
       <p>• Social sharing: Open Graph & Twitter Cards meta tags</p>
-      <p>• Accessibility: Keyboard navigation, focus states, semantic HTML5, WCAG-compliant touch targets, screen reader optimized</p>
+      <p>• Accessibility: Keyboard navigation, focus states, semantic HTML5 with optimized heading hierarchy, WCAG 2.1 AAA color contrast (7:1), WCAG-compliant touch targets, screen reader optimized, respects reduced motion preferences</p>
       <p>• Built following Microsoft Inclusive Design methodology</p>
       <p style="margin-top: 10px;">Inspired by <a href="https://solar.lowtechmagazine.com/" target="_blank">Low-Tech Magazine</a></p>
     </div>
