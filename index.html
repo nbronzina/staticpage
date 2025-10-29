@@ -89,6 +89,11 @@
       border-bottom: 2px solid #000;
       padding-bottom: 15px;
       margin-bottom: 30px;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
     }
 
     /* Theme Toggle Button */
@@ -122,11 +127,13 @@
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 10px;
+      text-align: center;
     }
 
     .subtitle {
       font-size: 1.3rem;
       margin-bottom: 15px;
+      text-align: center;
     }
 
     /* Hide desktop line break on mobile */
@@ -139,12 +146,16 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      align-items: center;
+      width: 100%;
     }
 
     .stats-content {
       display: flex;
       flex-direction: column;
       gap: 20px;
+      align-items: center;
+      width: 100%;
     }
 
     .stats > div {
@@ -161,11 +172,13 @@
       font-size: 1.2rem;
       margin-bottom: 10px;
       font-weight: 600;
+      text-align: center;
     }
 
     .stats p {
       margin: 5px 0;
       font-size: 0.95rem;
+      text-align: center;
     }
 
     /* Contact Icons */
@@ -173,6 +186,7 @@
       display: flex;
       gap: 15px;
       margin-top: 10px;
+      justify-content: center;
     }
 
     .social-icons a {
@@ -194,7 +208,7 @@
       display: flex;
       flex-direction: column;
       gap: 25px;
-      align-items: flex-start;
+      align-items: center;
       margin-bottom: 25px;
     }
 
@@ -207,6 +221,7 @@
 
     .intro-text p {
       margin-bottom: 12px;
+      text-align: center;
     }
 
     /* Section Titles */
@@ -353,14 +368,17 @@
 
       header {
         flex: 1;
+        width: auto;
       }
 
       header h1 {
         font-size: 2.8rem;
+        text-align: left;
       }
 
       .subtitle {
         font-size: 1.5rem;
+        text-align: left;
       }
 
       /* Show line break on desktop */
@@ -375,6 +393,7 @@
         flex-wrap: nowrap;
         max-width: 450px;
         align-items: flex-start;
+        width: auto;
       }
 
       .stats-content {
@@ -382,20 +401,40 @@
         flex-direction: row;
         gap: 30px;
         flex: 1;
+        align-items: flex-start;
+        width: auto;
       }
 
       .stats > div {
         flex: 1;
         min-width: 150px;
+        width: auto;
+      }
+
+      .stat-label {
+        text-align: left;
+      }
+
+      .stats p {
+        text-align: left;
+      }
+
+      .social-icons {
+        justify-content: flex-start;
       }
 
       /* Intro Container - Desktop */
       .intro-container {
         flex-direction: row;
+        align-items: flex-start;
       }
 
       .main-image {
         width: 180px;
+      }
+
+      .intro-text p {
+        text-align: left;
       }
 
       /* Projects Grid - Desktop */
