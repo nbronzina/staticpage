@@ -265,36 +265,30 @@
     height: 50px;
   }
 
-  #forecast-container {
+  .social-icons {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 20px;
+    margin-top: 15px;
     flex-wrap: wrap;
   }
 
-  .forecast-day {
-    text-align: center;
-    min-width: 70px;
+  .social-icons a {
+    color: #000;
+    transition: opacity var(--transition-speed), transform var(--transition-speed);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .forecast-label {
-    font-size: 0.85rem;
-    color: var(--color-grey-light);
-    margin-bottom: 5px;
+  .social-icons a:hover {
+    opacity: 0.6;
+    transform: translateY(-2px);
   }
 
-  .forecast-day div {
-    font-size: 2rem;
-    margin: 5px 0;
-  }
-
-  #forecast-today-temp,
-  #forecast-tomorrow-temp,
-  #forecast-after-temp {
-    font-size: 0.9rem;
-    color: var(--color-grey);
-    margin: 0;
+  .social-icons svg {
+    width: 26px;
+    height: 26px;
   }
 
   .climate-credit {
@@ -439,12 +433,13 @@
       align-items: flex-start;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 40px;
     }
 
     .stats-section > div {
       flex: 1;
-      min-width: 200px;
-      max-width: 300px;
+      min-width: 220px;
+      max-width: 320px;
     }
   }
 
@@ -657,27 +652,7 @@
       <h2>Server Status</h2>
       <p>Location: Madrid, Spain</p>
       <p id="server-time">Time: Loading...</p>
-      <p>Last updated: October 2024</p>
-    </div>
-    <div>
-      <h2>Forecast</h2>
-      <div id="forecast-container">
-        <div class="forecast-day">
-          <p class="forecast-label">Today</p>
-          <div id="forecast-today-icon">☀️</div>
-          <p id="forecast-today-temp">--°C</p>
-        </div>
-        <div class="forecast-day">
-          <p class="forecast-label">Tomorrow</p>
-          <div id="forecast-tomorrow-icon">☀️</div>
-          <p id="forecast-tomorrow-temp">--°C</p>
-        </div>
-        <div class="forecast-day">
-          <p class="forecast-label">Day after</p>
-          <div id="forecast-after-icon">☀️</div>
-          <p id="forecast-after-temp">--°C</p>
-        </div>
-      </div>
+      <p>Last updated: October 2025</p>
     </div>
     <div>
       <h2>Climate Status</h2>
@@ -690,25 +665,42 @@
       <details class="climate-acronyms">
         <summary style="cursor: pointer; color: #888; font-size: 0.8rem; margin-top: 10px;">📖 What do these metrics mean?</summary>
         <div style="font-size: 0.75rem; color: #888; margin-top: 8px; line-height: 1.5; text-align: left;">
-          <p><strong>AQI:</strong> Air Quality Index (1-5 scale)</p>
-          <p><strong>PM2.5/PM10:</strong> Particulate Matter in μg/m³</p>
-          <p><strong>UV:</strong> Ultraviolet radiation index</p>
-          <p><strong>Heat Index:</strong> Feels-like temperature</p>
-          <p><strong>Anomaly:</strong> Temperature above historical average</p>
-          <p><strong>UHI:</strong> Urban Heat Island effect</p>
-          <p><strong>Resilience:</strong> Climate adaptation score (0-10)</p>
-          <p><strong>Heat Wave:</strong> Consecutive days above 30°C</p>
+          <p><strong>Temperature:</strong> Current air temperature in Madrid (°C)</p>
+          <p><strong>Weather Description:</strong> Current sky conditions (clear, clouds, rain, etc.)</p>
+          <p><strong>AQI (Air Quality Index):</strong> Measures air pollution on a 1-5 scale (1=Good, 5=Very Poor)</p>
+          <p><strong>UV (Ultraviolet Index):</strong> Sun radiation intensity (~1=Low, 6-7=High, 11+=Extreme)</p>
         </div>
       </details>
     </div>
     <div>
       <h2>Contact</h2>
-      <p>
-        <a href="https://www.instagram.com/nbronzina" rel="noopener" target="_blank">Instagram</a> | 
-        <a href="https://www.linkedin.com/in/nicolasbronzina" rel="noopener" target="_blank">LinkedIn</a> | 
-        <a href="https://www.medium.com/@nbronzina" rel="noopener" target="_blank">Medium</a> | 
-        <a href="mailto:nicolas.bronzina@gmail.com">Email</a>
-      </p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/nbronzina" rel="noopener" target="_blank" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nicolasbronzina" rel="noopener" target="_blank" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a href="https://www.medium.com/@nbronzina" rel="noopener" target="_blank" aria-label="Medium">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+          </svg>
+        </a>
+        <a href="mailto:nicolas.bronzina@gmail.com" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -795,77 +787,6 @@
 
     setInterval(updateServerTime, 1000);
     updateServerTime();
-
-    // ========== Weather Forecast (3 days) ==========
-    function getWeatherEmoji(weatherCode, icon) {
-      // Use icon string from API (e.g., "01d", "02n")
-      const iconMap = {
-        '01d': '☀️', '01n': '🌙',
-        '02d': '⛅', '02n': '☁️',
-        '03d': '☁️', '03n': '☁️',
-        '04d': '☁️', '04n': '☁️',
-        '09d': '🌧️', '09n': '🌧️',
-        '10d': '🌦️', '10n': '🌧️',
-        '11d': '⛈️', '11n': '⛈️',
-        '13d': '❄️', '13n': '❄️',
-        '50d': '🌫️', '50n': '🌫️'
-      };
-      return iconMap[icon] || '☀️';
-    }
-
-    async function fetchForecast() {
-      try {
-        const url = `https://api.openweathermap.org/data/2.5/forecast?q=Madrid&appid=${CONFIG.API_KEY}&units=metric`;
-        const response = await fetch(url);
-        const data = await response.json();
-        
-        // Get forecast for today (noon), tomorrow (noon), day after (noon)
-        const now = new Date();
-        const forecasts = [];
-        
-        // Find forecasts at approximately 12:00 for the next 3 days
-        for (let i = 0; i < 3; i++) {
-          const targetDate = new Date(now);
-          targetDate.setDate(now.getDate() + i);
-          targetDate.setHours(12, 0, 0, 0);
-          
-          // Find closest forecast to noon for this day
-          const dayForecasts = data.list.filter(item => {
-            const itemDate = new Date(item.dt * 1000);
-            return itemDate.toDateString() === targetDate.toDateString();
-          });
-          
-          if (dayForecasts.length > 0) {
-            // Find forecast closest to noon
-            const noonForecast = dayForecasts.reduce((prev, curr) => {
-              const prevTime = new Date(prev.dt * 1000).getHours();
-              const currTime = new Date(curr.dt * 1000).getHours();
-              return Math.abs(currTime - 12) < Math.abs(prevTime - 12) ? curr : prev;
-            });
-            forecasts.push(noonForecast);
-          }
-        }
-        
-        // Update UI
-        if (forecasts[0]) {
-          document.getElementById('forecast-today-icon').textContent = getWeatherEmoji(forecasts[0].weather[0].id, forecasts[0].weather[0].icon);
-          document.getElementById('forecast-today-temp').textContent = `${Math.round(forecasts[0].main.temp)}°C`;
-        }
-        
-        if (forecasts[1]) {
-          document.getElementById('forecast-tomorrow-icon').textContent = getWeatherEmoji(forecasts[1].weather[0].id, forecasts[1].weather[0].icon);
-          document.getElementById('forecast-tomorrow-temp').textContent = `${Math.round(forecasts[1].main.temp)}°C`;
-        }
-        
-        if (forecasts[2]) {
-          document.getElementById('forecast-after-icon').textContent = getWeatherEmoji(forecasts[2].weather[0].id, forecasts[2].weather[0].icon);
-          document.getElementById('forecast-after-temp').textContent = `${Math.round(forecasts[2].main.temp)}°C`;
-        }
-        
-      } catch (error) {
-        console.error('Error fetching forecast:', error);
-      }
-    }
 
     // ========== Weather API Manager ==========
     class WeatherAPI {
@@ -1108,7 +1029,6 @@
 
     // ========== Initialize ==========
     fetchWeather();
-    fetchForecast();
   </script>
   
 </body>
