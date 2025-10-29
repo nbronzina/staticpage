@@ -265,10 +265,78 @@
     height: 50px;
   }
 
+  #forecast-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .forecast-day {
+    text-align: center;
+    min-width: 70px;
+  }
+
+  .forecast-label {
+    font-size: 0.85rem;
+    color: var(--color-grey-light);
+    margin-bottom: 5px;
+  }
+
+  .forecast-day div {
+    font-size: 2rem;
+    margin: 5px 0;
+  }
+
+  #forecast-today-temp,
+  #forecast-tomorrow-temp,
+  #forecast-after-temp {
+    font-size: 0.9rem;
+    color: var(--color-grey);
+    margin: 0;
+  }
+
   .climate-credit {
     font-size: var(--font-size-small);
     color: var(--color-grey-light);
     margin-top: var(--spacing-sm);
+  }
+
+  .climate-acronyms {
+    margin-top: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .climate-acronyms summary {
+    cursor: pointer;
+    color: var(--color-grey-light);
+    font-size: 0.8rem;
+    transition: color var(--transition-speed);
+  }
+
+  .climate-acronyms summary:hover {
+    color: var(--color-grey);
+  }
+
+  .climate-acronyms div {
+    font-size: 0.75rem;
+    color: var(--color-grey-light);
+    margin-top: 8px;
+    line-height: 1.5;
+    text-align: left;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  .climate-acronyms p {
+    margin: 5px 0;
+    font-size: 0.75rem;
+  }
+
+  .climate-acronyms strong {
+    color: var(--color-grey);
   }
 
   /* ========== Back to Top Button ========== */
@@ -369,13 +437,14 @@
     .stats-section {
       flex-direction: row;
       align-items: flex-start;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .stats-section > div {
       flex: 1;
-      min-width: 180px;
-      max-width: 280px;
+      min-width: 200px;
+      max-width: 300px;
     }
   }
 
@@ -433,7 +502,7 @@
         
         <p><strong>Do you need strategic clarity on what comes next for you or your workplace?</strong> <a href="mailto:nicolas.bronzina@gmail.com">Let's explore future scenarios together</a>.</p>
         
-        <p>A porteño living in Madrid.</p>
+        <p>Originally from Argentina, now based in Madrid.</p>
       </div>
     </div>
     <hr>
@@ -455,7 +524,7 @@
     <article class="interactive-project-card">
       <h3>Mercado San Telmo</h3>
       <p>Interactive exploration of Buenos Aires' historic San Telmo Market. A digital experience that brings the market's cultural heritage and gastronomic diversity to life through design fiction and futures thinking.</p>
-      <a href="https://www.futures-in-maps.com/san-telmo/" target="_blank" rel="noopener" class="project-button" aria-label="Visit Mercado San Telmo project">
+      <a href="https://www.futures-in-maps.com/san-telmo" target="_blank" rel="noopener" class="project-button" aria-label="Visit Mercado San Telmo project">
         Visit Mercado San Telmo →
       </a>
     </article>
@@ -586,8 +655,29 @@
   <section class="stats-section">
     <div>
       <h2>Server Status</h2>
-      <p>Location: Madrid</p>
-      <p id="time-info">Time: Loading...</p>
+      <p>Location: Madrid, Spain</p>
+      <p id="server-time">Time: Loading...</p>
+      <p>Last updated: October 2024</p>
+    </div>
+    <div>
+      <h2>Forecast</h2>
+      <div id="forecast-container">
+        <div class="forecast-day">
+          <p class="forecast-label">Today</p>
+          <div id="forecast-today-icon">☀️</div>
+          <p id="forecast-today-temp">--°C</p>
+        </div>
+        <div class="forecast-day">
+          <p class="forecast-label">Tomorrow</p>
+          <div id="forecast-tomorrow-icon">☀️</div>
+          <p id="forecast-tomorrow-temp">--°C</p>
+        </div>
+        <div class="forecast-day">
+          <p class="forecast-label">Day after</p>
+          <div id="forecast-after-icon">☀️</div>
+          <p id="forecast-after-temp">--°C</p>
+        </div>
+      </div>
     </div>
     <div>
       <h2>Climate Status</h2>
@@ -600,6 +690,19 @@
       <p id="adaptation-metrics">Adaptation: Loading...</p>
       <p id="risk-assessment">Risk Level: Loading...</p>
       <p class="climate-credit">Multi-source climate data</p>
+      <details class="climate-acronyms">
+        <summary style="cursor: pointer; color: #888; font-size: 0.8rem; margin-top: 10px;">📖 What do these metrics mean?</summary>
+        <div style="font-size: 0.75rem; color: #888; margin-top: 8px; line-height: 1.5; text-align: left;">
+          <p><strong>AQI:</strong> Air Quality Index (1-5 scale)</p>
+          <p><strong>PM2.5/PM10:</strong> Particulate Matter in μg/m³</p>
+          <p><strong>UV:</strong> Ultraviolet radiation index</p>
+          <p><strong>Heat Index:</strong> Feels-like temperature</p>
+          <p><strong>Anomaly:</strong> Temperature above historical average</p>
+          <p><strong>UHI:</strong> Urban Heat Island effect</p>
+          <p><strong>Resilience:</strong> Climate adaptation score (0-10)</p>
+          <p><strong>Heat Wave:</strong> Consecutive days above 30°C</p>
+        </div>
+      </details>
     </div>
     <div>
       <h2>Contact</h2>
@@ -678,17 +781,94 @@
       }
     }
 
-    // ========== Time Display ==========
-    function updateTime() {
+    // ========== Server Time Display (Madrid) ==========
+    function updateServerTime() {
       const now = new Date();
-      const timeElement = document.getElementById('time-info');
+      const timeElement = document.getElementById('server-time');
       if (timeElement) {
-        timeElement.textContent = `Time: ${now.toLocaleTimeString()}`;
+        const madridTime = now.toLocaleTimeString('en-GB', { 
+          timeZone: 'Europe/Madrid',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        });
+        timeElement.textContent = `Time: ${madridTime} CET`;
       }
     }
 
-    setInterval(updateTime, 1000);
-    updateTime();
+    setInterval(updateServerTime, 1000);
+    updateServerTime();
+
+    // ========== Weather Forecast (3 days) ==========
+    function getWeatherEmoji(weatherCode, icon) {
+      // Use icon string from API (e.g., "01d", "02n")
+      const iconMap = {
+        '01d': '☀️', '01n': '🌙',
+        '02d': '⛅', '02n': '☁️',
+        '03d': '☁️', '03n': '☁️',
+        '04d': '☁️', '04n': '☁️',
+        '09d': '🌧️', '09n': '🌧️',
+        '10d': '🌦️', '10n': '🌧️',
+        '11d': '⛈️', '11n': '⛈️',
+        '13d': '❄️', '13n': '❄️',
+        '50d': '🌫️', '50n': '🌫️'
+      };
+      return iconMap[icon] || '☀️';
+    }
+
+    async function fetchForecast() {
+      try {
+        const url = `https://api.openweathermap.org/data/2.5/forecast?q=Madrid&appid=${CONFIG.API_KEY}&units=metric`;
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        // Get forecast for today (noon), tomorrow (noon), day after (noon)
+        const now = new Date();
+        const forecasts = [];
+        
+        // Find forecasts at approximately 12:00 for the next 3 days
+        for (let i = 0; i < 3; i++) {
+          const targetDate = new Date(now);
+          targetDate.setDate(now.getDate() + i);
+          targetDate.setHours(12, 0, 0, 0);
+          
+          // Find closest forecast to noon for this day
+          const dayForecasts = data.list.filter(item => {
+            const itemDate = new Date(item.dt * 1000);
+            return itemDate.toDateString() === targetDate.toDateString();
+          });
+          
+          if (dayForecasts.length > 0) {
+            // Find forecast closest to noon
+            const noonForecast = dayForecasts.reduce((prev, curr) => {
+              const prevTime = new Date(prev.dt * 1000).getHours();
+              const currTime = new Date(curr.dt * 1000).getHours();
+              return Math.abs(currTime - 12) < Math.abs(prevTime - 12) ? curr : prev;
+            });
+            forecasts.push(noonForecast);
+          }
+        }
+        
+        // Update UI
+        if (forecasts[0]) {
+          document.getElementById('forecast-today-icon').textContent = getWeatherEmoji(forecasts[0].weather[0].id, forecasts[0].weather[0].icon);
+          document.getElementById('forecast-today-temp').textContent = `${Math.round(forecasts[0].main.temp)}°C`;
+        }
+        
+        if (forecasts[1]) {
+          document.getElementById('forecast-tomorrow-icon').textContent = getWeatherEmoji(forecasts[1].weather[0].id, forecasts[1].weather[0].icon);
+          document.getElementById('forecast-tomorrow-temp').textContent = `${Math.round(forecasts[1].main.temp)}°C`;
+        }
+        
+        if (forecasts[2]) {
+          document.getElementById('forecast-after-icon').textContent = getWeatherEmoji(forecasts[2].weather[0].id, forecasts[2].weather[0].icon);
+          document.getElementById('forecast-after-temp').textContent = `${Math.round(forecasts[2].main.temp)}°C`;
+        }
+        
+      } catch (error) {
+        console.error('Error fetching forecast:', error);
+      }
+    }
 
     // ========== Weather API Manager ==========
     class WeatherAPI {
@@ -949,6 +1129,7 @@
 
     // ========== Initialize ==========
     fetchWeather();
+    fetchForecast();
   </script>
   
 </body>
