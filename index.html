@@ -657,7 +657,7 @@
       <h2>Server Status</h2>
       <p>Location: Madrid, Spain</p>
       <p id="server-time">Time: Loading...</p>
-      <p>Last updated: October 2025</p>
+      <p>Last updated: October 2024</p>
     </div>
     <div>
       <h2>Forecast</h2>
@@ -685,11 +685,8 @@
         <img id="weather-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Weather icon">
         <p id="weather-info">Loading...</p>
       </div>
-      <p id="air-quality-info">AQI: Loading...</p>
-      <p id="uv-heat-info">UV/Heat: Loading...</p>
-      <p id="adaptation-metrics">Adaptation: Loading...</p>
-      <p id="risk-assessment">Risk Level: Loading...</p>
-      <p class="climate-credit">Multi-source climate data</p>
+      <p id="air-quality-simple">AQI: Loading...</p>
+      <p id="uv-simple">UV: Loading...</p>
       <details class="climate-acronyms">
         <summary style="cursor: pointer; color: #888; font-size: 0.8rem; margin-top: 10px;">📖 What do these metrics mean?</summary>
         <div style="font-size: 0.75rem; color: #888; margin-top: 8px; line-height: 1.5; text-align: left;">
@@ -1079,43 +1076,25 @@
         const weatherDescription = weatherData.weather[0].description;
         const weatherIcon = weatherData.weather[0].icon;
         const iconUrl = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
-        const humidity = weatherData.main.humidity;
 
         document.getElementById('weather-info').textContent = `${temperature}°C, ${weatherDescription}`;
         document.getElementById('weather-icon').src = iconUrl;
         
+        // AQI simplificado
         const aqi = airData.list[0].main.aqi;
-        const pm25 = Math.round(airData.list[0].components.pm2_5);
-        const pm10 = Math.round(airData.list[0].components.pm10);
         const aqiText = ClimateCalculations.getAQIText(aqi);
+        document.getElementById('air-quality-simple').textContent = `AQI: ${aqiText} (${aqi}/5)`;
         
-        document.getElementById('air-quality-info').textContent = `AQI: ${aqiText} (${aqi}/5) | PM2.5: ${pm25} | PM10: ${pm10}μg/m³`;
-        
-        // UV Index estimado basado en hora del día (simplificado)
+        // UV simplificado (estimado por hora del día)
         const hour = new Date().getHours();
         const uvIndex = (hour >= 11 && hour <= 15) ? 6 : (hour >= 9 && hour <= 17) ? 4 : 1;
-        const heatIndex = ClimateCalculations.heatIndex(temperature, humidity);
-        const tempAnomaly = ClimateCalculations.temperatureAnomaly(temperature);
-        
-        document.getElementById('uv-heat-info').textContent = `UV: ~${uvIndex} | Heat Index: ${heatIndex}°C | Anomaly: +${tempAnomaly}°C`;
-        
-        const urbanHeatIsland = ClimateCalculations.urbanHeatIsland(temperature);
-        const resilienceScore = ClimateCalculations.resilienceScore(temperature, aqi, uvIndex);
-        
-        document.getElementById('adaptation-metrics').textContent = `UHI: +${urbanHeatIsland}°C | Resilience: ${resilienceScore}/10`;
-        
-        const riskLevel = ClimateCalculations.riskLevel(temperature, aqi, uvIndex, heatIndex);
-        const heatWaveDays = ClimateCalculations.trackHeatWaveDays(temperature);
-        
-        document.getElementById('risk-assessment').textContent = `Risk: ${riskLevel} | Heat Wave: ${heatWaveDays} days`;
+        document.getElementById('uv-simple').textContent = `UV: ~${uvIndex}`;
         
       } catch (error) {
         console.error('Error fetching climate data:', error);
         document.getElementById('weather-info').textContent = 'Weather data not available';
-        document.getElementById('air-quality-info').textContent = 'AQI: Data unavailable';
-        document.getElementById('uv-heat-info').textContent = 'UV/Heat: Data unavailable';
-        document.getElementById('adaptation-metrics').textContent = 'Adaptation: Data unavailable';
-        document.getElementById('risk-assessment').textContent = 'Risk Level: Data unavailable';
+        document.getElementById('air-quality-simple').textContent = 'AQI: Data unavailable';
+        document.getElementById('uv-simple').textContent = 'UV: Data unavailable';
       }
     }
 
