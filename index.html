@@ -34,6 +34,28 @@
       opacity: 0.7;
     }
 
+    a:focus,
+    button:focus {
+      outline: 2px solid #000;
+      outline-offset: 2px;
+    }
+
+    /* Skip Link for keyboard navigation */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #000;
+      color: #EBE1D1;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
     /* Header Container */
     .header-container {
       display: flex;
@@ -46,8 +68,8 @@
 
     /* Theme Toggle Button */
     .theme-toggle {
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
       border: 2px solid #000;
       background-color: transparent;
       cursor: pointer;
@@ -123,8 +145,8 @@
     }
 
     .social-icons svg {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
     }
 
     /* Intro Section */
@@ -424,9 +446,22 @@
     body.dark-mode .moon-icon {
       display: block;
     }
+
+    body.dark-mode a:focus,
+    body.dark-mode button:focus {
+      outline-color: #EBE1D1;
+    }
+
+    body.dark-mode .skip-link {
+      background: #EBE1D1;
+      color: #1a1a1a;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Skip Link for keyboard navigation -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Header Container with Stats -->
   <div class="header-container">
@@ -495,6 +530,9 @@
     </section>
   </div>
 
+  <!-- Main Content -->
+  <main id="main-content">
+  
   <!-- Introduction Section -->
   <section class="intro-section">
     <div class="intro-container">
@@ -661,17 +699,21 @@
     </div>
   </section>
 
+  </main>
+  <!-- End Main Content -->
+
   <!-- Footer -->
   <footer>
     <div class="site-stats">
       <p><strong>Low-Tech Website Metrics</strong></p>
       <p>This site is optimized for minimal bandwidth and maximum accessibility</p>
-      <p>• Page weight: ~33 KB (HTML+CSS only, excluding images)</p>
+      <p>• Page weight: ~33.5 KB (HTML+CSS only, excluding images)</p>
       <p>• External API requests: 0</p>
       <p>• External fonts: 0 (system fonts only)</p>
       <p>• JavaScript: ~400 bytes (clock + theme toggle)</p>
       <p>• Images: Optimized JPG format (59% lighter than originals)</p>
       <p>• Dark mode: Manual toggle with localStorage persistence</p>
+      <p>• Accessibility: Keyboard navigation, focus states, semantic HTML5, WCAG-compliant touch targets</p>
       <p style="margin-top: 10px;">Inspired by <a href="https://solar.lowtechmagazine.com/" target="_blank">Low-Tech Magazine</a></p>
     </div>
   </footer>
