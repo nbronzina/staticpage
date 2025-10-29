@@ -129,6 +129,11 @@
       margin-bottom: 15px;
     }
 
+    /* Hide desktop line break on mobile */
+    .desktop-break {
+      display: none;
+    }
+
     /* Stats Section - Mobile */
     .stats {
       display: flex;
@@ -358,6 +363,11 @@
         font-size: 1.5rem;
       }
 
+      /* Show line break on desktop */
+      .desktop-break {
+        display: inline;
+      }
+
       /* Stats - Desktop: lado a lado */
       .stats {
         flex-direction: row;
@@ -524,7 +534,7 @@
   <div class="header-container">
     <header>
       <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
-      <p class="subtitle">I'm Nicolás Bronzina, Strategic Foresight Researcher &<br>Climate Adaptation Specialist</p>
+      <p class="subtitle">I'm Nicolás Bronzina, Strategic Foresight Researcher &<br class="desktop-break">Climate Adaptation Specialist</p>
     </header>
 
     <section class="stats">
