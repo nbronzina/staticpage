@@ -224,6 +224,15 @@
       text-align: center;
     }
 
+    /* Highlight effect for key phrases */
+    .highlight {
+      background-color: #000;
+      color: #EBE1D1;
+      padding: 2px 4px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
     /* Section Titles */
     .section {
       margin-bottom: 40px;
@@ -314,13 +323,13 @@
     .cv-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 25px;
+      gap: 30px;
       margin-top: 15px;
     }
 
     .cv-grid p {
-      font-size: 0.9rem;
-      margin: 3px 0;
+      font-size: 1rem;
+      margin: 5px 0;
     }
 
     .cv-grid strong {
@@ -351,6 +360,40 @@
 
     .text-center {
       text-align: center;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      background-color: transparent;
+      border: 2px solid #000;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .back-to-top:hover {
+      background-color: #000;
+    }
+
+    .back-to-top:hover svg {
+      stroke: #EBE1D1;
+    }
+
+    .back-to-top.show {
+      display: flex;
+    }
+
+    .back-to-top svg {
+      width: 20px;
+      height: 20px;
+      stroke: #000;
     }
 
     /* Desktop styles - min-width 769px */
@@ -445,6 +488,7 @@
       /* CV Grid - Desktop */
       .cv-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
       }
 
       /* Category Sections - Desktop: imagen izquierda, bullets derecha */
@@ -549,6 +593,28 @@
     body.dark-mode ::-moz-selection {
       background-color: #EBE1D1;
       color: #0d0d0d;
+    }
+
+    body.dark-mode .highlight {
+      background-color: #EBE1D1;
+      color: #0d0d0d;
+    }
+
+    body.dark-mode .back-to-top {
+      background-color: transparent;
+      border-color: #EBE1D1;
+    }
+
+    body.dark-mode .back-to-top:hover {
+      background-color: #EBE1D1;
+    }
+
+    body.dark-mode .back-to-top svg {
+      stroke: #EBE1D1;
+    }
+
+    body.dark-mode .back-to-top:hover svg {
+      stroke: #0d0d0d;
     }
 
     /* Reduced Motion - Respect user preferences */
@@ -814,7 +880,7 @@
       <p>• Page weight: ~28 KB (HTML+CSS only, excluding images)</p>
       <p>• External API requests: 0</p>
       <p>• External fonts: 0 (system fonts only)</p>
-      <p>• JavaScript: ~400 bytes (clock + theme toggle)</p>
+      <p>• JavaScript: ~600 bytes (clock + theme toggle + back to top)</p>
       <p>• Images: 4 optimized JPGs, ~700 KB total (59% lighter than originals)</p>
       <p>• Favicon: Inline SVG (~180 bytes, no extra HTTP requests)</p>
       <p>• Dark mode: Manual toggle with localStorage persistence</p>
@@ -824,6 +890,13 @@
       <p style="margin-top: 10px;">Inspired by <a href="https://solar.lowtechmagazine.com/" target="_blank">Low-Tech Magazine</a></p>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
   <!-- Minimal JavaScript - Clock & Theme Toggle -->
   <script>
@@ -854,6 +927,24 @@
     themeToggle.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
       localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   </script>
 
