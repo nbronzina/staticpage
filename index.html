@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicolás Bronzina - AI-Enhanced Futures Designer & Climate Adaptation Specialist</title>
-  <meta name="description" content="AI-Enhanced Futures Designer & Climate Adaptation Specialist based in Madrid. Making tangible futures through design fiction and strategic foresight.">
+  <title>Nicolás Bronzina - AI-Enhanced Futures Designer</title>
+  <meta name="description" content="AI-Enhanced Futures Designer & Climate Adaptation Specialist. Making tangible futures through design fiction and strategic foresight.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='65' font-weight='700' font-family='system-ui,sans-serif' fill='%23000'>NB</text></svg>">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.nicolasbronzina.com/">
   <meta property="og:title" content="Nicolás Bronzina - AI-Enhanced Futures Designer">
-  <meta property="og:description" content="AI-Enhanced Futures Designer & Climate Adaptation Specialist. Making tangible futures through design fiction and strategic foresight.">
+  <meta property="og:description" content="AI-Enhanced Futures Designer & Climate Adaptation Specialist. Making tangible futures through design fiction.">
   <meta property="og:image" content="https://www.nicolasbronzina.com/img/DitherME.jpg">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.nicolasbronzina.com/">
   <meta property="twitter:title" content="Nicolás Bronzina - AI-Enhanced Futures Designer">
-  <meta property="twitter:description" content="AI-Enhanced Futures Designer & Climate Adaptation Specialist based in Madrid.">
+  <meta property="twitter:description" content="AI-Enhanced Futures Designer making tangible futures through design fiction.">
   <meta property="twitter:image" content="https://www.nicolasbronzina.com/img/DitherME.jpg">
   
   <style>
-    /* Mobile-First Low-Tech Optimized CSS */
+    /* Mobile-First Low-Tech Optimized CSS - Estilo Editorial Jardí */
     * {
       margin: 0;
       padding: 0;
@@ -33,11 +33,11 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background-color: #EBE1D1;
       color: #000;
-      line-height: 1.5;
+      line-height: 1.6;
       font-size: 16px;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 15px;
+      padding: 20px;
     }
 
     ::selection {
@@ -65,7 +65,7 @@
       outline-offset: 2px;
     }
 
-    /* Skip Link for keyboard navigation */
+    /* Skip Link */
     .skip-link {
       position: absolute;
       top: -40px;
@@ -81,22 +81,55 @@
       top: 0;
     }
 
-    /* Header Container */
+    /* Header - Jerarquía Editorial Clara */
     .header-container {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 25px;
       border-bottom: 2px solid #000;
-      padding-bottom: 15px;
-      margin-bottom: 30px;
-      align-items: center;
+      padding-bottom: 20px;
+      margin-bottom: 40px;
     }
 
-    header {
-      width: 100%;
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.2;
     }
 
-    /* Theme Toggle Button */
+    .subtitle {
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .location {
+      font-size: 1rem;
+      color: #000;
+      opacity: 0.8;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .email {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* Theme Toggle */
     .theme-toggle {
       width: 44px;
       height: 44px;
@@ -123,70 +156,10 @@
       display: none;
     }
 
-    header h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    .subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    /* Hide desktop line break on mobile */
-    .desktop-break {
-      display: none;
-    }
-
-    /* Stats Section - Mobile */
-    .stats {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      width: 100%;
-    }
-
-    .stats-content {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      width: 100%;
-    }
-
-    .stats > div {
-      width: 100%;
-    }
-
-    .stats h2 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    .stat-label {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    .stats p {
-      margin: 5px 0;
-      font-size: 0.95rem;
-      text-align: center;
-    }
-
-    /* Contact Icons */
+    /* Social Icons */
     .social-icons {
       display: flex;
       gap: 15px;
-      margin-top: 10px;
-      justify-content: center;
     }
 
     .social-icons a {
@@ -200,90 +173,84 @@
       pointer-events: none;
     }
 
-    /* Intro Section */
+    /* Intro Section - Medida Editorial */
     .intro-section {
-      margin-bottom: 30px;
+      margin-bottom: 50px;
     }
 
     .intro-container {
       display: flex;
       flex-direction: column;
-      gap: 25px;
-      align-items: center;
-      margin-bottom: 25px;
+      gap: 30px;
+      margin-bottom: 30px;
     }
 
     .main-image {
       width: 100%;
-      max-width: 200px;
-      flex-shrink: 0;
+      max-width: 250px;
       border: 2px solid #000;
     }
 
+    .intro-text {
+      max-width: 65ch;
+    }
+
     .intro-text p {
-      margin-bottom: 12px;
-      text-align: center;
+      margin-bottom: 1.2em;
+      line-height: 1.6;
     }
 
-    /* Highlight effect for key phrases */
-    .highlight {
-      background-color: #000;
-      color: #EBE1D1;
-      padding: 2px 4px;
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
-    }
-
-    /* Section Titles */
+    /* Section Titles - Escala Modular 1.25 */
     .section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.563rem;
       font-weight: 600;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       border-bottom: 2px solid #000;
-      padding-bottom: 8px;
+      padding-bottom: 10px;
     }
 
     h3 {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      line-height: 1.3;
     }
 
-    /* Projects Grid - Mobile */
+    /* Projects Grid */
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
-      margin-top: 15px;
+      gap: 25px;
+      margin-top: 20px;
     }
 
     .project-card {
       border: 1px solid #000;
-      padding: 12px;
+      padding: 20px;
     }
 
     .project-card h3 {
       margin-top: 0;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .project-card p {
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-      line-height: 1.5;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      line-height: 1.6;
+      max-width: 60ch;
     }
 
     .project-button {
       display: inline-block;
-      padding: 8px 16px;
+      padding: 10px 20px;
       border: 1px solid #000;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
     .project-button:hover {
@@ -292,45 +259,46 @@
       opacity: 1;
     }
 
-    /* Category Sections */
-    .category-section {
-      margin-bottom: 30px;
+    /* Work Categories - Layout Editorial */
+    .work-category {
+      margin-bottom: 40px;
     }
 
-    .category-content {
+    .work-content {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
     }
 
-    .category-section img {
+    .work-category img {
       width: 100%;
       max-width: 500px;
       display: block;
-      margin: 0 auto;
       border: 2px solid #000;
     }
 
-    .category-section ul {
-      list-style-position: inside;
-      margin: 12px 0;
+    .work-category ul {
+      list-style-position: outside;
+      margin-left: 20px;
     }
 
-    .category-section li {
-      margin: 6px 0;
+    .work-category li {
+      margin: 8px 0;
+      line-height: 1.5;
     }
 
-    /* CV Section - Mobile */
+    /* CV Section */
     .cv-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 30px;
-      margin-top: 15px;
+      gap: 35px;
+      margin-top: 20px;
     }
 
     .cv-grid p {
       font-size: 1rem;
-      margin: 5px 0;
+      margin: 6px 0;
+      line-height: 1.5;
     }
 
     .cv-grid strong {
@@ -341,26 +309,18 @@
       text-decoration: underline;
     }
 
-    /* Footer */
+    /* Footer - Colofón Editorial Minimal */
     footer {
-      margin-top: 15px;
-      padding-top: 0;
-      font-size: 0.85rem;
-    }
-
-    .site-stats {
-      margin-top: 15px;
-      padding: 15px;
-      background-color: rgba(0, 0, 0, 0.05);
-      border: 1px solid #000;
-    }
-
-    .site-stats p {
-      margin: 5px 0;
-    }
-
-    .text-center {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #000;
+      font-size: 0.9rem;
       text-align: center;
+      opacity: 0.7;
+    }
+
+    footer p {
+      margin: 5px 0;
     }
 
     /* Back to Top Button */
@@ -397,120 +357,75 @@
       stroke: #000;
     }
 
-    /* Desktop styles - min-width 769px */
+    /* Desktop Styles */
     @media (min-width: 769px) {
       body {
-        padding: 20px;
+        padding: 40px;
       }
 
-      /* Header Container - Desktop */
       .header-container {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-      }
-
-      header {
-        flex: 1;
-        width: auto;
+        padding-bottom: 25px;
+        margin-bottom: 50px;
       }
 
       header h1 {
-        font-size: 2.8rem;
-        text-align: left;
+        font-size: 2.441rem;
       }
 
       .subtitle {
-        font-size: 1.5rem;
-        text-align: left;
+        font-size: 1.563rem;
       }
 
-      /* Show line break on desktop */
-      .desktop-break {
-        display: inline;
-      }
-
-      /* Stats - Desktop: lado a lado */
-      .stats {
+      .contact-section {
         flex-direction: row;
-        gap: 15px;
-        flex-wrap: nowrap;
-        max-width: 450px;
+        gap: 20px;
         align-items: flex-start;
-        width: auto;
+        max-width: 400px;
       }
 
-      .stats-content {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-        flex: 1;
-        align-items: flex-start;
-        width: auto;
-      }
-
-      .stats > div {
-        flex: 1;
-        min-width: 150px;
-        width: auto;
-      }
-
-      .stat-label {
-        text-align: left;
-      }
-
-      .stats p {
-        text-align: left;
-      }
-
-      .social-icons {
-        justify-content: flex-start;
-      }
-
-      /* Intro Container - Desktop */
       .intro-container {
         flex-direction: row;
         align-items: flex-start;
+        gap: 40px;
       }
 
       .main-image {
         width: 250px;
+        flex-shrink: 0;
       }
 
-      .intro-text p {
-        text-align: left;
-      }
-
-      /* Projects Grid - Desktop */
       .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
       }
 
-      /* CV Grid - Desktop */
+      /* Work Layout Editorial: imagen izquierda, lista derecha */
+      .work-content {
+        flex-direction: row;
+        gap: 30px;
+        align-items: flex-start;
+      }
+
+      .work-category img {
+        max-width: 300px;
+        flex-shrink: 0;
+      }
+
+      .work-category ul {
+        flex: 1;
+        margin: 0;
+      }
+
       .cv-grid {
         grid-template-columns: 1fr 1.2fr 1fr;
         gap: 40px;
       }
-
-      /* Category Sections - Desktop: imagen izquierda, bullets derecha */
-      .category-content {
-        flex-direction: row;
-        gap: 25px;
-        align-items: flex-start;
-      }
-
-      .category-section img {
-        max-width: 300px;
-        margin: 0;
-      }
-
-      .category-section ul {
-        flex: 1;
-        margin: 0;
-      }
     }
 
-    /* Dark Mode Styles */
+    /* Dark Mode */
     body.dark-mode {
       background-color: #0d0d0d;
       color: #EBE1D1;
@@ -520,18 +435,15 @@
       color: #EBE1D1;
     }
 
-    body.dark-mode .header-container {
-      border-bottom-color: #EBE1D1;
-    }
-
-    body.dark-mode h2 {
-      border-bottom-color: #EBE1D1;
+    body.dark-mode .header-container,
+    body.dark-mode h2,
+    body.dark-mode footer {
+      border-color: #EBE1D1;
     }
 
     body.dark-mode .main-image,
     body.dark-mode .project-card,
-    body.dark-mode .category-section img,
-    body.dark-mode .site-stats {
+    body.dark-mode .work-category img {
       border-color: #EBE1D1;
     }
 
@@ -554,10 +466,6 @@
     body.dark-mode .project-button:hover {
       background-color: #EBE1D1;
       color: #0d0d0d;
-    }
-
-    body.dark-mode .site-stats {
-      background-color: rgba(235, 225, 209, 0.05);
     }
 
     body.dark-mode .theme-toggle {
@@ -596,13 +504,7 @@
       color: #0d0d0d;
     }
 
-    body.dark-mode .highlight {
-      background-color: #EBE1D1;
-      color: #0d0d0d;
-    }
-
     body.dark-mode .back-to-top {
-      background-color: transparent;
       border-color: #EBE1D1;
     }
 
@@ -618,7 +520,7 @@
       stroke: #0d0d0d;
     }
 
-    /* Reduced Motion - Respect user preferences */
+    /* Reduced Motion */
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -633,17 +535,18 @@
 </head>
 <body>
 
-  <!-- Skip Link for keyboard navigation -->
+  <!-- Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Header Container with Stats -->
+  <!-- Header -->
   <div class="header-container">
     <header>
-      <h1>¡Hola! | Hello! | 你好 | नमस्ते</h1>
-      <p class="subtitle">I'm Nicolás Bronzina, AI-Enhanced Futures Designer & <br class="desktop-break">Climate Adaptation Specialist</p>
+      <h1>Nicolás Bronzina</h1>
+      <p class="subtitle">AI-Enhanced Futures Designer & Climate Adaptation Specialist</p>
+      <p class="location">Buenos Aires → Madrid</p>
     </header>
 
-    <section class="stats">
+    <section class="contact-section">
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
         <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
@@ -661,17 +564,8 @@
         </svg>
       </button>
 
-      <div class="stats-content">
-        <div>
-          <div class="stat-label">Server Status</div>
-          <p>Location: Madrid, Spain</p>
-          <p>Time: <span id="madrid-time">Loading...</span></p>
-          <p>Last updated: October 2025</p>
-        </div>
-
-        <div>
-          <div class="stat-label">Contact</div>
-          <p style="margin-top: 5px; margin-bottom: 8px; font-size: 1rem;">nicolas.bronzina [at] gmail [dot] com</p>
+      <div class="contact-info">
+        <p class="email">nicolas.bronzina [at] gmail [dot] com</p>
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/nicolasbronzina" target="_blank" aria-label="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5">
@@ -693,7 +587,6 @@
             </svg>
           </a>
         </div>
-        </div>
       </div>
     </section>
   </div>
@@ -701,64 +594,93 @@
   <!-- Main Content -->
   <main id="main-content">
   
-  <!-- Introduction Section -->
+  <!-- Introduction -->
   <section class="intro-section">
     <div class="intro-container">
       <img src="img/DitherME.jpg" alt="Nicolás Bronzina profile picture" class="main-image" loading="lazy">
       <div class="intro-text">
-        <p>I help organizations navigate uncertainty by prototyping tangible futures. With backgrounds in sociology and UX design, I specialize in translating complex climate and urban challenges into design fiction artifacts and strategic scenarios through AI-enhanced research and prototyping.</p>
+        <p>I translate futures research into tangible artifacts through AI-enhanced design fiction. With backgrounds in sociology and UX design, focused on climate and urban futures.</p>
         
-        <p>As co-founder of <a href="https://www.heated.studio/" rel="noopener" target="_blank">Heated Studio</a>, I lead climate resilience projects for clients seeking future-ready strategies. Also, as Managing Partner at BPP Analytics and Design, I combine quantitative analysis with futures design to support strategic decision-making in complex contexts. I also deliver workshops and masterclasses on AI-enhanced design fiction and strategic foresight for design schools and public sector organizations. My work bridges present capabilities with emerging scenarios, combining speculative design with rigorous research methodologies.</p>
+        <p>Co-founder of <a href="https://www.heated.studio/" rel="noopener" target="_blank">Heated Studio</a>, leading climate resilience projects. Managing Partner at BPP Analytics and Design, combining research with futures design for strategic decision-making. I deliver workshops on AI-enhanced design fiction for design schools and public sector organizations.</p>
         
-        <p>Previously collaborated with Near Future Laboratory and Girardin & Nova on design fiction projects for major enterprises across telecommunications, finance, defense, and automotive/mobility sectors.</p>
+        <p>Previously collaborated with Near Future Laboratory and Girardin & Nova on design fiction projects for telecommunications, finance, defense, and mobility sectors.</p>
         
-        <p><strong>Do you need strategic clarity on what comes next for you or your workplace?</strong> <a href="mailto:nicolas.bronzina@gmail.com">Let's explore future scenarios together</a>.</p>
-        
-        <p>A porteño based in Madrid.</p>
+        <p><a href="mailto:nicolas.bronzina@gmail.com">Let's explore future scenarios together</a>.</p>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Web Projects Section -->
+  <!-- Projects -->
   <section class="section">
-    <h2>Interactive Web Projects</h2>
-    <p style="margin-bottom: 20px;">Design fiction artifacts translating speculative futures into web-based tools and interactive experiences</p>
+    <h2>Projects</h2>
     
     <div class="projects-grid">
       <article class="project-card">
-        <h3>CUIDAR.ar | Sistema de Cuidados para Personas Mayores</h3>
-        <p>Design fiction artifact exploring a care system platform for older adults in Buenos Aires. A speculative interactive tool envisioning improved access to care services and support networks for elderly citizens.</p>
+        <h3>Adaptive Museums</h3>
+        <p>Climate-responsive ticketing for museums. Heated Studio.</p>
+        <a href="https://www.youtube.com/watch?v=3nGlFK0WJPI" target="_blank" rel="noopener" class="project-button">
+          Watch →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <h3>Desert Athleisure</h3>
+        <p>Decathlon adaptive sportswear for extreme heat. Heated Studio.</p>
+        <a href="https://www.youtube.com/watch?v=nApY_pWiY9I" target="_blank" rel="noopener" class="project-button">
+          Watch →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <h3>CUIDAR.ar</h3>
+        <p>Eldercare infrastructure for Buenos Aires. Design fiction.</p>
         <a href="https://nbronzina.github.io/cuidar/index.html" target="_blank" rel="noopener" class="project-button">
-          Explore CUIDAR.ar →
+          Explore →
         </a>
       </article>
 
       <article class="project-card">
         <h3>Mercado San Telmo</h3>
-        <p>Interactive exploration of Buenos Aires' historic San Telmo Market. A digital experience that brings the market's cultural heritage and gastronomic diversity to life through design fiction and futures thinking.</p>
+        <p>Buenos Aires' historic market. Design fiction. <a href="https://youtu.be/HKzJblDronw" target="_blank" rel="noopener">Video introduction</a>.</p>
         <a href="https://www.futures-in-maps.com/san-telmo" target="_blank" rel="noopener" class="project-button">
-          Visit Mercado San Telmo →
+          Visit →
         </a>
       </article>
 
       <article class="project-card">
-        <h3>OFFicial | WELCOME System for Refugees</h3>
-        <p>Speculative design fiction artifact envisioning a comprehensive support system for refugees and asylum seekers. Master's thesis project exploring user experience design as a tool for social intervention, featuring an AI-powered app and biometric wristband designed to simplify asylum processes and facilitate integration into host communities.</p>
+        <h3>OFFicial</h3>
+        <p>WELCOME system for refugees. MA thesis.</p>
         <a href="https://www.nicolasbronzina.com/Official.html" target="_blank" rel="noopener" class="project-button">
-          Explore OFFicial →
+          Explore →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <h3>Coffee.txt</h3>
+        <p>Specialty coffee guide for Madrid.</p>
+        <a href="https://www.nicolasbronzina.com/Coffee.html" target="_blank" class="project-button">
+          Read →
+        </a>
+      </article>
+      
+      <article class="project-card">
+        <h3>Coffee Decoded</h3>
+        <p>Practical guide to home coffee equipment.</p>
+        <a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" target="_blank" class="project-button">
+          Read →
         </a>
       </article>
     </div>
   </section>
 
-  <!-- Selected Work Section -->
+  <!-- Work -->
   <section class="section">
-    <h2>Selected Work</h2>
+    <h2>Work</h2>
     
-    <article class="category-section">
+    <article class="work-category">
       <h3>Future of Food</h3>
-      <div class="category-content">
-        <img src="img/Empanadas.jpg" alt="Future of Food project visualization" loading="lazy">
+      <div class="work-content">
+        <img src="img/Empanadas.jpg" alt="Future of Food" loading="lazy">
         <ul>
           <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37" rel="noopener" target="_blank">A Manifesto for a New Argentinean Cuisine</a></li>
           <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968" rel="noopener" target="_blank">What is carbon-neutral gastronomy?</a></li>
@@ -768,10 +690,10 @@
       </div>
     </article>
 
-    <article class="category-section">
+    <article class="work-category">
       <h3>Environmental Crisis</h3>
-      <div class="category-content">
-        <img src="img/PortadaNG.jpg" alt="Environmental Crisis project visualization" loading="lazy">
+      <div class="work-content">
+        <img src="img/PortadaNG.jpg" alt="Environmental Crisis" loading="lazy">
         <ul>
           <li><a href="https://medium.com/heated-consultancy/how-i-prototyped-an-alternative-future-climate-with-design-fiction-genai-90b720ecf2d4" rel="noopener" target="_blank">How I Prototyped an Alternative Future Climate with Design Fiction & GenAI</a></li>
           <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442" rel="noopener" target="_blank">How Madrid could adapt to extreme heat without losing its essence</a></li>
@@ -781,10 +703,10 @@
       </div>
     </article>
 
-    <article class="category-section">
+    <article class="work-category">
       <h3>Foresight</h3>
-      <div class="category-content">
-        <img src="img/DDK.jpg" alt="Foresight project visualization" loading="lazy">
+      <div class="work-content">
+        <img src="img/DDK.jpg" alt="Foresight" loading="lazy">
         <ul>
           <li><a href="https://medium.com/@nbronzina/no-the-plane-doesnt-have-ai-e6a0501e9f0d" rel="noopener" target="_blank">No, the plane doesn't have AI. And that opens up more interesting questions than the ones it tries to answer</a></li>
           <li><a href="https://medium.com/@nbronzina/what-if-the-state-designed-futures-661a303aeb8f" rel="noopener" target="_blank">What if the State Designed Futures? A day in Buenos Aires revealed how speculative design, weak signals, and institutional fiction can become fundamental tools for public policy</a></li>
@@ -801,27 +723,9 @@
     </article>
   </section>
 
-  <!-- Side Projects Section -->
+  <!-- CV -->
   <section class="section">
-    <h2>Side Projects & Personal Pursuits</h2>
-    <p style="margin-bottom: 20px;">When I'm not thinking about possible futures...</p>
-    
-    <div class="projects-grid">
-      <article class="project-card">
-        <h3><a href="https://www.nicolasbronzina.com/Coffee.html" target="_blank">Coffee.txt</a></h3>
-        <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
-      </article>
-      
-      <article class="project-card">
-        <h3><a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" target="_blank">Coffee Decoded</a></h3>
-        <p>A practical guide written by someone who has made the expensive equipment and bad coffee mistakes so you don't have to.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- About / CV Section -->
-  <section class="section">
-    <h2>About / CV</h2>
+    <h2>CV</h2>
     <div class="cv-grid">
       <div>
         <p><strong>Experience</strong></p>
@@ -837,14 +741,14 @@
         <p>Design Researcher</p>
       </div>
       <div>
-        <p><strong>Teaching & Knowledge Sharing</strong></p>
+        <p><strong>Teaching</strong></p>
         <p><u>UDIT Madrid</u></p>
-        <p>Guest Lecturer, Master's in User Experience Design (Masterclass: AI & Emerging Technologies)</p>
+        <p>Guest Lecturer, Master's in UX Design (Masterclass: AI & Emerging Technologies)</p>
         <p><u>Domus Academy, Milan</u></p>
         <p>Guest Workshop Facilitator (AI-Enhanced Design Fiction)</p>
-        <p><u>CESBA - Economic and Social Council, City of Buenos Aires</u></p>
+        <p><u>CESBA, Buenos Aires</u></p>
         <p>Event Organizer & Opening Keynote (Design Fiction & Strategic Foresight for Public Policy)</p>
-        <p><strong>Education & Credentials</strong></p>
+        <p style="margin-top: 20px;"><strong>Education</strong></p>
         <p><u>UDIT Madrid</u></p>
         <p>Master's Degree in User Experience for the Design of Digital Products and Services</p>
         <p><u>Universidad del Salvador</u></p>
@@ -854,77 +758,36 @@
       </div>
       <div>
         <p><strong>Core Expertise</strong></p>
-        <p><strong>Strategic Foresight</strong></p>
-        <p>Scenario Planning & Vision Development</p>
-        <p>Weak Signals & Trends Analysis</p>
-        <p>Systems Thinking & Complexity Navigation</p>
-        <p><strong>Design Research</strong></p>
-        <p>Design Fiction & Speculative Design</p>
-        <p>Diegetic Prototyping</p>
-        <p>AI-Enhanced Narrative Development</p>
-        <p><strong>Climate & Urban Futures</strong></p>
-        <p>Climate Adaptation & Resilience Planning</p>
-        <p>Urban Transformation Strategies</p>
-        <p>Sustainability Framework Development</p>
-        <p><strong>Organizational Impact</strong></p>
-        <p>Executive Strategic Planning</p>
-        <p>Cross-disciplinary Team Leadership</p>
-        <p>Future-Ready Decision Making</p>
+        <p>Design Fiction & AI-Enhanced Prototyping</p>
+        <p>Futures Research & Weak Signals</p>
+        <p>Climate Adaptation & Urban Resilience</p>
+        <p>Sociological Methods</p>
       </div>
     </div>
   </section>
 
   </main>
-  <!-- End Main Content -->
 
   <!-- Footer -->
   <footer>
-    <div class="site-stats">
-      <p><strong>Low-Tech Website Metrics</strong></p>
-      <p>This site is optimized for minimal bandwidth and maximum accessibility</p>
-      <p>• Page weight: ~31 KB (HTML+CSS only, excluding images)</p>
-      <p>• External API requests: 0</p>
-      <p>• External fonts: 0 (system fonts only)</p>
-      <p>• JavaScript: ~600 bytes (clock + theme toggle + back to top)</p>
-      <p>• Images: 4 optimized JPGs, ~700 KB total (59% lighter than originals)</p>
-      <p>• Favicon: Inline SVG (~180 bytes, no extra HTTP requests)</p>
-      <p>• Dark mode: Manual toggle with localStorage persistence</p>
-      <p>• Social sharing: Open Graph & Twitter Cards meta tags</p>
-      <p>• Accessibility: Keyboard navigation, focus states, semantic HTML5 with optimized heading hierarchy, WCAG 2.1 AAA color contrast (7:1), WCAG-compliant touch targets, screen reader optimized, respects reduced motion preferences</p>
-      <p>• Built following Microsoft Inclusive Design methodology</p>
-      <p style="margin-top: 10px;">Inspired by <a href="https://solar.lowtechmagazine.com/" target="_blank">Low-Tech Magazine</a></p>
-    </div>
+    <p>HTML5 + CSS. System fonts. Low-tech web.</p>
+    <p>Inspired by <a href="https://solar.lowtechmagazine.com/" target="_blank">Low-Tech Magazine</a></p>
+    <p>Madrid, 2025</p>
   </footer>
 
-  <!-- Back to Top Button -->
+  <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
 
-  <!-- Minimal JavaScript - Clock & Theme Toggle -->
+  <!-- JavaScript -->
   <script>
-    // Madrid Clock
-    function updateMadridTime() {
-      const now = new Date();
-      const timeString = now.toLocaleTimeString('en-GB', { 
-        timeZone: 'Europe/Madrid',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-      });
-      document.getElementById('madrid-time').textContent = timeString + ' CET';
-    }
-    
-    setInterval(updateMadridTime, 1000);
-    updateMadridTime();
-
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     
-    // Check for saved theme preference, default to light
     if (localStorage.getItem('theme') === 'dark') {
       body.classList.add('dark-mode');
     }
@@ -934,7 +797,7 @@
       localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
 
-    // Back to Top Button
+    // Back to Top
     const backToTopButton = document.getElementById('backToTop');
     
     window.addEventListener('scroll', () => {
