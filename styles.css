@@ -1,0 +1,509 @@
+/* Mobile-First Low-Tech Optimized CSS - Estilo Editorial Jardí */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #EBE1D1;
+  color: #000;
+  line-height: 1.6;
+  font-size: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+::selection {
+  background-color: #000;
+  color: #EBE1D1;
+}
+
+::-moz-selection {
+  background-color: #000;
+  color: #EBE1D1;
+}
+
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a:focus,
+button:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #EBE1D1;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header - Jerarquía Editorial Clara */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.location {
+  font-size: 1rem;
+  color: #000;
+  opacity: 0.8;
+}
+
+/* Contact Section */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.email {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  border: 2px solid #000;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  opacity: 0.7;
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.moon-icon {
+  display: none;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #000;
+  text-decoration: none;
+}
+
+.social-icons svg {
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+}
+
+/* Intro Section - Medida Editorial */
+.intro-section {
+  margin-bottom: 50px;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 250px;
+  border: 2px solid #000;
+}
+
+.intro-text {
+  max-width: 65ch;
+}
+
+.intro-text p {
+  margin-bottom: 1.2em;
+  line-height: 1.6;
+}
+
+/* Section Titles - Escala Modular 1.25 */
+.section {
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 1.563rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.project-card {
+  border: 1px solid #000;
+  padding: 20px;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.project-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.project-button:hover {
+  background-color: #000;
+  color: #EBE1D1;
+  opacity: 1;
+}
+
+/* Work Categories - Layout Editorial */
+.work-category {
+  margin-bottom: 40px;
+}
+
+.work-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.work-category img {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  border: 2px solid #000;
+}
+
+.work-category ul {
+  list-style-position: outside;
+  margin-left: 20px;
+}
+
+.work-category li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* CV Section */
+.cv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 35px;
+  margin-top: 20px;
+}
+
+.cv-grid p {
+  font-size: 1rem;
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.cv-grid strong {
+  font-weight: 600;
+}
+
+.cv-grid u {
+  text-decoration: underline;
+}
+
+/* Footer - Colofón Editorial Minimal */
+footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #000;
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0.7;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: 2px solid #000;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background-color: #000;
+}
+
+.back-to-top:hover svg {
+  stroke: #EBE1D1;
+}
+
+.back-to-top.show {
+  display: flex;
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  stroke: #000;
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  body {
+    padding: 40px;
+  }
+
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+  }
+
+  header h1 {
+    font-size: 2.441rem;
+  }
+
+  .subtitle {
+    font-size: 1.563rem;
+  }
+
+  .contact-section {
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    max-width: 400px;
+  }
+
+  .intro-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .main-image {
+    width: 250px;
+    flex-shrink: 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  /* Work Layout Editorial: imagen izquierda, lista derecha */
+  .work-content {
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  .work-category img {
+    max-width: 300px;
+    flex-shrink: 0;
+  }
+
+  .work-category ul {
+    flex: 1;
+    margin: 0;
+  }
+
+  .cv-grid {
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #0d0d0d;
+  color: #EBE1D1;
+}
+
+body.dark-mode a {
+  color: #EBE1D1;
+}
+
+body.dark-mode .header-container,
+body.dark-mode h2,
+body.dark-mode footer {
+  border-color: #EBE1D1;
+}
+
+body.dark-mode .main-image,
+body.dark-mode .project-card,
+body.dark-mode .work-category img {
+  border-color: #EBE1D1;
+}
+
+body.dark-mode .social-icons a {
+  color: #EBE1D1;
+}
+
+body.dark-mode .social-icons svg {
+  stroke: #EBE1D1;
+}
+
+body.dark-mode .social-icons svg[fill="#000"] {
+  fill: #EBE1D1;
+}
+
+body.dark-mode .project-button {
+  border-color: #EBE1D1;
+}
+
+body.dark-mode .project-button:hover {
+  background-color: #EBE1D1;
+  color: #0d0d0d;
+}
+
+body.dark-mode .theme-toggle {
+  border-color: #EBE1D1;
+}
+
+body.dark-mode .theme-toggle svg {
+  stroke: #EBE1D1;
+}
+
+body.dark-mode .sun-icon {
+  display: none;
+}
+
+body.dark-mode .moon-icon {
+  display: block;
+}
+
+body.dark-mode a:focus,
+body.dark-mode button:focus {
+  outline-color: #EBE1D1;
+}
+
+body.dark-mode .skip-link {
+  background: #EBE1D1;
+  color: #0d0d0d;
+}
+
+body.dark-mode ::selection {
+  background-color: #EBE1D1;
+  color: #0d0d0d;
+}
+
+body.dark-mode ::-moz-selection {
+  background-color: #EBE1D1;
+  color: #0d0d0d;
+}
+
+body.dark-mode .back-to-top {
+  border-color: #EBE1D1;
+}
+
+body.dark-mode .back-to-top:hover {
+  background-color: #EBE1D1;
+}
+
+body.dark-mode .back-to-top svg {
+  stroke: #EBE1D1;
+}
+
+body.dark-mode .back-to-top:hover svg {
+  stroke: #0d0d0d;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
