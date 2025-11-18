@@ -162,9 +162,10 @@ header h1 {
 }
 
 .main-image {
-  width: 100%;
-  max-width: 250px;
+  max-width: 100%;
+  width: auto;
   height: auto;
+  object-fit: contain;
   border: 2px solid #000;
 }
 
@@ -248,9 +249,10 @@ h3 {
 }
 
 .work-category img {
-  width: 100%;
-  max-width: 500px;
+  max-width: 100%;
+  width: auto;
   height: auto;
+  object-fit: contain;
   display: block;
   border: 2px solid #000;
 }
@@ -371,8 +373,10 @@ footer p {
   }
 
   .main-image {
-    width: 250px;
+    max-width: 250px;
+    width: auto;
     height: auto;
+    object-fit: contain;
     flex-shrink: 0;
   }
 
@@ -390,7 +394,9 @@ footer p {
 
   .work-category img {
     max-width: 300px;
+    width: auto;
     height: auto;
+    object-fit: contain;
     flex-shrink: 0;
   }
 
