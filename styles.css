@@ -237,7 +237,7 @@ h3 {
   opacity: 1;
 }
 
-/* Work Categories - Layout Editorial */
+/* Work Categories */
 .work-category {
   margin-bottom: 40px;
 }
@@ -267,6 +267,41 @@ h3 {
   line-height: 1.5;
 }
 
+/* 👉 Ajustes específicos MARGIN.SIGNALS */
+
+.work-category p strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.work-category p em {
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.work-category .margin-pricing {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.work-category .margin-status {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Espaciado visual interno */
+.work-category div > p + p {
+  margin-top: 6px;
+}
+
+/* 📌 Nota editorial (opcional) */
+.margin-footnote {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
 /* CV Section */
 .cv-grid {
   display: grid;
@@ -289,7 +324,7 @@ h3 {
   text-decoration: underline;
 }
 
-/* Footer - Colofón Editorial Minimal */
+/* Footer */
 footer {
   margin-top: 60px;
   padding-top: 20px;
@@ -374,9 +409,6 @@ footer p {
 
   .main-image {
     max-width: 250px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
     flex-shrink: 0;
   }
 
@@ -385,24 +417,19 @@ footer p {
     gap: 30px;
   }
 
-  /* Work Layout Editorial: imagen izquierda, lista derecha */
   .work-content {
     flex-direction: row;
     gap: 30px;
     align-items: flex-start;
   }
 
-  .work-category img {
-    max-width: 300px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    flex-shrink: 0;
+  .work-content div {
+    max-width: 60ch;
   }
 
-  .work-category ul {
-    flex: 1;
-    margin: 0;
+  .work-category img {
+    max-width: 300px;
+    flex-shrink: 0;
   }
 
   .cv-grid {
@@ -441,10 +468,6 @@ body.dark-mode .social-icons svg {
   stroke: #EBE1D1;
 }
 
-body.dark-mode .social-icons svg[fill="#000"] {
-  fill: #EBE1D1;
-}
-
 body.dark-mode .project-button {
   border-color: #EBE1D1;
 }
@@ -481,11 +504,6 @@ body.dark-mode .skip-link {
 }
 
 body.dark-mode ::selection {
-  background-color: #EBE1D1;
-  color: #0d0d0d;
-}
-
-body.dark-mode ::-moz-selection {
   background-color: #EBE1D1;
   color: #0d0d0d;
 }
