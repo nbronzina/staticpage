@@ -72,6 +72,7 @@ header h1 {
   font-weight: 700;
   margin-bottom: 8px;
   line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
 .subtitle {
@@ -189,6 +190,7 @@ h2 {
   margin-bottom: 20px;
   border-bottom: 2px solid #000;
   padding-bottom: 10px;
+  letter-spacing: -0.01em;
 }
 
 h3 {
@@ -312,8 +314,12 @@ h3 {
 
 .cv-grid p {
   font-size: 1rem;
-  margin: 6px 0;
+  margin: 0 0 1.2em 0;
   line-height: 1.5;
+}
+
+.cv-grid > div > p:last-child {
+  margin-bottom: 0;
 }
 
 .cv-grid strong {
@@ -388,10 +394,11 @@ footer p {
 
   header h1 {
     font-size: 2.441rem;
+    letter-spacing: -0.02em;
   }
 
   .subtitle {
-    font-size: 1.563rem;
+    font-size: 1.75rem;
   }
 
   .contact-section {
