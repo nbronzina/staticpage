@@ -424,15 +424,11 @@ footer p {
   }
 
   .main-image {
-    flex: 1;
-    max-width: none;
-    width: 100%;
+    max-width: 250px;
+    width: 250px;
     height: 100%;
     object-fit: cover;
-  }
-
-  .intro-text {
-    flex: 1;
+    flex-shrink: 0;
   }
 
   .projects-grid {
