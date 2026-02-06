@@ -95,6 +95,22 @@
             html {
                 scroll-behavior: auto;
             }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .back-to-top {
+                transition: none;
+            }
+
+            .scroll-progress::before {
+                animation: none;
+            }
         }
 
         *:focus-visible {
@@ -344,6 +360,98 @@
             text-decoration: underline;
         }
 
+        /* SCROLL PROGRESS INDICATOR */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--color-border-light);
+            z-index: 1000;
+            transform-origin: 0 0;
+        }
+
+        .scroll-progress::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-focus) 100%);
+            transform: scaleX(0);
+            transform-origin: 0 0;
+            animation: scroll-progress linear;
+            animation-timeline: scroll(root);
+        }
+
+        @keyframes scroll-progress {
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        /* Fallback for browsers without animation-timeline support */
+        @supports not (animation-timeline: scroll()) {
+            .scroll-progress {
+                display: none;
+            }
+        }
+
+        @media print {
+            .scroll-progress {
+                display: none;
+            }
+        }
+
+        /* BACK TO TOP BUTTON */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent);
+            color: var(--color-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            background: var(--color-text);
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-to-top:focus-visible {
+            outline: 3px solid var(--color-focus);
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        @media print {
+            .back-to-top {
+                display: none;
+            }
+        }
+
         /* GRID SIMPLE */
         .grid {
             display: grid;
@@ -384,6 +492,16 @@
             text-align: center;
             color: var(--color-text-secondary);
             font-size: 0.9rem;
+        }
+
+        footer .metadata {
+            margin-top: 1rem;
+            color: var(--color-text-secondary);
+            opacity: 0.7;
+        }
+
+        footer .metadata small {
+            font-size: 0.8rem;
         }
 
         /* RESPONSIVE */
@@ -648,35 +766,160 @@
         
         /* Print styles */
         @media print {
+            * {
+                background: transparent !important;
+                color: #000 !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+
+            body {
+                font-size: 12pt;
+                line-height: 1.5;
+            }
+
             .container {
                 max-width: none;
                 padding: 0;
+                margin: 0;
             }
-            
-            nav {
-                display: none;
+
+            /* Hide interactive elements */
+            nav,
+            .skip-link,
+            .section-nav,
+            details summary::after {
+                display: none !important;
             }
-            
+
+            /* Show all details content when printing */
+            details {
+                border: none;
+            }
+
+            details summary {
+                display: block;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+            }
+
+            details[open] summary {
+                border-bottom: none;
+            }
+
+            /* Typography for print */
+            h1 {
+                font-size: 24pt;
+                margin-bottom: 12pt;
+            }
+
+            h2 {
+                font-size: 18pt;
+                page-break-after: avoid;
+                page-break-before: always;
+                margin-top: 24pt;
+                margin-bottom: 12pt;
+            }
+
+            h2:first-of-type {
+                page-break-before: avoid;
+            }
+
+            h3 {
+                font-size: 14pt;
+                page-break-after: avoid;
+                margin-top: 18pt;
+                margin-bottom: 6pt;
+            }
+
+            h4 {
+                font-size: 12pt;
+                page-break-after: avoid;
+                margin-top: 12pt;
+                margin-bottom: 6pt;
+            }
+
+            p, li {
+                orphans: 3;
+                widows: 3;
+            }
+
+            /* Boxes and highlights */
             .highlight,
             .tip,
             .warning,
-            .success {
+            .success,
+            .intro-box {
+                border: 1px solid #333 !important;
+                page-break-inside: avoid;
+                padding: 12pt;
+                margin: 12pt 0;
+            }
+
+            /* Tables */
+            table {
+                page-break-inside: avoid;
+                border-collapse: collapse;
+                width: 100%;
+                font-size: 10pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            th, td {
                 border: 1px solid #333;
-                break-inside: avoid;
+                padding: 6pt;
             }
-            
-            h2 {
-                page-break-before: always;
+
+            th {
+                background: #f0f0f0 !important;
+                font-weight: 600;
             }
-            
+
+            /* Grids */
             .grid,
             .grid-four {
-                break-inside: avoid;
+                display: block;
+            }
+
+            .grid-item {
+                page-break-inside: avoid;
+                margin-bottom: 12pt;
+                border: 1px solid #ddd;
+                padding: 12pt;
+            }
+
+            /* Links */
+            a {
+                text-decoration: underline;
+                color: #000 !important;
+            }
+
+            a[href^="http"]:after {
+                content: " (" attr(href) ")";
+                font-size: 9pt;
+            }
+
+            a[href^="#"]:after {
+                content: "";
+            }
+
+            /* Image */
+            .header-img {
+                max-width: 200px;
+                page-break-inside: avoid;
             }
         }
     </style>
 </head>
 <body id="top">
+    <div class="scroll-progress"></div>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
     <div class="container">
@@ -2159,8 +2402,11 @@
 
         <footer>
             <p>Coffee Decoded - De la confusión a la claridad en el café de especialidad | <a href="https://www.nicolasbronzina.com/">Nicolás Bronzina</a></p>
+            <p class="metadata"><small>Versión 2.0 | Última actualización: Febrero 2026 | Filosofía: Zero-JS, < 1MB, Low-Tech</small></p>
         </footer>
 
     </div>
+
+    <a href="#top" class="back-to-top" aria-label="Volver arriba">↑</a>
 </body>
 </html>
