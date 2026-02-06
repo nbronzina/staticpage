@@ -293,6 +293,57 @@
             margin-bottom: 0.3rem;
         }
 
+        /* DETAILS/SUMMARY (Acordeón) */
+        details {
+            border: 1px solid var(--color-border-light);
+            border-radius: 3px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem;
+            margin: -1rem -1rem 0 -1rem;
+            border-radius: 3px 3px 0 0;
+            background: var(--color-bg-alt);
+            user-select: none;
+        }
+
+        summary:hover {
+            background: var(--color-border-light);
+        }
+
+        details[open] summary {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        details .grid-item {
+            border: none;
+            padding: 1rem 0 0 0;
+        }
+
+        /* SECTION NAVIGATION */
+        .section-nav {
+            background: var(--color-bg-alt);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0 0 0;
+            border-top: 2px solid var(--color-border);
+            border-radius: 3px;
+        }
+
+        .section-nav p {
+            margin: 0;
+        }
+
+        .section-nav a {
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
         /* GRID SIMPLE */
         .grid {
             display: grid;
@@ -401,17 +452,45 @@
                 padding: 1rem;
             }
             
-            /* Tables scroll horizontal */
+            /* Tables responsive */
             table {
                 font-size: 0.9rem;
-                overflow-x: auto;
                 display: block;
-                white-space: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
             }
-            
-            th, td {
+
+            thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                margin-bottom: 1rem;
+                border: 1px solid var(--color-border-light);
+                border-radius: 3px;
                 padding: 0.5rem;
-                min-width: 120px;
+            }
+
+            td {
+                border: none;
+                padding: 0.5rem 0.5rem 0.5rem 50%;
+                position: relative;
+            }
+
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0.5rem;
+                width: 45%;
+                padding-right: 0.5rem;
+                white-space: nowrap;
+                font-weight: 600;
             }
             
             /* Lists more compact */
@@ -615,6 +694,7 @@
                 <li><a href="#economia">Costos Reales</a></li>
                 <li><a href="#molienda">Molienda</a></li>
                 <li><a href="#agua">Agua</a></li>
+                <li><a href="#tueste">El Tueste</a></li>
                 <li><a href="#calidad">Identificar Calidad</a></li>
                 <li><a href="#preparacion">Preparación</a></li>
                 <li><a href="#cata">Cata en Casa</a></li>
@@ -1053,37 +1133,35 @@
             </table>
 
             <h3>Tamaños de Molienda por Método</h3>
-            <div class="grid-four">
+            <div class="grid">
                 <div class="grid-item">
                     <h4>EXTRA GRUESA</h4>
                     <p><strong>Aspecto:</strong> Migas de pan</p>
                     <p><strong>Métodos:</strong> Cold brew, prensa francesa</p>
                     <p><strong>Tiempo:</strong> 4+ minutos</p>
                 </div>
-                
+
                 <div class="grid-item">
                     <h4>GRUESA</h4>
                     <p><strong>Aspecto:</strong> Sal marina gruesa</p>
                     <p><strong>Métodos:</strong> Chemex, percoladores</p>
                     <p><strong>Tiempo:</strong> 4-6 minutos</p>
                 </div>
-                
+
                 <div class="grid-item">
                     <h4>MEDIA</h4>
                     <p><strong>Aspecto:</strong> Sal de mesa</p>
                     <p><strong>Métodos:</strong> V60, Kalita, cafetera filtro</p>
                     <p><strong>Tiempo:</strong> 2-4 minutos</p>
                 </div>
-                
+
                 <div class="grid-item">
                     <h4>MEDIA-FINA</h4>
                     <p><strong>Aspecto:</strong> Arena de playa</p>
                     <p><strong>Métodos:</strong> AeroPress, Moka</p>
                     <p><strong>Tiempo:</strong> 1-3 minutos</p>
                 </div>
-            </div>
 
-            <div class="grid">
                 <div class="grid-item">
                     <h4>FINA</h4>
                     <p><strong>Aspecto:</strong> Harina</p>
@@ -1122,9 +1200,13 @@
                     <p><strong>Mejor para:</strong> Entusiastas, espresso</p>
                 </div>
             </div>
+
+            <div class="section-nav">
+                <p><strong>→ Siguiente:</strong> Conoce cómo <a href="#agua">el agua afecta tu café</a>, luego aprende las <a href="#preparacion">técnicas de preparación</a>.</p>
+            </div>
         </section>
 
-        <!-- SECCIÓN 4: AGUA -->
+        <!-- SECCIÓN 5: AGUA -->
         <section id="agua" aria-labelledby="heading-agua">
             <h2 id="heading-agua">5. El Agua: Fundamento Invisible del Sabor</h2>
             
@@ -1243,9 +1325,165 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 5: IDENTIFICAR CALIDAD -->
+        <!-- SECCIÓN 6: EL TUESTE -->
+        <section id="tueste" aria-labelledby="heading-tueste">
+            <h2 id="heading-tueste">6. El Tueste: Transformación del Grano</h2>
+
+            <h3>Por Qué el Nivel de Tueste Importa</h3>
+            <div class="highlight">
+                <p>El tueste transforma químicamente el café verde: carameliza azúcares, desarrolla aceites, libera CO₂ y crea +1000 compuestos aromáticos. El nivel de tueste afecta directamente acidez, cuerpo, dulzor y qué parámetros de preparación necesitas.</p>
+                <p><strong>Regla básica:</strong> Tueste más claro = más acidez, más origen. Tueste más oscuro = más cuerpo, menos origen.</p>
+            </div>
+
+            <h3>Niveles de Tueste</h3>
+            <table>
+                <caption>Características de los niveles de tueste</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Nivel</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Desarrollo</th>
+                    <th scope="col">Perfil</th>
+                    <th scope="col">Mejor Para</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-label="Nivel">Claro (Light)</td>
+                    <td data-label="Color">Canela</td>
+                    <td data-label="Desarrollo">10-11 min, <196°C</td>
+                    <td data-label="Perfil">Alta acidez, floral, frutal, té</td>
+                    <td data-label="Mejor Para">Orígenes africanos, filtrados</td>
+                </tr>
+                <tr>
+                    <td data-label="Nivel">Medio (Medium)</td>
+                    <td data-label="Color">Marrón</td>
+                    <td data-label="Desarrollo">11-13 min, 196-205°C</td>
+                    <td data-label="Perfil">Equilibrado, dulce, nueces</td>
+                    <td data-label="Mejor Para">Todo uso, recomendado inicio</td>
+                </tr>
+                <tr>
+                    <td data-label="Nivel">Medio-Oscuro (Medium-Dark)</td>
+                    <td data-label="Color">Chocolate</td>
+                    <td data-label="Desarrollo">13-14 min, 205-220°C</td>
+                    <td data-label="Perfil">Caramelo, chocolate, menos acidez</td>
+                    <td data-label="Mejor Para">Espresso, leche</td>
+                </tr>
+                <tr>
+                    <td data-label="Nivel">Oscuro (Dark)</td>
+                    <td data-label="Color">Casi negro</td>
+                    <td data-label="Desarrollo">14+ min, >220°C</td>
+                    <td data-label="Perfil">Amargo, ahumado, cuerpo pesado</td>
+                    <td data-label="Mejor Para">Espresso tradicional italiano</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h3>Ajustes de Preparación por Nivel de Tueste</h3>
+            <table>
+                <caption>Parámetros de extracción según nivel de tueste</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Tueste</th>
+                    <th scope="col">Temperatura Agua</th>
+                    <th scope="col">Molienda</th>
+                    <th scope="col">Tiempo Extracción</th>
+                    <th scope="col">Observación</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-label="Tueste">Claro</td>
+                    <td data-label="Temperatura Agua">93-96°C</td>
+                    <td data-label="Molienda">Más fina</td>
+                    <td data-label="Tiempo Extracción">+10-15%</td>
+                    <td data-label="Observación">Más denso, requiere más extracción</td>
+                </tr>
+                <tr>
+                    <td data-label="Tueste">Medio</td>
+                    <td data-label="Temperatura Agua">90-93°C</td>
+                    <td data-label="Molienda">Estándar</td>
+                    <td data-label="Tiempo Extracción">Normal</td>
+                    <td data-label="Observación">Usa parámetros base</td>
+                </tr>
+                <tr>
+                    <td data-label="Tueste">Medio-Oscuro</td>
+                    <td data-label="Temperatura Agua">88-91°C</td>
+                    <td data-label="Molienda">Estándar a gruesa</td>
+                    <td data-label="Tiempo Extracción">Normal a -10%</td>
+                    <td data-label="Observación">Evitar sobreextracción amarga</td>
+                </tr>
+                <tr>
+                    <td data-label="Tueste">Oscuro</td>
+                    <td data-label="Temperatura Agua">85-88°C</td>
+                    <td data-label="Molienda">Más gruesa</td>
+                    <td data-label="Tiempo Extracción">-15-20%</td>
+                    <td data-label="Observación">Muy soluble, cuidado amargor</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h3>Degassing: El Reposo del Café Tostado</h3>
+            <table>
+                <caption>Tiempo de reposo recomendado post-tueste</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Nivel Tueste</th>
+                    <th scope="col">Reposo Mínimo</th>
+                    <th scope="col">Ventana Óptima</th>
+                    <th scope="col">Por Qué</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-label="Nivel Tueste">Claro</td>
+                    <td data-label="Reposo Mínimo">7-10 días</td>
+                    <td data-label="Ventana Óptima">10-28 días</td>
+                    <td data-label="Por Qué">Libera CO₂ lentamente, desarrollo gradual</td>
+                </tr>
+                <tr>
+                    <td data-label="Nivel Tueste">Medio</td>
+                    <td data-label="Reposo Mínimo">4-7 días</td>
+                    <td data-label="Ventana Óptima">7-21 días</td>
+                    <td data-label="Por Qué">Equilibrio CO₂, mejor a partir día 5</td>
+                </tr>
+                <tr>
+                    <td data-label="Nivel Tueste">Medio-Oscuro</td>
+                    <td data-label="Reposo Mínimo">3-5 días</td>
+                    <td data-label="Ventana Óptima">5-14 días</td>
+                    <td data-label="Por Qué">Más poroso, degasifica rápido</td>
+                </tr>
+                <tr>
+                    <td data-label="Nivel Tueste">Oscuro</td>
+                    <td data-label="Reposo Mínimo">2-3 días</td>
+                    <td data-label="Ventana Óptima">3-10 días</td>
+                    <td data-label="Por Qué">Muy poroso, pico rápido pero ventana corta</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="tip">
+                <h4><span aria-hidden="true">💡</span> Café de Especialidad y el Tueste</h4>
+                <p>La mayoría del café de especialidad se tuesta claro o medio para preservar las características del origen. Tostadores serios indican fecha de tueste en el paquete — si no la ves, no es especialidad seria.</p>
+            </div>
+
+            <div class="warning">
+                <h4><span aria-hidden="true">⚠️</span> Mitos sobre el Tueste Oscuro</h4>
+                <ul>
+                    <li><strong>"Más cafeína":</strong> Falso. Pierde masa al tostar pero la concentración por peso es similar.</li>
+                    <li><strong>"Más fuerte":</strong> Amargo ≠ fuerte. Tueste oscuro oculta origen con sabor a carbón.</li>
+                    <li><strong>"Mejor para espresso":</strong> Tradición italiana, no requisito. Espresso claro es complejo y fascinante.</li>
+                </ul>
+            </div>
+
+            <div class="section-nav">
+                <p><strong>→ Siguiente:</strong> Ahora que entiendes el tueste, aprende a <a href="#calidad">identificar café de calidad</a> cuando compras.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: IDENTIFICAR CALIDAD -->
         <section id="calidad" aria-labelledby="heading-calidad">
-            <h2 id="heading-calidad">6. Cómo Identificar Café de Calidad</h2>
+            <h2 id="heading-calidad">7. Cómo Identificar Café de Calidad</h2>
             
             <h3>En el Empaque</h3>
             <div class="grid">
@@ -1316,9 +1554,9 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 6: PREPARACIÓN -->
+        <!-- SECCIÓN 8: PREPARACIÓN -->
         <section id="preparacion" aria-labelledby="heading-preparacion">
-            <h2 id="heading-preparacion">7. Preparación: Técnicas Específicas</h2>
+            <h2 id="heading-preparacion">8. Preparación: Técnicas Específicas</h2>
             
             <h3>Variables Fundamentales</h3>
             <p>Todo café se prepara controlando estas variables. Domínalas y controlarás el sabor:</p>
@@ -1362,11 +1600,10 @@
             </div>
 
             <h3>Técnicas Específicas por Método</h3>
-            
-            <div class="grid">
+
+            <details>
+                <summary><span aria-hidden="true">🫖</span> PRENSA FRANCESA — 30g : 450ml agua</summary>
                 <div class="grid-item">
-                    <h4><span aria-hidden="true">🫖</span> PRENSA FRANCESA</h4>
-                    <p><strong>Receta:</strong> 30g café : 450ml agua</p>
                     <p><strong>Paso a paso:</strong></p>
                     <ol>
                         <li>Precalentar prensa con agua caliente</li>
@@ -1379,10 +1616,11 @@
                     </ol>
                     <p><em>Alternativa Hoffmann:</em> No revolver, esperar 4 min, romper corteza, esperar 4-5 min adicionales, servir sin presionar completamente para evitar sedimento.</p>
                 </div>
-                
+            </details>
+
+            <details>
+                <summary><span aria-hidden="true">⏳</span> V60 POUR OVER — 22g : 350ml agua</summary>
                 <div class="grid-item">
-                    <h4><span aria-hidden="true">⏳</span> V60 POUR OVER</h4>
-                    <p><strong>Receta:</strong> 22g café : 350ml agua</p>
                     <p><strong>Paso a paso:</strong></p>
                     <ol>
                         <li>Enjuagar filtro con agua caliente</li>
@@ -1394,10 +1632,11 @@
                         <li>Tiempo total: 2:30-3:00</li>
                     </ol>
                 </div>
-                
+            </details>
+
+            <details>
+                <summary><span aria-hidden="true">🔄</span> AEROPRESS — 18g : 220ml agua</summary>
                 <div class="grid-item">
-                    <h4><span aria-hidden="true">🔄</span> AEROPRESS</h4>
-                    <p><strong>Receta:</strong> 18g café : 220ml agua</p>
                     <p><strong>Paso a paso:</strong></p>
                     <ol>
                         <li>Enjuagar filtro, calentar AeroPress</li>
@@ -1409,7 +1648,23 @@
                         <li>Presionar suavemente 30 segundos</li>
                     </ol>
                 </div>
-            </div>
+            </details>
+
+            <details>
+                <summary><span aria-hidden="true">⌛</span> CHEMEX — 42g : 700ml agua</summary>
+                <div class="grid-item">
+                    <p><strong>Paso a paso:</strong></p>
+                    <ol>
+                        <li>Enjuagar filtro (lado triple hacia pico)</li>
+                        <li>Molienda media-gruesa</li>
+                        <li><strong>Bloom:</strong> 80ml agua, esperar 45s</li>
+                        <li><strong>1° vertido:</strong> círculos lentos hasta 300ml</li>
+                        <li><strong>2° vertido:</strong> hasta 500ml</li>
+                        <li><strong>3° vertido:</strong> hasta 700ml</li>
+                        <li>Tiempo total: 4:00-4:30</li>
+                    </ol>
+                </div>
+            </details>
 
             <h3>Pre-infusión/Blooming: La Técnica Crucial</h3>
             <div class="success">
@@ -1436,11 +1691,15 @@
                 <h4><span aria-hidden="true">🥛</span> Nota sobre Leche</h4>
                 <p>Si preparas café con leche: usa leche entera (3.5% grasa) para mejor textura. Calentar entre 60-65°C — a mayor temperatura se quema la lactosa. El café de especialidad se diseña para apreciarse solo, pero un buen flat white o cappuccino requiere leche de calidad y técnica de vaporizado adecuada.</p>
             </div>
+
+            <div class="section-nav">
+                <p><strong>→ Siguiente:</strong> Ahora que sabes preparar, aprende a <a href="#cata">desarrollar tu paladar y catar café</a>.</p>
+            </div>
         </section>
 
-        <!-- SECCIÓN 7: CATA EN CASA -->
+        <!-- SECCIÓN 9: CATA EN CASA -->
         <section id="cata" aria-labelledby="heading-cata">
-            <h2 id="heading-cata">8. Desarrollar el Paladar: Cata Básica en Casa</h2>
+            <h2 id="heading-cata">9. Desarrollar el Paladar: Cata Básica en Casa</h2>
             
             <h3>Protocolo Simplificado de Cata</h3>
             <div class="highlight">
@@ -1587,9 +1846,9 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 8: GUÍA DE COMPRA -->
+        <!-- SECCIÓN 10: GUÍA DE COMPRA -->
         <section id="compra" aria-labelledby="heading-compra">
-            <h2 id="heading-compra">9. Guía Práctica de Compra</h2>
+            <h2 id="heading-compra">10. Guía Práctica de Compra</h2>
             
             <h3>Por Nivel de Experiencia</h3>
             <table>
@@ -1731,9 +1990,9 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 10: SOLUCIÓN DE PROBLEMAS -->
+        <!-- SECCIÓN 11: SOLUCIÓN DE PROBLEMAS -->
         <section id="solucion" aria-labelledby="heading-solucion">
-            <h2 id="heading-solucion">10. Solución de Problemas</h2>
+            <h2 id="heading-solucion">11. Solución de Problemas</h2>
             
             <h3>Diagnóstico por Sabor</h3>
             <table>
