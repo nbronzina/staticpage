@@ -743,6 +743,21 @@
             margin-top: 0;
         }
 
+        /* Prevent section headings from appearing side-by-side with content */
+        /* Ensure headings always take full width and appear above their content */
+        section > h2,
+        section > h3,
+        h2 + table,
+        h2 + aside,
+        h3 + table,
+        h3 + aside,
+        h3 + ol,
+        h3 + ul {
+            display: block;
+            width: 100%;
+            clear: both;
+        }
+
         /* FOOTER */
         footer {
             margin-top: 4rem;
