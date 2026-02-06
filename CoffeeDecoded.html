@@ -30,15 +30,75 @@
     
     <style>
         /* ESTILO BASADO EN NICOLASBRONZINA.COM */
-        
+
+        /* CSS CUSTOM PROPERTIES FOR THEME */
+        :root {
+            --color-bg: #fff;
+            --color-bg-alt: #f9f9f9;
+            --color-text: #333;
+            --color-text-primary: #222;
+            --color-text-secondary: #666;
+            --color-text-tertiary: #444;
+            --color-border: #ddd;
+            --color-border-light: #eee;
+            --color-accent: #333;
+            --color-focus: #0066CC;
+
+            /* Box backgrounds */
+            --color-highlight-bg: #f0f8ff;
+            --color-tip-bg: #fff9e6;
+            --color-tip-border: #f4a261;
+            --color-warning-bg: #fff2f2;
+            --color-warning-border: #e76f51;
+            --color-success-bg: #f0fff4;
+            --color-success-border: #38a169;
+            --color-table-header: #f5f5f5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #1a1a1a;
+                --color-bg-alt: #2a2a2a;
+                --color-text: #e0e0e0;
+                --color-text-primary: #f0f0f0;
+                --color-text-secondary: #b0b0b0;
+                --color-text-tertiary: #d0d0d0;
+                --color-border: #444;
+                --color-border-light: #333;
+                --color-accent: #e0e0e0;
+                --color-focus: #4a9eff;
+
+                /* Box backgrounds - darker with subtle tints */
+                --color-highlight-bg: #1e2830;
+                --color-tip-bg: #2a2416;
+                --color-tip-border: #d4934e;
+                --color-warning-bg: #2a1a1a;
+                --color-warning-border: #d05a3e;
+                --color-success-bg: #1a2a1f;
+                --color-success-border: #2d8a56;
+                --color-table-header: #2a2a2a;
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* SMOOTH SCROLLING */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
         *:focus-visible {
-            outline: 3px solid #0066CC;
+            outline: 3px solid var(--color-focus);
             outline-offset: 2px;
         }
 
@@ -49,8 +109,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #fff;
+            color: var(--color-text);
+            background: var(--color-bg);
             padding: 0;
             margin: 0;
             font-size: 16px;
@@ -72,12 +132,12 @@
             font-size: 2.5rem;
             font-weight: 400;
             margin-bottom: 0.5rem;
-            color: #222;
+            color: var(--color-text-primary);
         }
 
         .subtitle {
             font-size: 1.1rem;
-            color: #666;
+            color: var(--color-text-secondary);
             font-weight: 300;
         }
 
@@ -93,8 +153,8 @@
             position: absolute;
             top: -40px;
             left: 0;
-            background: #333;
-            color: #fff;
+            background: var(--color-accent);
+            color: var(--color-bg);
             padding: 8px 16px;
             z-index: 100;
             transition: top 0.2s;
@@ -120,16 +180,16 @@
         }
 
         nav a {
-            color: #333;
+            color: var(--color-text);
             text-decoration: none;
             padding: 0.5rem 1rem;
-            border: 1px solid #ddd;
+            border: 1px solid var(--color-border);
             border-radius: 3px;
             transition: all 0.2s ease;
         }
 
         nav a:hover {
-            background: #f5f5f5;
+            background: var(--color-bg-alt);
         }
 
         /* TIPOGRAFÍA */
@@ -137,21 +197,21 @@
             font-size: 1.8rem;
             font-weight: 400;
             margin: 3rem 0 1rem 0;
-            color: #222;
+            color: var(--color-text-primary);
         }
 
         h3 {
             font-size: 1.3rem;
             font-weight: 400;
             margin: 2rem 0 1rem 0;
-            color: #333;
+            color: var(--color-text);
         }
 
         h4 {
             font-size: 1.1rem;
             font-weight: 500;
             margin: 1.5rem 0 0.5rem 0;
-            color: #444;
+            color: var(--color-text-tertiary);
         }
 
         p {
@@ -168,41 +228,41 @@
         }
 
         .intro-box {
-            background: #f9f9f9;
+            background: var(--color-bg-alt);
             padding: 2rem;
             margin: 2rem 0;
-            border-left: 3px solid #333;
+            border-left: 3px solid var(--color-accent);
         }
 
         .highlight {
-            background: #f0f8ff;
+            background: var(--color-highlight-bg);
             padding: 1.5rem;
             margin: 1.5rem 0;
             border-radius: 3px;
         }
 
         .tip {
-            background: #fff9e6;
+            background: var(--color-tip-bg);
             padding: 1.5rem;
             margin: 1.5rem 0;
             border-radius: 3px;
-            border-left: 3px solid #f4a261;
+            border-left: 3px solid var(--color-tip-border);
         }
 
         .warning {
-            background: #fff2f2;
+            background: var(--color-warning-bg);
             padding: 1.5rem;
             margin: 1.5rem 0;
             border-radius: 3px;
-            border-left: 3px solid #e76f51;
+            border-left: 3px solid var(--color-warning-border);
         }
 
         .success {
-            background: #f0fff4;
+            background: var(--color-success-bg);
             padding: 1.5rem;
             margin: 1.5rem 0;
             border-radius: 3px;
-            border-left: 3px solid #38a169;
+            border-left: 3px solid var(--color-success-border);
         }
 
         /* TABLAS */
@@ -215,11 +275,11 @@
         th, td {
             padding: 0.8rem;
             text-align: left;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--color-border-light);
         }
 
         th {
-            background: #f5f5f5;
+            background: var(--color-table-header);
             font-weight: 500;
         }
 
@@ -257,7 +317,7 @@
 
         .grid-item {
             padding: 1.5rem;
-            border: 1px solid #eee;
+            border: 1px solid var(--color-border-light);
             border-radius: 3px;
         }
 
@@ -269,9 +329,9 @@
         footer {
             margin-top: 4rem;
             padding-top: 2rem;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--color-border-light);
             text-align: center;
-            color: #666;
+            color: var(--color-text-secondary);
             font-size: 0.9rem;
         }
 
@@ -552,13 +612,13 @@
             <ul>
                 <li><a href="#fundamentos">Fundamentos</a></li>
                 <li><a href="#equipamiento">Equipamiento</a></li>
+                <li><a href="#economia">Costos Reales</a></li>
                 <li><a href="#molienda">Molienda</a></li>
                 <li><a href="#agua">Agua</a></li>
                 <li><a href="#calidad">Identificar Calidad</a></li>
                 <li><a href="#preparacion">Preparación</a></li>
                 <li><a href="#cata">Cata en Casa</a></li>
                 <li><a href="#compra">Guía de Compra</a></li>
-                <li><a href="#economia">Costos Reales</a></li>
                 <li><a href="#solucion">Solución de Problemas</a></li>
             </ul>
         </nav>
@@ -666,6 +726,7 @@
                     <p><strong>Sabor:</strong> Amargo, terroso</p>
                     <p><strong>Cafeína:</strong> 1.7-4%</p>
                     <p>Usado en mezclas y instantáneo</p>
+                    <p><em>Nota:</em> Existe "Fine Robusta" de especialidad con mejor calidad que la Robusta comercial tradicional, cultivado a mayor altitud y procesado con cuidado.</p>
                 </div>
             </div>
 
@@ -794,14 +855,157 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 3: MOLIENDA -->
+        <!-- SECCIÓN 3: COSTOS REALES -->
+        <section id="economia" aria-labelledby="heading-economia">
+            <h2 id="heading-economia">3. Economía del Café de Especialidad</h2>
+
+            <h3>Inversión Inicial Total por Nivel</h3>
+            <table>
+                <caption>Inversión inicial y costo por taza según nivel</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Nivel</th>
+                    <th scope="col">Equipamiento</th>
+                    <th scope="col">Café (1er mes)</th>
+                    <th scope="col">Total Inicial</th>
+                    <th scope="col">Costo/Taza</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-label="Nivel">Entrada</td>
+                    <td data-label="Equipamiento">€60</td>
+                    <td data-label="Café (1er mes)">€30</td>
+                    <td data-label="Total Inicial">€90</td>
+                    <td data-label="Costo/Taza">€0.50</td>
+                </tr>
+                <tr>
+                    <td data-label="Nivel">Intermedio</td>
+                    <td data-label="Equipamiento">€150</td>
+                    <td data-label="Café (1er mes)">€40</td>
+                    <td data-label="Total Inicial">€190</td>
+                    <td data-label="Costo/Taza">€0.65</td>
+                </tr>
+                <tr>
+                    <td data-label="Nivel">Entusiasta</td>
+                    <td data-label="Equipamiento">€300</td>
+                    <td data-label="Café (1er mes)">€60</td>
+                    <td data-label="Total Inicial">€360</td>
+                    <td data-label="Costo/Taza">€0.80</td>
+                </tr>
+                <tr>
+                    <td data-label="Nivel">Avanzado</td>
+                    <td data-label="Equipamiento">€600+</td>
+                    <td data-label="Café (1er mes)">€80</td>
+                    <td data-label="Total Inicial">€680+</td>
+                    <td data-label="Costo/Taza">€1.00+</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h3>Comparación Costo vs Alternativas</h3>
+            <div class="grid-four">
+                <div class="grid-item">
+                    <h4><span aria-hidden="true">☕</span> CASA ESPECIALIDAD</h4>
+                    <p><strong>Costo:</strong> €0.50-0.80/taza</p>
+                    <p><strong>Calidad:</strong> Excelente</p>
+                    <p><strong>Tiempo:</strong> 5-8 minutos</p>
+                    <p><strong>Control:</strong> Total</p>
+                </div>
+
+                <div class="grid-item">
+                    <h4><span aria-hidden="true">🏪</span> CAFETERÍA ESPECIALIDAD</h4>
+                    <p><strong>Costo:</strong> €2.50-4.00/taza</p>
+                    <p><strong>Calidad:</strong> Variable</p>
+                    <p><strong>Tiempo:</strong> 0 + desplazamiento</p>
+                    <p><strong>Control:</strong> Nulo</p>
+                </div>
+
+                <div class="grid-item">
+                    <h4><span aria-hidden="true">🏢</span> OFICINA/BAR</h4>
+                    <p><strong>Costo:</strong> €1.20-2.00/taza</p>
+                    <p><strong>Calidad:</strong> Baja-media</p>
+                    <p><strong>Tiempo:</strong> Variable</p>
+                    <p><strong>Control:</strong> Nulo</p>
+                </div>
+
+                <div class="grid-item">
+                    <h4><span aria-hidden="true">🏠</span> CÁPSULAS</h4>
+                    <p><strong>Costo:</strong> €0.40-0.60/taza</p>
+                    <p><strong>Calidad:</strong> Media</p>
+                    <p><strong>Tiempo:</strong> 1 minuto</p>
+                    <p><strong>Control:</strong> Mínimo</p>
+                </div>
+            </div>
+
+            <h3>Análisis de ROI (Return on Investment)</h3>
+            <div class="highlight">
+                <p><strong>Escenario típico:</strong> 2 tazas/día, 300 días/año</p>
+                <p><strong>Inversión inicial:</strong> €190 (nivel intermedio)</p>
+                <p><strong>Ahorro anual vs cafetería:</strong> €1,500-2,000</p>
+                <p><strong>Payback period:</strong> 6-8 semanas</p>
+                <p><strong>Beneficio adicional:</strong> Mejor calidad + conveniencia</p>
+            </div>
+
+            <h3>Presupuesto Mensual Realista</h3>
+            <table>
+                <tr>
+                    <th>Consumo</th>
+                    <th>Café Necesario</th>
+                    <th>Presupuesto</th>
+                    <th>Observaciones</th>
+                </tr>
+                <tr>
+                    <td data-label="Consumo">1 taza/día</td>
+                    <td data-label="Café Necesario">500g/mes</td>
+                    <td data-label="Presupuesto">€8-15</td>
+                    <td data-label="Observaciones">Nivel entrada suficiente</td>
+                </tr>
+                <tr>
+                    <td data-label="Consumo">2 tazas/día</td>
+                    <td data-label="Café Necesario">1kg/mes</td>
+                    <td data-label="Presupuesto">€15-30</td>
+                    <td data-label="Observaciones">Explorar diferentes orígenes</td>
+                </tr>
+                <tr>
+                    <td data-label="Consumo">3+ tazas/día</td>
+                    <td data-label="Café Necesario">1.5kg/mes</td>
+                    <td data-label="Presupuesto">€25-45</td>
+                    <td data-label="Observaciones">Café diario + experimentación</td>
+                </tr>
+            </table>
+
+            <h3>Optimización de Costos</h3>
+            <div class="tip">
+                <h4><span aria-hidden="true">💡</span> Estrategias para Ahorrar</h4>
+                <ul>
+                    <li><strong>Comprar directo de tostador:</strong> 10-20% descuento vs tiendas</li>
+                    <li><strong>Suscripciones:</strong> 5-15% descuento por compra recurrente</li>
+                    <li><strong>Compras grupales:</strong> Dividir costos envío con amigos</li>
+                    <li><strong>Ofertas temporada:</strong> Stocks cuando hay promociones</li>
+                    <li><strong>Marcas house:</strong> Misma calidad, menos marketing</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h4><span aria-hidden="true">⚠️</span> Costos Ocultos a Considerar</h4>
+                <ul>
+                    <li>Mantenimiento/descalcificación equipamiento</li>
+                    <li>Reemplazo filtros (si usas agua filtrada)</li>
+                    <li>Actualización equipamiento (GAS - Gear Acquisition Syndrome)</li>
+                    <li>Mayor consumo al mejorar calidad</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: MOLIENDA -->
         <section id="molienda" aria-labelledby="heading-molienda">
-            <h2 id="heading-molienda">3. Molienda: La Variable Más Subestimada</h2>
+            <h2 id="heading-molienda">4. Molienda: La Variable Más Subestimada</h2>
             
             <h3>Por Qué la Molienda es Crítica</h3>
             <div class="highlight">
-                <p>Una molienda uniforme es más importante que el método de preparación. 80% del sabor final depende de cómo moliste el café.</p>
-                <p><strong>Regla absoluta:</strong> Moler siempre justo antes de preparar. Café molido pierde 60% del aroma en 15 minutos.</p>
+                <p>Una molienda uniforme es más importante que el método de preparación. Una molienda uniforme es una de las variables más importantes que puedes controlar. Determina la superficie expuesta al agua y gobierna directamente la velocidad y calidad de la extracción. Junto con la temperatura, el ratio y el tiempo de contacto, define el resultado en taza.</p>
+                <p><strong>Regla absoluta:</strong> Moler siempre justo antes de preparar. El café molido comienza a perder compuestos aromáticos inmediatamente — el CO₂ se disipa en minutos llevando consigo compuestos volátiles, y estudios muestran que más del 50% de la intensidad aromática puede perderse en las primeras 24 horas.</p>
             </div>
 
             <h3>Tipos de Molinillos</h3>
@@ -922,7 +1126,7 @@
 
         <!-- SECCIÓN 4: AGUA -->
         <section id="agua" aria-labelledby="heading-agua">
-            <h2 id="heading-agua">4. El Agua: Fundamento Invisible del Sabor</h2>
+            <h2 id="heading-agua">5. El Agua: Fundamento Invisible del Sabor</h2>
             
             <h3>Por Qué Importa el Agua</h3>
             <div class="highlight">
@@ -1041,7 +1245,7 @@
 
         <!-- SECCIÓN 5: IDENTIFICAR CALIDAD -->
         <section id="calidad" aria-labelledby="heading-calidad">
-            <h2 id="heading-calidad">5. Cómo Identificar Café de Calidad</h2>
+            <h2 id="heading-calidad">6. Cómo Identificar Café de Calidad</h2>
             
             <h3>En el Empaque</h3>
             <div class="grid">
@@ -1114,7 +1318,7 @@
 
         <!-- SECCIÓN 6: PREPARACIÓN -->
         <section id="preparacion" aria-labelledby="heading-preparacion">
-            <h2 id="heading-preparacion">6. Preparación: Técnicas Específicas</h2>
+            <h2 id="heading-preparacion">7. Preparación: Técnicas Específicas</h2>
             
             <h3>Variables Fundamentales</h3>
             <p>Todo café se prepara controlando estas variables. Domínalas y controlarás el sabor:</p>
@@ -1167,12 +1371,13 @@
                     <ol>
                         <li>Precalentar prensa con agua caliente</li>
                         <li>Molienda muy gruesa</li>
-                        <li>Añadir café, verter agua 96°C</li>
+                        <li>Añadir café, verter agua 96°C (93°C tueste oscuro)</li>
                         <li>Revolver suavemente 30 seg</li>
                         <li>Colocar tapa, esperar 3:30</li>
                         <li>Presionar lentamente</li>
                         <li><strong>Servir inmediatamente</strong></li>
                     </ol>
+                    <p><em>Alternativa Hoffmann:</em> No revolver, esperar 4 min, romper corteza, esperar 4-5 min adicionales, servir sin presionar completamente para evitar sedimento.</p>
                 </div>
                 
                 <div class="grid-item">
@@ -1197,7 +1402,7 @@
                     <ol>
                         <li>Enjuagar filtro, calentar AeroPress</li>
                         <li>Molienda media</li>
-                        <li>Café en cámara, agua 85°C</li>
+                        <li>Café en cámara, agua 90-93°C (80-85°C tueste oscuro)</li>
                         <li>Revolver 10 segundos</li>
                         <li>Insertar pistón, crear vacío ligero</li>
                         <li>Esperar 1:30 total</li>
@@ -1226,11 +1431,16 @@
                 <p><strong>Sabor agrio:</strong> Temperatura más alta o tiempo más largo</p>
                 <p><strong>Sabor amargo:</strong> Temperatura más baja o tiempo más corto</p>
             </div>
+
+            <div class="tip">
+                <h4><span aria-hidden="true">🥛</span> Nota sobre Leche</h4>
+                <p>Si preparas café con leche: usa leche entera (3.5% grasa) para mejor textura. Calentar entre 60-65°C — a mayor temperatura se quema la lactosa. El café de especialidad se diseña para apreciarse solo, pero un buen flat white o cappuccino requiere leche de calidad y técnica de vaporizado adecuada.</p>
+            </div>
         </section>
 
         <!-- SECCIÓN 7: CATA EN CASA -->
         <section id="cata" aria-labelledby="heading-cata">
-            <h2 id="heading-cata">7. Desarrollar el Paladar: Cata Básica en Casa</h2>
+            <h2 id="heading-cata">8. Desarrollar el Paladar: Cata Básica en Casa</h2>
             
             <h3>Protocolo Simplificado de Cata</h3>
             <div class="highlight">
@@ -1239,6 +1449,7 @@
                 <p><strong>Frecuencia:</strong> 2-3 veces por semana máximo</p>
                 
                 <p><strong>Nota técnica:</strong> Este protocolo está basado en el <strong>cupping</strong> profesional desarrollado por la <strong>SCA</strong>, pero simplificado para uso casero. Los <strong>Q Graders</strong> (catadores certificados por el Coffee Quality Institute) usan protocolos más estrictos para evaluar cafés comercialmente.</p>
+                <p><em>Actualización 2024:</em> La SCA introdujo el sistema CVA (Coffee Value Assessment) como complemento al cupping tradicional, incorporando evaluación hedónica y contexto de consumo.</p>
                 <p><strong>Más info:</strong> <a href="https://sca.coffee/research/protocols-best-practices" target="_blank" rel="noopener">Protocolos SCA</a></p>
             </div>
 
@@ -1343,6 +1554,7 @@
             </div>
 
             <h3>Rueda de Sabores Simplificada</h3>
+            <p>Esta es una versión simplificada. Para la herramienta completa, consulta la <a href="https://sca.coffee/research/coffee-tasters-flavor-wheel" target="_blank" rel="noopener">SCA Coffee Taster's Flavor Wheel</a> oficial.</p>
             <div class="grid-four">
                 <div class="grid-item">
                     <h4><span aria-hidden="true">🍊</span> FRUTALES</h4>
@@ -1370,13 +1582,14 @@
                     <li>Catar con otras personas (comparar notas)</li>
                     <li>No más de 4 muestras por sesión</li>
                     <li>Ser consistente: mismo horario y condiciones</li>
+                    <li><strong>Calibración:</strong> Catar periódicamente cafés conocidos para mantener referencias constantes y detectar cambios en tu paladar</li>
                 </ul>
             </div>
         </section>
 
         <!-- SECCIÓN 8: GUÍA DE COMPRA -->
         <section id="compra" aria-labelledby="heading-compra">
-            <h2 id="heading-compra">8. Guía Práctica de Compra</h2>
+            <h2 id="heading-compra">9. Guía Práctica de Compra</h2>
             
             <h3>Por Nivel de Experiencia</h3>
             <table>
@@ -1514,149 +1727,6 @@
                     <li>No preguntar fecha de tostado</li>
                     <li>Ignorar método de procesamiento</li>
                     <li>Comprar café molido (se oxida rápidamente)</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 9: COSTOS REALES -->
-        <section id="economia" aria-labelledby="heading-economia">
-            <h2 id="heading-economia">9. Economía del Café de Especialidad</h2>
-            
-            <h3>Inversión Inicial Total por Nivel</h3>
-            <table>
-                <caption>Inversión inicial y costo por taza según nivel</caption>
-                <thead>
-                <tr>
-                    <th scope="col">Nivel</th>
-                    <th scope="col">Equipamiento</th>
-                    <th scope="col">Café (1er mes)</th>
-                    <th scope="col">Total Inicial</th>
-                    <th scope="col">Costo/Taza</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td data-label="Nivel">Entrada</td>
-                    <td data-label="Equipamiento">€60</td>
-                    <td data-label="Café (1er mes)">€30</td>
-                    <td data-label="Total Inicial">€90</td>
-                    <td data-label="Costo/Taza">€0.50</td>
-                </tr>
-                <tr>
-                    <td data-label="Nivel">Intermedio</td>
-                    <td data-label="Equipamiento">€150</td>
-                    <td data-label="Café (1er mes)">€40</td>
-                    <td data-label="Total Inicial">€190</td>
-                    <td data-label="Costo/Taza">€0.65</td>
-                </tr>
-                <tr>
-                    <td data-label="Nivel">Entusiasta</td>
-                    <td data-label="Equipamiento">€300</td>
-                    <td data-label="Café (1er mes)">€60</td>
-                    <td data-label="Total Inicial">€360</td>
-                    <td data-label="Costo/Taza">€0.80</td>
-                </tr>
-                <tr>
-                    <td data-label="Nivel">Avanzado</td>
-                    <td data-label="Equipamiento">€600+</td>
-                    <td data-label="Café (1er mes)">€80</td>
-                    <td data-label="Total Inicial">€680+</td>
-                    <td data-label="Costo/Taza">€1.00+</td>
-                </tr>
-                </tbody>
-            </table>
-
-            <h3>Comparación Costo vs Alternativas</h3>
-            <div class="grid-four">
-                <div class="grid-item">
-                    <h4><span aria-hidden="true">☕</span> CASA ESPECIALIDAD</h4>
-                    <p><strong>Costo:</strong> €0.50-0.80/taza</p>
-                    <p><strong>Calidad:</strong> Excelente</p>
-                    <p><strong>Tiempo:</strong> 5-8 minutos</p>
-                    <p><strong>Control:</strong> Total</p>
-                </div>
-                
-                <div class="grid-item">
-                    <h4><span aria-hidden="true">🏪</span> CAFETERÍA ESPECIALIDAD</h4>
-                    <p><strong>Costo:</strong> €2.50-4.00/taza</p>
-                    <p><strong>Calidad:</strong> Variable</p>
-                    <p><strong>Tiempo:</strong> 0 + desplazamiento</p>
-                    <p><strong>Control:</strong> Nulo</p>
-                </div>
-                
-                <div class="grid-item">
-                    <h4><span aria-hidden="true">🏢</span> OFICINA/BAR</h4>
-                    <p><strong>Costo:</strong> €1.20-2.00/taza</p>
-                    <p><strong>Calidad:</strong> Baja-media</p>
-                    <p><strong>Tiempo:</strong> Variable</p>
-                    <p><strong>Control:</strong> Nulo</p>
-                </div>
-                
-                <div class="grid-item">
-                    <h4><span aria-hidden="true">🏠</span> CÁPSULAS</h4>
-                    <p><strong>Costo:</strong> €0.40-0.60/taza</p>
-                    <p><strong>Calidad:</strong> Media</p>
-                    <p><strong>Tiempo:</strong> 1 minuto</p>
-                    <p><strong>Control:</strong> Mínimo</p>
-                </div>
-            </div>
-
-            <h3>Análisis de ROI (Return on Investment)</h3>
-            <div class="highlight">
-                <p><strong>Escenario típico:</strong> 2 tazas/día, 300 días/año</p>
-                <p><strong>Inversión inicial:</strong> €190 (nivel intermedio)</p>
-                <p><strong>Ahorro anual vs cafetería:</strong> €1,500-2,000</p>
-                <p><strong>Payback period:</strong> 6-8 semanas</p>
-                <p><strong>Beneficio adicional:</strong> Mejor calidad + conveniencia</p>
-            </div>
-
-            <h3>Presupuesto Mensual Realista</h3>
-            <table>
-                <tr>
-                    <th>Consumo</th>
-                    <th>Café Necesario</th>
-                    <th>Presupuesto</th>
-                    <th>Observaciones</th>
-                </tr>
-                <tr>
-                    <td data-label="Consumo">1 taza/día</td>
-                    <td data-label="Café Necesario">500g/mes</td>
-                    <td data-label="Presupuesto">€8-15</td>
-                    <td data-label="Observaciones">Nivel entrada suficiente</td>
-                </tr>
-                <tr>
-                    <td data-label="Consumo">2 tazas/día</td>
-                    <td data-label="Café Necesario">1kg/mes</td>
-                    <td data-label="Presupuesto">€15-30</td>
-                    <td data-label="Observaciones">Explorar diferentes orígenes</td>
-                </tr>
-                <tr>
-                    <td data-label="Consumo">3+ tazas/día</td>
-                    <td data-label="Café Necesario">1.5kg/mes</td>
-                    <td data-label="Presupuesto">€25-45</td>
-                    <td data-label="Observaciones">Café diario + experimentación</td>
-                </tr>
-            </table>
-
-            <h3>Optimización de Costos</h3>
-            <div class="tip">
-                <h4><span aria-hidden="true">💡</span> Estrategias para Ahorrar</h4>
-                <ul>
-                    <li><strong>Comprar directo de tostador:</strong> 10-20% descuento vs tiendas</li>
-                    <li><strong>Suscripciones:</strong> 5-15% descuento por compra recurrente</li>
-                    <li><strong>Compras grupales:</strong> Dividir costos envío con amigos</li>
-                    <li><strong>Ofertas temporada:</strong> Stocks cuando hay promociones</li>
-                    <li><strong>Marcas house:</strong> Misma calidad, menos marketing</li>
-                </ul>
-            </div>
-
-            <div class="warning">
-                <h4><span aria-hidden="true">⚠️</span> Costos Ocultos a Considerar</h4>
-                <ul>
-                    <li>Mantenimiento/descalcificación equipamiento</li>
-                    <li>Reemplazo filtros (si usas agua filtrada)</li>
-                    <li>Actualización equipamiento (GAS - Gear Acquisition Syndrome)</li>
-                    <li>Mayor consumo al mejorar calidad</li>
                 </ul>
             </div>
         </section>
