@@ -1019,36 +1019,12 @@
             }
         }
 
-        /* Sticky ToC for large screens */
-        @media (min-width: 1200px) {
-            .container {
-                display: grid;
-                grid-template-columns: 250px 1fr;
-                gap: 2rem;
-                max-width: calc(70ch + 250px + 2rem);
-            }
-
-            nav {
-                position: sticky;
-                top: 2rem;
-                max-height: calc(100vh - 4rem);
-                overflow-y: auto;
-                align-self: start;
-                font-size: 0.85rem;
-            }
-
-            /* Prevent wide tables from breaking grid layout */
-            main {
-                min-width: 0; /* Allow flexbox/grid child to shrink below content size */
-                overflow-x: auto;
-            }
-
-            nav a.active {
-                color: var(--color-link);
-                font-weight: 600;
-                border-left: 3px solid var(--color-link);
-                padding-left: 0.5rem;
-            }
+        /* Active nav link indicator (IntersectionObserver) */
+        nav a.active {
+            color: var(--color-link);
+            font-weight: 600;
+            border-left: 3px solid var(--color-link);
+            padding-left: 0.5rem;
         }
 
         /* Print styles */
