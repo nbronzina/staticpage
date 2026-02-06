@@ -419,15 +419,14 @@ footer p {
 
   .intro-container {
     flex-direction: row;
-    align-items: stretch;
+    align-items: flex-start;
     gap: 40px;
   }
 
   .main-image {
     max-width: 250px;
     width: 250px;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     flex-shrink: 0;
   }
 
