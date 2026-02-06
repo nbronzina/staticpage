@@ -27,7 +27,78 @@
     
     <!-- Favicon (optional) -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Coffee Decoded — De la confusión a la claridad en el café de especialidad",
+        "description": "Guía práctica escrita por alguien que ya cometió los errores costosos de equipamiento y mal café para que tú no tengas que hacerlo. Aprende a identificar, comprar y preparar café de especialidad.",
+        "author": {
+            "@type": "Person",
+            "name": "Nicolás Bronzina",
+            "url": "https://www.nicolasbronzina.com/"
+        },
+        "datePublished": "2024-01-01",
+        "dateModified": "2026-02-01",
+        "publisher": {
+            "@type": "Person",
+            "name": "Nicolás Bronzina"
+        },
+        "image": "https://www.nicolasbronzina.com/img/DitherCoffee.jpeg",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.nicolasbronzina.com/CoffeeDecoded.html"
+        },
+        "keywords": "café de especialidad, guía café, preparación café, barista, coffee brewing, specialty coffee, SCA, molienda, tueste, cata",
+        "articleSection": "Food & Drink",
+        "inLanguage": "es-ES"
+    }
+    </script>
+
+    <!-- Dark Mode Toggle Script (inline to prevent FOUC) -->
+    <script>
+    (function() {
+        var KEY = 'cd-theme';
+        var html = document.documentElement;
+        var saved = null;
+        try { saved = localStorage.getItem(KEY); } catch(e) {}
+
+        // Apply saved preference immediately (before CSS loads)
+        if (saved === 'dark') html.classList.add('dark');
+        else if (saved === 'light') html.classList.add('light');
+        // If no saved preference, fallback to CSS media query
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('theme-toggle');
+            if (!btn) return;
+
+            // Update button based on current theme
+            function updateButton() {
+                var isDark = html.classList.contains('dark');
+                btn.setAttribute('aria-label', isDark ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+            }
+
+            // Toggle theme on click
+            btn.addEventListener('click', function() {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    html.classList.add('light');
+                    try { localStorage.setItem(KEY, 'light'); } catch(e) {}
+                } else {
+                    html.classList.remove('light');
+                    html.classList.add('dark');
+                    try { localStorage.setItem(KEY, 'dark'); } catch(e) {}
+                }
+                updateButton();
+            });
+
+            updateButton();
+        });
+    })();
+    </script>
+
     <style>
         /* ESTILO BASADO EN NICOLASBRONZINA.COM */
 
@@ -53,10 +124,53 @@
             --color-success-bg: #f0fff4;
             --color-success-border: #38a169;
             --color-table-header: #f5f5f5;
+
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+            /* Link colors - warm amber theme */
+            --color-link: #92400E;
+            --color-link-hover: #7C3608;
+            --color-link-visited: #6B4226;
         }
 
+        /* Dark mode via class toggle */
+        html.dark {
+            --color-bg: #1a1a1a;
+            --color-bg-alt: #2a2a2a;
+            --color-text: #e0e0e0;
+            --color-text-primary: #f0f0f0;
+            --color-text-secondary: #b0b0b0;
+            --color-text-tertiary: #d0d0d0;
+            --color-border: #444;
+            --color-border-light: #333;
+            --color-accent: #e0e0e0;
+            --color-focus: #4a9eff;
+
+            /* Box backgrounds - darker with subtle tints */
+            --color-highlight-bg: #1e2830;
+            --color-tip-bg: #2a2416;
+            --color-tip-border: #d4934e;
+            --color-warning-bg: #2a1a1a;
+            --color-warning-border: #d05a3e;
+            --color-success-bg: #1a2a1f;
+            --color-success-border: #2d8a56;
+            --color-table-header: #2a2a2a;
+
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+
+            /* Link colors - warm amber theme (lighter for dark mode) */
+            --color-link: #D4915C;
+            --color-link-hover: #E0A874;
+            --color-link-visited: #C9A07B;
+        }
+
+        /* Fallback: respect OS preference when no manual override */
         @media (prefers-color-scheme: dark) {
-            :root {
+            html:not(.light):not(.dark) {
                 --color-bg: #1a1a1a;
                 --color-bg-alt: #2a2a2a;
                 --color-text: #e0e0e0;
@@ -77,6 +191,15 @@
                 --color-success-bg: #1a2a1f;
                 --color-success-border: #2d8a56;
                 --color-table-header: #2a2a2a;
+
+                /* Shadows */
+                --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+                --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+
+                /* Link colors - warm amber theme (lighter for dark mode) */
+                --color-link: #D4915C;
+                --color-link-hover: #E0A874;
+                --color-link-visited: #C9A07B;
             }
         }
 
@@ -122,6 +245,19 @@
             outline: none;
         }
 
+        /* SCREEN READER ONLY */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
@@ -130,6 +266,34 @@
             padding: 0;
             margin: 0;
             font-size: 16px;
+        }
+
+        /* LINKS */
+        a {
+            color: var(--color-link);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--color-link-hover);
+        }
+
+        a:visited {
+            color: var(--color-link-visited);
+        }
+
+        a:visited:hover {
+            color: var(--color-link-hover);
+        }
+
+        /* External link indicator */
+        a[target="_blank"]::after {
+            content: " \2197";
+            font-size: 0.75em;
+            vertical-align: super;
         }
 
         .container {
@@ -145,10 +309,11 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 4vw + 1rem, 2.8rem);
             font-weight: 400;
             margin-bottom: 0.5rem;
             color: var(--color-text-primary);
+            text-wrap: balance;
         }
 
         .subtitle {
@@ -181,6 +346,51 @@
             top: 0;
         }
 
+        /* THEME TOGGLE BUTTON */
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-border);
+            color: var(--color-text);
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--color-text);
+            color: var(--color-bg);
+            border-color: var(--color-text);
+            transform: rotate(180deg);
+        }
+
+        .theme-toggle:focus-visible {
+            outline: 3px solid var(--color-focus);
+            outline-offset: 4px;
+        }
+
+        .theme-toggle-icon {
+            display: block;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+        }
+
         /* NAVEGACIÓN */
         nav {
             margin: 2rem 0;
@@ -210,24 +420,27 @@
 
         /* TIPOGRAFÍA */
         h2 {
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 2.5vw + 0.8rem, 2rem);
             font-weight: 400;
             margin: 3rem 0 1rem 0;
             color: var(--color-text-primary);
+            text-wrap: balance;
         }
 
         h3 {
-            font-size: 1.3rem;
+            font-size: clamp(1.2rem, 1.5vw + 0.7rem, 1.5rem);
             font-weight: 400;
             margin: 2rem 0 1rem 0;
             color: var(--color-text);
+            text-wrap: balance;
         }
 
         h4 {
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 1vw + 0.6rem, 1.2rem);
             font-weight: 500;
             margin: 1.5rem 0 0.5rem 0;
             color: var(--color-text-tertiary);
+            text-wrap: balance;
         }
 
         p {
@@ -420,15 +633,37 @@
             justify-content: center;
             font-size: 24px;
             text-decoration: none;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
             z-index: 999;
+            opacity: 0;
+            animation: back-to-top-fade linear;
+            animation-timeline: scroll(root);
+        }
+
+        @keyframes back-to-top-fade {
+            0%, 10% {
+                opacity: 0;
+                pointer-events: none;
+            }
+            20%, 100% {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+
+        /* Fallback for browsers without animation-timeline support */
+        @supports not (animation-timeline: scroll()) {
+            .back-to-top {
+                opacity: 1;
+                pointer-events: auto;
+            }
         }
 
         .back-to-top:hover {
             background: var(--color-text);
             transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow-md);
         }
 
         .back-to-top:focus-visible {
@@ -732,7 +967,7 @@
             table tr {
                 display: block;
                 margin-bottom: 1rem;
-                border: 1px solid #ddd;
+                border: 1px solid var(--color-border);
                 border-radius: 3px;
                 padding: 0.5rem;
                 white-space: normal;
@@ -787,6 +1022,9 @@
             /* Hide interactive elements */
             nav,
             .skip-link,
+            .theme-toggle,
+            .scroll-progress,
+            .back-to-top,
             .section-nav,
             details summary::after {
                 display: none !important;
@@ -919,8 +1157,12 @@
     </style>
 </head>
 <body id="top">
-    <div class="scroll-progress"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema de color">
+        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+    </button>
 
     <div class="container">
 
@@ -1087,6 +1329,10 @@
                 <p>Un café de especialidad debe tener 80+ puntos <strong>SCA</strong> (Specialty Coffee Association - la organización mundial que establece estándares de calidad para café), trazabilidad completa y cero defectos primarios. Solo 3% del café mundial cumple estos estándares.</p>
                 <p><strong>Más info:</strong> <a href="https://sca.coffee/" target="_blank" rel="noopener">sca.coffee</a></p>
             </div>
+
+            <div class="section-nav">
+                <p><strong>→ Siguiente:</strong> <a href="#equipamiento">Equipamiento Básico</a></p>
+            </div>
         </section>
 
         <!-- SECCIÓN 2: EQUIPAMIENTO -->
@@ -1175,6 +1421,10 @@
                     <li>Ignorar temperatura del agua</li>
                     <li>Querer todo el equipamiento desde el día 1</li>
                 </ul>
+            </div>
+
+            <div class="section-nav">
+                <p><strong>← Anterior:</strong> <a href="#fundamentos">Fundamentos</a> | <strong>→ Siguiente:</strong> <a href="#economia">Costos Reales</a></p>
             </div>
         </section>
 
@@ -1272,30 +1522,35 @@
 
             <h3>Presupuesto Mensual Realista</h3>
             <table>
-                <tr>
-                    <th>Consumo</th>
-                    <th>Café Necesario</th>
-                    <th>Presupuesto</th>
-                    <th>Observaciones</th>
-                </tr>
-                <tr>
-                    <td data-label="Consumo">1 taza/día</td>
-                    <td data-label="Café Necesario">500g/mes</td>
-                    <td data-label="Presupuesto">€8-15</td>
-                    <td data-label="Observaciones">Nivel entrada suficiente</td>
-                </tr>
-                <tr>
-                    <td data-label="Consumo">2 tazas/día</td>
-                    <td data-label="Café Necesario">1kg/mes</td>
-                    <td data-label="Presupuesto">€15-30</td>
-                    <td data-label="Observaciones">Explorar diferentes orígenes</td>
-                </tr>
-                <tr>
-                    <td data-label="Consumo">3+ tazas/día</td>
-                    <td data-label="Café Necesario">1.5kg/mes</td>
-                    <td data-label="Presupuesto">€25-45</td>
-                    <td data-label="Observaciones">Café diario + experimentación</td>
-                </tr>
+                <caption>Presupuesto mensual de café según consumo diario</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Consumo</th>
+                        <th scope="col">Café Necesario</th>
+                        <th scope="col">Presupuesto</th>
+                        <th scope="col">Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Consumo">1 taza/día</td>
+                        <td data-label="Café Necesario">500g/mes</td>
+                        <td data-label="Presupuesto">€8-15</td>
+                        <td data-label="Observaciones">Nivel entrada suficiente</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Consumo">2 tazas/día</td>
+                        <td data-label="Café Necesario">1kg/mes</td>
+                        <td data-label="Presupuesto">€15-30</td>
+                        <td data-label="Observaciones">Explorar diferentes orígenes</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Consumo">3+ tazas/día</td>
+                        <td data-label="Café Necesario">1.5kg/mes</td>
+                        <td data-label="Presupuesto">€25-45</td>
+                        <td data-label="Observaciones">Café diario + experimentación</td>
+                    </tr>
+                </tbody>
             </table>
 
             <h3>Optimización de Costos</h3>
@@ -1318,6 +1573,10 @@
                     <li>Actualización equipamiento (GAS - Gear Acquisition Syndrome)</li>
                     <li>Mayor consumo al mejorar calidad</li>
                 </ul>
+            </div>
+
+            <div class="section-nav">
+                <p><strong>← Anterior:</strong> <a href="#equipamiento">Equipamiento</a> | <strong>→ Siguiente:</strong> <a href="#molienda">Molienda</a></p>
             </div>
         </section>
 
@@ -1394,14 +1653,14 @@
                 <div class="grid-item">
                     <h4>MEDIA</h4>
                     <p><strong>Aspecto:</strong> Sal de mesa</p>
-                    <p><strong>Métodos:</strong> V60, Kalita, cafetera filtro</p>
+                    <p><strong>Métodos:</strong> Kalita, cafetera filtro</p>
                     <p><strong>Tiempo:</strong> 2-4 minutos</p>
                 </div>
 
                 <div class="grid-item">
                     <h4>MEDIA-FINA</h4>
                     <p><strong>Aspecto:</strong> Arena de playa</p>
-                    <p><strong>Métodos:</strong> AeroPress, Moka</p>
+                    <p><strong>Métodos:</strong> V60, AeroPress, Moka</p>
                     <p><strong>Tiempo:</strong> 1-3 minutos</p>
                 </div>
 
@@ -1491,6 +1750,10 @@
                 </tbody>
             </table>
 
+            <div class="tip">
+                <p><strong>Nota técnica:</strong> Los rangos óptimos mostrados están basados en el estándar SCAA/SCA Water for Brewing Specialty Coffee. El rango ideal de TDS total es 75-250 ppm, con pH entre 6.5-7.5.</p>
+            </div>
+
             <h3>Test Rápido de Tu Agua</h3>
             <div class="success">
                 <h4><span aria-hidden="true">✅</span> Prueba de Comparación</h4>
@@ -1565,6 +1828,10 @@
                 <p>Muchos tostadores de especialidad usan <strong>agua Third Wave Water</strong>: sachets que añades a agua destilada para mineralizarla perfectamente. €20 por 12 sachets (240L de agua perfecta).</p>
                 <p><strong>Qué es:</strong> Third Wave Water es una empresa que desarrolló paquetes minerales específicos para optimizar la extracción del café.</p>
                 <p><strong>Más info:</strong> <a href="https://thirdwavewater.com/" target="_blank" rel="noopener">thirdwavewater.com</a></p>
+            </div>
+
+            <div class="section-nav">
+                <p><strong>← Anterior:</strong> <a href="#molienda">Molienda</a> | <strong>→ Siguiente:</strong> <a href="#tueste">El Tueste</a></p>
             </div>
         </section>
 
@@ -1720,7 +1987,7 @@
             </div>
 
             <div class="section-nav">
-                <p><strong>→ Siguiente:</strong> Ahora que entiendes el tueste, aprende a <a href="#calidad">identificar café de calidad</a> cuando compras.</p>
+                <p><strong>← Anterior:</strong> <a href="#agua">Agua</a> | <strong>→ Siguiente:</strong> <a href="#calidad">Identificar Calidad</a></p>
             </div>
         </section>
 
@@ -1844,7 +2111,7 @@
 
             <h3>Técnicas Específicas por Método</h3>
 
-            <details>
+            <details name="metodo" open>
                 <summary><span aria-hidden="true">🫖</span> PRENSA FRANCESA — 30g : 450ml agua</summary>
                 <div class="grid-item">
                     <p><strong>Paso a paso:</strong></p>
@@ -1861,7 +2128,7 @@
                 </div>
             </details>
 
-            <details>
+            <details name="metodo">
                 <summary><span aria-hidden="true">⏳</span> V60 POUR OVER — 22g : 350ml agua</summary>
                 <div class="grid-item">
                     <p><strong>Paso a paso:</strong></p>
@@ -1877,7 +2144,7 @@
                 </div>
             </details>
 
-            <details>
+            <details name="metodo">
                 <summary><span aria-hidden="true">🔄</span> AEROPRESS — 18g : 220ml agua</summary>
                 <div class="grid-item">
                     <p><strong>Paso a paso:</strong></p>
@@ -1893,17 +2160,17 @@
                 </div>
             </details>
 
-            <details>
-                <summary><span aria-hidden="true">⌛</span> CHEMEX — 42g : 700ml agua</summary>
+            <details name="metodo">
+                <summary><span aria-hidden="true">⌛</span> CHEMEX — 30g : 500ml agua</summary>
                 <div class="grid-item">
                     <p><strong>Paso a paso:</strong></p>
                     <ol>
                         <li>Enjuagar filtro (lado triple hacia pico)</li>
                         <li>Molienda media-gruesa</li>
-                        <li><strong>Bloom:</strong> 80ml agua, esperar 45s</li>
-                        <li><strong>1° vertido:</strong> círculos lentos hasta 300ml</li>
-                        <li><strong>2° vertido:</strong> hasta 500ml</li>
-                        <li><strong>3° vertido:</strong> hasta 700ml</li>
+                        <li><strong>Bloom:</strong> 60ml agua, esperar 45s</li>
+                        <li><strong>1° vertido:</strong> círculos lentos hasta 200ml</li>
+                        <li><strong>2° vertido:</strong> hasta 350ml</li>
+                        <li><strong>3° vertido:</strong> hasta 500ml</li>
                         <li>Tiempo total: 4:00-4:30</li>
                     </ol>
                 </div>
@@ -1936,7 +2203,7 @@
             </div>
 
             <div class="section-nav">
-                <p><strong>→ Siguiente:</strong> Ahora que sabes preparar, aprende a <a href="#cata">desarrollar tu paladar y catar café</a>.</p>
+                <p><strong>← Anterior:</strong> <a href="#calidad">Identificar Calidad</a> | <strong>→ Siguiente:</strong> <a href="#cata">Cata en Casa</a></p>
             </div>
         </section>
 
@@ -2231,6 +2498,10 @@
                     <li>Comprar café molido (se oxida rápidamente)</li>
                 </ul>
             </div>
+
+            <div class="section-nav">
+                <p><strong>← Anterior:</strong> <a href="#cata">Cata en Casa</a> | <strong>→ Siguiente:</strong> <a href="#solucion">Solución de Problemas</a></p>
+            </div>
         </section>
 
         <!-- SECCIÓN 11: SOLUCIÓN DE PROBLEMAS -->
@@ -2394,6 +2665,10 @@
                     <li><strong>TDS:</strong> Total Dissolved Solids - concentración de café en agua</li>
                     <li><strong>Cupping:</strong> Método estándar de cata profesional</li>
                 </ul>
+            </div>
+
+            <div class="section-nav">
+                <p><strong>← Anterior:</strong> <a href="#compra">Guía de Compra</a></p>
             </div>
         </section>
 
