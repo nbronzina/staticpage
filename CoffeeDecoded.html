@@ -88,6 +88,23 @@
             opacity: 0.8;
         }
 
+        /* SKIP NAVIGATION */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #333;
+            color: #fff;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.2s;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
         /* NAVEGACIÓN */
         nav {
             margin: 2rem 0;
@@ -520,14 +537,34 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <div class="container">
-        
+
         <header>
             <img src="img/DitherCoffee.jpeg" alt="Ilustración botánica del cafeto" width="500" height="333" class="header-img">
             <h1>Coffee Decoded</h1>
             <p class="subtitle">De la confusión a la claridad en el café de especialidad</p>
         </header>
+
+        <nav aria-label="Tabla de contenidos">
+            <ul>
+                <li><a href="#fundamentos">Fundamentos</a></li>
+                <li><a href="#equipamiento">Equipamiento</a></li>
+                <li><a href="#molienda">Molienda</a></li>
+                <li><a href="#agua">Agua</a></li>
+                <li><a href="#calidad">Identificar Calidad</a></li>
+                <li><a href="#preparacion">Preparación</a></li>
+                <li><a href="#cata">Cata en Casa</a></li>
+                <li><a href="#compra">Guía de Compra</a></li>
+                <li><a href="#economia">Costos Reales</a></li>
+                <li><a href="#solucion">Solución de Problemas</a></li>
+            </ul>
+        </nav>
+
+        <main id="main-content" tabindex="-1">
+        <article>
 
         <div class="intro-box">
             <p><strong>¿Por qué algunos cafés cuestan €25/kg y otros €5?</strong></p>
@@ -607,24 +644,9 @@
             <p><strong>Empecemos.</strong></p>
         </section>
 
-        <nav>
-            <ul>
-                <li><a href="#fundamentos">Fundamentos</a></li>
-                <li><a href="#equipamiento">Equipamiento</a></li>
-                <li><a href="#molienda">Molienda</a></li>
-                <li><a href="#agua">Agua</a></li>
-                <li><a href="#calidad">Identificar Calidad</a></li>
-                <li><a href="#preparacion">Preparación</a></li>
-                <li><a href="#cata">Cata en Casa</a></li>
-                <li><a href="#compra">Guía de Compra</a></li>
-                <li><a href="#economia">Costos Reales</a></li>
-                <li><a href="#solucion">Solución de Problemas</a></li>
-            </ul>
-        </nav>
-
         <!-- SECCIÓN 1: FUNDAMENTOS -->
-        <section id="fundamentos">
-            <h2>1. Fundamentos: ¿Qué hace especial al café de especialidad?</h2>
+        <section id="fundamentos" aria-labelledby="heading-fundamentos">
+            <h2 id="heading-fundamentos">1. Fundamentos: ¿Qué hace especial al café de especialidad?</h2>
             
             <h3>El Cafeto y su Fruto</h3>
             <p>El café es el grano de una cereza. Como el vino con las uvas, el terroir (suelo, clima, altitud) afecta directamente el sabor. Un cafeto tarda 3-4 años en producir y cada cereza madura en 6-9 meses.</p>
@@ -674,13 +696,13 @@
             <div class="tip">
                 <h4>💡 Punto Clave</h4>
                 <p>Un café de especialidad debe tener 80+ puntos <strong>SCA</strong> (Specialty Coffee Association - la organización mundial que establece estándares de calidad para café), trazabilidad completa y cero defectos primarios. Solo 3% del café mundial cumple estos estándares.</p>
-                <p><strong>Más info:</strong> <a href="https://sca.coffee/" target="_blank">sca.coffee</a></p>
+                <p><strong>Más info:</strong> <a href="https://sca.coffee/" target="_blank" rel="noopener">sca.coffee</a></p>
             </div>
         </section>
 
         <!-- SECCIÓN 2: EQUIPAMIENTO -->
-        <section id="equipamiento">
-            <h2>2. Equipamiento Básico: Qué Necesitas Realmente</h2>
+        <section id="equipamiento" aria-labelledby="heading-equipamiento">
+            <h2 id="heading-equipamiento">2. Equipamiento Básico: Qué Necesitas Realmente</h2>
             
             <h3>Jerarquía de Inversión</h3>
             <div class="highlight">
@@ -763,8 +785,8 @@
         </section>
 
         <!-- SECCIÓN 3: MOLIENDA -->
-        <section id="molienda">
-            <h2>3. Molienda: La Variable Más Subestimada</h2>
+        <section id="molienda" aria-labelledby="heading-molienda">
+            <h2 id="heading-molienda">3. Molienda: La Variable Más Subestimada</h2>
             
             <h3>Por Qué la Molienda es Crítica</h3>
             <div class="highlight">
@@ -884,8 +906,8 @@
         </section>
 
         <!-- SECCIÓN 4: AGUA -->
-        <section id="agua">
-            <h2>4. El Agua: Fundamento Invisible del Sabor</h2>
+        <section id="agua" aria-labelledby="heading-agua">
+            <h2 id="heading-agua">4. El Agua: Fundamento Invisible del Sabor</h2>
             
             <h3>Por Qué Importa el Agua</h3>
             <div class="highlight">
@@ -988,13 +1010,13 @@
                 <h4>💡 Hack Profesional</h4>
                 <p>Muchos tostadores de especialidad usan <strong>agua Third Wave Water</strong>: sachets que añades a agua destilada para mineralizarla perfectamente. €20 por 12 sachets (240L de agua perfecta).</p>
                 <p><strong>Qué es:</strong> Third Wave Water es una empresa que desarrolló paquetes minerales específicos para optimizar la extracción del café.</p>
-                <p><strong>Más info:</strong> <a href="https://thirdwavewater.com/" target="_blank">thirdwavewater.com</a></p>
+                <p><strong>Más info:</strong> <a href="https://thirdwavewater.com/" target="_blank" rel="noopener">thirdwavewater.com</a></p>
             </div>
         </section>
 
         <!-- SECCIÓN 5: IDENTIFICAR CALIDAD -->
-        <section id="calidad">
-            <h2>5. Cómo Identificar Café de Calidad</h2>
+        <section id="calidad" aria-labelledby="heading-calidad">
+            <h2 id="heading-calidad">5. Cómo Identificar Café de Calidad</h2>
             
             <h3>En el Empaque</h3>
             <div class="grid">
@@ -1061,8 +1083,8 @@
         </section>
 
         <!-- SECCIÓN 6: PREPARACIÓN -->
-        <section id="preparacion">
-            <h2>6. Preparación: Técnicas Específicas</h2>
+        <section id="preparacion" aria-labelledby="heading-preparacion">
+            <h2 id="heading-preparacion">6. Preparación: Técnicas Específicas</h2>
             
             <h3>Variables Fundamentales</h3>
             <p>Todo café se prepara controlando estas variables. Domínalas y controlarás el sabor:</p>
@@ -1172,8 +1194,8 @@
         </section>
 
         <!-- SECCIÓN 7: CATA EN CASA -->
-        <section id="cata">
-            <h2>7. Desarrollar el Paladar: Cata Básica en Casa</h2>
+        <section id="cata" aria-labelledby="heading-cata">
+            <h2 id="heading-cata">7. Desarrollar el Paladar: Cata Básica en Casa</h2>
             
             <h3>Protocolo Simplificado de Cata</h3>
             <div class="highlight">
@@ -1182,7 +1204,7 @@
                 <p><strong>Frecuencia:</strong> 2-3 veces por semana máximo</p>
                 
                 <p><strong>Nota técnica:</strong> Este protocolo está basado en el <strong>cupping</strong> profesional desarrollado por la <strong>SCA</strong>, pero simplificado para uso casero. Los <strong>Q Graders</strong> (catadores certificados por el Coffee Quality Institute) usan protocolos más estrictos para evaluar cafés comercialmente.</p>
-                <p><strong>Más info:</strong> <a href="https://sca.coffee/research/protocols-best-practices" target="_blank">Protocolos SCA</a></p>
+                <p><strong>Más info:</strong> <a href="https://sca.coffee/research/protocols-best-practices" target="_blank" rel="noopener">Protocolos SCA</a></p>
             </div>
 
             <h3>Setup Básico de Cata</h3>
@@ -1313,8 +1335,8 @@
         </section>
 
         <!-- SECCIÓN 8: GUÍA DE COMPRA -->
-        <section id="compra">
-            <h2>8. Guía Práctica de Compra</h2>
+        <section id="compra" aria-labelledby="heading-compra">
+            <h2 id="heading-compra">8. Guía Práctica de Compra</h2>
             
             <h3>Por Nivel de Experiencia</h3>
             <table>
@@ -1447,8 +1469,8 @@
         </section>
 
         <!-- SECCIÓN 9: COSTOS REALES -->
-        <section id="economia">
-            <h2>9. Economía del Café de Especialidad</h2>
+        <section id="economia" aria-labelledby="heading-economia">
+            <h2 id="heading-economia">9. Economía del Café de Especialidad</h2>
             
             <h3>Inversión Inicial Total por Nivel</h3>
             <table>
@@ -1585,8 +1607,8 @@
         </section>
 
         <!-- SECCIÓN 10: SOLUCIÓN DE PROBLEMAS -->
-        <section id="solucion">
-            <h2>10. Solución de Problemas</h2>
+        <section id="solucion" aria-labelledby="heading-solucion">
+            <h2 id="heading-solucion">10. Solución de Problemas</h2>
             
             <h3>Diagnóstico por Sabor</h3>
             <table>
@@ -1722,9 +1744,9 @@
                 
                 <p><strong>Enlaces útiles:</strong></p>
                 <ul>
-                    <li><strong>SCA Cursos:</strong> <a href="https://sca.coffee/education" target="_blank">sca.coffee/education</a></li>
-                    <li><strong>CQI</strong> (Coffee Quality Institute - organización que certifica Q Graders): <a href="https://www.coffeeinstitute.org/" target="_blank">coffeeinstitute.org</a></li>
-                    <li><strong>World Coffee Research:</strong> <a href="https://worldcoffeeresearch.org/" target="_blank">worldcoffeeresearch.org</a></li>
+                    <li><strong>SCA Cursos:</strong> <a href="https://sca.coffee/education" target="_blank" rel="noopener">sca.coffee/education</a></li>
+                    <li><strong>CQI</strong> (Coffee Quality Institute - organización que certifica Q Graders): <a href="https://www.coffeeinstitute.org/" target="_blank" rel="noopener">coffeeinstitute.org</a></li>
+                    <li><strong>World Coffee Research:</strong> <a href="https://worldcoffeeresearch.org/" target="_blank" rel="noopener">worldcoffeeresearch.org</a></li>
                 </ul>
             </div>
 
@@ -1742,6 +1764,9 @@
                 </ul>
             </div>
         </section>
+
+        </article>
+        </main>
 
         <footer>
             <p>Coffee Decoded - De la confusión a la claridad en el café de especialidad | <a href="https://www.nicolasbronzina.com/">Nicolás Bronzina</a></p>
