@@ -24,7 +24,11 @@
 <!-- Additional SEO -->
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nicolasbronzina.com/CoffeeDecoded.html">
-    
+
+<!-- Theme color for mobile browsers -->
+<meta name="theme-color" content="#92400E" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+
     <!-- Favicon (optional) -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
@@ -445,6 +449,7 @@
 
         p {
             margin-bottom: 1rem;
+            text-wrap: pretty;
         }
 
         strong {
@@ -998,7 +1003,33 @@
                 color: #666;
             }
         }
-        
+
+        /* Sticky ToC for large screens */
+        @media (min-width: 1200px) {
+            .container {
+                display: grid;
+                grid-template-columns: 250px 1fr;
+                gap: 2rem;
+                max-width: calc(70ch + 250px + 2rem);
+            }
+
+            nav {
+                position: sticky;
+                top: 2rem;
+                max-height: calc(100vh - 4rem);
+                overflow-y: auto;
+                align-self: start;
+                font-size: 0.85rem;
+            }
+
+            nav a.active {
+                color: var(--color-link);
+                font-weight: 600;
+                border-left: 3px solid var(--color-link);
+                padding-left: 0.5rem;
+            }
+        }
+
         /* Print styles */
         @media print {
             * {
@@ -1233,24 +1264,24 @@
 
             <h3>Lo Que Este Manual NO Es</h3>
             
-            <div class="warning">
+            <aside class="warning" aria-label="Advertencia">
                 <ul>
                     <li><strong>No es snobismo disfrazado:</strong> No te diremos que tu café actual es malo o que necesitas gastar €500 en equipamiento</li>
                     <li><strong>No es marketing:</strong> No vendemos nada. Las recomendaciones son genuinas y basadas en experiencia</li>
                     <li><strong>No es académico:</strong> Evitamos tecnicismos innecesarios. Si algo no mejora tu café, no está aquí</li>
                     <li><strong>No es dogmático:</strong> Hay muchas formas "correctas" de hacer café. Te damos herramientas para encontrar la tuya</li>
                 </ul>
-            </div>
+            </aside>
 
             <h3>Tu Ruta de Aprendizaje</h3>
             
             <p>Recomendamos leer las secciones en orden si eres principiante, pero cada una funciona independientemente. Si ya tienes experiencia, puedes saltar directamente a lo que necesitas:</p>
 
-            <div class="highlight">
+            <aside class="highlight" aria-label="Dato destacado">
                 <p><strong>Ruta Rápida (30 minutos):</strong> Fundamentos → Identificar Calidad → Una técnica de preparación</p>
                 <p><strong>Ruta Completa (2-3 horas):</strong> Todo el manual, pausas para reflexionar y tomar notas</p>
                 <p><strong>Ruta Práctica (semanas):</strong> Leer una sección, implementar, experimentar, continuar</p>
-            </div>
+            </aside>
 
             <h3>Promesa y Expectativas</h3>
             
@@ -1284,7 +1315,7 @@
                     <p><strong>Sabor:</strong> Complejo, dulce, ácido</p>
                     <p><strong>Cafeína:</strong> 0.8-1.4%</p>
                     <p>Solo el 10% del arábica es "especialidad"</p>
-                </div>
+                </aside>
                 <div class="grid-item">
                     <h4>Robusta (30% mundial)</h4>
                     <p><strong>Altitud:</strong> 0-800m</p>
@@ -1292,7 +1323,7 @@
                     <p><strong>Cafeína:</strong> 1.7-4%</p>
                     <p>Usado en mezclas y instantáneo</p>
                     <p><em>Nota:</em> Existe "Fine Robusta" de especialidad con mejor calidad que la Robusta comercial tradicional, cultivado a mayor altitud y procesado con cuidado.</p>
-                </div>
+                </aside>
             </div>
 
             <h3>Las Tres Olas del Café</h3>
@@ -1324,15 +1355,15 @@
                 </tbody>
             </table>
 
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <h4><span aria-hidden="true">💡</span> Punto Clave</h4>
                 <p>Un café de especialidad debe tener 80+ puntos <strong>SCA</strong> (Specialty Coffee Association - la organización mundial que establece estándares de calidad para café), trazabilidad completa y cero defectos primarios. Solo 3% del café mundial cumple estos estándares.</p>
                 <p><strong>Más info:</strong> <a href="https://sca.coffee/" target="_blank" rel="noopener">sca.coffee</a></p>
-            </div>
+            </aside>
 
             <div class="section-nav">
                 <p><strong>→ Siguiente:</strong> <a href="#equipamiento">Equipamiento Básico</a></p>
-            </div>
+            </aside>
         </section>
 
         <!-- SECCIÓN 2: EQUIPAMIENTO -->
@@ -1340,7 +1371,7 @@
             <h2 id="heading-equipamiento">2. Equipamiento Básico: Qué Necesitas Realmente</h2>
             
             <h3>Jerarquía de Inversión</h3>
-            <div class="highlight">
+            <aside class="highlight" aria-label="Dato destacado">
                 <p><strong>Orden de prioridad para invertir tu dinero:</strong></p>
                 <ol>
                     <li><strong>Buen molinillo</strong> (más importante que el método)</li>
@@ -1348,7 +1379,7 @@
                     <li><strong>Kettle con control temperatura</strong> (para métodos filtrados)</li>
                     <li><strong>Método específico</strong> (V60, AeroPress, etc.)</li>
                 </ol>
-            </div>
+            </aside>
 
             <h3>Por Presupuesto Total</h3>
             <table>
@@ -1393,7 +1424,7 @@
                     <p><strong>Capacidad:</strong> 2kg+</p>
                     <p><strong>Extra:</strong> Timer integrado es útil</p>
                     <p><strong>Precio:</strong> €15-40</p>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4><span aria-hidden="true">🌡️</span> KETTLE TEMPERATURA</h4>
@@ -1402,7 +1433,7 @@
                     <p><strong>Rango:</strong> 60-100°C</p>
                     <p><strong>Extra:</strong> Hold temperature función</p>
                     <p><strong>Precio:</strong> €40-120</p>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4><span aria-hidden="true">⏱️</span> TIMER</h4>
@@ -1413,7 +1444,7 @@
                 </div>
             </div>
 
-            <div class="warning">
+            <aside class="warning" aria-label="Advertencia">
                 <h4><span aria-hidden="true">❌</span> Errores Comunes de Principiantes</h4>
                 <ul>
                     <li>Comprar método caro antes que buen molinillo</li>
@@ -1421,11 +1452,11 @@
                     <li>Ignorar temperatura del agua</li>
                     <li>Querer todo el equipamiento desde el día 1</li>
                 </ul>
-            </div>
+            </aside>
 
             <div class="section-nav">
                 <p><strong>← Anterior:</strong> <a href="#fundamentos">Fundamentos</a> | <strong>→ Siguiente:</strong> <a href="#economia">Costos Reales</a></p>
-            </div>
+            </aside>
         </section>
 
         <!-- SECCIÓN 3: COSTOS REALES -->
@@ -1484,7 +1515,7 @@
                     <p><strong>Calidad:</strong> Excelente</p>
                     <p><strong>Tiempo:</strong> 5-8 minutos</p>
                     <p><strong>Control:</strong> Total</p>
-                </div>
+                </aside>
 
                 <div class="grid-item">
                     <h4><span aria-hidden="true">🏪</span> CAFETERÍA ESPECIALIDAD</h4>
@@ -1512,13 +1543,13 @@
             </div>
 
             <h3>Análisis de ROI (Return on Investment)</h3>
-            <div class="highlight">
+            <aside class="highlight" aria-label="Dato destacado">
                 <p><strong>Escenario típico:</strong> 2 tazas/día, 300 días/año</p>
                 <p><strong>Inversión inicial:</strong> €190 (nivel intermedio)</p>
                 <p><strong>Ahorro anual vs cafetería:</strong> €1,500-2,000</p>
                 <p><strong>Payback period:</strong> 6-8 semanas</p>
                 <p><strong>Beneficio adicional:</strong> Mejor calidad + conveniencia</p>
-            </div>
+            </aside>
 
             <h3>Presupuesto Mensual Realista</h3>
             <table>
@@ -1554,7 +1585,7 @@
             </table>
 
             <h3>Optimización de Costos</h3>
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <h4><span aria-hidden="true">💡</span> Estrategias para Ahorrar</h4>
                 <ul>
                     <li><strong>Comprar directo de tostador:</strong> 10-20% descuento vs tiendas</li>
@@ -1563,9 +1594,9 @@
                     <li><strong>Ofertas temporada:</strong> Stocks cuando hay promociones</li>
                     <li><strong>Marcas house:</strong> Misma calidad, menos marketing</li>
                 </ul>
-            </div>
+            </aside>
 
-            <div class="warning">
+            <aside class="warning" aria-label="Advertencia">
                 <h4><span aria-hidden="true">⚠️</span> Costos Ocultos a Considerar</h4>
                 <ul>
                     <li>Mantenimiento/descalcificación equipamiento</li>
@@ -1573,7 +1604,7 @@
                     <li>Actualización equipamiento (GAS - Gear Acquisition Syndrome)</li>
                     <li>Mayor consumo al mejorar calidad</li>
                 </ul>
-            </div>
+            </aside>
 
             <div class="section-nav">
                 <p><strong>← Anterior:</strong> <a href="#equipamiento">Equipamiento</a> | <strong>→ Siguiente:</strong> <a href="#molienda">Molienda</a></p>
@@ -1585,10 +1616,10 @@
             <h2 id="heading-molienda">4. Molienda: La Variable Más Subestimada</h2>
             
             <h3>Por Qué la Molienda es Crítica</h3>
-            <div class="highlight">
+            <aside class="highlight" aria-label="Dato destacado">
                 <p>Una molienda uniforme es más importante que el método de preparación. Una molienda uniforme es una de las variables más importantes que puedes controlar. Determina la superficie expuesta al agua y gobierna directamente la velocidad y calidad de la extracción. Junto con la temperatura, el ratio y el tiempo de contacto, define el resultado en taza.</p>
                 <p><strong>Regla absoluta:</strong> Moler siempre justo antes de preparar. El café molido comienza a perder compuestos aromáticos inmediatamente — el CO₂ se disipa en minutos llevando consigo compuestos volátiles, y estudios muestran que más del 50% de la intensidad aromática puede perderse en las primeras 24 horas.</p>
-            </div>
+            </aside>
 
             <h3>Tipos de Molinillos</h3>
             <table>
@@ -1641,28 +1672,28 @@
                     <p><strong>Aspecto:</strong> Migas de pan</p>
                     <p><strong>Métodos:</strong> Cold brew, prensa francesa</p>
                     <p><strong>Tiempo:</strong> 4+ minutos</p>
-                </div>
+                </aside>
 
                 <div class="grid-item">
                     <h4>GRUESA</h4>
                     <p><strong>Aspecto:</strong> Sal marina gruesa</p>
                     <p><strong>Métodos:</strong> Chemex, percoladores</p>
                     <p><strong>Tiempo:</strong> 4-6 minutos</p>
-                </div>
+                </aside>
 
                 <div class="grid-item">
                     <h4>MEDIA</h4>
                     <p><strong>Aspecto:</strong> Sal de mesa</p>
                     <p><strong>Métodos:</strong> Kalita, cafetera filtro</p>
                     <p><strong>Tiempo:</strong> 2-4 minutos</p>
-                </div>
+                </aside>
 
                 <div class="grid-item">
                     <h4>MEDIA-FINA</h4>
                     <p><strong>Aspecto:</strong> Arena de playa</p>
                     <p><strong>Métodos:</strong> V60, AeroPress, Moka</p>
                     <p><strong>Tiempo:</strong> 1-3 minutos</p>
-                </div>
+                </aside>
 
                 <div class="grid-item">
                     <h4>FINA</h4>
@@ -1672,12 +1703,12 @@
                 </div>
             </div>
 
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <h4><span aria-hidden="true">💡</span> Ajuste en Tiempo Real</h4>
                 <p><strong>Extracción lenta/amarga:</strong> Molienda más gruesa</p>
                 <p><strong>Extracción rápida/agria:</strong> Molienda más fina</p>
                 <p><strong>Inicio recomendado:</strong> Empezar medio, ajustar según sabor</p>
-            </div>
+            </aside>
 
             <h3>Recomendaciones por Presupuesto</h3>
             <div class="grid">
@@ -1686,7 +1717,7 @@
                     <p><strong>Ventajas:</strong> Excelente calidad/precio</p>
                     <p><strong>Desventajas:</strong> Esfuerzo físico</p>
                     <p><strong>Mejor para:</strong> 1-2 tazas, viajes</p>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4>€80-120: ELÉCTRICO ENTRY</h4>
@@ -1705,7 +1736,7 @@
 
             <div class="section-nav">
                 <p><strong>→ Siguiente:</strong> Conoce cómo <a href="#agua">el agua afecta tu café</a>, luego aprende las <a href="#preparacion">técnicas de preparación</a>.</p>
-            </div>
+            </aside>
         </section>
 
         <!-- SECCIÓN 5: AGUA -->
@@ -1713,9 +1744,9 @@
             <h2 id="heading-agua">5. El Agua: Fundamento Invisible del Sabor</h2>
             
             <h3>Por Qué Importa el Agua</h3>
-            <div class="highlight">
+            <aside class="highlight" aria-label="Dato destacado">
                 <p>El café es 98% agua. Los minerales disueltos actúan como "llaves" que extraen diferentes sabores del café. Agua "mala" = café malo, sin excepciones.</p>
-            </div>
+            </aside>
 
             <h3>Minerales Clave y Sus Efectos</h3>
             <table>
@@ -1750,12 +1781,12 @@
                 </tbody>
             </table>
 
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <p><strong>Nota técnica:</strong> Los rangos óptimos mostrados están basados en el estándar SCAA/SCA Water for Brewing Specialty Coffee. El rango ideal de TDS total es 75-250 ppm, con pH entre 6.5-7.5.</p>
-            </div>
+            </aside>
 
             <h3>Test Rápido de Tu Agua</h3>
-            <div class="success">
+            <aside class="success" aria-label="Resultado positivo">
                 <h4><span aria-hidden="true">✅</span> Prueba de Comparación</h4>
                 <ol>
                     <li>Haz café idéntico con agua del grifo</li>
@@ -1764,7 +1795,7 @@
                 </ol>
                 <p><strong>Si notas diferencia clara:</strong> Tu agua necesita mejora</p>
                 <p><strong>Si son similares:</strong> Tu agua del grifo es aceptable</p>
-            </div>
+            </aside>
 
             <h3>Soluciones Prácticas por Problema</h3>
             <div class="grid">
@@ -1773,21 +1804,21 @@
                     <p><strong>Síntomas:</strong> Café plano, sin acidez</p>
                     <p><strong>Causa:</strong> Exceso calcio/magnesio</p>
                     <p><strong>Solución:</strong> Filtro descalcificador o mezclar con destilada</p>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4>AGUA MUY BLANDA</h4>
                     <p><strong>Síntomas:</strong> Café agrio, metálico</p>
                     <p><strong>Causa:</strong> Falta minerales</p>
                     <p><strong>Solución:</strong> Agua embotellada mineralizada</p>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4>CLORO/QUÍMICOS</h4>
                     <p><strong>Síntomas:</strong> Sabor químico, olor</p>
                     <p><strong>Causa:</strong> Tratamiento municipal</p>
                     <p><strong>Solución:</strong> Filtro carbón activado</p>
-                </div>
+                </aside>
             </div>
 
             <h3>Aguas Embotelladas por Tipo de Mineralización</h3>
@@ -1823,16 +1854,16 @@
                 </tbody>
             </table>
 
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <h4><span aria-hidden="true">💡</span> Hack Profesional</h4>
                 <p>Muchos tostadores de especialidad usan <strong>agua Third Wave Water</strong>: sachets que añades a agua destilada para mineralizarla perfectamente. €20 por 12 sachets (240L de agua perfecta).</p>
                 <p><strong>Qué es:</strong> Third Wave Water es una empresa que desarrolló paquetes minerales específicos para optimizar la extracción del café.</p>
                 <p><strong>Más info:</strong> <a href="https://thirdwavewater.com/" target="_blank" rel="noopener">thirdwavewater.com</a></p>
-            </div>
+            </aside>
 
             <div class="section-nav">
                 <p><strong>← Anterior:</strong> <a href="#molienda">Molienda</a> | <strong>→ Siguiente:</strong> <a href="#tueste">El Tueste</a></p>
-            </div>
+            </aside>
         </section>
 
         <!-- SECCIÓN 6: EL TUESTE -->
@@ -1840,10 +1871,10 @@
             <h2 id="heading-tueste">6. El Tueste: Transformación del Grano</h2>
 
             <h3>Por Qué el Nivel de Tueste Importa</h3>
-            <div class="highlight">
+            <aside class="highlight" aria-label="Dato destacado">
                 <p>El tueste transforma químicamente el café verde: carameliza azúcares, desarrolla aceites, libera CO₂ y crea +1000 compuestos aromáticos. El nivel de tueste afecta directamente acidez, cuerpo, dulzor y qué parámetros de preparación necesitas.</p>
                 <p><strong>Regla básica:</strong> Tueste más claro = más acidez, más origen. Tueste más oscuro = más cuerpo, menos origen.</p>
-            </div>
+            </aside>
 
             <h3>Niveles de Tueste</h3>
             <table>
@@ -1972,19 +2003,19 @@
                 </tbody>
             </table>
 
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <h4><span aria-hidden="true">💡</span> Café de Especialidad y el Tueste</h4>
                 <p>La mayoría del café de especialidad se tuesta claro o medio para preservar las características del origen. Tostadores serios indican fecha de tueste en el paquete — si no la ves, no es especialidad seria.</p>
-            </div>
+            </aside>
 
-            <div class="warning">
+            <aside class="warning" aria-label="Advertencia">
                 <h4><span aria-hidden="true">⚠️</span> Mitos sobre el Tueste Oscuro</h4>
                 <ul>
                     <li><strong>"Más cafeína":</strong> Falso. Pierde masa al tostar pero la concentración por peso es similar.</li>
                     <li><strong>"Más fuerte":</strong> Amargo ≠ fuerte. Tueste oscuro oculta origen con sabor a carbón.</li>
                     <li><strong>"Mejor para espresso":</strong> Tradición italiana, no requisito. Espresso claro es complejo y fascinante.</li>
                 </ul>
-            </div>
+            </aside>
 
             <div class="section-nav">
                 <p><strong>← Anterior:</strong> <a href="#agua">Agua</a> | <strong>→ Siguiente:</strong> <a href="#calidad">Identificar Calidad</a></p>
@@ -2006,7 +2037,7 @@
                         <li>Válvula desgasificación</li>
                         <li>Empaque hermético y opaco</li>
                     </ul>
-                </div>
+                </aside>
                 <div class="grid-item">
                     <h4><span aria-hidden="true">❌</span> Evita Siempre</h4>
                     <ul>
@@ -2016,18 +2047,18 @@
                         <li>Empaques transparentes</li>
                         <li>Términos marketing ("gourmet")</li>
                     </ul>
-                </div>
-            </div>
+                </aside>
+            </aside>
 
             <h3>Test de Frescura (Bloom Test)</h3>
-            <div class="highlight">
+            <aside class="highlight" aria-label="Dato destacado">
                 <ol>
                     <li>Pon café recién molido en filtro</li>
                     <li>Vierte agua a 93°C (doble del peso del café)</li>
                     <li>¿Se infla y burbujea vigorosamente?</li>
                 </ol>
                 <p><strong>SÍ = café fresco y de calidad | NO = café viejo o defectuoso</strong></p>
-            </div>
+            </aside>
 
             <h3>Procesamiento: Cómo Afecta el Sabor</h3>
             <table>
@@ -2058,10 +2089,10 @@
                 </tbody>
             </table>
 
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <h4><span aria-hidden="true">💡</span> Regla Práctica</h4>
                 <p>Principiantes: empezar con lavados (más limpios). Experimentadores: probar naturales (más intensos). ¿Indeciso? Honey es el término medio perfecto.</p>
-            </div>
+            </aside>
         </section>
 
         <!-- SECCIÓN 8: PREPARACIÓN -->
@@ -2104,10 +2135,10 @@
                 </tbody>
             </table>
 
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <h4><span aria-hidden="true">💡</span> Término Técnico</h4>
                 <p><strong>TDS</strong> (Total Dissolved Solids): Porcentaje de café disuelto en el agua. Básicamente, qué tan "fuerte" sabe tu café. Rango óptimo: 1.15-1.35% para filtrados.</p>
-            </div>
+            </aside>
 
             <h3>Técnicas Específicas por Método</h3>
 
@@ -2125,7 +2156,7 @@
                         <li><strong>Servir inmediatamente</strong></li>
                     </ol>
                     <p><em>Alternativa Hoffmann:</em> No revolver, esperar 4 min, romper corteza, esperar 4-5 min adicionales, servir sin presionar completamente para evitar sedimento.</p>
-                </div>
+                </aside>
             </details>
 
             <details name="metodo">
@@ -2141,7 +2172,7 @@
                         <li><strong>3° vertido:</strong> hasta 350ml</li>
                         <li>Tiempo total: 2:30-3:00</li>
                     </ol>
-                </div>
+                </aside>
             </details>
 
             <details name="metodo">
@@ -2157,7 +2188,7 @@
                         <li>Esperar 1:30 total</li>
                         <li>Presionar suavemente 30 segundos</li>
                     </ol>
-                </div>
+                </aside>
             </details>
 
             <details name="metodo">
@@ -2173,11 +2204,11 @@
                         <li><strong>3° vertido:</strong> hasta 500ml</li>
                         <li>Tiempo total: 4:00-4:30</li>
                     </ol>
-                </div>
+                </aside>
             </details>
 
             <h3>Pre-infusión/Blooming: La Técnica Crucial</h3>
-            <div class="success">
+            <aside class="success" aria-label="Resultado positivo">
                 <h4><span aria-hidden="true">✅</span> Cómo Hacer Bloom Perfecto</h4>
                 <ol>
                     <li>Crear pequeño hoyo en centro del café molido</li>
@@ -2187,20 +2218,20 @@
                     <li>El café debe expandirse como una "torta"</li>
                 </ol>
                 <p><strong>Si no hay bloom:</strong> Café viejo o molienda incorrecta</p>
-            </div>
+            </aside>
 
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <h4><span aria-hidden="true">💡</span> Ajustes en Tiempo Real</h4>
                 <p><strong>Extracción muy rápida:</strong> Molienda más fina o vertido más lento</p>
                 <p><strong>Extracción muy lenta:</strong> Molienda más gruesa o vertido más rápido</p>
                 <p><strong>Sabor agrio:</strong> Temperatura más alta o tiempo más largo</p>
                 <p><strong>Sabor amargo:</strong> Temperatura más baja o tiempo más corto</p>
-            </div>
+            </aside>
 
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <h4><span aria-hidden="true">🥛</span> Nota sobre Leche</h4>
                 <p>Si preparas café con leche: usa leche entera (3.5% grasa) para mejor textura. Calentar entre 60-65°C — a mayor temperatura se quema la lactosa. El café de especialidad se diseña para apreciarse solo, pero un buen flat white o cappuccino requiere leche de calidad y técnica de vaporizado adecuada.</p>
-            </div>
+            </aside>
 
             <div class="section-nav">
                 <p><strong>← Anterior:</strong> <a href="#calidad">Identificar Calidad</a> | <strong>→ Siguiente:</strong> <a href="#cata">Cata en Casa</a></p>
@@ -2212,7 +2243,7 @@
             <h2 id="heading-cata">9. Desarrollar el Paladar: Cata Básica en Casa</h2>
             
             <h3>Protocolo Simplificado de Cata</h3>
-            <div class="highlight">
+            <aside class="highlight" aria-label="Dato destacado">
                 <p><strong>Objetivo:</strong> Entrenar el paladar sistemáticamente para identificar sabores y calidad.</p>
                 <p><strong>Tiempo necesario:</strong> 15-20 minutos</p>
                 <p><strong>Frecuencia:</strong> 2-3 veces por semana máximo</p>
@@ -2220,7 +2251,7 @@
                 <p><strong>Nota técnica:</strong> Este protocolo está basado en el <strong>cupping</strong> profesional desarrollado por la <strong>SCA</strong>, pero simplificado para uso casero. Los <strong>Q Graders</strong> (catadores certificados por el Coffee Quality Institute) usan protocolos más estrictos para evaluar cafés comercialmente.</p>
                 <p><em>Actualización 2024:</em> La SCA introdujo el sistema CVA (Coffee Value Assessment) como complemento al cupping tradicional, incorporando evaluación hedónica y contexto de consumo.</p>
                 <p><strong>Más info:</strong> <a href="https://sca.coffee/research/protocols-best-practices" target="_blank" rel="noopener">Protocolos SCA</a></p>
-            </div>
+            </aside>
 
             <h3>Setup Básico de Cata</h3>
             <table>
@@ -2266,7 +2297,7 @@
                         <li>Mismo tiempo extracción</li>
                         <li>Dejar enfriar a ~60°C</li>
                     </ul>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4><span aria-hidden="true">2️⃣</span> AROMA</h4>
@@ -2276,7 +2307,7 @@
                         <li>Comparar diferencias obvias</li>
                         <li>No pensar demasiado</li>
                     </ul>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4><span aria-hidden="true">3️⃣</span> PRIMERA CATA</h4>
@@ -2286,7 +2317,7 @@
                         <li>Anotar impresión general</li>
                         <li>Enjuagar boca entre muestras</li>
                     </ul>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4><span aria-hidden="true">4️⃣</span> ANÁLISIS DETALLADO</h4>
@@ -2296,31 +2327,31 @@
                         <li>Cuerpo: ¿ligero, medio, pesado?</li>
                         <li>Final: ¿limpio, persistente?</li>
                     </ul>
-                </div>
+                </aside>
             </div>
 
             <h3>Ejercicios Prácticos para Desarrollar Paladar</h3>
             
-            <div class="success">
+            <aside class="success" aria-label="Resultado positivo">
                 <h4><span aria-hidden="true">✅</span> EJERCICIO 1: Comparación Básica</h4>
                 <p><strong>Qué hacer:</strong> Catar mismo café preparado con ratios diferentes</p>
                 <p><strong>Setup:</strong> 1:15, 1:16, 1:17 lado a lado</p>
                 <p><strong>Qué aprendes:</strong> Cómo el ratio afecta intensidad y equilibrio</p>
-            </div>
+            </aside>
 
-            <div class="success">
+            <aside class="success" aria-label="Resultado positivo">
                 <h4><span aria-hidden="true">✅</span> EJERCICIO 2: Orígenes Contrastantes</h4>
                 <p><strong>Qué hacer:</strong> Etiope natural vs Colombian lavado</p>
                 <p><strong>Setup:</strong> Misma preparación, cafés opuestos</p>
                 <p><strong>Qué aprendes:</strong> Diferencias procesamiento y terroir</p>
-            </div>
+            </aside>
 
-            <div class="success">
+            <aside class="success" aria-label="Resultado positivo">
                 <h4><span aria-hidden="true">✅</span> EJERCICIO 3: Calidad Comparada</h4>
                 <p><strong>Qué hacer:</strong> Café especialidad vs supermercado</p>
                 <p><strong>Setup:</strong> Mismo origen si es posible</p>
                 <p><strong>Qué aprendes:</strong> Qué significa realmente "calidad"</p>
-            </div>
+            </aside>
 
             <h3>Rueda de Sabores Simplificada</h3>
             <p>Esta es una versión simplificada. Para la herramienta completa, consulta la <a href="https://sca.coffee/research/coffee-tasters-flavor-wheel" target="_blank" rel="noopener">SCA Coffee Taster's Flavor Wheel</a> oficial.</p>
@@ -2328,22 +2359,22 @@
                 <div class="grid-item">
                     <h4><span aria-hidden="true">🍊</span> FRUTALES</h4>
                     <p>Cítricos, bayas, frutas tropicales, frutas de hueso</p>
-                </div>
+                </aside>
                 <div class="grid-item">
                     <h4><span aria-hidden="true">🌸</span> FLORALES</h4>
                     <p>Rosa, jazmín, miel, té</p>
-                </div>
+                </aside>
                 <div class="grid-item">
                     <h4><span aria-hidden="true">🍫</span> DULCES</h4>
                     <p>Chocolate, caramelo, vainilla, azúcar moreno</p>
-                </div>
+                </aside>
                 <div class="grid-item">
                     <h4><span aria-hidden="true">🌰</span> NUECES/ESPECIAS</h4>
                     <p>Almendra, canela, clavo, pimienta</p>
                 </div>
             </div>
 
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <h4><span aria-hidden="true">💡</span> Consejos para Acelerar Desarrollo</h4>
                 <ul>
                     <li>Empezar con diferencias obvias (natural vs lavado)</li>
@@ -2353,7 +2384,7 @@
                     <li>Ser consistente: mismo horario y condiciones</li>
                     <li><strong>Calibración:</strong> Catar periódicamente cafés conocidos para mantener referencias constantes y detectar cambios en tu paladar</li>
                 </ul>
-            </div>
+            </aside>
         </section>
 
         <!-- SECCIÓN 10: GUÍA DE COMPRA -->
@@ -2400,7 +2431,7 @@
                     <p><strong>Etiopía:</strong> Florales, té, frutales salvajes</p>
                     <p><strong>Kenia:</strong> Acidez brillante, grosellas</p>
                     <p><strong>Carácter:</strong> Complejos, únicos</p>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4><span aria-hidden="true">🏔️</span> CENTROAMÉRICA</h4>
@@ -2457,12 +2488,12 @@
             </table>
 
             <h3>Estrategia de Compra Anual</h3>
-            <div class="highlight">
+            <aside class="highlight" aria-label="Dato destacado">
                 <p><strong>Primavera:</strong> Centroamericanos nuevos (mejores precios)</p>
                 <p><strong>Verano:</strong> Sudamericanos en peak</p>
                 <p><strong>Otoño:</strong> Africanos nueva cosecha</p>
                 <p><strong>Invierno:</strong> Experimentales y microlotes</p>
-            </div>
+            </aside>
 
             <h3>Cuánto Comprar de Una Vez</h3>
             <div class="grid">
@@ -2471,7 +2502,7 @@
                     <p><strong>Para:</strong> Probar nuevo origen</p>
                     <p><strong>Duración:</strong> 1-2 semanas</p>
                     <p><strong>Ventaja:</strong> Riesgo mínimo</p>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4>500g</h4>
@@ -2488,7 +2519,7 @@
                 </div>
             </div>
 
-            <div class="warning">
+            <aside class="warning" aria-label="Advertencia">
                 <h4><span aria-hidden="true">❌</span> Errores Comunes de Compra</h4>
                 <ul>
                     <li>Comprar más de 4 semanas de consumo</li>
@@ -2497,11 +2528,11 @@
                     <li>Ignorar método de procesamiento</li>
                     <li>Comprar café molido (se oxida rápidamente)</li>
                 </ul>
-            </div>
+            </aside>
 
             <div class="section-nav">
                 <p><strong>← Anterior:</strong> <a href="#cata">Cata en Casa</a> | <strong>→ Siguiente:</strong> <a href="#solucion">Solución de Problemas</a></p>
-            </div>
+            </aside>
         </section>
 
         <!-- SECCIÓN 11: SOLUCIÓN DE PROBLEMAS -->
@@ -2554,7 +2585,7 @@
                     <p><strong>Problema:</strong> Molienda desigual</p>
                     <p><strong>Causa:</strong> Fresas desgastadas/sucias</p>
                     <p><strong>Solución:</strong> Limpiar o calibrar</p>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4><span aria-hidden="true">⚖️</span> BALANZA</h4>
@@ -2572,17 +2603,17 @@
             </div>
 
             <h3>Defectos Comunes del Café</h3>
-            <div class="warning">
+            <aside class="warning" aria-label="Advertencia">
                 <h4><span aria-hidden="true">🚩</span> Señales de Café Defectuoso</h4>
                 <ul>
                     <li><strong>Visual:</strong> Granos quebrados, colores disparejos, aceites excesivos</li>
                     <li><strong>Olfativo:</strong> Olor a moho, rancio, químico, papel</li>
                     <li><strong>Gustativo:</strong> Astringencia, sabor metálico, terroso sucio</li>
                 </ul>
-            </div>
+            </aside>
 
             <h3>Guía de Emergencia: Café Malo → Café Bebible</h3>
-            <div class="success">
+            <aside class="success" aria-label="Resultado positivo">
                 <h4><span aria-hidden="true">✅</span> Rescate de Café Mediocre</h4>
                 <ul>
                     <li><strong>Demasiado amargo:</strong> Añadir pizca de sal</li>
@@ -2591,7 +2622,7 @@
                     <li><strong>Viejo/plano:</strong> Usar ratio más alto (más café)</li>
                     <li><strong>Último recurso:</strong> Bebidas con leche</li>
                 </ul>
-            </div>
+            </aside>
 
             <h3>Progresión Recomendada</h3>
             <div class="grid-four">
@@ -2603,7 +2634,7 @@
                         <li>Practicar el bloom test</li>
                         <li>Establecer rutina diaria</li>
                     </ul>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4>Mes 1-2</h4>
@@ -2613,7 +2644,7 @@
                         <li>Desarrollar el paladar</li>
                         <li>Llevar registro de preparaciones</li>
                     </ul>
-                </div>
+                </aside>
                 
                 <div class="grid-item">
                     <h4>Mes 3-6</h4>
@@ -2637,7 +2668,7 @@
             </div>
 
             <h3>Recursos para Continuar Aprendiendo</h3>
-            <div class="highlight">
+            <aside class="highlight" aria-label="Dato destacado">
                 <p><strong>Educación formal:</strong> Cursos <strong>SCA</strong> (Specialty Coffee Association - organización mundial que certifica profesionales del café desde baristas hasta tostadores)</p>
                 <p><strong>Comunidad:</strong> Tostadores locales, eventos de cata, foros online</p>
                 <p><strong>Experimentación:</strong> Llevar registro detallado de preparaciones</p>
@@ -2651,9 +2682,9 @@
                     <li><strong>CQI</strong> (Coffee Quality Institute - organización que certifica Q Graders): <a href="https://www.coffeeinstitute.org/" target="_blank" rel="noopener">coffeeinstitute.org</a></li>
                     <li><strong>World Coffee Research:</strong> <a href="https://worldcoffeeresearch.org/" target="_blank" rel="noopener">worldcoffeeresearch.org</a></li>
                 </ul>
-            </div>
+            </aside>
 
-            <div class="tip">
+            <aside class="tip" aria-label="Consejo">
                 <h4><span aria-hidden="true">💡</span> Mindset Final</h4>
                 <p>El café de especialidad es un viaje, no un destino. No existe la preparación "perfecta", solo la que te gusta más cada día. Experimenta, disfruta el proceso, y recuerda que cada taza cuenta una historia única desde el origen hasta tu mesa.</p>
                 
@@ -2665,7 +2696,7 @@
                     <li><strong>TDS:</strong> Total Dissolved Solids - concentración de café en agua</li>
                     <li><strong>Cupping:</strong> Método estándar de cata profesional</li>
                 </ul>
-            </div>
+            </aside>
 
             <div class="section-nav">
                 <p><strong>← Anterior:</strong> <a href="#compra">Guía de Compra</a></p>
@@ -2683,5 +2714,35 @@
     </div>
 
     <a href="#top" class="back-to-top" aria-label="Volver arriba">↑</a>
+
+    <!-- IntersectionObserver for active ToC section -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var sections = document.querySelectorAll('section[id]');
+        var navLinks = document.querySelectorAll('nav a[href^="#"]');
+        if (!sections.length || !navLinks.length || !('IntersectionObserver' in window)) return;
+
+        var linkMap = {};
+        navLinks.forEach(function(link) {
+            linkMap[link.getAttribute('href').slice(1)] = link;
+        });
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                var link = linkMap[entry.target.id];
+                if (!link) return;
+                if (entry.isIntersecting) {
+                    navLinks.forEach(function(l) { l.classList.remove('active'); });
+                    link.classList.add('active');
+                }
+            });
+        }, {
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        });
+
+        sections.forEach(function(s) { observer.observe(s); });
+    });
+    </script>
 </body>
 </html>
