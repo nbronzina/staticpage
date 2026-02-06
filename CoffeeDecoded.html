@@ -4,6 +4,63 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Dark Mode Toggle Script (inline FIRST to prevent FOUC) -->
+<script>
+(function() {
+    var KEY = 'cd-theme';
+    var html = document.documentElement;
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch(e) {}
+
+    // Apply saved preference immediately (before CSS loads)
+    if (saved === 'dark') html.classList.add('dark');
+    else if (saved === 'light') html.classList.add('light');
+    // If no saved preference, fallback to CSS media query
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        var icon = btn.querySelector('.theme-toggle-icon');
+        var icons = { system: '\u25D0', light: '\u2600', dark: '\u25CF' };
+        var titles = {
+            system: 'Tema: autom\u00E1tico (sistema). Click para forzar claro.',
+            light: 'Tema: claro. Click para forzar oscuro.',
+            dark: 'Tema: oscuro. Click para volver a autom\u00E1tico.'
+        };
+
+        function state() {
+            if (html.classList.contains('dark')) return 'dark';
+            if (html.classList.contains('light')) return 'light';
+            return 'system';
+        }
+
+        function render() {
+            var s = state();
+            icon.textContent = icons[s];
+            btn.setAttribute('title', titles[s]);
+            btn.setAttribute('aria-label', titles[s]);
+        }
+
+        btn.addEventListener('click', function() {
+            var s = state();
+            html.classList.remove('dark', 'light');
+            if (s === 'system') {
+                html.classList.add('light');
+                try { localStorage.setItem(KEY, 'light'); } catch(e) {}
+            } else if (s === 'light') {
+                html.classList.add('dark');
+                try { localStorage.setItem(KEY, 'dark'); } catch(e) {}
+            } else {
+                try { localStorage.removeItem(KEY); } catch(e) {}
+            }
+            render();
+        });
+
+        render();
+    });
+})();
+</script>
+
 <!-- Title and Basic Meta -->
 <title>Coffee Decoded — De la confusión a la claridad en el café de especialidad</title>
 <meta name="description" content="Guía práctica escrita por alguien que ya cometió los errores costosos de equipamiento y mal café para que tú no tengas que hacerlo. Aprende a identificar, comprar y preparar café de especialidad.">
@@ -59,48 +116,6 @@
         "articleSection": "Food & Drink",
         "inLanguage": "es-ES"
     }
-    </script>
-
-    <!-- Dark Mode Toggle Script (inline to prevent FOUC) -->
-    <script>
-    (function() {
-        var KEY = 'cd-theme';
-        var html = document.documentElement;
-        var saved = null;
-        try { saved = localStorage.getItem(KEY); } catch(e) {}
-
-        // Apply saved preference immediately (before CSS loads)
-        if (saved === 'dark') html.classList.add('dark');
-        else if (saved === 'light') html.classList.add('light');
-        // If no saved preference, fallback to CSS media query
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var btn = document.getElementById('theme-toggle');
-            if (!btn) return;
-
-            // Update button based on current theme
-            function updateButton() {
-                var isDark = html.classList.contains('dark');
-                btn.setAttribute('aria-label', isDark ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
-            }
-
-            // Toggle theme on click
-            btn.addEventListener('click', function() {
-                if (html.classList.contains('dark')) {
-                    html.classList.remove('dark');
-                    html.classList.add('light');
-                    try { localStorage.setItem(KEY, 'light'); } catch(e) {}
-                } else {
-                    html.classList.remove('light');
-                    html.classList.add('dark');
-                    try { localStorage.setItem(KEY, 'dark'); } catch(e) {}
-                }
-                updateButton();
-            });
-
-            updateButton();
-        });
-    })();
     </script>
 
     <style>
@@ -1022,6 +1037,12 @@
                 font-size: 0.85rem;
             }
 
+            /* Prevent wide tables from breaking grid layout */
+            main {
+                min-width: 0; /* Allow flexbox/grid child to shrink below content size */
+                overflow-x: auto;
+            }
+
             nav a.active {
                 color: var(--color-link);
                 font-weight: 600;
@@ -1264,7 +1285,7 @@
 
             <h3>Lo Que Este Manual NO Es</h3>
             
-            <aside class="warning" aria-label="Advertencia">
+            <aside class="warning" role="note">
                 <ul>
                     <li><strong>No es snobismo disfrazado:</strong> No te diremos que tu café actual es malo o que necesitas gastar €500 en equipamiento</li>
                     <li><strong>No es marketing:</strong> No vendemos nada. Las recomendaciones son genuinas y basadas en experiencia</li>
@@ -1277,7 +1298,7 @@
             
             <p>Recomendamos leer las secciones en orden si eres principiante, pero cada una funciona independientemente. Si ya tienes experiencia, puedes saltar directamente a lo que necesitas:</p>
 
-            <aside class="highlight" aria-label="Dato destacado">
+            <aside class="highlight" role="note">
                 <p><strong>Ruta Rápida (30 minutos):</strong> Fundamentos → Identificar Calidad → Una técnica de preparación</p>
                 <p><strong>Ruta Completa (2-3 horas):</strong> Todo el manual, pausas para reflexionar y tomar notas</p>
                 <p><strong>Ruta Práctica (semanas):</strong> Leer una sección, implementar, experimentar, continuar</p>
@@ -1355,7 +1376,7 @@
                 </tbody>
             </table>
 
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <h4><span aria-hidden="true">💡</span> Punto Clave</h4>
                 <p>Un café de especialidad debe tener 80+ puntos <strong>SCA</strong> (Specialty Coffee Association - la organización mundial que establece estándares de calidad para café), trazabilidad completa y cero defectos primarios. Solo 3% del café mundial cumple estos estándares.</p>
                 <p><strong>Más info:</strong> <a href="https://sca.coffee/" target="_blank" rel="noopener">sca.coffee</a></p>
@@ -1371,7 +1392,7 @@
             <h2 id="heading-equipamiento">2. Equipamiento Básico: Qué Necesitas Realmente</h2>
             
             <h3>Jerarquía de Inversión</h3>
-            <aside class="highlight" aria-label="Dato destacado">
+            <aside class="highlight" role="note">
                 <p><strong>Orden de prioridad para invertir tu dinero:</strong></p>
                 <ol>
                     <li><strong>Buen molinillo</strong> (más importante que el método)</li>
@@ -1444,7 +1465,7 @@
                 </div>
             </div>
 
-            <aside class="warning" aria-label="Advertencia">
+            <aside class="warning" role="note">
                 <h4><span aria-hidden="true">❌</span> Errores Comunes de Principiantes</h4>
                 <ul>
                     <li>Comprar método caro antes que buen molinillo</li>
@@ -1543,7 +1564,7 @@
             </div>
 
             <h3>Análisis de ROI (Return on Investment)</h3>
-            <aside class="highlight" aria-label="Dato destacado">
+            <aside class="highlight" role="note">
                 <p><strong>Escenario típico:</strong> 2 tazas/día, 300 días/año</p>
                 <p><strong>Inversión inicial:</strong> €190 (nivel intermedio)</p>
                 <p><strong>Ahorro anual vs cafetería:</strong> €1,500-2,000</p>
@@ -1585,7 +1606,7 @@
             </table>
 
             <h3>Optimización de Costos</h3>
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <h4><span aria-hidden="true">💡</span> Estrategias para Ahorrar</h4>
                 <ul>
                     <li><strong>Comprar directo de tostador:</strong> 10-20% descuento vs tiendas</li>
@@ -1596,7 +1617,7 @@
                 </ul>
             </aside>
 
-            <aside class="warning" aria-label="Advertencia">
+            <aside class="warning" role="note">
                 <h4><span aria-hidden="true">⚠️</span> Costos Ocultos a Considerar</h4>
                 <ul>
                     <li>Mantenimiento/descalcificación equipamiento</li>
@@ -1616,7 +1637,7 @@
             <h2 id="heading-molienda">4. Molienda: La Variable Más Subestimada</h2>
             
             <h3>Por Qué la Molienda es Crítica</h3>
-            <aside class="highlight" aria-label="Dato destacado">
+            <aside class="highlight" role="note">
                 <p>Una molienda uniforme es más importante que el método de preparación. Una molienda uniforme es una de las variables más importantes que puedes controlar. Determina la superficie expuesta al agua y gobierna directamente la velocidad y calidad de la extracción. Junto con la temperatura, el ratio y el tiempo de contacto, define el resultado en taza.</p>
                 <p><strong>Regla absoluta:</strong> Moler siempre justo antes de preparar. El café molido comienza a perder compuestos aromáticos inmediatamente — el CO₂ se disipa en minutos llevando consigo compuestos volátiles, y estudios muestran que más del 50% de la intensidad aromática puede perderse en las primeras 24 horas.</p>
             </aside>
@@ -1703,7 +1724,7 @@
                 </div>
             </div>
 
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <h4><span aria-hidden="true">💡</span> Ajuste en Tiempo Real</h4>
                 <p><strong>Extracción lenta/amarga:</strong> Molienda más gruesa</p>
                 <p><strong>Extracción rápida/agria:</strong> Molienda más fina</p>
@@ -1744,7 +1765,7 @@
             <h2 id="heading-agua">5. El Agua: Fundamento Invisible del Sabor</h2>
             
             <h3>Por Qué Importa el Agua</h3>
-            <aside class="highlight" aria-label="Dato destacado">
+            <aside class="highlight" role="note">
                 <p>El café es 98% agua. Los minerales disueltos actúan como "llaves" que extraen diferentes sabores del café. Agua "mala" = café malo, sin excepciones.</p>
             </aside>
 
@@ -1781,12 +1802,12 @@
                 </tbody>
             </table>
 
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <p><strong>Nota técnica:</strong> Los rangos óptimos mostrados están basados en el estándar SCAA/SCA Water for Brewing Specialty Coffee. El rango ideal de TDS total es 75-250 ppm, con pH entre 6.5-7.5.</p>
             </aside>
 
             <h3>Test Rápido de Tu Agua</h3>
-            <aside class="success" aria-label="Resultado positivo">
+            <aside class="success" role="note">
                 <h4><span aria-hidden="true">✅</span> Prueba de Comparación</h4>
                 <ol>
                     <li>Haz café idéntico con agua del grifo</li>
@@ -1854,7 +1875,7 @@
                 </tbody>
             </table>
 
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <h4><span aria-hidden="true">💡</span> Hack Profesional</h4>
                 <p>Muchos tostadores de especialidad usan <strong>agua Third Wave Water</strong>: sachets que añades a agua destilada para mineralizarla perfectamente. €20 por 12 sachets (240L de agua perfecta).</p>
                 <p><strong>Qué es:</strong> Third Wave Water es una empresa que desarrolló paquetes minerales específicos para optimizar la extracción del café.</p>
@@ -1871,7 +1892,7 @@
             <h2 id="heading-tueste">6. El Tueste: Transformación del Grano</h2>
 
             <h3>Por Qué el Nivel de Tueste Importa</h3>
-            <aside class="highlight" aria-label="Dato destacado">
+            <aside class="highlight" role="note">
                 <p>El tueste transforma químicamente el café verde: carameliza azúcares, desarrolla aceites, libera CO₂ y crea +1000 compuestos aromáticos. El nivel de tueste afecta directamente acidez, cuerpo, dulzor y qué parámetros de preparación necesitas.</p>
                 <p><strong>Regla básica:</strong> Tueste más claro = más acidez, más origen. Tueste más oscuro = más cuerpo, menos origen.</p>
             </aside>
@@ -2003,12 +2024,12 @@
                 </tbody>
             </table>
 
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <h4><span aria-hidden="true">💡</span> Café de Especialidad y el Tueste</h4>
                 <p>La mayoría del café de especialidad se tuesta claro o medio para preservar las características del origen. Tostadores serios indican fecha de tueste en el paquete — si no la ves, no es especialidad seria.</p>
             </aside>
 
-            <aside class="warning" aria-label="Advertencia">
+            <aside class="warning" role="note">
                 <h4><span aria-hidden="true">⚠️</span> Mitos sobre el Tueste Oscuro</h4>
                 <ul>
                     <li><strong>"Más cafeína":</strong> Falso. Pierde masa al tostar pero la concentración por peso es similar.</li>
@@ -2051,7 +2072,7 @@
             </aside>
 
             <h3>Test de Frescura (Bloom Test)</h3>
-            <aside class="highlight" aria-label="Dato destacado">
+            <aside class="highlight" role="note">
                 <ol>
                     <li>Pon café recién molido en filtro</li>
                     <li>Vierte agua a 93°C (doble del peso del café)</li>
@@ -2089,7 +2110,7 @@
                 </tbody>
             </table>
 
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <h4><span aria-hidden="true">💡</span> Regla Práctica</h4>
                 <p>Principiantes: empezar con lavados (más limpios). Experimentadores: probar naturales (más intensos). ¿Indeciso? Honey es el término medio perfecto.</p>
             </aside>
@@ -2135,7 +2156,7 @@
                 </tbody>
             </table>
 
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <h4><span aria-hidden="true">💡</span> Término Técnico</h4>
                 <p><strong>TDS</strong> (Total Dissolved Solids): Porcentaje de café disuelto en el agua. Básicamente, qué tan "fuerte" sabe tu café. Rango óptimo: 1.15-1.35% para filtrados.</p>
             </aside>
@@ -2208,7 +2229,7 @@
             </details>
 
             <h3>Pre-infusión/Blooming: La Técnica Crucial</h3>
-            <aside class="success" aria-label="Resultado positivo">
+            <aside class="success" role="note">
                 <h4><span aria-hidden="true">✅</span> Cómo Hacer Bloom Perfecto</h4>
                 <ol>
                     <li>Crear pequeño hoyo en centro del café molido</li>
@@ -2220,7 +2241,7 @@
                 <p><strong>Si no hay bloom:</strong> Café viejo o molienda incorrecta</p>
             </aside>
 
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <h4><span aria-hidden="true">💡</span> Ajustes en Tiempo Real</h4>
                 <p><strong>Extracción muy rápida:</strong> Molienda más fina o vertido más lento</p>
                 <p><strong>Extracción muy lenta:</strong> Molienda más gruesa o vertido más rápido</p>
@@ -2228,7 +2249,7 @@
                 <p><strong>Sabor amargo:</strong> Temperatura más baja o tiempo más corto</p>
             </aside>
 
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <h4><span aria-hidden="true">🥛</span> Nota sobre Leche</h4>
                 <p>Si preparas café con leche: usa leche entera (3.5% grasa) para mejor textura. Calentar entre 60-65°C — a mayor temperatura se quema la lactosa. El café de especialidad se diseña para apreciarse solo, pero un buen flat white o cappuccino requiere leche de calidad y técnica de vaporizado adecuada.</p>
             </aside>
@@ -2243,7 +2264,7 @@
             <h2 id="heading-cata">9. Desarrollar el Paladar: Cata Básica en Casa</h2>
             
             <h3>Protocolo Simplificado de Cata</h3>
-            <aside class="highlight" aria-label="Dato destacado">
+            <aside class="highlight" role="note">
                 <p><strong>Objetivo:</strong> Entrenar el paladar sistemáticamente para identificar sabores y calidad.</p>
                 <p><strong>Tiempo necesario:</strong> 15-20 minutos</p>
                 <p><strong>Frecuencia:</strong> 2-3 veces por semana máximo</p>
@@ -2332,21 +2353,21 @@
 
             <h3>Ejercicios Prácticos para Desarrollar Paladar</h3>
             
-            <aside class="success" aria-label="Resultado positivo">
+            <aside class="success" role="note">
                 <h4><span aria-hidden="true">✅</span> EJERCICIO 1: Comparación Básica</h4>
                 <p><strong>Qué hacer:</strong> Catar mismo café preparado con ratios diferentes</p>
                 <p><strong>Setup:</strong> 1:15, 1:16, 1:17 lado a lado</p>
                 <p><strong>Qué aprendes:</strong> Cómo el ratio afecta intensidad y equilibrio</p>
             </aside>
 
-            <aside class="success" aria-label="Resultado positivo">
+            <aside class="success" role="note">
                 <h4><span aria-hidden="true">✅</span> EJERCICIO 2: Orígenes Contrastantes</h4>
                 <p><strong>Qué hacer:</strong> Etiope natural vs Colombian lavado</p>
                 <p><strong>Setup:</strong> Misma preparación, cafés opuestos</p>
                 <p><strong>Qué aprendes:</strong> Diferencias procesamiento y terroir</p>
             </aside>
 
-            <aside class="success" aria-label="Resultado positivo">
+            <aside class="success" role="note">
                 <h4><span aria-hidden="true">✅</span> EJERCICIO 3: Calidad Comparada</h4>
                 <p><strong>Qué hacer:</strong> Café especialidad vs supermercado</p>
                 <p><strong>Setup:</strong> Mismo origen si es posible</p>
@@ -2374,7 +2395,7 @@
                 </div>
             </div>
 
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <h4><span aria-hidden="true">💡</span> Consejos para Acelerar Desarrollo</h4>
                 <ul>
                     <li>Empezar con diferencias obvias (natural vs lavado)</li>
@@ -2488,7 +2509,7 @@
             </table>
 
             <h3>Estrategia de Compra Anual</h3>
-            <aside class="highlight" aria-label="Dato destacado">
+            <aside class="highlight" role="note">
                 <p><strong>Primavera:</strong> Centroamericanos nuevos (mejores precios)</p>
                 <p><strong>Verano:</strong> Sudamericanos en peak</p>
                 <p><strong>Otoño:</strong> Africanos nueva cosecha</p>
@@ -2519,7 +2540,7 @@
                 </div>
             </div>
 
-            <aside class="warning" aria-label="Advertencia">
+            <aside class="warning" role="note">
                 <h4><span aria-hidden="true">❌</span> Errores Comunes de Compra</h4>
                 <ul>
                     <li>Comprar más de 4 semanas de consumo</li>
@@ -2603,7 +2624,7 @@
             </div>
 
             <h3>Defectos Comunes del Café</h3>
-            <aside class="warning" aria-label="Advertencia">
+            <aside class="warning" role="note">
                 <h4><span aria-hidden="true">🚩</span> Señales de Café Defectuoso</h4>
                 <ul>
                     <li><strong>Visual:</strong> Granos quebrados, colores disparejos, aceites excesivos</li>
@@ -2613,7 +2634,7 @@
             </aside>
 
             <h3>Guía de Emergencia: Café Malo → Café Bebible</h3>
-            <aside class="success" aria-label="Resultado positivo">
+            <aside class="success" role="note">
                 <h4><span aria-hidden="true">✅</span> Rescate de Café Mediocre</h4>
                 <ul>
                     <li><strong>Demasiado amargo:</strong> Añadir pizca de sal</li>
@@ -2668,7 +2689,7 @@
             </div>
 
             <h3>Recursos para Continuar Aprendiendo</h3>
-            <aside class="highlight" aria-label="Dato destacado">
+            <aside class="highlight" role="note">
                 <p><strong>Educación formal:</strong> Cursos <strong>SCA</strong> (Specialty Coffee Association - organización mundial que certifica profesionales del café desde baristas hasta tostadores)</p>
                 <p><strong>Comunidad:</strong> Tostadores locales, eventos de cata, foros online</p>
                 <p><strong>Experimentación:</strong> Llevar registro detallado de preparaciones</p>
@@ -2684,7 +2705,7 @@
                 </ul>
             </aside>
 
-            <aside class="tip" aria-label="Consejo">
+            <aside class="tip" role="note">
                 <h4><span aria-hidden="true">💡</span> Mindset Final</h4>
                 <p>El café de especialidad es un viaje, no un destino. No existe la preparación "perfecta", solo la que te gusta más cada día. Experimenta, disfruta el proceso, y recuerda que cada taza cuenta una historia única desde el origen hasta tu mesa.</p>
                 
