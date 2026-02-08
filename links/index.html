@@ -99,7 +99,15 @@
     opacity: 1;
   }
 
+  .link-item:active::before {
+    opacity: 1;
+  }
+
   .link-item:hover {
+    color: var(--bg);
+  }
+
+  .link-item:active {
     color: var(--bg);
   }
 
@@ -108,7 +116,17 @@
     transform: translateX(3px);
   }
 
+  .link-item:active .link-arrow {
+    color: var(--bg);
+    transform: translateX(3px);
+  }
+
   .link-item:hover .link-tag {
+    color: var(--bg);
+    opacity: 0.5;
+  }
+
+  .link-item:active .link-tag {
     color: var(--bg);
     opacity: 0.5;
   }
