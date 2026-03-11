@@ -15,15 +15,21 @@
   <meta property="og:image" content="https://www.nicolasbronzina.com/img/DitherME.jpg">
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.nicolasbronzina.com/">
-  <meta property="twitter:title" content="Nicolás Bronzina - AI-Enhanced Futures Designer">
-  <meta property="twitter:description" content="AI-Enhanced Futures Designer making tangible futures through design fiction.">
-  <meta property="twitter:image" content="https://www.nicolasbronzina.com/img/DitherME.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.nicolasbronzina.com/">
+  <meta name="twitter:title" content="Nicolás Bronzina - AI-Enhanced Futures Designer">
+  <meta name="twitter:description" content="AI-Enhanced Futures Designer making tangible futures through design fiction.">
+  <meta name="twitter:image" content="https://www.nicolasbronzina.com/img/DitherME.jpg">
 
   <!-- Theme Color -->
   <meta name="theme-color" content="#EBE1D1" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.nicolasbronzina.com/">
+
+  <!-- Author -->
+  <meta name="author" content="Nicolás Bronzina">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -34,26 +40,26 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Header -->
-  <div class="header-container">
-    <header>
+  <header class="header-container">
+    <div>
       <h1>Nicolás Bronzina</h1>
       <p class="subtitle">AI-Enhanced Futures Designer</p>
       <p class="location">Buenos Aires → Madrid</p>
-    </header>
+    </div>
 
-    <section class="contact-section">
+    <div class="contact-section">
       <div class="contact-info">
         <p class="email">nicolas.bronzina@gmail.com</p>
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/nicolasbronzina" target="_blank" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
               <rect x="2" y="9" width="4" height="12"></rect>
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
-          <a href="https://www.medium.com/@nbronzina" target="_blank" aria-label="Medium">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000">
+          <a href="https://medium.com/@nbronzina" target="_blank" rel="noopener" aria-label="Medium">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
               <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
             </svg>
           </a>
@@ -61,7 +67,7 @@
       </div>
 
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -72,12 +78,12 @@
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
-    </section>
-  </div>
+    </div>
+  </header>
 
   <!-- Main Content -->
   <main id="main-content">
@@ -85,7 +91,10 @@
   <!-- Introduction -->
   <section class="intro-section">
     <div class="intro-container">
-      <img src="img/hi.jpg" alt="Nicolás Bronzina profile picture" class="main-image" loading="lazy">
+      <picture>
+        <source srcset="img/hi.webp" type="image/webp">
+        <img src="img/hi.jpg" alt="Nicolás Bronzina profile picture" class="main-image" width="800" height="1106" fetchpriority="high">
+      </picture>
       <div class="intro-text">
         <p>Your organization navigates uncertain futures. I build AI-enhanced prototypes that turn research into strategic decisions you can actually act on.</p>
 
@@ -107,7 +116,7 @@
     <article class="work-category">
       <h3>Future of Food</h3>
       <div class="work-content">
-        <img src="img/Empanadas.jpg" alt="Future of Food" loading="lazy">
+        <img src="img/Empanadas.jpg" alt="Empanadas with design fiction elements exploring future Argentinean cuisine" width="1000" height="683" loading="lazy">
         <ul>
           <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37" rel="noopener" target="_blank">A Manifesto for a New Argentinean Cuisine</a></li>
           <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968" rel="noopener" target="_blank">What is carbon-neutral gastronomy?</a></li>
@@ -120,7 +129,10 @@
     <article class="work-category">
       <h3>Environmental Crisis</h3>
       <div class="work-content">
-        <img src="img/PortadaNG.jpg" alt="Environmental Crisis" loading="lazy">
+        <picture>
+          <source srcset="img/PortadaNG.webp" type="image/webp">
+          <img src="img/PortadaNG.jpg" alt="Climate design fiction prototype exploring heat adaptation" width="800" height="1045" loading="lazy">
+        </picture>
         <ul>
           <li><a href="https://medium.com/heated-consultancy/inhabiting-the-future-0cc470f47b93" rel="noopener" target="_blank">Inhabiting the future: climate design fiction with French spatial design master’s students</a></li>
           <li><a href="https://medium.com/heated-consultancy/how-i-prototyped-an-alternative-future-climate-with-design-fiction-genai-90b720ecf2d4" rel="noopener" target="_blank">How I Prototyped an Alternative Future Climate with Design Fiction & GenAI</a></li>
@@ -134,7 +146,10 @@
     <article class="work-category">
       <h3>Futures</h3>
       <div class="work-content">
-        <img src="img/DDK.jpg" alt="Futures" loading="lazy">
+        <picture>
+          <source srcset="img/DDK.webp" type="image/webp">
+          <img src="img/DDK.jpg" alt="Diegetic Discovery Kit workshop materials for futures design" width="800" height="1114" loading="lazy">
+        </picture>
         <ul>
           <li><a href="https://medium.com/@nbronzina/dise%C3%B1ar-futuros-desde-la-fuga-27548f831e36" rel="noopener" target="_blank">Designing futures from the brain drain: a workshop on brains that leave (and those that might return) [ES]</a></li>
           <li><a href="https://medium.com/@nbronzina/no-the-plane-doesnt-have-ai-e6a0501e9f0d" rel="noopener" target="_blank">No, the plane doesn't have AI. And that opens up more interesting questions than the ones it tries to answer</a></li>
@@ -158,7 +173,7 @@
     <article class="work-category">
       <h3>MARGIN.SIGNALS</h3>
       <div class="work-content">
-        <img src="img/PortadaZine.jpg" alt="MARGIN.SIGNALS Release 001 prototype" loading="lazy">
+        <img src="img/PortadaZine.jpg" alt="MARGIN.SIGNALS Release 001 prototype" width="698" height="990" loading="lazy">
         <div>
           <p>Independent editorial bringing you weak signals from cultural margins—before they reshape your industry.</p>
 
@@ -237,7 +252,7 @@
       <article class="project-card">
         <h3>playground mk-air</h3>
         <p>Experience live audio that exists only in the moment—no recording, no archive. Broadcasts that challenge your relationship with permanence and presence.</p>
-        <a href="https://mk-air.onrender.com/" target="_blank" class="project-button">
+        <a href="https://mk-air.onrender.com/" target="_blank" rel="noopener" class="project-button">
           View →
         </a>
       </article>
@@ -249,9 +264,7 @@
           View →
         </a>
       </article>
-    </div>
 
-    <div class="projects-grid">
       <article class="project-card">
         <h3>playground mk-1</h3>
         <p>Web-based music creation tool. 8-track drum sequencer, synthesizer, 4-slot looper with mic input.</p>
@@ -315,7 +328,7 @@
         <p><u><a href="https://www.cesba.com.ar/" rel="noopener" target="_blank">CESBA, Buenos Aires</a></u></p>
         <p>Event Organizer & Opening Keynote</p>
         <p>Presented frameworks for integrating futures design into public policy—proposing a Futures Anticipation Unit that helps government navigate uncertainty through institutional design fiction.</p>
-        <p style="margin-top: 20px;"><strong>Education</strong></p>
+        <p class="cv-education-title"><strong>Education</strong></p>
         <p><u><a href="https://www.udit.es/" rel="noopener" target="_blank">UDIT Madrid</a></u></p>
         <p>Master's Degree in User Experience for the Design of Digital Products and Services</p>
         <p><u><a href="https://www.usal.edu.ar/" rel="noopener" target="_blank">Universidad del Salvador</a></u></p>
@@ -335,7 +348,7 @@
   <!-- Footer -->
   <footer>
     <p>HTML5 + CSS. System fonts.</p>
-    <p>Madrid, 2025</p>
+    <p>Madrid, 2026</p>
   </footer>
 
   <!-- Back to Top -->

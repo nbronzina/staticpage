@@ -14,11 +14,18 @@ themeToggle.addEventListener('click', () => {
 // Back to Top
 const backToTopButton = document.getElementById('backToTop');
 
+let ticking = false;
 window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 300) {
-    backToTopButton.classList.add('show');
-  } else {
-    backToTopButton.classList.remove('show');
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+      ticking = false;
+    });
+    ticking = true;
   }
 });
 
