@@ -13,6 +13,7 @@
   <meta property="og:title" content="Nicolás Bronzina - AI-Enhanced Futures Designer">
   <meta property="og:description" content="AI-Enhanced Futures Designer & Climate Adaptation Specialist. Making tangible futures through design fiction.">
   <meta property="og:image" content="https://www.nicolasbronzina.com/img/DitherME.jpg">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -38,6 +39,52 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nicolás Bronzina",
+    "jobTitle": "AI-Enhanced Futures Designer",
+    "description": "AI-Enhanced Futures Designer & Climate Adaptation Specialist. Making tangible futures through design fiction.",
+    "url": "https://www.nicolasbronzina.com/",
+    "image": "https://www.nicolasbronzina.com/img/DitherME.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/nicolasbronzina",
+      "https://medium.com/@nbronzina",
+      "https://www.youtube.com/@otrosfuturos",
+      "https://instagram.com/margin.signals"
+    ],
+    "worksFor": [
+      {
+        "@type": "Organization",
+        "name": "Heated Studio",
+        "url": "https://www.heated.studio/"
+      },
+      {
+        "@type": "Organization",
+        "name": "BPP Analytics and Design",
+        "url": "https://www.bppanalyticsanddesign.com/"
+      }
+    ],
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "UDIT Madrid"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Universidad del Salvador"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Madrid",
+      "addressCountry": "ES"
+    }
+  }
+  </script>
 
   <!-- No-JS Fallback -->
   <noscript>
@@ -105,7 +152,6 @@
 
   <!-- Projects -->
   <section class="section" data-index="01" aria-label="Section 1: Projects">
-    <span class="section-label">Portfolio</span>
     <h2>Projects</h2>
     
     <div class="projects-grid">
@@ -153,13 +199,15 @@
 
   <!-- Work -->
   <section class="section" data-index="02" aria-label="Section 2: Work">
-    <span class="section-label">Published</span>
     <h2>Work</h2>
 
     <article class="work-category">
       <h3>Future of Food</h3>
       <div class="work-content">
-        <img src="img/Empanadas.jpg" alt="Empanadas with design fiction elements exploring future Argentinean cuisine" width="1000" height="683" loading="lazy">
+        <picture>
+          <source srcset="img/Empanadas.webp" type="image/webp">
+          <img src="img/Empanadas.jpg" alt="Empanadas with design fiction elements exploring future Argentinean cuisine" width="1000" height="683" loading="lazy">
+        </picture>
         <div>
           <p class="work-context">Food as a futures problem. What climate, culture, and politics are doing to what we eat — and what comes next.</p>
           <ul>
@@ -220,7 +268,6 @@
 
   <!-- Editorial -->
   <section class="section" id="editorial" data-index="03" aria-label="Section 3: Editorial">
-    <span class="section-label">Publishing</span>
     <h2>Editorial</h2>
 
     <article class="work-category">
@@ -247,7 +294,10 @@
     <article class="work-category">
       <h3>MARGIN.SIGNALS</h3>
       <div class="work-content">
-        <img src="img/PortadaZine.jpg" alt="MARGIN.SIGNALS Release 001 prototype" width="698" height="990" loading="lazy">
+        <picture>
+          <source srcset="img/PortadaZine.webp" type="image/webp">
+          <img src="img/PortadaZine.jpg" alt="MARGIN.SIGNALS Release 001 prototype" width="698" height="990" loading="lazy">
+        </picture>
         <div>
           <p>An independent publication tracking weak signals from cultural margins — before they reshape your industry.</p>
 
@@ -271,7 +321,6 @@
 
   <!-- Also -->
   <section class="section" data-index="04" aria-label="Section 4: Also">
-    <span class="section-label">Experiments</span>
     <h2>Also</h2>
 
     <p class="also-intro">Experiments and side projects outside client work.</p>
@@ -288,7 +337,7 @@
       <article class="project-card">
         <h3>playground mk-dwell</h3>
         <p>A habitable sound space. Your cursor is your position—move toward a corner and a sound emerges, move away and it fades. The center breathes.</p>
-        <a href="https://nbronzina.github.io/playground/mk-dwell/" target="_blank" class="project-button">
+        <a href="https://nbronzina.github.io/playground/mk-dwell/" target="_blank" rel="noopener" class="project-button">
           View →
         </a>
       </article>
@@ -296,7 +345,7 @@
       <article class="project-card">
         <h3>playground mk-1</h3>
         <p>Web-based music creation tool. 8-track drum sequencer, synthesizer, 4-slot looper with mic input.</p>
-        <a href="https://nbronzina.github.io/playground/" target="_blank" class="project-button">
+        <a href="https://nbronzina.github.io/playground/" target="_blank" rel="noopener" class="project-button">
           View →
         </a>
       </article>
@@ -304,7 +353,7 @@
       <article class="project-card">
         <h3>Coffee.txt</h3>
         <p>Specialty coffee guide for Madrid.</p>
-        <a href="https://www.nicolasbronzina.com/Coffee.html" target="_blank" class="project-button">
+        <a href="https://www.nicolasbronzina.com/Coffee.html" target="_blank" rel="noopener" class="project-button">
           View →
         </a>
       </article>
@@ -312,7 +361,7 @@
       <article class="project-card">
         <h3>Coffee Decoded</h3>
         <p>Practical guide to home coffee equipment.</p>
-        <a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" target="_blank" class="project-button">
+        <a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" target="_blank" rel="noopener" class="project-button">
           View →
         </a>
       </article>
@@ -321,7 +370,6 @@
 
   <!-- CV -->
   <section class="section" data-index="05" aria-label="Section 5: CV">
-    <span class="section-label">Background</span>
     <h2>CV</h2>
     <div class="cv-grid">
       <div>
@@ -384,7 +432,7 @@
       </div>
       <div class="footer-right">
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/nicolasbronzina" target="_blank" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/nicolasbronzina" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
               <rect x="2" y="9" width="4" height="12"></rect>
