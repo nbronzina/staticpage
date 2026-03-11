@@ -43,6 +43,8 @@ backToTopButton.addEventListener('click', () => {
 });
 
 // Scroll Reveal for Sections
+const STAGGER_DELAY = 40; // ms
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -52,7 +54,7 @@ const revealObserver = new IntersectionObserver((entries) => {
       if (entry.target.getAttribute('data-index') === '02') {
         const items = entry.target.querySelectorAll('ul li');
         items.forEach((item, i) => {
-          item.style.transitionDelay = `${i * 40}ms`;
+          item.style.transitionDelay = `${i * STAGGER_DELAY}ms`;
         });
       }
 
