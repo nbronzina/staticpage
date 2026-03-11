@@ -93,6 +93,7 @@ header h1 {
   line-height: var(--line-height-heading);
   letter-spacing: -0.015em;
   position: relative;
+  animation: heroIn 0.7s ease forwards;
 }
 
 header h1::after {
@@ -207,8 +208,8 @@ header h1::after {
 .intro-text p {
   margin-bottom: 1.2em;
   line-height: var(--line-height-body);
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  hyphens: manual;
+  overflow-wrap: break-word;
   max-width: 62ch;
 }
 
@@ -297,8 +298,8 @@ h3 {
   margin-bottom: 15px;
   line-height: 1.6;
   max-width: 60ch;
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  hyphens: manual;
+  overflow-wrap: break-word;
 }
 
 .project-button {
@@ -394,8 +395,8 @@ section ul li a:hover {
 }
 
 .work-category div p {
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  hyphens: manual;
+  overflow-wrap: break-word;
 }
 
 /* 📌 Nota editorial (opcional) */
@@ -482,6 +483,42 @@ footer p {
   width: 20px;
   height: 20px;
   stroke: #000;
+}
+
+/* Scroll Reveal Animation */
+section {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation for Work section list items */
+section ul li {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+section.is-visible ul li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* H1 Load Animation */
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Desktop Styles */
@@ -671,5 +708,21 @@ body.dark-mode .back-to-top:hover svg {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  header h1 {
+    animation: none;
+  }
+
+  section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  section ul li {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
