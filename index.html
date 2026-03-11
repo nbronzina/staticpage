@@ -38,6 +38,14 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- No-JS Fallback -->
+  <noscript>
+    <style>
+      .section { opacity: 1 !important; transform: none !important; }
+      section ul li { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 </head>
 <body>
 
@@ -45,7 +53,7 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Theme Toggle -->
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
