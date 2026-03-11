@@ -9,6 +9,8 @@
   --line-height-body: 1.75;
   --line-height-heading: 1.05;
   --letter-spacing-label: 0.12em;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --color-accent: #1B3A6B;
 }
 
 * {
@@ -44,9 +46,10 @@ a {
 }
 
 a:hover {
+  color: var(--color-accent);
   text-decoration: underline;
   text-underline-offset: 3px;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 a:focus,
@@ -82,8 +85,10 @@ button:focus {
 }
 
 header h1 {
+  font-family: var(--font-display);
   font-size: var(--font-size-h1);
-  font-weight: 200;
+  font-weight: 400;
+  font-style: italic;
   margin-bottom: 8px;
   line-height: var(--line-height-heading);
   letter-spacing: -0.015em;
@@ -240,8 +245,9 @@ section[data-index]::before {
 }
 
 h2 {
+  font-family: var(--font-display);
   font-size: var(--font-size-h2);
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 2.5rem;
   border-bottom: none;
   padding-bottom: 0;
@@ -262,7 +268,8 @@ h3 {
   font-family: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
-  opacity: 0.45;
+  color: var(--color-accent);
+  opacity: 1;
   text-transform: uppercase;
   margin-bottom: 1.5em;
   line-height: 1.6;
@@ -558,6 +565,7 @@ footer p {
 body.dark-mode {
   background-color: #0d0d0d;
   color: #EBE1D1;
+  --color-accent: #7BA3D4;
 }
 
 body.dark-mode a {
