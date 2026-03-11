@@ -247,11 +247,11 @@ h3 {
 /* Also Section */
 .also-intro {
   font-family: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  color: var(--color-accent);
-  opacity: 1;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: inherit;
+  opacity: 0.45;
+  text-transform: none;
   margin-bottom: 1.5em;
   line-height: 1.6;
 }
@@ -561,7 +561,7 @@ section.is-visible ul li {
 
   .work-content {
     flex-direction: row;
-    gap: 30px;
+    gap: 2rem;
     align-items: flex-start;
   }
 
@@ -577,6 +577,7 @@ section.is-visible ul li {
   .cv-grid {
     grid-template-columns: 1fr 1.2fr 1fr;
     gap: 40px;
+    align-items: start;
   }
 }
 
