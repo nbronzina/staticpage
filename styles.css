@@ -724,18 +724,6 @@ body.dark-mode .moon-icon {
   display: block;
 }
 
-/* Section Labels */
-.section-label {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-label);
-  letter-spacing: var(--letter-spacing-label);
-  text-transform: uppercase;
-  color: var(--color-accent);
-  display: block;
-  margin-bottom: var(--space-sm);
-  opacity: 0.8;
-}
-
 /* SR-Only Utility */
 .sr-only {
   position: absolute;
