@@ -257,19 +257,6 @@ h3 {
   text-transform: none;
 }
 
-/* Section Labels */
-.section-label {
-  font-family: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-  font-size: 0.75rem;
-  letter-spacing: var(--letter-spacing-label);
-  text-transform: uppercase;
-  opacity: 0.4;
-  display: block;
-  margin-bottom: 0.75rem;
-  color: inherit;
-  font-variant-numeric: tabular-nums;
-}
-
 /* Also Section */
 .also-intro {
   font-family: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
