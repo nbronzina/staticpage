@@ -17,8 +17,8 @@ NO editar archivos `.min.*` si existen.
 - Display (h1, h2): Instrument Serif — Google Fonts
 - Body: system fonts
 - Monospace (labels, metadata): IBM Plex Mono → fallback system monospace
-- h1: italic, font-weight 200
-- h2 secciones: a definir por sprint (ver último commit)
+- h1: italic, font-weight 400
+- h2: normal, font-weight 400
 
 ## Sistema visual
 - Separadores: border-top 1px solid opacity 0.15 en cada section
