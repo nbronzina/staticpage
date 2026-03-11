@@ -711,6 +711,7 @@ body.dark-mode .sun-icon {
 
 body.dark-mode .moon-icon {
   display: block;
+  color: #EBE1D1;
 }
 
 /* SR-Only Utility */
