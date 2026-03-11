@@ -3,10 +3,11 @@
 :root {
   --font-size-h1: clamp(3.5rem, 10vw, 8rem);
   --font-size-h2: clamp(2rem, 5vw, 3.5rem);
-  --font-size-h3: clamp(1.1rem, 2vw, 1.4rem);
+  --font-size-h3: clamp(1.5rem, 3vw, 1.75rem);
   --font-size-body: 1rem;
   --font-size-label: 0.7rem;
   --line-height-body: 1.75;
+  --line-height-compact: 1.6;
   --line-height-heading: 1.05;
   --letter-spacing-label: 0.12em;
   --font-display: 'Instrument Serif', Georgia, serif;
@@ -89,7 +90,7 @@ header h1 {
   font-size: var(--font-size-h1);
   font-weight: 400;
   font-style: italic;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   line-height: var(--line-height-heading);
   letter-spacing: -0.015em;
   position: relative;
@@ -109,7 +110,7 @@ header h1::after {
 .subtitle {
   font-size: 1.25rem;
   line-height: 1.4;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .location {
@@ -194,7 +195,6 @@ header h1::after {
   line-height: var(--line-height-body);
   hyphens: manual;
   overflow-wrap: break-word;
-  max-width: 62ch;
 }
 
 /* Section Titles - Editorial Contrast */
@@ -231,7 +231,7 @@ section[data-index]::before {
 h2 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: var(--font-size-h2);
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 2.5rem;
   border-bottom: none;
   padding-bottom: 0;
@@ -242,8 +242,8 @@ h2 {
 h3 {
   font-size: var(--font-size-h3);
   font-weight: 400;
-  margin-bottom: 12px;
-  line-height: 1.3;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
   text-transform: none;
 }
 
@@ -251,12 +251,12 @@ h3 {
 .also-intro {
   font-family: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
   font-size: 0.75rem;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--letter-spacing-label);
   color: inherit;
-  opacity: 0.45;
+  opacity: 0.5;
   text-transform: none;
   margin-bottom: 1.5em;
-  line-height: 1.6;
+  line-height: var(--line-height-compact);
 }
 
 /* Projects Grid */
@@ -274,13 +274,13 @@ h3 {
 
 .project-card h3 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .project-card p {
   font-size: 1rem;
   margin-bottom: 15px;
-  line-height: 1.6;
+  line-height: var(--line-height-compact);
   max-width: 60ch;
   hyphens: manual;
   overflow-wrap: break-word;
@@ -326,8 +326,8 @@ h3 {
 }
 
 .work-category li {
-  margin: 8px 0;
-  line-height: 1.5;
+  margin: 0.5rem 0;
+  line-height: var(--line-height-compact);
 }
 
 section ul li a {
@@ -344,10 +344,10 @@ section ul li a:hover {
 .work-context {
   font-family: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
   font-size: 0.875rem;
-  opacity: 0.6;
+  opacity: 0.65;
   font-style: normal;
   margin-bottom: 1em;
-  line-height: 1.6;
+  line-height: var(--line-height-compact);
 }
 
 /* 👉 Ajustes específicos MARGIN.SIGNALS */
@@ -401,7 +401,7 @@ section ul li a:hover {
 .cv-grid p {
   font-size: 1rem;
   margin: 0 0 1.2em 0;
-  line-height: 1.5;
+  line-height: var(--line-height-compact);
   font-variant-numeric: tabular-nums;
 }
 
