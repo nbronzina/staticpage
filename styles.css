@@ -117,25 +117,6 @@ header h1::after {
   color: #333;
 }
 
-/* Contact Section */
-.contact-section {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: flex-start;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.email {
-  font-size: 1rem;
-  margin: 0;
-}
-
 /* Theme Toggle */
 .theme-toggle {
   width: 44px;
@@ -451,6 +432,15 @@ footer p {
   margin: 5px 0;
 }
 
+footer a {
+  color: inherit;
+}
+
+footer .social-icons {
+  justify-content: center;
+  margin: 10px 0;
+}
+
 /* Back to Top Button */
 .back-to-top {
   position: fixed;
@@ -549,13 +539,6 @@ section.is-visible ul li {
     font-size: 1.75rem;
   }
 
-  .contact-section {
-    flex-direction: row;
-    gap: 20px;
-    align-items: flex-start;
-    max-width: 400px;
-  }
-
   .intro-container {
     flex-direction: row;
     align-items: stretch;
@@ -614,6 +597,18 @@ body.dark-mode .location {
 
 body.dark-mode footer {
   color: #a0a0a0;
+}
+
+body.dark-mode footer a {
+  color: #a0a0a0;
+}
+
+body.dark-mode footer .social-icons a {
+  color: #EBE1D1;
+}
+
+body.dark-mode footer .social-icons svg {
+  stroke: #EBE1D1;
 }
 
 body.dark-mode .header-container,
