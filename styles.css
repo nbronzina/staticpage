@@ -468,7 +468,7 @@ footer p {
 }
 
 .back-to-top:hover {
-  background-color: #000;
+  background-color: var(--color-accent);
 }
 
 .back-to-top:hover svg {
@@ -688,7 +688,7 @@ body.dark-mode .back-to-top {
 }
 
 body.dark-mode .back-to-top:hover {
-  background-color: #EBE1D1;
+  background-color: var(--color-accent);
 }
 
 body.dark-mode .back-to-top svg {
