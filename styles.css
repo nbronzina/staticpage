@@ -254,7 +254,8 @@ header h1::after {
 .intro-text p {
   margin-bottom: 1.2em;
   line-height: var(--line-height-body);
-  hyphens: manual;
+  hyphens: auto;
+  -webkit-hyphens: auto;
   overflow-wrap: break-word;
 }
 
@@ -354,7 +355,8 @@ h3 {
   margin-bottom: var(--space-md);
   line-height: var(--line-height-compact);
   max-width: 60ch;
-  hyphens: manual;
+  hyphens: auto;
+  -webkit-hyphens: auto;
   overflow-wrap: break-word;
 }
 
@@ -458,7 +460,8 @@ section ul li a:hover {
 }
 
 .work-category div p {
-  hyphens: manual;
+  hyphens: auto;
+  -webkit-hyphens: auto;
   overflow-wrap: break-word;
 }
 
@@ -479,7 +482,7 @@ section ul li a:hover {
 
 .cv-grid p {
   font-size: 1rem;
-  margin: 0 0 1.2em 0;
+  margin: 0 0 1.25em 0;
   line-height: var(--line-height-compact);
   font-variant-numeric: tabular-nums;
 }
@@ -650,7 +653,8 @@ section.is-visible .projects-grid > * {
   }
 
   .subtitle {
-    font-size: 1.75rem;
+    font-size: 2rem;
+    line-height: 1.4;
   }
 
   .intro-container {
