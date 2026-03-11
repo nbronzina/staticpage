@@ -60,7 +60,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 // Observe all sections after a short delay to ensure first section is visible
 setTimeout(() => {
-  document.querySelectorAll('section').forEach(section => {
+  document.querySelectorAll('.section').forEach(section => {
     revealObserver.observe(section);
   });
 }, 100);
