@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nicolás Bronzina — Links</title>
+<meta name="description" content="Links to all my projects, publications, and ways to connect — AI-Enhanced Futures Designer based in Madrid.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.nicolasbronzina.com/links/">
+<meta property="og:title" content="Nicolás Bronzina — Links">
+<meta property="og:description" content="Links to all my projects, publications, and ways to connect.">
+<meta property="og:image" content="https://www.nicolasbronzina.com/img/DitherME.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://www.nicolasbronzina.com/links/">
+<meta name="twitter:title" content="Nicolás Bronzina — Links">
+<meta name="twitter:description" content="Links to all my projects, publications, and ways to connect.">
+<meta name="twitter:image" content="https://www.nicolasbronzina.com/img/DitherME.jpg">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://www.nicolasbronzina.com/links/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -78,7 +96,7 @@
     border-bottom: 1px solid rgba(26, 26, 26, 0.12);
     text-decoration: none;
     color: var(--fg);
-    transition: all 0.2s ease;
+    transition: color 0.2s ease;
     position: relative;
   }
 
@@ -95,20 +113,24 @@
     z-index: 0;
   }
 
-  .link-item:hover::before {
+  .link-item:hover::before,
+  .link-item:active::before {
     opacity: 1;
   }
 
-  .link-item:hover {
+  .link-item:hover,
+  .link-item:active {
     color: var(--bg);
   }
 
-  .link-item:hover .link-arrow {
+  .link-item:hover .link-arrow,
+  .link-item:active .link-arrow {
     color: var(--bg);
     transform: translateX(3px);
   }
 
-  .link-item:hover .link-tag {
+  .link-item:hover .link-tag,
+  .link-item:active .link-tag {
     color: var(--bg);
     opacity: 0.5;
   }
@@ -188,12 +210,6 @@
     height: 5px;
     background: #4a9e5c;
     border-radius: 50%;
-    animation: pulse 2.5s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
   }
 
   /* ── Responsive ── */
