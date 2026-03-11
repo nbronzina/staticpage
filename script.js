@@ -50,13 +50,14 @@ const revealObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('is-visible');
 
-      // Stagger animation for Work section links
-      if (entry.target.getAttribute('data-index') === '02') {
-        const items = entry.target.querySelectorAll('ul li');
-        items.forEach((item, i) => {
-          item.style.transitionDelay = `${i * STAGGER_DELAY}ms`;
-        });
-      }
+      // Stagger animation for all lists and grids
+      const listItems = entry.target.querySelectorAll('ul li');
+      const gridItems = entry.target.querySelectorAll('.projects-grid > *');
+      const allItems = [...listItems, ...gridItems];
+
+      allItems.forEach((item, i) => {
+        item.style.transitionDelay = `${i * STAGGER_DELAY}ms`;
+      });
 
       revealObserver.unobserve(entry.target);
     }
