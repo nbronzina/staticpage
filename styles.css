@@ -218,7 +218,6 @@ header h1::after {
   padding-top: 5rem;
   padding-bottom: 5rem;
   position: relative;
-  overflow: hidden;
 }
 
 .section:first-of-type {
