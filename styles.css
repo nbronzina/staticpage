@@ -253,24 +253,22 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
 .dirA-intro-right p:last-child { margin-bottom: 0; }
 .dirA-intro-right a { color: var(--accent); }
 
+/* ---------- Section retraction (right inset) ---------- */
+.dirA-section,
+.dirA-intro,
+.dirA-foot {
+  padding-right: clamp(48px, 8vw, 120px);
+}
+
 /* ---------- Section heads ---------- */
 .dirA-section-head {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: baseline;
   gap: 32px;
-  padding: 80px clamp(48px, 8vw, 120px) 40px 0;
+  padding: 80px 0 40px;
+  border-bottom: 1px solid var(--ink);
   margin-bottom: 48px;
-  position: relative;
-}
-.dirA-section-head::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: clamp(48px, 8vw, 120px);
-  bottom: 0;
-  height: 1px;
-  background: var(--ink);
 }
 .dirA-section-head h2 {
   font-size: clamp(48px, 6vw, 88px);
@@ -578,13 +576,17 @@ img.plain {
   }
   .dirA-portrait { max-width: 280px; }
 
+  .dirA-section,
+  .dirA-intro,
+  .dirA-foot {
+    padding-right: 0;
+  }
   .dirA-section-head {
     grid-template-columns: 1fr;
     gap: 4px;
     padding: 56px 0 28px;
     margin-bottom: 32px;
   }
-  .dirA-section-head::after { right: 0; }
   .dirA-section-head .section-meta { display: none; }
 
   .dirA-writing-group,
