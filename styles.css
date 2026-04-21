@@ -277,19 +277,19 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
   filter: var(--img-filter);
   mix-blend-mode: var(--img-blend);
 }
-.dirA-lede {
+.dirA-intro-right p {
+  font-size: 18px;
+  line-height: 1.55;
+  margin: 0 0 20px;
+  max-width: 62ch;
+}
+.dirA-intro-right .dirA-lede {
   font-size: clamp(22px, 2.4vw, 32px);
   line-height: 1.35;
   margin: 0 0 28px;
   letter-spacing: -0.01em;
   font-weight: 300;
   max-width: 28ch;
-}
-.dirA-intro-right p {
-  font-size: 18px;
-  line-height: 1.55;
-  margin: 0 0 20px;
-  max-width: 62ch;
 }
 .dirA-intro-right p:last-child { margin-bottom: 0; }
 .dirA-intro-right a { color: var(--accent); }
