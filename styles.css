@@ -89,7 +89,7 @@ body.dark-mode {
   --img-blend: normal;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html, body { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -180,8 +180,8 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; letter-spacing: -0.01em; }
   background: var(--paper);
   border: 1px solid var(--rule);
   color: var(--ink);
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -199,14 +199,14 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
 /* ---------- Back to top ---------- */
 .back-to-top {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: max(24px, env(safe-area-inset-bottom, 24px));
+  right: max(24px, env(safe-area-inset-right, 24px));
   z-index: 100;
   background: var(--ink);
   color: var(--paper);
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
@@ -232,7 +232,7 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
   border-bottom: 1px solid var(--rule);
 }
 .dirA-title {
-  font-size: clamp(80px, 13vw, 200px);
+  font-size: clamp(56px, 13vw, 200px);
   line-height: 0.9;
   letter-spacing: -0.045em;
   font-weight: 400;
@@ -580,8 +580,9 @@ img.plain {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
+  margin: -10px;
   color: var(--ink-mute);
   transition: color 0.2s ease;
   background-image: none;
@@ -621,11 +622,10 @@ img.plain {
   }
   .dirA-section-head {
     grid-template-columns: 1fr;
-    gap: 4px;
+    gap: 6px;
     padding: 56px 0 28px;
     margin-bottom: 32px;
   }
-  .dirA-section-head .section-meta { display: none; }
 
   .dirA-writing-group,
   .dirA-ed,
@@ -643,6 +643,12 @@ img.plain {
     gap: 16px;
   }
 
-  .theme-toggle { top: 12px; right: 12px; }
-  .back-to-top { bottom: 16px; right: 16px; }
+  .theme-toggle {
+    top: max(12px, env(safe-area-inset-top, 12px));
+    right: max(12px, env(safe-area-inset-right, 12px));
+  }
+  .back-to-top {
+    bottom: max(16px, env(safe-area-inset-bottom, 16px));
+    right: max(16px, env(safe-area-inset-right, 16px));
+  }
 }
