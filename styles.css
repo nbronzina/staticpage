@@ -14,8 +14,8 @@
   --rule: #C9BFA9;
   --rule-soft: #D9D0BC;
 
-  --accent: oklch(62% 0.11 65);
-  --accent-soft: oklch(62% 0.11 65 / 0.15);
+  --accent: oklch(48% 0.12 65);
+  --accent-soft: oklch(48% 0.12 65 / 0.15);
 
   --serif: "Fraunces", "Times New Roman", Georgia, serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
