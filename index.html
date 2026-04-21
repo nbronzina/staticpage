@@ -23,8 +23,8 @@
   <meta name="twitter:image" content="https://www.nicolasbronzina.com/og-image.png">
 
   <!-- Theme Color -->
-  <meta name="theme-color" content="#EBE1D1" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F4EFE6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1A1715" media="(prefers-color-scheme: dark)">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://www.nicolasbronzina.com/">
@@ -35,7 +35,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,30;1,9..144,300..700,30&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -89,8 +89,7 @@
   <!-- No-JS Fallback -->
   <noscript>
     <style>
-      .section { opacity: 1 !important; transform: none !important; }
-      section ul li { opacity: 1 !important; transform: none !important; }
+      .dirA-section, .dirA-intro { opacity: 1 !important; transform: none !important; }
     </style>
   </noscript>
 </head>
@@ -117,347 +116,446 @@
     </svg>
   </button>
 
-  <!-- Header -->
-  <header class="header-container">
-    <div>
-      <h1>Nicolás Bronzina</h1>
-      <p class="subtitle">AI-Enhanced Futures Designer</p>
-      <p class="location">Buenos Aires ↔ Madrid</p>
+  <!-- Main Content -->
+  <main id="main-content" class="dirA">
+
+  <!-- Masthead / Header -->
+  <header class="dirA-top">
+    <div class="dirA-masthead">
+      <span class="mono">nicolasbronzina.com</span>
+      <span class="mono right">Buenos Aires ↔ Madrid</span>
     </div>
+    <h1 class="dirA-title">
+      <span class="dirA-title-first">Nicolás</span>
+      <span class="dirA-title-last">Bronzina</span>
+    </h1>
+    <p class="dirA-subtitle"><span class="mono">—</span>AI-Enhanced Futures Designer</p>
+    <nav class="dirA-nav mono" aria-label="Primary">
+      <a href="#projects">I. Projects</a>
+      <a href="#writing">II. Writing</a>
+      <a href="#editorial">III. Editorial</a>
+      <a href="#also">IV. Also</a>
+      <a href="#cv">V. Curriculum</a>
+    </nav>
   </header>
 
-  <!-- Main Content -->
-  <main id="main-content">
-  
   <!-- Introduction -->
-  <section class="intro-section">
-    <div class="intro-container">
+  <section class="dirA-intro" aria-label="Introduction">
+    <div class="dirA-portrait">
       <picture>
         <source srcset="img/hi.webp" type="image/webp">
-        <img src="img/hi.jpg" alt="Nicolás Bronzina profile picture" class="main-image" width="800" height="1106" fetchpriority="high">
+        <img src="img/hi.jpg" alt="Nicolás Bronzina profile picture" width="800" height="1106" fetchpriority="high">
       </picture>
-      <div class="intro-text">
-        <p>Your organization navigates uncertain futures. I build prototypes and design fiction artifacts that turn research into decisions you can actually act on.</p>
+    </div>
+    <div class="dirA-intro-right">
+      <p class="dirA-lede">Your organization navigates uncertain futures. I build prototypes and design fiction artifacts that turn research into decisions you can actually act on.</p>
 
-        <p>Through <a href="https://www.bppanalyticsanddesign.com/" rel="noopener" target="_blank">BPP Analytics & Design</a>, we combine research, futures design, and experimentation to support high-stakes strategic choices. I designed the Emerging Technologies course for <a href="https://www.udit.es/" rel="noopener" target="_blank">UDIT Madrid</a>&rsquo;s Online Master&rsquo;s in UX Design, and run workshops for design teams working with AI and futures methods. At <a href="https://www.heated.studio/" rel="noopener" target="_blank">Heated Studio</a>, I help organizations imagine and prototype new climate futures.</p>
+      <p>Through <a href="https://www.bppanalyticsanddesign.com/" rel="noopener" target="_blank">BPP Analytics & Design</a>, we combine research, futures design, and experimentation to support high-stakes strategic choices. I designed the Emerging Technologies course for <a href="https://www.udit.es/" rel="noopener" target="_blank">UDIT Madrid</a>&rsquo;s Online Master&rsquo;s in UX Design, and run workshops for design teams working with AI and futures methods. At <a href="https://www.heated.studio/" rel="noopener" target="_blank">Heated Studio</a>, I help organizations imagine and prototype new climate futures.</p>
 
-        <p>Previously at <a href="http://nearfuturelaboratory.com/" rel="noopener" target="_blank">Near Future Laboratory</a> and <a href="https://fabiengirardin.com/" rel="noopener" target="_blank">Girardin & Nova</a>, I&rsquo;ve delivered design fiction projects for global clients across telecommunications, finance, defense, and mobility — turning abstract risk into artifacts teams can argue about.</p>
+      <p>Previously at <a href="http://nearfuturelaboratory.com/" rel="noopener" target="_blank">Near Future Laboratory</a> and <a href="https://fabiengirardin.com/" rel="noopener" target="_blank">Girardin & Nova</a>, I&rsquo;ve delivered design fiction projects for global clients across telecommunications, finance, defense, and mobility — turning abstract risk into artifacts teams can argue about.</p>
 
-        <p>I document futures design methods and experiments through <a href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener">Otros Futuros</a>, a YouTube channel where speculative thinking becomes tangible practice. I also publish <a href="#editorial">MARGIN.SIGNALS</a>, an independent publication tracking early signals from cultural margins before they harden into mainstream trends.</p>
+      <p>I document futures design methods and experiments through <a href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener">Otros Futuros</a>, a YouTube channel where speculative thinking becomes tangible practice. I also publish <a href="#editorial">MARGIN.SIGNALS</a>, an independent publication tracking early signals from cultural margins before they harden into mainstream trends.</p>
 
-        <p>Working on something that doesn&rsquo;t have a clear future yet? <a href="mailto:nicolas.bronzina@gmail.com">Let&rsquo;s talk<span class="sr-only"> (send email)</span></a>.</p>
-      </div>
+      <p>Working on something that doesn&rsquo;t have a clear future yet? <a href="mailto:nicolas.bronzina@gmail.com">Let&rsquo;s talk<span class="sr-only"> (send email)</span></a>.</p>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="section" data-index="01" aria-label="Section 1: Projects">
-    <h2>Projects</h2>
-    
-    <div class="projects-grid">
-      <article class="project-card">
-        <h3>Mercado San Telmo</h3>
-        <p>A 100-year-old market, a city that keeps changing, a climate that doesn&rsquo;t wait. Design fiction for San Telmo&rsquo;s next chapter. <a href="https://youtu.be/HKzJblDronw" target="_blank" rel="noopener">Video introduction</a>.</p>
-        <a href="https://www.futures-in-maps.com/san-telmo" target="_blank" rel="noopener" class="project-button">
-          View →
-        </a>
-      </article>
+  <!-- § I. Projects -->
+  <section class="dirA-section" id="projects" aria-labelledby="projects-head">
+    <div class="dirA-section-head">
+      <span class="mono">§ I</span>
+      <h2 id="projects-head">Projects</h2>
+      <span class="mono section-meta">Design fiction · Futures prototyping</span>
+    </div>
+    <ol class="dirA-project-list">
+      <li class="dirA-project">
+        <div class="mono dirA-project-num">01</div>
+        <div class="dirA-project-body">
+          <h3><a href="https://www.futures-in-maps.com/san-telmo" target="_blank" rel="noopener">Mercado San Telmo</a></h3>
+          <p>A 100-year-old market, a city that keeps changing, a climate that doesn&rsquo;t wait. Design fiction for San Telmo&rsquo;s next chapter.</p>
+          <div class="mono dirA-project-meta">
+            <a class="ext" href="https://www.futures-in-maps.com/san-telmo" target="_blank" rel="noopener">futures-in-maps.com/san-telmo ↗</a>
+            <a class="ext" href="https://youtu.be/HKzJblDronw" target="_blank" rel="noopener">Video introduction ↗</a>
+          </div>
+        </div>
+      </li>
 
-      <article class="project-card">
-        <h3>Desert Athleisure</h3>
-        <p>Sportswear for a 40°C+ world. A Heated Studio design fiction that gives retailers and brands something tangible to argue about before the heat arrives. <a href="https://drive.google.com/file/d/1MyQMEEvz6jRql5MN79UZ3hftiBRgZSOW/view" target="_blank" rel="noopener">Landing page</a>.</p>
-        <a href="https://www.youtube.com/watch?v=nApY_pWiY9I" target="_blank" rel="noopener" class="project-button">
-          View →
-        </a>
-      </article>
+      <li class="dirA-project">
+        <div class="mono dirA-project-num">02</div>
+        <div class="dirA-project-body">
+          <h3><a href="https://www.youtube.com/watch?v=nApY_pWiY9I" target="_blank" rel="noopener">Desert Athleisure</a></h3>
+          <p>Sportswear for a 40°C+ world. A Heated Studio design fiction that gives retailers and brands something tangible to argue about before the heat arrives.</p>
+          <div class="mono dirA-project-meta">
+            <a class="ext" href="https://www.youtube.com/watch?v=nApY_pWiY9I" target="_blank" rel="noopener">youtube.com ↗</a>
+            <a class="ext" href="https://drive.google.com/file/d/1MyQMEEvz6jRql5MN79UZ3hftiBRgZSOW/view" target="_blank" rel="noopener">Landing page ↗</a>
+          </div>
+        </div>
+      </li>
 
-      <article class="project-card">
-        <h3>Adaptive Museums</h3>
-        <p>Museums as climate infrastructure. A prototype exploring what happens when cultural institutions have to choose between their mission and their survival. <a href="https://www.youtube.com/watch?v=3nGlFK0WJPI" target="_blank" rel="noopener">Video introduction</a>.</p>
-        <a href="https://prototypes.heated.studio/adaptive-museums" target="_blank" rel="noopener" class="project-button">
-          View →
-        </a>
-      </article>
+      <li class="dirA-project">
+        <div class="mono dirA-project-num">03</div>
+        <div class="dirA-project-body">
+          <h3><a href="https://prototypes.heated.studio/adaptive-museums" target="_blank" rel="noopener">Adaptive Museums</a></h3>
+          <p>Museums as climate infrastructure. A prototype exploring what happens when cultural institutions have to choose between their mission and their survival.</p>
+          <div class="mono dirA-project-meta">
+            <a class="ext" href="https://prototypes.heated.studio/adaptive-museums" target="_blank" rel="noopener">prototypes.heated.studio ↗</a>
+            <a class="ext" href="https://www.youtube.com/watch?v=3nGlFK0WJPI" target="_blank" rel="noopener">Video introduction ↗</a>
+          </div>
+        </div>
+      </li>
 
-      <article class="project-card">
-        <h3>Cuidados en Red</h3>
-        <p>Buenos Aires is aging. This design fiction reimagines what care looks like when the system built for the 20th century runs out of answers.</p>
-        <a href="https://nbronzina.github.io/cuidar/index.html" target="_blank" rel="noopener" class="project-button">
-          View →
-        </a>
-      </article>
+      <li class="dirA-project">
+        <div class="mono dirA-project-num">04</div>
+        <div class="dirA-project-body">
+          <h3><a href="https://nbronzina.github.io/cuidar/index.html" target="_blank" rel="noopener">Cuidados en Red</a></h3>
+          <p>Buenos Aires is aging. This design fiction reimagines what care looks like when the system built for the 20th century runs out of answers.</p>
+          <div class="mono dirA-project-meta">
+            <a class="ext" href="https://nbronzina.github.io/cuidar/index.html" target="_blank" rel="noopener">nbronzina.github.io/cuidar ↗</a>
+          </div>
+        </div>
+      </li>
 
-      <article class="project-card">
-        <h3>OFFicial</h3>
-        <p>Spain, near future. Climate refugees arriving faster than the institutions designed to receive them. A design fiction for the gap between policy and reality.</p>
-        <a href="https://www.nicolasbronzina.com/Official.html" target="_blank" rel="noopener" class="project-button">
-          View →
-        </a>
-      </article>
+      <li class="dirA-project">
+        <div class="mono dirA-project-num">05</div>
+        <div class="dirA-project-body">
+          <h3><a href="https://www.nicolasbronzina.com/Official.html" target="_blank" rel="noopener">OFFicial</a></h3>
+          <p>Spain, near future. Climate refugees arriving faster than the institutions designed to receive them. A design fiction for the gap between policy and reality.</p>
+          <div class="mono dirA-project-meta">
+            <a class="ext" href="https://www.nicolasbronzina.com/Official.html" target="_blank" rel="noopener">nicolasbronzina.com/Official.html ↗</a>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- § II. Writing -->
+  <section class="dirA-section" id="writing" aria-labelledby="writing-head">
+    <div class="dirA-section-head">
+      <span class="mono">§ II</span>
+      <h2 id="writing-head">Writing</h2>
+      <span class="mono section-meta">Essays, workshops, frameworks</span>
+    </div>
+
+    <div class="dirA-writing-group">
+      <div class="dirA-writing-head">
+        <h3>Future of Food</h3>
+        <p>Food as a futures problem. What climate, culture, and politics are doing to what we eat — and what comes next.</p>
+        <div class="dirA-writing-img">
+          <picture>
+            <source srcset="img/Empanadas.webp" type="image/webp">
+            <img src="img/Empanadas.jpg" alt="Empanadas with design fiction elements exploring future Argentinean cuisine" width="1000" height="683" loading="lazy">
+          </picture>
+        </div>
+      </div>
+      <ol class="dirA-writing-list">
+        <li><span class="mono idx">01</span><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37" rel="noopener" target="_blank">A Manifesto for a New Argentinean Cuisine</a></li>
+        <li><span class="mono idx">02</span><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968" rel="noopener" target="_blank">What is carbon-neutral gastronomy?</a></li>
+        <li><span class="mono idx">03</span><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7" rel="noopener" target="_blank">What is ethical meat and sustainable proteins tasting?</a></li>
+        <li><span class="mono idx">04</span><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d" rel="noopener" target="_blank">The gastronomic offer of San Telmo Market in a 15-minute city</a></li>
+      </ol>
+    </div>
+
+    <div class="dirA-writing-group">
+      <div class="dirA-writing-head">
+        <h3>Environmental Crisis</h3>
+        <p>Cities adapting to a climate that didn&rsquo;t ask permission. Projects with students, institutions, and communities in Madrid and Buenos Aires.</p>
+        <div class="dirA-writing-img">
+          <picture>
+            <source srcset="img/PortadaNG.webp" type="image/webp">
+            <img src="img/PortadaNG.jpg" alt="Climate design fiction prototype exploring heat adaptation" width="800" height="1045" loading="lazy">
+          </picture>
+        </div>
+      </div>
+      <ol class="dirA-writing-list">
+        <li><span class="mono idx">01</span><a href="https://medium.com/heated-consultancy/inhabiting-the-future-0cc470f47b93" rel="noopener" target="_blank">Inhabiting the future: climate design fiction with French spatial design master's students</a></li>
+        <li><span class="mono idx">02</span><a href="https://medium.com/heated-consultancy/how-i-prototyped-an-alternative-future-climate-with-design-fiction-genai-90b720ecf2d4" rel="noopener" target="_blank">How I Prototyped an Alternative Future Climate with Design Fiction & GenAI</a></li>
+        <li><span class="mono idx">03</span><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442" rel="noopener" target="_blank">How Madrid could adapt to extreme heat without losing its essence</a></li>
+        <li><span class="mono idx">04</span><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb" rel="noopener" target="_blank">A speculative tour of San Telmo Market in a future Buenos Aires</a></li>
+        <li><span class="mono idx">05</span><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f" rel="noopener" target="_blank">Collective trauma and community resilience after a climate disaster</a></li>
+      </ol>
+    </div>
+
+    <div class="dirA-writing-group">
+      <div class="dirA-writing-head">
+        <h3>Futures</h3>
+        <p>Essays, workshops, and frameworks. How to think about what comes next when the patterns stop working.</p>
+        <div class="dirA-writing-img">
+          <picture>
+            <source srcset="img/DDK.webp" type="image/webp">
+            <img src="img/DDK.jpg" alt="Diegetic Discovery Kit workshop materials for futures design" width="800" height="1114" loading="lazy">
+          </picture>
+        </div>
+      </div>
+      <ol class="dirA-writing-list">
+        <li><span class="mono idx">01</span><a href="https://medium.com/@nbronzina/could-should-might-dont-a-practitioner-s-reading-4664b9758b06" rel="noopener" target="_blank">Could, Should, Might, Don't: A Practitioner's Reading</a>&nbsp;<a class="mono alt" href="https://medium.com/@nbronzina/could-should-might-dont-una-lectura-desde-la-pr%C3%A1ctica-eef22b0c7b3e" rel="noopener" target="_blank">[ES]</a></li>
+        <li><span class="mono idx">02</span><a href="https://medium.com/@nbronzina/dise%C3%B1ar-futuros-desde-la-fuga-27548f831e36" rel="noopener" target="_blank">Diseñar futuros desde la fuga: un workshop sobre cerebros que se van (y los que podrían volver)</a></li>
+        <li><span class="mono idx">03</span><a href="https://medium.com/@nbronzina/no-the-plane-doesnt-have-ai-e6a0501e9f0d" rel="noopener" target="_blank">No, the plane doesn&rsquo;t have AI. And that opens up more interesting questions than the ones it tries to answer</a></li>
+        <li><span class="mono idx">04</span><a href="https://medium.com/@nbronzina/what-if-the-state-designed-futures-661a303aeb8f" rel="noopener" target="_blank">What if the State Designed Futures? A day in Buenos Aires revealed how speculative design, weak signals, and institutional fiction can become fundamental tools for public policy</a></li>
+        <li><span class="mono idx">05</span><a href="https://medium.com/@nbronzina/viveza-criolla-a-model-for-the-future-dc2705802104" rel="noopener" target="_blank">Viveza Criolla: A Design Fiction Lens on Strategic Adaptation</a></li>
+        <li><span class="mono idx">06</span><a href="https://medium.com/@nbronzina/diegetic-discovery-kit-57f77e6074e9" rel="noopener" target="_blank">A practical guide to changing how you see the everyday objects and spaces around you</a></li>
+        <li><span class="mono idx">07</span><a href="https://medium.com/@nbronzina/ense%C3%B1ando-inteligencia-artificial-a-dise%C3%B1adores-ux-694c3a1611d7" target="_blank" rel="noopener">Enseñando Inteligencia Artificial a Diseñadores UX: apuntes de una clase magistral impartida junto a Fabien Girardin y Rohit Gupta para estudiantes de diseño UX en UDIT</a></li>
+        <li><span class="mono idx">08</span><a href="https://medium.com/@nbronzina/turning-the-tide-ac23bdb8e7ba" target="_blank" rel="noopener">Turning the Tide: How Argentina Can Transform Short-Term Survival into a Future-Ready Strategy</a></li>
+        <li><span class="mono idx">09</span><a href="https://atelierdesfuturs.org/q260-comment-reimaginer-le-futur-au-quotidien/" target="_blank" rel="noopener">Comment réimaginer le futur au quotidian? / Re-imagining everyday futures</a></li>
+        <li><span class="mono idx">10</span><a href="https://medium.com/@nbronzina/welcome-an-approach-to-prospective-methodology-based-on-futures-design-and-its-relation-to-6a5491518262" target="_blank" rel="noopener">Prospective Methodology Based on Futures Design</a></li>
+        <li><span class="mono idx">11</span><a href="https://medium.com/@nbronzina/a-shift-towards-strategic-foresight-a34a87050eff" target="_blank" rel="noopener">How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
+      </ol>
     </div>
   </section>
 
-  <!-- Writing -->
-  <section class="section" data-index="02" aria-label="Section 2: Writing">
-    <h2>Writing</h2>
+  <!-- § III. Editorial -->
+  <section class="dirA-section" id="editorial" aria-labelledby="editorial-head">
+    <div class="dirA-section-head">
+      <span class="mono">§ III</span>
+      <h2 id="editorial-head">Editorial</h2>
+      <span class="mono section-meta">Channel · Publication</span>
+    </div>
 
-    <article class="work-category">
-      <h3>Future of Food</h3>
-      <div class="work-content">
-        <picture>
-          <source srcset="img/Empanadas.webp" type="image/webp">
-          <img src="img/Empanadas.jpg" alt="Empanadas with design fiction elements exploring future Argentinean cuisine" width="1000" height="683" loading="lazy">
-        </picture>
-        <div>
-          <p class="work-context">Food as a futures problem. What climate, culture, and politics are doing to what we eat — and what comes next.</p>
-          <ul>
-          <li><a href="https://medium.com/futures-in-maps/a-manifesto-for-a-new-argentinean-cuisine-9f0daa5d7b37" rel="noopener" target="_blank">A Manifesto for a New Argentinean Cuisine</a></li>
-          <li><a href="https://medium.com/futures-in-maps/what-is-carbon-neutral-gastronomy-d510e2159968" rel="noopener" target="_blank">What is carbon-neutral gastronomy?</a></li>
-          <li><a href="https://medium.com/futures-in-maps/what-is-ethical-meat-and-sustainable-proteins-tasting-6fbdbbe7dde7" rel="noopener" target="_blank">What is ethical meat and sustainable proteins tasting?</a></li>
-          <li><a href="https://medium.com/@nbronzina/the-gastronomic-offer-of-mercado-san-telmo-in-a-15-minute-city-72323894454d" rel="noopener" target="_blank">The gastronomic offer of San Telmo Market in a 15-minute city</a></li>
-        </ul>
-        </div>
-      </div>
-    </article>
-
-    <article class="work-category">
-      <h3>Environmental Crisis</h3>
-      <div class="work-content">
-        <picture>
-          <source srcset="img/PortadaNG.webp" type="image/webp">
-          <img src="img/PortadaNG.jpg" alt="Climate design fiction prototype exploring heat adaptation" width="800" height="1045" loading="lazy">
-        </picture>
-        <div>
-          <p class="work-context">Cities adapting to a climate that didn&rsquo;t ask permission. Projects with students, institutions, and communities in Madrid and Buenos Aires.</p>
-          <ul>
-          <li><a href="https://medium.com/heated-consultancy/inhabiting-the-future-0cc470f47b93" rel="noopener" target="_blank">Inhabiting the future: climate design fiction with French spatial design master's students</a></li>
-          <li><a href="https://medium.com/heated-consultancy/how-i-prototyped-an-alternative-future-climate-with-design-fiction-genai-90b720ecf2d4" rel="noopener" target="_blank">How I Prototyped an Alternative Future Climate with Design Fiction & GenAI</a></li>
-          <li><a href="https://medium.com/futures-in-maps/how-madrid-could-adapt-to-extreme-heat-without-losing-its-essence-8192d927d442" rel="noopener" target="_blank">How Madrid could adapt to extreme heat without losing its essence</a></li>
-          <li><a href="https://medium.com/futures-in-maps/navigating-san-telmo-market-in-the-15-minute-city-of-buenos-aires-e0566fe3dcdb" rel="noopener" target="_blank">A speculative tour of San Telmo Market in a future Buenos Aires</a></li>
-          <li><a href="https://medium.com/heated-consultancy/sociological-significance-of-design-fiction-objects-and-artifacts-22d32aa8637f" rel="noopener" target="_blank">Collective trauma and community resilience after a climate disaster</a></li>
-        </ul>
-        </div>
-      </div>
-    </article>
-
-    <article class="work-category">
-      <h3>Futures</h3>
-      <div class="work-content">
-        <picture>
-          <source srcset="img/DDK.webp" type="image/webp">
-          <img src="img/DDK.jpg" alt="Diegetic Discovery Kit workshop materials for futures design" width="800" height="1114" loading="lazy">
-        </picture>
-        <div>
-          <p class="work-context">Essays, workshops, and frameworks. How to think about what comes next when the patterns stop working.</p>
-          <ul>
-          <li><a href="https://medium.com/@nbronzina/could-should-might-dont-a-practitioner-s-reading-4664b9758b06" rel="noopener" target="_blank">Could, Should, Might, Don't: A Practitioner's Reading</a> [<a href="https://medium.com/@nbronzina/could-should-might-dont-una-lectura-desde-la-pr%C3%A1ctica-eef22b0c7b3e" rel="noopener" target="_blank">ES</a>]</li>
-          <li><a href="https://medium.com/@nbronzina/dise%C3%B1ar-futuros-desde-la-fuga-27548f831e36" rel="noopener" target="_blank">Diseñar futuros desde la fuga: un workshop sobre cerebros que se van (y los que podrían volver)</a></li>
-          <li><a href="https://medium.com/@nbronzina/no-the-plane-doesnt-have-ai-e6a0501e9f0d" rel="noopener" target="_blank">No, the plane doesn&rsquo;t have AI. And that opens up more interesting questions than the ones it tries to answer</a></li>
-          <li><a href="https://medium.com/@nbronzina/what-if-the-state-designed-futures-661a303aeb8f" rel="noopener" target="_blank">What if the State Designed Futures? A day in Buenos Aires revealed how speculative design, weak signals, and institutional fiction can become fundamental tools for public policy</a></li>
-          <li><a href="https://medium.com/@nbronzina/viveza-criolla-a-model-for-the-future-dc2705802104" rel="noopener" target="_blank">Viveza Criolla: A Design Fiction Lens on Strategic Adaptation</a></li>
-          <li><a href="https://medium.com/@nbronzina/diegetic-discovery-kit-57f77e6074e9" rel="noopener" target="_blank">A practical guide to changing how you see the everyday objects and spaces around you</a></li>
-          <li><a href="https://medium.com/@nbronzina/ense%C3%B1ando-inteligencia-artificial-a-dise%C3%B1adores-ux-694c3a1611d7" target="_blank" rel="noopener">Enseñando Inteligencia Artificial a Diseñadores UX: apuntes de una clase magistral impartida junto a Fabien Girardin y Rohit Gupta para estudiantes de diseño UX en UDIT</a></li>
-          <li><a href="https://medium.com/@nbronzina/turning-the-tide-ac23bdb8e7ba" target="_blank" rel="noopener">Turning the Tide: How Argentina Can Transform Short-Term Survival into a Future-Ready Strategy</a></li>
-          <li><a href="https://atelierdesfuturs.org/q260-comment-reimaginer-le-futur-au-quotidien/" target="_blank" rel="noopener">Comment réimaginer le futur au quotidian? / Re-imagining everyday futures</a></li>
-          <li><a href="https://medium.com/@nbronzina/welcome-an-approach-to-prospective-methodology-based-on-futures-design-and-its-relation-to-6a5491518262" target="_blank" rel="noopener">Prospective Methodology Based on Futures Design</a></li>
-          <li><a href="https://medium.com/@nbronzina/a-shift-towards-strategic-foresight-a34a87050eff" target="_blank" rel="noopener">How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
-        </ul>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- Editorial -->
-  <section class="section" id="editorial" data-index="03" aria-label="Section 3: Editorial">
-    <h2>Editorial</h2>
-
-    <article class="work-category">
-      <h3>Otros Futuros</h3>
-      <div class="work-content">
+    <article class="dirA-ed">
+      <div class="dirA-ed-img">
         <picture>
           <source srcset="img/OtrosFuturos.webp" type="image/webp">
           <img src="img/OtrosFuturos.jpeg" alt="Otros Futuros YouTube channel banner" width="1600" height="900" loading="lazy">
         </picture>
-        <div>
-          <p class="work-context">Futures design, design fiction, speculative design.</p>
-
-          <p>I&rsquo;m a futures designer. I build prototypes and speculative artifacts for organizations that have to make decisions without knowing what comes next.</p>
-
-          <p>Weak signals from the present. Futures thinking methods. Speculative experiments, live. The orientation is toward making things: show future, don&rsquo;t tell future.</p>
-
-          <p>What I&rsquo;ve learned, what I&rsquo;ve applied, what I&rsquo;m still testing. From practice.</p>
-
-          <p>New content every week. <a href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener">Watch →</a></p>
-        </div>
+      </div>
+      <div class="dirA-ed-body">
+        <h3>Otros Futuros</h3>
+        <p class="dirA-ed-tagline">Futures design, design fiction, speculative design.</p>
+        <p>I&rsquo;m a futures designer. I build prototypes and speculative artifacts for organizations that have to make decisions without knowing what comes next.</p>
+        <p>Weak signals from the present. Futures thinking methods. Speculative experiments, live. The orientation is toward making things: show future, don&rsquo;t tell future.</p>
+        <p>What I&rsquo;ve learned, what I&rsquo;ve applied, what I&rsquo;m still testing. From practice.</p>
+        <p>New content every week.</p>
+        <p><a class="dirA-ed-cta" href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener">Watch →</a></p>
       </div>
     </article>
 
-    <article class="work-category">
-      <h3>MARGIN.SIGNALS</h3>
-      <div class="work-content">
+    <article class="dirA-ed">
+      <div class="dirA-ed-img">
         <picture>
           <source srcset="img/MarginSignals.webp" type="image/webp">
           <img src="img/MarginSignals.webp" alt="MARGIN.SIGNALS Release 001 prototype" width="703" height="997" loading="lazy">
         </picture>
-        <div>
-          <p>An independent publication tracking weak signals from cultural margins — before they reshape your industry.</p>
-
-          <p><strong>Release 001: SPECIALTY.COFFEE.MARGINS</strong></p>
-
-          <p>What happens when coffee's margins challenge its center? This trendspotting fanzine explores master plant protocols, intentional defect fermentation, and decolonised cupping—patterns of hierarchy inversion you'll see elsewhere soon.</p>
-
-          <p><strong>Limited prototype run. Access by direct request only.</strong></p>
-
-          <p><strong>Get a copy</strong><br>
-          Digital edition – €15<br>
-          Physical edition (limited print) – €35<br>
-          Dual bundle (digital + print) – €45
-          </p>
-
-          <p>Request your copy at <a href="mailto:nicolas.bronzina@gmail.com?subject=MARGIN.SIGNALS%20Request&body=Hi%20Nicolás%2C%20I'd%20like%20to%20acquire%20MARGIN.SIGNALS%20Release%20001.%0A%0AFormat%3A%20%5BDigital%20%E2%82%AC15%20%2F%20Physical%20%E2%82%AC35%20%2F%20Bundle%20%E2%82%AC45%5D%0A%0AName%3A%0ALocation%20(for%20physical%20edition)%3A">nicolas.bronzina@gmail.com</a> or via <a href="https://instagram.com/margin.signals" target="_blank" rel="noopener">@margin.signals</a> on Instagram.</p>
-        </div>
+      </div>
+      <div class="dirA-ed-body">
+        <h3>MARGIN.SIGNALS</h3>
+        <p class="dirA-ed-tagline">An independent publication tracking weak signals from cultural margins — before they reshape your industry.</p>
+        <p class="dirA-ed-release mono">Release 001: SPECIALTY.COFFEE.MARGINS</p>
+        <p>What happens when coffee's margins challenge its center? This trendspotting fanzine explores master plant protocols, intentional defect fermentation, and decolonised cupping—patterns of hierarchy inversion you'll see elsewhere soon.</p>
+        <p>Limited prototype run. Access by direct request only.</p>
+        <dl class="dirA-prices mono">
+          <div><dt>Digital edition</dt><dd>€15</dd></div>
+          <div><dt>Physical edition (limited print)</dt><dd>€35</dd></div>
+          <div><dt>Dual bundle (digital + print)</dt><dd>€45</dd></div>
+        </dl>
+        <p>Request your copy at <a href="mailto:nicolas.bronzina@gmail.com?subject=MARGIN.SIGNALS%20Request&body=Hi%20Nicolás%2C%20I'd%20like%20to%20acquire%20MARGIN.SIGNALS%20Release%20001.%0A%0AFormat%3A%20%5BDigital%20%E2%82%AC15%20%2F%20Physical%20%E2%82%AC35%20%2F%20Bundle%20%E2%82%AC45%5D%0A%0AName%3A%0ALocation%20(for%20physical%20edition)%3A">nicolas.bronzina@gmail.com</a> or via <a href="https://instagram.com/margin.signals" target="_blank" rel="noopener">@margin.signals</a> on Instagram.</p>
       </div>
     </article>
   </section>
 
-  <!-- Also -->
-  <section class="section" data-index="04" aria-label="Section 4: Also">
-    <h2>Also</h2>
-
-    <p class="also-intro">Experiments and side projects outside client work.</p>
-
-    <div class="projects-grid">
-      <article class="project-card">
-        <h3>playground mk-1</h3>
-        <p>Web-based music creation tool. 8-track drum sequencer, synthesizer, 4-slot looper with mic input.</p>
-        <a href="https://nbronzina.github.io/playground/" target="_blank" rel="noopener" class="project-button">
-          View →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <h3>playground mk-air</h3>
-        <p>Experience live audio that exists only in the moment—no recording, no archive. Broadcasts that challenge your relationship with permanence and presence.</p>
-        <a href="https://mk-air.onrender.com/" target="_blank" rel="noopener" class="project-button">
-          View →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <h3>playground mk-dwell</h3>
-        <p>A habitable sound space. Your cursor is your position—move toward a corner and a sound emerges, move away and it fades. The center breathes.</p>
-        <a href="https://nbronzina.github.io/playground/mk-dwell/" target="_blank" rel="noopener" class="project-button">
-          View →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <h3>Coffee.txt</h3>
-        <p>Specialty coffee guide for Madrid.</p>
-        <a href="https://www.nicolasbronzina.com/Coffee.html" target="_blank" rel="noopener" class="project-button">
-          View →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <h3>Coffee Decoded</h3>
-        <p>Practical guide to home coffee equipment.</p>
-        <a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" target="_blank" rel="noopener" class="project-button">
-          View →
-        </a>
-      </article>
+  <!-- § IV. Also -->
+  <section class="dirA-section" id="also" aria-labelledby="also-head">
+    <div class="dirA-section-head">
+      <span class="mono">§ IV</span>
+      <h2 id="also-head">Also</h2>
+      <span class="mono section-meta">Experiments and side projects outside client work</span>
     </div>
+    <ul class="dirA-also-list">
+      <li>
+        <span class="mono idx">01</span>
+        <div>
+          <h4><a href="https://nbronzina.github.io/playground/" target="_blank" rel="noopener">playground mk-1</a></h4>
+          <p>Web-based music creation tool. 8-track drum sequencer, synthesizer, 4-slot looper with mic input.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mono idx">02</span>
+        <div>
+          <h4><a href="https://mk-air.onrender.com/" target="_blank" rel="noopener">playground mk-air</a></h4>
+          <p>Experience live audio that exists only in the moment—no recording, no archive. Broadcasts that challenge your relationship with permanence and presence.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mono idx">03</span>
+        <div>
+          <h4><a href="https://nbronzina.github.io/playground/mk-dwell/" target="_blank" rel="noopener">playground mk-dwell</a></h4>
+          <p>A habitable sound space. Your cursor is your position—move toward a corner and a sound emerges, move away and it fades. The center breathes.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mono idx">04</span>
+        <div>
+          <h4><a href="https://www.nicolasbronzina.com/Coffee.html" target="_blank" rel="noopener">Coffee.txt</a></h4>
+          <p>Specialty coffee guide for Madrid.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mono idx">05</span>
+        <div>
+          <h4><a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" target="_blank" rel="noopener">Coffee Decoded</a></h4>
+          <p>Practical guide to home coffee equipment.</p>
+        </div>
+      </li>
+    </ul>
   </section>
 
-  <!-- CV -->
-  <section class="section" data-index="05" aria-label="Section 5: CV">
-    <h2>CV</h2>
-    <div class="cv-grid">
-      <div>
-        <p><strong>Experience</strong></p>
-        <p><u><a href="https://www.udit.es/" rel="noopener" target="_blank">UDIT, Universidad de Diseño, Innovación y Tecnología (Madrid, Spain)</a></u></p>
-        <p>Emerging Technologies Curriculum Designer, Online Master&rsquo;s in UX Design</p>
-        <p>Design emerging-technology curricula for UDIT&rsquo;s Online Master&rsquo;s in UX Design—authored a 6-ECTS course that moves students from Science and Technology Studies and philosophy of technology to speculative prototyping, with AI as a running case study and each student working on a technology from their own field.</p>
-        <p><u><a href="https://mundanidadforzada.org/" rel="noopener" target="_blank">Lab de Mundanidad Forzada</a></u></p>
-        <p>Research Coordinator & Lab Initiator</p>
-        <p>Coordinate collaborative experiments that help teams understand forced mundanity through ethnographic methods and design interventions—creating research frameworks you can apply to your own contexts.</p>
-        <p><u><a href="https://www.heated.studio/" rel="noopener" target="_blank">Heated Studio</a></u></p>
-        <p>Co-founder & Design Fiction Lead</p>
-        <p>Prepare your organization for climate futures through design fiction prototypes and strategic foresight—turning abstract climate risks into tangible strategies your team can test.</p>
-        <p><u><a href="https://www.bppanalyticsanddesign.com/" rel="noopener" target="_blank">BPP Analytics and Design</a></u></p>
-        <p>Managing Partner</p>
-        <p>Your organization needs intelligence that anticipates change. We combine sociological research with futures design to transform uncertainty into strategic clarity and actionable insights.</p>
-        <p><u><a href="https://fabiengirardin.com/" rel="noopener" target="_blank">Girardin & Nova</a></u></p>
-        <p>Design Researcher</p>
-        <p>Delivered design fiction projects that helped global telecoms, financial services, and defense organizations navigate sector transformation—methods now documented in published frameworks you can apply.</p>
-        <p><u><a href="http://nearfuturelaboratory.com/" rel="noopener" target="_blank">Near Future Laboratory</a></u></p>
-        <p>Design Researcher</p>
-        <p>Explored emerging tech futures for mobility sectors through design fiction—creating prototypes that helped organizations anticipate societal transformation before it arrived.</p>
-      </div>
-      <div>
-        <p><strong>Teaching</strong></p>
-        <p><u><a href="https://www.lamartinierediderot.fr/" rel="noopener" target="_blank">ESAA La Martinière-Diderot (Lyon, France)</a></u></p>
-        <p>Guest Lecturer, DSAA Design Espace</p>
-        <p>Delivered a talk and hands-on activity on climate design fiction for spatial design master&rsquo;s students visiting Madrid—introducing future mundane methods and diegetic artefacts, using Matadero as a living case study.</p>
-        <p><u><a href="https://www.udit.es/" rel="noopener" target="_blank">UDIT, Universidad de Diseño, Innovación y Tecnología (Madrid, Spain)</a></u></p>
-        <p>Guest Lecturer, Master&rsquo;s in UX Design</p>
-        <p>Equipped UX designers with AI-enhanced design fiction methods through intensive masterclass with Fabien Girardin and Rohit Gupta—giving students practical tools to anticipate emerging technology impacts in their work.</p>
-        <p><u><a href="https://www.domusacademy.com/" rel="noopener" target="_blank">Domus Academy (Milan, Italy)</a></u></p>
-        <p>Guest Workshop Co-facilitator</p>
-        <p>Guided design students to develop speculative urban futures for extreme heat scenarios—teaching weak signals analysis and climate foresight methods they can apply throughout their careers.</p>
-        <p><u><a href="https://www.cesba.com.ar/" rel="noopener" target="_blank">CESBA, Consejo Económico y Social de la Ciudad de Buenos Aires (Buenos Aires, Argentina)</a></u></p>
-        <p>Event Organizer & Opening Keynote</p>
-        <p>Presented frameworks for integrating futures design into public policy—proposing a Futures Anticipation Unit that helps government navigate uncertainty through institutional design fiction.</p>
-        <p class="cv-education-title"><strong>Education</strong></p>
-        <p><u><a href="https://www.udit.es/" rel="noopener" target="_blank">UDIT, Universidad de Diseño, Innovación y Tecnología (Madrid, Spain)</a></u></p>
-        <p>Master&rsquo;s Degree in User Experience for the Design of Digital Products and Services</p>
-        <p><u><a href="https://www.usal.edu.ar/" rel="noopener" target="_blank">Universidad del Salvador (Buenos Aires, Argentina)</a></u></p>
-        <p>Bachelor&rsquo;s in Sociology</p>
-        <p><u><a href="https://www.iftf.org/" rel="noopener" target="_blank">Institute for the Future (California, United States)</a></u></p>
-        <p>Certified in Future Thinking & Forecasting</p>
-      </div>
-      <div>
-        <p><strong>Core Expertise</strong></p>
-        <p>I help organizations prepare for uncertain futures through design fiction and AI-enhanced prototyping. My methods—weak signals analysis, scenario planning, ethnographic research—transform abstract risks into tangible strategies.</p>
-        <p>Sectors: climate adaptation, urban resilience, mobility, defense, financial services, telecommunications.</p>
-        <p>Methods: design fiction, futures prototyping, speculative scenarios, workshop facilitation, ethnographic research, AI-enhanced foresight.</p>
-      </div>
+  <!-- § V. Curriculum -->
+  <section class="dirA-section" id="cv" aria-labelledby="cv-head">
+    <div class="dirA-section-head">
+      <span class="mono">§ V</span>
+      <h2 id="cv-head">Curriculum</h2>
+      <span class="mono section-meta">Experience · Teaching · Education</span>
     </div>
-  </section>
 
-  </main>
+    <div class="dirA-cv-doc">
+      <div class="dirA-cv-block">
+        <div class="dirA-cv-block-head mono">Experience</div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-left">
-        <a href="mailto:nicolas.bronzina@gmail.com">nicolas.bronzina@gmail.com</a>
-        <span class="footer-meta">Handcrafted code. 2026</span>
+        <div class="dirA-cv-row">
+          <div class="dirA-cv-left">
+            <h4><a href="https://www.udit.es/" rel="noopener" target="_blank">UDIT, Universidad de Diseño, Innovación y Tecnología <span class="mono">(Madrid, Spain)</span></a></h4>
+            <div class="mono role">Emerging Technologies Curriculum Designer, Online Master&rsquo;s in UX Design</div>
+          </div>
+          <div class="dirA-cv-right"><p>Design emerging-technology curricula for UDIT&rsquo;s Online Master&rsquo;s in UX Design—authored a 6-ECTS course that moves students from Science and Technology Studies and philosophy of technology to speculative prototyping, with AI as a running case study and each student working on a technology from their own field.</p></div>
+        </div>
+
+        <div class="dirA-cv-row">
+          <div class="dirA-cv-left">
+            <h4><a href="https://mundanidadforzada.org/" rel="noopener" target="_blank">Lab de Mundanidad Forzada</a></h4>
+            <div class="mono role">Research Coordinator & Lab Initiator</div>
+          </div>
+          <div class="dirA-cv-right"><p>Coordinate collaborative experiments that help teams understand forced mundanity through ethnographic methods and design interventions—creating research frameworks you can apply to your own contexts.</p></div>
+        </div>
+
+        <div class="dirA-cv-row">
+          <div class="dirA-cv-left">
+            <h4><a href="https://www.heated.studio/" rel="noopener" target="_blank">Heated Studio</a></h4>
+            <div class="mono role">Co-founder & Design Fiction Lead</div>
+          </div>
+          <div class="dirA-cv-right"><p>Prepare your organization for climate futures through design fiction prototypes and strategic foresight—turning abstract climate risks into tangible strategies your team can test.</p></div>
+        </div>
+
+        <div class="dirA-cv-row">
+          <div class="dirA-cv-left">
+            <h4><a href="https://www.bppanalyticsanddesign.com/" rel="noopener" target="_blank">BPP Analytics and Design</a></h4>
+            <div class="mono role">Managing Partner</div>
+          </div>
+          <div class="dirA-cv-right"><p>Your organization needs intelligence that anticipates change. We combine sociological research with futures design to transform uncertainty into strategic clarity and actionable insights.</p></div>
+        </div>
+
+        <div class="dirA-cv-row">
+          <div class="dirA-cv-left">
+            <h4><a href="https://fabiengirardin.com/" rel="noopener" target="_blank">Girardin & Nova</a></h4>
+            <div class="mono role">Design Researcher</div>
+          </div>
+          <div class="dirA-cv-right"><p>Delivered design fiction projects that helped global telecoms, financial services, and defense organizations navigate sector transformation—methods now documented in published frameworks you can apply.</p></div>
+        </div>
+
+        <div class="dirA-cv-row">
+          <div class="dirA-cv-left">
+            <h4><a href="http://nearfuturelaboratory.com/" rel="noopener" target="_blank">Near Future Laboratory</a></h4>
+            <div class="mono role">Design Researcher</div>
+          </div>
+          <div class="dirA-cv-right"><p>Explored emerging tech futures for mobility sectors through design fiction—creating prototypes that helped organizations anticipate societal transformation before it arrived.</p></div>
+        </div>
       </div>
-      <div class="footer-right">
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/nicolasbronzina" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-              <rect x="2" y="9" width="4" height="12"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-          </a>
-          <a href="https://medium.com/@nbronzina" target="_blank" rel="noopener" aria-label="Medium">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-            </svg>
-          </a>
-          <a href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener" aria-label="Otros Futuros on YouTube">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
-              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
-            </svg>
-          </a>
+
+      <div class="dirA-cv-block">
+        <div class="dirA-cv-block-head mono">Teaching</div>
+
+        <div class="dirA-cv-row">
+          <div class="dirA-cv-left">
+            <h4><a href="https://www.lamartinierediderot.fr/" rel="noopener" target="_blank">ESAA La Martinière-Diderot <span class="mono">(Lyon, France)</span></a></h4>
+            <div class="mono role">Guest Lecturer, DSAA Design Espace</div>
+          </div>
+          <div class="dirA-cv-right"><p>Delivered a talk and hands-on activity on climate design fiction for spatial design master&rsquo;s students visiting Madrid—introducing future mundane methods and diegetic artefacts, using Matadero as a living case study.</p></div>
+        </div>
+
+        <div class="dirA-cv-row">
+          <div class="dirA-cv-left">
+            <h4><a href="https://www.udit.es/" rel="noopener" target="_blank">UDIT, Universidad de Diseño, Innovación y Tecnología <span class="mono">(Madrid, Spain)</span></a></h4>
+            <div class="mono role">Guest Lecturer, Master&rsquo;s in UX Design</div>
+          </div>
+          <div class="dirA-cv-right"><p>Equipped UX designers with AI-enhanced design fiction methods through intensive masterclass with Fabien Girardin and Rohit Gupta—giving students practical tools to anticipate emerging technology impacts in their work.</p></div>
+        </div>
+
+        <div class="dirA-cv-row">
+          <div class="dirA-cv-left">
+            <h4><a href="https://www.domusacademy.com/" rel="noopener" target="_blank">Domus Academy <span class="mono">(Milan, Italy)</span></a></h4>
+            <div class="mono role">Guest Workshop Co-facilitator</div>
+          </div>
+          <div class="dirA-cv-right"><p>Guided design students to develop speculative urban futures for extreme heat scenarios—teaching weak signals analysis and climate foresight methods they can apply throughout their careers.</p></div>
+        </div>
+
+        <div class="dirA-cv-row">
+          <div class="dirA-cv-left">
+            <h4><a href="https://www.cesba.com.ar/" rel="noopener" target="_blank">CESBA, Consejo Económico y Social de la Ciudad de Buenos Aires <span class="mono">(Buenos Aires, Argentina)</span></a></h4>
+            <div class="mono role">Event Organizer & Opening Keynote</div>
+          </div>
+          <div class="dirA-cv-right"><p>Presented frameworks for integrating futures design into public policy—proposing a Futures Anticipation Unit that helps government navigate uncertainty through institutional design fiction.</p></div>
+        </div>
+      </div>
+
+      <div class="dirA-cv-block">
+        <div class="dirA-cv-block-head mono">Education</div>
+
+        <div class="dirA-cv-row compact">
+          <div class="dirA-cv-left">
+            <h4><a href="https://www.udit.es/" rel="noopener" target="_blank">UDIT, Universidad de Diseño, Innovación y Tecnología <span class="mono">(Madrid, Spain)</span></a></h4>
+          </div>
+          <div class="dirA-cv-right"><p class="role-line">Master&rsquo;s Degree in User Experience for the Design of Digital Products and Services</p></div>
+        </div>
+
+        <div class="dirA-cv-row compact">
+          <div class="dirA-cv-left">
+            <h4><a href="https://www.usal.edu.ar/" rel="noopener" target="_blank">Universidad del Salvador <span class="mono">(Buenos Aires, Argentina)</span></a></h4>
+          </div>
+          <div class="dirA-cv-right"><p class="role-line">Bachelor&rsquo;s in Sociology</p></div>
+        </div>
+
+        <div class="dirA-cv-row compact">
+          <div class="dirA-cv-left">
+            <h4><a href="https://www.iftf.org/" rel="noopener" target="_blank">Institute for the Future <span class="mono">(California, United States)</span></a></h4>
+          </div>
+          <div class="dirA-cv-right"><p class="role-line">Certified in Future Thinking & Forecasting</p></div>
+        </div>
+      </div>
+
+      <div class="dirA-cv-block">
+        <div class="dirA-cv-block-head mono">Core Expertise</div>
+        <div class="dirA-cv-expertise">
+          <p>I help organizations prepare for uncertain futures through design fiction and AI-enhanced prototyping. My methods—weak signals analysis, scenario planning, ethnographic research—transform abstract risks into tangible strategies.</p>
+          <p>Sectors: climate adaptation, urban resilience, mobility, defense, financial services, telecommunications.</p>
+          <p>Methods: design fiction, futures prototyping, speculative scenarios, workshop facilitation, ethnographic research, AI-enhanced foresight.</p>
         </div>
       </div>
     </div>
+  </section>
+
+  <footer class="dirA-foot mono">
+    <div><a href="mailto:nicolas.bronzina@gmail.com">nicolas.bronzina@gmail.com</a></div>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/nicolasbronzina" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+      <a href="https://medium.com/@nbronzina" target="_blank" rel="noopener" aria-label="Medium">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+        </svg>
+      </a>
+      <a href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener" aria-label="Otros Futuros on YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+          <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+        </svg>
+      </a>
+    </div>
+    <div>Handcrafted code · 2026</div>
   </footer>
+
+  </main>
 
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">
