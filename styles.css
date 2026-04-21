@@ -214,18 +214,8 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
 
 .dirA-location {
   color: var(--ink-mute);
-  margin: 0 0 60px;
+  margin: 0;
 }
-
-.dirA-nav {
-  display: flex;
-  gap: 32px;
-  padding-top: 20px;
-  border-top: 1px solid var(--rule);
-  flex-wrap: wrap;
-}
-.dirA-nav a { color: var(--ink-mute); }
-.dirA-nav a:hover { color: var(--accent); }
 
 /* ---------- Intro ---------- */
 .dirA-intro {
@@ -593,8 +583,6 @@ img.plain {
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .dirA { padding: 24px var(--gutter) 80px; }
-  .dirA-location { margin-bottom: 36px; }
-  .dirA-nav { gap: 18px; }
 
   .dirA-intro {
     grid-template-columns: 1fr;
