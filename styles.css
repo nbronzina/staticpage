@@ -6,16 +6,14 @@
 /* ---------- Tokens ---------- */
 :root {
   --paper: #F4EFE6;
-  --paper-2: #ECE5D7;
-  --paper-deep: #E4DBC8;
   --ink: #1A1715;
   --ink-2: #2B2825;
   --ink-mute: #6F6A62;
   --rule: #C9BFA9;
   --rule-soft: #D9D0BC;
 
-  --accent: oklch(62% 0.11 65);
-  --accent-soft: oklch(62% 0.11 65 / 0.15);
+  --accent: oklch(48% 0.12 65);
+  --accent-soft: oklch(48% 0.12 65 / 0.15);
 
   --serif: "Fraunces", "Times New Roman", Georgia, serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
@@ -29,8 +27,6 @@
 
 body.dark-mode {
   --paper: #1A1715;
-  --paper-2: #201c19;
-  --paper-deep: #262220;
   --ink: #F4EFE6;
   --ink-2: #E4DBC8;
   --ink-mute: #9E988E;
@@ -95,7 +91,6 @@ a.ext, .mono a {
   font-weight: 400;
 }
 .mono a { color: inherit; }
-.mono.lower, .mono.lower * { text-transform: none; letter-spacing: 0.02em; }
 
 img { max-width: 100%; display: block; height: auto; }
 
@@ -232,10 +227,6 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
   filter: var(--img-filter);
   mix-blend-mode: var(--img-blend);
 }
-.dirA-portrait-cap {
-  margin-top: 10px;
-  color: var(--ink-mute);
-}
 .dirA-lede {
   font-size: clamp(22px, 2.4vw, 32px);
   line-height: 1.35;
@@ -344,10 +335,6 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
   height: auto;
   filter: var(--img-filter);
   mix-blend-mode: var(--img-blend);
-}
-.dirA-writing-img .mono {
-  color: var(--ink-mute);
-  margin-top: 8px;
 }
 .dirA-writing-list {
   list-style: none;
@@ -500,8 +487,7 @@ img.plain {
   letter-spacing: -0.01em;
 }
 .dirA-cv-left h4 a { background-image: linear-gradient(var(--accent), var(--accent)); }
-.dirA-cv-left .role,
-.dirA-cv-left .place {
+.dirA-cv-left .role {
   color: var(--ink-mute);
   margin-bottom: 2px;
 }
