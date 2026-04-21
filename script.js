@@ -43,22 +43,10 @@ backToTopButton.addEventListener('click', () => {
 });
 
 // Scroll Reveal for Sections
-const STAGGER_DELAY = 40; // ms
-
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('is-visible');
-
-      // Stagger animation for all lists and grids
-      const listItems = entry.target.querySelectorAll('ul li');
-      const gridItems = entry.target.querySelectorAll('.projects-grid > *');
-      const allItems = [...listItems, ...gridItems];
-
-      allItems.forEach((item, i) => {
-        item.style.transitionDelay = `${i * STAGGER_DELAY}ms`;
-      });
-
       revealObserver.unobserve(entry.target);
     }
   });
@@ -67,9 +55,8 @@ const revealObserver = new IntersectionObserver((entries) => {
   rootMargin: '0px 0px -40px 0px'
 });
 
-// Observe all sections after a short delay to ensure first section is visible
 setTimeout(() => {
-  document.querySelectorAll('.section').forEach(section => {
-    revealObserver.observe(section);
+  document.querySelectorAll('.dirA-section, .dirA-intro').forEach(el => {
+    revealObserver.observe(el);
   });
 }, 100);
