@@ -60,3 +60,60 @@ setTimeout(() => {
     revealObserver.observe(el);
   });
 }, 100);
+
+// Audio Player
+const audio = document.getElementById('audio-element');
+const playBtn = document.getElementById('audio-play');
+const pauseBtn = document.getElementById('audio-pause');
+const currentTimeSpan = document.getElementById('audio-current');
+const durationSpan = document.getElementById('audio-duration');
+const progressFill = document.getElementById('audio-progress-fill');
+const progressBar = document.getElementById('audio-progress-bar');
+
+// Format time helper
+function formatTime(seconds) {
+  if (isNaN(seconds)) return '--:--';
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+// Load metadata
+audio.addEventListener('loadedmetadata', () => {
+  durationSpan.textContent = formatTime(audio.duration);
+});
+
+// Play button
+playBtn.addEventListener('click', () => {
+  audio.play();
+  playBtn.style.display = 'none';
+  pauseBtn.style.display = 'inline';
+});
+
+// Pause button
+pauseBtn.addEventListener('click', () => {
+  audio.pause();
+  pauseBtn.style.display = 'none';
+  playBtn.style.display = 'inline';
+});
+
+// Update progress
+audio.addEventListener('timeupdate', () => {
+  currentTimeSpan.textContent = formatTime(audio.currentTime);
+  const percent = (audio.currentTime / audio.duration) * 100;
+  progressFill.style.width = `${percent}%`;
+});
+
+// When audio ends, reset to play button
+audio.addEventListener('ended', () => {
+  pauseBtn.style.display = 'none';
+  playBtn.style.display = 'inline';
+  audio.currentTime = 0;
+});
+
+// Click on progress bar to seek
+progressBar.addEventListener('click', (e) => {
+  const rect = progressBar.getBoundingClientRect();
+  const percent = (e.clientX - rect.left) / rect.width;
+  audio.currentTime = percent * audio.duration;
+});

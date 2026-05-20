@@ -5,6 +5,13 @@ HTML/CSS/JS puro. Sin frameworks. GitHub Pages.
 Fuente de verdad: `styles.css` y `script.js`.
 NO editar archivos `.min.*` si existen.
 
+## Audio Player
+Fixed minimal player arriba de todo. Mono font, barra de progreso con accent color.
+- Archivo: `audio/adaptaciones.mp3`
+- Si >25MB: usar Git LFS o hosting externo (Internet Archive, Cloudinary)
+- Controles: play/pause + tiempo + barra clickeable
+- Adaptado a tokens CSS (--paper, --ink, --accent)
+
 ## Sistema visual (Direction A — CV as editorial)
 Editorial, alto contraste, inspirado en MIT Press Reader / Are.na editorial / The Serving Library. Ink on paper + ochre accent.
 
