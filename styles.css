@@ -606,14 +606,17 @@ img.plain {
 /* ---------- Audio Player ---------- */
 .audio-player {
   position: fixed;
-  top: max(12px, env(safe-area-inset-top, 12px));
-  right: max(68px, calc(12px + 44px + 12px + env(safe-area-inset-right, 0px)));
+  top: 20px;
+  right: 76px;
   background: var(--paper);
   border: 1px solid var(--rule);
-  border-radius: 4px;
   z-index: 998;
   font-family: var(--mono);
   padding: 6px 10px;
+  transition: border-color 0.2s ease, background 0.25s ease;
+}
+.audio-player:hover {
+  border-color: var(--accent);
 }
 
 .audio-player-inner {
@@ -667,7 +670,6 @@ img.plain {
   height: 1px;
   background: var(--rule-soft);
   cursor: pointer;
-  border-radius: 0 0 4px 4px;
 }
 
 .audio-progress-fill {
@@ -675,7 +677,6 @@ img.plain {
   background: var(--accent);
   width: 0%;
   transition: width 0.1s linear;
-  border-radius: 0 0 0 4px;
 }
 
 /* ---------- Responsive ---------- */
@@ -723,9 +724,19 @@ img.plain {
     right: max(12px, env(safe-area-inset-right, 12px));
   }
   .audio-player {
-    top: max(60px, calc(12px + 44px + 4px + env(safe-area-inset-top, 0px)));
+    top: max(64px, calc(12px + 44px + 8px + env(safe-area-inset-top, 0px)));
     right: max(12px, env(safe-area-inset-right, 12px));
+    padding: 6px 8px;
+  }
+  .audio-title {
     font-size: 10px;
+  }
+  .audio-time {
+    font-size: 9px;
+  }
+  .audio-btn {
+    font-size: 9px;
+    min-width: 20px;
   }
   .back-to-top {
     bottom: max(16px, env(safe-area-inset-bottom, 16px));
