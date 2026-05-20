@@ -725,8 +725,9 @@ img.plain {
   }
   .audio-player {
     top: max(64px, calc(12px + 44px + 8px + env(safe-area-inset-top, 0px)));
-    right: max(8px, env(safe-area-inset-right, 8px));
-    padding: 4px 6px;
+    right: max(6px, env(safe-area-inset-right, 6px));
+    padding: 4px 5px;
+    max-width: 140px;
   }
   .audio-player-inner {
     gap: 6px;
