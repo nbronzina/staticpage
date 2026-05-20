@@ -65,6 +65,7 @@ setTimeout(() => {
 const audio = document.getElementById('audio-element');
 const playBtn = document.getElementById('audio-play');
 const pauseBtn = document.getElementById('audio-pause');
+const stopBtn = document.getElementById('audio-stop');
 const currentTimeSpan = document.getElementById('audio-current');
 const durationSpan = document.getElementById('audio-duration');
 const progressFill = document.getElementById('audio-progress-fill');
@@ -86,15 +87,18 @@ audio.addEventListener('loadedmetadata', () => {
 // Play button
 playBtn.addEventListener('click', () => {
   audio.play();
-  playBtn.style.display = 'none';
-  pauseBtn.style.display = 'inline';
 });
 
 // Pause button
 pauseBtn.addEventListener('click', () => {
   audio.pause();
-  pauseBtn.style.display = 'none';
-  playBtn.style.display = 'inline';
+});
+
+// Stop button
+stopBtn.addEventListener('click', () => {
+  audio.pause();
+  audio.currentTime = 0;
+  progressFill.style.width = '0%';
 });
 
 // Update progress
@@ -104,11 +108,10 @@ audio.addEventListener('timeupdate', () => {
   progressFill.style.width = `${percent}%`;
 });
 
-// When audio ends, reset to play button
+// When audio ends, reset
 audio.addEventListener('ended', () => {
-  pauseBtn.style.display = 'none';
-  playBtn.style.display = 'inline';
   audio.currentTime = 0;
+  progressFill.style.width = '0%';
 });
 
 // Click on progress bar to seek
