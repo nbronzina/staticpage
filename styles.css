@@ -603,6 +603,84 @@ img.plain {
   transform: none;
 }
 
+/* ---------- Audio Player ---------- */
+.audio-player {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  z-index: 999;
+  font-family: var(--mono);
+}
+
+.audio-player-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 8px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.audio-title {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.audio-btn {
+  background: none;
+  border: none;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 2px 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.audio-btn:hover {
+  opacity: 1;
+}
+
+.audio-time {
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.01em;
+}
+
+.audio-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--rule-soft);
+  cursor: pointer;
+}
+
+.audio-progress-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* Adjust body padding to account for fixed player */
+body {
+  padding-top: 33px;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .dirA { padding: 24px var(--gutter) 80px; }
