@@ -606,35 +606,33 @@ img.plain {
 /* ---------- Audio Player ---------- */
 .audio-player {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: max(12px, env(safe-area-inset-top, 12px));
+  right: max(68px, calc(12px + 44px + 12px + env(safe-area-inset-right, 0px)));
   background: var(--paper);
-  border-bottom: 1px solid var(--rule);
-  z-index: 999;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  z-index: 998;
   font-family: var(--mono);
+  padding: 6px 10px;
 }
 
 .audio-player-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 8px var(--gutter);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 10px;
 }
 
 .audio-title {
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.02em;
   color: var(--ink);
+  text-transform: lowercase;
 }
 
 .audio-controls {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .audio-btn {
@@ -643,10 +641,11 @@ img.plain {
   color: var(--ink);
   cursor: pointer;
   font-family: var(--mono);
-  font-size: 11px;
-  padding: 2px 4px;
-  opacity: 0.7;
+  font-size: 10px;
+  padding: 0;
+  opacity: 0.6;
   transition: opacity 0.2s ease;
+  line-height: 1;
 }
 
 .audio-btn:hover {
@@ -654,9 +653,10 @@ img.plain {
 }
 
 .audio-time {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--ink-mute);
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .audio-progress-bar {
@@ -667,6 +667,7 @@ img.plain {
   height: 1px;
   background: var(--rule-soft);
   cursor: pointer;
+  border-radius: 0 0 4px 4px;
 }
 
 .audio-progress-fill {
@@ -674,11 +675,7 @@ img.plain {
   background: var(--accent);
   width: 0%;
   transition: width 0.1s linear;
-}
-
-/* Adjust body padding to account for fixed player */
-body {
-  padding-top: 33px;
+  border-radius: 0 0 0 4px;
 }
 
 /* ---------- Responsive ---------- */
@@ -724,6 +721,11 @@ body {
   .theme-toggle {
     top: max(12px, env(safe-area-inset-top, 12px));
     right: max(12px, env(safe-area-inset-right, 12px));
+  }
+  .audio-player {
+    top: max(60px, calc(12px + 44px + 4px + env(safe-area-inset-top, 0px)));
+    right: max(12px, env(safe-area-inset-right, 12px));
+    font-size: 10px;
   }
   .back-to-top {
     bottom: max(16px, env(safe-area-inset-bottom, 16px));
