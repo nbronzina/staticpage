@@ -726,17 +726,29 @@ img.plain {
   .audio-player {
     top: max(64px, calc(12px + 44px + 8px + env(safe-area-inset-top, 0px)));
     right: max(12px, env(safe-area-inset-right, 12px));
-    padding: 6px 8px;
+    padding: 4px 6px;
+  }
+  .audio-player-inner {
+    gap: 6px;
+    flex-wrap: wrap;
   }
   .audio-title {
-    font-size: 10px;
+    font-size: 9px;
+    width: 100%;
+    margin-bottom: -2px;
+  }
+  .audio-controls {
+    gap: 4px;
   }
   .audio-time {
-    font-size: 9px;
+    font-size: 8px;
   }
   .audio-btn {
-    font-size: 9px;
-    min-width: 20px;
+    font-size: 8px;
+    min-width: 18px;
+  }
+  #audio-stop {
+    display: none;
   }
   .back-to-top {
     bottom: max(16px, env(safe-area-inset-bottom, 16px));
