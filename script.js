@@ -79,6 +79,20 @@ function formatTime(seconds) {
   return `${mins}:${secs.toString().padStart(2, '0')}`;
 }
 
+// Update button states
+function updateButtonStates() {
+  if (audio.paused) {
+    playBtn.style.display = 'inline-flex';
+    pauseBtn.style.display = 'none';
+    playBtn.classList.remove('active');
+    pauseBtn.classList.remove('active');
+  } else {
+    playBtn.style.display = 'none';
+    pauseBtn.style.display = 'inline-flex';
+    pauseBtn.classList.add('active');
+  }
+}
+
 // Load metadata
 audio.addEventListener('loadedmetadata', () => {
   durationSpan.textContent = formatTime(audio.duration);
@@ -87,11 +101,13 @@ audio.addEventListener('loadedmetadata', () => {
 // Play button
 playBtn.addEventListener('click', () => {
   audio.play();
+  updateButtonStates();
 });
 
 // Pause button
 pauseBtn.addEventListener('click', () => {
   audio.pause();
+  updateButtonStates();
 });
 
 // Stop button
@@ -99,6 +115,7 @@ stopBtn.addEventListener('click', () => {
   audio.pause();
   audio.currentTime = 0;
   progressFill.style.width = '0%';
+  updateButtonStates();
 });
 
 // Update progress
@@ -112,7 +129,12 @@ audio.addEventListener('timeupdate', () => {
 audio.addEventListener('ended', () => {
   audio.currentTime = 0;
   progressFill.style.width = '0%';
+  updateButtonStates();
 });
+
+// Audio play/pause events for state sync
+audio.addEventListener('play', updateButtonStates);
+audio.addEventListener('pause', updateButtonStates);
 
 // Click on progress bar to seek
 progressBar.addEventListener('click', (e) => {
@@ -120,3 +142,6 @@ progressBar.addEventListener('click', (e) => {
   const percent = (e.clientX - rect.left) / rect.width;
   audio.currentTime = percent * audio.duration;
 });
+
+// Initialize button states
+updateButtonStates();

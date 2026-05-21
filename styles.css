@@ -623,6 +623,7 @@ img.plain {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 
 .audio-title {
@@ -630,6 +631,7 @@ img.plain {
   letter-spacing: 0.02em;
   color: var(--ink);
   text-transform: lowercase;
+  opacity: 0.6;
 }
 
 .audio-controls {
@@ -646,28 +648,64 @@ img.plain {
   font-family: var(--mono);
   font-size: 10px;
   padding: 0;
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
+  opacity: 0.4;
+  transition: opacity 0.2s ease, background 0.15s ease;
   line-height: 1;
+  min-width: 16px;
+  min-height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .audio-btn:hover {
+  opacity: 0.7;
+}
+
+.audio-btn:active {
+  background: var(--rule-soft);
+}
+
+.audio-btn.active {
   opacity: 1;
 }
 
 .audio-time {
   font-size: 10px;
-  color: var(--ink-mute);
+  color: var(--ink);
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
 
+#audio-current {
+  opacity: 1;
+  font-weight: 400;
+}
+
+#audio-duration {
+  opacity: 0.6;
+}
+
 .audio-progress-bar {
-  display: none;
+  position: absolute;
+  bottom: -6px;
+  left: -10px;
+  right: -10px;
+  height: 1px;
+  background: rgba(26, 23, 21, 0.15);
+  cursor: pointer;
+}
+
+body.dark-mode .audio-progress-bar {
+  background: rgba(244, 239, 230, 0.15);
 }
 
 .audio-progress-fill {
-  display: none;
+  height: 100%;
+  background: var(--ink);
+  width: 0%;
+  transition: width 0.1s linear;
+  opacity: 0.3;
 }
 
 /* ---------- Responsive ---------- */
@@ -717,17 +755,18 @@ img.plain {
   .audio-player {
     top: max(64px, calc(12px + 44px + 8px + env(safe-area-inset-top, 0px)));
     right: max(12px, env(safe-area-inset-right, 12px));
-    padding: 4px 5px;
-    max-width: 140px;
+    padding: 4px 6px 5px;
+    max-width: none;
   }
   .audio-player-inner {
-    gap: 6px;
-    flex-wrap: wrap;
+    gap: 5px;
+    flex-wrap: nowrap;
   }
   .audio-title {
-    font-size: 9px;
-    width: 100%;
-    margin-bottom: -2px;
+    font-size: 8px;
+    width: auto;
+    margin: 0;
+    opacity: 0.5;
   }
   .audio-controls {
     gap: 4px;
@@ -737,10 +776,16 @@ img.plain {
   }
   .audio-btn {
     font-size: 8px;
-    min-width: 18px;
+    min-width: 16px;
+    min-height: 16px;
   }
   #audio-stop {
     display: none;
+  }
+  .audio-progress-bar {
+    bottom: -5px;
+    left: -6px;
+    right: -6px;
   }
   .back-to-top {
     bottom: max(16px, env(safe-area-inset-bottom, 16px));
