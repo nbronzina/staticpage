@@ -145,3 +145,53 @@ progressBar.addEventListener('click', (e) => {
 
 // Initialize button states
 updateButtonStates();
+
+// Project Audio Players
+document.querySelectorAll('.project-audio').forEach(playerContainer => {
+  const btn = playerContainer.querySelector('.project-audio-btn');
+  const audioEl = playerContainer.querySelector('.project-audio-element');
+  const currentSpan = playerContainer.querySelector('.project-audio-current');
+  const durationSpan = playerContainer.querySelector('.project-audio-duration');
+
+  // Load metadata
+  audioEl.addEventListener('loadedmetadata', () => {
+    durationSpan.textContent = formatTime(audioEl.duration);
+  });
+
+  // Play/pause toggle
+  btn.addEventListener('click', () => {
+    if (audioEl.paused) {
+      // Pause other project audios
+      document.querySelectorAll('.project-audio-element').forEach(otherAudio => {
+        if (otherAudio !== audioEl && !otherAudio.paused) {
+          otherAudio.pause();
+        }
+      });
+      audioEl.play();
+    } else {
+      audioEl.pause();
+    }
+  });
+
+  // Update button and time
+  audioEl.addEventListener('play', () => {
+    btn.textContent = '⏸';
+    btn.classList.add('playing');
+  });
+
+  audioEl.addEventListener('pause', () => {
+    btn.textContent = '▶';
+    btn.classList.remove('playing');
+  });
+
+  audioEl.addEventListener('timeupdate', () => {
+    currentSpan.textContent = formatTime(audioEl.currentTime);
+  });
+
+  // Reset on end
+  audioEl.addEventListener('ended', () => {
+    audioEl.currentTime = 0;
+    btn.textContent = '▶';
+    btn.classList.remove('playing');
+  });
+});

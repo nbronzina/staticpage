@@ -708,6 +708,60 @@ body.dark-mode .audio-progress-bar {
   opacity: 0.3;
 }
 
+/* ---------- Project Audio Player ---------- */
+.project-audio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 16px;
+  font-size: 11px;
+  color: var(--ink-mute);
+}
+
+.project-audio-label {
+  opacity: 0.6;
+}
+
+.project-audio-btn {
+  background: none;
+  border: none;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 0;
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+  line-height: 1;
+  min-width: 14px;
+}
+
+.project-audio-btn:hover {
+  opacity: 0.7;
+}
+
+.project-audio-btn.playing {
+  opacity: 1;
+}
+
+.project-audio-time {
+  font-size: 10px;
+  color: var(--ink-mute);
+}
+
+.project-audio-current {
+  opacity: 1;
+  color: var(--ink);
+}
+
+.project-audio-duration {
+  opacity: 0.6;
+}
+
+.project-audio-element {
+  display: none;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .dirA { padding: 24px var(--gutter) 80px; }
