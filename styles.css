@@ -608,10 +608,8 @@ img.plain {
 }
 .sustainability-data {
   display: block;
-  font-size: 0.75rem;
   color: var(--ink-mute);
   margin-top: 4px;
-  line-height: 1.4;
 }
 
 /* ---------- Scroll reveal ---------- */
