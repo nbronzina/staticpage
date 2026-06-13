@@ -590,6 +590,22 @@ img.plain {
 .dirA-foot .social a:hover { color: var(--accent); }
 .dirA-foot .social svg { width: 16px; height: 16px; }
 
+/* Sustainability statement */
+.sustainability-link {
+  position: relative;
+  color: var(--ink);
+  text-decoration: none;
+  background-image: linear-gradient(to right, var(--accent) 0%, var(--accent) 100%);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.28s ease, color 0.2s ease;
+}
+.sustainability-link:hover {
+  color: var(--accent);
+  background-size: 100% 1px;
+}
+
 /* ---------- Scroll reveal ---------- */
 .dirA-section,
 .dirA-intro {
