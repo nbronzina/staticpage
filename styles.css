@@ -592,6 +592,7 @@ img.plain {
 
 /* Sustainability statement */
 .sustainability-link {
+  display: inline;
   position: relative;
   color: var(--ink);
   text-decoration: none;
@@ -604,6 +605,13 @@ img.plain {
 .sustainability-link:hover {
   color: var(--accent);
   background-size: 100% 1px;
+}
+.sustainability-data {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--ink-mute);
+  margin-top: 4px;
+  line-height: 1.4;
 }
 
 /* ---------- Scroll reveal ---------- */
