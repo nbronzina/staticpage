@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee.txt</title>
+    <link rel="canonical" href="https://www.nicolasbronzina.com/Coffee.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.nicolasbronzina.com/Coffee.html">
+    <meta property="og:title" content="Coffee.txt — Nicolás Bronzina">
+    <meta property="og:description" content="A plain text guide to specialty coffee in Buenos Aires.">
     <style>
         body {
             background-color: black;
             color: #00FF00; /* Bright green text */
             font-family: "Courier New", Courier, monospace;
-            text-align: center;
+            text-align: left;
             margin: 0;
             padding: 0;
         }
@@ -58,54 +63,52 @@
             height: 100px;
             margin-top: 20px;
         }
-        /* Retro pattern background */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://www.transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png'); /* Retro pattern */
-            opacity: 0.1;
-            z-index: -1;
-        }
         .readable-content {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
+        @media (max-width: 600px) {
+  body { padding: 1rem; }
+  .container { padding: 0 1rem; }
+  .readable-content { padding: 0 0.5rem; }
+  h2.section-title { font-size: 22px; }
+  div.title, h1.title { font-size: 26px; }
+}
     </style>
 </head>
 <body>
     <div class="container">
+        <header>
         <!-- Open the readable-content div here -->
     <div class="readable-content">
-        <div class="title">Coffee.txt</div>
+        <h1 class="title">Coffee.txt</h1>
         <hr>
         <!-- Introduction Box -->
         <div class="intro">
             <p>Your go-to, no-nonsense guide for exploring the specialty coffee scene in Madrid.</p>
-            <p>Discover personalized coffee routes curated specifically to match your preferences. Madrid’s best specialty cafes with detailed address information, opening hours, and more.</p>
+            <p>Discover personalized coffee routes curated specifically to match your preferences. Madrid's best specialty cafes with detailed address information, opening hours, and more.</p>
             <hr>
             <p>Enjoy every sip, every step, every café.</p>
         </div>
-        
+        </header>
+
+        <main>
         <!-- New Section Title -->
         <div class="content">
             <h2 class="section-title">Cafés for Digital Nomads</h2>
-            <p>Madrid, the vibrant capital of Spain, is known for its rich history, culture, and growing specialty coffee scene. Here’s a quick guide to some of the best cafes in the city for digital nomads.</p>
-            
-            <p>You'll find Hola Coffee in the elegant Salamanca neighborhood. This cozy spot is perfect for coffee lovers seeking quality. Their menu features various options, from classic espressos to innovative brewing methods. The calm atmosphere is ideal for reading or working, although it isn’t specifically labeled as digital-nomad-friendly.</p>
-            
-            <p>Next, head to the city center, where several excellent cafes are concentrated. Pum Pum Café on Tribulete Street is a charming little place serving specialty coffee and delicious homemade pastries. This spot is digital-nomad-friendly, with available outlets and reliable Wi-Fi. Nearby on Cost.ª de los Ángeles, you’ll find Hanso Café, known for its scientific approach to coffee brewing. Hanso offers a quiet atmosphere and free Wi-Fi, although outlets may be scarce during peak hours.</p>
-            
-            <p>La Casa Encendida’s café on Ronda de Valencia is another must-visit. Located in a cultural center, it provides a unique space to enjoy coffee while exploring exhibitions. The spacious area has free Wi-Fi but can get crowded due to its prime location. If you’re a coffee aficionado, Acid Coffee on Verónica Street features quality beans and a relaxed setting. It’s a comfortable spot to work or read, with free Wi-Fi and available outlets.</p>
-            
+            <p>Madrid, the vibrant capital of Spain, is known for its rich history, culture, and growing specialty coffee scene. Here's a quick guide to some of the best cafes in the city for digital nomads.</p>
+
+            <p>You'll find Hola Coffee in the elegant Salamanca neighborhood. This cozy spot is perfect for coffee lovers seeking quality. Their menu features various options, from classic espressos to innovative brewing methods. The calm atmosphere is ideal for reading or working, although it isn't specifically labeled as digital-nomad-friendly.</p>
+
+            <p>Next, head to the city center, where several excellent cafes are concentrated. Pum Pum Café on Tribulete Street is a charming little place serving specialty coffee and delicious homemade pastries. This spot is digital-nomad-friendly, with available outlets and reliable Wi-Fi. Nearby on Cost.ª de los Ángeles, you'll find Hanso Café, known for its scientific approach to coffee brewing. Hanso offers a quiet atmosphere and free Wi-Fi, although outlets may be scarce during peak hours.</p>
+
+            <p>La Casa Encendida's café on Ronda de Valencia is another must-visit. Located in a cultural center, it provides a unique space to enjoy coffee while exploring exhibitions. The spacious area has free Wi-Fi but can get crowded due to its prime location. If you're a coffee aficionado, Acid Coffee on Verónica Street features quality beans and a relaxed setting. It's a comfortable spot to work or read, with free Wi-Fi and available outlets.</p>
+
             <p>In the Chamberí neighborhood, Toma Café is a benchmark in Madrid's specialty coffee scene. Their commitment to quality and sustainability is evident in every cup. Toma is another great place for digital nomads, with free Wi-Fi and outlets, though it can be busy during peak hours. Finally, in Arganzuela, Dot Café Bar offers a unique experience combining specialty coffee with contemporary art. The spacious and bright venue has free Wi-Fi, but outlets can be limited.</p>
-            
+
             <p>Note: Some cafes may restrict laptop use on weekends to maintain a relaxed and pleasant atmosphere for all patrons.</p>
-            
+
             <hr>
             <p><strong>Addresses & Hours:</strong></p>
             <ul>
@@ -117,7 +120,7 @@
                 <li><strong>Toma Café:</strong> C. de Sta. Feliciana, 5, Chamberí, 28010 Madrid. Open Mon-Sun 8:00-20:00.</li>
                 <li><strong>Dot Café Bar:</strong> C. de Eugenio Sellés, 6, Arganzuela, 28045 Madrid. Open Mon-Fri 8:00-20:00, Closed on Tuesdays.</li>
             </ul>
-            
+
             <p>Hope this guide helps you find the best specialty coffee spots in Madrid, whether looking for a place to work or enjoy a great cup of coffee.</p>
         </div>
             </div> <!-- Close the readable-content div here -->
@@ -125,23 +128,23 @@
           <!-- New Section Title -->
         <div class="content">
             <h2 class="section-title">Takeaway and limited seating Cafés</h2>
-            <p>Madrid, with its rich cultural heritage and vibrant energy, boasts a growing specialty coffee scene. For those on the move or seeking a quick caffeine fix, the city offers several cafés designed for takeaway service or with minimal seating. Here’s a guide to some of the best grab-and-go specialty coffee spots in Madrid.</p>
-            
+            <p>Madrid, with its rich cultural heritage and vibrant energy, boasts a growing specialty coffee scene. For those on the move or seeking a quick caffeine fix, the city offers several cafés designed for takeaway service or with minimal seating. Here's a guide to some of the best grab-and-go specialty coffee spots in Madrid.</p>
+
             <p>Located near Gran Vía, Casto is a sleek, takeaway-focused café and bakery. Their specialty coffee pairs perfectly with their famous pistachio croissants. The minimalist space encourages quick visits, offering only a few standing spots for those needing a brief escape from the city's hustle.</p>
-            
-            <p> In the historic La Latina neighborhood, Ruda Café is a small yet beloved gem among locals. Known for its rich espressos and flavorful flat whites, Ruda offers limited seating but excels in takeout service. It’s a favorite among early risers looking for quality coffee to jumpstart their day.</p>
-            
+
+            <p> In the historic La Latina neighborhood, Ruda Café is a small yet beloved gem among locals. Known for its rich espressos and flavorful flat whites, Ruda offers limited seating but excels in takeout service. It's a favorite among early risers looking for quality coffee to jumpstart their day.</p>
+
             <p>Nestled in the heart of Malasaña, Bianchi Kiosko Caffé offers a unique blend of Ethiopian, Brazilian, and Guatemalan coffees. The shop emphasizes takeaway, though a few window-side seats are available for those who want to enjoy coffee while people-watching in this vibrant neighborhood.</p>
-            
-            <p>For a fusion of coffee and culture, visit Faraday, a café and record store hybrid. Located on San Lucas Street, it’s perfect for a quick coffee while browsing vinyl records. With only a handful of seats, Faraday is best suited for grab-and-go orders.</p>
-            
+
+            <p>For a fusion of coffee and culture, visit Faraday, a café and record store hybrid. Located on San Lucas Street, it's perfect for a quick coffee while browsing vinyl records. With only a handful of seats, Faraday is best suited for grab-and-go orders.</p>
+
             <p>Tucked away in Chamberí's Trafalgar area, Santa Kafeína serves expertly crafted specialty coffee alongside freshly baked pastries. Its intimate atmosphere, featuring just a few stools by the window, primarily caters to takeout customers, making it ideal for a quick caffeine boost.</p>
 
-            <p>A staple of Malasaña, La Bicicleta Café blends coffee culture with the creative arts. While it’s a popular gathering space for artists and entrepreneurs, seating can be scarce during peak hours. Many patrons enjoy takeaway, savoring their brew while strolling through the neighborhood's lively streets.</p>
+            <p>A staple of Malasaña, La Bicicleta Café blends coffee culture with the creative arts. While it's a popular gathering space for artists and entrepreneurs, seating can be scarce during peak hours. Many patrons enjoy takeaway, savoring their brew while strolling through the neighborhood's lively streets.</p>
 
             <p>Note: These takeaway-friendly cafés are perfect for those with tight schedules or preferring a quick specialty coffee experience without needing a long sit-down session.</p>
 
-            
+
             <hr>
             <p><strong>Addresses & Hours:</strong></p>
             <ul>
@@ -152,15 +155,20 @@
                 <li><strong>Santa Kafeina:</strong> Calle de Viriato, 37, Chamberí, 28010 Madrid. Open Mon-Fri 8:00-17:00, Sat 9:30-13:00, Sun-Closed.</li>
                 <li><strong>La Bicicleta Café:</strong> Pl. de San Ildefonso, 9, Centro, 28004 Madrid. Open Sun-Wed 10:00-20:00, Thu-Sun 10:00-2:15.</li>
             </ul>
-            
+
             <p>Hope this guide helps you find the best specialty coffee spots in Madrid; whether rushing to work or exploring the city, Madrid has plenty of spots to fuel your day with quality coffee.</p>
         </div>
             </div> <!-- Close the readable-content div here -->
+        </main>
 
-        <div class="footer">© 2025 Coffee.txt | All rights brewed.</div>
-        <img src="https://i.gifer.com/1tJ6.gif" alt="Animated icon" class="gif-icon">
+        <footer class="footer">© 2025 Coffee.txt | All rights brewed.</footer>
     </div>
-</body>
-</html>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js');
+    });
+  }
+</script>
 </body>
 </html>
