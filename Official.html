@@ -72,8 +72,13 @@
             max-height: 40px;
             transition: transform 2s;
             transform-origin: center;
-            animation: rotate3D 10s linear infinite;
             cursor: pointer;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+          .rotating-logo {
+            animation: rotate3D 10s linear infinite;
+          }
         }
 
         @keyframes rotate3D {
@@ -739,24 +744,77 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 8px;
+        }
+        .hamburger span {
+          display: block;
+          width: 22px;
+          height: 2px;
+          background: var(--color-text-light);
+          transition: 0.3s;
+        }
+        @media (max-width: 768px) {
+          .hamburger { display: flex; }
+          .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: var(--color-bg-dark);
+            padding: 1rem 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+          }
+          .menu.open { display: flex; }
+          .navbar a { margin-left: 0; padding: 0.75rem 1.5rem; display: block; }
+        }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--color-primary);color:white;padding:8px 16px;z-index:9999;text-decoration:none;font-family:monospace;transition:top 0.2s;">Skip to content</a>
+    <style>.skip-link:focus { top: 0; }</style>
     <nav class="navbar">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <div class="logo">
-            <a onclick="navigateTo('home')"><img src="img/LogoOFF.png" alt="OFFicial Logo" class="rotating-logo"></a>
+            <a href="#home" onclick="navigateTo('home')">
+              <picture>
+                <source srcset="img/LogoOFF.webp" type="image/webp">
+                <img src="img/LogoOFF.png" alt="OFFicial Logo" class="rotating-logo">
+              </picture>
+            </a>
         </div>
         <div class="menu">
-            <a onclick="navigateTo('about')" data-section="about">About</a>
-            <a onclick="navigateTo('context')" data-section="context">Context</a>
-            <a onclick="navigateTo('principles')" data-section="principles">Principles</a>
-            <a onclick="navigateTo('welcome')" data-section="welcome">WELCOME</a>
-            <a onclick="navigateTo('value')" data-section="value">Value</a>
-            <a onclick="navigateTo('impact')" data-section="impact">Impact</a>
-            <a onclick="navigateTo('team')" data-section="team">Team</a>
-            <a onclick="navigateTo('contact')" data-section="contact">Contact</a>
+            <a href="#about" onclick="navigateTo('about')" data-section="about">About</a>
+            <a href="#context" onclick="navigateTo('context')" data-section="context">Context</a>
+            <a href="#principles" onclick="navigateTo('principles')" data-section="principles">Principles</a>
+            <a href="#welcome" onclick="navigateTo('welcome')" data-section="welcome">WELCOME</a>
+            <a href="#value" onclick="navigateTo('value')" data-section="value">Value</a>
+            <a href="#impact" onclick="navigateTo('impact')" data-section="impact">Impact</a>
+            <a href="#team" onclick="navigateTo('team')" data-section="team">Team</a>
+            <a href="#contact" onclick="navigateTo('contact')" data-section="contact">Contact</a>
         </div>
     </nav>
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const menu = document.querySelector('.menu');
+      hamburger.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+      });
+    </script>
 
     <div class="content">
         <div class="readable-content">
@@ -764,8 +822,11 @@
         <!-- HOME Section -->
         <section id="home" class="section active">
             <div class="hero">
-                <div class="image-container">
-                    <img src="img/OFFICIAL.png" alt="OFFicial Consultancy" loading="eager">
+                <div class="image-container" id="main-content">
+                    <picture>
+                      <source srcset="img/OFFICIAL.webp" type="image/webp">
+                      <img src="img/OFFICIAL.png" alt="OFFicial Consultancy" width="800" height="600" loading="eager">
+                    </picture>
                 </div>
                 <h1>Empowering Displaced Communities</h1>
                 <p>Committed to leveraging design and technology to empower displaced communities, shaping a world where everyone has the opportunity to thrive with dignity.</p>
@@ -775,7 +836,27 @@
             </div>
             
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/Ih194mji50A" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                <div class="video-facade" id="videoFacade" style="position:relative;padding-bottom:56.25%;height:0;background:#000;cursor:pointer;" onclick="loadVideo(this)" data-src="https://www.youtube.com/embed/Ih194mji50A?autoplay=1">
+                  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:white;">
+                    <svg width="68" height="48" viewBox="0 0 68 48" style="fill:red;"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"/><path d="M45 24 27 14v20" fill="white"/></svg>
+                    <p style="margin:8px 0 0;font-family:monospace;font-size:14px;opacity:0.8;">Click to load video</p>
+                  </div>
+                </div>
+                <script>
+                function loadVideo(el) {
+                  const iframe = document.createElement('iframe');
+                  iframe.src = el.dataset.src;
+                  iframe.width = '100%';
+                  iframe.height = '100%';
+                  iframe.style.position = 'absolute';
+                  iframe.style.top = '0';
+                  iframe.style.left = '0';
+                  iframe.frameBorder = '0';
+                  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                  iframe.allowFullscreen = true;
+                  el.replaceWith(iframe);
+                }
+                </script>
             </div>
         </section>
 
@@ -960,7 +1041,10 @@
             <p>OFFicial's flagship product supports refugees through every step of their journey. Powered by advanced Artificial Intelligence, WELCOME simplifies, automates, and personalizes the asylum process and integration into the community.</p>
 
             <div class="image-container">
-                <img src="img/PackWelcome.jpg" alt="WELCOME Package" loading="lazy" style="max-width: 600px; border-radius: 10px;">
+                <picture>
+                  <source srcset="img/PackWelcome.webp" type="image/webp">
+                  <img src="img/PackWelcome.jpg" alt="WELCOME Package" loading="lazy" style="max-width: 600px; border-radius: 10px;">
+                </picture>
             </div>
 
             <h3>What WELCOME Is</h3>
@@ -1129,8 +1213,14 @@
                 <li><strong>App Connectivity:</strong> Syncs with the WELCOME App, can be used with or without headset</li>
             </ul>
             <div class="image-container">
-                <img src="img/PulseraWelcome.jpg" alt="WELCOME Wristband" loading="lazy">
-                <img src="img/PulseraWelcome2.jpg" alt="WELCOME Wristband Detail" loading="lazy">
+                <picture>
+                  <source srcset="img/PulseraWelcome.webp" type="image/webp">
+                  <img src="img/PulseraWelcome.jpg" alt="WELCOME Wristband" loading="lazy">
+                </picture>
+                <picture>
+                  <source srcset="img/PulseraWelcome2.webp" type="image/webp">
+                  <img src="img/PulseraWelcome2.jpg" alt="WELCOME Wristband Detail" loading="lazy">
+                </picture>
             </div>
 
             <!-- WELCOME Offices -->
@@ -1226,7 +1316,10 @@
             <p>In 2015, the civil war in Syria, extreme poverty in Niger, and political persecution in Afghanistan and Iraq led to one of the largest migration crises in history. The Rio 2016 Olympic Games joined Amnesty International's Refugee Nation initiative, registering a team of 10 refugee athletes as a symbolic gesture to make the crisis visible. This initiative continued for Tokyo 2020 Olympics with 29 athletes.</p>
             <p>Although not officially recognized by the International Olympic Committee, as part of this visibility campaign, a team of creatives developed distinctive graphic elements, most importantly the Refugee Nation flag.</p>
             <div class="look-feel-image-container">
-                <img src="img/Flag.jpg" alt="Refugee Nation Flag" class="look-feel-image" loading="lazy">
+                <picture>
+                  <source srcset="img/Flag.webp" type="image/webp">
+                  <img src="img/Flag.jpg" alt="Refugee Nation Flag" class="look-feel-image" loading="lazy">
+                </picture>
             </div>
         </section>
 
@@ -1406,6 +1499,13 @@
 
     <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
 
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
     <script>
         // ========== Navigation with Hash URLs ==========
         function navigateTo(sectionId) {
