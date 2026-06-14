@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="preload" href="img/DitherCoffee.webp" as="image" type="image/webp">
+
 <!-- Dark Mode Toggle Script (inline FIRST to prevent FOUC) -->
 <script>
 (function() {
@@ -94,15 +96,18 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Coffee Decoded — De la confusión a la claridad en el café de especialidad",
-        "description": "Guía práctica escrita por alguien que ya cometió los errores costosos de equipamiento y mal café para que tú no tengas que hacerlo. Aprende a identificar, comprar y preparar café de especialidad.",
+        "name": "Coffee Decoded",
+        "headline": "Coffee Decoded — Specialty Coffee Guide",
+        "description": "A comprehensive guide to specialty coffee: varieties, origins, preparation methods, and tasting.",
+        "url": "https://www.nicolasbronzina.com/CoffeeDecoded.html",
+        "inLanguage": "es",
         "author": {
             "@type": "Person",
             "name": "Nicolás Bronzina",
-            "url": "https://www.nicolasbronzina.com/"
+            "url": "https://www.nicolasbronzina.com"
         },
         "datePublished": "2024-01-01",
-        "dateModified": "2026-02-01",
+        "dateModified": "2026-06-14",
         "publisher": {
             "@type": "Person",
             "name": "Nicolás Bronzina"
@@ -113,8 +118,7 @@
             "@id": "https://www.nicolasbronzina.com/CoffeeDecoded.html"
         },
         "keywords": "café de especialidad, guía café, preparación café, barista, coffee brewing, specialty coffee, SCA, molienda, tueste, cata",
-        "articleSection": "Food & Drink",
-        "inLanguage": "es-ES"
+        "articleSection": "Food & Drink"
     }
     </script>
 
@@ -835,9 +839,12 @@
             }
             
             /* Single column grids */
-            .grid,
-            .grid-four {
+            .grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .grid-four {
                 gap: 1rem;
             }
             
