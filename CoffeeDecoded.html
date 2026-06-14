@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="preload" href="img/DitherCoffee.webp" as="image" type="image/webp">
+
 <!-- Dark Mode Toggle Script (inline FIRST to prevent FOUC) -->
 <script>
 (function() {
@@ -94,15 +96,18 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Coffee Decoded — De la confusión a la claridad en el café de especialidad",
-        "description": "Guía práctica escrita por alguien que ya cometió los errores costosos de equipamiento y mal café para que tú no tengas que hacerlo. Aprende a identificar, comprar y preparar café de especialidad.",
+        "name": "Coffee Decoded",
+        "headline": "Coffee Decoded — Specialty Coffee Guide",
+        "description": "A comprehensive guide to specialty coffee: varieties, origins, preparation methods, and tasting.",
+        "url": "https://www.nicolasbronzina.com/CoffeeDecoded.html",
+        "inLanguage": "es",
         "author": {
             "@type": "Person",
             "name": "Nicolás Bronzina",
-            "url": "https://www.nicolasbronzina.com/"
+            "url": "https://www.nicolasbronzina.com"
         },
         "datePublished": "2024-01-01",
-        "dateModified": "2026-02-01",
+        "dateModified": "2026-06-14",
         "publisher": {
             "@type": "Person",
             "name": "Nicolás Bronzina"
@@ -113,8 +118,7 @@
             "@id": "https://www.nicolasbronzina.com/CoffeeDecoded.html"
         },
         "keywords": "café de especialidad, guía café, preparación café, barista, coffee brewing, specialty coffee, SCA, molienda, tueste, cata",
-        "articleSection": "Food & Drink",
-        "inLanguage": "es-ES"
+        "articleSection": "Food & Drink"
     }
     </script>
 
@@ -407,6 +411,12 @@
                 width: 40px;
                 height: 40px;
                 font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav[aria-label="Tabla de contenidos"] {
+                display: none;
             }
         }
 
@@ -725,9 +735,15 @@
         /* GRID ESPECÍFICO PARA 4 ELEMENTOS */
         .grid-four {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 1.5rem;
             margin: 1.5rem 0;
+        }
+
+        @media (min-width: 481px) {
+            .grid-four {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* Never more than 2 columns within 70ch container */
@@ -823,9 +839,12 @@
             }
             
             /* Single column grids */
-            .grid,
-            .grid-four {
+            .grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .grid-four {
                 gap: 1rem;
             }
             
@@ -1204,7 +1223,10 @@
     <div class="container">
 
         <header>
-            <img src="img/DitherCoffee.jpeg" alt="Ilustración botánica del cafeto" width="500" height="333" class="header-img">
+            <picture>
+              <source srcset="img/DitherCoffee.webp" type="image/webp">
+              <img src="img/DitherCoffee.jpeg" alt="Ilustración botánica del cafeto" width="500" height="333" class="header-img" loading="eager" fetchpriority="high">
+            </picture>
             <h1>Coffee Decoded</h1>
             <p class="subtitle">De la confusión a la claridad en el café de especialidad</p>
         </header>
@@ -1344,19 +1366,19 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>1ª (1900s)</td>
-                    <td>Commodity</td>
-                    <td>Conveniencia, precio bajo</td>
+                    <td data-label="Ola">1ª (1900s)</td>
+                    <td data-label="Enfoque">Commodity</td>
+                    <td data-label="Característica">Conveniencia, precio bajo</td>
                 </tr>
                 <tr>
-                    <td>2ª (1960s)</td>
-                    <td>Experiencia</td>
-                    <td>Cafeterías, drinks con leche</td>
+                    <td data-label="Ola">2ª (1960s)</td>
+                    <td data-label="Enfoque">Experiencia</td>
+                    <td data-label="Característica">Cafeterías, drinks con leche</td>
                 </tr>
                 <tr>
-                    <td>3ª (1990s)</td>
-                    <td>Artesanal</td>
-                    <td>Origen, calidad, sostenibilidad</td>
+                    <td data-label="Ola">3ª (1990s)</td>
+                    <td data-label="Enfoque">Artesanal</td>
+                    <td data-label="Característica">Origen, calidad, sostenibilidad</td>
                 </tr>
                 </tbody>
             </table>
@@ -1367,9 +1389,9 @@
                 <p><strong>Más info:</strong> <a href="https://sca.coffee/" target="_blank" rel="noopener">sca.coffee</a></p>
             </aside>
 
-            <div class="section-nav">
+            <nav class="section-nav" aria-label="Navegación de sección">
                 <p><strong>→ Siguiente:</strong> <a href="#equipamiento">Equipamiento Básico</a></p>
-            </aside>
+            </nav>
         </section>
 
         <!-- SECCIÓN 2: EQUIPAMIENTO -->
@@ -1460,9 +1482,9 @@
                 </ul>
             </aside>
 
-            <div class="section-nav">
+            <nav class="section-nav" aria-label="Navegación de sección">
                 <p><strong>← Anterior:</strong> <a href="#fundamentos">Fundamentos</a> | <strong>→ Siguiente:</strong> <a href="#economia">Costos Reales</a></p>
-            </aside>
+            </nav>
         </section>
 
         <!-- SECCIÓN 3: COSTOS REALES -->
@@ -1612,9 +1634,9 @@
                 </ul>
             </aside>
 
-            <div class="section-nav">
+            <nav class="section-nav" aria-label="Navegación de sección">
                 <p><strong>← Anterior:</strong> <a href="#equipamiento">Equipamiento</a> | <strong>→ Siguiente:</strong> <a href="#molienda">Molienda</a></p>
-            </div>
+            </nav>
         </section>
 
         <!-- SECCIÓN 4: MOLIENDA -->
@@ -1740,9 +1762,9 @@
                 </div>
             </div>
 
-            <div class="section-nav">
+            <nav class="section-nav" aria-label="Navegación de sección">
                 <p><strong>→ Siguiente:</strong> Conoce cómo <a href="#agua">el agua afecta tu café</a>, luego aprende las <a href="#preparacion">técnicas de preparación</a>.</p>
-            </aside>
+            </nav>
         </section>
 
         <!-- SECCIÓN 5: AGUA -->
@@ -1867,9 +1889,9 @@
                 <p><strong>Más info:</strong> <a href="https://thirdwavewater.com/" target="_blank" rel="noopener">thirdwavewater.com</a></p>
             </aside>
 
-            <div class="section-nav">
+            <nav class="section-nav" aria-label="Navegación de sección">
                 <p><strong>← Anterior:</strong> <a href="#molienda">Molienda</a> | <strong>→ Siguiente:</strong> <a href="#tueste">El Tueste</a></p>
-            </aside>
+            </nav>
         </section>
 
         <!-- SECCIÓN 6: EL TUESTE -->
@@ -2023,9 +2045,9 @@
                 </ul>
             </aside>
 
-            <div class="section-nav">
+            <nav class="section-nav" aria-label="Navegación de sección">
                 <p><strong>← Anterior:</strong> <a href="#agua">Agua</a> | <strong>→ Siguiente:</strong> <a href="#calidad">Identificar Calidad</a></p>
-            </div>
+            </nav>
         </section>
 
         <!-- SECCIÓN 7: IDENTIFICAR CALIDAD -->
@@ -2239,9 +2261,9 @@
                 <p>Si preparas café con leche: usa leche entera (3.5% grasa) para mejor textura. Calentar entre 60-65°C — a mayor temperatura se quema la lactosa. El café de especialidad se diseña para apreciarse solo, pero un buen flat white o cappuccino requiere leche de calidad y técnica de vaporizado adecuada.</p>
             </aside>
 
-            <div class="section-nav">
+            <nav class="section-nav" aria-label="Navegación de sección">
                 <p><strong>← Anterior:</strong> <a href="#calidad">Identificar Calidad</a> | <strong>→ Siguiente:</strong> <a href="#cata">Cata en Casa</a></p>
-            </div>
+            </nav>
         </section>
 
         <!-- SECCIÓN 9: CATA EN CASA -->
@@ -2536,9 +2558,9 @@
                 </ul>
             </aside>
 
-            <div class="section-nav">
+            <nav class="section-nav" aria-label="Navegación de sección">
                 <p><strong>← Anterior:</strong> <a href="#cata">Cata en Casa</a> | <strong>→ Siguiente:</strong> <a href="#solucion">Solución de Problemas</a></p>
-            </aside>
+            </nav>
         </section>
 
         <!-- SECCIÓN 11: SOLUCIÓN DE PROBLEMAS -->
@@ -2704,9 +2726,9 @@
                 </ul>
             </aside>
 
-            <div class="section-nav">
+            <nav class="section-nav" aria-label="Navegación de sección">
                 <p><strong>← Anterior:</strong> <a href="#compra">Guía de Compra</a></p>
-            </div>
+            </nav>
         </section>
 
         </article>
@@ -2720,6 +2742,14 @@
     </div>
 
     <a href="#top" class="back-to-top" aria-label="Volver arriba">↑</a>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
 
     <!-- IntersectionObserver for active ToC section -->
     <script>
