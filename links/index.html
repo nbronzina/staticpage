@@ -22,9 +22,23 @@
 
 <!-- Canonical -->
 <link rel="canonical" href="https://www.nicolasbronzina.com/links/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  @font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/jetbrains-mono-normal-400-latin-ext.woff2') format('woff2');
+    font-weight: 300 600;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/jetbrains-mono-normal-400-latin.woff2') format('woff2');
+    font-weight: 300 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root {
     --bg: #f5f3ef;
     --fg: #1a1a1a;
@@ -92,7 +106,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 0.75rem 0;
+    min-height: 44px;
     border-bottom: 1px solid rgba(26, 26, 26, 0.12);
     text-decoration: none;
     color: var(--fg);
@@ -150,7 +165,7 @@
   }
 
   .link-tag {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     font-weight: 300;
     color: var(--muted);
     text-transform: uppercase;
@@ -169,12 +184,22 @@
 
   /* ── Section Labels ── */
   .section-label {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--muted);
     padding-top: 0.5rem;
+  }
+
+  h2.section-label {
+    font-size: 0.65rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    padding-top: 0.5rem;
+    margin: 0;
   }
 
   /* ── Footer ── */
@@ -228,131 +253,142 @@
     <p>AI-Enhanced Futures Designer · Buenos Aires → Madrid</p>
   </header>
 
-  <!-- ═══ WORK ═══ -->
-  <div>
-    <div class="section-label">Work</div>
-    <div class="links">
-      <a href="https://nicolasbronzina.com" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">Portfolio</span>
-          <span class="link-tag">nicolasbronzina.com</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-      <a href="https://www.bppanalyticsanddesign.com/" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">BPP Analytics & Design</span>
-          <span class="link-tag">Consultancy · BA + Madrid</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-      <a href="https://heated.studio" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">Heated Studio</span>
-          <span class="link-tag">Climate Design Fiction</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-      <a href="https://mundanidadforzada.org/" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">Lab de Mundanidad Forzada</span>
-          <span class="link-tag">Design Fiction Collective · LATAM</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-    </div>
-  </div>
+  <main>
 
-  <!-- ═══ EDITORIAL ═══ -->
-  <div>
-    <div class="section-label">Editorial</div>
-    <div class="links">
-      <a href="https://www.youtube.com/@otrosfuturos" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">Otros Futuros</span>
-          <span class="link-tag">YouTube</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-      <a href="https://www.instagram.com/margin.signals/" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">MARGIN.SIGNALS</span>
-          <span class="link-tag">Weak signals from cultural margins</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-      <a href="https://medium.com/@nbronzina" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">Medium</span>
-          <span class="link-tag">Essays & writing</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-    </div>
-  </div>
+    <!-- ═══ WORK ═══ -->
+    <nav aria-label="Work">
+      <h2 class="section-label">Work</h2>
+      <div class="links">
+        <a href="https://nicolasbronzina.com" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">Portfolio</span>
+            <span class="link-tag">nicolasbronzina.com</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+        <a href="https://www.bppanalyticsanddesign.com/" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">BPP Analytics & Design</span>
+            <span class="link-tag">Consultancy · BA + Madrid</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+        <a href="https://heated.studio" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">Heated Studio</span>
+            <span class="link-tag">Climate Design Fiction</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+        <a href="https://mundanidadforzada.org/" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">Lab de Mundanidad Forzada</span>
+            <span class="link-tag">Design Fiction Collective · LATAM</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+      </div>
+    </nav>
 
-  <!-- ═══ ALSO ═══ -->
-  <div>
-    <div class="section-label">Also</div>
-    <div class="links">
-      <a href="https://nbronzina.github.io/playground/" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">play·ground</span>
-          <span class="link-tag">Experimental Audio · just play</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-      <a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">Coffee Decoded</span>
-          <span class="link-tag">Specialty coffee guide</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-      <a href="https://www.nicolasbronzina.com/Coffee.html" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">Coffee.txt</span>
-          <span class="link-tag">Plain text coffee guide</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-    </div>
-  </div>
+    <!-- ═══ EDITORIAL ═══ -->
+    <nav aria-label="Editorial">
+      <h2 class="section-label">Editorial</h2>
+      <div class="links">
+        <a href="https://www.youtube.com/@otrosfuturos" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">Otros Futuros</span>
+            <span class="link-tag">YouTube</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+        <a href="https://www.instagram.com/margin.signals/" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">MARGIN.SIGNALS</span>
+            <span class="link-tag">Weak signals from cultural margins</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+        <a href="https://medium.com/@nbronzina" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">Medium</span>
+            <span class="link-tag">Essays & writing</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+      </div>
+    </nav>
 
-  <!-- ═══ CONNECT ═══ -->
-  <div>
-    <div class="section-label">Connect</div>
-    <div class="links">
-      <a href="https://linkedin.com/in/nicolasbronzina" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">LinkedIn</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-      <a href="https://instagram.com/nicolasbronzina" class="link-item" target="_blank">
-        <div class="link-content">
-          <span class="link-name">Instagram</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-      <a href="mailto:hola@nicolasbronzina.com" class="link-item">
-        <div class="link-content">
-          <span class="link-name">Let's talk</span>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-    </div>
-  </div>
+    <!-- ═══ ALSO ═══ -->
+    <nav aria-label="Also">
+      <h2 class="section-label">Also</h2>
+      <div class="links">
+        <a href="https://nbronzina.github.io/playground/" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">play·ground</span>
+            <span class="link-tag">Experimental Audio · just play</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+        <a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">Coffee Decoded</span>
+            <span class="link-tag">Specialty coffee guide</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+        <a href="https://www.nicolasbronzina.com/Coffee.html" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">Coffee.txt</span>
+            <span class="link-tag">Plain text coffee guide</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+      </div>
+    </nav>
 
-  <footer class="footer">
-    <div class="status">
-      <span class="status-dot"></span>
-      Open to opportunities
-    </div>
-    <span>Madrid, 2026</span>
-  </footer>
+    <!-- ═══ CONNECT ═══ -->
+    <nav aria-label="Connect">
+      <h2 class="section-label">Connect</h2>
+      <div class="links">
+        <a href="https://linkedin.com/in/nicolasbronzina" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">LinkedIn</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+        <a href="https://instagram.com/nicolasbronzina" class="link-item" target="_blank">
+          <div class="link-content">
+            <span class="link-name">Instagram</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+        <a href="mailto:hola@nicolasbronzina.com" class="link-item" aria-label="Send email to Nicolás Bronzina">
+          <div class="link-content">
+            <span class="link-name">Let's talk</span>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+      </div>
+    </nav>
+
+    <footer class="footer">
+      <div class="status">
+        <span class="status-dot"></span>
+        Open to opportunities
+      </div>
+      <span>Madrid, 2026</span>
+    </footer>
+
+  </main>
 
 </div>
 
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js');
+    });
+  }
+</script>
 </body>
 </html>
