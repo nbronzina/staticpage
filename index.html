@@ -104,16 +104,12 @@
 
   <!-- Audio Player -->
   <div class="audio-player" id="audio-player">
-    <div class="audio-player-inner">
-      <span class="audio-title mono">Adaptaciones</span>
-      <div class="audio-controls">
-        <button id="audio-play" class="audio-btn mono" aria-label="Play">▶</button>
-        <button id="audio-pause" class="audio-btn mono" aria-label="Pause">⏸</button>
-        <button id="audio-stop" class="audio-btn mono" aria-label="Stop">⏹</button>
-        <span class="audio-time mono">
-          <span id="audio-current">0:00</span> / <span id="audio-duration">--:--</span>
-        </span>
-      </div>
+    <div class="audio-controls">
+      <button id="audio-play" class="audio-btn mono" aria-label="Play">▶</button>
+      <button id="audio-pause" class="audio-btn mono" aria-label="Pause">⏸</button>
+      <span class="audio-time mono">
+        <span id="audio-current">0:00</span> / <span id="audio-duration">0:00</span>
+      </span>
     </div>
     <div class="audio-progress-bar" id="audio-progress-bar">
       <div class="audio-progress-fill" id="audio-progress-fill"></div>
@@ -345,6 +341,7 @@
       <span class="mono section-meta">Channel · Publication</span>
     </div>
 
+    <div class="dirA-editorial-grid">
     <article class="dirA-ed">
       <div class="dirA-ed-img">
         <picture>
@@ -381,6 +378,7 @@
         <p>Request your copy at <a href="mailto:nicolas.bronzina@gmail.com?subject=MARGIN.SIGNALS%20Request&body=Hi%20Nicolás%2C%20I'd%20like%20to%20acquire%20MARGIN.SIGNALS%20Release%20001.%0A%0AFormat%3A%20%5BDigital%20%E2%82%AC8%20%2F%20Physical%20%E2%82%AC15%20%2F%20Bundle%20%E2%82%AC24%5D%0A%0AName%3A%0ALocation%20(for%20physical%20edition)%3A">nicolas.bronzina@gmail.com</a> or via <a href="https://instagram.com/margin.signals" target="_blank" rel="noopener noreferrer">@margin.signals</a> on Instagram.</p>
       </div>
     </article>
+    </div>
   </section>
 
   <!-- Also -->
@@ -389,38 +387,28 @@
       <h2 id="also-head">Also</h2>
       <span class="mono section-meta">Experiments and side projects outside client work</span>
     </div>
-    <ul class="dirA-also-list">
-      <li>
-        <div>
-          <h4><a href="https://nbronzina.github.io/playground/" target="_blank" rel="noopener noreferrer">playground mk-1</a></h4>
-          <p>Web-based music creation tool. 8-track drum sequencer, synthesizer, 4-slot looper with mic input.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4><a href="https://mk-air.onrender.com/" target="_blank" rel="noopener noreferrer">playground mk-air</a></h4>
-          <p>Experience live audio that exists only in the moment: no recording, no archive. Broadcasts that challenge your relationship with permanence and presence.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4><a href="https://nbronzina.github.io/playground/mk-dwell/" target="_blank" rel="noopener noreferrer">playground mk-dwell</a></h4>
-          <p>A habitable sound space. Your cursor is your position. Move toward a corner and a sound emerges, move away and it fades. The center breathes.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4><a href="https://www.nicolasbronzina.com/Coffee.html" target="_blank" rel="noopener noreferrer">Coffee.txt</a></h4>
-          <p>Specialty coffee guide for Madrid.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4><a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" target="_blank" rel="noopener noreferrer">Coffee Decoded</a></h4>
-          <p>Practical guide to home coffee equipment.</p>
-        </div>
-      </li>
-    </ul>
+    <div class="dirA-also-grid">
+      <div class="dirA-also-card">
+        <h4><a href="https://nbronzina.github.io/playground/" target="_blank" rel="noopener noreferrer">playground mk-1</a></h4>
+        <p>Web-based music creation tool. 8-track drum sequencer, synthesizer, 4-slot looper with mic input.</p>
+      </div>
+      <div class="dirA-also-card">
+        <h4><a href="https://mk-air.onrender.com/" target="_blank" rel="noopener noreferrer">playground mk-air</a></h4>
+        <p>Experience live audio that exists only in the moment: no recording, no archive. Broadcasts that challenge your relationship with permanence and presence.</p>
+      </div>
+      <div class="dirA-also-card">
+        <h4><a href="https://nbronzina.github.io/playground/mk-dwell/" target="_blank" rel="noopener noreferrer">playground mk-dwell</a></h4>
+        <p>A habitable sound space. Your cursor is your position. Move toward a corner and a sound emerges, move away and it fades. The center breathes.</p>
+      </div>
+      <div class="dirA-also-card">
+        <h4><a href="https://www.nicolasbronzina.com/Coffee.html" target="_blank" rel="noopener noreferrer">Coffee.txt</a></h4>
+        <p>Specialty coffee guide for Madrid.</p>
+      </div>
+      <div class="dirA-also-card">
+        <h4><a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" target="_blank" rel="noopener noreferrer">Coffee Decoded</a></h4>
+        <p>Practical guide to home coffee equipment.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Curriculum -->
@@ -562,42 +550,44 @@
   </section>
 
   <footer class="dirA-foot mono">
-    <div><a href="mailto:nicolas.bronzina@gmail.com">nicolas.bronzina@gmail.com</a></div>
-    <div class="social">
-      <a href="https://www.linkedin.com/in/nicolasbronzina" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-          <rect x="2" y="9" width="4" height="12"></rect>
-          <circle cx="4" cy="4" r="2"></circle>
-        </svg>
-      </a>
-      <a href="https://medium.com/@nbronzina" target="_blank" rel="noopener noreferrer" aria-label="Medium">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-        </svg>
-      </a>
-      <a href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener noreferrer" aria-label="Otros Futuros on YouTube">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
-          <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
-        </svg>
-      </a>
-      <a href="https://otrosfuturos.substack.com/" target="_blank" rel="noopener noreferrer" aria-label="Otros Futuros on Substack">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 6h16M4 10h16M4 14l8 5 8-5M4 14v6l8 5 8-5v-6"/>
-        </svg>
-      </a>
-      <a href="https://instagram.com/nicolasbronzina" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-        </svg>
-      </a>
-    </div>
-    <div class="sustainability-statement">
-      <div>Handcrafted code · 2026</div>
-      <div class="sustainability-data">85% lower CO₂e vs conventional site · WebP · Service worker · Internet Archive hosting</div>
+    <div class="footer-content">
+      <div class="footer-email"><a href="mailto:nicolas.bronzina@gmail.com">nicolas.bronzina@gmail.com</a></div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/nicolasbronzina" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a href="https://medium.com/@nbronzina" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener noreferrer" aria-label="Otros Futuros on YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+          </svg>
+        </a>
+        <a href="https://otrosfuturos.substack.com/" target="_blank" rel="noopener noreferrer" aria-label="Otros Futuros on Substack">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 10h16M4 14l8 5 8-5M4 14v6l8 5 8-5v-6"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/nicolasbronzina" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+      <div class="sustainability-statement">
+        <div>Handcrafted code · 2026</div>
+        <div class="sustainability-data">85% lower CO₂e vs conventional site · WebP · Service worker · Internet Archive hosting</div>
+      </div>
     </div>
   </footer>
 
