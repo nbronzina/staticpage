@@ -2,11 +2,10 @@
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Check for saved theme preference or default to system preference
+// Check for saved theme preference, default to light mode
 const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+if (savedTheme === 'dark') {
   body.classList.add('dark-mode');
   themeToggle.setAttribute('aria-pressed', 'true');
 }
