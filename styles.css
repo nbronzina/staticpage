@@ -531,6 +531,38 @@ p a:hover {
   color: var(--paper);
 }
 
+#theme-toggle svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  #theme-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+#theme-toggle:hover svg {
+  color: var(--paper);
+}
+
+#theme-toggle .sun-icon,
+#theme-toggle .moon-icon {
+  position: absolute;
+}
+
+body:not(.dark-mode) #theme-toggle .moon-icon {
+  display: none;
+}
+
+body.dark-mode #theme-toggle .sun-icon {
+  display: none;
+}
+
 /* ────────────────────────────────────────────────────────
    BACK TO TOP
    ──────────────────────────────────────────────────────── */
@@ -1164,67 +1196,6 @@ p a:hover {
   margin: 0;
 }
 
-/* ═══ Theme Toggle ═══ */
-.theme-toggle {
-  position: fixed;
-  top: var(--space-1);
-  right: var(--space-2);
-  width: 28px;
-  height: 28px;
-  border: 1px solid var(--ink);
-  background: var(--paper);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  z-index: 1000;
-  padding: 0;
-}
-
-@media (min-width: 768px) {
-  .theme-toggle {
-    width: 32px;
-    height: 32px;
-    right: clamp(2rem, 8vw, 8rem);
-  }
-}
-
-.theme-toggle:hover {
-  background: var(--ink);
-}
-
-.theme-toggle svg {
-  width: 14px;
-  height: 14px;
-  stroke: currentColor;
-  color: var(--ink);
-  transition: all 0.2s ease;
-}
-
-@media (min-width: 768px) {
-  .theme-toggle svg {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-.theme-toggle:hover svg {
-  color: var(--paper);
-}
-
-.sun-icon,
-.moon-icon {
-  position: absolute;
-}
-
-body:not(.dark-mode) .moon-icon {
-  display: none;
-}
-
-body.dark-mode .sun-icon {
-  display: none;
-}
 
 /* ═══ Skip Link ═══ */
 .skip-link {
