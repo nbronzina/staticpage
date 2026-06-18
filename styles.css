@@ -944,13 +944,14 @@ body.dark-mode #theme-toggle .sun-icon {
 }
 
 .dirA-writing-head h3 {
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   margin-bottom: var(--space-2);
 }
 
 .dirA-writing-head p {
   color: var(--ink-mute);
   margin-bottom: var(--space-3);
+  font-size: var(--text-sm);
 }
 
 .dirA-writing-list {
@@ -976,7 +977,7 @@ body.dark-mode #theme-toggle .sun-icon {
 }
 
 .dirA-writing-list a {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   line-height: 1.5;
 }
 
