@@ -2,3 +2,8 @@
 .claude/skills/
 skills-lock.json
 .claude/
+
+# Node.js (local testing only, not used in production)
+node_modules/
+package.json
+package-lock.json

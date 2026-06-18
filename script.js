@@ -205,11 +205,17 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
 
     const co2Calculator = new tgwf.co2();
 
-    // Wait for page to fully load
-    window.addEventListener('load', () => {
+    // Function to calculate and update footer
+    const updateCarbonFootprint = () => {
       // Get page transfer size from Navigation Timing API
       const perfData = performance.getEntriesByType('navigation')[0];
-      const pageWeight = perfData ? perfData.transferSize : 0;
+
+      if (!perfData || !perfData.transferSize) {
+        console.warn('Navigation Timing API not available yet');
+        return;
+      }
+
+      const pageWeight = perfData.transferSize;
 
       // Calculate CO2 (green hosting = false, per Green Web Check)
       const co2Grams = co2Calculator.perByte(pageWeight, false);
@@ -227,17 +233,27 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
           <strong>${co2Formatted}g CO₂</strong> esta página (${pageKB}KB) ·
           WebP · Service worker · Internet Archive hosting
         `.trim();
-      }
 
-      // Optional: Log to console for debugging
-      console.log(`📊 Page sustainability metrics:
+        // Log to console for debugging
+        console.log(`📊 Page sustainability metrics:
   Transfer size: ${(pageWeight / 1024).toFixed(2)} KB
   CO₂ emissions: ${co2Formatted}g
   Model: Sustainable Web Design (Green Web Foundation)
   Green hosting: No (GitHub Pages unverified)`);
-    });
+      }
+    };
+
+    // Check if page is already loaded
+    if (document.readyState === 'complete') {
+      // Page already loaded, calculate now
+      updateCarbonFootprint();
+    } else {
+      // Wait for page to load
+      window.addEventListener('load', updateCarbonFootprint);
+    }
+
   } catch (error) {
-    console.warn('CO2.js failed to load:', error);
+    console.error('CO2.js failed to load:', error);
     // Graceful degradation: keep original text if CO2.js fails
   }
 })();
