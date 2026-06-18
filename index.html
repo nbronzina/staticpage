@@ -104,16 +104,12 @@
 
   <!-- Audio Player -->
   <div class="audio-player" id="audio-player">
-    <div class="audio-controls">
-      <button id="audio-play" class="audio-btn mono" aria-label="Play">▶</button>
-      <button id="audio-pause" class="audio-btn mono" aria-label="Pause">⏸</button>
-      <span class="audio-time mono">
-        <span id="audio-current">0:00</span> / <span id="audio-duration">0:00</span>
-      </span>
-    </div>
-    <div class="audio-progress-bar" id="audio-progress-bar">
-      <div class="audio-progress-fill" id="audio-progress-fill"></div>
-    </div>
+    <span class="audio-label mono">Tour narration</span>
+    <button id="audio-play" class="audio-btn mono" aria-label="Play">▶</button>
+    <button id="audio-pause" class="audio-btn mono" aria-label="Pause">⏸</button>
+    <span class="audio-time mono">
+      <span id="audio-current">0:00</span> / <span id="audio-duration">0:00</span>
+    </span>
     <audio id="audio-element" preload="metadata">
       <source src="https://ia903205.us.archive.org/7/items/eleven-labs-otros-futuros-podcast/ElevenLabs_Otros_Futuros_Podcast.mp3" type="audio/mpeg">
     </audio>

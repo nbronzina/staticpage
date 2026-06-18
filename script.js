@@ -65,15 +65,12 @@ setTimeout(() => {
 const audio = document.getElementById('audio-element');
 const playBtn = document.getElementById('audio-play');
 const pauseBtn = document.getElementById('audio-pause');
-const stopBtn = document.getElementById('audio-stop');
 const currentTimeSpan = document.getElementById('audio-current');
 const durationSpan = document.getElementById('audio-duration');
-const progressFill = document.getElementById('audio-progress-fill');
-const progressBar = document.getElementById('audio-progress-bar');
 
 // Format time helper
 function formatTime(seconds) {
-  if (isNaN(seconds)) return '--:--';
+  if (isNaN(seconds)) return '0:00';
   const mins = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
   return `${mins}:${secs.toString().padStart(2, '0')}`;
@@ -84,12 +81,9 @@ function updateButtonStates() {
   if (audio.paused) {
     playBtn.style.display = 'inline-flex';
     pauseBtn.style.display = 'none';
-    playBtn.classList.remove('active');
-    pauseBtn.classList.remove('active');
   } else {
     playBtn.style.display = 'none';
     pauseBtn.style.display = 'inline-flex';
-    pauseBtn.classList.add('active');
   }
 }
 
@@ -101,47 +95,26 @@ audio.addEventListener('loadedmetadata', () => {
 // Play button
 playBtn.addEventListener('click', () => {
   audio.play();
-  updateButtonStates();
 });
 
 // Pause button
 pauseBtn.addEventListener('click', () => {
   audio.pause();
-  updateButtonStates();
 });
 
-// Stop button
-stopBtn.addEventListener('click', () => {
-  audio.pause();
-  audio.currentTime = 0;
-  progressFill.style.width = '0%';
-  updateButtonStates();
-});
-
-// Update progress
+// Update current time
 audio.addEventListener('timeupdate', () => {
   currentTimeSpan.textContent = formatTime(audio.currentTime);
-  const percent = (audio.currentTime / audio.duration) * 100;
-  progressFill.style.width = `${percent}%`;
 });
 
 // When audio ends, reset
 audio.addEventListener('ended', () => {
   audio.currentTime = 0;
-  progressFill.style.width = '0%';
-  updateButtonStates();
 });
 
 // Audio play/pause events for state sync
 audio.addEventListener('play', updateButtonStates);
 audio.addEventListener('pause', updateButtonStates);
-
-// Click on progress bar to seek
-progressBar.addEventListener('click', (e) => {
-  const rect = progressBar.getBoundingClientRect();
-  const percent = (e.clientX - rect.left) / rect.width;
-  audio.currentTime = percent * audio.duration;
-});
 
 // Initialize button states
 updateButtonStates();
