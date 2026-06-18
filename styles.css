@@ -503,8 +503,8 @@ a.ext::after {
   position: fixed;
   top: var(--space-1);
   right: clamp(1.5rem, 5vw, 2rem);
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   border: 1px solid var(--ink);
   background: var(--paper);
   cursor: pointer;
@@ -513,7 +513,7 @@ a.ext::after {
   justify-content: center;
   transition: all 0.2s ease;
   z-index: 1000;
-  font-size: var(--text-base);
+  padding: 0;
 }
 
 @media (min-width: 768px) {
@@ -681,9 +681,10 @@ a.ext::after {
     --text-4xl: 2.441rem;    /* 39px — h1 */
   }
 
-  /* Header: more vertical space */
+  /* Header: more vertical space, left-aligned on desktop */
   .dirA-top {
     padding: calc(var(--space-16) + var(--space-4)) clamp(2rem, 8vw, 8rem) var(--space-12) clamp(2rem, 8vw, 8rem);
+    text-align: left;
   }
 
   /* Section headers: 2-column layout */
@@ -1130,8 +1131,8 @@ a.ext::after {
   position: fixed;
   top: var(--space-1);
   right: clamp(1.5rem, 5vw, 2rem);
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   border: 1px solid var(--ink);
   background: var(--paper);
   cursor: pointer;
@@ -1154,8 +1155,8 @@ a.ext::after {
 }
 
 .theme-toggle svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   stroke: currentColor;
   color: var(--ink);
   transition: all 0.2s ease;
