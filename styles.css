@@ -38,15 +38,15 @@
   /* Typography */
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
-  /* Type scale — Major Third (1.25 ratio) */
+  /* Type scale — Major Third (1.25 ratio) — Mobile-first */
   --text-xs: 0.64rem;      /* 10px — micro labels */
   --text-sm: 0.8rem;       /* 13px — metadata */
   --text-base: 1rem;       /* 16px — body */
   --text-lg: 1.125rem;     /* 18px — large body */
   --text-xl: 1.25rem;      /* 20px — h4 */
-  --text-2xl: 1.563rem;    /* 25px — h3 */
-  --text-3xl: 1.953rem;    /* 31px — h2 */
-  --text-4xl: 2.441rem;    /* 39px — h1 */
+  --text-2xl: 1.25rem;     /* 20px — h3 (mobile) */
+  --text-3xl: 1.5rem;      /* 24px — h2 (mobile) */
+  --text-4xl: 2rem;        /* 32px — h1 (mobile) */
 
   /* Spacing — 8px base grid */
   --space-1: 0.5rem;       /* 8px */
@@ -179,12 +179,12 @@ strong {
 }
 
 .dirA-top {
-  padding: calc(var(--space-16) + var(--space-4)) clamp(2rem, 8vw, 8rem) var(--space-12) clamp(2rem, 8vw, 8rem);
+  padding: var(--space-8) clamp(1.5rem, 5vw, 2rem) var(--space-6) clamp(1.5rem, 5vw, 2rem);
   border-bottom: 2px solid var(--ink);
 }
 
 .dirA-intro {
-  padding: var(--space-8) clamp(2rem, 8vw, 8rem);
+  padding: var(--space-6) clamp(1.5rem, 5vw, 2rem);
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
@@ -193,25 +193,32 @@ strong {
 
 @media (min-width: 768px) {
   .dirA-intro {
+    padding: var(--space-8) clamp(2rem, 8vw, 8rem);
     grid-template-columns: 420px 1fr;
     gap: var(--space-8);
   }
 }
 
 .dirA-section {
-  padding: var(--space-8) clamp(2rem, 8vw, 8rem);
+  padding: var(--space-6) clamp(1.5rem, 5vw, 2rem);
   border-bottom: 1px solid var(--rule);
+}
+
+@media (min-width: 768px) {
+  .dirA-section {
+    padding: var(--space-8) clamp(2rem, 8vw, 8rem);
+  }
 }
 
 .dirA-section:last-of-type {
   border-bottom: none;
 }
 
-/* Section header — 2 column layout */
+/* Section header — Mobile-first: single column, desktop: 2 columns */
 .dirA-section-head {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: var(--space-4);
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
   align-items: baseline;
   padding-bottom: var(--space-4);
   border-bottom: 2px solid var(--ink);
@@ -224,6 +231,7 @@ strong {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--ink-mute);
+  order: -1;
 }
 
 /* ────────────────────────────────────────────────────────
@@ -402,9 +410,16 @@ a.ext::after {
    FOOTER
    ──────────────────────────────────────────────────────── */
 .dirA-foot {
-  padding: var(--space-8) clamp(2rem, 8vw, 8rem);
+  padding: var(--space-6) clamp(1.5rem, 5vw, 2rem);
   border-top: 2px solid var(--ink);
-  margin-top: var(--space-12);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .dirA-foot {
+    padding: var(--space-8) clamp(2rem, 8vw, 8rem);
+    margin-top: var(--space-12);
+  }
 }
 
 .footer-content {
@@ -486,7 +501,7 @@ a.ext::after {
 #theme-toggle {
   position: fixed;
   top: var(--space-1);
-  right: clamp(2rem, 8vw, 8rem);
+  right: clamp(1.5rem, 5vw, 2rem);
   width: 44px;
   height: 44px;
   border: 1px solid var(--ink);
@@ -498,6 +513,12 @@ a.ext::after {
   transition: all 0.2s ease;
   z-index: 1000;
   font-size: var(--text-base);
+}
+
+@media (min-width: 768px) {
+  #theme-toggle {
+    right: clamp(2rem, 8vw, 8rem);
+  }
 }
 
 #theme-toggle:hover {
@@ -554,10 +575,11 @@ a.ext::after {
   right: 0;
   background: var(--paper);
   border-bottom: 1px solid var(--ink);
-  padding: var(--space-1) clamp(2rem, 8vw, 8rem);
+  padding: var(--space-1) clamp(1.5rem, 5vw, 2rem);
   display: flex;
   align-items: center;
   gap: var(--space-2);
+  flex-wrap: wrap;
   z-index: 998;
   font-size: var(--text-sm);
 }
@@ -605,7 +627,7 @@ a.ext::after {
 .audio-time {
   font-size: var(--text-xs);
   color: var(--ink-mute);
-  min-width: 80px;
+  min-width: auto;
   text-align: right;
 }
 
@@ -664,34 +686,41 @@ a.ext::after {
 }
 
 /* ────────────────────────────────────────────────────────
-   RESPONSIVE
+   RESPONSIVE — Mobile-First (min-width only)
    ──────────────────────────────────────────────────────── */
-@media (max-width: 767px) {
+
+/* Tablet and Desktop: 768px+ */
+@media (min-width: 768px) {
+  /* Typography scale up for larger screens */
   :root {
-    --text-4xl: 2rem;
-    --text-3xl: 1.5rem;
-    --text-2xl: 1.25rem;
+    --text-2xl: 1.563rem;    /* 25px — h3 */
+    --text-3xl: 1.953rem;    /* 31px — h2 */
+    --text-4xl: 2.441rem;    /* 39px — h1 */
   }
 
+  /* Header: more vertical space */
   .dirA-top {
-    padding: var(--space-8) 0 var(--space-6);
+    padding: calc(var(--space-16) + var(--space-4)) clamp(2rem, 8vw, 8rem) var(--space-12) clamp(2rem, 8vw, 8rem);
   }
 
+  /* Section headers: 2-column layout */
   .dirA-section-head {
-    grid-template-columns: 1fr;
-    gap: var(--space-2);
+    grid-template-columns: 1fr auto;
+    gap: var(--space-4);
   }
 
   .section-meta {
-    order: -1;
+    order: 0;
   }
 
+  /* Audio player: no wrap on larger screens */
   .audio-player {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    padding: var(--space-1) clamp(2rem, 8vw, 8rem);
   }
 
   .audio-time {
-    min-width: auto;
+    min-width: 80px;
   }
 }
 
@@ -723,7 +752,7 @@ a.ext::after {
 
 /* ═══ Header Specific ═══ */
 .dirA-title {
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.1;
@@ -1122,7 +1151,7 @@ a.ext::after {
 .theme-toggle {
   position: fixed;
   top: var(--space-1);
-  right: clamp(2rem, 8vw, 8rem);
+  right: clamp(1.5rem, 5vw, 2rem);
   width: 44px;
   height: 44px;
   border: 1px solid var(--ink);
@@ -1134,6 +1163,12 @@ a.ext::after {
   transition: all 0.2s ease;
   z-index: 1000;
   padding: 0;
+}
+
+@media (min-width: 768px) {
+  .theme-toggle {
+    right: clamp(2rem, 8vw, 8rem);
+  }
 }
 
 .theme-toggle:hover {
