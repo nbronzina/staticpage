@@ -179,14 +179,12 @@ strong {
 }
 
 .dirA-top {
-  padding: var(--space-12) 0 var(--space-8);
-  padding-left: clamp(2rem, 8vw, 8rem);
+  padding: var(--space-12) clamp(2rem, 8vw, 8rem) var(--space-8) clamp(2rem, 8vw, 8rem);
   border-bottom: 2px solid var(--ink);
 }
 
 .dirA-intro {
-  padding: var(--space-8) 0;
-  padding-left: clamp(2rem, 8vw, 8rem);
+  padding: var(--space-8) clamp(2rem, 8vw, 8rem);
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
@@ -201,8 +199,7 @@ strong {
 }
 
 .dirA-section {
-  padding: var(--space-8) 0;
-  padding-left: clamp(2rem, 8vw, 8rem);
+  padding: var(--space-8) clamp(2rem, 8vw, 8rem);
   border-bottom: 1px solid var(--rule);
 }
 
@@ -824,13 +821,22 @@ a.ext::after {
 
 @media (min-width: 768px) {
   .dirA-writing-group {
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: 280px 1fr;
     gap: var(--space-8);
   }
 }
 
-.dirA-writing-head {
-  order: 1;
+.dirA-writing-img {
+  max-width: 280px;
+  margin: 0;
+}
+
+.dirA-writing-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: var(--img-filter);
+  border: 2px solid var(--ink);
 }
 
 .dirA-writing-head h3 {
@@ -841,20 +847,6 @@ a.ext::after {
 .dirA-writing-head p {
   color: var(--ink-mute);
   margin-bottom: var(--space-3);
-}
-
-.dirA-writing-img {
-  order: 2;
-  max-width: 280px;
-  margin: 0;
-}
-
-.dirA-writing-img img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: var(--img-filter);
-  border: 1px solid var(--rule);
 }
 
 .dirA-writing-list {
@@ -922,7 +914,7 @@ a.ext::after {
 
 @media (min-width: 768px) {
   .dirA-ed {
-    grid-template-columns: 1fr 240px;
+    grid-template-columns: 240px 1fr;
     gap: var(--space-8);
   }
 }
@@ -936,13 +928,6 @@ a.ext::after {
 .dirA-ed-img {
   width: 100%;
   max-width: 240px;
-  order: 2;
-}
-
-@media (max-width: 767px) {
-  .dirA-ed-img {
-    order: 1;
-  }
 }
 
 .dirA-ed-img img {
@@ -1006,6 +991,8 @@ a.ext::after {
 /* ═══ CV Blocks ═══ */
 .dirA-cv-block {
   margin-bottom: var(--space-8);
+  padding: var(--space-4);
+  border: 1px solid var(--rule);
 }
 
 .dirA-cv-block-head {
@@ -1080,52 +1067,28 @@ a.ext::after {
 
 /* ═══ Prices ═══ */
 .dirA-prices {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-  margin-top: var(--space-4);
-}
-
-@media (min-width: 768px) {
-  .dirA-prices {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  flex-wrap: wrap;
 }
 
 .dirA-prices > div {
-  padding: var(--space-4);
+  padding: var(--space-2) var(--space-3);
   border: 1px solid var(--ink);
-}
-
-.dirA-prices h4 {
-  font-size: var(--text-lg);
-  margin-bottom: var(--space-2);
-}
-
-.dirA-prices .price {
-  font-size: var(--text-3xl);
-  font-weight: 700;
-  margin-bottom: var(--space-2);
-}
-
-.dirA-prices ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dirA-prices li {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: baseline;
   font-size: var(--text-sm);
-  padding-left: var(--space-3);
-  position: relative;
-  margin-bottom: var(--space-1);
 }
 
-.dirA-prices li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--ink-mute);
+.dirA-prices dt {
+  font-weight: 400;
+}
+
+.dirA-prices dd {
+  font-weight: 600;
+  margin: 0;
 }
 
 /* ═══ Audio Player Fixed ═══ */
@@ -1215,17 +1178,40 @@ body.dark-mode .sun-icon {
 .social a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-1);
   font-size: var(--text-sm);
-  padding: var(--space-1) var(--space-2);
-  border: 1px solid var(--rule);
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ink);
   transition: all 0.2s ease;
 }
 
 .social a:hover {
-  border-color: var(--ink);
   background: var(--ink);
   color: var(--paper);
+}
+
+.social svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--ink);
+  fill: none;
+  transition: all 0.2s ease;
+}
+
+.social a:hover svg {
+  stroke: var(--paper);
+  fill: none;
+}
+
+.social svg[fill="currentColor"] {
+  fill: var(--ink);
+  stroke: none;
+}
+
+.social a:hover svg[fill="currentColor"] {
+  fill: var(--paper);
 }
 
 /* ═══ Role Line ═══ */
