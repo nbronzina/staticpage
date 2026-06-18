@@ -65,6 +65,7 @@ setTimeout(() => {
 const audio = document.getElementById('audio-element');
 const playBtn = document.getElementById('audio-play');
 const pauseBtn = document.getElementById('audio-pause');
+const stopBtn = document.getElementById('audio-stop');
 const currentTimeSpan = document.getElementById('audio-current');
 const durationSpan = document.getElementById('audio-duration');
 
@@ -102,6 +103,14 @@ pauseBtn.addEventListener('click', () => {
   audio.pause();
 });
 
+// Stop button
+stopBtn.addEventListener('click', () => {
+  audio.pause();
+  audio.currentTime = 0;
+  currentTimeSpan.textContent = '0:00';
+  updateButtonStates();
+});
+
 // Update current time
 audio.addEventListener('timeupdate', () => {
   currentTimeSpan.textContent = formatTime(audio.currentTime);
@@ -110,6 +119,7 @@ audio.addEventListener('timeupdate', () => {
 // When audio ends, reset
 audio.addEventListener('ended', () => {
   audio.currentTime = 0;
+  updateButtonStates();
 });
 
 // Audio play/pause events for state sync
