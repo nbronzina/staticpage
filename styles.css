@@ -186,15 +186,25 @@ strong {
 
 .dirA-intro {
   padding: var(--space-6) clamp(1.5rem, 5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--rule);
+}
+
+.dirA-intro-content {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
-  border-bottom: 1px solid var(--rule);
 }
 
 @media (min-width: 768px) {
   .dirA-intro {
     padding: var(--space-8) clamp(2rem, 8vw, 8rem);
+    gap: var(--space-8);
+  }
+
+  .dirA-intro-content {
     grid-template-columns: 420px 1fr;
     gap: var(--space-8);
   }
@@ -584,6 +594,26 @@ p a:hover {
   color: var(--ink);
 }
 
+/* Project audio player */
+.project-audio {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  font-size: var(--text-sm);
+}
+
+.project-audio-label {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.project-audio-time {
+  font-size: var(--text-xs);
+  color: var(--ink-mute);
+}
+
 .audio-btn {
   width: 32px;
   height: 32px;
@@ -789,19 +819,27 @@ p a:hover {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-6);
 }
 
-.dirA-project {
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: var(--space-6);
+@media (min-width: 768px) {
+  .dirA-project-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
 }
 
-.dirA-project:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+@media (min-width: 1024px) {
+  .dirA-project-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.dirA-project {
+  border: 1px solid var(--rule);
+  padding: var(--space-4);
 }
 
 .dirA-project-body {
@@ -1166,8 +1204,8 @@ p a:hover {
 
 @media (min-width: 768px) {
   .theme-toggle svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
   }
 }
 
