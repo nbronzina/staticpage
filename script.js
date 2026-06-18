@@ -207,34 +207,14 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
 
     // Function to calculate and update footer
     const updateCarbonFootprint = () => {
-      let pageWeight = 0;
-      let method = '';
-
-      // Try method 1: Navigation Timing API (works on desktop)
+      // Get page transfer size from Navigation Timing API
       const perfData = performance.getEntriesByType('navigation')[0];
-      if (perfData && perfData.transferSize) {
-        pageWeight = perfData.transferSize;
-        method = 'Navigation Timing API';
-      } else {
-        // Method 2: Sum all resources (fallback for mobile)
-        const resources = performance.getEntriesByType('resource');
-        pageWeight = resources.reduce((total, resource) => {
-          return total + (resource.transferSize || 0);
-        }, 0);
 
-        // Add document size if available
-        if (perfData && perfData.encodedBodySize) {
-          pageWeight += perfData.encodedBodySize;
-        }
-
-        method = 'Resource Timing API (summed)';
-      }
-
-      // If we still don't have data, keep fallback
-      if (!pageWeight || pageWeight === 0) {
-        console.log('📊 Unable to calculate page size on this browser');
+      if (!perfData || !perfData.transferSize) {
         return;
       }
+
+      const pageWeight = perfData.transferSize;
 
       // Calculate CO2 (green hosting = false, per Green Web Check)
       const co2Grams = co2Calculator.perByte(pageWeight, false);
@@ -258,7 +238,6 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
   Transfer size: ${(pageWeight / 1024).toFixed(2)} KB
   CO₂ emissions: ${co2Formatted}g
   Model: Sustainable Web Design (Green Web Foundation)
-  Method: ${method}
   Green hosting: No (GitHub Pages unverified)`);
       }
     };
