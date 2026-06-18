@@ -744,6 +744,7 @@ body.dark-mode #theme-toggle .sun-icon {
 @media (min-width: 768px) {
   /* Typography scale up for larger screens */
   :root {
+    --text-xl: 1.563rem;     /* 25px — section headers */
     --text-2xl: 1.563rem;    /* 25px — h3 */
     --text-3xl: 1.953rem;    /* 31px — h2 */
     --text-4xl: 2.441rem;    /* 39px — h1 */
