@@ -744,6 +744,7 @@ body.dark-mode #theme-toggle .sun-icon {
 @media (min-width: 768px) {
   /* Typography scale up for larger screens */
   :root {
+    --text-xl: 1.563rem;     /* 25px — section headers */
     --text-2xl: 1.563rem;    /* 25px — h3 */
     --text-3xl: 1.953rem;    /* 31px — h2 */
     --text-4xl: 2.441rem;    /* 39px — h1 */
@@ -893,13 +894,14 @@ body.dark-mode #theme-toggle .sun-icon {
 }
 
 .dirA-project-body h3 {
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   margin: 0;
 }
 
 .dirA-project-body p {
   max-width: 58ch;
   margin: 0;
+  font-size: var(--text-sm);
 }
 
 .dirA-project-meta {
@@ -943,13 +945,14 @@ body.dark-mode #theme-toggle .sun-icon {
 }
 
 .dirA-writing-head h3 {
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   margin-bottom: var(--space-2);
 }
 
 .dirA-writing-head p {
   color: var(--ink-mute);
   margin-bottom: var(--space-3);
+  font-size: var(--text-sm);
 }
 
 .dirA-writing-list {
@@ -975,7 +978,7 @@ body.dark-mode #theme-toggle .sun-icon {
 }
 
 .dirA-writing-list a {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   line-height: 1.5;
 }
 
@@ -1008,7 +1011,7 @@ body.dark-mode #theme-toggle .sun-icon {
 }
 
 .dirA-also-card h4 {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   margin: 0;
 }
 
@@ -1180,6 +1183,10 @@ body.dark-mode #theme-toggle .sun-icon {
 .dirA-cv-right {
   display: flex;
   flex-direction: column;
+}
+
+.dirA-cv-right p {
+  font-size: var(--text-sm);
 }
 
 /* ═══ Prices ═══ */
