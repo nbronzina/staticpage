@@ -207,14 +207,32 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
 
     // Function to calculate and update footer
     const updateCarbonFootprint = () => {
-      // Get page transfer size from Navigation Timing API
       const perfData = performance.getEntriesByType('navigation')[0];
+      let pageWeight = 0;
+      let method = '';
 
-      if (!perfData || !perfData.transferSize) {
+      if (!perfData) {
         return;
       }
 
-      const pageWeight = perfData.transferSize;
+      // Priority 1: transferSize (most accurate, includes headers)
+      if (perfData.transferSize) {
+        pageWeight = perfData.transferSize;
+        method = 'transferSize';
+      }
+      // Priority 2: encodedBodySize (widely available on mobile)
+      else if (perfData.encodedBodySize) {
+        pageWeight = perfData.encodedBodySize;
+        method = 'encodedBodySize';
+      }
+      // Priority 3: decodedBodySize (last resort)
+      else if (perfData.decodedBodySize) {
+        pageWeight = perfData.decodedBodySize;
+        method = 'decodedBodySize';
+      }
+      else {
+        return;
+      }
 
       // Calculate CO2 (green hosting = false, per Green Web Check)
       const co2Grams = co2Calculator.perByte(pageWeight, false);
@@ -238,6 +256,7 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
   Transfer size: ${(pageWeight / 1024).toFixed(2)} KB
   CO₂ emissions: ${co2Formatted}g
   Model: Sustainable Web Design (Green Web Foundation)
+  Method: ${method}
   Green hosting: No (GitHub Pages unverified)`);
       }
     };
