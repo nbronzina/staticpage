@@ -195,3 +195,49 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
     btn.classList.remove('playing');
   });
 });
+
+// CO2.js — Real-time carbon calculation
+// Green Web Foundation Sustainable Web Design model
+(async () => {
+  try {
+    // Import CO2.js from Skypack CDN
+    const { default: tgwf } = await import('https://cdn.skypack.dev/@tgwf/co2@0.17.1');
+
+    const co2Calculator = new tgwf.co2();
+
+    // Wait for page to fully load
+    window.addEventListener('load', () => {
+      // Get page transfer size from Navigation Timing API
+      const perfData = performance.getEntriesByType('navigation')[0];
+      const pageWeight = perfData ? perfData.transferSize : 0;
+
+      // Calculate CO2 (green hosting = false, per Green Web Check)
+      const co2Grams = co2Calculator.perByte(pageWeight, false);
+
+      // Format: convert to grams with 2 decimals
+      const co2Formatted = co2Grams.toFixed(2);
+
+      // Update sustainability data in footer
+      const sustainabilityData = document.querySelector('.sustainability-data');
+      if (sustainabilityData) {
+        // Calculate page weight in KB
+        const pageKB = (pageWeight / 1024).toFixed(1);
+
+        sustainabilityData.innerHTML = `
+          <strong>${co2Formatted}g CO₂</strong> esta página (${pageKB}KB) ·
+          WebP · Service worker · Internet Archive hosting
+        `.trim();
+      }
+
+      // Optional: Log to console for debugging
+      console.log(`📊 Page sustainability metrics:
+  Transfer size: ${(pageWeight / 1024).toFixed(2)} KB
+  CO₂ emissions: ${co2Formatted}g
+  Model: Sustainable Web Design (Green Web Foundation)
+  Green hosting: No (GitHub Pages unverified)`);
+    });
+  } catch (error) {
+    console.warn('CO2.js failed to load:', error);
+    // Graceful degradation: keep original text if CO2.js fails
+  }
+})();

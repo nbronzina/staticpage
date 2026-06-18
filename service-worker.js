@@ -1,8 +1,9 @@
-const CACHE_NAME = 'nicolasbronzina-v1';
+const CACHE_NAME = 'nicolasbronzina-v2';
 const urlsToCache = [
   '/',
   '/styles.css',
   '/script.js',
+  '/carbon.txt',
   '/img/hi.webp',
   '/img/hi-sm.webp',
   '/fonts/fraunces-normal-300-700-latin.woff2',
