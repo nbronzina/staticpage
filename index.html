@@ -188,9 +188,11 @@
           <p>A 100-year-old market, a city that keeps changing, a climate that doesn&rsquo;t wait. Design fiction for San Telmo&rsquo;s next chapter.</p>
           <div class="project-audio mono">
             <span class="project-audio-label">Tour narration</span>
-            <button class="project-audio-btn" data-audio="mst-tour" aria-label="Play">▶</button>
+            <button class="project-audio-play audio-btn" aria-label="Play">▶</button>
+            <button class="project-audio-pause audio-btn" aria-label="Pause" style="display: none;">⏸</button>
+            <button class="project-audio-stop audio-btn" aria-label="Stop">⏹</button>
             <span class="project-audio-time">
-              <span class="project-audio-current">0:00</span> / <span class="project-audio-duration">--:--</span>
+              <span class="project-audio-current">0:00</span> / <span class="project-audio-duration">0:00</span>
             </span>
             <audio class="project-audio-element" preload="metadata">
               <source src="https://ia903109.us.archive.org/3/items/tour-mst-1/Tour%20MST%20%281%29.mp3" type="audio/mpeg">

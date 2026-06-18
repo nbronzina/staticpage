@@ -131,52 +131,70 @@ updateButtonStates();
 
 // Project Audio Players
 document.querySelectorAll('.project-audio').forEach(playerContainer => {
-  const btn = playerContainer.querySelector('.project-audio-btn');
+  const playBtn = playerContainer.querySelector('.project-audio-play');
+  const pauseBtn = playerContainer.querySelector('.project-audio-pause');
+  const stopBtn = playerContainer.querySelector('.project-audio-stop');
   const audioEl = playerContainer.querySelector('.project-audio-element');
   const currentSpan = playerContainer.querySelector('.project-audio-current');
   const durationSpan = playerContainer.querySelector('.project-audio-duration');
+
+  // Update button states
+  function updateProjectButtonStates() {
+    if (audioEl.paused) {
+      playBtn.style.display = 'inline-flex';
+      pauseBtn.style.display = 'none';
+    } else {
+      playBtn.style.display = 'none';
+      pauseBtn.style.display = 'inline-flex';
+    }
+  }
 
   // Load metadata
   audioEl.addEventListener('loadedmetadata', () => {
     durationSpan.textContent = formatTime(audioEl.duration);
   });
 
-  // Play/pause toggle
-  btn.addEventListener('click', () => {
-    if (audioEl.paused) {
-      // Pause other project audios
-      document.querySelectorAll('.project-audio-element').forEach(otherAudio => {
-        if (otherAudio !== audioEl && !otherAudio.paused) {
-          otherAudio.pause();
-        }
-      });
-      audioEl.play();
-    } else {
-      audioEl.pause();
-    }
+  // Play button
+  playBtn.addEventListener('click', () => {
+    // Pause other project audios
+    document.querySelectorAll('.project-audio-element').forEach(otherAudio => {
+      if (otherAudio !== audioEl && !otherAudio.paused) {
+        otherAudio.pause();
+      }
+    });
+    audioEl.play();
   });
 
-  // Update button and time
-  audioEl.addEventListener('play', () => {
-    btn.textContent = '⏸';
-    btn.classList.add('playing');
+  // Pause button
+  pauseBtn.addEventListener('click', () => {
+    audioEl.pause();
   });
 
-  audioEl.addEventListener('pause', () => {
-    btn.textContent = '▶';
-    btn.classList.remove('playing');
+  // Stop button
+  stopBtn.addEventListener('click', () => {
+    audioEl.pause();
+    audioEl.currentTime = 0;
+    currentSpan.textContent = '0:00';
+    updateProjectButtonStates();
   });
 
+  // Update current time
   audioEl.addEventListener('timeupdate', () => {
     currentSpan.textContent = formatTime(audioEl.currentTime);
   });
 
-  // Reset on end
+  // When audio ends, reset
   audioEl.addEventListener('ended', () => {
     audioEl.currentTime = 0;
-    btn.textContent = '▶';
-    btn.classList.remove('playing');
+    updateProjectButtonStates();
   });
+
+  // Audio play/pause events for state sync
+  audioEl.addEventListener('play', updateProjectButtonStates);
+  audioEl.addEventListener('pause', updateProjectButtonStates);
+
+  // Initialize button states
+  updateProjectButtonStates();
 });
 
 // CO2.js — Real-time carbon calculation
