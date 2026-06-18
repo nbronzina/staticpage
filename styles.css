@@ -819,19 +819,27 @@ p a:hover {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-6);
 }
 
-.dirA-project {
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: var(--space-6);
+@media (min-width: 768px) {
+  .dirA-project-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
 }
 
-.dirA-project:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+@media (min-width: 1024px) {
+  .dirA-project-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.dirA-project {
+  border: 1px solid var(--rule);
+  padding: var(--space-4);
 }
 
 .dirA-project-body {
