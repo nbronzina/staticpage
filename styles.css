@@ -526,9 +526,11 @@ p a:hover {
   }
 }
 
-#theme-toggle:hover {
-  background: var(--ink);
-  color: var(--paper);
+@media (hover: hover) {
+  #theme-toggle:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
 }
 
 #theme-toggle svg {
@@ -546,8 +548,10 @@ p a:hover {
   }
 }
 
-#theme-toggle:hover svg {
-  color: var(--paper);
+@media (hover: hover) {
+  #theme-toggle:hover svg {
+    color: var(--paper);
+  }
 }
 
 #theme-toggle .sun-icon,
@@ -666,9 +670,11 @@ body.dark-mode #theme-toggle .sun-icon {
   fill: currentColor;
 }
 
-.audio-btn:hover {
-  background: var(--ink);
-  color: var(--paper);
+@media (hover: hover) {
+  .audio-btn:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
 }
 
 .audio-time {

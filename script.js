@@ -14,6 +14,7 @@ themeToggle.addEventListener('click', () => {
   const isDark = body.classList.toggle('dark-mode');
   themeToggle.setAttribute('aria-pressed', isDark);
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  themeToggle.blur(); // Remove focus on mobile
 });
 
 // Back to Top
@@ -95,11 +96,13 @@ audio.addEventListener('loadedmetadata', () => {
 // Play button
 playBtn.addEventListener('click', () => {
   audio.play();
+  playBtn.blur(); // Remove focus on mobile
 });
 
 // Pause button
 pauseBtn.addEventListener('click', () => {
   audio.pause();
+  pauseBtn.blur(); // Remove focus on mobile
 });
 
 // Stop button
@@ -108,6 +111,7 @@ stopBtn.addEventListener('click', () => {
   audio.currentTime = 0;
   currentTimeSpan.textContent = '0:00';
   updateButtonStates();
+  stopBtn.blur(); // Remove focus on mobile
 });
 
 // Update current time
@@ -162,11 +166,13 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
       }
     });
     audioEl.play();
+    playBtn.blur(); // Remove focus on mobile
   });
 
   // Pause button
   pauseBtn.addEventListener('click', () => {
     audioEl.pause();
+    pauseBtn.blur(); // Remove focus on mobile
   });
 
   // Stop button
@@ -175,6 +181,7 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
     audioEl.currentTime = 0;
     currentSpan.textContent = '0:00';
     updateProjectButtonStates();
+    stopBtn.blur(); // Remove focus on mobile
   });
 
   // Update current time
