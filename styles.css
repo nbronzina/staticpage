@@ -179,8 +179,9 @@ strong {
 }
 
 .dirA-top {
-  padding: var(--space-8) clamp(1.5rem, 5vw, 2rem) var(--space-6) clamp(1.5rem, 5vw, 2rem);
+  padding: var(--space-12) clamp(1.5rem, 5vw, 2rem) var(--space-8) clamp(1.5rem, 5vw, 2rem);
   border-bottom: 2px solid var(--ink);
+  text-align: center;
 }
 
 .dirA-intro {
