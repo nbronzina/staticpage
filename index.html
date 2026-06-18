@@ -105,9 +105,21 @@
   <!-- Audio Player -->
   <div class="audio-player" id="audio-player">
     <span class="audio-label mono">Nicolás, by Matías</span>
-    <button id="audio-play" class="audio-btn mono" aria-label="Play">▶</button>
-    <button id="audio-pause" class="audio-btn mono" aria-label="Pause">⏸</button>
-    <button id="audio-stop" class="audio-btn mono" aria-label="Stop">⏹</button>
+    <button id="audio-play" class="audio-btn" aria-label="Play">
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </button>
+    <button id="audio-pause" class="audio-btn" aria-label="Pause">
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 4h4v16H6zM14 4h4v16h-4z"/>
+      </svg>
+    </button>
+    <button id="audio-stop" class="audio-btn" aria-label="Stop">
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="6" width="12" height="12"/>
+      </svg>
+    </button>
     <span class="audio-time mono">
       <span id="audio-current">0:00</span> / <span id="audio-duration">0:00</span>
     </span>
@@ -190,9 +202,21 @@
           <p>A 100-year-old market, a city that keeps changing, a climate that doesn&rsquo;t wait. Design fiction for San Telmo&rsquo;s next chapter.</p>
           <div class="project-audio mono">
             <span class="project-audio-label">Tour narration</span>
-            <button class="project-audio-play audio-btn" aria-label="Play">▶</button>
-            <button class="project-audio-pause audio-btn" aria-label="Pause" style="display: none;">⏸</button>
-            <button class="project-audio-stop audio-btn" aria-label="Stop">⏹</button>
+            <button class="project-audio-play audio-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+            <button class="project-audio-pause audio-btn" aria-label="Pause" style="display: none;">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 4h4v16H6zM14 4h4v16h-4z"/>
+              </svg>
+            </button>
+            <button class="project-audio-stop audio-btn" aria-label="Stop">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="6" width="12" height="12"/>
+              </svg>
+            </button>
             <span class="project-audio-time">
               <span class="project-audio-current">0:00</span> / <span class="project-audio-duration">0:00</span>
             </span>

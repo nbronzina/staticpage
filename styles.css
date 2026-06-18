@@ -660,6 +660,12 @@ body.dark-mode #theme-toggle .sun-icon {
   font-size: var(--text-sm);
 }
 
+.audio-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
 .audio-btn:hover {
   background: var(--ink);
   color: var(--paper);
