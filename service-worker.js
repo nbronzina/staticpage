@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nicolasbronzina-v2';
+const CACHE_NAME = 'nicolasbronzina-v3-direction-b';
 const urlsToCache = [
   '/',
   '/styles.css',
@@ -6,9 +6,8 @@ const urlsToCache = [
   '/carbon.txt',
   '/img/hi.webp',
   '/img/hi-sm.webp',
-  '/fonts/fraunces-normal-300-700-latin.woff2',
-  '/fonts/fraunces-italic-300-700-latin.woff2',
-  '/fonts/jetbrains-mono-normal-400-latin.woff2'
+  '/fonts/jetbrains-mono-normal-400-latin.woff2',
+  '/fonts/jetbrains-mono-normal-400-latin-ext.woff2'
 ];
 
 // Install event - cache core assets
