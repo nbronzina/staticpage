@@ -211,6 +211,8 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
       const perfData = performance.getEntriesByType('navigation')[0];
 
       if (!perfData || !perfData.transferSize) {
+        console.log('📊 Navigation Timing API transferSize not available (common on mobile browsers for privacy)');
+        // Keep the static fallback text in HTML
         return;
       }
 
