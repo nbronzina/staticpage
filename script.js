@@ -211,7 +211,6 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
       const perfData = performance.getEntriesByType('navigation')[0];
 
       if (!perfData || !perfData.transferSize) {
-        console.warn('Navigation Timing API not available yet');
         return;
       }
 
