@@ -399,14 +399,6 @@ p a:hover {
   background-size: 100% 1px;
 }
 
-/* External links */
-a.ext::after {
-  content: '↗';
-  font-size: 0.8em;
-  margin-left: 0.2em;
-  opacity: 0.5;
-}
-
 /* ────────────────────────────────────────────────────────
    FOOTER
    ──────────────────────────────────────────────────────── */
@@ -683,9 +675,9 @@ a.ext::after {
     --text-4xl: 2.441rem;    /* 39px — h1 */
   }
 
-  /* Header: more vertical space, left-aligned on desktop */
+  /* Header: left-aligned on desktop */
   .dirA-top {
-    padding: calc(var(--space-16) + var(--space-4)) clamp(2rem, 8vw, 8rem) var(--space-12) clamp(2rem, 8vw, 8rem);
+    padding: var(--space-12) clamp(2rem, 8vw, 8rem) var(--space-12) clamp(2rem, 8vw, 8rem);
     text-align: left;
   }
 
