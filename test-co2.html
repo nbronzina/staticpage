@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO2.js Test</title>
+  <style>
+    body {
+      font-family: monospace;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #1a1715;
+      color: #f4efe6;
+    }
+    .result {
+      background: #2b2825;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .sustainability-data {
+      font-size: 1.2em;
+      color: #f4efe6;
+    }
+    strong {
+      color: oklch(72% 0.14 65);
+    }
+    pre {
+      background: #000;
+      padding: 15px;
+      overflow-x: auto;
+      border-left: 3px solid oklch(72% 0.14 65);
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌿 CO2.js Test Page</h1>
+
+<div class="result">
+  <h2>Footer dinámico (como en index.html):</h2>
+  <div class="sustainability-data">Cargando cálculo de CO₂...</div>
+</div>
+
+<div class="result">
+  <h2>Console log (abrí DevTools):</h2>
+  <pre id="console-output">Esperando resultados...</pre>
+</div>
+
+<script type="module">
+// CO2.js — Real-time carbon calculation
+(async () => {
+  const consoleOutput = document.getElementById('console-output');
+
+  try {
+    consoleOutput.textContent = '⏳ Importando CO2.js desde Skypack CDN...';
+
+    // Import CO2.js from Skypack CDN
+    const { default: tgwf } = await import('https://cdn.skypack.dev/@tgwf/co2@0.17.1');
+
+    consoleOutput.textContent += '\n✅ CO2.js cargado correctamente\n⏳ Esperando Navigation Timing API...';
+
+    const co2Calculator = new tgwf.co2();
+
+    // Function to calculate and update footer
+    const updateCarbonFootprint = () => {
+      // Get page transfer size from Navigation Timing API
+      const perfData = performance.getEntriesByType('navigation')[0];
+
+      if (!perfData || !perfData.transferSize) {
+        consoleOutput.textContent += '\n⚠️ Navigation Timing API no disponible aún';
+        return;
+      }
+
+      const pageWeight = perfData.transferSize;
+
+      // Calculate CO2 (green hosting = false)
+      const co2Grams = co2Calculator.perByte(pageWeight, false);
+      const co2Formatted = co2Grams.toFixed(2);
+
+      // Update sustainability data in footer
+      const sustainabilityData = document.querySelector('.sustainability-data');
+      if (sustainabilityData) {
+        const pageKB = (pageWeight / 1024).toFixed(1);
+
+        sustainabilityData.innerHTML = `
+          <strong>${co2Formatted}g CO₂</strong> esta página (${pageKB}KB) ·
+          WebP · Service worker · Internet Archive hosting
+        `.trim();
+
+        // Log to console output
+        consoleOutput.textContent = `✅ Cálculo completado:
+
+📊 Page sustainability metrics:
+   Transfer size: ${(pageWeight / 1024).toFixed(2)} KB
+   CO₂ emissions: ${co2Formatted}g
+   Model: Sustainable Web Design v4 (Green Web Foundation)
+   Green hosting: No (GitHub Pages unverified)
+
+🔧 Technical details:
+   API: Navigation Timing Level 2
+   Library: @tgwf/co2@0.17.1
+   CDN: Skypack
+   Load time: ${performance.now().toFixed(2)}ms`;
+
+        console.log(`📊 CO2 Test:
+  Transfer size: ${(pageWeight / 1024).toFixed(2)} KB
+  CO₂ emissions: ${co2Formatted}g`);
+      }
+    };
+
+    // Check if page is already loaded
+    if (document.readyState === 'complete') {
+      updateCarbonFootprint();
+    } else {
+      window.addEventListener('load', updateCarbonFootprint);
+    }
+
+  } catch (error) {
+    consoleOutput.textContent = `❌ Error cargando CO2.js:\n\n${error.message}\n\nStack:\n${error.stack}`;
+    console.error('CO2.js failed to load:', error);
+  }
+})();
+</script>
+
+</body>
+</html>
