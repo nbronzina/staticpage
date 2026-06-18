@@ -200,10 +200,10 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
 // Green Web Foundation Sustainable Web Design model
 (async () => {
   try {
-    // Import CO2.js from Skypack CDN
-    const { default: tgwf } = await import('https://cdn.skypack.dev/@tgwf/co2@0.17.1');
+    // Import CO2.js from unpkg (ESM CDN with proper CORS)
+    const { co2 } = await import('https://unpkg.com/@tgwf/co2@0.18.0/dist/esm/index.js');
 
-    const co2Calculator = new tgwf.co2();
+    const co2Calculator = new co2();
 
     // Function to calculate and update footer
     const updateCarbonFootprint = () => {
