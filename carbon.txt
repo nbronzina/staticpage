@@ -1,0 +1,61 @@
+# carbon.txt for nicolasbronzina.com
+# Machine-readable sustainability data
+# Spec: https://www.thegreenwebfoundation.org/support/using-carbon-txt-to-improve-green-web-check-results/
+
+[upstream]
+provider = GitHub Pages
+website = https://pages.github.com
+
+[hosting]
+green_verified = false
+# GitHub Pages is not currently verified in Green Web Foundation database
+
+[performance]
+# Main page (index.html)
+transfer_size_avg = 45kb
+page_weight_target = <100kb
+images_format = WebP
+images_fallback = JPEG via <picture>
+
+[fonts]
+hosting = self-hosted
+format = woff2
+preload = true
+display = swap
+# Fraunces (display, body) + JetBrains Mono (monospace)
+
+[optimization]
+framework = none
+vanilla_stack = HTML + CSS + JS
+service_worker = cache-first strategy
+caching = fonts, images, CSS, JS
+third_party_scripts = none
+analytics = none
+
+[media]
+audio_hosting = Internet Archive
+# Hosted externally to reduce bandwidth from GitHub Pages
+audio_format = mp3
+youtube_strategy = click-to-load facade (Official.html)
+
+[sustainability_practices]
+# Ranked by impact
+1_static_site = No server-side processing, pure static HTML
+2_webp_images = All images converted to WebP with fallback
+3_self_hosted_fonts = No Google Fonts CDN requests
+4_service_worker = Aggressive caching reduces repeat visits to ~0kb
+5_internet_archive = Audio hosted on renewable infrastructure
+6_minimal_js = Vanilla JS, no frameworks (React/Vue would add ~100kb+)
+7_dark_mode = User preference reduces screen power consumption
+8_font_subsetting = Only latin + latin-ext unicode ranges loaded
+
+[calculation]
+co2js_integration = true
+# Real-time carbon calculation via Green Web Foundation CO2.js library
+model = Sustainable Web Design v4
+green_hosting = false
+
+[last_updated]
+date = 2026-06-18
+by = Nicolás Bronzina
+contact = hola@nicolasbronzina.com
