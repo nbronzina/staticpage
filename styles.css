@@ -186,15 +186,25 @@ strong {
 
 .dirA-intro {
   padding: var(--space-6) clamp(1.5rem, 5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--rule);
+}
+
+.dirA-intro-content {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
-  border-bottom: 1px solid var(--rule);
 }
 
 @media (min-width: 768px) {
   .dirA-intro {
     padding: var(--space-8) clamp(2rem, 8vw, 8rem);
+    gap: var(--space-8);
+  }
+
+  .dirA-intro-content {
     grid-template-columns: 420px 1fr;
     gap: var(--space-8);
   }
