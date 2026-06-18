@@ -502,9 +502,9 @@ a.ext::after {
 #theme-toggle {
   position: fixed;
   top: var(--space-1);
-  right: clamp(1.5rem, 5vw, 2rem);
-  width: 32px;
-  height: 32px;
+  right: var(--space-2);
+  width: 28px;
+  height: 28px;
   border: 1px solid var(--ink);
   background: var(--paper);
   cursor: pointer;
@@ -518,6 +518,8 @@ a.ext::after {
 
 @media (min-width: 768px) {
   #theme-toggle {
+    width: 32px;
+    height: 32px;
     right: clamp(2rem, 8vw, 8rem);
   }
 }
@@ -697,9 +699,15 @@ a.ext::after {
     order: 0;
   }
 
-  /* Audio player: more padding on larger screens */
+  /* Audio player: position next to theme toggle on desktop */
   .audio-player {
-    padding: var(--space-1) clamp(2rem, 8vw, 8rem);
+    top: var(--space-1);
+    left: auto;
+    right: calc(clamp(2rem, 8vw, 8rem) + 32px + var(--space-2));
+    width: auto;
+    border-bottom: none;
+    border: 1px solid var(--ink);
+    padding: var(--space-1);
   }
 }
 
@@ -1130,9 +1138,9 @@ a.ext::after {
 .theme-toggle {
   position: fixed;
   top: var(--space-1);
-  right: clamp(1.5rem, 5vw, 2rem);
-  width: 32px;
-  height: 32px;
+  right: var(--space-2);
+  width: 28px;
+  height: 28px;
   border: 1px solid var(--ink);
   background: var(--paper);
   cursor: pointer;
@@ -1146,6 +1154,8 @@ a.ext::after {
 
 @media (min-width: 768px) {
   .theme-toggle {
+    width: 32px;
+    height: 32px;
     right: clamp(2rem, 8vw, 8rem);
   }
 }
@@ -1155,11 +1165,18 @@ a.ext::after {
 }
 
 .theme-toggle svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   stroke: currentColor;
   color: var(--ink);
   transition: all 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .theme-toggle svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .theme-toggle:hover svg {
