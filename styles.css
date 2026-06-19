@@ -905,6 +905,24 @@ body.dark-mode #theme-toggle .sun-icon {
   font-size: var(--text-base);
 }
 
+.project-tldr {
+  font-size: var(--text-sm);
+  color: var(--ink-mute);
+  background: transparent;
+  border-left: 3px solid var(--ink);
+  padding-left: var(--space-2);
+  margin: var(--space-2) 0 var(--space-3) 0;
+  max-width: 58ch;
+}
+
+.project-tldr strong {
+  color: var(--ink);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: var(--text-xs);
+}
+
 .dirA-project-meta {
   display: flex;
   flex-wrap: wrap;
