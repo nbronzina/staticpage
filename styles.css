@@ -608,10 +608,14 @@ body.lang-es #lang-toggle .lang-en {
 /* Language switching - hide/show content */
 body:not(.lang-es) [lang="es"] {
   display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 body.lang-es [lang="en"] {
   display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* ────────────────────────────────────────────────────────
@@ -807,11 +811,11 @@ body.lang-es [lang="en"] {
     order: 0;
   }
 
-  /* Audio player: position next to theme toggle on desktop */
+  /* Audio player: position next to both toggles on desktop */
   .audio-player {
     top: var(--space-1);
     left: auto;
-    right: calc(clamp(2rem, 8vw, 8rem) + 32px + var(--space-2));
+    right: calc(clamp(2rem, 8vw, 8rem) + 32px + 48px + var(--space-2));
     width: auto;
     border-bottom: none;
     border: 1px solid var(--ink);
