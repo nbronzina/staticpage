@@ -17,6 +17,46 @@ themeToggle.addEventListener('click', () => {
   themeToggle.blur(); // Remove focus on mobile
 });
 
+// Language Toggle
+const langToggle = document.getElementById('lang-toggle');
+
+// Check for saved language preference, default to English
+const savedLang = localStorage.getItem('language');
+
+if (savedLang === 'es') {
+  body.classList.add('lang-es');
+  langToggle.setAttribute('aria-pressed', 'true');
+  document.documentElement.lang = 'es';
+}
+
+langToggle.addEventListener('click', () => {
+  const isSpanish = body.classList.toggle('lang-es');
+  langToggle.setAttribute('aria-pressed', isSpanish);
+  localStorage.setItem('language', isSpanish ? 'es' : 'en');
+  document.documentElement.lang = isSpanish ? 'es' : 'en';
+  langToggle.blur(); // Remove focus on mobile
+
+  // Update CO2 footer text
+  updateCO2FooterLanguage(isSpanish);
+});
+
+// Function to update CO2 footer language
+function updateCO2FooterLanguage(isSpanish) {
+  const sustainabilityData = document.querySelector('.sustainability-data');
+  if (sustainabilityData && sustainabilityData.textContent.includes('CO₂')) {
+    const match = sustainabilityData.textContent.match(/([\d.]+g CO₂).*?\(([\d.]+KB)\)/);
+    if (match) {
+      const co2 = match[1];
+      const kb = match[2];
+      const text = isSpanish ? 'esta página' : 'this page';
+      sustainabilityData.innerHTML = `
+        <strong>${co2}</strong> ${text} (${kb}) ·
+        WebP · Service worker · Internet Archive hosting
+      `.trim();
+    }
+  }
+}
+
 // Back to Top
 const backToTopButton = document.getElementById('backToTop');
 
@@ -237,8 +277,12 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
         // Calculate page weight in KB
         const pageKB = (pageWeight / 1024).toFixed(1);
 
+        // Check current language
+        const isSpanish = body.classList.contains('lang-es');
+        const text = isSpanish ? 'esta página' : 'this page';
+
         sustainabilityData.innerHTML = `
-          <strong>${co2Formatted}g CO₂</strong> esta página (${pageKB}KB) ·
+          <strong>${co2Formatted}g CO₂</strong> ${text} (${pageKB}KB) ·
           WebP · Service worker · Internet Archive hosting
         `.trim();
 
