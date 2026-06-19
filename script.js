@@ -42,24 +42,8 @@ backToTopButton.addEventListener('click', () => {
   });
 });
 
-// Scroll Reveal for Sections
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.08,
-  rootMargin: '0px 0px -40px 0px'
-});
-
-setTimeout(() => {
-  document.querySelectorAll('.dirA-section, .dirA-intro').forEach(el => {
-    revealObserver.observe(el);
-  });
-}, 100);
+// Scroll Reveal removed for behavioral design clarity
+// Content is immediately visible, reducing cognitive load
 
 // Audio Player
 const audio = document.getElementById('audio-element');
