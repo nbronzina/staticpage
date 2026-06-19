@@ -664,7 +664,7 @@ body.lang-es [lang="en"] {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right: 100px; /* Leave space for toggles on mobile */
   background: var(--paper);
   border-bottom: 1px solid var(--ink);
   padding: var(--space-1) clamp(1.5rem, 5vw, 2rem);
@@ -815,7 +815,7 @@ body.lang-es [lang="en"] {
   .audio-player {
     top: var(--space-1);
     left: auto;
-    right: calc(clamp(2rem, 8vw, 8rem) + 32px + 48px + var(--space-2));
+    right: calc(clamp(2rem, 8vw, 8rem) + 32px + 48px + var(--space-3));
     width: auto;
     border-bottom: none;
     border: 1px solid var(--ink);
