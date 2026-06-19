@@ -553,6 +553,68 @@ body.dark-mode #theme-toggle .sun-icon {
 }
 
 /* ────────────────────────────────────────────────────────
+   LANGUAGE TOGGLE
+   ──────────────────────────────────────────────────────── */
+#lang-toggle {
+  position: fixed;
+  top: var(--space-1);
+  right: calc(var(--space-2) + 36px);
+  width: 36px;
+  height: 28px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 1000;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+@media (min-width: 768px) {
+  #lang-toggle {
+    width: 40px;
+    height: 32px;
+    right: calc(clamp(2rem, 8vw, 8rem) + 40px);
+    font-size: 12px;
+  }
+}
+
+@media (hover: hover) {
+  #lang-toggle:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+}
+
+#lang-toggle .lang-en,
+#lang-toggle .lang-es {
+  position: absolute;
+}
+
+body:not(.lang-es) #lang-toggle .lang-es {
+  display: none;
+}
+
+body.lang-es #lang-toggle .lang-en {
+  display: none;
+}
+
+/* Language switching - hide/show content */
+body:not(.lang-es) [lang="es"] {
+  display: none !important;
+}
+
+body.lang-es [lang="en"] {
+  display: none !important;
+}
+
+/* ────────────────────────────────────────────────────────
    BACK TO TOP
    ──────────────────────────────────────────────────────── */
 #backToTop {
@@ -761,6 +823,7 @@ body.dark-mode #theme-toggle .sun-icon {
    PRINT
    ──────────────────────────────────────────────────────── */
 @media print {
+  #lang-toggle,
   #theme-toggle,
   #backToTop,
   .audio-player {
