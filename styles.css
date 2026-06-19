@@ -667,18 +667,23 @@ body.lang-es [lang="en"] {
   right: 100px; /* Leave space for toggles on mobile */
   background: var(--paper);
   border-bottom: 1px solid var(--ink);
-  padding: var(--space-1) clamp(1.5rem, 5vw, 2rem);
+  padding: var(--space-1) var(--space-2);
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-1);
   z-index: 998;
   font-size: var(--text-sm);
 }
 
 .audio-label {
-  font-size: var(--text-sm);
+  font-size: 13px;
   font-weight: 400;
   color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 /* Project audio player */
