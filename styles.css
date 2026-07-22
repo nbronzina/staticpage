@@ -192,6 +192,7 @@ strong {
   .dirA-intro-content {
     grid-template-columns: 420px 1fr;
     gap: var(--space-8);
+    align-items: start;
   }
 }
 
@@ -888,6 +889,13 @@ body.lang-es [lang="en"] {
   max-width: 420px;
   margin: 0;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .dirA-portrait {
+    position: sticky;
+    top: 80px;
+  }
 }
 
 .dirA-portrait::after {
