@@ -960,6 +960,31 @@ body.lang-es [lang="en"] {
   position: relative;
 }
 
+.dirA-project--hero {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+  .dirA-project--hero .dirA-project-body {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: var(--space-8);
+    align-items: start;
+  }
+}
+
+.dirA-project-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.dirA-project-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
 .dirA-project::before {
   content: "0" counter(project-counter);
   position: absolute;
