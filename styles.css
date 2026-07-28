@@ -975,6 +975,18 @@ body.lang-es [lang="en"] {
   .dirA-project-hero-title {
     grid-column: 1 / -1;
   }
+
+  .dirA-project-hero-img {
+    grid-column: 1 / -1;
+  }
+}
+
+.dirA-project-hero-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: var(--img-filter);
+  mix-blend-mode: var(--img-blend);
 }
 
 .dirA-project-main {
