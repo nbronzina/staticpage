@@ -968,8 +968,12 @@ body.lang-es [lang="en"] {
   .dirA-project--hero .dirA-project-body {
     display: grid;
     grid-template-columns: 1fr 260px;
-    gap: var(--space-8);
+    gap: var(--space-4) var(--space-8);
     align-items: start;
+  }
+
+  .dirA-project-hero-title {
+    grid-column: 1 / -1;
   }
 }
 
