@@ -949,7 +949,7 @@ body.lang-es [lang="en"] {
 
 @media (min-width: 1024px) {
   .dirA-project-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -960,45 +960,13 @@ body.lang-es [lang="en"] {
   position: relative;
 }
 
-.dirA-project--hero {
-  grid-column: 1 / -1;
-}
-
-@media (min-width: 768px) {
-  .dirA-project--hero .dirA-project-body {
-    display: grid;
-    grid-template-columns: 1fr 260px;
-    gap: var(--space-4) var(--space-8);
-    align-items: start;
-  }
-
-  .dirA-project-hero-title {
-    grid-column: 1 / -1;
-  }
-
-  .dirA-project-hero-img {
-    grid-column: 1 / -1;
-  }
-}
-
-.dirA-project-hero-img img {
+.dirA-project-img img {
   width: 100%;
   height: auto;
   display: block;
   filter: var(--img-filter);
   mix-blend-mode: var(--img-blend);
-}
-
-.dirA-project-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.dirA-project-aside {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+  margin-bottom: var(--space-2);
 }
 
 .dirA-project::before {
