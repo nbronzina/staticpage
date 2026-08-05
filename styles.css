@@ -969,11 +969,8 @@ body.lang-es [lang="en"] {
   margin-bottom: var(--space-2);
 }
 
-.dirA-project::before {
-  content: "0" counter(project-counter);
-  position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
+.dirA-project-body h3::before {
+  content: "0" counter(project-counter) " · ";
   font-size: var(--text-sm);
   color: var(--ink-mute);
   font-weight: 600;
