@@ -1219,12 +1219,6 @@ body.dark-mode .dirA-project--quiet {
   }
 }
 
-@media (min-width: 1024px) {
-  .dirA-also-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .dirA-also-card {
   padding: var(--space-4);
   border: 1px solid var(--rule);
