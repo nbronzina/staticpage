@@ -1182,7 +1182,7 @@ body.dark-mode .dirA-project--quiet {
 .dirA-field-notes {
   display: flex;
   flex-direction: column;
-  gap: var(--space-10);
+  gap: var(--space-12);
 }
 
 .dirA-field-group {
