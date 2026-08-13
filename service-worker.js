@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nicolasbronzina-v3-direction-b';
+const CACHE_NAME = 'nicolasbronzina-v4';
 const urlsToCache = [
   '/',
   '/styles.css',
