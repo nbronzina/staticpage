@@ -226,6 +226,15 @@ strong {
   order: -1;
 }
 
+.dirA-section-intro {
+  margin-top: 0;
+  margin-bottom: var(--space-6);
+  max-width: 62ch;
+  color: var(--ink-mute);
+  font-size: var(--text-base);
+  line-height: 1.5;
+}
+
 /* ────────────────────────────────────────────────────────
    HEADER
    ──────────────────────────────────────────────────────── */
