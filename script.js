@@ -44,15 +44,11 @@ langToggle.addEventListener('click', () => {
 function updateCO2FooterLanguage(isSpanish) {
   const sustainabilityData = document.querySelector('.sustainability-data');
   if (sustainabilityData && sustainabilityData.textContent.includes('CO₂')) {
-    const match = sustainabilityData.textContent.match(/([\d.]+g CO₂).*?\(([\d.]+KB)\)/);
+    const match = sustainabilityData.textContent.match(/([\d.]+)g CO₂.*?([\d.]+)KB/);
     if (match) {
       const co2 = match[1];
       const kb = match[2];
-      const text = isSpanish ? 'esta página' : 'this page';
-      sustainabilityData.innerHTML = `
-        <strong>${co2}</strong> ${text} (${kb}) ·
-        WebP · Service worker · Internet Archive hosting
-      `.trim();
+      sustainabilityData.textContent = `Estimated ${co2}g CO₂ per page view · ${kb}KB · WebP · Service worker · Internet Archive archived`;
     }
   }
 }
@@ -277,14 +273,7 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
         // Calculate page weight in KB
         const pageKB = (pageWeight / 1024).toFixed(1);
 
-        // Check current language
-        const isSpanish = body.classList.contains('lang-es');
-        const text = isSpanish ? 'esta página' : 'this page';
-
-        sustainabilityData.innerHTML = `
-          <strong>${co2Formatted}g CO₂</strong> ${text} (${pageKB}KB) ·
-          WebP · Service worker · Internet Archive hosting
-        `.trim();
+        sustainabilityData.textContent = `Estimated ${co2Formatted}g CO₂ per page view · ${pageKB}KB · WebP · Service worker · Internet Archive archived`;
 
         // Log to console for debugging
         console.log(`📊 Page sustainability metrics:
