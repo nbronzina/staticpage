@@ -1360,18 +1360,44 @@ body.dark-mode .dirA-project--quiet {
 
 .dirA-cv-expertise {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-top: var(--space-3);
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--rule-soft);
 }
 
-.dirA-cv-expertise span {
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: var(--space-1) var(--space-2);
-  border: 1px solid var(--rule);
-  background: transparent;
+.dirA-cv-expertise p {
+  font-size: var(--text-base);
+  max-width: 58ch;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cv-label {
+  color: var(--ink-mute);
+}
+
+.dirA-cv-right ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.dirA-cv-right li {
+  font-size: var(--text-base);
+  padding-left: 1.5ch;
+  position: relative;
+}
+
+.dirA-cv-right li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--ink-mute);
 }
 
 .dirA-cv-doc {
