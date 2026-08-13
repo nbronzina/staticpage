@@ -1437,6 +1437,25 @@ body.dark-mode .dirA-also-badge--live {
   color: var(--ink-mute);
 }
 
+.dirA-cv-downloads {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.dirA-cv-downloads a {
+  font-size: var(--text-sm);
+  color: var(--ink-mute);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 0.5px;
+}
+
+.dirA-cv-downloads a:hover,
+.dirA-cv-downloads a:focus-visible {
+  color: var(--accent);
+}
+
 .dirA-cv-doc {
   margin-top: var(--space-4);
   display: grid;
