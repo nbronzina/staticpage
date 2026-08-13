@@ -1178,7 +1178,34 @@ body.dark-mode .dirA-project--quiet {
   line-height: 1.5;
 }
 
-/* ═══ Also ═══ */
+/* ═══ Field notes ═══ */
+.dirA-field-notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.dirA-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.dirA-field-group h3 {
+  font-size: var(--text-xl);
+  font-style: italic;
+  font-weight: 300;
+  margin: 0;
+}
+
+.dirA-field-group-intro {
+  max-width: 62ch;
+  color: var(--ink-mute);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  margin: 0;
+}
+
 .dirA-also-grid {
   display: grid;
   grid-template-columns: 1fr;
