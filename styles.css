@@ -949,24 +949,49 @@ body.lang-es [lang="en"] {
   counter-reset: project-counter;
 }
 
-@media (min-width: 768px) {
+/* Tablet and up: 2-column, featured projects span full width */
+@media (min-width: 680px) {
   .dirA-project-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8);
+    gap: var(--space-6);
+  }
+
+  .dirA-project--featured {
+    grid-column: 1 / -1;
+  }
+
+  /* Extra vertical rhythm above the second featured block */
+  .dirA-project--featured ~ .dirA-project--featured {
+    margin-top: var(--space-4);
   }
 }
 
-@media (min-width: 1024px) {
-  .dirA-project-list {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
+/* Base card */
 .dirA-project {
   border: 1px solid var(--rule);
   padding: var(--space-4);
   counter-increment: project-counter;
   position: relative;
+  transition: border-color 0.28s ease;
+}
+
+.dirA-project:hover {
+  border-color: var(--ink-mute);
+}
+
+.dirA-project:focus-within {
+  border-color: var(--ink);
+}
+
+/* Featured card */
+.dirA-project--featured {
+  padding: var(--space-6);
+}
+
+/* Image container */
+.dirA-project-img {
+  overflow: hidden;
+  margin-bottom: var(--space-3);
 }
 
 .dirA-project-img img {
@@ -975,9 +1000,15 @@ body.lang-es [lang="en"] {
   display: block;
   filter: var(--img-filter);
   mix-blend-mode: var(--img-blend);
-  margin-bottom: var(--space-2);
 }
 
+.dirA-project--featured .dirA-project-img img {
+  max-height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Counter */
 .dirA-project-body h3::before {
   content: "0" counter(project-counter) " · ";
   font-size: var(--text-sm);
@@ -997,12 +1028,55 @@ body.lang-es [lang="en"] {
   margin: 0;
 }
 
+.dirA-project-body h3 a {
+  color: var(--ink);
+}
+
+.dirA-project-body h3 a:hover,
+.dirA-project-body h3 a:focus-visible {
+  color: var(--ink-mute);
+}
+
+.dirA-project-body h3 a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Featured title larger on tablet+ */
+@media (min-width: 680px) {
+  .dirA-project--featured .dirA-project-body h3 {
+    font-size: clamp(1.375rem, 2vw, 1.75rem);
+  }
+}
+
 .dirA-project-body p {
   max-width: 58ch;
   margin: 0;
   font-size: var(--text-base);
 }
 
+.dirA-project--featured .dirA-project-body p {
+  max-width: 72ch;
+}
+
+/* Quiet cards (07–08): lighter visual presence */
+.dirA-project--quiet {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode .dirA-project--quiet {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dirA-project--quiet .dirA-project-body h3 {
+  font-size: var(--text-lg);
+}
+
+.dirA-project--quiet .dirA-project-body p:not(.project-tldr) {
+  color: var(--ink-mute);
+}
+
+/* TL;DR block */
 .project-tldr {
   font-size: var(--text-sm);
   color: var(--ink-mute);
@@ -1021,6 +1095,7 @@ body.lang-es [lang="en"] {
   font-size: var(--text-xs);
 }
 
+/* Meta / CTA links */
 .dirA-project-meta {
   display: flex;
   flex-wrap: wrap;
@@ -1031,6 +1106,11 @@ body.lang-es [lang="en"] {
 .dirA-project-meta a {
   font-size: var(--text-sm);
   color: var(--ink-mute);
+}
+
+.dirA-project-meta a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 /* ═══ Writing ═══ */
