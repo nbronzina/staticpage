@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nicolasbronzina-v5';
+const CACHE_NAME = 'nicolasbronzina-v6';
 const urlsToCache = [
   '/',
   '/styles.css',
