@@ -31,7 +31,7 @@ Header (nombre, rol, lede, email / CV, índice) → Now → Work → Editorial �
 - **Curriculum:** una línea por puesto; el detalle va en `cv-en.pdf` y `cv-es.pdf`.
 - **Footer:** nombre, email, base, idiomas de trabajo, secciones y perfiles en dos columnas (texto, sin íconos), foto de cierre con pie y crédito, colofón con peso de la página y fecha de actualización.
 - Cada sección termina con `[top]`.
-- Experiencia con años (de LinkedIn, octubre 2026), formato `2024&ndash;present / Org, Rol`. Docencia, estudios y proyectos van sin años (decisión). Faltan los créditos de los proyectos: se agregan cuando Nicolás los pase; no inventarlos.
+- Experiencia con años (de LinkedIn, octubre 2026), formato `2024&ndash;present / Org, Rol`. Docencia, estudios y proyectos van sin años (decisión). Créditos cargados en San Telmo, Adaptive Museums, Desert Athleisure y Red de Aguante (formato `Tipo, with … at <org>`; organizaciones con link, personas sin link). Estación Fresca, Rescoldo, Cuidados en Red y OFFicial van solo con el tipo hasta que Nicolás diga otra cosa; no inventar créditos.
 - Solo Mercado San Telmo (el proyecto insignia) y Desert Athleisure llevan imagen. Es una decisión, no un pendiente.
 
 ## Idioma
