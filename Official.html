@@ -1536,13 +1536,6 @@
     <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
 
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js');
-        });
-      }
-    </script>
-    <script>
         // ========== Navigation with Hash URLs ==========
         function navigateTo(sectionId) {
             window.location.hash = sectionId;
