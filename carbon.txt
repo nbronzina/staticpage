@@ -12,47 +12,35 @@ green_verified = false
 
 [performance]
 # Main page (index.html), first visit scrolled to the end, measured 2026-10
-transfer_size_avg = ~1mb
-# ~90% is images (lazy-loaded); HTML + CSS + JS together are ~25kb gzipped
-images_format = WebP (one PNG left: desert-athleisure.png)
-images_fallback = JPEG via <picture>
+transfer_size_avg = ~120kb
+# HTML with inline CSS is ~9kb gzipped; the rest is five grayscale WebP images
+images_format = WebP, grayscale, sized to their display width
+requests = 6 (HTML + 5 images); audio only when played
 
 [fonts]
-hosting = Google Fonts CDN
-format = woff2 (variable, latin + latin-ext subsets)
-display = swap
-# Jost, single typeface for the whole site
+hosting = none
+# Browser default serif; no web fonts downloaded on the main page
 
 [optimization]
 framework = none
-vanilla_stack = HTML + CSS + JS
-service_worker = network-first for pages/CSS/JS, cache-first for images
-caching = same-origin images, fonts, PDFs; pages/CSS/JS as offline fallback
-third_party_scripts = CO2.js (unpkg), loaded after page load for the footer estimate
+stack = HTML + inline CSS, no JavaScript
+service_worker = none (service-worker.js only removes the old one from returning visitors)
+third_party_scripts = none
 analytics = none
 
 [media]
 audio_hosting = Internet Archive
-# Hosted externally to reduce bandwidth from GitHub Pages
 audio_format = mp3
-youtube_strategy = click-to-load facade (Official.html)
+audio_preload = none (nothing downloads until play)
+youtube_strategy = links, no embeds (Official.html uses a click-to-load facade)
 
 [sustainability_practices]
 # Ranked by impact
 1_static_site = No server-side processing, pure static HTML
-2_webp_images = Images served as WebP with JPEG fallback
-3_single_typeface = One variable font file per style instead of several weights
-4_service_worker = Images cached on first view; repeat visits skip them
-5_internet_archive = Audio hosted on renewable infrastructure
-6_minimal_js = Vanilla JS, no frameworks (React/Vue would add ~100kb+)
-7_dark_mode = User preference reduces screen power consumption
-8_font_subsetting = Only latin + latin-ext unicode ranges loaded
-
-[calculation]
-co2js_integration = true
-# Real-time carbon calculation via Green Web Foundation CO2.js library
-model = Sustainable Web Design v4
-green_hosting = false
+2_small_images = Grayscale WebP at display size instead of full-size photos
+3_no_javascript = No scripts on the main page
+4_no_web_fonts = System fonts only on the main page
+5_dark_mode = Follows the system preference via color-scheme
 
 [last_updated]
 date = 2026-10-09

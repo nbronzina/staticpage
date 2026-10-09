@@ -1,78 +1,52 @@
 # nicolasbronzina.com — CLAUDE.md
 
 ## Stack
-HTML/CSS/JS puro. Sin frameworks. GitHub Pages.
-Fuente de verdad: `styles.css` y `script.js`.
+HTML clásico. Sin frameworks, sin JavaScript, sin fuentes web, sin service worker. GitHub Pages.
+Fuente de verdad: `index.html` (el CSS va inline, en el `<style>` del head).
 NO editar archivos `.min.*` si existen.
 
-## Audio Player
-Player fijo arriba a la derecha + narración del recorrido en Mercado San Telmo. Mismo markup y mismo JS para los dos.
-- Audio alojado en Internet Archive (no se sube audio al repo)
-- Markup: contenedor con `data-player`, botones `data-play` / `data-pause` / `data-stop`, spans `data-current` / `data-duration`, un `<audio>`
-- Al reproducir uno se pausa cualquier otro
-- Adaptado a tokens CSS (--paper, --ink)
+## Sistema visual (Classic HTML, desde octubre 2026)
+Estilos por defecto del navegador: la tipografía serif del sistema (Times), links azules subrayados, `<hr>` entre secciones. Lo único moderno es invisible: viewport, ancho de columna, modo oscuro automático.
+Referencias del benchmark: Knuth (HTML por defecto pero ordenado), Norvig (una línea por ítem), Bret Victor (trabajo agrupado por temas, bio al final), Dexter Sinister (metadatos fecha / tipo / título), Tufte (footer).
 
-## Sistema visual (Direction B — Carbon Neutral Editorial)
-Blanco y negro puro, una sola tipografía. La jerarquía la sostienen tamaño, peso y líneas.
+## CSS
+- Todo inline en el head, pocas líneas. No agregar hojas de estilo externas.
+- `color-scheme: light dark`: el navegador resuelve el modo oscuro según el sistema. No hay toggle.
+- Columna: `max-width: 35em` en `header`, `main` y `footer > div`.
+- Footer: bloque invertido (`#222`, en oscuro `#333` vía `light-dark()` con fallback).
+- No fijar `font-family` en el body: se usa la del navegador.
 
-## Colores
-- Paper (bg): `#FFFFFF`
-- Ink (text): `#000000`
-- Ink-mute: `#666666`
-- Rule: `#E0E0E0`
-- Accent: `#000000` (igual a ink)
+## Estructura de la portada
+Header (nombre, rol, lede, email / CV, índice) → Now → Work → Editorial → Field notes → About → Curriculum → footer.
+- **Now:** dos o tres entradas en presente, con fecha cuando se conoce, y el "Let's talk".
+- **Work:** proyectos y escritos agrupados por tema (`h3`). Cada proyecto:
+  `h4` con link · línea de metadatos (`[año] / tipo / con quién`) · imagen opcional · una línea de descripción · `Also:` con formatos extra (video, audio, landing).
+- **Writing:** `<li>` con título linkeado y, si tiene subtítulo, `<br>- subtítulo` en minúscula.
+- **About:** la bio larga, después del trabajo.
+- **Curriculum:** una línea por puesto; el detalle va en `cv-en.pdf` y `cv-es.pdf`.
+- **Footer:** nombre, email, base, idiomas de trabajo, secciones y perfiles en dos columnas (texto, sin íconos), foto de cierre con pie y crédito, colofón con peso de la página y fecha de actualización.
+- Cada sección termina con `[top]`.
+- Faltan datos: años de proyectos y puestos, créditos, imágenes de seis proyectos. Se agregan cuando Nicolás los pase; no inventarlos.
 
-Dark mode (body.dark-mode):
-- Paper: `#0A0A0A`
-- Ink: `#FFFFFF`
-- Ink-mute: `#999999`
-- Rule: `#2A2A2A`
-- Accent: `#FFFFFF`
-
-## Tipografía
-- Jost (variable, roman + italic, Google Fonts) para todo. `--sans` y `--mono` apuntan a Jost; la clase `.mono` hoy solo achica (text-sm, weight 500)
-- h1 700, h2/h3 600, h4 500. Body 400, line-height 1.6
-- Escala en `--text-xs` … `--text-4xl`, sube en ≥768px
-- Body copy max-width: 65ch (p), 62ch (section intro), 58ch (project/CV desc)
-
-## Sistema de sección
-- Cada section usa `.dirA-section` con `.dirA-section-head` (h2 EN + h2 ES)
-- Section head border-bottom `2px solid var(--ink)` (línea fuerte)
-- Cards y bloques internos con `1px solid var(--rule)` (línea suave)
-- Section order: Projects → Writing → Editorial → Field notes → Curriculum
-
-## Bilingüe (EN/ES)
-- Cada texto traducido es un par de hermanos consecutivos: primero `lang="en"`, inmediatamente después `lang="es"`
-- En modo ES solo se oculta el EN que tiene su ES pegado (`:has(+ [lang="es"])`); el EN sin traducir queda visible en los dos modos
-- El `lang` va en el bloque (`<p>`, `<h2>`), no en un `<a>` dentro de párrafos distintos
-- No repetir `id` en el par ES
+## Idioma
+Sitio en inglés. El CV en español está como PDF. Texto en otro idioma dentro de la página va con su `lang` (`<span lang="es">`, `lang="fr"`).
 
 ## Imágenes
+- Escala de grises, WebP, en `img/90s/`, generadas a partir de los originales
+- Tamaño de archivo: 2x el ancho en pantalla (1.5x para fotos con mucho grano, con un desenfoque leve antes de achicar)
+- `width`/`height` del `<img>` = tamaño en pantalla, no el del archivo
+- Sin dithering: ahorraba poco y volvía ilegibles los textos de las imágenes
 - No rounded corners, ever
-- Tratamiento en escala de grises vía `--img-filter` + `--img-blend`:
-  - Light: `grayscale(100%) contrast(1.1)`, blend `normal`
-  - Dark: `grayscale(100%) contrast(0.9) brightness(0.9)`
-- Opt-out: `.plain` sobre el contenedor o `<img>`
-- `width`/`height` del `<img>` = dimensiones reales del archivo
+- Los originales que ya no se usan se borraron; están en el historial de git
 
-## Links
-- Subrayado siempre visible: 1px, offset 3px; hover → `--ink-mute`
+## Contacto
+Un solo mail en todo el sitio: `nicolas.bronzina@gmail.com`.
 
-## Espaciado
-- Escala 8px: `--space-1` (8) · 2 (16) · 3 (24) · 4 (32) · 6 (48) · 8 (64) · 12 (96) · 16 (128). No existen 5, 7, 9, 10, 11
-- Secciones: padding `--space-6` mobile, `--space-8 clamp(2rem, 8vw, 8rem)` desktop
-
-## Motion
-- Sin scroll reveal: el contenido es visible de entrada
-- Transiciones de color/borde 0.2s ease
-- Siempre respetar `prefers-reduced-motion` (forzado a 0.01ms)
-
-## Dark mode
-Toggle fijo top-right con fondo `var(--paper)` opaco. Clase `body.dark-mode` override todos los tokens CSS.
-Todos los elementos nuevos heredan de variables CSS — si un color no está tokenizado, no se adaptará.
+## Subpáginas
+`Coffee.html`, `CoffeeDecoded.html`, `Official.html` y `links/` mantienen su propio diseño por ahora. Ninguna registra service worker.
 
 ## Service worker
-Network-first para páginas, CSS y JS (un deploy se ve en la próxima visita). Cache-first para imágenes, fuentes y PDFs. No toca requests de otros orígenes.
+Ya no se usa. `service-worker.js` es un archivo que se desinstala solo (borra cachés, se desregistra y recarga) para quienes tenían una versión anterior. Mantenerlo publicado unos meses. No volver a registrar uno.
 
 ## Deploy
 GitHub Pages. Push a main = deploy automático.
