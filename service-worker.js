@@ -1,53 +1,53 @@
-const CACHE_NAME = 'nicolasbronzina-v6';
-const urlsToCache = [
+const CACHE_NAME = 'nicolasbronzina-v7';
+const PRECACHE = [
   '/',
   '/styles.css',
   '/script.js',
-  '/carbon.txt',
-  '/img/hi.webp',
-  '/img/hi-sm.webp',
-  '/fonts/jetbrains-mono-normal-400-latin.woff2',
-  '/fonts/jetbrains-mono-normal-400-latin-ext.woff2'
+  '/img/hi-sm.webp'
 ];
 
-// Install event - cache core assets
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(PRECACHE)));
+  self.skipWaiting();
 });
 
-// Fetch event - serve from cache, fallback to network
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      }
-    )
-  );
-});
-
-// Activate event - clean up old caches
+// Drop caches from previous versions and take control of open tabs
 self.addEventListener('activate', event => {
-  const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
+    caches.keys()
+      .then(names => Promise.all(names.filter(name => name !== CACHE_NAME).map(name => caches.delete(name))))
+      .then(() => self.clients.claim())
+  );
+});
+
+function cacheCopy(request, response) {
+  if (response.ok) {
+    const copy = response.clone();
+    caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+  }
+  return response;
+}
+
+// Pages, CSS and JS: network first, so a deploy shows up on the next visit;
+// the cache is only the offline fallback.
+// Images, fonts and PDFs: cache first, filled as they are requested.
+// Cross-origin requests (Google Fonts, Internet Archive audio, CDN) go straight to the network.
+self.addEventListener('fetch', event => {
+  const { request } = event;
+  if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
+
+  const isPage = request.mode === 'navigate';
+  if (isPage || request.destination === 'style' || request.destination === 'script') {
+    event.respondWith(
+      fetch(request)
+        .then(response => cacheCopy(request, response))
+        .catch(() => caches.match(request)
+          .then(cached => cached || (isPage && caches.match('/')) || Response.error()))
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(request).then(cached => cached || fetch(request).then(response => cacheCopy(request, response)))
   );
 });

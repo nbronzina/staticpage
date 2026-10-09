@@ -1,13 +1,7 @@
 /* =========================================================
    Nicolás Bronzina — Direction B: Carbon Neutral Editorial
-   Redesign 2026 — Lowtech minimalism meets sustainability
-   Pure B&W · Monospace only · Radical simplification
+   Pure B&W · Single typeface (Jost) · Radical simplification
    ========================================================= */
-
-/* ────────────────────────────────────────────────────────
-   FONTS — System font stack (zero download)
-   ──────────────────────────────────────────────────────── */
-/* Native system fonts for best performance and readability */
 
 /* ────────────────────────────────────────────────────────
    DESIGN TOKENS
@@ -44,10 +38,6 @@
   --space-12: 6rem;        /* 96px */
   --space-16: 8rem;        /* 128px */
 
-  /* Layout */
-  --max-width: 1280px;
-  --gutter: clamp(1.5rem, 5vw, 6rem);
-
   /* Images */
   --img-filter: grayscale(100%) contrast(1.1);
   --img-blend: normal;
@@ -71,6 +61,10 @@ body.dark-mode {
   -webkit-tap-highlight-color: transparent;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -78,7 +72,6 @@ html, body {
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -153,17 +146,9 @@ a:hover {
 strong {
   font-weight: 600;
 }
-
 /* ────────────────────────────────────────────────────────
    LAYOUT SYSTEM
    ──────────────────────────────────────────────────────── */
-.dirA-container,
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-}
-
 .dirA-top {
   padding: var(--space-12) clamp(1.5rem, 5vw, 2rem) var(--space-8) clamp(1.5rem, 5vw, 2rem);
   border-bottom: 2px solid var(--ink);
@@ -217,15 +202,6 @@ strong {
   margin-bottom: var(--space-6);
 }
 
-.section-meta {
-  font-size: var(--text-sm);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ink-mute);
-  order: -1;
-}
-
 .dirA-section-intro {
   margin-top: 0;
   margin-bottom: var(--space-6);
@@ -233,47 +209,6 @@ strong {
   color: var(--ink-mute);
   font-size: var(--text-base);
   line-height: 1.5;
-}
-
-/* ────────────────────────────────────────────────────────
-   HEADER
-   ──────────────────────────────────────────────────────── */
-.dirA-h1 {
-  font-size: clamp(2rem, 5vw, var(--text-4xl));
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  margin-bottom: var(--space-2);
-}
-
-.dirA-tagline {
-  font-size: var(--text-lg);
-  font-weight: 400;
-  color: var(--ink-mute);
-  line-height: 1.5;
-  max-width: 60ch;
-}
-
-/* ────────────────────────────────────────────────────────
-   PROJECTS
-   ──────────────────────────────────────────────────────── */
-.project-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-3);
-  padding: var(--space-4) 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-@media (min-width: 768px) {
-  .project-row {
-    grid-template-columns: 2fr 3fr;
-    gap: var(--space-6);
-  }
-}
-
-.project-row:last-child {
-  border-bottom: none;
 }
 
 /* CV rows — always vertical stacked */
@@ -295,80 +230,6 @@ strong {
   margin-bottom: var(--space-3);
 }
 
-.project-meta,
-.cv-meta {
-  font-size: var(--text-sm);
-  color: var(--ink-mute);
-  font-weight: 500;
-}
-
-.project-desc,
-.cv-desc {
-  font-size: var(--text-base);
-  line-height: 1.6;
-  max-width: 58ch;
-}
-
-.project-desc p,
-.cv-desc p {
-  margin-bottom: var(--space-2);
-}
-
-.project-cta,
-.cv-cta {
-  display: inline-block;
-  margin-top: var(--space-2);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: var(--space-1) var(--space-2);
-  border: 1px solid var(--ink);
-  transition: all 0.2s ease;
-}
-
-.project-cta:hover,
-.cv-cta:hover {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-/* Project images */
-.project-img,
-.project-img-row {
-  margin: var(--space-3) 0;
-}
-
-.project-img img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: var(--img-filter);
-  mix-blend-mode: var(--img-blend);
-}
-
-.project-img.plain img {
-  filter: none;
-  mix-blend-mode: normal;
-}
-
-/* ────────────────────────────────────────────────────────
-   HERO IMAGE
-   ──────────────────────────────────────────────────────── */
-.dirA-hero {
-  margin: var(--space-6) 0;
-  width: 100%;
-  max-width: 320px;
-}
-
-.dirA-hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: var(--img-filter);
-  border: 2px solid var(--ink);
-}
-
 /* ────────────────────────────────────────────────────────
    LINKS & INTERACTIONS
    ──────────────────────────────────────────────────────── */
@@ -380,7 +241,7 @@ strong {
 }
 
 /* Underline — always visible (behavioral design: clear affordance) */
-.dirA-section a:not(.project-cta):not(.cv-cta),
+.dirA-section a,
 .dirA-intro a,
 p a {
   text-decoration: underline;
@@ -391,7 +252,7 @@ p a {
 }
 
 @media (hover: hover) {
-  .dirA-section a:not(.project-cta):not(.cv-cta):hover,
+  .dirA-section a:hover,
   .dirA-intro a:hover,
   p a:hover {
     color: var(--ink-mute);
@@ -426,38 +287,6 @@ p a {
   font-size: var(--text-base);
 }
 
-.dirA-foot-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
-}
-
-@media (min-width: 768px) {
-  .dirA-foot-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
-  }
-}
-
-.dirA-foot h4 {
-  font-size: var(--text-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--space-2);
-  font-weight: 600;
-}
-
-.dirA-foot ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dirA-foot li {
-  margin-bottom: var(--space-1);
-  font-size: var(--text-sm);
-}
-
 .dirA-foot a {
   color: var(--ink-mute);
   transition: color 0.2s ease;
@@ -480,11 +309,6 @@ p a {
   font-size: var(--text-sm);
   color: var(--ink-mute);
   line-height: 1.6;
-}
-
-.sustainability-data strong {
-  color: var(--ink);
-  font-weight: 700;
 }
 
 .privacy-statement {
@@ -615,56 +439,15 @@ body.lang-es #lang-toggle .lang-en {
   display: none;
 }
 
-/* Language switching - hide/show content */
+/* Language switching: an EN element is hidden only when its ES translation
+   follows it, so untranslated EN content stays visible in both modes.
+   Kept as two rules so a browser without :has() still drops only the second. */
 body:not(.lang-es) [lang="es"] {
   display: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
-body.lang-es [lang="en"] {
+body.lang-es [lang="en"]:has(+ [lang="es"]) {
   display: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* ────────────────────────────────────────────────────────
-   BACK TO TOP
-   ──────────────────────────────────────────────────────── */
-#backToTop {
-  position: fixed;
-  bottom: var(--space-3);
-  right: var(--space-3);
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--ink);
-  background: var(--paper);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.2s ease;
-  z-index: 999;
-}
-
-#backToTop.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-#backToTop:hover {
-  background: var(--ink);
-}
-
-#backToTop svg {
-  stroke: var(--ink);
-  transition: stroke 0.2s ease;
-}
-
-#backToTop:hover svg {
-  stroke: var(--paper);
 }
 
 /* ────────────────────────────────────────────────────────
@@ -714,6 +497,7 @@ body.lang-es [lang="en"] {
 .project-audio-time {
   font-size: var(--text-xs);
   color: var(--ink-mute);
+  white-space: nowrap;
 }
 
 .audio-btn {
@@ -746,34 +530,7 @@ body.lang-es [lang="en"] {
 .audio-time {
   font-size: var(--text-xs);
   color: var(--ink-mute);
-}
-
-/* ────────────────────────────────────────────────────────
-   SCROLL REVEAL — Removed for behavioral design clarity
-   Content is immediately visible, reducing cognitive load
-   ──────────────────────────────────────────────────────── */
-.dirA-section,
-.dirA-intro {
-  opacity: 1;
-  transform: none;
-}
-
-/* ────────────────────────────────────────────────────────
-   CV SPECIFIC
-   ──────────────────────────────────────────────────────── */
-.cv-block {
-  margin-bottom: var(--space-6);
-}
-
-.cv-block h4 {
-  font-size: var(--text-lg);
-  margin-bottom: var(--space-1);
-}
-
-.cv-block .mono {
-  display: block;
-  margin-bottom: var(--space-2);
-  color: var(--ink-mute);
+  white-space: nowrap;
 }
 
 /* ────────────────────────────────────────────────────────
@@ -816,16 +573,6 @@ body.lang-es [lang="en"] {
     text-align: left;
   }
 
-  /* Section headers: 2-column layout */
-  .dirA-section-head {
-    grid-template-columns: 1fr auto;
-    gap: var(--space-4);
-  }
-
-  .section-meta {
-    order: 0;
-  }
-
   /* Audio player: position next to both toggles on desktop */
   .audio-player {
     top: var(--space-1);
@@ -853,16 +600,10 @@ body.lang-es [lang="en"] {
     background: white;
     color: black;
   }
-
-  .dirA-section,
-  .dirA-intro {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 /* ────────────────────────────────────────────────────────
-   MISSING CLASSES — Complete Integration
+   COMPONENTS
    ──────────────────────────────────────────────────────── */
 
 /* ═══ Header Specific ═══ */
@@ -946,7 +687,6 @@ body.lang-es [lang="en"] {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-6);
-  counter-reset: project-counter;
 }
 
 /* Tablet and up: 2-column, featured projects span full width */
@@ -970,7 +710,6 @@ body.lang-es [lang="en"] {
 .dirA-project {
   border: 1px solid var(--rule);
   padding: var(--space-4);
-  counter-increment: project-counter;
   position: relative;
   transition: border-color 0.28s ease;
 }
@@ -1006,15 +745,6 @@ body.lang-es [lang="en"] {
   max-height: 400px;
   object-fit: cover;
   object-position: center;
-}
-
-/* Counter */
-.dirA-project-body h3::before {
-  content: "0" counter(project-counter) " · ";
-  font-size: var(--text-sm);
-  color: var(--ink-mute);
-  font-weight: 600;
-  font-family: var(--mono);
 }
 
 .dirA-project-body {
@@ -1238,49 +968,6 @@ body.dark-mode .dirA-project--quiet {
   font-size: var(--text-base);
 }
 
-.dirA-also-card-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-2);
-}
-
-.dirA-also-card-head h4 {
-  margin: 0;
-}
-
-.dirA-also-badge {
-  font-size: var(--text-xs);
-  padding: 1px var(--space-2);
-  border: 1px solid currentColor;
-  white-space: nowrap;
-  flex-shrink: 0;
-  line-height: 1.6;
-}
-
-.dirA-also-badge--live {
-  color: oklch(44% 0.14 145);
-}
-
-body.dark-mode .dirA-also-badge--live {
-  color: oklch(70% 0.18 145);
-}
-
-.dirA-also-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-top: auto;
-  padding-top: var(--space-2);
-}
-
-.dirA-also-tag {
-  font-size: var(--text-xs);
-  padding: 2px var(--space-2);
-  border: 1px solid var(--rule);
-  color: var(--ink-mute);
-}
-
 /* ═══ Editorial ═══ */
 .dirA-editorial-grid {
   display: grid;
@@ -1301,10 +988,6 @@ body.dark-mode .dirA-also-badge--live {
   gap: var(--space-4);
 }
 
-.dirA-ed:last-child {
-  margin-bottom: 0;
-}
-
 .dirA-ed-img {
   width: 100%;
   max-width: 240px;
@@ -1316,11 +999,6 @@ body.dark-mode .dirA-also-badge--live {
   display: block;
   filter: var(--img-filter);
   mix-blend-mode: var(--img-blend);
-}
-
-.dirA-ed-img.plain img {
-  filter: none;
-  mix-blend-mode: normal;
 }
 
 .dirA-ed-body {
@@ -1390,18 +1068,13 @@ body.dark-mode .dirA-also-badge--live {
   font-weight: 600;
 }
 
-.dirA-cv-block-head h3 {
-  font-size: var(--text-xl);
-  margin: 0;
-}
-
 .dirA-cv-expertise {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
   margin-top: var(--space-6);
   padding-top: var(--space-4);
-  border-top: 1px solid var(--rule-soft);
+  border-top: 1px solid var(--rule);
 }
 
 .dirA-cv-expertise p {
@@ -1477,17 +1150,6 @@ body.dark-mode .dirA-also-badge--live {
   margin-bottom: var(--space-2);
 }
 
-.dirA-cv-doc ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dirA-cv-doc li {
-  font-size: var(--text-sm);
-  margin-bottom: var(--space-1);
-}
-
 .dirA-cv-left,
 .dirA-cv-right {
   display: flex;
@@ -1555,8 +1217,6 @@ body.dark-mode .dirA-also-badge--live {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-1);
-  font-size: var(--text-sm);
   width: 32px;
   height: 32px;
   border: 1px solid var(--ink);
@@ -1579,15 +1239,6 @@ body.dark-mode .dirA-also-badge--live {
 .social a:hover svg {
   stroke: var(--paper);
   fill: none;
-}
-
-.social svg[fill="currentColor"] {
-  fill: var(--ink);
-  stroke: none;
-}
-
-.social a:hover svg[fill="currentColor"] {
-  fill: var(--paper);
 }
 
 /* ═══ Role Line ═══ */
@@ -1630,6 +1281,11 @@ body.dark-mode .dirA-also-badge--live {
 
 .back-to-top:hover {
   background: var(--ink);
+}
+
+.back-to-top svg {
+  stroke: var(--ink);
+  transition: stroke 0.2s ease;
 }
 
 .back-to-top:hover svg {
