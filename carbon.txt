@@ -57,4 +57,4 @@ green_hosting = false
 [last_updated]
 date = 2026-10-09
 by = Nicolás Bronzina
-contact = hola@nicolasbronzina.com
+contact = nicolas.bronzina@gmail.com
