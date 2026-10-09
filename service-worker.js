@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nicolasbronzina-v7';
+const CACHE_NAME = 'nicolasbronzina-v8';
 const PRECACHE = [
   '/',
   '/styles.css',
