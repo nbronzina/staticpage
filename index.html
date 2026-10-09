@@ -68,18 +68,30 @@
   table { border-collapse: collapse; }
   th, td { border: 1px solid; padding: .2em .6em; text-align: left; }
   li { margin-bottom: .4em; }
+  p, li, dd { text-wrap: pretty; }
+  h4 { margin-bottom: .2em; }
+  h4 + p { margin-top: 0; }
+  .skip { position: absolute; left: -100vw; }
+  .skip:focus { left: 1em; top: 1em; background: #fff; padding: .2em .5em; }
   footer { margin-top: 3em; padding: 2em 0 1em; background: #222; color: #eee; }
   footer a { color: inherit; }
   footer hr { border: 0; border-top: 1px solid #888; }
   footer ul { list-style: none; padding: 0; }
-  footer li { margin-bottom: 0; }
+  footer li { margin-bottom: .35em; }
   .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1em; }
   .label { font-variant: small-caps; letter-spacing: .05em; color: #aaa; }
   figure { margin: 1em 0; }
   figcaption { font-size: .85em; color: #bbb; margin-top: .4em; }
+  @media print {
+    footer { background: none; color: #000; }
+    .label, figcaption { color: #444; }
+    nav, audio, .skip { display: none; }
+  }
 </style>
 </head>
 <body>
+
+<a class="skip" href="#content">Skip to content</a>
 
 <div class="page">
 
@@ -95,7 +107,7 @@ Madrid ↔ Buenos Aires</p>
 <hr>
 </header>
 
-<main>
+<main id="content">
 
 <section id="now">
 <h2>Now</h2>
@@ -133,7 +145,7 @@ Madrid ↔ Buenos Aires</p>
 
 <h4><a href="https://www.youtube.com/watch?v=nApY_pWiY9I">Desert Athleisure</a></h4>
 <p>Fictional product line, at Heated Studio</p>
-<p><img src="img/90s/desert-athleisure.webp" width="560" height="213" alt="Desert Athleisure speculative sportswear collection for cities where summer reaches 40°C"></p>
+<p><img src="img/90s/desert-athleisure.webp" loading="lazy" decoding="async" width="560" height="213" alt="Desert Athleisure speculative sportswear collection for cities where summer reaches 40°C"></p>
 <p>A fictional sportswear line for cities where summer heat regularly hits 40°C or above.</p>
 <p>Also: <a href="https://drive.google.com/file/d/1MyQMEEvz6jRql5MN79UZ3hftiBRgZSOW/view">landing page</a></p>
 
@@ -150,7 +162,7 @@ Madrid ↔ Buenos Aires</p>
 </ul>
 
 <h3 id="food">Futures of Food</h3>
-<p>Food as a futures problem: what climate, culture, and politics are doing to what we eat &mdash; and what we might eat next.</p>
+<p>Food as a futures problem: what climate, culture, and politics are doing to what we eat, and what we might eat next.</p>
 
 <h4><a href="https://rescoldo.vercel.app/">Rescoldo</a></h4>
 <p>Diegetic archive</p>
@@ -179,7 +191,7 @@ Madrid ↔ Buenos Aires</p>
 <p>A voice assistant for people navigating integration after displacement.</p>
 
 <h3 id="ai">AI and Personal Software</h3>
-<p>Notes on building with tools I&rsquo;m still figuring out &mdash; and the everyday friction of working alongside machines.</p>
+<p>Notes on building with tools I&rsquo;m still figuring out, and the everyday friction of working alongside machines.</p>
 <ul>
 <li><a href="https://medium.com/@nbronzina/ense%C3%B1ando-inteligencia-artificial-a-dise%C3%B1adores-ux-694c3a1611d7">Teaching Artificial Intelligence to UX Designers</a><br>
 - notes from a masterclass with Fabien Girardin and Rohit Gupta for UX design students at UDIT</li>
@@ -227,19 +239,21 @@ Madrid ↔ Buenos Aires</p>
 <h3><a href="https://www.youtube.com/@otrosfuturos">Otros Futuros</a></h3>
 <p><i>Futures design, design fiction, speculative design.</i></p>
 <p>Weak signals from the present. Futures-thinking methods. Speculative experiments, live. The orientation is toward making things: show the future, don&rsquo;t tell the future.</p>
-<p>What I&rsquo;ve learned, what I&rsquo;ve applied, what I&rsquo;m still testing &mdash; from practice.</p>
+<p>What I&rsquo;ve learned, what I&rsquo;ve applied, what I&rsquo;m still testing: from practice.</p>
 <p>New content every week. <a href="https://www.youtube.com/@otrosfuturos">Watch on YouTube</a>.</p>
 
 <h3>MARGIN.SIGNALS</h3>
-<p><img src="img/90s/margin-signals.webp" width="240" height="358" alt="MARGIN.SIGNALS Release 001 cover"></p>
+<p><img src="img/90s/margin-signals.webp" loading="lazy" decoding="async" width="240" height="358" alt="MARGIN.SIGNALS Release 001 cover"></p>
 <p><i>An independent publication tracking weak signals from cultural margins before they reshape the industry.</i></p>
 <p><b>Release 001: Specialty.Coffee.Margins</b></p>
 <p>What happens when coffee's margins challenge its center? This trendspotting fanzine explores master plant protocols, intentional defect fermentation, and decolonised cupping: patterns of hierarchy inversion you'll see elsewhere soon.</p>
 <p>Limited prototype run. Access by direct request only.</p>
 <table>
+<tbody>
 <tr><td>Digital edition</td><td>€8</td></tr>
 <tr><td>Physical edition (limited print)</td><td>€15</td></tr>
 <tr><td>Dual bundle (digital + print)</td><td>€24</td></tr>
+</tbody>
 </table>
 <p>Request your copy at <a href="mailto:nicolas.bronzina@gmail.com?subject=MARGIN.SIGNALS%20Request&amp;body=Hi%20Nicolás%2C%20I'd%20like%20to%20acquire%20MARGIN.SIGNALS%20Release%20001.%0A%0AFormat%3A%20%5BDigital%20%E2%82%AC8%20%2F%20Physical%20%E2%82%AC15%20%2F%20Bundle%20%E2%82%AC24%5D%0A%0AName%3A%0ALocation%20(for%20physical%20edition)%3A">nicolas.bronzina@gmail.com</a> or via <a href="https://instagram.com/margin.signals">@margin.signals</a> on Instagram.</p>
 
@@ -281,7 +295,7 @@ Madrid ↔ Buenos Aires</p>
 
 <section id="about">
 <h2>About</h2>
-<p><img src="img/90s/portrait.webp" width="280" height="280" alt="Nicolás Bronzina in a cap and glasses, hands clasped"></p>
+<p><img src="img/90s/portrait.webp" loading="lazy" decoding="async" width="280" height="280" alt="Nicolás Bronzina in a cap and glasses, hands clasped"></p>
 
 <p>My starting point is never technology. It&rsquo;s someone specific, in a specific situation, dealing with a future that arrived without asking. I trained as a sociologist before becoming a designer, and it shows: I&rsquo;m less interested in what the future looks like than in who has to live in it, and how.</p>
 
@@ -384,7 +398,7 @@ Working in English and Spanish</p>
 </div>
 </div>
 <figure>
-<img src="img/90s/teaching.webp" width="560" height="315" alt="Nicolás Bronzina leading an outdoor session with a group of students seated on wooden steps, notebooks in hand">
+<img src="img/90s/teaching.webp" loading="lazy" decoding="async" width="560" height="315" alt="Nicolás Bronzina leading an outdoor session with a group of students seated on wooden steps, notebooks in hand">
 <figcaption><a href="https://medium.com/heated-consultancy/inhabiting-the-future-0cc470f47b93">Design fiction <span lang="es">al aire libre</span></a>: teaching climate adaptation in January, at a wooden amphitheatre in Matadero. Photo: Rohit Gupta.</figcaption>
 </figure>
 <p><small>Handcrafted HTML. No JavaScript, no cookies, no tracking, no analytics. This page weighs about 110 KB.<br>
