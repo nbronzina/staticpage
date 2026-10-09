@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <title>Nicolás Bronzina - Futures Designer</title>
 <meta name="description" content="Futures Designer working with AI, sociology, and design fiction. I build prototypes and design-fiction artifacts that turn research into decisions organizations can act on.">
 <meta name="author" content="Nicolás Bronzina">
@@ -11,8 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='65' font-weight='700' font-family='serif' fill='%23000'>NB</text></svg>">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.nicolasbronzina.com/">
 <meta property="og:title" content="Nicolás Bronzina - Futures Designer">
@@ -52,16 +51,24 @@
 }
 </script>
 <style>
-  html { color-scheme: light dark; }
+  html { color-scheme: light; font-size: clamp(100%, 0.25vw + 0.75rem, 112.5%); }
   body { margin: 0; line-height: 1.45; }
   header, main, footer > div { max-width: 35em; margin: 0 auto; padding: 0 1em; }
+  /* Wide screens: identity and index in a fixed left column, content beside it */
+  @media (min-width: 62em) {
+    .page { display: grid; grid-template-columns: clamp(1em, 5vw, 6em) 14em 4em minmax(0, 35em) 1fr; }
+    header { grid-column: 2; position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto; margin: 0; padding: 1em 0; max-width: none; }
+    header hr { display: none; }
+    main { grid-column: 4; margin: 0; padding: 1em 0 0; max-width: none; }
+    footer > div { margin-left: calc(clamp(1em, 5vw, 6em) + 18em); padding: 0; }
+  }
   header { padding-top: 1em; }
   img { max-width: 100%; height: auto; }
   dd { margin-bottom: 1em; }
   table { border-collapse: collapse; }
   th, td { border: 1px solid; padding: .2em .6em; text-align: left; }
   li { margin-bottom: .4em; }
-  footer { margin-top: 3em; padding: 2em 0 1em; background: #222; background: light-dark(#222, #333); color: #eee; }
+  footer { margin-top: 3em; padding: 2em 0 1em; background: #222; color: #eee; }
   footer a { color: inherit; }
   footer hr { border: 0; border-top: 1px solid #888; }
   footer ul { list-style: none; padding: 0; }
@@ -73,6 +80,8 @@
 </style>
 </head>
 <body>
+
+<div class="page">
 
 <header>
 <h1 id="top">Nicolás Bronzina</h1>
@@ -92,7 +101,7 @@ Madrid ↔ Buenos Aires</p>
 <h2>Now</h2>
 <ul>
 <li>Relaunching <a href="https://www.instagram.com/futures_madrid/">Speculative Futures Madrid</a>, the local chapter of <a href="https://www.speculativefutures.design/">The Design Futures Initiative</a>, after a three-year pause (September 2026).</li>
-<li>Teaching Emerging Technologies in <a href="https://www.udit.es/">UDIT</a>&rsquo;s Online Master&rsquo;s in UX Design.</li>
+<li>Teaching Emerging Technologies in <a href="https://www.udit.es/">UDIT</a>&rsquo;s Online Master&rsquo;s in UX Design (since April 2026).</li>
 </ul>
 <p>Working on something that doesn&rsquo;t have a clear future yet? <a href="mailto:nicolas.bronzina@gmail.com">Let&rsquo;s talk</a>.</p>
 </section>
@@ -272,7 +281,7 @@ Madrid ↔ Buenos Aires</p>
 
 <section id="about">
 <h2>About</h2>
-<p><img src="img/90s/hi.webp" width="240" height="281" alt="Nicolás Bronzina, arms crossed, in front of a sign that says Hi!"></p>
+<p><img src="img/90s/portrait.webp" width="280" height="280" alt="Nicolás Bronzina in a cap and glasses, hands clasped"></p>
 
 <p>My starting point is never technology. It&rsquo;s someone specific, in a specific situation, dealing with a future that arrived without asking. I trained as a sociologist before becoming a designer, and it shows: I&rsquo;m less interested in what the future looks like than in who has to live in it, and how.</p>
 
@@ -302,13 +311,13 @@ Madrid ↔ Buenos Aires</p>
 
 <h3>Experience</h3>
 <ul>
-<li><b><a href="https://www.instagram.com/futures_madrid/">Speculative Futures Madrid</a></b> (The Design Futures Initiative), Chapter Co-Lead</li>
-<li><b><a href="https://www.udit.es/">UDIT</a></b>, Universidad de Diseño, Innovación y Tecnología (Madrid), Emerging Technologies Curriculum Designer, Online Master&rsquo;s in UX Design</li>
-<li><b><a href="https://mundanidadforzada.org/">Lab de Mundanidad Forzada</a></b>, Research Coordinator &amp; Lab Initiator: collaborative experiments on forced mundanity through ethnographic methods and design interventions</li>
-<li><b><a href="https://www.heated.studio/">Heated Studio</a></b>, Co-founder &amp; Design Fiction Lead</li>
-<li><b><a href="https://www.bppanalyticsanddesign.com/">BPP Analytics &amp; Design</a></b>, Managing Partner</li>
-<li><b><a href="https://fabiengirardin.com/">Girardin &amp; Nova</a></b>, Design Researcher</li>
-<li><b><a href="https://nearfuturelaboratory.com/">Near Future Laboratory</a></b>, Design Researcher</li>
+<li>2026&ndash;present / <b><a href="https://www.instagram.com/futures_madrid/">Speculative Futures Madrid</a></b> (The Design Futures Initiative), Chapter Co-Lead</li>
+<li>2026&ndash;present / <b><a href="https://www.udit.es/">UDIT</a></b>, Universidad de Diseño, Innovación y Tecnología (Madrid), Emerging Technologies Curriculum Designer, Online Master&rsquo;s in UX Design</li>
+<li>2025&ndash;present / <b><a href="https://mundanidadforzada.org/">Lab de Mundanidad Forzada</a></b>, Research Coordinator &amp; Lab Initiator: collaborative experiments on forced mundanity through ethnographic methods and design interventions</li>
+<li>2024&ndash;present / <b><a href="https://www.heated.studio/">Heated Studio</a></b>, Co-founder &amp; Design Fiction Lead</li>
+<li>2024&ndash;present / <b><a href="https://www.bppanalyticsanddesign.com/">BPP Analytics &amp; Design</a></b>, Managing Partner</li>
+<li>2024&ndash;2025 / <b><a href="https://fabiengirardin.com/">Girardin &amp; Nova</a></b>, Design Researcher</li>
+<li>2023&ndash;2024 / <b><a href="https://nearfuturelaboratory.com/">Near Future Laboratory</a></b>, Design Researcher</li>
 </ul>
 
 <h3>Teaching</h3>
@@ -339,6 +348,8 @@ Madrid ↔ Buenos Aires</p>
 </section>
 
 </main>
+
+</div>
 
 <footer id="contact">
 <div>
@@ -376,7 +387,7 @@ Working in English and Spanish</p>
 <img src="img/90s/teaching.webp" width="560" height="315" alt="Nicolás Bronzina leading an outdoor session with a group of students seated on wooden steps, notebooks in hand">
 <figcaption><a href="https://medium.com/heated-consultancy/inhabiting-the-future-0cc470f47b93">Design fiction <span lang="es">al aire libre</span></a>: teaching climate adaptation in January, at a wooden amphitheatre in Matadero. Photo: Rohit Gupta.</figcaption>
 </figure>
-<p><small>Handcrafted HTML. No JavaScript, no cookies, no tracking, no analytics. This page weighs about 120 KB.<br>
+<p><small>Handcrafted HTML. No JavaScript, no cookies, no tracking, no analytics. This page weighs about 110 KB.<br>
 Last updated: 9 October 2026.</small></p>
 </div>
 </footer>

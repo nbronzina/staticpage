@@ -6,14 +6,16 @@ Fuente de verdad: `index.html` (el CSS va inline, en el `<style>` del head).
 NO editar archivos `.min.*` si existen.
 
 ## Sistema visual (Classic HTML, desde octubre 2026)
-Estilos por defecto del navegador: la tipografía serif del sistema (Times), links azules subrayados, `<hr>` entre secciones. Lo único moderno es invisible: viewport, ancho de columna, modo oscuro automático.
+Estilos por defecto del navegador: la tipografía serif del sistema (Times), links azules subrayados, `<hr>` entre secciones. Solo modo claro. Lo único moderno es invisible: viewport, ancho de columna y la disposición en pantallas anchas.
 Referencias del benchmark: Knuth (HTML por defecto pero ordenado), Norvig (una línea por ítem), Bret Victor (trabajo agrupado por temas, bio al final), Dexter Sinister (metadatos fecha / tipo / título), Tufte (footer).
 
 ## CSS
 - Todo inline en el head, pocas líneas. No agregar hojas de estilo externas.
-- `color-scheme: light dark`: el navegador resuelve el modo oscuro según el sistema. No hay toggle.
+- Solo modo claro (`color-scheme: light`). No hay modo oscuro ni toggle, tampoco en las subpáginas.
 - Columna: `max-width: 35em` en `header`, `main` y `footer > div`.
-- Footer: bloque invertido (`#222`, en oscuro `#333` vía `light-dark()` con fallback).
+- Pantallas anchas (≥ 62em): `.page` es una grilla; el `header` (nombre, lede, contacto, índice) queda fijo en una columna izquierda de 14em y `main` al lado. El footer se alinea con `main`. En celular y tablet, una sola columna.
+- El tamaño de letra crece levemente en pantallas grandes: `clamp(100%, 0.25vw + 0.75rem, 112.5%)` (16 a 18 px).
+- Footer: bloque invertido `#222`.
 - No fijar `font-family` en el body: se usa la del navegador.
 
 ## Estructura de la portada
@@ -26,7 +28,7 @@ Header (nombre, rol, lede, email / CV, índice) → Now → Work → Editorial �
 - **Curriculum:** una línea por puesto; el detalle va en `cv-en.pdf` y `cv-es.pdf`.
 - **Footer:** nombre, email, base, idiomas de trabajo, secciones y perfiles en dos columnas (texto, sin íconos), foto de cierre con pie y crédito, colofón con peso de la página y fecha de actualización.
 - Cada sección termina con `[top]`.
-- Faltan datos: años de proyectos y puestos, créditos, imágenes de seis proyectos. Se agregan cuando Nicolás los pase; no inventarlos.
+- Experiencia con años (de LinkedIn, octubre 2026), formato `2024&ndash;present / Org, Rol`. Faltan: años de proyectos, docencia y estudios; créditos; imágenes de seis proyectos. Se agregan cuando Nicolás los pase; no inventarlos.
 
 ## Idioma
 Sitio en inglés. El CV en español está como PDF. Texto en otro idioma dentro de la página va con su `lang` (`<span lang="es">`, `lang="fr"`).
