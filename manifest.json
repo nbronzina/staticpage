@@ -1,11 +1,11 @@
 {
   "name": "Nicolás Bronzina — Portfolio",
   "short_name": "N. Bronzina",
-  "description": "AI-Enhanced Futures Designer based in Madrid",
+  "description": "Futures Designer working with AI, sociology, and design fiction",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F4EFE6",
-  "theme_color": "#1A1715",
+  "background_color": "#FFFFFF",
+  "theme_color": "#000000",
   "orientation": "portrait-primary",
   "icons": [
     {

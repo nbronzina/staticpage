@@ -26,8 +26,8 @@
   <meta name="twitter:image" content="https://www.nicolasbronzina.com/og-image.png">
 
   <!-- Theme Color -->
-  <meta name="theme-color" content="#F4EFE6" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#1A1715" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://www.nicolasbronzina.com/">
@@ -91,13 +91,6 @@
     }
   }
   </script>
-
-  <!-- No-JS Fallback -->
-  <noscript>
-    <style>
-      .dirA-section, .dirA-intro { opacity: 1 !important; transform: none !important; }
-    </style>
-  </noscript>
 </head>
 <body>
 
@@ -105,28 +98,28 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Audio Player -->
-  <div class="audio-player" id="audio-player">
+  <div class="audio-player" data-player>
     <span class="audio-label mono" lang="en">Nicolás, by Matías (Spanish)</span>
     <span class="audio-label mono" lang="es">Nicolás, por Matías</span>
-    <button id="audio-play" class="audio-btn" aria-label="Play">
+    <button class="audio-btn" data-play aria-label="Play">
       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 5v14l11-7z"/>
       </svg>
     </button>
-    <button id="audio-pause" class="audio-btn" aria-label="Pause">
+    <button class="audio-btn" data-pause aria-label="Pause" hidden>
       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 4h4v16H6zM14 4h4v16h-4z"/>
       </svg>
     </button>
-    <button id="audio-stop" class="audio-btn" aria-label="Stop">
+    <button class="audio-btn" data-stop aria-label="Stop">
       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <rect x="6" y="6" width="12" height="12"/>
       </svg>
     </button>
     <span class="audio-time mono">
-      <span id="audio-current">0:00</span> / <span id="audio-duration">0:00</span>
+      <span data-current>0:00</span> / <span data-duration>0:00</span>
     </span>
-    <audio id="audio-element" preload="metadata">
+    <audio preload="metadata">
       <source src="https://ia903205.us.archive.org/7/items/eleven-labs-otros-futuros-podcast/ElevenLabs_Otros_Futuros_Podcast.mp3" type="audio/mpeg">
     </audio>
   </div>
@@ -178,10 +171,10 @@
         <picture>
           <source type="image/webp"
                   srcset="img/hi-sm.webp 600w, img/hi.webp 1200w"
-                  sizes="(max-width: 860px) 280px, 320px">
+                  sizes="(min-width: 768px) 420px, 100vw">
           <img src="img/hi.jpg"
                srcset="img/hi-sm.jpg 600w, img/hi.jpg 1200w"
-               sizes="(max-width: 860px) 280px, 320px"
+               sizes="(min-width: 768px) 420px, 100vw"
                alt="Nicolás Bronzina profile picture"
                width="1200" height="1674"
                fetchpriority="high">
@@ -208,8 +201,8 @@
         <p lang="en">I was born in Buenos Aires, a city that teaches you early that scenarios flip. That turned out to be professional training.</p>
         <p lang="es">Nací en Buenos Aires, una ciudad que te enseña temprano que los escenarios se dan vuelta. Eso resultó ser formación profesional.</p>
 
-        <p lang="en">Working on something that doesn&rsquo;t have a clear future yet? <a href="mailto:nbronzina.claudeai@gmail.com">Let&rsquo;s talk<span class="sr-only"> (send email)</span></a>.</p>
-        <p lang="es">¿Trabajando en algo que todavía no tiene un futuro claro? <a href="mailto:nbronzina.claudeai@gmail.com">Hablemos<span class="sr-only"> (enviar email)</span></a>.</p>
+        <p lang="en">Working on something that doesn&rsquo;t have a clear future yet? <a href="mailto:nicolas.bronzina@gmail.com">Let&rsquo;s talk<span class="sr-only"> (send email)</span></a>.</p>
+        <p lang="es">¿Trabajando en algo que todavía no tiene un futuro claro? <a href="mailto:nicolas.bronzina@gmail.com">Hablemos<span class="sr-only"> (enviar email)</span></a>.</p>
       </div>
     </div>
   </section>
@@ -218,7 +211,7 @@
   <section class="dirA-section" id="projects" aria-labelledby="projects-head">
     <div class="dirA-section-head">
       <h2 id="projects-head" lang="en">Selected Projects</h2>
-      <h2 id="projects-head" lang="es">Proyectos</h2>
+      <h2 lang="es">Proyectos</h2>
     </div>
     <p class="dirA-section-intro" lang="en">These projects turn uncertain conditions into artifacts, experiences, and systems that people can examine, discuss, and act on.</p>
     <p class="dirA-section-intro" lang="es">Estos proyectos convierten condiciones inciertas en artefactos, experiencias y sistemas que las personas pueden examinar, discutir y sobre los que pueden actuar.</p>
@@ -228,7 +221,7 @@
           <div class="dirA-project-img">
             <picture>
               <source srcset="img/MST-map-sm.webp 800w, img/MST-map.webp 1600w" type="image/webp">
-              <img src="img/MST-map.jpg" srcset="img/MST-map-sm.jpg 800w, img/MST-map.jpg 1600w" alt="Someone holding the Mercado San Telmo 2031 map inside the market" width="1600" height="396" loading="lazy">
+              <img src="img/MST-map.jpg" alt="Someone holding the Mercado San Telmo 2031 map inside the market" width="1600" height="396" loading="lazy">
             </picture>
           </div>
           <h3><a href="https://www.futures-in-maps.com/san-telmo" target="_blank" rel="noopener noreferrer">Mercado San Telmo</a></h3>
@@ -236,28 +229,28 @@
           <p class="project-tldr" lang="es"><strong>TL;DR:</strong> Diseño ficción para un mercado centenario de Buenos Aires que navega el cambio climático, la transición a la ciudad de 15 minutos, y la pregunta de qué se convierte un lugar histórico cuando las condiciones para las que fue construido ya no se sostienen.</p>
           <p lang="en">San Telmo Market was built in 1897 for a city that no longer exists. This design fiction imagines it in 2031: retrofitted for extreme heat, reorganized around a 15-minute city model, with new programs layered over a century of use. The site includes a speculative map of the market and neighborhood, a tour narration recorded as if visiting from that year, and an open question about what preservation means when a place has to change to survive.</p>
           <p lang="es">El Mercado San Telmo fue construido en 1897 para una ciudad que ya no existe. Este diseño ficción lo imagina en 2031: adaptado al calor extremo, reorganizado en torno al modelo de ciudad de 15 minutos, con nuevos programas superpuestos sobre un siglo de uso. El sitio incluye un mapa especulativo del mercado y el barrio, una narración de recorrido grabada como si se visitara desde ese año, y una pregunta abierta sobre qué significa la preservación cuando un lugar tiene que cambiar para sobrevivir.</p>
-          <div class="project-audio mono">
+          <div class="project-audio mono" data-player>
             <span class="project-audio-label" lang="en">Tour narration</span>
             <span class="project-audio-label" lang="es">Narración del recorrido</span>
-            <button class="project-audio-play audio-btn" aria-label="Play">
+            <button class="audio-btn" data-play aria-label="Play">
               <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 5v14l11-7z"/>
               </svg>
             </button>
-            <button class="project-audio-pause audio-btn" aria-label="Pause" style="display: none;">
+            <button class="audio-btn" data-pause aria-label="Pause" hidden>
               <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 4h4v16H6zM14 4h4v16h-4z"/>
               </svg>
             </button>
-            <button class="project-audio-stop audio-btn" aria-label="Stop">
+            <button class="audio-btn" data-stop aria-label="Stop">
               <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <rect x="6" y="6" width="12" height="12"/>
               </svg>
             </button>
             <span class="project-audio-time">
-              <span class="project-audio-current">0:00</span> / <span class="project-audio-duration">0:00</span>
+              <span data-current>0:00</span> / <span data-duration>0:00</span>
             </span>
-            <audio class="project-audio-element" preload="metadata">
+            <audio preload="metadata">
               <source src="https://ia903109.us.archive.org/3/items/tour-mst-1/Tour%20MST%20%281%29.mp3" type="audio/mpeg">
             </audio>
           </div>
@@ -303,7 +296,7 @@
       <li class="dirA-project dirA-project--featured">
         <div class="dirA-project-body">
           <div class="dirA-project-img">
-            <img src="img/desert-athleisure.png" alt="Desert Athleisure speculative sportswear collection for cities where summer reaches 40°C" width="1600" height="900" loading="lazy">
+            <img src="img/desert-athleisure.png" alt="Desert Athleisure speculative sportswear collection for cities where summer reaches 40°C" width="795" height="302" loading="lazy">
           </div>
           <h3><a href="https://www.youtube.com/watch?v=nApY_pWiY9I" target="_blank" rel="noopener noreferrer">Desert Athleisure</a></h3>
           <p class="project-tldr" lang="en"><strong>TL;DR:</strong> A fictional sportswear collection designed for cities where summer reaches 40°C — giving fashion brands a concrete artifact to react to before extreme heat becomes the condition they're designing for, not the edge case.</p>
@@ -362,14 +355,14 @@
 
       <li class="dirA-project dirA-project--quiet">
         <div class="dirA-project-body">
-          <h3><a href="https://www.nicolasbronzina.com/Official.html" target="_blank" rel="noopener noreferrer">OFFicial</a></h3>
+          <h3><a href="Official.html" target="_blank" rel="noopener noreferrer">OFFicial</a></h3>
           <p class="project-tldr" lang="en"><strong>TL;DR:</strong> A voice assistant prototype for people navigating integration after displacement — designed to collect the kinds of information institutions were never built to ask for.</p>
           <p class="project-tldr" lang="es"><strong>TL;DR:</strong> Prototipo de asistente de voz para personas en proceso de integración tras el desplazamiento — diseñado para recopilar el tipo de información que las instituciones nunca fueron construidas para preguntar.</p>
           <p lang="en">A voice assistant for people navigating integration after displacement. Built around the gap between what institutions need to know and what they know how to ask — using conversation rather than forms to surface the things that don&rsquo;t fit in a field.</p>
           <p lang="es">Un asistente de voz para personas en proceso de integración tras el desplazamiento. Construido alrededor de la brecha entre lo que las instituciones necesitan saber y lo que saben cómo preguntar: usando conversación en lugar de formularios para revelar lo que no cabe en un campo.</p>
           <div class="mono dirA-project-meta">
-            <a class="ext" href="https://www.nicolasbronzina.com/Official.html" target="_blank" rel="noopener noreferrer" lang="en">Enter the scenario ↗</a>
-            <a class="ext" href="https://www.nicolasbronzina.com/Official.html" target="_blank" rel="noopener noreferrer" lang="es">Entrar al escenario ↗</a>
+            <a class="ext" href="Official.html" target="_blank" rel="noopener noreferrer" lang="en">Enter the scenario ↗</a>
+            <a class="ext" href="Official.html" target="_blank" rel="noopener noreferrer" lang="es">Entrar al escenario ↗</a>
           </div>
         </div>
       </li>
@@ -381,7 +374,7 @@
   <section class="dirA-section" id="writing" aria-labelledby="writing-head">
     <div class="dirA-section-head">
       <h2 id="writing-head" lang="en">Writing</h2>
-      <h2 id="writing-head" lang="es">Escritura</h2>
+      <h2 lang="es">Escritura</h2>
     </div>
     <p class="dirA-section-intro" lang="en">A collection of essays, workshops, frameworks, and investigations into how people imagine, design, and live through uncertain futures.</p>
     <p class="dirA-section-intro" lang="es">Una colección de ensayos, talleres, frameworks e investigaciones sobre cómo las personas imaginan, diseñan y viven a través de futuros inciertos.</p>
@@ -407,7 +400,7 @@
         <li><a href="https://medium.com/@nbronzina/viveza-criolla-a-model-for-the-future-dc2705802104" rel="noopener noreferrer" target="_blank">Viveza Criolla: A Design Fiction Lens on Strategic Adaptation</a></li>
         <li><a href="https://medium.com/@nbronzina/diegetic-discovery-kit-57f77e6074e9" rel="noopener noreferrer" target="_blank">A practical guide to changing how you see the everyday objects and spaces around you</a></li>
         <li><a href="https://medium.com/@nbronzina/turning-the-tide-ac23bdb8e7ba" target="_blank" rel="noopener noreferrer">Turning the Tide: How Argentina Can Transform Short-Term Survival into a Future-Ready Strategy</a></li>
-        <li><a href="https://atelierdesfuturs.org/q260-comment-reimaginer-le-futur-au-quotidien/" target="_blank" rel="noopener noreferrer">Comment réimaginer le futur au quotidian? / Re-imagining everyday futures</a></li>
+        <li><a href="https://atelierdesfuturs.org/q260-comment-reimaginer-le-futur-au-quotidien/" target="_blank" rel="noopener noreferrer">Comment réimaginer le futur au quotidien? / Re-imagining everyday futures</a></li>
         <li><a href="https://medium.com/@nbronzina/welcome-an-approach-to-prospective-methodology-based-on-futures-design-and-its-relation-to-6a5491518262" target="_blank" rel="noopener noreferrer">Prospective Methodology Based on Futures Design</a></li>
         <li><a href="https://medium.com/@nbronzina/a-shift-towards-strategic-foresight-a34a87050eff" target="_blank" rel="noopener noreferrer">How to prepare for and anticipate contingencies by proposing narratives and artifacts through Futures Design</a></li>
       </ol>
@@ -485,7 +478,7 @@
   <section class="dirA-section" id="editorial" aria-labelledby="editorial-head">
     <div class="dirA-section-head">
       <h2 id="editorial-head" lang="en">Editorial</h2>
-      <h2 id="editorial-head" lang="es">Editorial</h2>
+      <h2 lang="es">Editorial</h2>
     </div>
     <p class="dirA-section-intro" lang="en">A channel and publication for documenting practice, following weak signals, and making speculative thinking tangible.</p>
     <p class="dirA-section-intro" lang="es">Un canal y una publicación para documentar la práctica, seguir señales débiles y hacer tangible el pensamiento especulativo.</p>
@@ -502,16 +495,14 @@
         <h3>Otros Futuros</h3>
         <p class="dirA-ed-tagline" lang="en">Futures design, design fiction, speculative design.</p>
         <p class="dirA-ed-tagline" lang="es">Diseño de futuros, diseño ficción, diseño especulativo.</p>
-        <p lang="en">I&rsquo;m a futures designer. I build prototypes and speculative artifacts for organizations that have to make decisions without knowing what comes next.</p>
-        <p lang="es">Soy diseñador de futuros. Construyo prototipos y artefactos especulativos para organizaciones que tienen que tomar decisiones sin saber lo que viene.</p>
         <p lang="en">Weak signals from the present. Futures-thinking methods. Speculative experiments, live. The orientation is toward making things: show the future, don&rsquo;t tell the future.</p>
         <p lang="es">Señales débiles del presente. Métodos de pensamiento de futuros. Experimentos especulativos, en vivo. La orientación es hacia hacer cosas: mostrar el futuro, no contarlo.</p>
         <p lang="en">What I&rsquo;ve learned, what I&rsquo;ve applied, what I&rsquo;m still testing &mdash; from practice.</p>
         <p lang="es">Lo que aprendí, lo que apliqué, lo que sigo testeando &mdash; desde la práctica.</p>
         <p lang="en">New content every week.</p>
         <p lang="es">Contenido nuevo cada semana.</p>
-        <p><a class="dirA-ed-cta" href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener noreferrer" lang="en">Watch →</a></p>
-        <p><a class="dirA-ed-cta" href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener noreferrer" lang="es">Ver →</a></p>
+        <p lang="en"><a class="dirA-ed-cta" href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener noreferrer">Watch →</a></p>
+        <p lang="es"><a class="dirA-ed-cta" href="https://www.youtube.com/@otrosfuturos" target="_blank" rel="noopener noreferrer">Ver →</a></p>
       </div>
     </article>
 
@@ -579,11 +570,11 @@
         <p class="dirA-field-group-intro" lang="en">An ongoing investigation into coffee as culture, ritual, equipment, labor, taste, and place.</p>
         <div class="dirA-also-grid">
           <div class="dirA-also-card">
-            <h4><a href="https://www.nicolasbronzina.com/Coffee.html" target="_blank" rel="noopener noreferrer">Coffee.txt</a></h4>
+            <h4><a href="Coffee.html" target="_blank" rel="noopener noreferrer">Coffee.txt</a></h4>
             <p lang="en">Specialty coffee guide for Madrid.</p>
           </div>
           <div class="dirA-also-card">
-            <h4><a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" target="_blank" rel="noopener noreferrer">Coffee Decoded</a></h4>
+            <h4><a href="CoffeeDecoded.html" target="_blank" rel="noopener noreferrer">Coffee Decoded</a></h4>
             <p lang="en">Practical guide to home coffee equipment.</p>
           </div>
         </div>
@@ -596,7 +587,7 @@
   <section class="dirA-section" id="cv" aria-labelledby="cv-head">
     <div class="dirA-section-head">
       <h2 id="cv-head" lang="en">Curriculum</h2>
-      <h2 id="cv-head" lang="es">Currículum</h2>
+      <h2 lang="es">Currículum</h2>
     </div>
     <div class="dirA-cv-downloads mono">
       <a href="/cv-en.pdf" download lang="en">↓ CV (EN)</a>
@@ -775,6 +766,8 @@
     </div>
   </section>
 
+  </main>
+
   <footer class="dirA-foot mono">
     <div class="footer-content">
       <div class="footer-email"><a href="mailto:nicolas.bronzina@gmail.com">nicolas.bronzina@gmail.com</a></div>
@@ -820,8 +813,6 @@
       </div>
     </div>
   </footer>
-
-  </main>
 
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">

@@ -35,23 +35,7 @@ langToggle.addEventListener('click', () => {
   localStorage.setItem('language', isSpanish ? 'es' : 'en');
   document.documentElement.lang = isSpanish ? 'es' : 'en';
   langToggle.blur(); // Remove focus on mobile
-
-  // Update CO2 footer text
-  updateCO2FooterLanguage(isSpanish);
 });
-
-// Function to update CO2 footer language
-function updateCO2FooterLanguage(isSpanish) {
-  const sustainabilityData = document.querySelector('.sustainability-data');
-  if (sustainabilityData && sustainabilityData.textContent.includes('CO₂')) {
-    const match = sustainabilityData.textContent.match(/([\d.]+)g CO₂.*?([\d.]+)KB/);
-    if (match) {
-      const co2 = match[1];
-      const kb = match[2];
-      sustainabilityData.textContent = `Estimated ${co2}g CO₂ per page view · ${kb}KB · WebP · Service worker · Internet Archive archived`;
-    }
-  }
-}
 
 // Back to Top
 const backToTopButton = document.getElementById('backToTop');
@@ -78,18 +62,8 @@ backToTopButton.addEventListener('click', () => {
   });
 });
 
-// Scroll Reveal removed for behavioral design clarity
-// Content is immediately visible, reducing cognitive load
-
-// Audio Player
-const audio = document.getElementById('audio-element');
-const playBtn = document.getElementById('audio-play');
-const pauseBtn = document.getElementById('audio-pause');
-const stopBtn = document.getElementById('audio-stop');
-const currentTimeSpan = document.getElementById('audio-current');
-const durationSpan = document.getElementById('audio-duration');
-
-// Format time helper
+// Audio players (fixed header player + project narrations).
+// Starting one pauses any other that is playing.
 function formatTime(seconds) {
   if (isNaN(seconds)) return '0:00';
   const mins = Math.floor(seconds / 60);
@@ -97,130 +71,58 @@ function formatTime(seconds) {
   return `${mins}:${secs.toString().padStart(2, '0')}`;
 }
 
-// Update button states
-function updateButtonStates() {
-  if (audio.paused) {
-    playBtn.style.display = 'inline-flex';
-    pauseBtn.style.display = 'none';
-  } else {
-    playBtn.style.display = 'none';
-    pauseBtn.style.display = 'inline-flex';
-  }
-}
+const players = document.querySelectorAll('[data-player]');
 
-// Load metadata
-audio.addEventListener('loadedmetadata', () => {
-  durationSpan.textContent = formatTime(audio.duration);
-});
+players.forEach(player => {
+  const audio = player.querySelector('audio');
+  const playBtn = player.querySelector('[data-play]');
+  const pauseBtn = player.querySelector('[data-pause]');
+  const stopBtn = player.querySelector('[data-stop]');
+  const current = player.querySelector('[data-current]');
+  const duration = player.querySelector('[data-duration]');
 
-// Play button
-playBtn.addEventListener('click', () => {
-  audio.play();
-  playBtn.blur(); // Remove focus on mobile
-});
+  const syncButtons = () => {
+    playBtn.hidden = !audio.paused;
+    pauseBtn.hidden = audio.paused;
+  };
 
-// Pause button
-pauseBtn.addEventListener('click', () => {
-  audio.pause();
-  pauseBtn.blur(); // Remove focus on mobile
-});
-
-// Stop button
-stopBtn.addEventListener('click', () => {
-  audio.pause();
-  audio.currentTime = 0;
-  currentTimeSpan.textContent = '0:00';
-  updateButtonStates();
-  stopBtn.blur(); // Remove focus on mobile
-});
-
-// Update current time
-audio.addEventListener('timeupdate', () => {
-  currentTimeSpan.textContent = formatTime(audio.currentTime);
-});
-
-// When audio ends, reset
-audio.addEventListener('ended', () => {
-  audio.currentTime = 0;
-  updateButtonStates();
-});
-
-// Audio play/pause events for state sync
-audio.addEventListener('play', updateButtonStates);
-audio.addEventListener('pause', updateButtonStates);
-
-// Initialize button states
-updateButtonStates();
-
-// Project Audio Players
-document.querySelectorAll('.project-audio').forEach(playerContainer => {
-  const playBtn = playerContainer.querySelector('.project-audio-play');
-  const pauseBtn = playerContainer.querySelector('.project-audio-pause');
-  const stopBtn = playerContainer.querySelector('.project-audio-stop');
-  const audioEl = playerContainer.querySelector('.project-audio-element');
-  const currentSpan = playerContainer.querySelector('.project-audio-current');
-  const durationSpan = playerContainer.querySelector('.project-audio-duration');
-
-  // Update button states
-  function updateProjectButtonStates() {
-    if (audioEl.paused) {
-      playBtn.style.display = 'inline-flex';
-      pauseBtn.style.display = 'none';
-    } else {
-      playBtn.style.display = 'none';
-      pauseBtn.style.display = 'inline-flex';
-    }
-  }
-
-  // Load metadata
-  audioEl.addEventListener('loadedmetadata', () => {
-    durationSpan.textContent = formatTime(audioEl.duration);
+  audio.addEventListener('loadedmetadata', () => {
+    duration.textContent = formatTime(audio.duration);
   });
 
-  // Play button
-  playBtn.addEventListener('click', () => {
-    // Pause other project audios
-    document.querySelectorAll('.project-audio-element').forEach(otherAudio => {
-      if (otherAudio !== audioEl && !otherAudio.paused) {
-        otherAudio.pause();
-      }
+  audio.addEventListener('timeupdate', () => {
+    current.textContent = formatTime(audio.currentTime);
+  });
+
+  audio.addEventListener('play', () => {
+    players.forEach(other => {
+      const otherAudio = other.querySelector('audio');
+      if (otherAudio !== audio) otherAudio.pause();
     });
-    audioEl.play();
+    syncButtons();
+  });
+
+  audio.addEventListener('pause', syncButtons);
+
+  audio.addEventListener('ended', () => {
+    audio.currentTime = 0;
+  });
+
+  playBtn.addEventListener('click', () => {
+    audio.play();
     playBtn.blur(); // Remove focus on mobile
   });
 
-  // Pause button
   pauseBtn.addEventListener('click', () => {
-    audioEl.pause();
+    audio.pause();
     pauseBtn.blur(); // Remove focus on mobile
   });
 
-  // Stop button
   stopBtn.addEventListener('click', () => {
-    audioEl.pause();
-    audioEl.currentTime = 0;
-    currentSpan.textContent = '0:00';
-    updateProjectButtonStates();
+    audio.pause();
+    audio.currentTime = 0;
     stopBtn.blur(); // Remove focus on mobile
   });
-
-  // Update current time
-  audioEl.addEventListener('timeupdate', () => {
-    currentSpan.textContent = formatTime(audioEl.currentTime);
-  });
-
-  // When audio ends, reset
-  audioEl.addEventListener('ended', () => {
-    audioEl.currentTime = 0;
-    updateProjectButtonStates();
-  });
-
-  // Audio play/pause events for state sync
-  audioEl.addEventListener('play', updateProjectButtonStates);
-  audioEl.addEventListener('pause', updateProjectButtonStates);
-
-  // Initialize button states
-  updateProjectButtonStates();
 });
 
 // CO2.js — Real-time carbon calculation
@@ -235,29 +137,14 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
     // Function to calculate and update footer
     const updateCarbonFootprint = () => {
       const perfData = performance.getEntriesByType('navigation')[0];
-      let pageWeight = 0;
-      let method = '';
-
       if (!perfData) {
         return;
       }
 
-      // Priority 1: transferSize (most accurate, includes headers)
-      if (perfData.transferSize) {
-        pageWeight = perfData.transferSize;
-        method = 'transferSize';
-      }
-      // Priority 2: encodedBodySize (widely available on mobile)
-      else if (perfData.encodedBodySize) {
-        pageWeight = perfData.encodedBodySize;
-        method = 'encodedBodySize';
-      }
-      // Priority 3: decodedBodySize (last resort)
-      else if (perfData.decodedBodySize) {
-        pageWeight = perfData.decodedBodySize;
-        method = 'decodedBodySize';
-      }
-      else {
+      // transferSize includes headers; the body sizes are fallbacks
+      // (transferSize is 0 when served from cache)
+      const pageWeight = perfData.transferSize || perfData.encodedBodySize || perfData.decodedBodySize;
+      if (!pageWeight) {
         return;
       }
 
@@ -274,14 +161,6 @@ document.querySelectorAll('.project-audio').forEach(playerContainer => {
         const pageKB = (pageWeight / 1024).toFixed(1);
 
         sustainabilityData.textContent = `Estimated ${co2Formatted}g CO₂ per page view · ${pageKB}KB · WebP · Service worker · Internet Archive archived`;
-
-        // Log to console for debugging
-        console.log(`📊 Page sustainability metrics:
-  Transfer size: ${(pageWeight / 1024).toFixed(2)} KB
-  CO₂ emissions: ${co2Formatted}g
-  Model: Sustainable Web Design (Green Web Foundation)
-  Method: ${method}
-  Green hosting: No (GitHub Pages unverified)`);
       }
     };
 
