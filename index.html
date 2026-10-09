@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <title>Nicolás Bronzina - Futures Designer</title>
 <meta name="description" content="Futures Designer working with AI, sociology, and design fiction. I build prototypes and design-fiction artifacts that turn research into decisions organizations can act on.">
 <meta name="author" content="Nicolás Bronzina">
@@ -11,8 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='65' font-weight='700' font-family='serif' fill='%23000'>NB</text></svg>">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.nicolasbronzina.com/">
 <meta property="og:title" content="Nicolás Bronzina - Futures Designer">
@@ -52,16 +51,24 @@
 }
 </script>
 <style>
-  html { color-scheme: light dark; }
+  html { color-scheme: light; font-size: clamp(100%, 0.25vw + 0.75rem, 112.5%); }
   body { margin: 0; line-height: 1.45; }
   header, main, footer > div { max-width: 35em; margin: 0 auto; padding: 0 1em; }
+  /* Wide screens: identity and index in a fixed left column, content beside it */
+  @media (min-width: 62em) {
+    .page { display: grid; grid-template-columns: clamp(1em, 5vw, 6em) 14em 4em minmax(0, 35em) 1fr; }
+    header { grid-column: 2; position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto; margin: 0; padding: 1em 0; max-width: none; }
+    header hr { display: none; }
+    main { grid-column: 4; margin: 0; padding: 1em 0 0; max-width: none; }
+    footer > div { margin-left: calc(clamp(1em, 5vw, 6em) + 18em); padding: 0; }
+  }
   header { padding-top: 1em; }
   img { max-width: 100%; height: auto; }
   dd { margin-bottom: 1em; }
   table { border-collapse: collapse; }
   th, td { border: 1px solid; padding: .2em .6em; text-align: left; }
   li { margin-bottom: .4em; }
-  footer { margin-top: 3em; padding: 2em 0 1em; background: #222; background: light-dark(#222, #333); color: #eee; }
+  footer { margin-top: 3em; padding: 2em 0 1em; background: #222; color: #eee; }
   footer a { color: inherit; }
   footer hr { border: 0; border-top: 1px solid #888; }
   footer ul { list-style: none; padding: 0; }
@@ -73,6 +80,8 @@
 </style>
 </head>
 <body>
+
+<div class="page">
 
 <header>
 <h1 id="top">Nicolás Bronzina</h1>
@@ -339,6 +348,8 @@ Madrid ↔ Buenos Aires</p>
 </section>
 
 </main>
+
+</div>
 
 <footer id="contact">
 <div>

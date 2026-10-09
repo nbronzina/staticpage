@@ -40,7 +40,6 @@ youtube_strategy = links, no embeds (Official.html uses a click-to-load facade)
 2_small_images = Grayscale WebP at display size instead of full-size photos
 3_no_javascript = No scripts on the main page
 4_no_web_fonts = System fonts only on the main page
-5_dark_mode = Follows the system preference via color-scheme
 
 [last_updated]
 date = 2026-10-09
