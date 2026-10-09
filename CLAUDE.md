@@ -28,7 +28,7 @@ Header (nombre, rol, lede, email / CV, índice) → Now → Work → Editorial �
 - **Curriculum:** una línea por puesto; el detalle va en `cv-en.pdf` y `cv-es.pdf`.
 - **Footer:** nombre, email, base, idiomas de trabajo, secciones y perfiles en dos columnas (texto, sin íconos), foto de cierre con pie y crédito, colofón con peso de la página y fecha de actualización.
 - Cada sección termina con `[top]`.
-- Faltan datos: años de proyectos y puestos, créditos, imágenes de seis proyectos. Se agregan cuando Nicolás los pase; no inventarlos.
+- Experiencia con años (de LinkedIn, octubre 2026), formato `2024&ndash;present / Org, Rol`. Faltan: años de proyectos, docencia y estudios; créditos; imágenes de seis proyectos. Se agregan cuando Nicolás los pase; no inventarlos.
 
 ## Idioma
 Sitio en inglés. El CV en español está como PDF. Texto en otro idioma dentro de la página va con su `lang` (`<span lang="es">`, `lang="fr"`).
