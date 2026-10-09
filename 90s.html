@@ -11,11 +11,19 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='65' font-weight='700' font-family='serif' fill='%23000'>NB</text></svg>">
 <style>
   html { color-scheme: light dark; }
-  body { max-width: 35em; margin: 0 auto; padding: 1em; line-height: 1.45; }
-  img { max-width: 100%; height: auto; image-rendering: pixelated; }
+  body { margin: 0; line-height: 1.45; }
+  header, main, footer > div { max-width: 35em; margin: 0 auto; padding: 0 1em; }
+  header { padding-top: 1em; }
+  img { max-width: 100%; height: auto; }
   dd { margin-bottom: 1em; }
   table { border-collapse: collapse; }
   th, td { border: 1px solid; padding: .2em .6em; text-align: left; }
+  footer { margin-top: 3em; padding: 2em 0 1em; background: #222; background: light-dark(#222, #333); color: #eee; }
+  footer a { color: inherit; }
+  footer hr { border: 0; border-top: 1px solid #888; }
+  footer ul { list-style: none; padding: 0; }
+  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1em; }
+  .label { font-variant: small-caps; letter-spacing: .05em; color: #aaa; }
 </style>
 </head>
 <body>
@@ -27,14 +35,13 @@ Madrid ↔ Buenos Aires</p>
 <nav aria-label="Sections">
 <p>[ <a href="#projects">Projects</a> | <a href="#writing">Writing</a> | <a href="#editorial">Editorial</a> | <a href="#field-notes">Field notes</a> | <a href="#cv">Curriculum</a> | <a href="#contact">Contact</a> ]</p>
 </nav>
-</header>
-
 <hr>
+</header>
 
 <main>
 
 <section aria-label="Introduction">
-<p><img src="img/dither/hi.png" width="240" height="280" alt="Nicolás Bronzina, arms crossed, in front of a sign that says Hi!"></p>
+<p><img src="img/90s/hi.webp" width="240" height="281" alt="Nicolás Bronzina, arms crossed, in front of a sign that says Hi!"></p>
 
 <p><b>I build prototypes and design-fiction artifacts that turn research into decisions organizations can act on.</b></p>
 
@@ -65,7 +72,7 @@ Madrid ↔ Buenos Aires</p>
 <p>These projects turn uncertain conditions into artifacts, experiences, and systems that people can examine, discuss, and act on.</p>
 
 <h3><a href="https://www.futures-in-maps.com/san-telmo">Mercado San Telmo</a></h3>
-<p><img src="img/dither/mst-map.png" width="560" height="139" alt="Someone holding the Mercado San Telmo 2031 map inside the market"></p>
+<p><img src="img/90s/mst-map.webp" width="560" height="138" alt="Someone holding the Mercado San Telmo 2031 map inside the market"></p>
 <p><b>TL;DR:</b> Design fiction for a century-old Buenos Aires market navigating climate change, a 15-minute city transition, and the question of what a historic place becomes when the conditions it was built for no longer hold.</p>
 <p>San Telmo Market was built in 1897 for a city that no longer exists. This design fiction imagines it in 2031: retrofitted for extreme heat, reorganized around a 15-minute city model, with new programs layered over a century of use. The site includes a speculative map of the market and neighborhood, a tour narration recorded as if visiting from that year, and an open question about what preservation means when a place has to change to survive.</p>
 <p>Tour narration:<br>
@@ -83,7 +90,7 @@ Madrid ↔ Buenos Aires</p>
 <p><a href="https://prototypes.heated.studio/adaptive-museums">Try the prototype</a> · <a href="https://www.youtube.com/watch?v=3nGlFK0WJPI">Video introduction</a></p>
 
 <h3><a href="https://www.youtube.com/watch?v=nApY_pWiY9I">Desert Athleisure</a></h3>
-<p><img src="img/dither/desert-athleisure.png" width="560" height="213" alt="Desert Athleisure speculative sportswear collection for cities where summer reaches 40°C"></p>
+<p><img src="img/90s/desert-athleisure.webp" width="560" height="213" alt="Desert Athleisure speculative sportswear collection for cities where summer reaches 40°C"></p>
 <p><b>TL;DR:</b> A fictional sportswear collection designed for cities where summer reaches 40°C — giving fashion brands a concrete artifact to react to before extreme heat becomes the condition they're designing for, not the edge case.</p>
 <p>A fictional sportswear line developed at Heated Studio for cities where summer heat regularly hits 40°C or above. The project takes the form of a complete product catalog, a brand identity, and a retail scenario &mdash; all designed as if the collection already exists. It gives fashion businesses something concrete to hold and react to: not a trend report about what might happen, but a thing that looks and feels like it could already be on the shelf. The question underneath it is whether brands are building toward this climate or still waiting to be surprised by it.</p>
 <p><a href="https://drive.google.com/file/d/1MyQMEEvz6jRql5MN79UZ3hftiBRgZSOW/view">Landing page</a> · <a href="https://www.youtube.com/watch?v=nApY_pWiY9I">Video introduction</a></p>
@@ -179,7 +186,7 @@ Madrid ↔ Buenos Aires</p>
 <p>New content every week. <a href="https://www.youtube.com/@otrosfuturos">Watch on YouTube</a>.</p>
 
 <h3>MARGIN.SIGNALS</h3>
-<p><img src="img/dither/margin-signals.png" width="240" height="358" alt="MARGIN.SIGNALS Release 001 cover"></p>
+<p><img src="img/90s/margin-signals.webp" width="240" height="358" alt="MARGIN.SIGNALS Release 001 cover"></p>
 <p><i>An independent publication tracking weak signals from cultural margins before they reshape the industry.</i></p>
 <p><b>Release 001: Specialty.Coffee.Margins</b></p>
 <p>What happens when coffee's margins challenge its center? This trendspotting fanzine explores master plant protocols, intentional defect fermentation, and decolonised cupping: patterns of hierarchy inversion you'll see elsewhere soon.</p>
@@ -299,15 +306,40 @@ Madrid ↔ Buenos Aires</p>
 
 </main>
 
-<hr>
-
 <footer id="contact">
-<h2>Contact</h2>
+<div>
+<p><b>Nicolás Bronzina</b><br>
+Futures Designer</p>
 <p>Email: <a href="mailto:nicolas.bronzina@gmail.com">nicolas.bronzina@gmail.com</a><br>
-Elsewhere: <a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a> · <a href="https://otrosfuturos.substack.com/">Otros Futuros on Substack</a> · <a href="https://www.youtube.com/@otrosfuturos">YouTube</a> · <a href="https://instagram.com/nicolasbronzina">Instagram</a></p>
+Based in: Madrid, Spain (CET) ↔ Buenos Aires, Argentina<br>
+Working in English and Spanish</p>
 <hr>
-<p><small>Handcrafted HTML. No JavaScript, no cookies, no tracking, no analytics. This page weighs about 30 KB.<br>
+<div class="columns">
+<div>
+<p class="label">Sections</p>
+<ul>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#writing">Writing</a></li>
+<li><a href="#editorial">Editorial</a></li>
+<li><a href="#field-notes">Field notes</a></li>
+<li><a href="#cv">Curriculum</a></li>
+<li><a href="cv-en.pdf">CV (PDF)</a></li>
+</ul>
+</div>
+<div>
+<p class="label">Elsewhere</p>
+<ul>
+<li><a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a></li>
+<li><a href="https://otrosfuturos.substack.com/">Otros Futuros on Substack</a></li>
+<li><a href="https://www.youtube.com/@otrosfuturos">YouTube</a></li>
+<li><a href="https://instagram.com/nicolasbronzina">Instagram</a></li>
+</ul>
+</div>
+</div>
+<p><img src="img/90s/empanadas.webp" width="560" height="382" alt="A delivery box of Solar Empanadas from Cocina Solaris, a design fiction about future Argentinean food"></p>
+<p><small>Handcrafted HTML. No JavaScript, no cookies, no tracking, no analytics. This page weighs about 100 KB.<br>
 Last updated: 9 October 2026.</small></p>
+</div>
 </footer>
 
 </body>
