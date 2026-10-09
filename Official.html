@@ -22,6 +22,7 @@
     <!-- Preload Font -->
     <link rel="preload" href="../fonts/dm-mono-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
     <style>
+        .skip-link:focus { top: 0; }
 @font-face {
   font-family: 'DM Mono';
   src: url('../fonts/dm-mono-normal-400-latin-ext.woff2') format('woff2');
@@ -816,10 +817,9 @@
 </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--color-primary);color:white;padding:8px 16px;z-index:9999;text-decoration:none;font-family:monospace;transition:top 0.2s;">Skip to content</a>
-    <style>.skip-link:focus { top: 0; }</style>
+    <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--color-primary);color:#000;padding:8px 16px;z-index:9999;text-decoration:none;font-family:monospace;transition:top 0.2s;">Skip to content</a>
     <nav class="navbar">
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
@@ -852,7 +852,7 @@
       });
     </script>
 
-    <div class="content">
+    <main class="content">
         <div class="readable-content">
         
         <!-- HOME Section -->
@@ -1070,17 +1070,14 @@
         <!-- WELCOME Section (Expanded) -->
         <section id="welcome" class="section">
             <div class="image-container">
-                <img src="img/OFF2.png" alt="WELCOME System" loading="lazy">
+                <img src="img/OFF2.webp" width="960" height="540" alt="WELCOME System" loading="lazy">
             </div>
             
             <h2>The WELCOME System</h2>
             <p>OFFicial's flagship product supports refugees through every step of their journey. Powered by advanced Artificial Intelligence, WELCOME simplifies, automates, and personalizes the asylum process and integration into the community.</p>
 
             <div class="image-container">
-                <picture>
-                  <source srcset="img/PackWelcome.webp" type="image/webp">
-                  <img src="img/PackWelcome.jpg" alt="WELCOME Package" loading="lazy" style="max-width: 600px; border-radius: 10px;">
-                </picture>
+                <img src="img/PackWelcome.webp" width="1200" height="636" alt="WELCOME Package" loading="lazy" style="max-width: 600px; border-radius: 10px;">
             </div>
 
             <h3>What WELCOME Is</h3>
@@ -1207,7 +1204,7 @@
                 </div>
 
                 <div class="feature-category">
-                    <h4>Privacy & Data Rights</h4>
+                    <h4>Privacy &amp; Data Rights</h4>
                     <div class="feature-list">
                         <div class="feature-item">Personal Data Ownership - you control your information</div>
                         <div class="feature-item">Anonymous Data Collection - contribute while respecting privacy</div>
@@ -1219,18 +1216,9 @@
             </div>
 
             <div class="mobile-images">
-                <picture>
-                    <source srcset="img/Follow-up2.webp" type="image/webp">
-                    <img src="img/Follow-up2.png" alt="WELCOME App Interface" loading="lazy">
-                </picture>
-                <picture>
-                    <source srcset="img/Loading.webp" type="image/webp">
-                    <img src="img/Loading.png" alt="WELCOME App Loading" loading="lazy">
-                </picture>
-                <picture>
-                    <source srcset="img/Privacy.webp" type="image/webp">
-                    <img src="img/Privacy.png" alt="WELCOME App Privacy" loading="lazy">
-                </picture>
+                <img src="img/Follow-up2.webp" width="500" height="972" alt="WELCOME App Interface" loading="lazy">
+                <img src="img/Loading.webp" width="500" height="972" alt="WELCOME App Loading" loading="lazy">
+                <img src="img/Privacy.webp" width="500" height="971" alt="WELCOME App Privacy" loading="lazy">
             </div>
             
             <p>As a conversational assistant, the weight of the graphical interface is drastically reduced. People are accustomed to interacting with digital services through natural interfaces, but visual output ensures messages are received correctly.</p>
@@ -1333,7 +1321,7 @@
                         <p style="font-size: 1.2rem; margin: 10px 0;">DM Mono Regular</p>
                         <p style="font-size: 1rem; margin: 10px 0;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                         <p style="font-size: 1rem; margin: 10px 0;">abcdefghijklmnopqrstuvwxyz</p>
-                        <p style="font-size: 1rem; margin: 10px 0;">0123456789 !@#$%&*</p>
+                        <p style="font-size: 1rem; margin: 10px 0;">0123456789 !@#$%&amp;*</p>
                     </div>
                 </div>
 
@@ -1365,7 +1353,7 @@
             
             <div class="value-grid">
                 <div class="value-card">
-                    <h4>For Refugees & Asylum Seekers</h4>
+                    <h4>For Refugees &amp; Asylum Seekers</h4>
                     <ul>
                         <li><strong>Simplification:</strong> Navigate complex systems with confidence</li>
                         <li><strong>24/7 Support:</strong> Help when you need it, in your language</li>
@@ -1378,7 +1366,7 @@
                 </div>
 
                 <div class="value-card">
-                    <h4>For Spanish State & Government</h4>
+                    <h4>For Spanish State &amp; Government</h4>
                     <p><strong>Why WELCOME benefits Spain:</strong></p>
                     <ul>
                         <li><strong>Efficiency:</strong> Rapid, centralized access to asylum seeker documentation</li>
@@ -1444,10 +1432,7 @@
             
             <div class="testimonials">
                 <h3>What People Say</h3>
-                <picture>
-                    <source srcset="img/Refugees.webp" type="image/webp">
-                    <img src="img/Refugees.png" alt="Refugees using WELCOME" class="refugee-image" loading="lazy">
-                </picture>
+                <img src="img/Refugees.webp" width="1456" height="816" alt="Refugees using WELCOME" class="refugee-image" loading="lazy">
                 <div class="testimonial">
                     <div class="testimonial-content">
                         <blockquote>"Through WELCOME, I found a lifeline in a sea of uncertainty. It's more than a tool; it's a guide that empowers and restores a sense of control in the most vulnerable moments." <br>- Leila Hussein (35), Human Rights Advocate and Refugee</blockquote>
@@ -1521,7 +1506,7 @@
         </section>
         
         </div>
-    </div>
+    </main>
 
     <footer class="footer">
         <blockquote>"Why do you always choose battles you cannot win? - Because they are the ones worth fighting for."</blockquote>
@@ -1533,7 +1518,7 @@
         </div>
     </footer>
 
-    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+    <button type="button" class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
 
     <script>
         // ========== Navigation with Hash URLs ==========

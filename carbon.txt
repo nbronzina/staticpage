@@ -12,7 +12,7 @@ green_verified = false
 
 [performance]
 # Main page (index.html), first visit scrolled to the end, measured 2026-10
-transfer_size_avg = ~120kb
+transfer_size_avg = ~115kb (full scroll); ~50kb for the first screen, the rest is lazy-loaded
 # HTML with inline CSS is ~9kb gzipped; the rest is five grayscale WebP images
 images_format = WebP, grayscale, sized to their display width
 requests = 6 (HTML + 5 images); audio only when played

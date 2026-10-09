@@ -15,7 +15,10 @@ Referencias del benchmark: Knuth (HTML por defecto pero ordenado), Norvig (una l
 - Columna: `max-width: 35em` en `header`, `main` y `footer > div`.
 - Pantallas anchas (≥ 62em): `.page` es una grilla; el `header` (nombre, lede, contacto, índice) queda fijo en una columna izquierda de 14em y `main` al lado. El footer se alinea con `main`. En celular y tablet, una sola columna.
 - El tamaño de letra crece levemente en pantallas grandes: `clamp(100%, 0.25vw + 0.75rem, 112.5%)` (16 a 18 px).
-- Footer: bloque invertido `#222`.
+- Footer: bloque invertido `#222`. Al imprimir, sin fondo y en negro.
+- `h4` (título de proyecto) y su línea de metadatos van pegados (`h4 + p { margin-top: 0 }`).
+- Link "Skip to content" oculto hasta recibir foco de teclado.
+- `text-wrap: pretty` en párrafos y listas.
 - No fijar `font-family` en el body: se usa la del navegador.
 
 ## Estructura de la portada
@@ -37,9 +40,14 @@ Sitio en inglés. El CV en español está como PDF. Texto en otro idioma dentro 
 - Escala de grises, WebP, en `img/90s/`, generadas a partir de los originales
 - Tamaño de archivo: 2x el ancho en pantalla (1.5x para fotos con mucho grano, con un desenfoque leve antes de achicar)
 - `width`/`height` del `<img>` = tamaño en pantalla, no el del archivo
+- `loading="lazy" decoding="async"` en toda imagen que no esté en la primera pantalla
+- Subpáginas: WebP directo, sin respaldo PNG/JPG, al doble del tamaño en que se muestran
 - Sin dithering: ahorraba poco y volvía ilegibles los textos de las imágenes
 - No rounded corners, ever
 - Los originales que ya no se usan se borraron; están en el historial de git
+
+## Calidad
+Antes de publicar: `html-validate` sin errores en las cinco páginas y axe-core (WCAG 2.2 AA) sin fallas en la portada.
 
 ## Contacto
 Un solo mail en todo el sitio: `nicolas.bronzina@gmail.com`.
