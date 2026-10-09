@@ -11,9 +11,9 @@ green_verified = false
 # GitHub Pages is not currently verified in Green Web Foundation database
 
 [performance]
-# Main page (index.html), first visit, measured 2026-10
-transfer_size_avg = ~620kb
-# ~80% is images; HTML + CSS + JS together are ~25kb gzipped
+# Main page (index.html), first visit scrolled to the end, measured 2026-10
+transfer_size_avg = ~1mb
+# ~90% is images (lazy-loaded); HTML + CSS + JS together are ~25kb gzipped
 images_format = WebP (one PNG left: desert-athleisure.png)
 images_fallback = JPEG via <picture>
 
