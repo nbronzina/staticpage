@@ -54,7 +54,7 @@ Antes de publicar: `html-validate` sin errores en las cinco páginas y axe-core 
 Un solo mail en todo el sitio: `nicolas.bronzina@gmail.com`.
 
 ## Subpáginas
-- `links/` (link-in-bio, entra desde Instagram) usa el mismo sistema que la portada: HTML clásico, CSS inline, sin fuentes ni JS, columna de 30em alineada a la izquierda. Cada link con su bajada `- …`. Es una lista corta para decidir rápido, no un resumen del sitio: los links de siempre (estudios, editorial, field notes, contacto) más lo nuevo que le sirve a quien llega desde Instagram (Speculative Futures Madrid, el último ensayo, San Telmo, CV). Sin links repetidos. Al cambiar el Now de la portada, revisar si corresponde acá.
+- `links/` (link-in-bio, entra desde Instagram) usa el mismo sistema que la portada: HTML clásico, CSS inline, sin fuentes ni JS, columna de 30em alineada a la izquierda. Cada link con su bajada `- …`. Es una lista corta para decidir rápido, no un resumen del sitio: los 14 links de siempre (sitio, estudios, editorial, field notes, contacto) más Speculative Futures Madrid. No agregar más sin que Nicolás lo pida. Sin links repetidos.
 - `Coffee.html`, `CoffeeDecoded.html` y `Official.html` mantienen su propio diseño (identidad de cada proyecto).
 - Ninguna registra service worker.
 
