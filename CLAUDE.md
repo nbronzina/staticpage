@@ -54,7 +54,9 @@ Antes de publicar: `html-validate` sin errores en las cinco páginas y axe-core 
 Un solo mail en todo el sitio: `nicolas.bronzina@gmail.com`.
 
 ## Subpáginas
-`Coffee.html`, `CoffeeDecoded.html`, `Official.html` y `links/` mantienen su propio diseño por ahora. Ninguna registra service worker.
+- `links/` (link-in-bio, entra desde Instagram) usa el mismo sistema que la portada: HTML clásico, CSS inline, sin fuentes ni JS, columna de 30em alineada a la izquierda. Cada link con su bajada `- …`. Su sección **Now** repite la de la portada: si cambia una, cambiar la otra.
+- `Coffee.html`, `CoffeeDecoded.html` y `Official.html` mantienen su propio diseño (identidad de cada proyecto).
+- Ninguna registra service worker.
 
 ## Service worker
 Ya no se usa. `service-worker.js` es un archivo que se desinstala solo (borra cachés, se desregistra y recarga) para quienes tenían una versión anterior. Mantenerlo publicado unos meses. No volver a registrar uno.
