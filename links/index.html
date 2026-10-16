@@ -2,426 +2,119 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nicolás Bronzina — Links</title>
-<meta name="description" content="Links to all my projects, publications, and ways to connect. Futures Designer working with AI, sociology, and design fiction.">
-
-<!-- Open Graph -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Nicolás Bronzina - Links</title>
+<meta name="description" content="Links to my projects, publications, and ways to connect. Futures Designer working with AI, sociology, and design fiction.">
+<meta name="author" content="Nicolás Bronzina">
+<link rel="canonical" href="https://www.nicolasbronzina.com/links/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='65' font-weight='700' font-family='serif' fill='%23000'>NB</text></svg>">
+<link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#FFFFFF">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.nicolasbronzina.com/links/">
-<meta property="og:title" content="Nicolás Bronzina — Links">
-<meta property="og:description" content="Links to all my projects, publications, and ways to connect.">
-<meta property="og:image" content="https://www.nicolasbronzina.com/img/DitherME.jpg">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:url" content="https://www.nicolasbronzina.com/links/">
-<meta name="twitter:title" content="Nicolás Bronzina — Links">
-<meta name="twitter:description" content="Links to all my projects, publications, and ways to connect.">
-<meta name="twitter:image" content="https://www.nicolasbronzina.com/img/DitherME.jpg">
-
-<!-- Canonical -->
-<link rel="canonical" href="https://www.nicolasbronzina.com/links/">
-<link rel="preload" href="../fonts/jetbrains-mono-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/jetbrains-mono-normal-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<style>
-  @font-face {
-    font-family: 'JetBrains Mono';
-    src: url('../fonts/jetbrains-mono-normal-400-latin-ext.woff2') format('woff2');
-    font-weight: 300 600;
-    font-style: normal;
-    font-display: swap;
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
-  @font-face {
-    font-family: 'JetBrains Mono';
-    src: url('../fonts/jetbrains-mono-normal-400-latin.woff2') format('woff2');
-    font-weight: 300 600;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  :root {
-    --bg: #f5f3ef;
-    --fg: #1a1a1a;
-    --muted: #66625b;
-    --accent: #1a1a1a;
-    --link-bg: transparent;
-    --link-border: #1a1a1a;
-    --link-hover-bg: #1a1a1a;
-    --link-hover-fg: #f5f3ef;
-    --mono: 'JetBrains Mono', monospace;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: var(--mono);
-    background: var(--bg);
-    color: var(--fg);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    padding: 3rem 1.5rem;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .container {
-    width: 100%;
-    max-width: 420px;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  /* ── Header ── */
-  .header {
-    text-align: left;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--fg);
-  }
-
-  .header h1 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.4rem;
-  }
-
-  .header p {
-    font-size: 0.7rem;
-    font-weight: 300;
-    color: var(--muted);
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-
-  /* ── Links ── */
-  .links {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .link-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 0;
-    min-height: 44px;
-    border-bottom: 1px solid rgba(26, 26, 26, 0.12);
-    text-decoration: none;
-    color: var(--fg);
-    transition: color 0.2s ease;
-    position: relative;
-  }
-
-  .link-item::before {
-    content: '';
-    position: absolute;
-    left: -1rem;
-    right: -1rem;
-    top: 0;
-    bottom: 0;
-    background: var(--fg);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    z-index: 0;
-  }
-
-  .link-item:hover::before,
-  .link-item:active::before {
-    opacity: 1;
-  }
-
-  .link-item:hover,
-  .link-item:active {
-    color: var(--bg);
-  }
-
-  .link-item:hover .link-arrow,
-  .link-item:active .link-arrow {
-    color: var(--bg);
-    transform: translateX(3px);
-  }
-
-  .link-item:hover .link-tag,
-  .link-item:active .link-tag {
-    color: var(--bg);
-    opacity: 0.5;
-  }
-
-  .link-content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .link-name {
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-  }
-
-  .link-tag {
-    font-size: 0.7rem;
-    font-weight: 300;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    transition: color 0.2s ease;
-  }
-
-  .link-arrow {
-    position: relative;
-    z-index: 1;
-    font-size: 0.75rem;
-    color: var(--muted);
-    transition: all 0.2s ease;
-    font-weight: 300;
-  }
-
-  /* ── Section Labels ── */
-  .section-label {
-    font-size: 0.65rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    padding-top: 0.5rem;
-  }
-
-  h2.section-label {
-    font-size: 0.65rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    padding-top: 0.5rem;
-    margin: 0;
-  }
-
-  /* ── Footer ── */
-  .footer {
-    padding-top: 1rem;
-    border-top: 1px solid var(--fg);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer span {
-    font-size: 0.6rem;
-    font-weight: 300;
-    color: var(--muted);
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-
-  .status {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.6rem;
-    font-weight: 300;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
-
-  .status-dot {
-    width: 5px;
-    height: 5px;
-    background: #4a9e5c;
-    border-radius: 50%;
-  }
-
-  /* ── Responsive ── */
-  @media (max-width: 480px) {
-    body { padding: 2rem 1.25rem; }
-    .header h1 { font-size: 1rem; }
-  }
-</style>
+<meta property="og:title" content="Nicolás Bronzina - Links">
+<meta property="og:description" content="Links to my projects, publications, and ways to connect.">
+<meta property="og:image" content="https://www.nicolasbronzina.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nicolás Bronzina - Links">
+<meta name="twitter:description" content="Links to my projects, publications, and ways to connect.">
+<meta name="twitter:image" content="https://www.nicolasbronzina.com/og-image.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Nicolás Bronzina",
-  "url": "https://www.nicolasbronzina.com",
-  "email": "nicolas.bronzina@gmail.com",
   "jobTitle": "Futures Designer",
   "description": "Futures Designer working with AI, sociology, and design fiction. I build prototypes and design-fiction artifacts that turn research into decisions organizations can act on.",
-  "worksFor": [
-    {
-      "@type": "Organization",
-      "name": "BPP Analytics and Design",
-      "url": "https://www.bppanalyticsanddesign.com/"
-    },
-    {
-      "@type": "Organization",
-      "name": "Heated Studio",
-      "url": "https://heated.studio"
-    }
-  ],
+  "url": "https://www.nicolasbronzina.com/",
+  "email": "mailto:nicolas.bronzina@gmail.com",
   "sameAs": [
-    "https://linkedin.com/in/nicolasbronzina",
-    "https://instagram.com/nicolasbronzina",
+    "https://www.linkedin.com/in/nicolasbronzina",
+    "https://medium.com/@nbronzina",
     "https://www.youtube.com/@otrosfuturos",
     "https://otrosfuturos.substack.com/",
-    "https://medium.com/@nbronzina",
-    "https://www.nicolasbronzina.com"
+    "https://instagram.com/nicolasbronzina"
   ]
 }
 </script>
+<style>
+  html { color-scheme: light; font-size: clamp(100%, 0.25vw + 0.75rem, 112.5%); }
+  body { margin: 0; padding: 1em clamp(1em, 5vw, 6em); line-height: 1.45; }
+  header, main, footer, hr { max-width: 30em; }
+  hr { margin-left: 0; }
+  img { max-width: 100%; height: auto; }
+  h2 { font-size: 1.17em; margin: 1.5em 0 .5em; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: .6em; text-wrap: pretty; }
+</style>
 </head>
 <body>
 
-<div class="container">
+<header>
+<p><img src="../img/90s/portrait.webp" width="120" height="120" alt="Nicolás Bronzina in a cap and glasses"></p>
+<h1>Nicolás Bronzina</h1>
+<p>Futures Designer working with AI, sociology, and design fiction.<br>
+Madrid ↔ Buenos Aires</p>
+<p><a href="../">nicolasbronzina.com</a>: projects, writing, and CV</p>
+</header>
 
-  <header class="header">
-    <h1>Nicolás Bronzina</h1>
-    <p>Futures Designer working with AI, sociology, and design fiction · Madrid ↔ Buenos Aires</p>
-  </header>
+<hr>
 
-  <main>
+<main>
 
-    <!-- ═══ WORK ═══ -->
-    <nav aria-label="Work">
-      <h2 class="section-label">Work</h2>
-      <div class="links">
-        <a href="https://nicolasbronzina.com" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">Portfolio</span>
-            <span class="link-tag">nicolasbronzina.com</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-        <a href="https://www.bppanalyticsanddesign.com/" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">BPP Analytics &amp; Design</span>
-            <span class="link-tag">Consultancy · BA + Madrid</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-        <a href="https://heated.studio" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">Heated Studio</span>
-            <span class="link-tag">Climate Design Fiction</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-        <a href="https://mundanidadforzada.org/" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">Lab de Mundanidad Forzada</span>
-            <span class="link-tag">Design Fiction Collective · LATAM</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-      </div>
-    </nav>
+<h2>Now</h2>
+<ul>
+<li><a href="https://www.instagram.com/futures_madrid?xtok=dGN4cDV0OTVydzh3">Speculative Futures Madrid</a><br>
+- relaunching the Madrid chapter of The Design Futures Initiative (September 2026)</li>
+</ul>
 
-    <!-- ═══ EDITORIAL ═══ -->
-    <nav aria-label="Editorial">
-      <h2 class="section-label">Editorial</h2>
-      <div class="links">
-        <a href="https://www.youtube.com/@otrosfuturos" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">Otros Futuros</span>
-            <span class="link-tag">YouTube</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-        <a href="https://otrosfuturos.substack.com/" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">Otros Futuros</span>
-            <span class="link-tag">Substack</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-        <a href="https://www.instagram.com/margin.signals/" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">MARGIN.SIGNALS</span>
-            <span class="link-tag">Weak signals from cultural margins</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-        <a href="https://medium.com/@nbronzina" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">Medium</span>
-            <span class="link-tag">Essays &amp; writing</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-      </div>
-    </nav>
+<h2>Studios</h2>
+<ul>
+<li><a href="https://www.bppanalyticsanddesign.com/">BPP Analytics &amp; Design</a><br>
+- strategic design consultancy, Managing Partner</li>
+<li><a href="https://www.heated.studio/">Heated Studio</a><br>
+- design fiction collective for climate futures, co-founder</li>
+<li><a href="https://mundanidadforzada.org/">Lab de Mundanidad Forzada</a><br>
+- design fiction methods rooted in Latin American contexts, initiator</li>
+</ul>
 
-    <!-- ═══ ALSO ═══ -->
-    <nav aria-label="Also">
-      <h2 class="section-label">Also</h2>
-      <div class="links">
-        <a href="https://nbronzina.github.io/playground/" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">play·ground</span>
-            <span class="link-tag">Experimental Audio · just play</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-        <a href="https://www.nicolasbronzina.com/CoffeeDecoded.html" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">Coffee Decoded</span>
-            <span class="link-tag">Specialty coffee guide</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-        <a href="https://www.nicolasbronzina.com/Coffee.html" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">Coffee.txt</span>
-            <span class="link-tag">Plain text coffee guide</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-      </div>
-    </nav>
+<h2>Editorial</h2>
+<ul>
+<li><a href="https://www.youtube.com/@otrosfuturos">Otros Futuros on YouTube</a><br>
+- futures design, design fiction, speculative design</li>
+<li><a href="https://otrosfuturos.substack.com/">Otros Futuros on Substack</a></li>
+<li><a href="https://instagram.com/margin.signals">MARGIN.SIGNALS</a><br>
+- independent zine tracking weak signals from cultural margins</li>
+<li><a href="https://medium.com/@nbronzina">Essays on Medium</a></li>
+</ul>
 
-    <!-- ═══ CONNECT ═══ -->
-    <nav aria-label="Connect">
-      <h2 class="section-label">Connect</h2>
-      <div class="links">
-        <a href="https://linkedin.com/in/nicolasbronzina" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">LinkedIn</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-        <a href="https://instagram.com/nicolasbronzina" class="link-item" target="_blank">
-          <div class="link-content">
-            <span class="link-name">Instagram</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-        <a href="mailto:nicolas.bronzina@gmail.com" class="link-item">
-          <div class="link-content">
-            <span class="link-name">Let's talk</span>
-          </div>
-          <span class="link-arrow">→</span>
-        </a>
-      </div>
-    </nav>
+<h2>Field notes</h2>
+<ul>
+<li><a href="https://nbronzina.github.io/playground/">play•ground</a><br>
+- web instruments, live audio, and inhabitable sound</li>
+<li><a href="../Coffee.html">Coffee.txt</a><br>
+- specialty coffee guide for Madrid</li>
+<li><a href="../CoffeeDecoded.html">Coffee Decoded</a><br>
+- practical guide to home coffee equipment</li>
+</ul>
 
-    <footer class="footer">
-      <div class="status">
-        <span class="status-dot"></span>
-        Open to opportunities
-      </div>
-      <span>Madrid, 2026</span>
-    </footer>
+<h2>Contact</h2>
+<p>Working on something that doesn&rsquo;t have a clear future yet? <a href="mailto:nicolas.bronzina@gmail.com">Let&rsquo;s talk</a>.</p>
+<ul>
+<li><a href="https://www.linkedin.com/in/nicolasbronzina">LinkedIn</a></li>
+<li><a href="https://instagram.com/nicolasbronzina">Instagram</a></li>
+</ul>
 
-  </main>
+</main>
 
-</div>
+<hr>
+
+<footer>
+<p><small>Handcrafted HTML. No JavaScript, no cookies, no tracking.<br>
+Last updated: 16 October 2026.</small></p>
+</footer>
 
 </body>
 </html>
