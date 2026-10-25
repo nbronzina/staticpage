@@ -53,6 +53,11 @@ Sitio en inglés. El CV en español está como PDF. Texto en otro idioma dentro 
 - `.github/workflows/links-weekly.yml`: los lunes revisa todos los links externos (menos LinkedIn e Instagram, que bloquean bots) y abre un issue si hay rotos.
 - Antes de pushear, correr lo mismo localmente.
 
+## IndieWeb (invisible)
+- h-card en el `<header>` de la portada y de `links/`: `p-name`, `p-job-title`, `p-locality`, `p-note`, `u-email`, `u-url`/`u-uid`, `u-photo` (en la portada vía `<data>`). Si cambia el nombre, el rol, la foto o el mail, actualizarlo también ahí.
+- `rel="me"` en los links a perfiles propios (LinkedIn, YouTube, Substack, Instagram, Medium).
+- Autodescubrimiento de feeds en el `<head>`: RSS de Medium y de Substack. El sitio no tiene feed propio.
+
 ## Contacto
 Un solo mail en todo el sitio: `nicolas.bronzina@gmail.com`.
 
