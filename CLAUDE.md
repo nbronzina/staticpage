@@ -57,6 +57,7 @@ Sitio en inglés. El CV en español está como PDF. Texto en otro idioma dentro 
 - h-card en el `<header>` de la portada y de `links/`: `p-name`, `p-job-title`, `p-locality`, `p-note`, `u-email`, `u-url`/`u-uid`, `u-photo` (en la portada vía `<data>`). Si cambia el nombre, el rol, la foto o el mail, actualizarlo también ahí.
 - `rel="me"` en los links a perfiles propios (LinkedIn, YouTube, Substack, Instagram, Medium).
 - Autodescubrimiento de feeds en el `<head>`: RSS de Medium y de Substack. El sitio no tiene feed propio.
+- Decidido no hacer (octubre 2026): sumarse a directorios como 512kb.club o personalsit.es, una lista de sitios de otros, y publicar los ensayos en el sitio. No volver a proponerlo.
 
 ## Contacto
 Un solo mail en todo el sitio: `nicolas.bronzina@gmail.com`.
