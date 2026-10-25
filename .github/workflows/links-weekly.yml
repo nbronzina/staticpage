@@ -1,0 +1,38 @@
+# Every Monday: checks every external link on the site (articles, projects, profiles).
+# If any is broken, opens an issue in the repository listing them.
+name: Weekly link check
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check all links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # LinkedIn and Instagram block automated checks, so they always look broken.
+          args: >-
+            --no-progress --include-fragments --max-retries 3 --accept 200..=299,429
+            --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36"
+            --exclude 'linkedin\.com' --exclude 'instagram\.com'
+            --root-dir ${{ github.workspace }}
+            './**/*.html'
+          fail: false
+
+      - name: Open an issue if links are broken
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Broken links on nicolasbronzina.com
+          content-filepath: ./lychee/out.md

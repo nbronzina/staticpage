@@ -48,7 +48,9 @@ Sitio en inglés. El CV en español está como PDF. Texto en otro idioma dentro 
 - Los originales que ya no se usan se borraron; están en el historial de git
 
 ## Calidad
-Antes de publicar: `html-validate` sin errores en las cinco páginas y axe-core (WCAG 2.2 AA) sin fallas en la portada.
+- `.github/workflows/checks.yml` corre en cada push a main: `html-validate` (config en `.htmlvalidate.json`) en las cinco páginas, links internos y anclas con `lychee --offline --include-fragments`, y axe-core (WCAG 2.2 AA) en `/` y `/links/`, desktop y celular (`.github/scripts/a11y.mjs`). Si falla, GitHub marca el commit con una X roja y avisa por mail. No bloquea la publicación: Pages publica desde la rama igual.
+- `.github/workflows/links-weekly.yml`: los lunes revisa todos los links externos (menos LinkedIn e Instagram, que bloquean bots) y abre un issue si hay rotos.
+- Antes de pushear, correr lo mismo localmente.
 
 ## Contacto
 Un solo mail en todo el sitio: `nicolas.bronzina@gmail.com`.

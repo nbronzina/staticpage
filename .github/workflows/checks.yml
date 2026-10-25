@@ -1,0 +1,38 @@
+# Runs on every push to main: valid HTML, internal links and anchors, accessibility.
+# A failure shows as a red X on the commit and GitHub emails the author.
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: HTML is valid
+        run: npx --yes html-validate@11 index.html links/index.html Coffee.html CoffeeDecoded.html Official.html
+
+      - name: Internal links and anchors resolve
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --include-fragments --no-progress --root-dir ${{ github.workspace }} './**/*.html'
+          fail: true
+
+      - name: Accessibility (WCAG 2.2 AA)
+        run: |
+          npm install --no-save --no-package-lock playwright@1 axe-core@4
+          npx playwright install --with-deps chromium
+          python3 -m http.server 8080 > /dev/null 2>&1 &
+          sleep 1
+          node .github/scripts/a11y.mjs http://localhost:8080
