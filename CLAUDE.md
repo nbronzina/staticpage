@@ -63,8 +63,7 @@ Ya no se usa. `service-worker.js` es un archivo que se desinstala solo (borra ca
 
 ## Deploy
 GitHub Pages. Push a main = deploy automático.
-Nicolás mergea los PRs a main él mismo: pushear a la rama y darlo por hecho, sin recordarle el merge.
-Rama activa: `claude/analyze-lowtech-design-01B8DoTK287KRYrNksYcwuGj`
+Se trabaja directo en `main`, sin ramas. Cada push publica, así que validar antes (ver Calidad).
 
 ## Reglas
 - Sin gradientes decorativos
