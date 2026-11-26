@@ -32,7 +32,7 @@ Header (nombre, rol, lede, email / CV, índice) → Now → Work → Editorial �
 - **Footer:** nombre, email, base, idiomas de trabajo, secciones y perfiles en dos columnas (texto, sin íconos), foto de cierre con pie y crédito, colofón con peso de la página y fecha de actualización.
 - Cada sección termina con `[top]`.
 - Experiencia con años (de LinkedIn, octubre 2026), formato `2024&ndash;present / Org, Rol`. Docencia, estudios y proyectos van sin años (decisión). Créditos cargados en San Telmo, Adaptive Museums, Desert Athleisure y Red de Aguante (formato `Tipo, with … at <org>`; organizaciones con link, personas sin link). Estación Fresca, Rescoldo, Cuidados en Red y OFFicial van solo con el tipo hasta que Nicolás diga otra cosa; no inventar créditos.
-- Solo Mercado San Telmo (el proyecto insignia) y Desert Athleisure llevan imagen. Es una decisión, no un pendiente.
+- Solo Mercado San Telmo (el proyecto insignia) y Desert Athleisure llevan imagen en Work. En Editorial, Otros Futuros lleva su banner (pedido de Nicolás, noviembre 2026). Es una decisión, no un pendiente.
 - MARGIN.SIGNALS va en Field notes, no en Editorial (desde noviembre 2026): es un registro público de señales (`signals/`) que Nicolás arma con una herramienta de escritorio propia. Release 001 queda como un ítem más, a pedido. En `links/` también va en Field notes.
 - Sin páginas de caso de estudio: cada proyecto queda en su línea de la portada y linkea a su propio sitio. Decisión de Nicolás (octubre 2026); no volver a proponerlo.
 
