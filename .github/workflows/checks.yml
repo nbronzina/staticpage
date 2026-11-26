@@ -21,7 +21,7 @@ jobs:
           node-version: 22
 
       - name: HTML is valid
-        run: npx --yes html-validate@11 index.html links/index.html Coffee.html CoffeeDecoded.html Official.html
+        run: npx --yes html-validate@11 index.html links/index.html Coffee.html CoffeeDecoded.html Official.html signals/index.html
 
       - name: Internal links and anchors resolve
         uses: lycheeverse/lychee-action@v2

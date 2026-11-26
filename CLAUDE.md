@@ -49,7 +49,7 @@ Sitio en inglés. El CV en español está como PDF. Texto en otro idioma dentro 
 - Los originales que ya no se usan se borraron; están en el historial de git
 
 ## Calidad
-- `.github/workflows/checks.yml` corre en cada push a main: `html-validate` (config en `.htmlvalidate.json`) en las cinco páginas, links internos y anclas con `lychee --offline --include-fragments`, y axe-core (WCAG 2.2 AA) en `/` y `/links/`, desktop y celular (`.github/scripts/a11y.mjs`). Si falla, GitHub marca el commit con una X roja y avisa por mail. No bloquea la publicación: Pages publica desde la rama igual.
+- `.github/workflows/checks.yml` corre en cada push a main: `html-validate` (config en `.htmlvalidate.json`) en las seis páginas, links internos y anclas con `lychee --offline --include-fragments`, y axe-core (WCAG 2.2 AA) en `/` y `/links/`, desktop y celular (`.github/scripts/a11y.mjs`). Si falla, GitHub marca el commit con una X roja y avisa por mail. No bloquea la publicación: Pages publica desde la rama igual.
 - `.github/workflows/links-weekly.yml`: los lunes revisa todos los links externos (menos LinkedIn e Instagram, que bloquean bots) y abre un issue si hay rotos.
 - Antes de pushear, correr lo mismo localmente.
 
@@ -65,6 +65,7 @@ Un solo mail en todo el sitio: `nicolas.bronzina@gmail.com`.
 ## Subpáginas
 - `links/` (link-in-bio, entra desde Instagram) usa el mismo sistema que la portada: HTML clásico, CSS inline, sin fuentes ni JS, columna de 30em alineada a la izquierda. Cada link con su bajada `- …`. Es una lista corta para decidir rápido, no un resumen del sitio: los 14 links de siempre (sitio, estudios, editorial, field notes, contacto) más Speculative Futures Madrid. No agregar más sin que Nicolás lo pida. Sin links repetidos.
 - `Coffee.html`, `CoffeeDecoded.html` y `Official.html` mantienen su propio diseño (identidad de cada proyecto).
+- `signals/` es el registro de señales de MARGIN.SIGNALS. No se edita a mano: lo genera `scripts/publicar.py` de radar (app local de Nicolás) a partir de las señales marcadas con nota. Tiene la identidad de MARGIN.SIGNALS (fondo negro, JetBrains Mono, punto amarillo), no la de la portada.
 - Ninguna registra service worker.
 
 ## Service worker

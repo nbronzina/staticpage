@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MARGIN.SIGNALS — signals log</title>
+<meta name="description" content="Weak signals from cultural margins, logged the day they were spotted.">
+<style>
+  @font-face { font-family: "JBM"; src: url("fonts/JetBrainsMono-Regular.woff2") format("woff2"); font-weight: 400; }
+  @font-face { font-family: "JBM"; src: url("fonts/JetBrainsMono-Medium.woff2") format("woff2"); font-weight: 500; }
+  :root { --bg: #0b0b0b; --fg: #e8e4da; --dim: #8a867d; --line: #262522; --signal: #f2c230; }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); color: var(--fg); }
+  body { margin: 0; font: 400 15px/1.65 "JBM", ui-monospace, Menlo, Consolas, monospace; }
+  main { max-width: 680px; margin: 0 auto; padding: 72px 24px 96px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 28px; margin-bottom: 8px; }
+  .mark { display: flex; align-items: center; gap: 14px; }
+  .mark svg { flex: none; }
+  h1 { font-size: 15px; font-weight: 500; letter-spacing: .08em; margin: 0; }
+  .lede { color: var(--dim); margin: 18px 0 0; }
+  .count { color: var(--dim); font-size: 13px; margin: 6px 0 0; }
+  .signal { border-bottom: 1px solid var(--line); padding: 28px 0; }
+  .meta { color: var(--dim); font-size: 13px; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--signal); display: inline-block; }
+  .sep { color: var(--line); }
+  .note { margin: 0 0 12px; white-space: pre-line; }
+  .link { margin: 0; font-size: 13px; }
+  a { color: var(--fg); text-decoration: underline; text-decoration-color: var(--dim); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--signal); }
+  .empty { color: var(--dim); padding: 28px 0; margin: 0; }
+  footer { color: var(--dim); font-size: 12px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="mark">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <circle cx="17" cy="17" r="16" fill="none" stroke="#3a3935"/>
+        <circle cx="17" cy="17" r="10.5" fill="none" stroke="#3a3935"/>
+        <circle cx="17" cy="17" r="5" fill="none" stroke="#3a3935"/>
+        <circle cx="27.5" cy="17" r="2.6" fill="#f2c230"/>
+      </svg>
+      <h1>MARGIN.SIGNALS</h1>
+    </div>
+    <p class="lede">Weak signals from cultural margins, logged the day they were spotted.</p>
+    <p class="count">0 signals · updated 2026-11-26</p>
+  </header>
+    <p class="empty">No signals logged yet.</p>
+  <footer>∴ designed for margin, not for algorithm</footer>
+</main>
+</body>
+</html>
