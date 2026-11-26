@@ -1,5 +1,78 @@
 {
   "updated": "2026-11-26",
-  "count": 0,
-  "signals": []
+  "count": 8,
+  "signals": [
+    {
+      "detected": "2026-11-26",
+      "source": "Embedded",
+      "category": "margen",
+      "title": "The New Place Kids Are Chatting Online",
+      "url": "https://embedded.substack.com/p/the-new-place-kids-are-chatting-online-42bfc3ec",
+      "note": "Kids route around social media bans by chatting inside a music app. Every ban opens a new margin.",
+      "published": "2026-11-25 09:00:00"
+    },
+    {
+      "detected": "2026-11-26",
+      "source": "Revista Crisis",
+      "category": "margen",
+      "title": "la tangente | algo está pasando con el folklore argentino",
+      "url": "https://revistacrisis.com.ar/notas/la-tangente-algo-esta-pasando-con-el-folklore-argentino/",
+      "note": "Young Argentine listeners turning to folklore and crossing it with other genres. Tradition as the new edge.",
+      "published": "2026-11-14 06:33:47"
+    },
+    {
+      "detected": "2026-11-26",
+      "source": "Tierra Viva",
+      "category": "margen",
+      "title": "La economía agroecológica avanza en América: lecciones desde los movimientos",
+      "url": "https://agenciatierraviva.com.ar/la-economia-agroecologica-avanza-en-america-lecciones-desde-los-movimientos/",
+      "note": "Peasant, indigenous and cooperative groups from 15 countries certify their own food. Quality defined by producers, not certifiers.",
+      "published": "2026-11-19 17:23:47"
+    },
+    {
+      "detected": "2026-11-26",
+      "source": "El Grito del Sur",
+      "category": "margen",
+      "title": "Ni extras, ni villanos: el cine villero que le da batalla cultural a las grandes producciones",
+      "url": "https://elgritodelsur.com.ar/2026/11/ni-extras-ni-villanos-el-cine-villero-da-batalla-cultural-grandes-producciones/",
+      "note": "A film company from Villa 21-24 tells its own stories. The margin stops being an extra in someone else's film.",
+      "published": "2026-11-20 13:38:08"
+    },
+    {
+      "detected": "2026-11-26",
+      "source": "lavaca",
+      "category": "margen",
+      "title": "Los jubilados lanzan una Iniciativa Popular para sancionar una nueva Ley que recomponga sus ingresos",
+      "url": "https://lavaca.org/protesta-social/los-jubilados-lanzan-una-iniciativa-popular-para-sancionar-una-nueva-ley-que-recomponga-sus-ingresos/",
+      "note": "Retirees revive a direct-democracy tool almost nobody uses. When the usual channels close, dormant ones reopen.",
+      "published": "2026-11-18 23:04:01"
+    },
+    {
+      "detected": "2026-11-26",
+      "source": "Embedded",
+      "category": "margen",
+      "title": "Fanfiction Isn’t Dead, But AO3 Might Be",
+      "url": "https://embedded.substack.com/p/fanfiction-isnt-dead-but-ao3-might-017",
+      "note": "Readers organise to rescue fanfiction as its main archive weakens. A community becoming its own archive.",
+      "published": "2026-11-11 09:00:00"
+    },
+    {
+      "detected": "2026-11-26",
+      "source": "Mongabay Latam",
+      "category": "margen",
+      "title": "Día Mundial de la Pesca | Dejar descansar el mar y reinventar la pesca, las apuestas de comunidades en América Latina",
+      "url": "https://es.mongabay.com/2026/11/dia-mundial-pesca-dejar-descansar-mar-reinventar-pesca-comunidades-america-latina/",
+      "note": "Artisanal fishers in Mexico, Peru and Chile let the sea rest on their own terms. Setting limits before anyone imposes them.",
+      "published": "2026-11-21 14:34:41"
+    },
+    {
+      "detected": "2026-11-26",
+      "source": "Tierra Viva",
+      "category": "margen",
+      "title": "Un molino agroecológico en plena Pampa Húmeda y el cooperativismo que produce alimentos sanos",
+      "url": "https://agenciatierraviva.com.ar/un-molino-agroecologico-en-plena-pampa-humeda-y-el-cooperativismo-que-produce-alimentos-sanos/",
+      "note": "An agroecological mill in Lincoln, in the middle of soy country, and it pays. The exception growing inside the model it questions.",
+      "published": "2026-11-19 11:52:01"
+    }
+  ]
 }
